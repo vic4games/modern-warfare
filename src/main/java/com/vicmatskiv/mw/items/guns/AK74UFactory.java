@@ -39,7 +39,7 @@ public class AK74UFactory implements GunFactory {
 		.withName("AK74U")
 		.withAmmo(CommonProxy.AK74UMag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.48f)
+		.withFireRate(0.6f)
 		.withRecoil(1.65f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -229,7 +229,7 @@ public class AK74UFactory implements GunFactory {
 						
 					} else {
 						// Regular
-						GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
+						GL11.glTranslatef(-0.5F, -0.7F, 1F);
 					}
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {

@@ -41,7 +41,7 @@ public class AK47Factory implements GunFactory {
 		.withName("AK47")
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
+		.withFireRate(0.55f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -253,7 +253,7 @@ public class AK47Factory implements GunFactory {
 						
 					} else {
 						// Regular
-						GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
+						GL11.glTranslatef(-0.5F, -0.7F, 1F);
 					}
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {

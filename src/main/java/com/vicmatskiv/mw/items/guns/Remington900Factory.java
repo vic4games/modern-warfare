@@ -41,7 +41,7 @@ public class Remington900Factory implements GunFactory {
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("RemingtonReload")
 		.withReloadingTime(40)
-		.withCrosshair("Running")
+		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
 		.withCreativeTab(ModernWarfareMod.gunsTab)

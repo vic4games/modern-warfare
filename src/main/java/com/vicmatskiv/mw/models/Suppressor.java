@@ -400,44 +400,11 @@ public class Suppressor extends ModelBase
     gun11.render(f5);
     gun12.render(f5);
     gun13.render(f5);
-    gun14.render(f5);
-    gun15.render(f5);
-    gun16.render(f5);
-    gun17.render(f5);
-    gun18.render(f5);
-    gun19.render(f5);
-    gun20.render(f5);
-    gun21.render(f5);
-    gun22.render(f5);
-    gun23.render(f5);
-    gun24.render(f5);
-    gun25.render(f5);
-    gun26.render(f5);
-    gun27.render(f5);
-    gun28.render(f5);
-    gun29.render(f5);
-    gun30.render(f5);
-    gun31.render(f5);
-    gun32.render(f5);
-    gun33.render(f5);
-    gun34.render(f5);
-    gun35.render(f5);
-    gun36.render(f5);
-    gun37.render(f5);
-    gun38.render(f5);
-    gun39.render(f5);
-    gun40.render(f5);
-    gun41.render(f5);
-    gun42.render(f5);
-    gun43.render(f5);
-    gun44.render(f5);
-    gun45.render(f5);
-    gun46.render(f5);
-    gun47.render(f5);
-    gun48.render(f5);
-    gun49.render(f5);
-    gun50.render(f5);
-    gun51.render(f5);
+
+
+
+
+
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

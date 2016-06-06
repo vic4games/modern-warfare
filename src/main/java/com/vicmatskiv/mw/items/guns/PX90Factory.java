@@ -39,7 +39,7 @@ public class PX90Factory implements GunFactory {
 		.withName("P90")
 		.withAmmo(CommonProxy.PX90Mag)
 		.withAmmoCapacity(50)
-		.withFireRate(0.7f)
+		.withFireRate(0.68f)
 		.withRecoil(1.7f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)

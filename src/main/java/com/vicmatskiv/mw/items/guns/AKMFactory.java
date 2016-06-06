@@ -11,6 +11,7 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47;
 import com.vicmatskiv.mw.models.AK47iron;
+import com.vicmatskiv.mw.models.AKM;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
@@ -43,11 +44,11 @@ public class AKMFactory implements GunFactory {
 		.withName("AKM")
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
+		.withFireRate(0.6f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("AK74U")
+		.withShootSound("AKM")
 		.withSilencedShootSound("AK47silenced")
 		.withReloadSound("AKReload")
 		.withReloadingTime(45)
@@ -181,7 +182,7 @@ public class AKMFactory implements GunFactory {
 				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new AK47())
+			.withModel(new AKM())
 			//.withTextureName("AKM")
 			//.withWeaponProximity(0.99F)
 			//.withYOffsetZoom(5F)
@@ -255,7 +256,7 @@ public class AKMFactory implements GunFactory {
 						
 					} else {
 						// Regular
-						GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
+						GL11.glTranslatef(-0.5F, -0.7F, 1F);
 					}
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
@@ -269,7 +270,7 @@ public class AKMFactory implements GunFactory {
 				GL11.glTranslatef(1F, -0.8F, -1.5F);
 			 })
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(7.5f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

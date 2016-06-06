@@ -37,7 +37,7 @@ public class MP7Factory implements GunFactory {
 		.withName("MP7")
 		.withAmmo(CommonProxy.MP7Mag)
 		.withAmmoCapacity(20)
-		.withFireRate(0.5f)
+		.withFireRate(0.61f)
 		.withRecoil(1.1f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)

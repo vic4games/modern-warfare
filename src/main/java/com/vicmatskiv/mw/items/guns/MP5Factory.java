@@ -39,7 +39,7 @@ public class MP5Factory implements GunFactory {
 		.withName("MP5")
 		.withAmmo(CommonProxy.MP5Mag)
 		.withAmmoCapacity(25)
-		.withFireRate(0.5f)
+		.withFireRate(0.59f)
 		.withRecoil(1.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)

@@ -43,7 +43,7 @@ public class AUGFactory implements GunFactory {
 		.withName("AUG")
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
+		.withFireRate(0.6f)
 		.withRecoil(1.7f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -194,7 +194,7 @@ public class AUGFactory implements GunFactory {
 						GL11.glTranslatef(1F, -1.2F, 0.6F);
 					} else if(itemStack.stackTagCompound != null && Weapon.isZoomed(itemStack) /*itemStack.stackTagCompound.getFloat(Weapon.ZOOM_TAG) != 1.0f*/) {
 						// Zoom
-						GL11.glTranslatef(0.135F, -0.97f, 1.3f);
+						GL11.glTranslatef(0.135F, -0.97f, 0.7f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						
 						// ACOG Zoom

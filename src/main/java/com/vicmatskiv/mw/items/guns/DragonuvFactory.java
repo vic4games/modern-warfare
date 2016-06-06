@@ -19,12 +19,17 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
+import com.vicmatskiv.mw.models.Holo2;
+import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.Reflex;
+import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -190,7 +195,18 @@ public class DragonuvFactory implements GunFactory {
 						// Reflex Zoom
 						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 							//System.out.println("Position me for Reflex");
-							GL11.glTranslatef(0F, 0.2f, 0.7f);
+							GL11.glTranslatef(0F, 0.25f, 0.2f);
+						} 
+						// Reflex Zoom
+						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+							//System.out.println("Position me for Reflex");
+							GL11.glTranslatef(0F, 0.1f, 0.8f);
+						} 
+						
+						// Holo Zoom
+						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+							//System.out.println("Position me for Holo");
+							GL11.glTranslatef(1.373F, -1.19f, 2.5f);
 						} 
 						
 						// Everything else
