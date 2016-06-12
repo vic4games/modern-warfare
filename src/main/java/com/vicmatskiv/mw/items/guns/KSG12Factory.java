@@ -53,14 +53,14 @@ public class KSG12Factory implements GunFactory {
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("KSG12Reload")
 		.withReloadingTime(130)
-		.withCrosshair("Running")
+		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {
-				GL11.glTranslatef(0.16F, -1.62F, 0.3F);
-				GL11.glScaled(0.35F, 0.37F, 0.35F);
+				GL11.glTranslatef(0.161F, -1.61F, 0.3F);
+				GL11.glScaled(0.32F, 0.34F, 0.32F);
 			} else if(model instanceof M4Iron2) {
 				GL11.glTranslatef(0.24F, -1.53F, -1.9F);
 				GL11.glScaled(0.5F, 0.32F, 0.32F);
@@ -212,7 +212,7 @@ public class KSG12Factory implements GunFactory {
 						GL11.glTranslatef(1F, -1.2F, 0.6F);
 					} else if(itemStack.stackTagCompound != null && Weapon.isZoomed(itemStack) /*itemStack.stackTagCompound.getFloat(Weapon.ZOOM_TAG) != 1.0f*/) {
 						// Zoom
-						GL11.glTranslatef(0.135F, -1.05f, 1.5f);
+						GL11.glTranslatef(0.135F, -1.05f, 1.1f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						
 						// ACOG Zoom

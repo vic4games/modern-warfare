@@ -45,11 +45,11 @@ public class AR15Factory implements GunFactory {
 		.withName("AR15")
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
-		.withRecoil(1.3f)
+		.withFireRate(0.6f)
+		.withRecoil(1.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("AR15")
+		.withShootSound("M4")
 		.withSilencedShootSound("AR15silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(43)
@@ -69,8 +69,47 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.58F, 0.55F);
 			} else if(model instanceof AR15Iron) {
 				GL11.glTranslatef(0F, 0.04F, 0F);
-				GL11.glScaled(1F, 1F, 1F);
+				GL11.glScaled(1F, 1F, 1.1F);
 			} 
+		})
+		 .withCompatibleAttachment(CommonProxy.AKMIron, (model) -> {
+	    	if(model instanceof M4Iron1) {
+				GL11.glTranslatef(0.162F, -1.75F, 1F);
+				GL11.glScaled(0.33F, 0.35F, 0.33F);
+			} else if(model instanceof M4Iron2) {
+				GL11.glTranslatef(0.255F, -1.55F, -2.25F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			} else if(model instanceof P90iron) {
+				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AKMiron1) {
+				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AKMiron2) {
+				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AK47iron) {
+				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof G36CIron1) {
+				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof G36CIron2) {
+				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof ScarIron1) {
+				GL11.glTranslatef(0.165F, -1.65F, 1F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof ScarIron2) {
+				GL11.glTranslatef(0.25F, -1.55F, -2F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof FALIron) {
+				GL11.glTranslatef(0.127F, -1.77F, -2.22F);
+				GL11.glScaled(0.55F, 0.58F, 0.55F);
+			} else if(model instanceof M14Iron) {
+				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			}
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
@@ -154,7 +193,7 @@ public class AR15Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.5F, -3.9F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AR15", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
+		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
 				"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -189,6 +228,12 @@ public class AR15Factory implements GunFactory {
 						// Zoom
 						GL11.glTranslatef(0.135F, -0.97f, 1.3f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						
+						// Standard Iron Sight Zoom
+						if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
+							//System.out.println("Position me for Acog");
+							GL11.glTranslatef(0F, 0f, -0.7f);
+						} 
 						
 						// ACOG Zoom
 						if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
@@ -232,7 +277,7 @@ public class AR15Factory implements GunFactory {
 						
 					} else {
 						// Regular
-						GL11.glTranslatef(-0.5F, -0.55F, 1.1F);
+						GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
 					}
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {

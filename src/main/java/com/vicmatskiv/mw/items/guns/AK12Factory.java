@@ -29,7 +29,7 @@ public class AK12Factory implements GunFactory {
 		.withName("AK12")
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.52f)
+		.withFireRate(0.58f)
 		.withRecoil(1.1f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)

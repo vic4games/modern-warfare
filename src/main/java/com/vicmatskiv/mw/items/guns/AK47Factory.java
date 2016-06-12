@@ -41,7 +41,7 @@ public class AK47Factory implements GunFactory {
 		.withName("AK47")
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
+		.withFireRate(0.55f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -215,7 +215,8 @@ public class AK47Factory implements GunFactory {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-						// Zoom
+				// Zoom
+
 				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
@@ -258,12 +259,15 @@ public class AK47Factory implements GunFactory {
 				else {
 					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
 				}
-				})
+
+			})
+			
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
 				GL11.glTranslatef(1F, -1F, -1.2F);
 			 })
+			
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);

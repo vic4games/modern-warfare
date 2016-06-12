@@ -42,7 +42,7 @@ public class M249Factory implements GunFactory {
 		.withName("M249")
 		.withAmmo(CommonProxy.M249Mag)
 		.withAmmoCapacity(200)
-		.withFireRate(0.6f)
+		.withFireRate(0.4f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)

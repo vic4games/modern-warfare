@@ -17,11 +17,47 @@
       }
     ]
   },
+  "RPK": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "RPK",
+       "stream": false
+      }
+    ]
+  },
   "G36": {
     "category": "master",
     "sounds": [
       {
        "name": "G36",
+       "stream": false
+      }
+    ]
+  },
+  "MG36": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MG36",
+       "stream": false
+      }
+    ]
+  },
+  "M4": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M4",
+       "stream": false
+      }
+    ]
+  },
+  "AK74M": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "AK74M",
        "stream": false
       }
     ]

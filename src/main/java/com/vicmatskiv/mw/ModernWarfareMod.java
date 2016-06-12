@@ -255,9 +255,37 @@ public class ModernWarfareMod {
 				'Q', CommonProxy.CGrip
 		);
 		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Famas),
+				"  A",
+				"AXA",
+				"EQA",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip
+		);
+		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.G18),
 				"AAA",
 				"EXQ",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.G21),
+				"AEA",
+				"EXQ",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.P2000),
+				"AEE",
+				"AXQ",
 				'X', CommonProxy.GunmetalIngot,
 				'A', CommonProxy.GunmetalPlate,
 				'E', CommonProxy.Electronics,
@@ -276,6 +304,15 @@ public class ModernWarfareMod {
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.M16A4),
 				"A A",
+				"AEX",
+				" AQ",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip
+		);
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.M16A3),
+				"AXA",
 				"AEX",
 				" AQ",
 				'X', CommonProxy.GunmetalIngot,
@@ -361,6 +398,17 @@ public class ModernWarfareMod {
 				'X', CommonProxy.GunmetalIngot,
 				'A', CommonProxy.GunmetalPlate,
 				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip,
+				'W', Blocks.planks
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.KSG12),
+				"AXX",
+				"AEA",
+				"  Q",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
 				'Q', CommonProxy.CGrip
 		);
 		
@@ -408,6 +456,28 @@ public class ModernWarfareMod {
 				'I', Blocks.iron_block
 		);
 		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.M107),
+				"AAA",
+				"XEX",
+				" AQ",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip,
+				'I', Blocks.iron_block
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.M249),
+				"IAI",
+				"XEX",
+				" AQ",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'E', CommonProxy.Electronics,
+				'Q', CommonProxy.CGrip,
+				'I', Blocks.iron_block
+		);
+		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.FNFAL),
 				"AXA",
 				"EQA",
@@ -439,8 +509,16 @@ public class ModernWarfareMod {
 				"XBX",
 				"XB ",
 				'X', CommonProxy.GunmetalIngot,
+				'B', CommonProxy.Bullets
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.FamasMag),
+				" XX",
+				"XBI",
+				"IB ",
+				'X', CommonProxy.GunmetalIngot,
 				'B', CommonProxy.Bullets,
-				'W', Blocks.planks
+				'I', CommonProxy.TitaniumIngot
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.DragonuvMag),
@@ -459,8 +537,16 @@ public class ModernWarfareMod {
 				"ABA",
 				'X', CommonProxy.GunmetalIngot,
 				'A', CommonProxy.GunmetalPlate,
-				'B', CommonProxy.Bullets,
-				'W', Blocks.planks
+				'B', CommonProxy.Bullets
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.G21Mag),
+				"XXA",
+				"XBA",
+				"XBA",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'B', CommonProxy.Bullets
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.G36CMag),
@@ -548,6 +634,16 @@ public class ModernWarfareMod {
 				'A', CommonProxy.GunmetalPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.M107Mag),
+				"XXX",
+				"WBA",
+				" BW",
+				'X', CommonProxy.GunmetalIngot,
+				'A', CommonProxy.GunmetalPlate,
+				'B', CommonProxy.Bullets,
+				'W', CommonProxy.TitaniumIngot
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.FNFALMag),
