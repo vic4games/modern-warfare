@@ -2,11 +2,6 @@ package com.vicmatskiv.mw.items.guns;
 
 
 
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -14,8 +9,6 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK12;
 import com.vicmatskiv.mw.models.Acog2;
-import com.vicmatskiv.mw.models.Bullet;
-import com.vicmatskiv.mw.models.Grenade;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Kobra;
@@ -23,6 +16,10 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+
+import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 
 public class AK12Factory implements GunFactory {
 
@@ -131,55 +128,63 @@ public class AK12Factory implements GunFactory {
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
-			.withFirstPersonPositioning((player, itemStack) -> {
+			
+			.withFirstPersonPositioning((player, itemStack) ->{
 				GL11.glTranslatef(-0.3F, 0F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
-					float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
-					if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
-						// Reload
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0.6F);
-					} else if(itemStack.stackTagCompound != null && Weapon.isZoomed(itemStack) /*itemStack.stackTagCompound.getFloat(Weapon.ZOOM_TAG) != 1.0f*/) {
-						// Zoom
-						GL11.glTranslatef(1.26F, -1.68f, 2.03f);
-						GL11.glScaled(0.55F, 0.55F, 0.55F);
-						
-						// ACOG Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
-							//System.out.println("Position me for Acog");
-							GL11.glTranslatef(0.01F, 0.4f, 0.7f);
-						} 
-						
-						// Reflex Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
-							//System.out.println("Position me for Reflex");
-							GL11.glTranslatef(0F, 0.4f, 0.8f);
-						} 
-						
-
-						// Holo Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
-							//System.out.println("Position me for Holo");
-							GL11.glTranslatef(0F, 0.35f, 1f);
-						} 
-						
-						// Holo Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
-							//System.out.println("Position me for Holo");
-							GL11.glTranslatef(1.37F, -0.98f, 3.5f);
-						} 
-						
-						// Everything else
-						else {
-							GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-						}
-						
-					} else {
-						// Regular
-						GL11.glTranslatef(-0.1F, -0.8F, 1.3F);
-					}
+				float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
+				if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
+					// Reload
+					GL11.glRotatef(-45F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0.6F);
+				} else {
+					// Regular
+					GL11.glTranslatef(-0.1F, -0.8F, 1.3F);
+				}
 				})
+			
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
+				GL11.glTranslatef(-0.3F, 0F, 0.1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				
+
+				// Zoom
+				GL11.glTranslatef(1.26F, -1.68f, 2.03f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.01F, 0.4f, 0.7f);
+				} 
+
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.4f, 0.8f);
+				} 
+
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.35f, 1f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.37F, -0.98f, 3.5f);
+				} 
+
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+			})
+			
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
