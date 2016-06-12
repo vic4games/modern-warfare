@@ -201,66 +201,73 @@ public class AK47Factory implements GunFactory {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-					float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
-					if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
-						// Reload
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0.6F);
-					} else if(itemStack.stackTagCompound != null && Weapon.isZoomed(itemStack) /*itemStack.stackTagCompound.getFloat(Weapon.ZOOM_TAG) != 1.0f*/) {
-						// Zoom
-						GL11.glTranslatef(0.135F, -1.08f, 1.3f);
-						GL11.glScaled(0.55F, 0.55F, 0.55F);
-						
-						// ACOG Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
-							//System.out.println("Position me for Acog");
-							GL11.glTranslatef(0.005F, 0.18f, 0.3f);
-						} 
-						
-						// Scope Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
-							//System.out.println("Position me for Scope");
-							GL11.glTranslatef(0F, 0.148f, 5f);
-						} 
-						
-						// Scope Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
-							//System.out.println("Position me for Scope");
-							GL11.glTranslatef(0F, 0.148f, 5f);
-						} 
-						
-						// Reflex Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
-							//System.out.println("Position me for Reflex");
-							GL11.glTranslatef(0F, 0.23f, 0.2f);
-						} 
-						// Reflex Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
-							//System.out.println("Position me for Reflex");
-							GL11.glTranslatef(0F, 0.1f, 0.8f);
-						} 
-						
-						// Holo Zoom
-						if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
-							//System.out.println("Position me for Holo");
-							GL11.glTranslatef(1.373F, -1.19f, 2.5f);
-						} 
-						
-						// Everything else
-						else {
-							GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-						}
-						
-					} else {
-						// Regular
-						GL11.glTranslatef(-0.5F, -0.7F, 1F);
-					}
+				float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
+				if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
+					// Reload
+					GL11.glRotatef(-45F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0.6F);
+				} else {
+					// Regular
+					GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
+				}
 				})
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				// Zoom
+
+				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
+				} 
+
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.23f, 0.2f);
+				} 
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.1f, 0.8f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
+				} 
+
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+
+			})
+			
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
 				GL11.glTranslatef(1F, -1F, -1.2F);
 			 })
+			
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);
