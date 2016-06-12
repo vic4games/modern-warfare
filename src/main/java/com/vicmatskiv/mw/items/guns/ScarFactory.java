@@ -43,7 +43,7 @@ public class ScarFactory implements GunFactory {
 		.withAmmo(CommonProxy.ScarMag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(1.3f)
+		.withRecoil(1.8f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("Scar")

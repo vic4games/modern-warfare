@@ -45,7 +45,7 @@ public class MG36Factory implements GunFactory {
 		.withAmmo(CommonProxy.DrumMag)
 		.withAmmoCapacity(100)
 		.withFireRate(0.47f)
-		.withRecoil(2.3f)
+		.withRecoil(2.8f)
 		.withZoom(0.8f)
 		//.withMaxShots(5)
 		.withShootSound("MG36")

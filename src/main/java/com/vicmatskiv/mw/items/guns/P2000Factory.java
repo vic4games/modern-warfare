@@ -26,7 +26,7 @@ public class P2000Factory implements GunFactory {
 		.withName("P2000")
 		.withAmmo(CommonProxy.M9Mag)
 		.withAmmoCapacity(10)
-		.withFireRate(0.3f)
+		.withFireRate(0.6f)
 		.withRecoil(1.5f)
 		.withZoom(0.9f)
 		.withMaxShots(1)

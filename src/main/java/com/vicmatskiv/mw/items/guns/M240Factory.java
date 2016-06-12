@@ -44,7 +44,7 @@ public class M240Factory implements GunFactory {
 		.withAmmo(CommonProxy.M249Mag)
 		.withAmmoCapacity(200)
 		.withFireRate(0.3f)
-		.withRecoil(2f)
+		.withRecoil(2.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("M249")

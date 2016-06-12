@@ -39,7 +39,7 @@ public class FamasG2Factory implements GunFactory {
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.7f)
-		.withRecoil(1.3f)
+		.withRecoil(2.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("Famas")

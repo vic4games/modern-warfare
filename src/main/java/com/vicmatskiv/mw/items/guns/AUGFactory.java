@@ -44,7 +44,7 @@ public class AUGFactory implements GunFactory {
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(1.7f)
+		.withRecoil(2.2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AUG")

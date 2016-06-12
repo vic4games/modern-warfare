@@ -46,7 +46,7 @@ public class AR15Factory implements GunFactory {
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(1.5f)
+		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("M4")
@@ -182,11 +182,11 @@ public class AR15Factory implements GunFactory {
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.25F, -1.4F, -1.6F);
+			GL11.glTranslatef(.3F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.25F, -1.4F, -1.6F);
+			GL11.glTranslatef(.3F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {

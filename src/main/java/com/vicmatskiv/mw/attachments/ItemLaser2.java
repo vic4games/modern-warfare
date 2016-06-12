@@ -9,17 +9,9 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 public class ItemLaser2 extends ItemAttachment<Weapon>
 {
-	private static final float RECOIL_REDUCTION_FACTOR = 0.5f;
 	
 	public ItemLaser2() {
-		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new Laser2(), "Laser2.png", null,
-				(attachment, weapon, player) -> {
-					weapon.changeRecoil(player, RECOIL_REDUCTION_FACTOR);
-				},
-				(attachment, weapon, player) -> {
-					weapon.changeRecoil(player, 1);
-				});
-		
+		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new Laser2(), "Laser2.png", null, null, null);
 		setPostRenderer(new LaserBeamRenderer());
 		
 		setMaxStackSize(1);

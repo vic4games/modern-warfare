@@ -42,7 +42,7 @@ public class AK47Factory implements GunFactory {
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.55f)
-		.withRecoil(2f)
+		.withRecoil(2.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK47")

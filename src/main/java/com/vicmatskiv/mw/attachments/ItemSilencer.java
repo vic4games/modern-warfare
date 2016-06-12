@@ -1,6 +1,7 @@
 package com.vicmatskiv.mw.attachments;
 
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.Suppressor;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;

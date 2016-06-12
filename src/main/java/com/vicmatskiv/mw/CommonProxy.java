@@ -54,6 +54,7 @@ import com.vicmatskiv.mw.items.ItemRemington870Mag;
 import com.vicmatskiv.mw.items.ItemScarHMag;
 import com.vicmatskiv.mw.items.ItemScarMag;
 import com.vicmatskiv.mw.items.ItemXWPMag;
+import com.vicmatskiv.mw.items.guns.ACRFactory;
 import com.vicmatskiv.mw.items.guns.AK12Factory;
 import com.vicmatskiv.mw.items.guns.AK47Factory;
 import com.vicmatskiv.mw.items.guns.AK74MFactory;
@@ -72,6 +73,7 @@ import com.vicmatskiv.mw.items.guns.G36CFactory;
 import com.vicmatskiv.mw.items.guns.G36Factory;
 import com.vicmatskiv.mw.items.guns.GaussRifleFactory;
 import com.vicmatskiv.mw.items.guns.GrenadeLauncherFactory;
+import com.vicmatskiv.mw.items.guns.HK416CFactory;
 import com.vicmatskiv.mw.items.guns.KSG12Factory;
 import com.vicmatskiv.mw.items.guns.M107Factory;
 import com.vicmatskiv.mw.items.guns.M14Factory;
@@ -196,6 +198,8 @@ public class CommonProxy {
 	public static Item M249;
 	public static Item RPK74M;
 	public static Item MG36;
+	public static Item ACR;
+	public static Item HK416C;
 	//public static Item GaussRifle;
 //	public static Item RPG;
 
@@ -365,6 +369,8 @@ public class CommonProxy {
 		M4A4 = new M4A4Factory().createGun(this);
 		M16A3 = new M16A3Factory().createGun(this);
 		M16A4 = new M16A4Factory().createGun(this);
+		HK416C = new HK416CFactory().createGun(this);
+		ACR = new ACRFactory().createGun(this);
 		Scar = new ScarFactory().createGun(this);
 		ScarH = new ScarHFactory().createGun(this);
 		FNFAL = new FNFALFactory().createGun(this);

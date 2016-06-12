@@ -45,7 +45,7 @@ public class FamasFactory implements GunFactory {
 		.withAmmo(CommonProxy.FamasMag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.7f)
-		.withRecoil(1.3f)
+		.withRecoil(2.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("Famas")

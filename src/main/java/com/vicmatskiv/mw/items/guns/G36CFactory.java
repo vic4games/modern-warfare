@@ -43,7 +43,7 @@ public class G36CFactory implements GunFactory {
 		.withAmmo(CommonProxy.G36CMag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.47f)
-		.withRecoil(2f)
+		.withRecoil(2.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("G36")

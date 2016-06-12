@@ -25,7 +25,7 @@ public class G18Factory implements GunFactory {
 		.withAmmo(CommonProxy.G18Mag)
 		.withAmmoCapacity(20)
 		.withFireRate(0.6f)
-		.withRecoil(1.5f)
+		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("G18")

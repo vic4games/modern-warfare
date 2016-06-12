@@ -43,7 +43,7 @@ public class RPK74MFactory implements GunFactory {
 		.withAmmo(CommonProxy.RPK74MMag)
 		.withAmmoCapacity(40)
 		.withFireRate(0.58f)
-		.withRecoil(1.7f)
+		.withRecoil(2.2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("RPK")

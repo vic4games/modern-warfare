@@ -40,7 +40,7 @@ public class AK74UFactory implements GunFactory {
 		.withAmmo(CommonProxy.AK74UMag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(1.65f)
+		.withRecoil(2f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK74U")

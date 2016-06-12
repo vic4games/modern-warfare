@@ -57,6 +57,8 @@ item.G36.name=G36
 item.RPK74M.name=RPK-74M
 item.MG36.name=MG36
 item.AK74M.name=AK-74M
+item.ACR.name=ACR
+item.416C.name=416-C
 
 item.mw_AK47Mag.name=30rnd Magazine
 item.mw_M9Mag.name=10rnd Magazine
