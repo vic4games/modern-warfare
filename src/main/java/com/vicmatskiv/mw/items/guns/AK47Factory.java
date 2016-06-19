@@ -197,20 +197,26 @@ public class AK47Factory implements GunFactory {
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
+			
 			.withFirstPersonPositioning((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
-				if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
-					// Reload
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0.6F);
-				} else {
-					// Regular
-					GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
-				}
+				GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
 				})
+			
+			.withFirstPersonPositioningReloading(400,
+					
+				(player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0F, -0.3F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-45F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -2F, 0.6F);
+				}
+			)
+			
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
