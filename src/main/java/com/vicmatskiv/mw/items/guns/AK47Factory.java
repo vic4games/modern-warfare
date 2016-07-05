@@ -32,6 +32,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class AK47Factory implements GunFactory {
 
@@ -202,19 +203,28 @@ public class AK47Factory implements GunFactory {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 1.3F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 			
-			.withFirstPersonPositioningReloading(400,
+			.withFirstPersonPositioningReloading(
 					
-				(player, itemStack) -> { // Reload position
+				new Transition((player, itemStack) -> { // Reload position
 					GL11.glTranslatef(0F, -0.3F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -2F, 0.6F);
-				}
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 250, 1000),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0F, -0.3F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-45F, 2f, 0f, -6f);
+					GL11.glTranslatef(-1.5F, -1.1F, 0.5F);
+				}, 250, 0)
 			)
 			
 			.withFirstPersonPositioningZooming((player, itemStack) -> {

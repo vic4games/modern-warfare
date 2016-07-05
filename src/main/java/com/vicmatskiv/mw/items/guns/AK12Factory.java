@@ -16,6 +16,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.animation.Transition;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -133,16 +134,30 @@ public class AK12Factory implements GunFactory {
 				GL11.glTranslatef(-0.3F, 0F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
-				if(itemStack.stackTagCompound != null && reloadingProgress > 0 && reloadingProgress < 0.2f) {
-					// Reload
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0.6F);
-				} else {
-					// Regular
-					GL11.glTranslatef(-0.1F, -0.8F, 1.3F);
-				}
+				GL11.glTranslatef(-0.1F, -0.8F, 1.3F);
 				})
+				
+			.withFirstPersonPositioningReloading(
+					
+				new Transition((player, itemStack) ->{
+				GL11.glTranslatef(-0.3F, 0F, 0.1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				
+				GL11.glRotatef(-45F, 1f, 0f, 2f);
+				GL11.glTranslatef(1F, -1.2F, 0.6F);
+				}, 250, 1000),
+				
+				new Transition((player, itemStack) ->{
+				GL11.glTranslatef(-0.3F, 0F, 0.1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+					
+				GL11.glRotatef(-45F, 1f, 0f, -2f);
+				GL11.glTranslatef(0.3F, -1.6F, 0.6F);
+				}, 250, 0)
+				
+			)
 			
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.3F, 0F, 0.1F);
