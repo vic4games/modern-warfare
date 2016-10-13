@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
@@ -88,6 +89,9 @@ public class XWPFactory implements GunFactory {
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
 				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -135,8 +139,9 @@ public class XWPFactory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, -0.8f);
+				GL11.glScaled(0.32F, 0.32F, 0.32F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -147,10 +152,10 @@ public class XWPFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.1F, -0.32F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.8F, 0.8F);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.2F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -187,13 +192,13 @@ public class XWPFactory implements GunFactory {
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.22f, 3f);
+					GL11.glTranslatef(0.5F, -0.2f, 7f);
 				} 
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.6F, -0.1f, 3f);
+					GL11.glTranslatef(0.5F, 0f, 7f);
 				} 
 				
 				// HP Zoom
@@ -232,6 +237,7 @@ public class XWPFactory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(34.3f)
+		.withSpawnEntityGravityVelocity(0f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

@@ -28,11 +28,11 @@ public class P2000Factory implements GunFactory {
 		.withAmmo(CommonProxy.M9Mag)
 		.withAmmoCapacity(10)
 		.withFireRate(0.6f)
-		.withRecoil(1.5f)
+		.withRecoil(6f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("P2000")
-		.withSilencedShootSound("P2000Silenced")
+		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")
 		.withReloadingTime(40)
 		.withCrosshair("gun")
@@ -88,8 +88,9 @@ public class P2000Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0f, 0f, 1f);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(0, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
@@ -100,7 +101,7 @@ public class P2000Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.36F, -0.36F, -0.23F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1F, -0.73F, 1.5F);
@@ -173,6 +174,7 @@ public class P2000Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(6.7f)
+		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

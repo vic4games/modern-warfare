@@ -22,9 +22,13 @@ import com.vicmatskiv.mw.attachments.ItemReflex;
 import com.vicmatskiv.mw.attachments.ItemScope;
 import com.vicmatskiv.mw.attachments.ItemSilencer;
 import com.vicmatskiv.mw.attachments.ItemVGrip;
+import com.vicmatskiv.mw.blocks.BlockBauxiteOre;
 import com.vicmatskiv.mw.blocks.BlockCopperOre;
 import com.vicmatskiv.mw.blocks.BlockLeadOre;
+import com.vicmatskiv.mw.blocks.BlockRubyOre;
+import com.vicmatskiv.mw.blocks.BlockSiliconOre;
 import com.vicmatskiv.mw.blocks.BlockSulfurOre;
+import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
 import com.vicmatskiv.mw.blocks.BlockZincOre;
@@ -43,8 +47,10 @@ import com.vicmatskiv.mw.items.ItemGaussMag;
 import com.vicmatskiv.mw.items.ItemGrenades;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM14Mag;
+import com.vicmatskiv.mw.items.ItemM1Mag;
 import com.vicmatskiv.mw.items.ItemM249Mag;
 import com.vicmatskiv.mw.items.ItemM9Mag;
+import com.vicmatskiv.mw.items.ItemMP40Mag;
 import com.vicmatskiv.mw.items.ItemMP5Mag;
 import com.vicmatskiv.mw.items.ItemMP7Mag;
 import com.vicmatskiv.mw.items.ItemMagnumAmmo;
@@ -60,6 +66,7 @@ import com.vicmatskiv.mw.items.guns.AK47Factory;
 import com.vicmatskiv.mw.items.guns.AK74MFactory;
 import com.vicmatskiv.mw.items.guns.AK74UFactory;
 import com.vicmatskiv.mw.items.guns.AKMFactory;
+import com.vicmatskiv.mw.items.guns.AN94Factory;
 import com.vicmatskiv.mw.items.guns.AR15Factory;
 import com.vicmatskiv.mw.items.guns.AS50Factory;
 import com.vicmatskiv.mw.items.guns.AUGFactory;
@@ -79,11 +86,13 @@ import com.vicmatskiv.mw.items.guns.M107Factory;
 import com.vicmatskiv.mw.items.guns.M14Factory;
 import com.vicmatskiv.mw.items.guns.M16A3Factory;
 import com.vicmatskiv.mw.items.guns.M16A4Factory;
+import com.vicmatskiv.mw.items.guns.M1CarbineFactory;
 import com.vicmatskiv.mw.items.guns.M240Factory;
 import com.vicmatskiv.mw.items.guns.M249Factory;
 import com.vicmatskiv.mw.items.guns.M4A4Factory;
 import com.vicmatskiv.mw.items.guns.M9Factory;
 import com.vicmatskiv.mw.items.guns.MG36Factory;
+import com.vicmatskiv.mw.items.guns.MP40Factory;
 import com.vicmatskiv.mw.items.guns.MP5Factory;
 import com.vicmatskiv.mw.items.guns.MP5KFactory;
 import com.vicmatskiv.mw.items.guns.MP7Factory;
@@ -96,6 +105,34 @@ import com.vicmatskiv.mw.items.guns.ScarFactory;
 import com.vicmatskiv.mw.items.guns.ScarHFactory;
 import com.vicmatskiv.mw.items.guns.XEagleFactory;
 import com.vicmatskiv.mw.items.guns.XWPFactory;
+import com.vicmatskiv.mw.parts.ItemBarrel;
+import com.vicmatskiv.mw.parts.ItemCapacitor;
+import com.vicmatskiv.mw.parts.ItemCopperWiring;
+import com.vicmatskiv.mw.parts.ItemDeagleReceiver;
+import com.vicmatskiv.mw.parts.ItemDiode;
+import com.vicmatskiv.mw.parts.ItemInductor;
+import com.vicmatskiv.mw.parts.ItemLMGReceiver;
+import com.vicmatskiv.mw.parts.ItemP90Receiver;
+import com.vicmatskiv.mw.parts.ItemPistolUnderReceiver;
+import com.vicmatskiv.mw.parts.ItemResistor;
+import com.vicmatskiv.mw.parts.ItemRetractableStock;
+import com.vicmatskiv.mw.parts.ItemRevolverAction;
+import com.vicmatskiv.mw.parts.ItemRevolverGrip;
+import com.vicmatskiv.mw.parts.ItemRevolverReceiver;
+import com.vicmatskiv.mw.parts.ItemRifleReceiver;
+import com.vicmatskiv.mw.parts.ItemSMGReceiver;
+import com.vicmatskiv.mw.parts.ItemScarReceiver;
+import com.vicmatskiv.mw.parts.ItemSecondaryStock;
+import com.vicmatskiv.mw.parts.ItemShotgunGrip;
+import com.vicmatskiv.mw.parts.ItemShotgunReceiver;
+import com.vicmatskiv.mw.parts.ItemTransistor;
+import com.vicmatskiv.mw.parts.ItemUnderReceiver;
+import com.vicmatskiv.mw.parts.ItemWeaponReceiver;
+import com.vicmatskiv.mw.parts.ItemWeaponStock;
+import com.vicmatskiv.mw.parts.ItemWoodRifleStock;
+import com.vicmatskiv.mw.parts.ItemWoodWeaponStock;
+import com.vicmatskiv.mw.resources.ItemAluminumIngot;
+import com.vicmatskiv.mw.resources.ItemAluminumPlate;
 import com.vicmatskiv.mw.resources.ItemBullets;
 import com.vicmatskiv.mw.resources.ItemCGrip;
 import com.vicmatskiv.mw.resources.ItemCloth;
@@ -106,8 +143,16 @@ import com.vicmatskiv.mw.resources.ItemGunmetalIngot;
 import com.vicmatskiv.mw.resources.ItemGunmetalPlate;
 import com.vicmatskiv.mw.resources.ItemLeadIngot;
 import com.vicmatskiv.mw.resources.ItemOpticGlass;
+import com.vicmatskiv.mw.resources.ItemPiston;
+import com.vicmatskiv.mw.resources.ItemPlastic;
+import com.vicmatskiv.mw.resources.ItemRuby;
+import com.vicmatskiv.mw.resources.ItemSilicon;
+import com.vicmatskiv.mw.resources.ItemSteelDust;
+import com.vicmatskiv.mw.resources.ItemSteelIngot;
+import com.vicmatskiv.mw.resources.ItemSteelPlate;
 import com.vicmatskiv.mw.resources.ItemSulfurDust;
 import com.vicmatskiv.mw.resources.ItemTanCloth;
+import com.vicmatskiv.mw.resources.ItemTantalumIngot;
 import com.vicmatskiv.mw.resources.ItemTinIngot;
 import com.vicmatskiv.mw.resources.ItemTitaniumIngot;
 import com.vicmatskiv.mw.resources.ItemZincIngot;
@@ -200,6 +245,9 @@ public class CommonProxy {
 	public static Item MG36;
 	public static Item ACR;
 	public static Item HK416C;
+	public static Item M1Carbine;
+	public static Item MP40;
+	public static Item AN94;
 	//public static Item GaussRifle;
 //	public static Item RPG;
 
@@ -228,6 +276,8 @@ public class CommonProxy {
 	public static ItemAmmo RPK74MMag;
 	public static ItemAmmo DrumMag;
 	public static ItemAmmo ScarHMag;
+	public static ItemAmmo M1Mag;
+	public static ItemAmmo MP40Mag;
 	//public static ItemAmmo GaussMag;
 	//public static ItemAmmo RPGAmmo;
 
@@ -238,6 +288,13 @@ public class CommonProxy {
 	public static Item Cloth;
 	public static Item TanCloth;
 	public static Item GreenCloth;
+	public static Item Inductor;
+	public static Item Transistor;
+	public static Item Resistor;
+	public static Item Diode;
+	public static Item Capacitor;
+	public static Item CopperWiring;
+	public static Item Piston;
 
 	public static Block TitaniumOre;
 	public static Item TitaniumIngot;
@@ -256,9 +313,55 @@ public class CommonProxy {
 
 	public static Block SulfurOre;
 	public static Item SulfurDust;
+	
+	public static Block BauxiteOre;
+	public static Item AluminumIngot;
+	public static Item AluminumPlate;
+	
+	public static Block SiliconOre;
+	public static Item Silicon;
+	
+	public static Block TantalumOre;
+	public static Item TantalumIngot;
+	
+	public static Block RubyOre;
+	public static Item Ruby;
 
 	public static Item GunmetalIngot;
 	public static Item GunmetalPlate;
+	
+	public static Item SteelDust;
+	public static Item SteelIngot;
+	public static Item SteelPlate;
+	
+	public static Item WeaponStock;
+	public static Item RetractableStock;
+	public static Item SecondaryStock;
+	public static Item WoodWeaponStock;
+	public static Item WoodRifleStock;
+	
+	public static Item WeaponReceiver;
+	public static Item SMGReceiver;
+	public static Item UnderReceiver;
+	public static Item RifleReceiver;
+	public static Item PistolUnderReceiver;
+	public static Item P90Receiver;
+	
+	public static Item RevolverAction;
+	public static Item RevolverGrip;
+	public static Item RevolverReceiver;
+	
+	public static Item ShotgunReceiver;
+	public static Item ShotgunGrip;
+	
+	public static Item ScarReceiver;
+	
+	public static Item DeagleReceiver;
+	
+	public static Item LMGReceiver;
+	
+	public static Item Barrel;
+	public static Item Plastic;
 
 	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", 40,
 			new int[] { 3, 5, 4, 3 }, 15);
@@ -310,10 +413,29 @@ public class CommonProxy {
 		SulfurOre = new BlockSulfurOre();
 		SulfurDust = new ItemSulfurDust();
 		OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
+		
+		BauxiteOre = new BlockBauxiteOre();
+		AluminumIngot = new ItemAluminumIngot();
+		AluminumPlate = new ItemAluminumPlate();
+		OreDictionary.registerOre("ingotAluminum", AluminumIngot);
+		
+		RubyOre = new BlockRubyOre();
+		Ruby = new  ItemRuby();
+		OreDictionary.registerOre("Ruby", Ruby);
+		
+		SiliconOre = new BlockSiliconOre();
+		Silicon = new ItemSilicon();
+		
+		TantalumOre = new BlockTantalumOre();
+		TantalumIngot = new ItemTantalumIngot();
 
 		GunmetalIngot = new ItemGunmetalIngot();
-		
 		GunmetalPlate = new ItemGunmetalPlate();
+		
+		SteelDust = new ItemSteelDust();
+		SteelIngot = new ItemSteelIngot();
+		SteelPlate = new ItemSteelPlate();
+		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
 		AK47Mag = new ItemAK47Mag();
 		G18Mag = new ItemG18Mag();
@@ -340,6 +462,8 @@ public class CommonProxy {
 		RPK74MMag = new ItemRPK74MMag();
 		DrumMag = new ItemDrumMag();
 		ScarHMag = new ItemScarHMag();
+		M1Mag = new ItemM1Mag();
+		MP40Mag = new ItemMP40Mag();
 		//GaussMag = new ItemGaussMag();
 	//	RPGAmmo = new ItemRPGAmmo();
 
@@ -363,6 +487,7 @@ public class CommonProxy {
 		AK47 = new AK47Factory().createGun(this);
 		AKM = new AKMFactory().createGun(this);
 		AK12 = new AK12Factory().createGun(this);
+		AN94 = new AN94Factory().createGun(this);
 		AK74U = new AK74UFactory().createGun(this);
 		AK74M = new AK74MFactory().createGun(this);
 		AR15 = new AR15Factory().createGun(this);
@@ -374,6 +499,7 @@ public class CommonProxy {
 		Scar = new ScarFactory().createGun(this);
 		ScarH = new ScarHFactory().createGun(this);
 		FNFAL = new FNFALFactory().createGun(this);
+		M1Carbine = new M1CarbineFactory().createGun(this);
 		G18 = new G18Factory().createGun(this);
 		G21 = new G21Factory().createGun(this);
 		M9 = new M9Factory().createGun(this);
@@ -391,6 +517,7 @@ public class CommonProxy {
 		MP5K = new MP5KFactory().createGun(this);
 		MP7 = new MP7Factory().createGun(this);
 		PX90 = new PX90Factory().createGun(this);
+		MP40 = new MP40Factory().createGun(this);
 		AS50 = new AS50Factory().createGun(this);
 		XWP = new XWPFactory().createGun(this);
 		Dragonuv = new DragonuvFactory().createGun(this);
@@ -403,6 +530,43 @@ public class CommonProxy {
 		GrenadeLauncher = new GrenadeLauncherFactory().createGun(this);
 		//GaussRifle = new GaussRifleFactory().createGun(this);
 	//	RPG = new RPGFactory().createGun(this);
+		
+		WeaponStock = new ItemWeaponStock();
+		RetractableStock = new ItemRetractableStock();
+		SecondaryStock = new ItemSecondaryStock();
+		WoodWeaponStock = new ItemWoodWeaponStock();
+		WoodRifleStock = new ItemWoodRifleStock();
+		
+		WeaponReceiver = new ItemWeaponReceiver();
+		SMGReceiver = new ItemSMGReceiver();
+		UnderReceiver = new ItemUnderReceiver();
+		RifleReceiver = new ItemRifleReceiver();
+		PistolUnderReceiver = new ItemPistolUnderReceiver();
+		P90Receiver = new ItemP90Receiver();
+		
+		RevolverAction = new ItemRevolverAction();
+		RevolverGrip = new ItemRevolverGrip();
+		RevolverReceiver = new ItemRevolverReceiver();
+		
+		ShotgunReceiver = new ItemShotgunReceiver();
+		ShotgunGrip = new ItemShotgunGrip();
+		
+		ScarReceiver = new ItemScarReceiver();
+		
+		DeagleReceiver = new ItemDeagleReceiver();
+		
+		LMGReceiver = new ItemLMGReceiver();
+		
+		Inductor = new ItemInductor();
+		Resistor = new ItemResistor();
+		Transistor = new ItemTransistor();
+		Diode = new ItemDiode();
+		Capacitor = new ItemCapacitor();
+		CopperWiring = new ItemCopperWiring();
+		Piston = new ItemPiston();
+		
+		Barrel = new ItemBarrel();
+		Plastic = new ItemPlastic();
 
 		GameRegistry.registerItem(AK47Mag, "AK47Mag");
 		GameRegistry.registerItem(G18Mag, "G18Mag");
@@ -429,6 +593,8 @@ public class CommonProxy {
 		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
 		GameRegistry.registerItem(DrumMag, "DrumMag");
 		GameRegistry.registerItem(ScarHMag, "ScarHMag");
+		GameRegistry.registerItem(M1Mag, "M1Mag");
+		GameRegistry.registerItem(MP40Mag, "MP40Mag");
 	//	GameRegistry.registerItem(GaussMag, "GaussMag");
 	//	GameRegistry.registerItem(RPGAmmo, "RPGAmmo");
 
@@ -474,10 +640,63 @@ public class CommonProxy {
 
 		GameRegistry.registerBlock(SulfurOre, "SulfurOre");
 		GameRegistry.registerItem(SulfurDust, "SulfurDust");
+		
+		GameRegistry.registerBlock(BauxiteOre, "BauxiteOre");
+		GameRegistry.registerItem(AluminumIngot, "AluminumIngot");
+		GameRegistry.registerItem(AluminumPlate, "AluminumPlate");
+		
+		GameRegistry.registerBlock(SiliconOre, "SiliconOre");
+		GameRegistry.registerItem(Silicon, "Silicon");
+		
+		GameRegistry.registerBlock(TantalumOre, "TantalumOre");
+		GameRegistry.registerItem(TantalumIngot, "TantalumIngot");
+		
+		GameRegistry.registerBlock(RubyOre, "RubyOre");
+		GameRegistry.registerItem(Ruby, "Ruby");
 
 		GameRegistry.registerItem(GunmetalIngot, "GunmetalIngot");
 		GameRegistry.registerItem(GunmetalPlate, "GunmetalPlate");
-
+		
+		GameRegistry.registerItem(SteelDust, "SteelDust");
+		GameRegistry.registerItem(SteelIngot, "SteelIngot");
+		GameRegistry.registerItem(SteelPlate, "SteelPlate");
+		
+		GameRegistry.registerItem(WeaponStock, "WeaponStock");
+		GameRegistry.registerItem(RetractableStock, "RetractableStock");
+		GameRegistry.registerItem(SecondaryStock, "SecondaryStock");
+		GameRegistry.registerItem(WoodWeaponStock, "WoodWeaponStock");
+		GameRegistry.registerItem(WoodRifleStock, "WoodRifleStock");
+		
+		GameRegistry.registerItem(WeaponReceiver, "WeaponReceiver");
+		GameRegistry.registerItem(SMGReceiver, "SMGReceiver");
+		GameRegistry.registerItem(UnderReceiver, "UnderReceiver");
+		GameRegistry.registerItem(RifleReceiver, "RifleReceiver");
+		GameRegistry.registerItem(PistolUnderReceiver, "PistolUnderReceiver");
+		GameRegistry.registerItem(P90Receiver, "P90Receiver");
+		
+		GameRegistry.registerItem(RevolverAction, "RevolverAction");
+		GameRegistry.registerItem(RevolverGrip, "RevolverGrip");
+		GameRegistry.registerItem(RevolverReceiver, "RevolverReceiver");
+		
+		GameRegistry.registerItem(ShotgunReceiver, "ShotgunReceiver");
+		GameRegistry.registerItem(ShotgunGrip, "ShotgunGrip");
+		
+		GameRegistry.registerItem(ScarReceiver, "ScarReceiver");
+		
+		GameRegistry.registerItem(DeagleReceiver, "DeagleReceiver");
+		
+		GameRegistry.registerItem(LMGReceiver, "LMGReceiver");
+		
+		GameRegistry.registerItem(Transistor, "Transistor");
+		GameRegistry.registerItem(Resistor, "Resistor");
+		GameRegistry.registerItem(Inductor, "Inductor");
+		GameRegistry.registerItem(Diode, "Diode");
+		GameRegistry.registerItem(Capacitor, "Capacitor");
+		GameRegistry.registerItem(CopperWiring, "CopperWiring");
+		GameRegistry.registerItem(Piston, "Piston");
+		
+		GameRegistry.registerItem(Barrel, "Barrel");
+		GameRegistry.registerItem(Plastic, "plastic");
 
 		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(), 0);
 

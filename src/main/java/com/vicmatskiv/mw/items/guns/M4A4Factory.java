@@ -27,6 +27,7 @@ import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4A4;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -45,11 +46,11 @@ public class M4A4Factory implements GunFactory {
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(1.6f)
+		.withRecoil(3.4f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("M4")
-		.withSilencedShootSound("AR15silenced")
+		.withShootSound("AR15")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -92,6 +93,9 @@ public class M4A4Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.58F, 0.55F);
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
@@ -191,8 +195,9 @@ public class M4A4Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -203,10 +208,10 @@ public class M4A4Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.25F, -0.28F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
+				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -294,6 +299,7 @@ public class M4A4Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

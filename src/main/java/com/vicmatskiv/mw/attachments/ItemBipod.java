@@ -8,7 +8,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 public class ItemBipod extends ItemAttachment<Weapon>
 {
-	private static final float RECOIL_REDUCTION_FACTOR = 0.5f;
+	private static final float RECOIL_REDUCTION_FACTOR = 0.7f;
 	
 	public ItemBipod() {
 		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new Bipod(), "Bipod.png", null,

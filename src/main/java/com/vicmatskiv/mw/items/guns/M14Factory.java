@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.M14;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
@@ -41,8 +42,8 @@ public class M14Factory implements GunFactory {
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
-		.withShootSound("Magnum")
-		.withSilencedShootSound("AK47silenced")
+		.withShootSound("M14")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
@@ -86,6 +87,9 @@ public class M14Factory implements GunFactory {
 			} else if(model instanceof ScarIron2) {
 					GL11.glTranslatef(0.25F, -1.55F, -2F);
 					GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
@@ -128,8 +132,9 @@ public class M14Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0, 0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.65F, 0.65F, 0.65F);
@@ -140,10 +145,10 @@ public class M14Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.25F, -0.36F, -0.18F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningReloading(

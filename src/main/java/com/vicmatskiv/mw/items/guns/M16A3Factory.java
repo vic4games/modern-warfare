@@ -29,6 +29,7 @@ import com.vicmatskiv.mw.models.M16;
 import com.vicmatskiv.mw.models.M16A4;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -45,13 +46,13 @@ public class M16A3Factory implements GunFactory {
 		.withModId(ModernWarfareMod.MODID)
 		.withName("M16A3")
 		.withAmmo(CommonProxy.AR15Mag)
-		.withAmmoCapacity(50)
-		.withFireRate(0.6f)
-		.withRecoil(2f)
+		.withAmmoCapacity(30)
+		.withFireRate(0.55f)
+		.withRecoil(3.2f)
 		.withZoom(0.9f)
 		//.withMaxShots(3)
 		.withShootSound("AR15")
-		.withSilencedShootSound("AR15silenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(43)
 		.withCrosshair("gun")
@@ -63,52 +64,16 @@ public class M16A3Factory implements GunFactory {
 				GL11.glTranslatef(0.175F, -1.79F, 0.9F);
 				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			} else if(model instanceof M4Iron2) {
-				GL11.glTranslatef(0.255F, -1.55F, -2.57F);
+				GL11.glTranslatef(0.255F, -1.55F, -2.78F);
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.127F, -1.77F, -2.55F);
+				GL11.glTranslatef(0.127F, -1.77F, -2.75F);
 				GL11.glScaled(0.55F, 0.58F, 0.55F);
 			} else if(model instanceof AR15Iron) {
-				GL11.glTranslatef(0F, 0.04F, 0F);
-				GL11.glScaled(1F, 1F, 1.1F);
-			} 
-		})
-		 .withCompatibleAttachment(CommonProxy.AKMIron, (model) -> {
-	    	if(model instanceof M4Iron1) {
-				GL11.glTranslatef(0.162F, -1.75F, 1F);
-				GL11.glScaled(0.33F, 0.35F, 0.33F);
-			} else if(model instanceof M4Iron2) {
-				GL11.glTranslatef(0.255F, -1.55F, -2.57F);
-				GL11.glScaled(0.8F, 0.8F, 0.8F);
-			} else if(model instanceof P90iron) {
-				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AKMiron1) {
-				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron1) {
-				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron2) {
-				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron1) {
-				GL11.glTranslatef(0.165F, -1.65F, 1F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron2) {
-				GL11.glTranslatef(0.25F, -1.55F, -2F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.127F, -1.77F, -2.55F);
-				GL11.glScaled(0.55F, 0.58F, 0.55F);
-			} else if(model instanceof M14Iron) {
-				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glTranslatef(0.037F, 0.04F, 0.07F);
+				GL11.glScaled(0.8F, 1F, 1.1F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
@@ -191,7 +156,7 @@ public class M16A3Factory implements GunFactory {
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.5F, -4.2F);
+			GL11.glTranslatef(0.107F, -1.5F, -4.6F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("M16", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
@@ -208,8 +173,9 @@ public class M16A3Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -220,10 +186,10 @@ public class M16A3Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.25F, -0.28F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
+				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -249,7 +215,7 @@ public class M16A3Factory implements GunFactory {
 				)
 				
 				.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(-0.1F, -0.3F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
@@ -317,6 +283,7 @@ public class M16A3Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

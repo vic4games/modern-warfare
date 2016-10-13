@@ -46,11 +46,11 @@ public class MG36Factory implements GunFactory {
 		.withAmmo(CommonProxy.DrumMag)
 		.withAmmoCapacity(100)
 		.withFireRate(0.47f)
-		.withRecoil(2.8f)
+		.withRecoil(4f)
 		.withZoom(0.8f)
 		//.withMaxShots(5)
 		.withShootSound("MG36")
-		.withSilencedShootSound("G36Silenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
@@ -192,8 +192,9 @@ public class MG36Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(0, 0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -294,6 +295,7 @@ public class MG36Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.2f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

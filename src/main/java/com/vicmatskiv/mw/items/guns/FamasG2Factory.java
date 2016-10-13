@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -40,11 +41,11 @@ public class FamasG2Factory implements GunFactory {
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.7f)
-		.withRecoil(2.3f)
+		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("Famas")
-		.withSilencedShootSound("FamasSilenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -87,6 +88,9 @@ public class FamasG2Factory implements GunFactory {
 				GL11.glScaled(0.3F, 0.3F, 0.3F);
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
@@ -159,8 +163,9 @@ public class FamasG2Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -169,11 +174,11 @@ public class FamasG2Factory implements GunFactory {
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
 				
-				.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+			.withFirstPersonPositioning((player, itemStack) -> {
+				GL11.glTranslatef(0.1F, -0.33F, -0.4F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.4F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -258,6 +263,7 @@ public class FamasG2Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

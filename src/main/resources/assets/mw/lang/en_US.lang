@@ -30,10 +30,10 @@ item.P90.name=P90
 item.M16A4.name=M16A4
 item.AKM.name=AKM
 item.G36C.name=G36C
-item.M4A4.name=M4A4
+item.M4A4.name=AR15-M4A4
 item.AK12.name=AK-12
-item.Scar.name=Scar
-item.ScarH.name=Scar-H
+item.Scar.name=Mk16
+item.ScarH.name=Mk17
 item.AUG.name=AUG
 item.MP5.name=MP5
 item.FamasG2.name=Famas-G2
@@ -59,6 +59,9 @@ item.MG36.name=MG36
 item.AK74M.name=AK-74M
 item.ACR.name=ACR
 item.416C.name=416-C
+item.M1Carbine.name=M1 Carbine
+item.MP40.name=MP40
+item.AN94.name=AN-94
 
 item.mw_AK47Mag.name=30rnd Magazine
 item.mw_M9Mag.name=10rnd Magazine
@@ -85,6 +88,8 @@ item.mw_G36Mag.name=30rnd Magazine
 item.mw_RPK74MMag.name=40rnd Magazine
 item.mw_DrumMag.name=100rnd Drum Magazine
 item.mw_ScarHMag.name=20rnd STANAG Magazine
+item.mw_M1Mag.name=15rnd Magazine
+item.mw_MP40Mag.name=32rnd Magazine
 
 item.mw_ACOG.name=Trigicon Acog Scope
 item.mw_Reflex.name=Sightmark Sure Shot Reflex
@@ -103,7 +108,7 @@ item.mw_Kobra.name=Kobra Sight
 item.mw_GunmetalIngot.name=Gunmetal Ingot
 item.mw_GunmetalPlate.name=Gunmetal Plate
 
-item.mw_Electronics.name=Electronics
+item.mw_Electronics.name=Electronic Circuit
 item.mw_Bullets.name=Bullets
 item.mw_CGrip.name=Grip
 item.mw_OpticGlass.name=Optic Glass
@@ -128,6 +133,56 @@ item.mw_TinIngot.name=Tin Ingot
 
 tile.mw_SulfurOre.name=Sulfur Ore
 item.mw_SulfurDust.name=Sulfur Dust
+
+tile.mw_BauxiteOre.name=Bauxite Ore
+item.mw_AluminumIngot.name=Aluminum Ingot
+item.mw_AluminumPlate.name=Aluminum Plate
+
+tile.mw_SiliconOre.name=Silicon Ore
+item.mw_Silicon.name=Silicon Ingot
+
+tile.mw_TantalumOre.name=Tantalum Ore
+item.mw_TantalumIngot.name=Tantalum Ingot
+
+tile.mw_RubyOre.name=Ruby Ore
+item.mw_Ruby.name=Ruby
+
+item.mw_SteelDust.name=Steel Dust
+item.mw_SteelIngot.name=Steel Ingot
+item.mw_SteelPlate.name=Steel Plate
+
+item.mw_WeaponStock.name=Weapon Stock
+item.mw_WoodWeaponStock.name=Weapon Stock (Wood)
+item.mw_SecondaryStock.name=Secondary Weapon Stock
+item.mw_RetractableStock.name=Retractable Weapon Stock
+item.mw_WoodRifleStock.name=Wood Sniper Stock
+
+item.mw_WeaponReceiver.name=Weapon Receiver
+item.mw_UnderReceiver.name=Weapon Receiver (Under-Part)
+item.mw_PistolUnderReceiver.name=Pistol Receiver (Under-Part)
+item.mw_SMGReceiver.name=Weapon Receiver (SMG)
+item.mw_RifleReceiver.name=Weapon Receiver (Sniper)
+item.mw_P90Receiver.name=Weapon Receiver (P90)
+item.mw_ScarReceiver.name=Weapon Receiver (Scar)
+item.mw_DeagleReceiver.name=Weapon Receiver (Desert-Eagle)
+item.mw_LMGReceiver.name=Weapon Receiver (LMG)
+
+item.mw_RevolverAction.name=Revolver Action
+item.mw_RevolverGrip.name=Revolver Grip
+item.mw_RevolverReceiver.name=Revolver Receiver
+
+item.mw_ShotgunReceiver.name=Shotgun Receiver
+item.mw_ShotgunGrip.name=Shotgun Grip
+
+item.mw_Transistor.name=Transistor
+item.mw_Diode.name=Diode
+item.mw_Inductor.name=Inductor
+item.mw_Resistor.name=Resistor
+item.mw_CopperWiring.name=Copper Wiring
+item.mw_Capacitor.name=Capacitor
+item.mw_Barrel.name=Gunmetal Barrel
+item.mw_Plastic.name=Plastic
+item.mw_Piston.name=Piston
 
 item.mw_AKMIron.name=Standard Iron-Sight
 item.mw_AR15Iron.name=AR-15 Action/Iron Sight

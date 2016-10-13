@@ -45,11 +45,11 @@ public class G36Factory implements GunFactory {
 		.withAmmo(CommonProxy.G36Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.47f)
-		.withRecoil(2.5f)
+		.withRecoil(3.3f)
 		.withZoom(0.8f)
 		//.withMaxShots(5)
 		.withShootSound("G36")
-		.withSilencedShootSound("G36Silenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
@@ -191,8 +191,9 @@ public class G36Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(0, 0.5f, 0);
+				GL11.glScaled(0.4F, 0.4F, 0.4F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -203,11 +204,10 @@ public class G36Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.4F, -0.36F, -0.08F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.7F, 1.2F);
-				GL11.glScaled(1F, 1F, 1F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -293,6 +293,7 @@ public class G36Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.2f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

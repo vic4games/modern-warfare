@@ -10,6 +10,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
@@ -34,6 +35,7 @@ public class ItemAKMIron extends ItemAttachment<Weapon>
 		addModel(new ScarIron2(), "ScarIron2.png");
 		addModel(new FALIron(), "FALIron.png");
 		addModel(new M14Iron(), "M14Iron.png");
+		addModel(new MP5Iron(), "AK12.png");
 		
 		setMaxStackSize(1);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AKMIron"); 

@@ -17,6 +17,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Remington;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -83,6 +84,9 @@ public class Remington900Factory implements GunFactory {
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.14F, -1.566F, 0.3F);
 				GL11.glScaled(0.37F, 0.37F, 0.37F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
@@ -103,8 +107,9 @@ public class Remington900Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -173,6 +178,7 @@ public class Remington900Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(30f)
+		.withSpawnEntityGravityVelocity(0.8f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

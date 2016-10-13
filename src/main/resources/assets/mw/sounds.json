@@ -26,6 +26,69 @@
       }
     ]
   },
+   "M1Carbine": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M1Carbine",
+       "stream": false
+      }
+    ]
+  },
+   "M1CarbineReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M1CarbineReload",
+       "stream": false
+      }
+    ]
+  },
+   "MP40": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MP40",
+       "stream": false
+      }
+    ]
+  },
+   "silencer": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "silencer",
+       "stream": false
+      }
+    ]
+  },
+  "AKsilenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "AKsilenced",
+       "stream": false
+      }
+    ]
+  },
+   "M14": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M14",
+       "stream": false
+      }
+    ]
+  },
+   "RifleSilencer": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "RifleSilencer",
+       "stream": false
+      }
+    ]
+  },
   "G36": {
     "category": "master",
     "sounds": [
