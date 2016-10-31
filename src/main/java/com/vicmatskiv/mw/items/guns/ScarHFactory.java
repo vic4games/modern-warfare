@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -44,11 +45,11 @@ public class ScarHFactory implements GunFactory {
 		.withAmmo(CommonProxy.ScarHMag)
 		.withAmmoCapacity(20)
 		.withFireRate(0.6f)
-		.withRecoil(1.8f)
+		.withRecoil(3.6f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("ScarH")
-		.withSilencedShootSound("ScarHSilenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -91,6 +92,9 @@ public class ScarHFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
@@ -187,8 +191,9 @@ public class ScarHFactory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -199,10 +204,10 @@ public class ScarHFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.25F, -0.28F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -291,6 +296,7 @@ public class ScarHFactory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {

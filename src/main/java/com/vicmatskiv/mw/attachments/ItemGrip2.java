@@ -8,7 +8,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 public class ItemGrip2 extends ItemAttachment<Weapon>
 {
-	private static final float RECOIL_REDUCTION_FACTOR = 1f;
+	private static final float RECOIL_REDUCTION_FACTOR = 0.7f;
 	
 	public ItemGrip2() {
 		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new Grip2(), "Grip2.png", null,

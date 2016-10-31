@@ -31,11 +31,11 @@ public class AK12Factory implements GunFactory {
 		.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.58f)
-		.withRecoil(1.6f)
+		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK12")
-		.withSilencedShootSound("AK12Silenced")
+		.withSilencedShootSound("AKsilenced")
 		.withReloadSound("AKReload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
@@ -120,8 +120,9 @@ public class AK12Factory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.3F, 0.3F, 0.3F);
-				GL11.glTranslatef(0, 0.5f, 2f);
+				GL11.glScaled(0.2F, 0.2F, 0.2F);
+				GL11.glTranslatef(-0.5f, 1.4f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.35F, 0.35F, 0.35F);
@@ -131,7 +132,7 @@ public class AK12Factory implements GunFactory {
 				})
 			
 			.withFirstPersonPositioning((player, itemStack) ->{
-				GL11.glTranslatef(-0.3F, 0F, 0.1F);
+				GL11.glTranslatef(0.2F, -0.05F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
 				GL11.glTranslatef(-0.1F, -0.8F, 1.3F);
@@ -212,6 +213,7 @@ public class AK12Factory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 	//	.withSpawnEntityModel(new Bullet())
 	//	.withSpawnEntityModelTexture("Bullet")
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {

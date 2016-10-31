@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MP5K;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
@@ -41,24 +42,24 @@ public class MP5KFactory implements GunFactory {
 		.withAmmo(CommonProxy.MP5Mag)
 		.withAmmoCapacity(25)
 		.withFireRate(0.61f)
-		.withRecoil(1.6f)
+		.withRecoil(3.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("MP5K")
-		.withSilencedShootSound("MP5Silenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(43)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-	  .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+	 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof G36CIron1) {
 				GL11.glTranslatef(-0.21F, -1.94F, 4F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof G36CIron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -1.1F);
-				GL11.glScaled(0.45F, 0.45F, 0.45F);
+				GL11.glTranslatef(0.13F, -1.545F, -1.2F);
+				GL11.glScaled(0.45F, 0.5F, 0.45F);
 			} else if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -89,6 +90,9 @@ public class MP5KFactory implements GunFactory {
 			} else if(model instanceof M14Iron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
 				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0.3F, 0.3F, 0.3F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
@@ -127,11 +131,23 @@ public class MP5KFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.8F, -0.8F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
+			GL11.glTranslatef(.135F, -0.65F, -0.8F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
+			GL11.glTranslatef(.135F, -0.8F, -0.8F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.11F, -1.57F, -2.73F);
+			GL11.glTranslatef(0.107F, -1.4F, -3F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("MP5K", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
+		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
 				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
 				"Creativity", "Dragon", "ASMO4", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
@@ -145,8 +161,9 @@ public class MP5KFactory implements GunFactory {
 				GL11.glRotatef(-90F, 0f, 0f, 4f);
 			})
 			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glTranslatef(0,  0.5f, 0);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+				GL11.glTranslatef(1, 0.8f, 0);
+				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -157,7 +174,7 @@ public class MP5KFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.2F, -0.35F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.7F, 0.9F);
@@ -236,6 +253,7 @@ public class MP5KFactory implements GunFactory {
 			 })
 			.build())
 		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityGravityVelocity(0.028f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {
