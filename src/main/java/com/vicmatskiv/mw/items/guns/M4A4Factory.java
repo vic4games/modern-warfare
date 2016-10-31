@@ -12,6 +12,7 @@ import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.AR15;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
@@ -31,6 +32,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
+import com.vicmatskiv.mw.models.SPAR16;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -42,7 +44,7 @@ public class M4A4Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("M4A4")
+		.withName("SPAR16")
 		.withAmmo(CommonProxy.AR15Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
@@ -57,193 +59,197 @@ public class M4A4Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
-	    	if(model instanceof M4Iron1) {
-	    		GL11.glTranslatef(0.162F, -1.75F, 1F);
-				GL11.glScaled(0.33F, 0.35F, 0.33F);
-			} else if(model instanceof M4Iron2) {
-				GL11.glTranslatef(0.255F, -1.55F, -2.25F);
-				GL11.glScaled(0.8F, 0.8F, 0.8F);
-			} else if(model instanceof P90iron) {
-				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AKMiron1) {
-				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron1) {
-				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron2) {
-				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron1) {
-				GL11.glTranslatef(0.165F, -1.65F, 1F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron2) {
-				GL11.glTranslatef(0.25F, -1.55F, -2F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.127F, -1.77F, -2.22F);
-				GL11.glScaled(0.55F, 0.58F, 0.55F);
-			} else if(model instanceof M14Iron) {
-				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof MP5Iron) {
-				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
-				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.033F, -1.7F, 0.5F);
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.877F, 0.5F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
-			if(model instanceof Reflex) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.8F, 0.0F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
-			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.53F, 0.2F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
-			if(model instanceof Kobra) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.675F, -0.45F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-			GL11.glTranslatef(.135F, -0.75F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.3F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-			GL11.glTranslatef(.135F, -0.75F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-			GL11.glTranslatef(.135F, -0.75F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.3F, -1.4F, -1.6F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.3F, -1.4F, -1.6F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.47F, -3.85F);
-			GL11.glScaled(1F, 1F, 1F);
-		})
-		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex2", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO4", "Vulcan", "GreenVulcan", "Guardian")
-		.withRenderer(new WeaponRenderer.Builder()
-			.withModId(ModernWarfareMod.MODID)
-			.withModel(new M4A4())
-			//.withTextureName("M4A4")
-			//.withWeaponProximity(0.99F)
-			//.withYOffsetZoom(5F)
-			.withEntityPositioning(itemStack -> {
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-				GL11.glRotatef(-90F, 0f, 0f, 4f);
+		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+		    	if(model instanceof M4Iron1) {
+					GL11.glTranslatef(0.162F, -1.75F, 1F);
+					GL11.glScaled(0.33F, 0.35F, 0.33F);
+				} else if(model instanceof M4Iron2) {
+					GL11.glTranslatef(0.255F, -1.55F, -2.9F);
+					GL11.glScaled(0.8F, 0.8F, 0.8F);
+				} else if(model instanceof P90iron) {
+					GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof AKMiron1) {
+					GL11.glTranslatef(0.125F, -1.8F, -0.5F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof AKMiron2) {
+					GL11.glTranslatef(0.13F, -1.55F, -3.05F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof AK47iron) {
+					GL11.glTranslatef(0.092F, -1.91F, -0.9F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof G36CIron1) {
+					GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof G36CIron2) {
+					GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof ScarIron1) {
+					GL11.glTranslatef(0.165F, -1.65F, 1F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof ScarIron2) {
+					GL11.glTranslatef(0.25F, -1.55F, -2F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof FALIron) {
+					GL11.glTranslatef(0.127F, -1.77F, -2.9F);
+					GL11.glScaled(0.55F, 0.58F, 0.55F);
+				} else if(model instanceof M14Iron) {
+					GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+					GL11.glScaled(0F, 0F, 0F);
+				} else if(model instanceof MP5Iron) {
+					GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+					GL11.glScaled(0F, 0F, 0F);
+				}
 			})
-			.withInventoryPositioning(itemStack -> {
-				GL11.glScaled(0.35F, 0.35F, 0.35F);
-				GL11.glTranslatef(1, 0.8f, 0);
-				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
+			.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
+				if(model instanceof ACOG) {
+					GL11.glTranslatef(0.033F, -1.7F, 0.5F);
+					GL11.glScaled(0.7F, 0.7F, 0.7F);
+				} else if(model instanceof Acog2) {
+					GL11.glTranslatef(0.197F, -1.877F, 0.5F);
+					GL11.glScaled(0.06F, 0.06F, 0.06F);
+				}
 			})
-			.withThirdPersonPositioning((player, itemStack) -> {
+			.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
+				if(model instanceof LP) {
+				GL11.glTranslatef(0.055F, -1.625F, 0.8F);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.8F, 0.3F, 1.5F);
-				GL11.glRotatef(-45F, 0f, 1f, 0f);
-				GL11.glRotatef(70F, 1f, 0f, 0f);
+				} else if(model instanceof LPscope) {
+					GL11.glTranslatef(0.197F, -1.78F, 1F);
+					GL11.glScaled(0.04F, 0.04F, 0.04F);
+				}
+			})
+			.withCompatibleAttachment(CommonProxy.HP, (model) -> {
+				if(model instanceof HP) {
+				GL11.glTranslatef(0.055F, -1.625F, 0.8F);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+				} else if(model instanceof HP2) {
+					GL11.glTranslatef(0.197F, -1.78F, 1F);
+					GL11.glScaled(0.04F, 0.04F, 0.04F);
+				}
+			})
+			.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
+				if(model instanceof Reflex) {
+				GL11.glTranslatef(.27F, -1.48F, 0F);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				} else if(model instanceof Reflex2) {
+					GL11.glTranslatef(0.202F, -1.8F, 0.0F);
+					GL11.glScaled(0.1F, 0.1F, 0.1F);
+				}
+			})
+			.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
+				if(model instanceof Holographic) {
+				GL11.glTranslatef(.264F, -1.53F, 0.2F);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				} else if(model instanceof Holo2) {
+					GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+					GL11.glScaled(0.06F, 0.06F, 0.06F);
+				}
+			})
+			.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
+				if(model instanceof Kobra) {
+				GL11.glTranslatef(.27F, -1.48F, 0F);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+				} else if(model instanceof Reflex2) {
+					GL11.glTranslatef(0.202F, -1.675F, -0.45F);
+					GL11.glScaled(0.1F, 0.1F, 0.1F);
+				}
+			})
+			.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+				GL11.glTranslatef(.135F, -0.7F, -1.25F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
+				GL11.glTranslatef(.135F, -0.6F, -1.3F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
+				GL11.glTranslatef(.135F, -0.7F, -1.25F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
+				GL11.glTranslatef(.135F, -0.7F, -1.25F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+				GL11.glTranslatef(.3F, -1.4F, -1.6F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+				GL11.glTranslatef(.3F, -1.4F, -1.6F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
+			})
+			.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+				GL11.glTranslatef(0.107F, -1.5F, -3.9F);
+				GL11.glScaled(1F, 1F, 1F);
+			})
+			.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
+					"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+			.withRenderer(new WeaponRenderer.Builder()
+				.withModId(ModernWarfareMod.MODID)
+				.withModel(new SPAR16())
+				//.withTextureName("M4A1")
+				//.withWeaponProximity(0.99F)
+				//.withYOffsetZoom(5F)
+				.withEntityPositioning(itemStack -> {
+					GL11.glScaled(0.5F, 0.5F, 0.5F);
+					GL11.glRotatef(-90F, 0f, 0f, 4f);
 				})
-				
-				
-			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.28F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+				.withInventoryPositioning(itemStack -> {
+					GL11.glScaled(0.35F, 0.35F, 0.35F);
+					GL11.glTranslatef(1, 0.8f, 0);
+					GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 				})
-				
-			.withFirstPersonPositioningReloading(
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glScaled(0.6F, 0.6F, 0.6F);
+					GL11.glTranslatef(-1.8F, 0.3F, 1.5F);
+					GL11.glRotatef(-45F, 0f, 1f, 0f);
+					GL11.glRotatef(70F, 1f, 0f, 0f);
+					})
 					
-				new Transition((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-				GL11.glRotatef(-45F, 1f, 0f, 2f);
-				GL11.glTranslatef(1F, -1.2F, 0.1F);
-				}, 250, 1200),
-				
-				new Transition((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.25F, -0.28F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+					})
 					
-				GL11.glRotatef(-51F, 1f, 0f, -2f);
-				GL11.glTranslatef(-1.2F, -1F, -0.5F);
-				}, 250, 0)
-				
-				)
-				
+				.withFirstPersonPositioningReloading(
+						
+					new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0F, -0.3F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+					GL11.glRotatef(-45F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0.1F);
+					}, 250, 1200),
+					
+					new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0F, -0.3F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+						
+					GL11.glRotatef(-51F, 1f, 0f, -2f);
+					GL11.glTranslatef(-1.2F, -1F, -0.5F);
+					}, 250, 0)
+					
+					)
+					
 				.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.135F, -0.97f, 0.9f);
+				GL11.glTranslatef(0.135F, -0.97f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				// Standard Iron Sight Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0f, -0.7f);
+				} 
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
@@ -284,30 +290,32 @@ public class M4A4Factory implements GunFactory {
 				else {
 					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
 				}
+					
 				
-			
-				})
-			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -1F, -1.2F);
+					})
+					
+					
+				.withFirstPersonPositioningRunning((player, itemStack) -> {
+					GL11.glScaled(0.7F, 0.7F, 0.7F);
+					GL11.glRotatef(-20F, -4f, 1f, -2f);
+					GL11.glTranslatef(1F, -1F, -1.2F);
+				 })
+				 .withFirstPersonPositioningModifying((player, itemStack) -> {
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glRotatef(-35F, 2f, 1f, 1f);
+					GL11.glTranslatef(1F, -0.8F, -1.5F);
+				 })
+				.build())
+			.withSpawnEntityDamage(7.8f)
+			.withSpawnEntityGravityVelocity(0.0118f)
+			.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
+				Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
+				if(block == Blocks.glass) {
+					world.func_147480_a(position.blockX, position.blockY, position.blockZ, true);
+				}
+				
 			 })
-			 .withFirstPersonPositioningModifying((player, itemStack) -> {
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-35F, 2f, 1f, 1f);
-				GL11.glTranslatef(1F, -0.8F, -1.5F);
-			 })
-			.build())
-		.withSpawnEntityDamage(7.8f)
-		.withSpawnEntityGravityVelocity(0.0118f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
-			if(block == Blocks.glass) {
-				world.func_147480_a(position.blockX, position.blockY, position.blockZ, true);
-			}
-			
-		 })
-		 
-		.build(ModernWarfareMod.MOD_CONTEXT);
+			 
+			.build(ModernWarfareMod.MOD_CONTEXT);
+		}
 	}
-}

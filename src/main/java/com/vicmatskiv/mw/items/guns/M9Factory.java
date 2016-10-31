@@ -41,24 +41,6 @@ public class M9Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.625F, -0F);
 			GL11.glScaled(0.4F, 0.4F, 0.4F);
 			})*/
-		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
-			if(model instanceof Reflex) {
-			GL11.glTranslatef(-0.02F, -1.06F, -1.3F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		} else if(model instanceof Reflex2) {
-			GL11.glTranslatef(-0.11F, -1.64F, -1.2F);
-			GL11.glScaled(0.12F, 0.12F, 0.12F);
-		}
-	})
-		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
-			if(model instanceof Holographic) {
-				GL11.glTranslatef(-0.06F, -1.12F, -0.6F);
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(-0.122F, -1.36F, -0.5F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
 		/*.withCompatibleAttachment(ModernWarfareMod.Grip, (model) -> {
 			GL11.glTranslatef(.135F, -0.6F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);

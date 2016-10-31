@@ -63,7 +63,7 @@ public class AKMFactory implements GunFactory {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
+				GL11.glTranslatef(0.13F, -1.6F, -3.05F);
 				GL11.glScaled(0.65F, 0.65F, 0.65F);
 			} else if(model instanceof AK47iron) {
 				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
@@ -102,46 +102,28 @@ public class AKMFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.06F, -1.65F, 0.5F);
+			GL11.glTranslatef(0.06F, -1.73F, 0.5F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.199F, -1.795F, 0.5F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.2F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
+				GL11.glTranslatef(0.199F, -1.87F, 0.5F);
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
 			if(model instanceof Reflex) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
+			GL11.glTranslatef(.27F, -1.57F, 0F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.8F, 0.0F);
+				GL11.glTranslatef(0.202F, -1.9F, 0.0F);
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
 			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.53F, 0.2F);
+			GL11.glTranslatef(.264F, -1.62F, 0.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+				GL11.glTranslatef(0.202F, -1.85F, 0.3F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -155,19 +137,19 @@ public class AKMFactory implements GunFactory {
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
+			GL11.glTranslatef(.135F, -0.5F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
+		/*.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
 			GL11.glTranslatef(.135F, -0.44F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
+		})*/
 		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
+			GL11.glTranslatef(.135F, -0.5F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
+			GL11.glTranslatef(.135F, -0.5F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
@@ -187,7 +169,7 @@ public class AKMFactory implements GunFactory {
 				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new AK47())
+			.withModel(new AKM())
 			//.withTextureName("AKM")
 			//.withWeaponProximity(0.99F)
 			//.withYOffsetZoom(5F)
@@ -236,7 +218,7 @@ public class AKMFactory implements GunFactory {
 			)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(-0.06F, -0.3F, -0.26F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
@@ -247,7 +229,7 @@ public class AKMFactory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
+					GL11.glTranslatef(0.005F, 0.25f, 0.3f);
 				} 
 				
 				// Scope Zoom
@@ -265,13 +247,13 @@ public class AKMFactory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.23f, 0.2f);
+					GL11.glTranslatef(0F, 0.32f, 0.2f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.15f, 0.2f);
+					GL11.glTranslatef(0F, 0.237f, 0.2f);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {

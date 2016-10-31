@@ -47,52 +47,6 @@ public class Remington900Factory implements GunFactory {
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
-			if(model instanceof AKMiron1) {
-				GL11.glTranslatef(0.14F, -1.566F, 0.3F);
-				GL11.glScaled(0f, 0F, 0F);
-			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.39F, -2.8F);
-				GL11.glScaled(0.65F, 0.65F, 0.65F);
-			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof M4Iron1) {
-				GL11.glTranslatef(0.155F, -1.74F, 1F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof M4Iron2) {
-				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof P90iron) {
-				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron1) {
-				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof G36CIron2) {
-				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron1) {
-				GL11.glTranslatef(0.165F, -1.65F, 1F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof ScarIron2) {
-				GL11.glTranslatef(0.25F, -1.55F, -2F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
-				GL11.glScaled(0F, 0F, 0F);
-			} else if(model instanceof M14Iron) {
-				GL11.glTranslatef(0.14F, -1.566F, 0.3F);
-				GL11.glScaled(0.37F, 0.37F, 0.37F);
-			} else if(model instanceof MP5Iron) {
-				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
-				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.24F, -1.2F, -0.8F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-		})
 		.withTextureNames("Remington", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
 				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
 				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
@@ -120,10 +74,10 @@ public class Remington900Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.55F, -0.42F, -0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -140,7 +94,7 @@ public class Remington900Factory implements GunFactory {
 				)
 				
 				.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(-0.21F, -0.313F, -0.41F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 

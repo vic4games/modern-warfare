@@ -183,7 +183,7 @@ public class KSG12Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.4F, -4.63F);
 			GL11.glScaled(1F, 1F, 1F);
 		})*/
-		.withTextureNames("KSG12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
+		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
 		"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
 		"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
@@ -210,7 +210,7 @@ public class KSG12Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.28F, -0.2F);
+				GL11.glTranslatef(0.23F, -0.39F, -0.35F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);

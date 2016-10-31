@@ -152,7 +152,7 @@ public class XWPFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.1F, -0.32F, -0.3F);
+				GL11.glTranslatef(0.2F, -0.32F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 				GL11.glTranslatef(-0.4F, -0.8F, 1.2F);

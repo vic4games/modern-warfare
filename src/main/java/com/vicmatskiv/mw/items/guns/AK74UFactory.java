@@ -9,17 +9,23 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.ACOG;
+import com.vicmatskiv.mw.models.AK47;
 import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AK74U;
+import com.vicmatskiv.mw.models.AKM;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.AKS74U;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
+import com.vicmatskiv.mw.models.HP;
+import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Kobra;
+import com.vicmatskiv.mw.models.LP;
+import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
@@ -38,11 +44,11 @@ public class AK74UFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("AK74U")
+		.withName("AKS74U")
 		.withAmmo(CommonProxy.AK74UMag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(3.5f)
+		.withRecoil(4f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK74U")
@@ -55,11 +61,11 @@ public class AK74UFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {
-				GL11.glTranslatef(0.125F, -1.8F, -0.8F);
+				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -2F);
-				GL11.glScaled(0.63F, 0.63F, 0.63F);
+				GL11.glTranslatef(0.13F, -1.6F, -2F);
+				GL11.glScaled(0.65F, 0.65F, 0.65F);
 			} else if(model instanceof AK47iron) {
 				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -97,28 +103,28 @@ public class AK74UFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.06F, -1.65F, 0.5F);
+			GL11.glTranslatef(0.06F, -1.73F, 0.5F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.199F, -1.795F, 0.5F);
+				GL11.glTranslatef(0.199F, -1.87F, 0.5F);
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
 			if(model instanceof Reflex) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
+			GL11.glTranslatef(.27F, -1.57F, 0F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.8F, 0.0F);
+				GL11.glTranslatef(0.202F, -1.9F, 0.0F);
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
 			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.53F, 0.2F);
+			GL11.glTranslatef(.264F, -1.62F, 0.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+				GL11.glTranslatef(0.202F, -1.85F, 0.3F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -131,37 +137,17 @@ public class AK74UFactory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
-			GL11.glTranslatef(.135F, -0.44F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.3F, -1.3F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.3F, -1.3F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.42F, -3.6F);
+			GL11.glTranslatef(0.107F, -1.27F, -3.7F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AK74U", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
+		.withTextureNames("AKS74U", "Red", "Green", "Blue", "Orange", "Purple", 
+				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
 				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new AK74U())
-			//.withTextureName("AK47")
+			.withModel(new AKS74U())
+			//.withTextureName("AKM")
 			//.withWeaponProximity(0.99F)
 			//.withYOffsetZoom(5F)
 			.withEntityPositioning(itemStack -> {
@@ -180,7 +166,7 @@ public class AK74UFactory implements GunFactory {
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
 				
-	       .withFirstPersonPositioning((player, itemStack) -> {
+		    .withFirstPersonPositioning((player, itemStack) -> {
 				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -209,56 +195,56 @@ public class AK74UFactory implements GunFactory {
 			)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(-0.06F, -0.3F, -0.26F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
 				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-
+				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
+					GL11.glTranslatef(0.005F, 0.25f, 0.3f);
 				} 
-
+				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.148f, 5f);
 				} 
-
+				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.148f, 5f);
 				} 
-
+				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.23f, 0.2f);
+					GL11.glTranslatef(0F, 0.32f, 0.2f);
 				} 
-
+				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.15f, 0.2f);
+					GL11.glTranslatef(0F, 0.237f, 0.2f);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.373F, -1.23f, 2.9f);
 				} 
-
+				
 				// Everything else
 				else {
 					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
 				}
-
-
-			})
+				
+			
+				})
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
@@ -272,8 +258,8 @@ public class AK74UFactory implements GunFactory {
 				GL11.glTranslatef(1F, -0.8F, -1.5F);
 			 })
 			.build())
-		.withSpawnEntityDamage(8.8f)
-		.withSpawnEntityGravityVelocity(0.028f)
+		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
 			if(block == Blocks.glass) {
