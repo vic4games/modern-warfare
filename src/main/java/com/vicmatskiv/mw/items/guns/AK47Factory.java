@@ -244,6 +244,28 @@ public class AK47Factory implements GunFactory {
 				GL11.glRotatef(-35F, 2f, 1f, 1f);
 				GL11.glTranslatef(1F, -0.8F, -1.5F);
 			 })
+			 
+			 .withFirstPersonHandPositioning(
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.8f, 1.8f, 5f);
+						 GL11.glTranslatef(0.8f, -0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-45f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.8f, 1.8f, 5f);
+						 GL11.glTranslatef(0.3f, -0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-45f, 1f, 0f, 0f);
+					 })
+			 
+//			 .withFirstPersonHandPositioningZooming((player,  itemStack) -> {
+//				 GL11.glScalef(1.8f, 1.8f, 5f);
+//				 GL11.glTranslatef(0.8f, -0.1f, 0.3f);
+//				 GL11.glRotatef(90f, 0, 0f, 1f);
+//				 GL11.glRotatef(-20f, 1f, 0f, 0f);
+//			 }, null)
+			 
 			.build())
 		.withSpawnEntityDamage(6.8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
