@@ -207,7 +207,6 @@ public class AK74UFactory implements GunFactory {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				float reloadingProgress = Weapon.reloadingProgress(player, itemStack);
 
 				// Zoom
 				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
