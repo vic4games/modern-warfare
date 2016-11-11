@@ -4,7 +4,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import java.io.File;
 
 import com.vicmatskiv.weaponlib.ModContext;
 
@@ -20,6 +24,9 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
 public class ModernWarfareMod {
 
+	private static final String CONFIG_PROPERTY_CATEGORY_GENERAL = "general";
+	private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
+	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare";
 	public static final String MODID = "mw";
 	public static final String VERSION = "1.1";
 	
@@ -34,10 +41,28 @@ public class ModernWarfareMod {
 	@SidedProxy(serverSide = "com.vicmatskiv.mw.CommonProxy", 
 			clientSide = "com.vicmatskiv.mw.ClientProxy")
 	public static CommonProxy proxy;
+	
+	public static boolean oreGenerationEnabled = true;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
+		configure(event.getSuggestedConfigurationFile());
 		proxy.preInit(this, event);
+	}
+
+	private void configure(File suggestedConfig) {
+		File parentDirectory = suggestedConfig.getParentFile();
+		File configFile;
+		if(parentDirectory != null) {
+			configFile = new File(parentDirectory, MODERN_WARFARE_CONFIG_FILE_NAME);
+		} else {
+			configFile = new File(MODERN_WARFARE_CONFIG_FILE_NAME);
+		}
+		Configuration config = new Configuration(configFile);
+		config.load();
+		Property oreGenerationEnabled = config.get(CONFIG_PROPERTY_CATEGORY_GENERAL, CONFIG_PROPERTY_ORE_GENERATION_ENABLED, true);
+		ModernWarfareMod.oreGenerationEnabled = oreGenerationEnabled.getBoolean();
+		config.save();
 	}
 
 	// ItemRecipes

@@ -12,6 +12,12 @@ import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
 public class WorldGeneratorEventHandler implements IWorldGenerator {
+	
+	private boolean oreGenerationEnabled;
+	
+	public WorldGeneratorEventHandler(boolean oreGenerationEnabled) {
+		this.oreGenerationEnabled = oreGenerationEnabled;
+	}
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
@@ -37,35 +43,38 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 
 	private void generateSurface(World world, Random random, int x, int z) {
 		
-		addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
-				x, z, 8, 8, 3 + random.nextInt(5), 20, 5, 90);
+		if(oreGenerationEnabled) {
+			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
+					x, z, 8, 8, 3 + random.nextInt(5), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.CopperOre, 0, Blocks.stone, world, random, 
+					x, z, 12, 12, 6 + random.nextInt(6), 20, 5, 110);
+			
+			addOreSpawn(CommonProxy.SulfurOre, 0, Blocks.stone, world, random, 
+					x, z, 13, 13, 6 + random.nextInt(7), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.ZincOre, 0, Blocks.stone, world, random, 
+					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.LeadOre, 0, Blocks.stone, world, random, 
+					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.TinOre, 0, Blocks.stone, world, random, 
+					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.stone, world, random, 
+					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 60);
+			
+			addOreSpawn(CommonProxy.TantalumOre, 0, Blocks.stone, world, random, 
+					x, z, 8, 8, 2 + random.nextInt(5), 20, 5, 60);
+			
+			addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.stone, world, random, 
+					x, z, 10, 10, 5 + random.nextInt(6), 20, 5, 90);
+			
+			addOreSpawn(CommonProxy.RubyOre, 0, Blocks.stone, world, random, 
+					x, z, 7, 7, 2 + random.nextInt(5), 20, 5, 15);
+		}
 		
-		addOreSpawn(CommonProxy.CopperOre, 0, Blocks.stone, world, random, 
-				x, z, 12, 12, 6 + random.nextInt(6), 20, 5, 110);
-		
-		addOreSpawn(CommonProxy.SulfurOre, 0, Blocks.stone, world, random, 
-				x, z, 13, 13, 6 + random.nextInt(7), 20, 5, 90);
-		
-		addOreSpawn(CommonProxy.ZincOre, 0, Blocks.stone, world, random, 
-				x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
-		
-		addOreSpawn(CommonProxy.LeadOre, 0, Blocks.stone, world, random, 
-				x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
-		
-		addOreSpawn(CommonProxy.TinOre, 0, Blocks.stone, world, random, 
-				x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
-		
-		addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.stone, world, random, 
-				x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 60);
-		
-		addOreSpawn(CommonProxy.TantalumOre, 0, Blocks.stone, world, random, 
-				x, z, 8, 8, 2 + random.nextInt(5), 20, 5, 60);
-		
-		addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.stone, world, random, 
-				x, z, 10, 10, 5 + random.nextInt(6), 20, 5, 90);
-		
-		addOreSpawn(CommonProxy.RubyOre, 0, Blocks.stone, world, random, 
-				x, z, 7, 7, 2 + random.nextInt(5), 20, 5, 15);
 	}
 
 	private void generateNether(World world, Random random, int x, int z) {

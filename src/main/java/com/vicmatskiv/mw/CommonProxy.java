@@ -1,12 +1,5 @@
 package com.vicmatskiv.mw;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.vicmatskiv.mw.attachments.ItemACOG;
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
 import com.vicmatskiv.mw.attachments.ItemAR15Iron;
@@ -43,7 +36,6 @@ import com.vicmatskiv.mw.items.ItemG18Mag;
 import com.vicmatskiv.mw.items.ItemG21Mag;
 import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemG36Mag;
-import com.vicmatskiv.mw.items.ItemGaussMag;
 import com.vicmatskiv.mw.items.ItemGrenades;
 import com.vicmatskiv.mw.items.ItemGunmetalMiniPlate;
 import com.vicmatskiv.mw.items.ItemM107Mag;
@@ -81,7 +73,6 @@ import com.vicmatskiv.mw.items.guns.G18Factory;
 import com.vicmatskiv.mw.items.guns.G21Factory;
 import com.vicmatskiv.mw.items.guns.G36CFactory;
 import com.vicmatskiv.mw.items.guns.G36Factory;
-import com.vicmatskiv.mw.items.guns.GaussRifleFactory;
 import com.vicmatskiv.mw.items.guns.GrenadeLauncherFactory;
 import com.vicmatskiv.mw.items.guns.HK416CFactory;
 import com.vicmatskiv.mw.items.guns.KSG12Factory;
@@ -171,6 +162,12 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -722,7 +719,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(Barrel, "Barrel");
 		GameRegistry.registerItem(Plastic, "plastic");
 
-		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(), 0);
+		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
 
 		Builder marineArmorBuilder = new CustomArmor.Builder()
 				.withModId(ModernWarfareMod.MODID).withMaterial(Marine)
