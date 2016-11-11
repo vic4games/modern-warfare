@@ -45,7 +45,9 @@ import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemG36Mag;
 import com.vicmatskiv.mw.items.ItemGaussMag;
 import com.vicmatskiv.mw.items.ItemGrenades;
+import com.vicmatskiv.mw.items.ItemGunmetalMiniPlate;
 import com.vicmatskiv.mw.items.ItemM107Mag;
+import com.vicmatskiv.mw.items.ItemM110Mag;
 import com.vicmatskiv.mw.items.ItemM14Mag;
 import com.vicmatskiv.mw.items.ItemM1Mag;
 import com.vicmatskiv.mw.items.ItemM249Mag;
@@ -57,6 +59,7 @@ import com.vicmatskiv.mw.items.ItemMagnumAmmo;
 import com.vicmatskiv.mw.items.ItemPX90Mag;
 import com.vicmatskiv.mw.items.ItemRPK74MMag;
 import com.vicmatskiv.mw.items.ItemRemington870Mag;
+import com.vicmatskiv.mw.items.ItemSPAS15Mag;
 import com.vicmatskiv.mw.items.ItemScarHMag;
 import com.vicmatskiv.mw.items.ItemScarMag;
 import com.vicmatskiv.mw.items.ItemXWPMag;
@@ -82,7 +85,9 @@ import com.vicmatskiv.mw.items.guns.GaussRifleFactory;
 import com.vicmatskiv.mw.items.guns.GrenadeLauncherFactory;
 import com.vicmatskiv.mw.items.guns.HK416CFactory;
 import com.vicmatskiv.mw.items.guns.KSG12Factory;
+import com.vicmatskiv.mw.items.guns.M1014Factory;
 import com.vicmatskiv.mw.items.guns.M107Factory;
+import com.vicmatskiv.mw.items.guns.M110Factory;
 import com.vicmatskiv.mw.items.guns.M14Factory;
 import com.vicmatskiv.mw.items.guns.M16A3Factory;
 import com.vicmatskiv.mw.items.guns.M16A4Factory;
@@ -101,6 +106,8 @@ import com.vicmatskiv.mw.items.guns.P2000Factory;
 import com.vicmatskiv.mw.items.guns.PX90Factory;
 import com.vicmatskiv.mw.items.guns.RPK74MFactory;
 import com.vicmatskiv.mw.items.guns.Remington900Factory;
+import com.vicmatskiv.mw.items.guns.SPAS12Factory;
+import com.vicmatskiv.mw.items.guns.SPAS15Factory;
 import com.vicmatskiv.mw.items.guns.ScarFactory;
 import com.vicmatskiv.mw.items.guns.ScarHFactory;
 import com.vicmatskiv.mw.items.guns.XEagleFactory;
@@ -233,12 +240,16 @@ public class CommonProxy {
 	public static Item MP7;
 	public static Item AS50;
 	public static Item M14;
+	public static Item M110;
 	public static Item XWP;
 	public static Item Dragonuv;
 	public static Item M107;
 	public static Item GrenadeLauncher;
 	public static Item Remington870;
 	public static Item KSG12;
+	public static Item M1014;
+	public static Item SPAS12;
+	public static Item SPAS15;
 	public static Item M240;
 	public static Item M249;
 	public static Item RPK74M;
@@ -278,6 +289,8 @@ public class CommonProxy {
 	public static ItemAmmo ScarHMag;
 	public static ItemAmmo M1Mag;
 	public static ItemAmmo MP40Mag;
+	public static ItemAmmo M110Mag;
+	public static ItemAmmo SPAS15Mag;
 	//public static ItemAmmo GaussMag;
 	//public static ItemAmmo RPGAmmo;
 
@@ -295,6 +308,7 @@ public class CommonProxy {
 	public static Item Capacitor;
 	public static Item CopperWiring;
 	public static Item Piston;
+	public static Item GunmetalMiniPlate;
 
 	public static Block TitaniumOre;
 	public static Item TitaniumIngot;
@@ -464,6 +478,8 @@ public class CommonProxy {
 		ScarHMag = new ItemScarHMag();
 		M1Mag = new ItemM1Mag();
 		MP40Mag = new ItemMP40Mag();
+		M110Mag = new ItemM110Mag();
+		SPAS15Mag = new ItemSPAS15Mag();
 		//GaussMag = new ItemGaussMag();
 	//	RPGAmmo = new ItemRPGAmmo();
 
@@ -508,6 +524,9 @@ public class CommonProxy {
 		Magnum = new MagnumFactory().createGun(this);
 		Remington870 = new Remington900Factory().createGun(this);
 		KSG12 = new KSG12Factory().createGun(this);
+		M1014 = new M1014Factory().createGun(this);
+		SPAS12 = new SPAS12Factory().createGun(this);
+		SPAS15 = new SPAS15Factory().createGun(this);
 		G36 = new G36Factory().createGun(this);
 		G36C = new G36CFactory().createGun(this);
 		AUG = new AUGFactory().createGun(this);
@@ -522,6 +541,7 @@ public class CommonProxy {
 		XWP = new XWPFactory().createGun(this);
 		Dragonuv = new DragonuvFactory().createGun(this);
 		M14 = new M14Factory().createGun(this);
+		M110 = new M110Factory().createGun(this);
 		M107 = new M107Factory().createGun(this);
 		M240 = new M240Factory().createGun(this);
 		M249 = new M249Factory().createGun(this);
@@ -564,6 +584,7 @@ public class CommonProxy {
 		Capacitor = new ItemCapacitor();
 		CopperWiring = new ItemCopperWiring();
 		Piston = new ItemPiston();
+		GunmetalMiniPlate = new ItemGunmetalMiniPlate();
 		
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
@@ -595,6 +616,8 @@ public class CommonProxy {
 		GameRegistry.registerItem(ScarHMag, "ScarHMag");
 		GameRegistry.registerItem(M1Mag, "M1Mag");
 		GameRegistry.registerItem(MP40Mag, "MP40Mag");
+		GameRegistry.registerItem(M110Mag, "M110Mag");
+		GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
 	//	GameRegistry.registerItem(GaussMag, "GaussMag");
 	//	GameRegistry.registerItem(RPGAmmo, "RPGAmmo");
 
@@ -694,6 +717,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(Capacitor, "Capacitor");
 		GameRegistry.registerItem(CopperWiring, "CopperWiring");
 		GameRegistry.registerItem(Piston, "Piston");
+		GameRegistry.registerItem(GunmetalMiniPlate, "GunmetalMiniPlate");
 		
 		GameRegistry.registerItem(Barrel, "Barrel");
 		GameRegistry.registerItem(Plastic, "plastic");

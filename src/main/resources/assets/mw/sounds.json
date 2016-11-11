@@ -89,6 +89,51 @@
       }
     ]
   },
+  "M110": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M110",
+       "stream": false
+      }
+    ]
+  },
+  "M1014": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M1014",
+       "stream": false
+      }
+    ]
+  },
+  "SPAS12Reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SPAS12Reload",
+       "stream": false
+      }
+    ]
+  },
+  "SPAS15": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SPAS15",
+       "stream": false
+      }
+    ]
+  },
+  "NoBoltReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "NoBoltReload",
+       "stream": false
+      }
+    ]
+  },
   "G36": {
     "category": "master",
     "sounds": [

@@ -47,8 +47,8 @@ public class KSG12Factory implements GunFactory {
 		.withAmmo(CommonProxy.Remington870Mag)
 		.withAmmoCapacity(7)
 		.withFireRate(0.5f)
-		.withPumpTimeout(2000)
-		.withRecoil(1.3f)
+		.withPumpTimeout(1000)
+		.withRecoil(9f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("KSG12")
@@ -58,6 +58,8 @@ public class KSG12Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withInaccuracy(10)
+		.withPellets(10)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {
@@ -219,13 +221,109 @@ public class KSG12Factory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.5F, -0.1F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				GL11.glRotatef(-45F, 1f, 0f, 2f);
 				GL11.glTranslatef(1F, -1.2F, 0.1F);
-				}, 250, 1200)
+				}, 250, 50), 
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+					GL11.glRotatef(-45F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0.1F);
+					}, 250, 50), 
+					new Transition((player, itemStack) -> {
+						GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						
+						GL11.glRotatef(-45F, 1f, 0f, 2f);
+						GL11.glTranslatef(1F, -1.2F, 0.1F);
+						}, 250, 50), 
+						new Transition((player, itemStack) -> {
+							GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+							GL11.glRotatef(45F, 0f, 1f, 0f);
+							GL11.glScaled(0.55F, 0.55F, 0.55F);
+							
+							GL11.glRotatef(-45F, 1f, 0f, 2f);
+							GL11.glTranslatef(1F, -1.2F, 0.1F);
+							}, 250, 50), 
+							new Transition((player, itemStack) -> {
+								GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+								GL11.glRotatef(45F, 0f, 1f, 0f);
+								GL11.glScaled(0.55F, 0.55F, 0.55F);
+								
+								GL11.glRotatef(-45F, 1f, 0f, 2f);
+								GL11.glTranslatef(1F, -1.2F, 0.1F);
+								}, 250, 50), 
+								new Transition((player, itemStack) -> {
+									GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+									GL11.glRotatef(45F, 0f, 1f, 0f);
+									GL11.glScaled(0.55F, 0.55F, 0.55F);
+									
+									GL11.glRotatef(-45F, 1f, 0f, 2f);
+									GL11.glTranslatef(1F, -1.2F, 0.1F);
+									}, 250, 50), 
+									new Transition((player, itemStack) -> {
+										GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+										GL11.glRotatef(45F, 0f, 1f, 0f);
+										GL11.glScaled(0.55F, 0.55F, 0.55F);
+										
+										GL11.glRotatef(-45F, 1f, 0f, 2f);
+										GL11.glTranslatef(1F, -1.2F, 0.1F);
+										}, 250, 50), 
+										new Transition((player, itemStack) -> {
+											GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+											GL11.glRotatef(45F, 0f, 1f, 0f);
+											GL11.glScaled(0.55F, 0.55F, 0.55F);
+											
+											GL11.glRotatef(-45F, 1f, 0f, 2f);
+											GL11.glTranslatef(1F, -1.2F, 0.1F);
+											}, 250, 50), 
+											new Transition((player, itemStack) -> {
+												GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+												GL11.glRotatef(45F, 0f, 1f, 0f);
+												GL11.glScaled(0.55F, 0.55F, 0.55F);
+												
+												GL11.glRotatef(-45F, 1f, 0f, 2f);
+												GL11.glTranslatef(1F, -1.2F, 0.1F);
+												}, 250, 50), 
+												new Transition((player, itemStack) -> {
+													GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+													GL11.glRotatef(45F, 0f, 1f, 0f);
+													GL11.glScaled(0.55F, 0.55F, 0.55F);
+													
+													GL11.glRotatef(-45F, 1f, 0f, 2f);
+													GL11.glTranslatef(1F, -1.2F, 0.1F);
+													}, 250, 50), 
+													new Transition((player, itemStack) -> {
+														GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+														GL11.glRotatef(45F, 0f, 1f, 0f);
+														GL11.glScaled(0.55F, 0.55F, 0.55F);
+														
+														GL11.glRotatef(-45F, 1f, 0f, 2f);
+														GL11.glTranslatef(1F, -1.2F, 0.1F);
+														}, 250, 50), 
+														new Transition((player, itemStack) -> {
+															GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+															GL11.glRotatef(45F, 0f, 1f, 0f);
+															GL11.glScaled(0.55F, 0.55F, 0.55F);
+															
+															GL11.glRotatef(-45F, 1f, 0f, 2f);
+															GL11.glTranslatef(1F, -1.2F, 0.1F);
+															}, 250, 50), 
+															new Transition((player, itemStack) -> {
+																GL11.glTranslatef(0.5F, -0.1F, -0.2F);
+																GL11.glRotatef(45F, 0f, 1f, 0f);
+																GL11.glScaled(0.55F, 0.55F, 0.55F);
+																
+																GL11.glRotatef(-45F, 1f, 0f, 2f);
+																GL11.glTranslatef(1F, -1.2F, 0.1F);
+																}, 250, 50)
 				
 				)
 				
@@ -283,15 +381,213 @@ public class KSG12Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -1F, -1.2F);
+				GL11.glTranslatef(1F, -0.9F, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);
 				GL11.glTranslatef(1F, -0.8F, -1.5F);
 			 })
+			 
+			 .withFirstPersonHandPositioning(
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, -0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					 })
+					 
+			.withFirstPersonHandPositioningModifying(
+					 (player,  itemStack) -> {
+						 GL11.glScalef(2.5f, 2.2f, 2.2f);
+						 GL11.glTranslatef(0.7f, 0.3f, 0.1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 20f, 20f, -20f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					 })
+					 
+			.withFirstPersonLeftHandPositioningReloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 6f);
+						 GL11.glTranslatef(0.85f, 0.1f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0))
+					
+			.withFirstPersonRightHandPositioningReloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(0.1f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000))
 			.build())
-		.withSpawnEntityDamage(35f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.8f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);

@@ -97,7 +97,7 @@ public class ModernWarfareMod {
 				'A', CommonProxy.GreenCloth,
 				'X', "ingotTitanium"));
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.Cloth),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Cloth, 3),
 				"XAX",
 				"AXA",
 				"XAX",
@@ -105,7 +105,7 @@ public class ModernWarfareMod {
 				'A', Blocks.wool
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.TanCloth),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.TanCloth, 3),
 				"XAX",
 				"AXA",
 				"XAX",
@@ -113,7 +113,7 @@ public class ModernWarfareMod {
 				'A', CommonProxy.Cloth
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.GreenCloth),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.GreenCloth, 3),
 				"XAX",
 				"AXA",
 				"XAX",
@@ -160,19 +160,22 @@ public class ModernWarfareMod {
 				
 		));
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.GunmetalPlate, 2),
-				"XXX",
-				"XXX",
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.GunmetalPlate, 6),
+				"XX",
 				'X', CommonProxy.GunmetalIngot
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelPlate, 2),
-				"XXX",
-				"XXX",
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.GunmetalMiniPlate, 6),
+				"X",
+				'X', CommonProxy.GunmetalIngot
+		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelPlate, 6),
+				"XX",
 				'X', CommonProxy.SteelIngot
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.Bullets, 5),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Bullets, 32),
 				" R ",
 				"XAX",
 				"XAX",
@@ -557,7 +560,7 @@ public class ModernWarfareMod {
 				" XX",
 				"XBX",
 				"ABX",
-				'X', CommonProxy.GunmetalIngot,
+				'X', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets
 		);
 		
@@ -565,7 +568,7 @@ public class ModernWarfareMod {
 				" XX",
 				"WBW",
 				"XBW",
-				'X', CommonProxy.GunmetalIngot,
+				'X', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -574,7 +577,7 @@ public class ModernWarfareMod {
 				" XX",
 				"XBX",
 				"XB ",
-				'X', CommonProxy.GunmetalIngot,
+				'X', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets
 		);
 		
@@ -582,7 +585,7 @@ public class ModernWarfareMod {
 				" XX",
 				"XBI",
 				"IB ",
-				'X', CommonProxy.GunmetalIngot,
+				'X', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'I', CommonProxy.TitaniumIngot
 		);
@@ -591,8 +594,8 @@ public class ModernWarfareMod {
 				"XAA",
 				"XBX",
 				" BX",
-				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'X', CommonProxy.GunmetalMiniPlate,
+				'A', CommonProxy.GunmetalIngot,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -601,8 +604,8 @@ public class ModernWarfareMod {
 				"XXX",
 				"XBX",
 				"ABA",
-				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'X', CommonProxy.GunmetalMiniPlate,
+				'A', CommonProxy.GunmetalIngot,
 				'B', CommonProxy.Bullets
 		);
 		
@@ -610,8 +613,8 @@ public class ModernWarfareMod {
 				"XXA",
 				"XBA",
 				"XBA",
-				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'X', CommonProxy.GunmetalMiniPlate,
+				'A', CommonProxy.GunmetalIngot,
 				'B', CommonProxy.Bullets
 		);
 		
@@ -620,7 +623,7 @@ public class ModernWarfareMod {
 				"XBX",
 				" BX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -630,7 +633,7 @@ public class ModernWarfareMod {
 				"XBX",
 				"AAX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -640,7 +643,7 @@ public class ModernWarfareMod {
 				"BBA",
 				"BBX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -650,7 +653,7 @@ public class ModernWarfareMod {
 				"XBA",
 				"XBX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -660,7 +663,7 @@ public class ModernWarfareMod {
 				"ABX",
 				"XBX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -669,7 +672,7 @@ public class ModernWarfareMod {
 				"CCC",
 				"BBB",
 				"AAA",
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'C', CommonProxy.AluminumIngot
 		);
@@ -678,7 +681,7 @@ public class ModernWarfareMod {
 				"CCC",
 				"BBA",
 				"CCA",
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'C', CommonProxy.CopperIngot
 		);
@@ -697,7 +700,7 @@ public class ModernWarfareMod {
 				"ABA",
 				" BA",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -707,7 +710,7 @@ public class ModernWarfareMod {
 				"WBA",
 				" BW",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', CommonProxy.TitaniumIngot
 		);
@@ -717,7 +720,7 @@ public class ModernWarfareMod {
 				"XBX",
 				"XBX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'B', CommonProxy.Bullets,
 				'W', Blocks.planks
 		);
@@ -727,7 +730,7 @@ public class ModernWarfareMod {
 				"ORG",
 				"AXX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.glass_pane
@@ -738,7 +741,7 @@ public class ModernWarfareMod {
 				"OR ",
 				"AXX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.glass_pane
@@ -749,7 +752,7 @@ public class ModernWarfareMod {
 				"ORX",
 				"AXX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.glass_pane
@@ -760,7 +763,7 @@ public class ModernWarfareMod {
 				"OGX",
 				"ARX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.glass_pane
@@ -771,7 +774,7 @@ public class ModernWarfareMod {
 				"OGO",
 				"XXX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.glass_pane
@@ -782,7 +785,7 @@ public class ModernWarfareMod {
 				"ORO",
 				"AXX",
 				'R', CommonProxy.Electronics,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'X', CommonProxy.GunmetalIngot,
 				'O', CommonProxy.OpticGlass
 		);
@@ -799,7 +802,7 @@ public class ModernWarfareMod {
 				"X A",
 				" XX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Grip2),
@@ -807,7 +810,7 @@ public class ModernWarfareMod {
 				" X ",
 				" X ",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.VGrip),
@@ -815,7 +818,7 @@ public class ModernWarfareMod {
 				" X ",
 				" X ",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Bipod),
@@ -823,7 +826,7 @@ public class ModernWarfareMod {
 				"A A",
 				"X X",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		/*GameRegistry.addRecipe(new ItemStack(CommonProxy.Laser),
@@ -851,7 +854,7 @@ public class ModernWarfareMod {
 				" XA",
 				" XA",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.WoodWeaponStock),
@@ -867,7 +870,7 @@ public class ModernWarfareMod {
 				"RXA",
 				"RAA",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'R', Blocks.planks
 		);
 		
@@ -876,7 +879,7 @@ public class ModernWarfareMod {
 				"XRA",
 				" A ",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'R', CommonProxy.Piston
 		);
 		
@@ -885,15 +888,15 @@ public class ModernWarfareMod {
 				"XXA",
 				" A ",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.Barrel),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Barrel, 2),
 				"X  ",
 				" X ",
 				"  A",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate
+				'A', CommonProxy.GunmetalMiniPlate
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.WeaponReceiver),
@@ -901,7 +904,7 @@ public class ModernWarfareMod {
 				"AEA",
 				" AX",
 				'X', CommonProxy.GunmetalIngot,
-				'A', CommonProxy.GunmetalPlate,
+				'A', CommonProxy.GunmetalMiniPlate,
 				'E', CommonProxy.Electronics
 		);
 		
@@ -1024,34 +1027,34 @@ public class ModernWarfareMod {
 				'R', Blocks.planks
 		);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Resistor,
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Resistor, 3),
 				"A",
 				"X",
 				"A",
-				'A', "ingotSteel",
+				'A', CommonProxy.SteelIngot,
 				'X', Items.coal
 				
-		));
+		);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Transistor,
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Transistor, 3),
 				"AA",
 				"XX",
 				"XX",
-				'A', "ingotSteel",
+				'A', CommonProxy.SteelIngot,
 				'X', CommonProxy.Silicon
 				
-		));
+		);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Capacitor,
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Capacitor, 3),
 				"XX",
 				"AA",
 				"RR",
-				'X', "ingotAluminum",
+				'X', CommonProxy.AluminumIngot,
 				'A', CommonProxy.Plastic,
 				'R', CommonProxy.TantalumIngot
-		));
+		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.Inductor),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Inductor, 3),
 				" A ",
 				"AXA",
 				" A ",
@@ -1059,20 +1062,20 @@ public class ModernWarfareMod {
 				'A', CommonProxy.CopperWiring
 		);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Diode,
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Diode, 3),
 				"X",
 				"A",
 				"X",
-				'A', "ingotSteel",
+				'A', CommonProxy.SteelIngot,
 				'X', CommonProxy.Silicon
-		));
+		);
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.CopperWiring,
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.CopperWiring, 10),
 				"AAA",
-				'A', "ingotCopper"
-		));
+				'A', CommonProxy.CopperIngot
+	);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.Plastic, 2),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Plastic, 3),
 				"AX",
 				'A', Items.coal,
 				'X', Items.water_bucket
@@ -1087,7 +1090,7 @@ public class ModernWarfareMod {
 				'E', CommonProxy.Electronics
 		));
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelDust, 3),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelDust, 5),
 				" X ",
 				"XAX",
 				" X ",
@@ -1095,9 +1098,8 @@ public class ModernWarfareMod {
 				'X', Items.coal
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.AluminumPlate, 2),
-				"XXX",
-				"XXX",
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.AluminumPlate, 6),
+				"XX",
 				'X', CommonProxy.AluminumIngot
 		);
 		

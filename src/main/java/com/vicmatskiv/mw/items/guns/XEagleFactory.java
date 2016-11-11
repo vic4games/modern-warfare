@@ -28,7 +28,7 @@ public class XEagleFactory implements GunFactory {
 		.withShootSound("Deagle")
 		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")
-		.withReloadingTime(40)
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
@@ -68,32 +68,39 @@ public class XEagleFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.36F, -0.36F, -0.23F);
+				GL11.glTranslatef(0.4F, -0.5F, -0.8F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-1F, -0.73F, 1.5F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
 			.withFirstPersonPositioningReloading(
 					
-				new Transition((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-				GL11.glRotatef(-45F, 1f, 0f, 3f);
-				GL11.glTranslatef(0.4F, -1.7F, 0.6F);
-				}, 250, 1000),
-				
-				new Transition((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0F, -0.3F, -0.4F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					
-				//GL11.glRotatef(45F, 1f, 0f, 0f);
-				GL11.glTranslatef(-0.3F, -1.2F, 0.8F);
-				}, 250, 0)
-				)
+					GL11.glRotatef(-45F, 1f, 0f, 3f);
+					GL11.glTranslatef(0.4F, -1.7F, 0.6F);
+				}, 250, 500),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0F, -0.3F, -0.4F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+					GL11.glRotatef(-45F, 1f, 0f, 3f);
+					GL11.glTranslatef(0.4F, -1.7F, 0.6F);
+				}, 250, 100),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.4F, -0.5F, -0.8F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				}, 250, 30)
+			) 
 				
 				.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.2F, -0.2F);
@@ -132,13 +139,83 @@ public class XEagleFactory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -1F, -1.2F);
+				GL11.glTranslatef(1F, -0.5F, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				 GL11.glScaled(1.2F, 1.2F, 1.2F);
 					GL11.glRotatef(-35F, 2f, 1f, 1f);
 					GL11.glTranslatef(-1F, 0.1F, 0F);
 			 })
+			 .withFirstPersonHandPositioning(
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.6f, 1.6f, 3f);
+						 GL11.glTranslatef(0.6f, 0.1f, 0.4f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					 })
+					 
+			.withFirstPersonHandPositioningModifying(
+					 (player,  itemStack) -> {
+						 GL11.glScalef(1.6f, 1.6f, 1.6f);
+						 GL11.glTranslatef(1.5f, 0.1f, -0.2f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-10f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					 })
+					 .withFirstPersonLeftHandPositioningReloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.5f, 2.2f, 2.2f);
+						 GL11.glTranslatef(0f, 0.5f, 0.8f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-100f, 20f, 20f, -20f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.5f, 2.2f, 2.2f);
+						 GL11.glTranslatef(-0.1f, 0.3f, 0.8f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-100f, 20f, 20f, -20f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 3f);
+						 GL11.glTranslatef(0.4f, -0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+					}, 250, 0))
+					
+			.withFirstPersonRightHandPositioningReloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 0))
 			.build())
 		.withSpawnEntityDamage(13.5f)
 		.withSpawnEntityGravityVelocity(0.016f)
