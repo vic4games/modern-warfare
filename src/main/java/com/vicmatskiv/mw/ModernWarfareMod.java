@@ -26,7 +26,7 @@ public class ModernWarfareMod {
 
 	private static final String CONFIG_PROPERTY_CATEGORY_GENERAL = "general";
 	private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
-	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare";
+	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
 	public static final String MODID = "mw";
 	public static final String VERSION = "1.1";
 	
