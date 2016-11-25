@@ -10,7 +10,7 @@ public class ItemCopperWiring extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperWiring"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "CopperWiring");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "CopperWiring");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

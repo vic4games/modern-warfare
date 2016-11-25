@@ -9,7 +9,7 @@ public class ItemM249Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "M249Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "M249Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "M249Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

@@ -18,8 +18,8 @@ public class BlockSiliconOre extends Block
 	public BlockSiliconOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "SiliconOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "SiliconOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "SiliconOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "SiliconOre");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

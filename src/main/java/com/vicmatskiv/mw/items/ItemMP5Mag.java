@@ -9,7 +9,7 @@ public class ItemMP5Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "MP5Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "MP5Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "MP5Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

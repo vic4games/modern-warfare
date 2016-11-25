@@ -10,7 +10,7 @@ public class ItemAluminumIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AluminumIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AluminumIngot");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "AluminumIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

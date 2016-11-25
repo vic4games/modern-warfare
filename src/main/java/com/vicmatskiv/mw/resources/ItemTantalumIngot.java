@@ -10,7 +10,7 @@ public class ItemTantalumIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TantalumIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "TantalumIngot");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "TantalumIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

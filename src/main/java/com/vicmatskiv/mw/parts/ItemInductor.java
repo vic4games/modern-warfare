@@ -10,7 +10,7 @@ public class ItemInductor extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Inductor"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Inductor");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Inductor");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

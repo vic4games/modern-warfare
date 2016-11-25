@@ -18,8 +18,8 @@ public class BlockRubyOre extends Block
 	public BlockRubyOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "RubyOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "RubyOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "RubyOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "RubyOre");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

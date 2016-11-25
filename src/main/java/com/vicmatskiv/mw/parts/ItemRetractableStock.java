@@ -10,7 +10,7 @@ public class ItemRetractableStock extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RetractableStock"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "RetractableStock");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "RetractableStock");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

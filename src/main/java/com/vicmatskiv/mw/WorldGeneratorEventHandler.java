@@ -2,14 +2,12 @@ package com.vicmatskiv.mw;
 
 import java.util.Random;
 
-import com.vicmatskiv.mw.CommonProxy;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
-import cpw.mods.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGeneratorEventHandler implements IWorldGenerator {
 	
@@ -23,7 +21,7 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 
-		switch(world.provider.dimensionId) {
+		switch(world.provider.getDimensionId()) {
 		case -1: 
 			generateNether(world, random, chunkX * 16, chunkZ * 16);
 			break;
@@ -90,8 +88,9 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBetweenMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			new WorldGenMinable(block, metadata, maxVeinSize, target)
-				.generate(world, random, posX, posY, posZ);
+			throw new UnsupportedOperationException("Fixed the commented code below");
+//			new WorldGenMinable(block, metadata, maxVeinSize, target)
+//				.generate(world, random, posX, posY, posZ);
 		}
 		
 		

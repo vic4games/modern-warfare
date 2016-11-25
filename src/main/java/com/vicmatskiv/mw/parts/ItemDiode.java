@@ -10,7 +10,7 @@ public class ItemDiode extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Diode"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Diode");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Diode");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

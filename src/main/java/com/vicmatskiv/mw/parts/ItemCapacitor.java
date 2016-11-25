@@ -10,7 +10,7 @@ public class ItemCapacitor extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Capacitor"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Capacitor");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Capacitor");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

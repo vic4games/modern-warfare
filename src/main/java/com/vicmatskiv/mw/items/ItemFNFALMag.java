@@ -9,7 +9,7 @@ public class ItemFNFALMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "FNFALMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "FNFALMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "FNFALMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

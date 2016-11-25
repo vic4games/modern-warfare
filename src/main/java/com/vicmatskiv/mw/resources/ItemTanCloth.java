@@ -10,7 +10,7 @@ public class ItemTanCloth extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TanCloth"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "TanCloth");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "TanCloth");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

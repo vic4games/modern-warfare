@@ -9,7 +9,7 @@ public class ItemRemington870Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Remington900Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Remington900Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Remington900Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

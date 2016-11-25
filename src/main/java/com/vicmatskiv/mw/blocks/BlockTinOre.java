@@ -18,8 +18,8 @@ public class BlockTinOre extends Block
 	public BlockTinOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "TinOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "TinOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "TinOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "TinOre");
 		setHardness(4F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

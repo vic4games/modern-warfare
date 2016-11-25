@@ -9,7 +9,7 @@ public class ItemMagnumAmmo extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "MagnumAmmo"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "MagnumAmmo");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "MagnumAmmo");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

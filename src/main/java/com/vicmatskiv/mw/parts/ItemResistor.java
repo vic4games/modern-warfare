@@ -10,7 +10,7 @@ public class ItemResistor extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Resistor"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Resistor");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Resistor");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

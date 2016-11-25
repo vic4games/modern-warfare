@@ -10,7 +10,7 @@ public class ItemRuby extends Item
 	{
 		setMaxStackSize(16);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Ruby"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Ruby");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Ruby");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

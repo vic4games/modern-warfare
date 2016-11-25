@@ -10,7 +10,7 @@ public class ItemWeaponReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "WeaponReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "WeaponReceiver");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "WeaponReceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

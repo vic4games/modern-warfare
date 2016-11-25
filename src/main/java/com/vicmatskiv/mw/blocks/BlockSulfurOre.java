@@ -18,8 +18,8 @@ public class BlockSulfurOre extends Block
 	public BlockSulfurOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "SulfurOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "SulfurOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "SulfurOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "SulfurOre");
 		setHardness(4F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

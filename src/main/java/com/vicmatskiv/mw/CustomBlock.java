@@ -2,7 +2,6 @@ package com.vicmatskiv.mw;
 
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
@@ -41,10 +40,10 @@ public class CustomBlock extends BlockContainer {
 	public boolean renderAsNormalBlock() {
 		return false;
 	}
-
-	// This is the icon to use for showing the block in your hand.
-	public void registerIcons(IIconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon(ModernWarfareMod.MODID + ":" + iconName);
-	}
+//
+//	// This is the icon to use for showing the block in your hand.
+//	public void registerIcons(IIconRegister iconRegister) {
+//		this.blockIcon = iconRegister.registerIcon(ModernWarfareMod.MODID + ":" + iconName);
+//	}
 
 }

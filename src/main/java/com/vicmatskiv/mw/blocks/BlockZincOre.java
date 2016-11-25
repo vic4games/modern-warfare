@@ -18,8 +18,8 @@ public class BlockZincOre extends Block
 	public BlockZincOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "ZincOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "ZincOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "ZincOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "ZincOre");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

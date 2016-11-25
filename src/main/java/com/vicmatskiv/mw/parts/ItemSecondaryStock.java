@@ -10,7 +10,7 @@ public class ItemSecondaryStock extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SecondaryStock"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "SecondaryStock");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "SecondaryStock");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

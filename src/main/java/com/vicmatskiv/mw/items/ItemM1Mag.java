@@ -9,7 +9,7 @@ public class ItemM1Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "M1Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "M1Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "M1Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

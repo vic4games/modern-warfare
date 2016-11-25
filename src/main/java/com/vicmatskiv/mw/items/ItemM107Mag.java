@@ -9,7 +9,7 @@ public class ItemM107Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "M107Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "M107Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "M107Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

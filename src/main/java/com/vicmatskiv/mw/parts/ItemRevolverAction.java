@@ -10,7 +10,7 @@ public class ItemRevolverAction extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RevolverAction"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "RevolverAction");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "RevolverAction");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

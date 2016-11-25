@@ -9,7 +9,7 @@ public class ItemRPK74MMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RPK74MMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "RPK74MMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "RPK74MMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

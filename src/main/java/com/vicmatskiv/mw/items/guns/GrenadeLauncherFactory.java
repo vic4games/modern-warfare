@@ -534,9 +534,9 @@ public class GrenadeLauncherFactory implements GunFactory {
 		//.withSpawnEntityClass(EntityGrenade.class)
 		//.withSpawnEntity((player) -> new EntityGrenade(player.worldObj, player, 60f, 6f))
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
-			if(block == Blocks.glass) {
-				world.func_147480_a(position.blockX, position.blockY, position.blockZ, true);
+			Block block = world.getBlockState(position.getBlockPos()).getBlock();
+			if (block == Blocks.glass) {
+				world.destroyBlock(position.getBlockPos(), true);
 			}
 			
 		 })

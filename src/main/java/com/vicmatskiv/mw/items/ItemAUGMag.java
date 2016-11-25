@@ -9,7 +9,7 @@ public class ItemAUGMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AUGMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AR15Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "AR15Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

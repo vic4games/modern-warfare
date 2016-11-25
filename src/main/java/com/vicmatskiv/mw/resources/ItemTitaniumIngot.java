@@ -10,7 +10,7 @@ public class ItemTitaniumIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TitaniumIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "TitaniumIngot");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "TitaniumIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

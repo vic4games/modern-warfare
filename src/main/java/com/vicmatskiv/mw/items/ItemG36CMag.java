@@ -9,7 +9,7 @@ public class ItemG36CMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "G36CMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "G36CMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "G36CMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

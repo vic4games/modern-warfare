@@ -375,9 +375,9 @@ public class FNFALFactory implements GunFactory {
 		.withSpawnEntityDamage(13f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
-			if(block == Blocks.glass) {
-				world.func_147480_a(position.blockX, position.blockY, position.blockZ, true);
+			Block block = world.getBlockState(position.getBlockPos()).getBlock();
+			if (block == Blocks.glass) {
+				world.destroyBlock(position.getBlockPos(), true);
 			}
 			
 		 })

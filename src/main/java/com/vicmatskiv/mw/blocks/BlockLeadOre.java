@@ -18,8 +18,8 @@ public class BlockLeadOre extends Block
 	public BlockLeadOre()
 	{
 		super(Material.rock);
-		setBlockName(ModernWarfareMod.MODID + "_" + "LeadOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "LeadOre");
+		setRegistryName(ModernWarfareMod.MODID + "_" + "LeadOre");
+		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "LeadOre");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

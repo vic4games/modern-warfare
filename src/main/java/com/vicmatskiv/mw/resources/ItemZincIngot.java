@@ -10,7 +10,7 @@ public class ItemZincIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "ZincIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "ZincIngot");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "ZincIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

@@ -160,13 +160,13 @@ import com.vicmatskiv.weaponlib.ItemAmmo;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.Weapon;
 
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
@@ -374,9 +374,9 @@ public class CommonProxy {
 	public static Item Barrel;
 	public static Item Plastic;
 
-	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", 40,
+	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40,
 			new int[] { 3, 5, 4, 3 }, 15);
-	static ArmorMaterial Tactical = EnumHelper.addArmorMaterial("Tactical", 40,
+	static ArmorMaterial Tactical = EnumHelper.addArmorMaterial("Tactical", "Tactical", 40,
 			new int[] { 2, 4, 3, 2 }, 15);
 
 	// private ClientEventHandler clientEventHandler = new ClientEventHandler();

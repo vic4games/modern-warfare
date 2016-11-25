@@ -9,7 +9,7 @@ public class ItemGrenades extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Grenades"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Grenades");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Grenades");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 

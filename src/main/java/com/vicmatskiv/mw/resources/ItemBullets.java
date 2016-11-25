@@ -10,7 +10,7 @@ public class ItemBullets extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Bullets"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Bullets");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Bullets");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

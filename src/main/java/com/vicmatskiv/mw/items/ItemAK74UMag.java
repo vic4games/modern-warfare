@@ -11,7 +11,7 @@ public class ItemAK74UMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AK74UMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AK74UMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "AK74UMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

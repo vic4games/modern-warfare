@@ -10,7 +10,7 @@ public class ItemRifleReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RifleReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "RifleReceiver");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "RifleReceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

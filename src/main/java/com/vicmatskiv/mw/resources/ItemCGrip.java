@@ -10,7 +10,7 @@ public class ItemCGrip extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CGrip"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "CGrip");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "CGrip");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

@@ -9,7 +9,7 @@ public class ItemScarHMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "ScarHMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "ScarHMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "ScarHMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

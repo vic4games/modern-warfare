@@ -9,7 +9,7 @@ public class ItemFamasMag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "FamasMag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "FamasMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "FamasMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

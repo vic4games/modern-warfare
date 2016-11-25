@@ -10,7 +10,7 @@ public class ItemTransistor extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Transistor"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Transistor");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "Transistor");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

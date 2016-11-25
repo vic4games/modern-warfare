@@ -9,7 +9,7 @@ public class ItemPX90Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "PX90Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "PX90Mag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "PX90Mag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 //	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) 

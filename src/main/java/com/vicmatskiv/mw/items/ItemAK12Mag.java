@@ -11,7 +11,7 @@ public class ItemAK12Mag extends ItemAmmo
 	{
 		setMaxStackSize(8);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AK12Mag"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AKMMag");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "AKMMag");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 		
 		

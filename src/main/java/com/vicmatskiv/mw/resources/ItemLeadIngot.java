@@ -10,7 +10,7 @@ public class ItemLeadIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LeadIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "LeadIngot");
+		//setTextureName(ModernWarfareMod.MODID + ":" + "LeadIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	
