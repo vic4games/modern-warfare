@@ -20,9 +20,9 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.0"
-group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "modid"
+version = "1.6"
+group= "com.vicmatskiv.mw" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "mw"
 
 minecraft {
     version = "1.8.9-11.15.1.1902-1.8.9"
@@ -42,6 +42,8 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
+    
+    compile files('/Users/victor-jr/Development/weaponlib-1.8.9/build/libs/weaponlib-1.0.jar')
       
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
@@ -80,3 +82,21 @@ processResources
         exclude 'mcmod.info'
     }
 }
+jar {
+    //baseName = project.name + '-all'
+    from { 
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
+    } {
+        include "com/vicmatskiv/weaponlib/**"
+    }
+    //with jar
+}
+
+
+task obfuscate(type: proguard.gradle.ProGuardTask) {
+  configuration 'proguard.cfg'
+  
+  injars "./build/libs/${archivesBaseName}-${version}.jar"
+  
+  outjars "./build/libs/${archivesBaseName}-${version}-${project.minecraft.version}.jar"
+} 
