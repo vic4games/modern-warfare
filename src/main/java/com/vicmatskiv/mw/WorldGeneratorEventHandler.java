@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
@@ -88,7 +89,8 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBetweenMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			//throw new UnsupportedOperationException("Fixed the commented code below");
+			new WorldGenMinable(block.getDefaultState(), maxVeinSize)
+				.generate(world, random, new BlockPos(posX, posY, posZ));
 //			new WorldGenMinable(block, metadata, maxVeinSize, target)
 //				.generate(world, random, posX, posY, posZ);
 		}
