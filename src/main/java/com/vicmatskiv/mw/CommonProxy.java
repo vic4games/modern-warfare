@@ -165,7 +165,7 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -374,7 +374,7 @@ public class CommonProxy {
 	public static Item Barrel;
 	public static Item Plastic;
 
-	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40,
+	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40, // TODO: second arg - texture name correct?
 			new int[] { 3, 5, 4, 3 }, 15);
 	static ArmorMaterial Tactical = EnumHelper.addArmorMaterial("Tactical", "Tactical", 40,
 			new int[] { 2, 4, 3, 2 }, 15);
@@ -389,7 +389,7 @@ public class CommonProxy {
 		return false;
 	}
 
-	public void preInit(Object mod, FMLPreInitializationEvent event) {
+	public void init(Object mod, FMLInitializationEvent event) {
 
 		ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.CHANNEL);
 
@@ -585,6 +585,8 @@ public class CommonProxy {
 		
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
+
+		
 
 		GameRegistry.registerItem(AK47Mag, "AK47Mag");
 		GameRegistry.registerItem(G18Mag, "G18Mag");

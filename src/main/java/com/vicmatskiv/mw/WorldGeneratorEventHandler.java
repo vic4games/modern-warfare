@@ -88,7 +88,7 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 			int posX = blockXPos + random.nextInt(maxX);
 			int posY = minY + random.nextInt(diffBetweenMinMaxY);
 			int posZ = blockZPos + random.nextInt(maxZ);
-			throw new UnsupportedOperationException("Fixed the commented code below");
+			//throw new UnsupportedOperationException("Fixed the commented code below");
 //			new WorldGenMinable(block, metadata, maxVeinSize, target)
 //				.generate(world, random, posX, posY, posZ);
 		}
