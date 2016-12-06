@@ -52,6 +52,7 @@ public class M107Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {

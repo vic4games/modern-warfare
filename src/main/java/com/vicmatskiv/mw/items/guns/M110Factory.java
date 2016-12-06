@@ -60,6 +60,7 @@ public class M110Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 		    	if(model instanceof M4Iron1) {
@@ -375,7 +376,7 @@ public class M110Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
 				.build())
-			.withSpawnEntityDamage(6.8f)
+			.withSpawnEntityDamage(9.5f)
 			.withSpawnEntityGravityVelocity(0.0118f)
 			.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 				Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);

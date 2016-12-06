@@ -60,6 +60,7 @@ public class KSG12Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withInaccuracy(10)
 		.withPellets(10)
+		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {

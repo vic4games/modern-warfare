@@ -36,6 +36,7 @@ public class M9Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		/*.withCompatibleAttachment(ModernWarfareMod.ACOG, (model) -> {
 			GL11.glTranslatef(0.107F, -1.625F, -0F);
@@ -85,6 +86,15 @@ public class M9Factory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				})
+				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.4F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				GL11.glRotatef(-45F, 1f, 0f, 3f);
+				GL11.glTranslatef(0.4F, -1.7F, 0.6F);
 				})
 				
 			.withFirstPersonPositioningReloading(
