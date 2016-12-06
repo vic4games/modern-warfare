@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/AK47Mag"
+        "layer0": "mw:items/GunmetalPlate"
     },
     "display": {
         "thirdperson": {
