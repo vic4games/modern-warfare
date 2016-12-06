@@ -40,7 +40,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.Grenades, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grenades", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip2", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.HP, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "HP", "inventory"));
 //		renderItem.getItemModelMesher().register(CommonProxy.Holo, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Holo2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo2", "inventory"));
@@ -96,7 +96,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.Grenades, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grenades", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip2", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.HP, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "HP", "inventory"));
 //		renderItem.getItemModelMesher().register(CommonProxy.Holo, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Holo2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo2", "inventory"));
@@ -181,9 +181,9 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.Grenades, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grenades", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Grip2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Grip2", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GunmetalIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GunmetalPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalPlate", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.GunmetalIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalIngot", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.GunmetalMiniPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalMiniPlate", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.GunmetalPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GunmetalPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.HP, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "HP", "inventory"));
 //		renderItem.getItemModelMesher().register(CommonProxy.Holo, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Holo2, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Holo2", "inventory"));
@@ -247,7 +247,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.WoodRifleStock, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "WoodRifleStock", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.WoodWeaponStock, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "WoodWeaponStock", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.XWPMag, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "XWPMag", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.ZincIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "ZincIngot", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.ZincIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "ZincIngot", "inventory"));
 
 	}
 }

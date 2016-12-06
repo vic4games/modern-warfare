@@ -26,9 +26,9 @@ public class BlockZincOre extends Block
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	public Block getBlockDropped(int meta, Random rand, int fortune)
-		{
-			return CommonProxy.ZincOre;
-		}
+//	public Block getBlockDropped(int meta, Random rand, int fortune)
+//		{
+//			return CommonProxy.ZincOre;
+//		}
 		
 	}

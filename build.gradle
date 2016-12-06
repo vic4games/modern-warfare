@@ -1,4 +1,3 @@
-
 // For those who want the bleeding edge
 buildscript {
     repositories {
@@ -82,6 +81,7 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
 jar {
     //baseName = project.name + '-all'
     from { 
