@@ -58,6 +58,7 @@ public class M4A4Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 		    	if(model instanceof M4Iron1) {

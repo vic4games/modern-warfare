@@ -32,6 +32,7 @@ public class MagnumFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)		
 		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
 			GL11.glTranslatef(0.01F, -0.95F, -2.3F);

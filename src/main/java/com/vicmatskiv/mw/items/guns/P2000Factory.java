@@ -38,6 +38,7 @@ public class P2000Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		/*.withCompatibleAttachment(ModernWarfareMod.ACOG, (model) -> {
 			GL11.glTranslatef(0.107F, -1.625F, -0F);

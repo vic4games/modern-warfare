@@ -111,9 +111,7 @@ item.mw_Bipod.name=Bipod
 item.mw_VGrip.name=ForeGrip
 item.mw_Kobra.name=Kobra Sight
 
-item.mw_GunmetalIngot.name=Gunmetal Ingot
-item.mw_GunmetalPlate.name=Gunmetal Plate
-
+item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit
 item.mw_Bullets.name=Bullets
 item.mw_CGrip.name=Grip
@@ -156,6 +154,7 @@ item.mw_Ruby.name=Ruby
 item.mw_SteelDust.name=Steel Dust
 item.mw_SteelIngot.name=Steel Ingot
 item.mw_SteelPlate.name=Steel Plate
+item.mw_MiniSteelPlate.name=Small Steel Plate
 
 item.mw_WeaponStock.name=Weapon Stock
 item.mw_WoodWeaponStock.name=Weapon Stock (Wood)

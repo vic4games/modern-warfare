@@ -47,6 +47,9 @@ public class M1014Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
+		.withInaccuracy(10)
+		.withPellets(10)
+		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
 				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
@@ -425,7 +428,7 @@ public class M1014Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 1000))
 			.build())
-		.withSpawnEntityDamage(30f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.8f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlockState(position.getBlockPos()).getBlock();

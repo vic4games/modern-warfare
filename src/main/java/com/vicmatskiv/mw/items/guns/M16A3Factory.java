@@ -58,6 +58,7 @@ public class M16A3Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.AR15Iron, true, (model) -> {
 	    	if(model instanceof M4Iron1) {

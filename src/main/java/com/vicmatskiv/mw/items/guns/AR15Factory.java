@@ -58,6 +58,7 @@ public class AR15Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(0f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	    .withCompatibleAttachment(CommonProxy.AR15Iron, true, (model) -> {
 	    	if(model instanceof M4Iron1) {

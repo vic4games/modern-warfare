@@ -24,7 +24,6 @@ import com.vicmatskiv.mw.blocks.BlockSulfurOre;
 import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
-import com.vicmatskiv.mw.blocks.BlockZincOre;
 import com.vicmatskiv.mw.items.ItemAK47Mag;
 import com.vicmatskiv.mw.items.ItemAK74UMag;
 import com.vicmatskiv.mw.items.ItemAR15Mag;
@@ -38,6 +37,7 @@ import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemG36Mag;
 import com.vicmatskiv.mw.items.ItemGrenades;
 import com.vicmatskiv.mw.items.ItemGunmetalMiniPlate;
+import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM110Mag;
 import com.vicmatskiv.mw.items.ItemM14Mag;
@@ -140,6 +140,7 @@ import com.vicmatskiv.mw.resources.ItemGreenCloth;
 import com.vicmatskiv.mw.resources.ItemGunmetalIngot;
 import com.vicmatskiv.mw.resources.ItemGunmetalPlate;
 import com.vicmatskiv.mw.resources.ItemLeadIngot;
+import com.vicmatskiv.mw.resources.ItemMiniSteelPlate;
 import com.vicmatskiv.mw.resources.ItemOpticGlass;
 import com.vicmatskiv.mw.resources.ItemPiston;
 import com.vicmatskiv.mw.resources.ItemPlastic;
@@ -153,7 +154,6 @@ import com.vicmatskiv.mw.resources.ItemTanCloth;
 import com.vicmatskiv.mw.resources.ItemTantalumIngot;
 import com.vicmatskiv.mw.resources.ItemTinIngot;
 import com.vicmatskiv.mw.resources.ItemTitaniumIngot;
-import com.vicmatskiv.mw.resources.ItemZincIngot;
 import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
 import com.vicmatskiv.weaponlib.ItemAmmo;
@@ -305,7 +305,7 @@ public class CommonProxy {
 	public static Item Capacitor;
 	public static Item CopperWiring;
 	public static Item Piston;
-	public static Item GunmetalMiniPlate;
+	public static Item LaserPointer;
 
 	public static Block TitaniumOre;
 	public static Item TitaniumIngot;
@@ -315,9 +315,6 @@ public class CommonProxy {
 
 	public static Block CopperOre;
 	public static Item CopperIngot;
-
-	public static Block ZincOre;
-	public static Item ZincIngot;
 
 	public static Block TinOre;
 	public static Item TinIngot;
@@ -337,13 +334,11 @@ public class CommonProxy {
 	
 	public static Block RubyOre;
 	public static Item Ruby;
-
-	public static Item GunmetalIngot;
-	public static Item GunmetalPlate;
 	
 	public static Item SteelDust;
 	public static Item SteelIngot;
 	public static Item SteelPlate;
+	public static Item MiniSteelPlate;
 	
 	public static Item WeaponStock;
 	public static Item RetractableStock;
@@ -413,10 +408,6 @@ public class CommonProxy {
 		CopperIngot = new ItemCopperIngot();
 		OreDictionary.registerOre("ingotCopper", CopperIngot);
 
-		ZincOre = new BlockZincOre();
-		ZincIngot = new ItemZincIngot();
-		OreDictionary.registerOre("ingotZinc", ZincIngot);
-
 		TinOre = new BlockTinOre();
 		TinIngot = new ItemTinIngot();
 		OreDictionary.registerOre("ingotTin", TinIngot);
@@ -439,13 +430,11 @@ public class CommonProxy {
 		
 		TantalumOre = new BlockTantalumOre();
 		TantalumIngot = new ItemTantalumIngot();
-
-		GunmetalIngot = new ItemGunmetalIngot();
-		GunmetalPlate = new ItemGunmetalPlate();
 		
 		SteelDust = new ItemSteelDust();
 		SteelIngot = new ItemSteelIngot();
 		SteelPlate = new ItemSteelPlate();
+		MiniSteelPlate = new ItemMiniSteelPlate();
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
 		AK47Mag = new ItemAK47Mag();
@@ -581,7 +570,7 @@ public class CommonProxy {
 		Capacitor = new ItemCapacitor();
 		CopperWiring = new ItemCopperWiring();
 		Piston = new ItemPiston();
-		GunmetalMiniPlate = new ItemGunmetalMiniPlate();
+		LaserPointer = new ItemLaserPointer();
 		
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
@@ -654,9 +643,6 @@ public class CommonProxy {
 		GameRegistry.registerBlock(CopperOre, "CopperOre");
 		GameRegistry.registerItem(CopperIngot, "CopperIngot");
 
-		GameRegistry.registerBlock(ZincOre, "ZincOre");
-		GameRegistry.registerItem(ZincIngot, "ZincIngot");
-
 		GameRegistry.registerBlock(TinOre, "TinOre");
 		GameRegistry.registerItem(TinIngot, "TinIngot");
 
@@ -675,13 +661,11 @@ public class CommonProxy {
 		
 		GameRegistry.registerBlock(RubyOre, "RubyOre");
 		GameRegistry.registerItem(Ruby, "Ruby");
-
-		GameRegistry.registerItem(GunmetalIngot, "GunmetalIngot");
-		GameRegistry.registerItem(GunmetalPlate, "GunmetalPlate");
 		
 		GameRegistry.registerItem(SteelDust, "SteelDust");
 		GameRegistry.registerItem(SteelIngot, "SteelIngot");
 		GameRegistry.registerItem(SteelPlate, "SteelPlate");
+		GameRegistry.registerItem(MiniSteelPlate, "MiniSteelPlate");
 		
 		GameRegistry.registerItem(WeaponStock, "WeaponStock");
 		GameRegistry.registerItem(RetractableStock, "RetractableStock");
@@ -716,7 +700,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(Capacitor, "Capacitor");
 		GameRegistry.registerItem(CopperWiring, "CopperWiring");
 		GameRegistry.registerItem(Piston, "Piston");
-		GameRegistry.registerItem(GunmetalMiniPlate, "GunmetalMiniPlate");
+		GameRegistry.registerItem(LaserPointer, "LaserPointer");
 		
 		GameRegistry.registerItem(Barrel, "Barrel");
 		GameRegistry.registerItem(Plastic, "plastic");

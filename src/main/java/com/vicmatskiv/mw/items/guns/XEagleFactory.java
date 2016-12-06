@@ -32,6 +32,8 @@ public class XEagleFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withInaccuracy(2)
+		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)		
 		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
 			GL11.glTranslatef(0.01F, -0.7F, -2F);
@@ -217,7 +219,7 @@ public class XEagleFactory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
 			.build())
-		.withSpawnEntityDamage(13.5f)
+		.withSpawnEntityDamage(15f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = world.getBlockState(position.getBlockPos()).getBlock();

@@ -44,34 +44,31 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 		
 		if(oreGenerationEnabled) {
 			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
-					x, z, 8, 8, 3 + random.nextInt(5), 20, 5, 90);
+					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
 			addOreSpawn(CommonProxy.CopperOre, 0, Blocks.stone, world, random, 
-					x, z, 12, 12, 6 + random.nextInt(6), 20, 5, 110);
+					x, z, 9, 9, 6 + random.nextInt(4), 15, 2, 110);
 			
 			addOreSpawn(CommonProxy.SulfurOre, 0, Blocks.stone, world, random, 
 					x, z, 13, 13, 6 + random.nextInt(7), 20, 5, 90);
 			
-			addOreSpawn(CommonProxy.ZincOre, 0, Blocks.stone, world, random, 
-					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
-			
 			addOreSpawn(CommonProxy.LeadOre, 0, Blocks.stone, world, random, 
 					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
 			
-			addOreSpawn(CommonProxy.TinOre, 0, Blocks.stone, world, random, 
-					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
+			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
+					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
 			addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.stone, world, random, 
-					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 60);
+					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
-			addOreSpawn(CommonProxy.TantalumOre, 0, Blocks.stone, world, random, 
-					x, z, 8, 8, 2 + random.nextInt(5), 20, 5, 60);
+			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
+					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
 			addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.stone, world, random, 
-					x, z, 10, 10, 5 + random.nextInt(6), 20, 5, 90);
+					x, z, 7, 7, 4 + random.nextInt(2), 15, 2, 90);
 			
 			addOreSpawn(CommonProxy.RubyOre, 0, Blocks.stone, world, random, 
-					x, z, 7, 7, 2 + random.nextInt(5), 20, 5, 15);
+					x, z, 6, 6, 2 + random.nextInt(2), 15, 2, 15);
 		}
 		
 	}
