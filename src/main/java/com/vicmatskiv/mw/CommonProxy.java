@@ -36,7 +36,6 @@ import com.vicmatskiv.mw.items.ItemG21Mag;
 import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemG36Mag;
 import com.vicmatskiv.mw.items.ItemGrenades;
-import com.vicmatskiv.mw.items.ItemGunmetalMiniPlate;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM110Mag;
@@ -137,8 +136,6 @@ import com.vicmatskiv.mw.resources.ItemCloth;
 import com.vicmatskiv.mw.resources.ItemCopperIngot;
 import com.vicmatskiv.mw.resources.ItemElectronics;
 import com.vicmatskiv.mw.resources.ItemGreenCloth;
-import com.vicmatskiv.mw.resources.ItemGunmetalIngot;
-import com.vicmatskiv.mw.resources.ItemGunmetalPlate;
 import com.vicmatskiv.mw.resources.ItemLeadIngot;
 import com.vicmatskiv.mw.resources.ItemMiniSteelPlate;
 import com.vicmatskiv.mw.resources.ItemOpticGlass;
@@ -387,6 +384,8 @@ public class CommonProxy {
 	public void init(Object mod, FMLInitializationEvent event) {
 
 		ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.CHANNEL);
+		
+		
 
 		Bullets = new ItemBullets();
 		Electronics = new ItemElectronics();
@@ -398,32 +397,25 @@ public class CommonProxy {
 
 		TitaniumOre = new BlockTitaniumOre();
 		TitaniumIngot = new ItemTitaniumIngot();
-		OreDictionary.registerOre("ingotTitanium", TitaniumIngot);
 
 		LeadOre = new BlockLeadOre();
 		LeadIngot = new ItemLeadIngot();
-		OreDictionary.registerOre("ingotLead", LeadIngot);
 
 		CopperOre = new BlockCopperOre();
 		CopperIngot = new ItemCopperIngot();
-		OreDictionary.registerOre("ingotCopper", CopperIngot);
 
 		TinOre = new BlockTinOre();
 		TinIngot = new ItemTinIngot();
-		OreDictionary.registerOre("ingotTin", TinIngot);
 
 		SulfurOre = new BlockSulfurOre();
 		SulfurDust = new ItemSulfurDust();
-		OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
 		
 		BauxiteOre = new BlockBauxiteOre();
 		AluminumIngot = new ItemAluminumIngot();
 		AluminumPlate = new ItemAluminumPlate();
-		OreDictionary.registerOre("ingotAluminum", AluminumIngot);
 		
 		RubyOre = new BlockRubyOre();
 		Ruby = new  ItemRuby();
-		OreDictionary.registerOre("Ruby", Ruby);
 		
 		SiliconOre = new BlockSiliconOre();
 		Silicon = new ItemSilicon();
@@ -435,7 +427,6 @@ public class CommonProxy {
 		SteelIngot = new ItemSteelIngot();
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
-		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
 		AK47Mag = new ItemAK47Mag();
 		G18Mag = new ItemG18Mag();
@@ -611,7 +602,7 @@ public class CommonProxy {
 
 		GameRegistry.registerItem(ACOG, "ACOG");
 		GameRegistry.registerItem(Reflex, "Reflex");
-		GameRegistry.registerItem(Scope, "Scope");
+		GameRegistry.registerItem(Scope, "LP");
 		GameRegistry.registerItem(Silencer, "Silencer");
 		GameRegistry.registerItem(Laser, "Laser");
 		GameRegistry.registerItem(HP, "HP");
@@ -703,7 +694,16 @@ public class CommonProxy {
 		GameRegistry.registerItem(LaserPointer, "LaserPointer");
 		
 		GameRegistry.registerItem(Barrel, "Barrel");
-		GameRegistry.registerItem(Plastic, "plastic");
+		GameRegistry.registerItem(Plastic, "Plastic");
+		
+		OreDictionary.registerOre("ingotTitanium", TitaniumIngot);
+		OreDictionary.registerOre("ingotLead", LeadIngot);
+		OreDictionary.registerOre("ingotCopper", CopperIngot);
+		OreDictionary.registerOre("ingotTin", TinIngot);
+		OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
+		OreDictionary.registerOre("ingotAluminum", AluminumIngot);
+		OreDictionary.registerOre("Ruby", Ruby);
+		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
 		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
 
