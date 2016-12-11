@@ -172,70 +172,71 @@ public class M9Factory implements GunFactory {
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.6f, 1.6f, 3f);
-						 GL11.glTranslatef(0.6f, 0.1f, 0.4f);
+						 GL11.glTranslatef(0.6f, 0f, 0.4f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-40f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.6f, 1.6f, 1.6f);
-						 GL11.glTranslatef(1.5f, 0.1f, -0.2f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-10f, 1f, 0f, 0f);
+						 GL11.glScalef(2f, 2f, 2f);
+						 GL11.glTranslatef(1f, 0.3f, -0.4f);
+						 GL11.glRotatef(99f, 0, 0f, 1f);
+						 GL11.glRotatef(-20f, 1f, 0f, 0f);
+						 GL11.glRotatef(-30f, 0f, 1f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
-					 .withFirstPersonLeftHandPositioningReloading(
+			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.5f, 2.2f, 2.2f);
-						 GL11.glTranslatef(0f, 0.5f, 0.8f);
+						 GL11.glTranslatef(0.7f, 0.8f, 0.4f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-100f, 20f, 20f, -20f);
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.5f, 2.2f, 2.2f);
-						 GL11.glTranslatef(-0.1f, 0.3f, 0.8f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-100f, 20f, 20f, -20f);
+						 GL11.glTranslatef(0.7f, 0.8f, 0.4f);
+						 GL11.glRotatef(110f, 0, 0f, 1f);
+						 GL11.glRotatef(-70f, 20f, 20f, -20f);
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.6f, 1.6f, 3f);
-						 GL11.glTranslatef(0.4f, -0.2f, 0.5f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.6f, 0f, 0.4f);
+						 GL11.glRotatef(130f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 1000),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
