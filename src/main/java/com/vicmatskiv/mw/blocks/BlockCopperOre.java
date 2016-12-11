@@ -7,18 +7,14 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
-public class BlockCopperOre extends Block 
-
-{
-	private static final String name = "titaniumore";
+public class BlockCopperOre extends Block {
 	
 	public BlockCopperOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "CopperOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "CopperOre");
 		setHardness(6F);
 		setResistance(600000F);

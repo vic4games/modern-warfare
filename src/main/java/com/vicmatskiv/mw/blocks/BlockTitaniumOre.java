@@ -7,18 +7,15 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
 public class BlockTitaniumOre extends Block 
-
 {
-	private static final String name = "titaniumore";
 	
 	public BlockTitaniumOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "TitaniumOre");
 		setHardness(6F);
 		setResistance(600000F);

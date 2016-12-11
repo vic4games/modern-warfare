@@ -7,18 +7,15 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class BlockRubyOre extends Block 
-
-{
-	private static final String name = "titaniumore";
+public class BlockRubyOre extends Block {
 	
 	public BlockRubyOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "RubyOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RubyOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "RubyOre");
 		setHardness(6F);
 		setResistance(600000F);

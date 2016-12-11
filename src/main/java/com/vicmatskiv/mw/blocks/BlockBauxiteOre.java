@@ -7,18 +7,15 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
-public class BlockBauxiteOre extends Block 
-
-{
-	private static final String name = "titaniumore";
+public class BlockBauxiteOre extends Block {
 	
 	public BlockBauxiteOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
+		//setUnlocalizedName("BauxiteOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "BauxiteOre");
 		setHardness(6F);
 		setResistance(600000F);

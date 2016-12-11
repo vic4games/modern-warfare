@@ -7,18 +7,14 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
-public class BlockLeadOre extends Block 
-
-{
-	private static final String name = "titaniumore";
+public class BlockLeadOre extends Block {
 	
 	public BlockLeadOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "LeadOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LeadOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "LeadOre");
 		setHardness(6F);
 		setResistance(600000F);

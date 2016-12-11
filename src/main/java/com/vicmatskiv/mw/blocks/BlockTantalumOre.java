@@ -7,28 +7,24 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 
-public class BlockTantalumOre extends Block 
-
+public class BlockTantalumOre extends Block
 {
-	private static final String name = "titaniumore";
-	
-	public BlockTantalumOre()
-	{
+
+	public BlockTantalumOre() {
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "TantalumOre");
-		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "TantalumOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TantalumOre");
+		// setBlockTextureName(ModernWarfareMod.MODID + ":" + "TantalumOre");
 		setHardness(4F);
 		setResistance(600000F);
-		setStepSound(soundTypeStone); 
+		setStepSound(soundTypeStone);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	public Block getBlockDropped(int meta, Random rand, int fortune)
-		{
-			return CommonProxy.TantalumOre;
-		}
-		
+
+	public Block getBlockDropped(int meta, Random rand, int fortune) {
+		return CommonProxy.TantalumOre;
 	}
+
+}

@@ -7,18 +7,17 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
 public class BlockSulfurOre extends Block 
 
 {
-	private static final String name = "titaniumore";
 	
 	public BlockSulfurOre()
 	{
 		super(Material.rock);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "SulfurOre");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SulfurOre");
 		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "SulfurOre");
 		setHardness(4F);
 		setResistance(600000F);
