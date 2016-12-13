@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.items.guns;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;

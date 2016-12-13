@@ -1,30 +1,13 @@
 package com.vicmatskiv.mw.items.guns;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AKMiron1;
-import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.FALIron;
-import com.vicmatskiv.mw.models.G36CIron1;
-import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.M1014;
-import com.vicmatskiv.mw.models.M14Iron;
-import com.vicmatskiv.mw.models.M4Iron1;
-import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MP5Iron;
-import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Remington;
-import com.vicmatskiv.mw.models.SPAS12;
 import com.vicmatskiv.mw.models.SPAS15;
-import com.vicmatskiv.mw.models.ScarIron1;
-import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
