@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.items.guns;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -11,6 +10,7 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.Magnum;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class MagnumFactory implements GunFactory {
@@ -74,11 +74,22 @@ public class MagnumFactory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.4F, -0.5F, -0.8F);
+					GL11.glTranslatef(0.5F, -0.4F, -0.6F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(5F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
-				}, 250, 10)
+
+				}, 250, 100),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.5F, -0.4F, -0.6F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+
+				}, 250, 100)
 			) 
 				
 				.withFirstPersonPositioningZooming((player, itemStack) -> {
@@ -128,54 +139,70 @@ public class MagnumFactory implements GunFactory {
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.6f, 1.6f, 3f);
-						 GL11.glTranslatef(0.6f, 0.1f, 0.4f);
+						 GL11.glTranslatef(0.6f, 0f, 0.4f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-40f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.6f, 1.6f, 1.6f);
-						 GL11.glTranslatef(1.5f, 0.1f, -0.2f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-10f, 1f, 0f, 0f);
+						 GL11.glScalef(2f, 2f, 2f);
+						 GL11.glTranslatef(1f, 0.3f, -0.4f);
+						 GL11.glRotatef(99f, 0, 0f, 1f);
+						 GL11.glRotatef(-20f, 1f, 0f, 0f);
+						 GL11.glRotatef(-30f, 0f, 1f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.6f, 1.6f, 3f);
-						 GL11.glTranslatef(0.6f, -0.1f, 0.4f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
+						 GL11.glRotatef(130f, 0, 0f, 1f);
+						 GL11.glRotatef(-10f, 1f, 0f, 0f);
+						 GL11.glRotatef(70f, 0f, 1f, 0f);
+					}, 50, 100),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 3f);
+						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
+						 GL11.glRotatef(130f, 0, 0f, 1f);
+						 GL11.glRotatef(-20f, 1f, 0f, 0f);
+						 GL11.glRotatef(70f, 0f, 1f, 0f);
 					}, 50, 200))
 					
 			.withFirstPersonRightHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.1f, 0.2f, 0.5f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 1000))
+					}, 250, 100),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2.1f, 2.1f, 2.1f);
+						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 200))
 			.build())
 		.withSpawnEntityDamage(13f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlock(position.blockX, position.blockY, position.blockZ);
-			if(block == Blocks.glass) {
-				world.func_147480_a(position.blockX, position.blockY, position.blockZ, true);
+			Block block = WorldHelper.getBlockAtPosition(world, position);
+			if (WorldHelper.isGlassBlock(block)) {
+				WorldHelper.destroyBlock(world, position);
 			}
-			
 		 })
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);

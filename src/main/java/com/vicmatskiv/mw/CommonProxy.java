@@ -41,6 +41,7 @@ import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM110Mag;
 import com.vicmatskiv.mw.items.ItemM14Mag;
+import com.vicmatskiv.mw.items.ItemM1911Mag;
 import com.vicmatskiv.mw.items.ItemM1Mag;
 import com.vicmatskiv.mw.items.ItemM249Mag;
 import com.vicmatskiv.mw.items.ItemM9Mag;
@@ -82,6 +83,7 @@ import com.vicmatskiv.mw.items.guns.M110Factory;
 import com.vicmatskiv.mw.items.guns.M14Factory;
 import com.vicmatskiv.mw.items.guns.M16A3Factory;
 import com.vicmatskiv.mw.items.guns.M16A4Factory;
+import com.vicmatskiv.mw.items.guns.M1911Factory;
 import com.vicmatskiv.mw.items.guns.M1CarbineFactory;
 import com.vicmatskiv.mw.items.guns.M240Factory;
 import com.vicmatskiv.mw.items.guns.M249Factory;
@@ -256,6 +258,7 @@ public class CommonProxy {
 	public static Item M1Carbine;
 	public static Item MP40;
 	public static Item AN94;
+	public static Item M1911;
 	//public static Item GaussRifle;
 //	public static Item RPG;
 
@@ -288,6 +291,7 @@ public class CommonProxy {
 	public static ItemAmmo MP40Mag;
 	public static ItemAmmo M110Mag;
 	public static ItemAmmo SPAS15Mag;
+	public static ItemAmmo M1911Mag;
 	//public static ItemAmmo GaussMag;
 	//public static ItemAmmo RPGAmmo;
 
@@ -466,6 +470,7 @@ public class CommonProxy {
 		MP40Mag = new ItemMP40Mag();
 		M110Mag = new ItemM110Mag();
 		SPAS15Mag = new ItemSPAS15Mag();
+		M1911Mag = new ItemM1911Mag();
 		//GaussMag = new ItemGaussMag();
 	//	RPGAmmo = new ItemRPGAmmo();
 
@@ -508,6 +513,7 @@ public class CommonProxy {
 		XEagle = new XEagleFactory().createGun(this);
 		P2000 = new P2000Factory().createGun(this);
 		Magnum = new MagnumFactory().createGun(this);
+		M1911 = new M1911Factory().createGun(this);
 		Remington870 = new Remington900Factory().createGun(this);
 		KSG12 = new KSG12Factory().createGun(this);
 		M1014 = new M1014Factory().createGun(this);
@@ -604,6 +610,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(MP40Mag, "MP40Mag");
 		GameRegistry.registerItem(M110Mag, "M110Mag");
 		GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
+		GameRegistry.registerItem(M1911Mag, "M1911Mag");
 	//	GameRegistry.registerItem(GaussMag, "GaussMag");
 	//	GameRegistry.registerItem(RPGAmmo, "RPGAmmo");
 
