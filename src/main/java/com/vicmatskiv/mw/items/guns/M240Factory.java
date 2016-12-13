@@ -1,5 +1,6 @@
 package com.vicmatskiv.mw.items.guns;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -35,6 +36,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class M240Factory implements GunFactory {
@@ -383,6 +385,12 @@ public class M240Factory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(4.2f)
 		.withSpawnEntityGravityVelocity(0.0118f)
+		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
+			Block block = WorldHelper.getBlockAtPosition(world, position);
+			if (WorldHelper.isGlassBlock(block)) {
+				WorldHelper.destroyBlock(world, position);
+			}
+		 })
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

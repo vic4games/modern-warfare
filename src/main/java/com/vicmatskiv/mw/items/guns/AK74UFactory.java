@@ -37,6 +37,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class AK74UFactory implements GunFactory {
@@ -342,13 +343,12 @@ public class AK74UFactory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(7.5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
+		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlockState(position.getBlockPos()).getBlock();
+			Block block = WorldHelper.getBlockAtPosition(world, position);
 			if (block == Blocks.glass) {
-				world.destroyBlock(position.getBlockPos(), true);
+				WorldHelper.destroyBlock(world, position);
 			}
-			
-			
 		 })
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);

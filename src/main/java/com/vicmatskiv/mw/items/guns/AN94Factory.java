@@ -3,6 +3,8 @@ package com.vicmatskiv.mw.items.guns;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.world.World;
 
 import org.lwjgl.opengl.GL11;
 
@@ -37,6 +39,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class AN94Factory implements GunFactory {
@@ -384,13 +387,18 @@ public class AN94Factory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = world.getBlockState(position.getBlockPos()).getBlock();
-			if (block == Blocks.glass) {
-				world.destroyBlock(position.getBlockPos(), true);
+				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
+			Block block = WorldHelper.getBlockAtPosition(world, position);
+			if (WorldHelper.isGlassBlock(block)) {
+				WorldHelper.destroyBlock(world, position);
 			}
 		 })
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
+	}
+
+	public static Block getBlockAtPosition(World world, MovingObjectPosition position) {
+		Block block = world.getBlockState(position.getBlockPos()).getBlock();
+		return block;
 	}
 }
