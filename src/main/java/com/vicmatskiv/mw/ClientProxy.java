@@ -149,5 +149,18 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.WoodWeaponStock, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "WoodWeaponStock", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.XWPMag, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "XWPMag", "inventory"));
 
+		
+		renderItem.getItemModelMesher().register(CommonProxy.Marineboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Marinechest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Marinehelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_helmet", "inventory"));
+		
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_helmet", "inventory"));
+		
+		renderItem.getItemModelMesher().register(CommonProxy.Swatboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Swatchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Swathelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_helmet", "inventory"));
+
 	}
 }
