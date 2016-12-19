@@ -1,10 +1,5 @@
 package com.vicmatskiv.mw.items.guns;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.world.World;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -38,6 +33,9 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 public class AN94Factory implements GunFactory {
 
@@ -392,10 +390,5 @@ public class AN94Factory implements GunFactory {
 		 })
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
-	}
-
-	public static Block getBlockAtPosition(World world, MovingObjectPosition position) {
-		Block block = world.getBlockState(position.getBlockPos()).getBlock();
-		return block;
 	}
 }

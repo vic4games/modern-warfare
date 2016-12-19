@@ -6,19 +6,19 @@ import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockLeadOre extends Block {
 	
 	public BlockLeadOre()
 	{
-		super(Material.rock);
+		super(Material.ROCK);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "LeadOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LeadOre");
-		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "LeadOre");
 		setHardness(6F);
 		setResistance(600000F);
-		setStepSound(soundTypeStone); 
+		setSoundType(SoundType.STONE);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}

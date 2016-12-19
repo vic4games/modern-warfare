@@ -6,20 +6,19 @@ import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockBauxiteOre extends Block {
 	
 	public BlockBauxiteOre()
 	{
-		super(Material.rock);
+		super(Material.ROCK);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
-		//setUnlocalizedName("BauxiteOre");
-		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "BauxiteOre");
 		setHardness(6F);
 		setResistance(600000F);
-		setStepSound(soundTypeStone); 
+		setSoundType(SoundType.STONE);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}

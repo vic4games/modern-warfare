@@ -366,10 +366,10 @@ public class CommonProxy {
 	public static Item Barrel;
 	public static Item Plastic;
 
-	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40, // TODO: second arg - texture name correct?
-			new int[] { 3, 5, 4, 3 }, 15);
+	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40, 
+			new int[] { 3, 5, 4, 3 }, 15, null, 0); // TODO: last argument, how does it work?
 	static ArmorMaterial Tactical = EnumHelper.addArmorMaterial("Tactical", "Tactical", 40,
-			new int[] { 2, 4, 3, 2 }, 15);
+			new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO: last argument, how does it work?
 
 	// private ClientEventHandler clientEventHandler = new ClientEventHandler();
 
@@ -382,6 +382,7 @@ public class CommonProxy {
 	}
 
 	public void init(Object mod, FMLInitializationEvent event) {
+		
 
 		ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.CHANNEL);
 		
@@ -566,7 +567,6 @@ public class CommonProxy {
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
 
-		
 
 		GameRegistry.registerItem(AK47Mag, "AK47Mag");
 		GameRegistry.registerItem(G18Mag, "G18Mag");
@@ -625,32 +625,32 @@ public class CommonProxy {
 		GameRegistry.registerItem(TanCloth, "TanCloth");
 		GameRegistry.registerItem(GreenCloth, "GreenCloth");
 
-		GameRegistry.registerBlock(TitaniumOre, "TitaniumOre");
+		GameRegistry.register(TitaniumOre); //, "TitaniumOre");
 		GameRegistry.registerItem(TitaniumIngot, "TitaniumIngot");
 
-		GameRegistry.registerBlock(LeadOre, "LeadOre");
+		GameRegistry.register(LeadOre); //, "LeadOre");
 		GameRegistry.registerItem(LeadIngot, "LeadIngot");
 
-		GameRegistry.registerBlock(CopperOre, "CopperOre");
+		GameRegistry.register(CopperOre); //, "CopperOre");
 		GameRegistry.registerItem(CopperIngot, "CopperIngot");
 
-		GameRegistry.registerBlock(TinOre, "TinOre");
+		GameRegistry.register(TinOre); //, "TinOre");
 		GameRegistry.registerItem(TinIngot, "TinIngot");
 
-		GameRegistry.registerBlock(SulfurOre, "SulfurOre");
+		GameRegistry.register(SulfurOre); //, "SulfurOre");
 		GameRegistry.registerItem(SulfurDust, "SulfurDust");
 		
-		GameRegistry.registerBlock(BauxiteOre, "BauxiteOre");
+		GameRegistry.register(BauxiteOre); //, "BauxiteOre");
 		GameRegistry.registerItem(AluminumIngot, "AluminumIngot");
 		GameRegistry.registerItem(AluminumPlate, "AluminumPlate");
 		
-		GameRegistry.registerBlock(SiliconOre, "SiliconOre");
+		GameRegistry.register(SiliconOre); //, "SiliconOre");
 		GameRegistry.registerItem(Silicon, "Silicon");
 		
-		GameRegistry.registerBlock(TantalumOre, "TantalumOre");
+		GameRegistry.register(TantalumOre); //, "TantalumOre");
 		GameRegistry.registerItem(TantalumIngot, "TantalumIngot");
 		
-		GameRegistry.registerBlock(RubyOre, "RubyOre");
+		GameRegistry.register(RubyOre); //, "RubyOre");
 		GameRegistry.registerItem(Ruby, "Ruby");
 		
 		GameRegistry.registerItem(SteelDust, "SteelDust");

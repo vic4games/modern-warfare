@@ -6,26 +6,24 @@ import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class BlockTitaniumOre extends Block 
-{
-	
-	public BlockTitaniumOre()
-	{
-		super(Material.rock);
+public class BlockTitaniumOre extends Block {
+
+	public BlockTitaniumOre() {
+		super(Material.ROCK);
 		setRegistryName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
-		//setBlockTextureName(ModernWarfareMod.MODID + ":" + "TitaniumOre");
 		setHardness(6F);
 		setResistance(600000F);
-		setStepSound(soundTypeStone); 
+		setSoundType(SoundType.STONE);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	public Block getBlockDropped(int meta, Random rand, int fortune)
-		{
-			return CommonProxy.TitaniumOre;
-		}
-		
+
+	public Block getBlockDropped(int meta, Random rand, int fortune) {
+		return CommonProxy.TitaniumOre;
 	}
+
+}

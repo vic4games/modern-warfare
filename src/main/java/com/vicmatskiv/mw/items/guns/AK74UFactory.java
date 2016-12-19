@@ -1,9 +1,5 @@
 package com.vicmatskiv.mw.items.guns;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -33,6 +29,9 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 public class AK74UFactory implements GunFactory {
 
@@ -340,7 +339,7 @@ public class AK74UFactory implements GunFactory {
 		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (block == Blocks.glass) {
+			if (WorldHelper.isGlassBlock(block)) {
 				WorldHelper.destroyBlock(world, position);
 			}
 		 })
