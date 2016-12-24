@@ -115,7 +115,7 @@ public class XWPFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.033F, -1.47F, 0.5F);
+				GL11.glTranslatef(0.033F, -1.47F, 0.3F);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 			} else if(model instanceof Acog2) {
 				GL11.glTranslatef(0.197F, -1.64F, 0.5F);
@@ -126,9 +126,7 @@ public class XWPFactory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.5F, -2.33F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
 		})
-		.withTextureNames("L96", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("L96", "L96Blue", "L96Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new L96())
@@ -146,7 +144,7 @@ public class XWPFactory implements GunFactory {
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.6F, 0.35F, 1.2F);
+				GL11.glTranslatef(-1.8F, 0.25F, 1.5F);
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
@@ -187,7 +185,7 @@ public class XWPFactory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0.2F, -0.3F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -233,9 +231,9 @@ public class XWPFactory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.9F, 0.9F, 0.9F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.3F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

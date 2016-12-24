@@ -45,21 +45,21 @@ public class M1CarbineFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0f)
+		.withFlashIntensity(0.5f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof M14Iron) {
-					GL11.glTranslatef(0.135F, -1.48F, 0.3F);
-					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				GL11.glTranslatef(0.135F, -1.45F, 0.2F);
+				GL11.glScaled(0.4F, 0.4F, 0.4F);
 			} else if(model instanceof AKMiron2) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.129F, -1.28F, -3.5F);
-				GL11.glScaled(0.65F, 0.65F, 0.65F);
+				GL11.glTranslatef(0.129F, -1.28F, -4F);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
 			} else if(model instanceof AK47iron) {
 				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -73,17 +73,17 @@ public class M1CarbineFactory implements GunFactory {
 				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof G36CIron1) {
-				GL11.glTranslatef(0.159F, -1.32F, 0.25F);
+				GL11.glTranslatef(0.159F, -1.3F, 0.15F);
 				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			} else if(model instanceof G36CIron2) {
 				GL11.glTranslatef(-0.205F, -1.9F, -4F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof ScarIron1) {
-					GL11.glTranslatef(0.177F, -1.65F, 1.4F);
-					GL11.glScaled(0F, 0F, 0F);
+				GL11.glTranslatef(0.177F, -1.65F, 1.4F);
+				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof ScarIron2) {
-					GL11.glTranslatef(0.25F, -1.55F, -2F);
-					GL11.glScaled(0F, 0F, 0F);
+				GL11.glTranslatef(0.25F, -1.55F, -2F);
+				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -148,7 +148,7 @@ public class M1CarbineFactory implements GunFactory {
 			)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0.103F, -0.39F, -0.1F);
+				GL11.glTranslatef(0.103F, -0.397F, -0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
@@ -201,9 +201,9 @@ public class M1CarbineFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.8F, 0.8F, 0.8F);
+				GL11.glScaled(1F, 1F, 1F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.5F, -1.2F);
+				GL11.glTranslatef(0.2F, -0.12F, -0.6F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -219,7 +219,7 @@ public class M1CarbineFactory implements GunFactory {
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(0f, -0.07f, 0.7f);
+						 GL11.glTranslatef(0f, 0.1f, 0.7f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
@@ -233,9 +233,10 @@ public class M1CarbineFactory implements GunFactory {
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(0f, -0.07f, 0.7f);
+						 GL11.glTranslatef(0f, 0.1f, 0.7f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+
 					 })
 					 
 			.withFirstPersonLeftHandPositioningReloading(

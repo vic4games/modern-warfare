@@ -174,8 +174,7 @@ public class M110Factory implements GunFactory {
 				GL11.glTranslatef(0.107F, -1.5F, -5F);
 				GL11.glScaled(1F, 1F, 1F);
 			})
-			.withTextureNames("M110", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-					"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+			.withTextureNames("M110", "Electric")
 			.withRenderer(new WeaponRenderer.Builder()
 				.withModId(ModernWarfareMod.MODID)
 				.withModel(new M110())
@@ -234,7 +233,7 @@ public class M110Factory implements GunFactory {
 				}, 250, 0)
 			)
 					
-					.withFirstPersonPositioningZooming((player, itemStack) -> {
+				.withFirstPersonPositioningZooming((player, itemStack) -> {
 					GL11.glTranslatef(0F, -0.3F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -252,7 +251,7 @@ public class M110Factory implements GunFactory {
 					// ACOG Zoom
 					if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 						//System.out.println("Position me for Acog");
-						GL11.glTranslatef(0.005F, 0.07f, 0.35f);
+						GL11.glTranslatef(0.005F, 0.07f, 0.3f);
 					} 
 					
 					// Scope Zoom
@@ -292,9 +291,9 @@ public class M110Factory implements GunFactory {
 				
 					})
 				.withFirstPersonPositioningRunning((player, itemStack) -> {
-					GL11.glScaled(0.7F, 0.7F, 0.7F);
+					GL11.glScaled(0.8F, 0.8F, 0.8F);
 					GL11.glRotatef(-20F, -4f, 1f, -2f);
-					GL11.glTranslatef(1F, -0.9F, -1.2F);
+					GL11.glTranslatef(0.5F, -0.35F, -1F);
 				 })
 				 .withFirstPersonPositioningModifying((player, itemStack) -> {
 					GL11.glScaled(0.55F, 0.55F, 0.55F);

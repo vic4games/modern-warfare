@@ -24,7 +24,7 @@ item.M9.name=M9-Beretta
 item.AR15.name=AR-15
 item.Deagle.name=Desert-Eagle
 item.L96.name=L96
-item.Dragonuv.name=SVD-Dragunov
+item.Dragunov.name=SVD-Dragunov
 item.Remington870.name=Remington-870
 item.P90.name=P90
 item.M16A4.name=M16A4
@@ -66,6 +66,7 @@ item.M110.name=M110
 item.M1014.name=M1014
 item.SPAS-12.name=SPAS-12
 item.SPAS-15.name=SPAS-15
+item.M1911.name=M1911
 
 item.mw_AK47Mag.name=30rnd Magazine
 item.mw_M9Mag.name=10rnd Magazine
@@ -96,6 +97,7 @@ item.mw_M1Mag.name=15rnd Magazine
 item.mw_MP40Mag.name=32rnd Magazine
 item.mw_M110Mag.name=10rnd Marksmen Magazine
 item.mw_SPAS15Mag.name=8 12G Shell Magazine
+item.mw_M1911Mag.name=10rnd Magazine
 
 item.mw_ACOG.name=Trigicon Acog Scope
 item.mw_Reflex.name=Sightmark Sure Shot Reflex

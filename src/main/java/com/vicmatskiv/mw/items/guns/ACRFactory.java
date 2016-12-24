@@ -48,8 +48,8 @@ public class ACRFactory implements GunFactory {
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("AR15")
-		.withSilencedShootSound("RifleSilencer")
+		.withShootSound("M4")
+		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -178,8 +178,7 @@ public class ACRFactory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.27F, -3.8F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("ACR", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("ACR", "ACRBlue", "ACRRed", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new ACR())
@@ -293,7 +292,7 @@ public class ACRFactory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(1F, -0.7f, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

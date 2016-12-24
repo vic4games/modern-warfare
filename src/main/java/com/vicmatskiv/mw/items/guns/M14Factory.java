@@ -38,7 +38,7 @@ public class M14Factory implements GunFactory {
 		.withName("M14")
 		.withAmmo(CommonProxy.M14Mag)
 		.withAmmoCapacity(20)
-		.withFireRate(0.16f)
+		.withFireRate(0.2f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
@@ -93,24 +93,6 @@ public class M14Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.43F, 0.6F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.2F);
-				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-				GL11.glTranslatef(0.055F, -1.43F, 0.6F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
 			GL11.glTranslatef(.135F, -0.7F, -2F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -119,9 +101,7 @@ public class M14Factory implements GunFactory {
 			GL11.glTranslatef(0.12F, -1.38F, -5.1F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("M14", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("M14", "M14Blue", "M14Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new M14())
@@ -180,7 +160,7 @@ public class M14Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -232,9 +212,9 @@ public class M14Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

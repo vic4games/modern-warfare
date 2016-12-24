@@ -1,31 +1,37 @@
 package com.vicmatskiv.mw.items.guns;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.G18;
+import com.vicmatskiv.mw.models.Holo2;
+import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.M1911;
+import com.vicmatskiv.mw.models.M9;
+import com.vicmatskiv.mw.models.Reflex;
+import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
-public class G18Factory implements GunFactory {
+public class M1911Factory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("Glock18")
-		.withAmmo(CommonProxy.G18Mag)
-		.withAmmoCapacity(20)
-		.withFireRate(0.8f)
-		.withRecoil(4f)
+		.withName("M1911")
+		.withAmmo(CommonProxy.M1911Mag)
+		.withAmmoCapacity(10)
+		.withFireRate(0.5f)
+		.withRecoil(5f)
 		.withZoom(0.9f)
-		//.withMaxShots(5)
-		.withShootSound("G18")
+		.withMaxShots(1)
+		.withShootSound("M1911")
 		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")
 		.withReloadingTime(50)
@@ -42,20 +48,15 @@ public class G18Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.6F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})*/
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(0.01F, -0.7F, -2F);
-			GL11.glScaled(1.1F, 1.1F, 1.1F);
-			GL11.glRotatef(-90F, 0f, 0f, -4f);
-		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(-0.25F, -1.15F, -4.61F);
+			GL11.glTranslatef(-0.25F, -1.16F, -4.92F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
-		.withTextureNames("G18", "G18Blue", "G18Red", "Electric")
+		.withTextureNames("M1911")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new G18())
-			//.withTextureName("G18")
+			.withModel(new M1911())
+			//.withTextureName("M9")
 			//.withWeaponProximity(0.99F)
 			//.withYOffsetZoom(5F)
 			.withEntityPositioning(itemStack -> {
@@ -64,7 +65,7 @@ public class G18Factory implements GunFactory {
 			})
 			.withInventoryPositioning(itemStack -> {
 				GL11.glScaled(0.35F, 0.35F, 0.35F);
-				GL11.glTranslatef(0f, 0.8f, 0);
+				GL11.glTranslatef(0, 0.8f, 0);
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
@@ -80,6 +81,15 @@ public class G18Factory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				})
+				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.4F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				GL11.glRotatef(-45F, 1f, 0f, 3f);
+				GL11.glTranslatef(0.4F, -1.7F, 0.6F);
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -111,12 +121,12 @@ public class G18Factory implements GunFactory {
 			) 
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(-0.2F, -0.3F, -0.4F);
+				GL11.glTranslatef(-0.155F, -0.32F, -0.36F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.31F, -1.34f, 1.5f);
+				GL11.glTranslatef(0.31F, -1.31f, 1.5f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 			/*	// ACOG Zoom
@@ -134,7 +144,7 @@ public class G18Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
+					GL11.glTranslatef(1.38F, -1.17f, 3.3f);
 				} 
 				
 				// Everything else
@@ -144,7 +154,6 @@ public class G18Factory implements GunFactory {
 				
 			
 				})
-				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glTranslatef(0.1F, -1.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -156,9 +165,9 @@ public class G18Factory implements GunFactory {
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				 GL11.glScaled(1.2F, 1.2F, 1.2F);
 					GL11.glRotatef(-35F, 2f, 1f, 1f);
-					GL11.glTranslatef(-1F, 0.1F, 0F);
+					GL11.glTranslatef(-1F, 0.1F, -0.2F);
 			 })
-			  .withFirstPersonHandPositioning(
+			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.6f, -0.1f, 0.4f);
@@ -229,8 +238,8 @@ public class G18Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
 			.build())
-		.withSpawnEntityDamage(5.5f)
-		.withSpawnEntityGravityVelocity(0.016f)
+		.withSpawnEntityDamage(9f)
+		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
 			if (WorldHelper.isGlassBlock(block)) {

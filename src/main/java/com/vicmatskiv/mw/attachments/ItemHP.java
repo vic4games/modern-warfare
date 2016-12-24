@@ -18,7 +18,7 @@ private static final float ZOOM_CHANGE_FACTOR = 0.2f;
 		(attachment, weapon, player) -> {
 			weapon.changeZoom(player, 1);
 		});
-		addModel(new HP(), "HP.png");
+		addModel(new HP(), "AK12.png");
 		addModel(new HP2(), "HP2.png");
 		
 		setMaxStackSize(1);

@@ -184,9 +184,7 @@ public class AN94Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.3F, -4.63F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AN94", "Red", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AN94", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AN94())
@@ -298,9 +296,9 @@ public class AN94Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -1F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -394,8 +392,4 @@ public class AN94Factory implements GunFactory {
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}
 
-	public static Block getBlockAtPosition(World world, MovingObjectPosition position) {
-		Block block = world.getBlockState(position.getBlockPos()).getBlock();
-		return block;
-	}
 }

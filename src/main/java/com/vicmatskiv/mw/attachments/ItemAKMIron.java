@@ -23,19 +23,19 @@ public class ItemAKMIron extends ItemAttachment<Weapon>
 	public ItemAKMIron() {
 		super(ModernWarfareMod.MODID, AttachmentCategory.SCOPE, "Sight");
 		
-		addModel(new AKMiron1(), "AKMIron1.png");
-		addModel(new AKMiron2(), "AKMiron2.png");
-		addModel(new AK47iron(), "AK47iron.png");
-		addModel(new M4Iron1(), "M4Iron1.png");
-		addModel(new M4Iron2(), "M4Iron2.png");
-		addModel(new P90iron(), "P90iron.png");
-		addModel(new G36CIron1(), "G36CIron1.png");
-		addModel(new G36CIron2(), "G36CIron2.png");
-		addModel(new ScarIron1(), "ScarIron1.png");
-		addModel(new ScarIron2(), "ScarIron2.png");
-		addModel(new FALIron(), "FALIron.png");
-		addModel(new M14Iron(), "M14Iron.png");
-		addModel(new MP5Iron(), "AK12.png");
+		addModel(new AKMiron1(), "GunmetalTexture.png");
+		addModel(new AKMiron2(), "GunmetalTexture.png");
+		addModel(new AK47iron(), "GunmetalTexture.png");
+		addModel(new M4Iron1(), "GunmetalTexture.png");
+		addModel(new M4Iron2(), "GunmetalTexture.png");
+		addModel(new P90iron(), "GunmetalTexture.png");
+		addModel(new G36CIron1(), "GunmetalTexture.png");
+		addModel(new G36CIron2(), "GunmetalTexture.png");
+		addModel(new ScarIron1(), "GunmetalTexture.png");
+		addModel(new ScarIron2(), "GunmetalTexture.png");
+		addModel(new FALIron(), "GunmetalTexture.png");
+		addModel(new M14Iron(), "GunmetalTexture.png");
+		addModel(new MP5Iron(), "GunmetalTexture.png");
 		
 		setMaxStackSize(1);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AKMIron"); 

@@ -323,11 +323,20 @@
       }
     ]
   },
-  "AR15silenced": {
+  "AR15Silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "AR15silenced",
+       "name": "AR15Silenced",
+       "stream": false
+      }
+    ]
+  },
+  "M1911": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M1911",
        "stream": false
       }
     ]

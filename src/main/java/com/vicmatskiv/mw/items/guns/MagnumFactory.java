@@ -39,8 +39,7 @@ public class MagnumFactory implements GunFactory {
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 			GL11.glRotatef(-90F, 0f, 0f, -4f);
 		})
-		.withTextureNames("Magnum", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-			"Cyan", "White", "Arctic")
+		.withTextureNames("Magnum", "MagnumGold")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new Magnum())
@@ -65,7 +64,7 @@ public class MagnumFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.4F, -0.5F, -0.8F);
+				GL11.glTranslatef(0.1F, -0.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
@@ -92,8 +91,8 @@ public class MagnumFactory implements GunFactory {
 				}, 250, 100)
 			) 
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.2F, -0.2F);
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
+				GL11.glTranslatef(-0.4F, -0.195F, -0.6F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 
@@ -127,9 +126,12 @@ public class MagnumFactory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.5F, -1.2F);
+				GL11.glTranslatef(0.1F, -1.5F, -1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-50F, 1f, 0f, 0f);
+				GL11.glRotatef(0F, 0f, 0f, 1f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				 GL11.glScaled(1.2F, 1.2F, 1.2F);
@@ -138,43 +140,42 @@ public class MagnumFactory implements GunFactory {
 			 })
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.6f, 1.6f, 3f);
-						 GL11.glTranslatef(0.6f, 0f, 0.4f);
+						 GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.6f, -0.1f, 0.4f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-40f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
-						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
+						 GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(2f, 2f, 2f);
-						 GL11.glTranslatef(1f, 0.3f, -0.4f);
-						 GL11.glRotatef(99f, 0, 0f, 1f);
-						 GL11.glRotatef(-20f, 1f, 0f, 0f);
-						 GL11.glRotatef(-30f, 0f, 1f, 0f);
+						 GL11.glScalef(1.6f, 1.6f, 1.6f);
+						 GL11.glTranslatef(1.5f, 0.1f, -0.2f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-10f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
-						 GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
+						 GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.1f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.6f, 1.6f, 3f);
+						GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
-						 GL11.glRotatef(-10f, 1f, 0f, 0f);
+						 GL11.glRotatef(-8f, 1f, 0f, 0f);
 						 GL11.glRotatef(70f, 0f, 1f, 0f);
 					}, 50, 100),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.6f, 1.6f, 3f);
+						GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
 						 GL11.glRotatef(-20f, 1f, 0f, 0f);
@@ -183,15 +184,15 @@ public class MagnumFactory implements GunFactory {
 					
 			.withFirstPersonRightHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
+						GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 100),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(2.1f, 2.1f, 2.1f);
-						 GL11.glTranslatef(-0.06f, 0.2f, 0.45f);
+						GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 200))

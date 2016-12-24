@@ -51,13 +51,13 @@ public class AR15Factory implements GunFactory {
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0f)
+		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	    .withCompatibleAttachment(CommonProxy.AR15Iron, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
@@ -201,8 +201,7 @@ public class AR15Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.5F, -3.9F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AR15", "AR15Blue", "AR15Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AR15())
@@ -272,7 +271,7 @@ public class AR15Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0f, -0.7f);
+					GL11.glTranslatef(0F, 0f, -0.2f);
 				} 
 				
 				// ACOG Zoom
@@ -290,7 +289,7 @@ public class AR15Factory implements GunFactory {
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, -0.2f);
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
 				} 
 				
 				// Reflex Zoom
@@ -320,9 +319,9 @@ public class AR15Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.3F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
