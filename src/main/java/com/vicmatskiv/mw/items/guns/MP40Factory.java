@@ -45,7 +45,7 @@ public class MP40Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0f)
+		.withFlashIntensity(0.5f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 	  .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof G36CIron1) {
@@ -190,7 +190,7 @@ public class MP40Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -231,9 +231,9 @@ public class MP40Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.7F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.3F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

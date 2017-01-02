@@ -51,15 +51,15 @@ public class AK47Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.52F, -3.05F);
-				GL11.glScaled(0.65F, 0.65F, 0.65F);
+				GL11.glTranslatef(0.14F, -1.49F, -3.04F);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
 			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.092F, -1.86F, -0.9F);
+				GL11.glTranslatef(0.092F, -1.84F, -0.85F);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 			} else if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.155F, -1.74F, 1F);
@@ -93,9 +93,7 @@ public class AK47Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withTextureNames("AK47", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AK47", "AK47Blue", "AK47Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AK47())
@@ -173,8 +171,18 @@ public class AK47Factory implements GunFactory {
 				}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glTranslatef(-0.1F, -0.5F, 0.6F);
+					GL11.glRotatef(50F, 0f, 1f, 0f);
+					GL11.glRotatef(50F, 0f, 0f, 1f);
+					GL11.glRotatef(-10F, 1f, 0f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 0),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.1F, -0.5F, 0.6F);
+					GL11.glRotatef(50F, 0f, 1f, 0f);
+					GL11.glRotatef(50F, 0f, 0f, 1f);
+					GL11.glRotatef(-10F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 0)
@@ -232,9 +240,9 @@ public class AK47Factory implements GunFactory {
 			})
 			
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
@@ -293,7 +301,14 @@ public class AK47Factory implements GunFactory {
 						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
-					}, 250, 0))
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+					}, 250, 0)
+					)
 					
 			.withFirstPersonRightHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
@@ -312,9 +327,16 @@ public class AK47Factory implements GunFactory {
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.4f, -0.2f, 0.6f);
+						 GL11.glTranslatef(-0.17f, -0.25f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+						 GL11.glRotatef(-105f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.23f, -0.25f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-120f, 1f, 0f, 0f);
+						 GL11.glRotatef(10f, 0f, 1f, 0f);
 					}, 250, 0))
 			 
 //			 .withFirstPersonHandPositioningZooming((player,  itemStack) -> {

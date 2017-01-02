@@ -50,7 +50,7 @@ public class AUGFactory implements GunFactory {
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -166,9 +166,7 @@ public class AUGFactory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.35F, -2.7F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AUG", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AUG", "AUGBlue", "AUGRed", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AUG())
@@ -281,9 +279,9 @@ public class AUGFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.6F, -0.35F, -1.5F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.45F, 0.45F, 0.45F);

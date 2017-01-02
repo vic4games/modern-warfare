@@ -21,7 +21,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.5.1"
+version = "1.6"
 group= "com.vicmatskiv.mw" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "mw"
 
@@ -77,6 +77,7 @@ processResources
 
 jar {
     //baseName = project.name + '-all'
+    archiveName = "${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
     from { 
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
     } {

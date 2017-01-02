@@ -124,22 +124,11 @@ public class AK74UFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
-			if(model instanceof Kobra) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.675F, -0.45F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
-		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
 			GL11.glTranslatef(0.107F, -1.27F, -3.7F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AKS74U", "Red", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AKS74U", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AKS74U())
@@ -251,10 +240,11 @@ public class AK74UFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -1F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.3F, -1F);
 			 })
+			 
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);

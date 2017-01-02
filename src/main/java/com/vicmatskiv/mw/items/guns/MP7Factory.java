@@ -25,7 +25,7 @@ public class MP7Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("MP7")
+		.withName("HK MP7")
 		.withAmmo(CommonProxy.MP7Mag)
 		.withAmmoCapacity(20)
 		.withFireRate(0.61f)
@@ -39,7 +39,7 @@ public class MP7Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0f)
+		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
@@ -89,9 +89,7 @@ public class MP7Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.26F, -2.6F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO4", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("GunmetalTexture", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new MP7())
@@ -150,7 +148,7 @@ public class MP7Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.2F, -0.285F, -0.4F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -194,7 +192,7 @@ public class MP7Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.7F, -1.2F);
+				GL11.glTranslatef(1F, -0.65F, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

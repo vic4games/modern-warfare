@@ -53,7 +53,7 @@ public class AS50Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -95,6 +95,7 @@ public class AS50Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
+			
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
 			GL11.glTranslatef(0.033F, -1.8F, 0.5F);
@@ -138,9 +139,7 @@ public class AS50Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.5F, -5.8F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AS50", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-		"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-		"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("AS50", "AS50Blue", "AS50Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AS50())
@@ -210,7 +209,7 @@ public class AS50Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.21f, 0.5f);
+					GL11.glTranslatef(0F, 0.21f, 0.1f);
 				}  
 				
 				// Scope Zoom
@@ -241,9 +240,9 @@ public class AS50Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.25F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

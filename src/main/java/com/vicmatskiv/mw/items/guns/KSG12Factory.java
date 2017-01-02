@@ -42,7 +42,7 @@ public class KSG12Factory implements GunFactory {
 		.withShootSound("KSG12")
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("KSG12Reload")
-		.withReloadingTime(130)
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
@@ -174,9 +174,7 @@ public class KSG12Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.4F, -4.63F);
 			GL11.glScaled(1F, 1F, 1F);
 		})*/
-		.withTextureNames("AK12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-		"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-		"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("GunmetalTexture", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new KSG12())
@@ -269,7 +267,7 @@ public class KSG12Factory implements GunFactory {
 				}, 250, 50)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -321,9 +319,9 @@ public class KSG12Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

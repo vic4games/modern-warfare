@@ -150,9 +150,7 @@ public class FamasG2Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.35F, -3F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("Famas", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO4", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("Famas", "FamasBlue", "FamasRed", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new Famas())
@@ -222,7 +220,7 @@ public class FamasG2Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.285f, 0.35f);
+					GL11.glTranslatef(0.005F, 0.285f, 0.3f);
 				} 
 				
 				// Scope Zoom
@@ -259,9 +257,9 @@ public class FamasG2Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.6F, -0.35F, -1.5F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

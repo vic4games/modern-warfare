@@ -130,9 +130,7 @@ public class M107Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.48F, -5.8F);
 			GL11.glScaled(1.3F, 1.3F, 1.3F);
 		})
-		.withTextureNames("M107", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-		"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-		"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("M107", "M107Blue", "M107Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new M107())
@@ -191,7 +189,7 @@ public class M107Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0.3F, -0.26F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -203,7 +201,7 @@ public class M107Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(-0.005F, 0.22f, 1.3f);
+					GL11.glTranslatef(-0.005F, 0.09f, 0.4f);
 				}  
 				
 				// Scope Zoom
@@ -232,9 +230,9 @@ public class M107Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.8F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

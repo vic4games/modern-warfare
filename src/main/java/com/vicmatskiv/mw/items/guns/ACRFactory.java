@@ -49,7 +49,7 @@ public class ACRFactory implements GunFactory {
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -57,6 +57,48 @@ public class ACRFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+			if(model instanceof ScarIron1) {
+				GL11.glTranslatef(0.165F, -1.65F, 1F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof ScarIron2) {
+				GL11.glTranslatef(0.24F, -1.56F, -1.7F);
+				GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof AKMiron1) {
+				GL11.glTranslatef(0.14F, -1.566F, 0.3F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AKMiron2) {
+				GL11.glTranslatef(0.13F, -1.39F, -2.8F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AK47iron) {
+				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof M4Iron1) {
+				GL11.glTranslatef(0.166F, -1.66F, 1F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof M4Iron2) {
+				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof P90iron) {
+				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof G36CIron1) {
+				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof G36CIron2) {
+				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof FALIron) {
+				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof M14Iron) {
+				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0F, 0F, 0F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof ScarIron1) {
 				GL11.glTranslatef(0.165F, -1.65F, 1F);
@@ -134,20 +176,20 @@ public class ACRFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
-			GL11.glTranslatef(.27F, -1.45F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			GL11.glTranslatef(.27F, -1.48F, 0.3F);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.67F, -0.4F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
+				GL11.glTranslatef(0.18F, -1.72F, -0.3F);
+				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
 			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.48F, 0.21F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			GL11.glTranslatef(.28F, -1.47F, 0.2F);
+			GL11.glScaled(0.65F, 0.65F, 0.65F);
 			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.71F, 0.3F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
+				GL11.glTranslatef(0.202F, -1.78F, 0.35F);
+				GL11.glScaled(0.08F, 0.08F, 0.08F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
@@ -178,8 +220,7 @@ public class ACRFactory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.27F, -3.8F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("ACR", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "Cyrex", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("ACR", "ACRBlue", "ACRRed", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new ACR())
@@ -274,13 +315,13 @@ public class ACRFactory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.02f, 0.4f);
+					GL11.glTranslatef(0F, 0.1f, 0.4f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.369F, -1.32f, 2.8f);
+					GL11.glTranslatef(1.369F, -1.2f, 2.8f);
 				} 
 				
 				// Everything else
@@ -293,7 +334,7 @@ public class ACRFactory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(1F, -0.7f, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

@@ -38,17 +38,17 @@ public class PX90Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("P90")
+		.withName("FN P90")
 		.withAmmo(CommonProxy.PX90Mag)
 		.withAmmoCapacity(50)
-		.withFireRate(0.75f)
+		.withFireRate(0.75f)  
 		.withRecoil(3.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("P90")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("P90Reload")
-		.withReloadingTime(30)
+		.withReloadingTime(70)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
@@ -144,9 +144,7 @@ public class PX90Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.2F, -2.14F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("P90", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("P90", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new P90())
@@ -202,8 +200,8 @@ public class PX90Factory implements GunFactory {
 				}, 250, 20)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(-0.2F, -0.3F, -0.3F);
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
+				GL11.glTranslatef(-0.3F, -0.3F, -0.4F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
@@ -250,7 +248,7 @@ public class PX90Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.8F, -1.2F);
+				GL11.glTranslatef(1F, -0.75F, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

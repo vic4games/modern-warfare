@@ -28,8 +28,8 @@ public class SPAS12Factory implements GunFactory {
 		.withPumpTimeout(1100)
 		.withShootSound("M1014")
 		//.withSilencedShootSound("AR15silenced")
-		.withReloadSound("SPAS12Reload")
-		.withReloadingTime(130)
+		.withReloadSound("KSG12Reload")
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
@@ -37,9 +37,7 @@ public class SPAS12Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withTextureNames("SPAS12", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("SPAS12", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new SPAS12())
@@ -162,7 +160,7 @@ public class SPAS12Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.5F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);

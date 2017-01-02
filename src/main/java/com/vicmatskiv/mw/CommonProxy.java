@@ -1,9 +1,17 @@
 package com.vicmatskiv.mw;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+
 import com.vicmatskiv.mw.attachments.ItemACOG;
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
 import com.vicmatskiv.mw.attachments.ItemAR15Iron;
 import com.vicmatskiv.mw.attachments.ItemBipod;
+import com.vicmatskiv.mw.attachments.ItemExtra;
 import com.vicmatskiv.mw.attachments.ItemGrip;
 import com.vicmatskiv.mw.attachments.ItemGrip2;
 import com.vicmatskiv.mw.attachments.ItemHP;
@@ -36,7 +44,6 @@ import com.vicmatskiv.mw.items.ItemG21Mag;
 import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemG36Mag;
 import com.vicmatskiv.mw.items.ItemGrenades;
-import com.vicmatskiv.mw.items.ItemGunmetalMiniPlate;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM110Mag;
@@ -74,7 +81,6 @@ import com.vicmatskiv.mw.items.guns.G18Factory;
 import com.vicmatskiv.mw.items.guns.G21Factory;
 import com.vicmatskiv.mw.items.guns.G36CFactory;
 import com.vicmatskiv.mw.items.guns.G36Factory;
-import com.vicmatskiv.mw.items.guns.GrenadeLauncherFactory;
 import com.vicmatskiv.mw.items.guns.HK416CFactory;
 import com.vicmatskiv.mw.items.guns.KSG12Factory;
 import com.vicmatskiv.mw.items.guns.M1014Factory;
@@ -139,8 +145,6 @@ import com.vicmatskiv.mw.resources.ItemCloth;
 import com.vicmatskiv.mw.resources.ItemCopperIngot;
 import com.vicmatskiv.mw.resources.ItemElectronics;
 import com.vicmatskiv.mw.resources.ItemGreenCloth;
-import com.vicmatskiv.mw.resources.ItemGunmetalIngot;
-import com.vicmatskiv.mw.resources.ItemGunmetalPlate;
 import com.vicmatskiv.mw.resources.ItemLeadIngot;
 import com.vicmatskiv.mw.resources.ItemMiniSteelPlate;
 import com.vicmatskiv.mw.resources.ItemOpticGlass;
@@ -164,12 +168,6 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -209,6 +207,7 @@ public class CommonProxy {
 
 	public static ItemAttachment<Weapon> AKMIron;
 	public static ItemAttachment<Weapon> AR15Iron;
+	public static ItemAttachment<Weapon> Extra;
 
 	public static Item AK47;
 	public static Item AKM;
@@ -243,12 +242,12 @@ public class CommonProxy {
 	public static Item XWP;
 	public static Item Dragonuv;
 	public static Item M107;
-	public static Item GrenadeLauncher;
+	//public static Item GrenadeLauncher;
 	public static Item Remington870;
 	public static Item KSG12;
 	public static Item M1014;
 	public static Item SPAS12;
-	public static Item SPAS15;
+	//public static Item SPAS15;
 	public static Item M240;
 	public static Item M249;
 	public static Item RPK74M;
@@ -278,19 +277,18 @@ public class CommonProxy {
 	public static ItemAmmo MagnumAmmo;
 	public static ItemAmmo FNFALMag;
 	public static ItemAmmo M14Mag;
-	public static ItemAmmo Grenades;
+	//public static ItemAmmo Grenades;
 	public static ItemAmmo M249Mag;
 	public static ItemAmmo FamasMag;
 	public static ItemAmmo G21Mag;
 	public static ItemAmmo M107Mag;
-	public static ItemAmmo G36Mag;
 	public static ItemAmmo RPK74MMag;
 	public static ItemAmmo DrumMag;
 	public static ItemAmmo ScarHMag;
 	public static ItemAmmo M1Mag;
 	public static ItemAmmo MP40Mag;
 	public static ItemAmmo M110Mag;
-	public static ItemAmmo SPAS15Mag;
+	//public static ItemAmmo SPAS15Mag;
 	public static ItemAmmo M1911Mag;
 	//public static ItemAmmo GaussMag;
 	//public static ItemAmmo RPGAmmo;
@@ -457,19 +455,18 @@ public class CommonProxy {
 		MagnumAmmo = new ItemMagnumAmmo();
 		FNFALMag = new ItemFNFALMag();
 		M14Mag = new ItemM14Mag();
-		Grenades = new ItemGrenades();
+		//Grenades = new ItemGrenades();
 		M249Mag = new ItemM249Mag();
 		FamasMag = new ItemFamasMag();
 		G21Mag = new ItemG21Mag();
 		M107Mag = new ItemM107Mag();
-		G36Mag = new ItemG36Mag();
 		RPK74MMag = new ItemRPK74MMag();
 		DrumMag = new ItemDrumMag();
 		ScarHMag = new ItemScarHMag();
 		M1Mag = new ItemM1Mag();
 		MP40Mag = new ItemMP40Mag();
 		M110Mag = new ItemM110Mag();
-		SPAS15Mag = new ItemSPAS15Mag();
+		//SPAS15Mag = new ItemSPAS15Mag();
 		M1911Mag = new ItemM1911Mag();
 		//GaussMag = new ItemGaussMag();
 	//	RPGAmmo = new ItemRPGAmmo();
@@ -490,6 +487,7 @@ public class CommonProxy {
 
 		AKMIron = new ItemAKMIron();
 		AR15Iron = new ItemAR15Iron();
+		Extra = new ItemExtra();
 
 		AK47 = new AK47Factory().createGun(this);
 		AKM = new AKMFactory().createGun(this);
@@ -518,7 +516,7 @@ public class CommonProxy {
 		KSG12 = new KSG12Factory().createGun(this);
 		M1014 = new M1014Factory().createGun(this);
 		SPAS12 = new SPAS12Factory().createGun(this);
-		SPAS15 = new SPAS15Factory().createGun(this);
+		//SPAS15 = new SPAS15Factory().createGun(this);
 		G36 = new G36Factory().createGun(this);
 		G36C = new G36CFactory().createGun(this);
 		AUG = new AUGFactory().createGun(this);
@@ -539,7 +537,7 @@ public class CommonProxy {
 		M249 = new M249Factory().createGun(this);
 		MG36 = new MG36Factory().createGun(this);
 		RPK74M = new RPK74MFactory().createGun(this);
-		GrenadeLauncher = new GrenadeLauncherFactory().createGun(this);
+		//GrenadeLauncher = new GrenadeLauncherFactory().createGun(this);
 		//GaussRifle = new GaussRifleFactory().createGun(this);
 	//	RPG = new RPGFactory().createGun(this);
 		
@@ -597,19 +595,18 @@ public class CommonProxy {
 		GameRegistry.registerItem(MagnumAmmo, "MagnumAmmo");
 		GameRegistry.registerItem(FNFALMag, "FNFALMag");
 		GameRegistry.registerItem(M14Mag, "M14Mag");
-		GameRegistry.registerItem(Grenades, "Grenades");
+		//GameRegistry.registerItem(Grenades, "Grenades");
 		GameRegistry.registerItem(M249Mag, "M249Mag");
 		GameRegistry.registerItem(FamasMag, "FamasMag");
 		GameRegistry.registerItem(G21Mag, "G21Mag");
 		GameRegistry.registerItem(M107Mag, "M107Mag");
-		GameRegistry.registerItem(G36Mag, "G36Mag");
 		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
 		GameRegistry.registerItem(DrumMag, "DrumMag");
 		GameRegistry.registerItem(ScarHMag, "ScarHMag");
 		GameRegistry.registerItem(M1Mag, "M1Mag");
 		GameRegistry.registerItem(MP40Mag, "MP40Mag");
 		GameRegistry.registerItem(M110Mag, "M110Mag");
-		GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
+		//GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
 		GameRegistry.registerItem(M1911Mag, "M1911Mag");
 	//	GameRegistry.registerItem(GaussMag, "GaussMag");
 	//	GameRegistry.registerItem(RPGAmmo, "RPGAmmo");
@@ -630,6 +627,7 @@ public class CommonProxy {
 
 		GameRegistry.registerItem(AKMIron, "AKMIron");
 		GameRegistry.registerItem(AR15Iron, "AR15Iron");
+		GameRegistry.registerItem(Extra, "Extra");
 
 		GameRegistry.registerItem(Bullets, "Bullets");
 		GameRegistry.registerItem(Electronics, "Electronics");
@@ -742,15 +740,15 @@ public class CommonProxy {
 		Swatchest = swatArmorBuilder.buildChest(isClient());
 		Swatboots = swatArmorBuilder.buildBoots(isClient());
 		
-		Builder gasswatArmorBuilder = new CustomArmor.Builder()
-		.withModId(ModernWarfareMod.MODID).withMaterial(Marine)
-		.withUnlocalizedName("GasSwat").withTextureName("GasSwat")
-		.withModelClass("com.vicmatskiv.mw.models.GasSwat")
-		.withHudTextureName("Marine");
+		//Builder gasswatArmorBuilder = new CustomArmor.Builder()
+		//.withModId(ModernWarfareMod.MODID).withMaterial(Marine)
+		//.withUnlocalizedName("GasSwat").withTextureName("GasSwat")
+		//.withModelClass("com.vicmatskiv.mw.models.GasSwat")
+		//.withHudTextureName("Marine");
 
-		GasSwathelmet = gasswatArmorBuilder.buildHelmet(isClient());
-		GasSwatchest = gasswatArmorBuilder.buildChest(isClient());
-		GasSwatboots = gasswatArmorBuilder.buildBoots(isClient());
+		//GasSwathelmet = gasswatArmorBuilder.buildHelmet(isClient());
+		//GasSwatchest = gasswatArmorBuilder.buildChest(isClient());
+		//GasSwatboots = gasswatArmorBuilder.buildBoots(isClient());
 
 		new CustomArmor.Builder().withModId(ModernWarfareMod.MODID)
 				.withMaterial(Tactical).withUnlocalizedName("Tactical")
