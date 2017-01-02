@@ -10,7 +10,7 @@ public class BlockZincOre extends Block {
 
 	public BlockZincOre() {
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "ZincOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "ZincOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "ZincOre");
 		setHardness(6F);
 		setResistance(600000F);

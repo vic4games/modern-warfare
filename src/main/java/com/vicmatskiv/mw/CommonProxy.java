@@ -161,6 +161,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -567,134 +568,133 @@ public class CommonProxy {
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
 
+		registerItem(AK47Mag);
+		registerItem(G18Mag);
+		registerItem(M9Mag);
+		registerItem(AR15Mag);
+		registerItem(XWPMag);
+		registerItem(DragonuvMag);
+		registerItem(Remington870Mag);
+		registerItem(PX90Mag);
+		registerItem(G36CMag);
+		registerItem(ScarMag);
+		registerItem(MP5Mag);
+		registerItem(AK74UMag);
+		registerItem(MP7Mag);
+		registerItem(MagnumAmmo);
+		registerItem(FNFALMag);
+		registerItem(M14Mag);
+		registerItem(Grenades);
+		registerItem(M249Mag);
+		registerItem(FamasMag);
+		registerItem(G21Mag);
+		registerItem(M107Mag);
+		registerItem(G36Mag);
+		registerItem(RPK74MMag);
+		registerItem(DrumMag);
+		registerItem(ScarHMag);
+		registerItem(M1Mag);
+		registerItem(MP40Mag);
+		registerItem(M110Mag);
+		registerItem(SPAS15Mag);
+	//	registerItem(GaussMag);
+	//	registerItem(RPGAmmo);
 
-		GameRegistry.registerItem(AK47Mag, "AK47Mag");
-		GameRegistry.registerItem(G18Mag, "G18Mag");
-		GameRegistry.registerItem(M9Mag, "M9Mag");
-		GameRegistry.registerItem(AR15Mag, "AR15Mag");
-		GameRegistry.registerItem(XWPMag, "XWPMag");
-		GameRegistry.registerItem(DragonuvMag, "DragonuvMag");
-		GameRegistry.registerItem(Remington870Mag, "Remington870Mag");
-		GameRegistry.registerItem(PX90Mag, "PX90Mag");
-		GameRegistry.registerItem(G36CMag, "G36CMag");
-		GameRegistry.registerItem(ScarMag, "ScarMag");
-		GameRegistry.registerItem(MP5Mag, "MP5Mag");
-		GameRegistry.registerItem(AK74UMag, "AK74UMag");
-		GameRegistry.registerItem(MP7Mag, "MP7Mag");
-		GameRegistry.registerItem(MagnumAmmo, "MagnumAmmo");
-		GameRegistry.registerItem(FNFALMag, "FNFALMag");
-		GameRegistry.registerItem(M14Mag, "M14Mag");
-		GameRegistry.registerItem(Grenades, "Grenades");
-		GameRegistry.registerItem(M249Mag, "M249Mag");
-		GameRegistry.registerItem(FamasMag, "FamasMag");
-		GameRegistry.registerItem(G21Mag, "G21Mag");
-		GameRegistry.registerItem(M107Mag, "M107Mag");
-		GameRegistry.registerItem(G36Mag, "G36Mag");
-		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
-		GameRegistry.registerItem(DrumMag, "DrumMag");
-		GameRegistry.registerItem(ScarHMag, "ScarHMag");
-		GameRegistry.registerItem(M1Mag, "M1Mag");
-		GameRegistry.registerItem(MP40Mag, "MP40Mag");
-		GameRegistry.registerItem(M110Mag, "M110Mag");
-		GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
-	//	GameRegistry.registerItem(GaussMag, "GaussMag");
-	//	GameRegistry.registerItem(RPGAmmo, "RPGAmmo");
+		registerItem(ACOG);
+		registerItem(Reflex);
+		registerItem(Scope);
+		registerItem(Silencer);
+		registerItem(Laser);
+		registerItem(HP);
+		registerItem(Holo2);
+		registerItem(Grip2);
+		registerItem(Bipod);
+		registerItem(Laser2);
+		registerItem(Grip);
+		registerItem(VGrip);
+		registerItem(Kobra);
 
-		GameRegistry.registerItem(ACOG, "ACOG");
-		GameRegistry.registerItem(Reflex, "Reflex");
-		GameRegistry.registerItem(Scope, "LP");
-		GameRegistry.registerItem(Silencer, "Silencer");
-		GameRegistry.registerItem(Laser, "Laser");
-		GameRegistry.registerItem(HP, "HP");
-		GameRegistry.registerItem(Holo2, "Holo2");
-		GameRegistry.registerItem(Grip2, "Grip2");
-		GameRegistry.registerItem(Bipod, "Bipod");
-		GameRegistry.registerItem(Laser2, "Laser2");
-		GameRegistry.registerItem(Grip, "Grip");
-		GameRegistry.registerItem(VGrip, "VGrip");
-		GameRegistry.registerItem(Kobra, "Kobra");
+		registerItem(AKMIron);
+		registerItem(AR15Iron);
 
-		GameRegistry.registerItem(AKMIron, "AKMIron");
-		GameRegistry.registerItem(AR15Iron, "AR15Iron");
+		registerItem(Bullets);
+		registerItem(Electronics);
+		registerItem(CGrip);
+		registerItem(OpticGlass);
+		registerItem(Cloth);
+		registerItem(TanCloth);
+		registerItem(GreenCloth);
 
-		GameRegistry.registerItem(Bullets, "Bullets");
-		GameRegistry.registerItem(Electronics, "Electronics");
-		GameRegistry.registerItem(CGrip, "CGrip");
-		GameRegistry.registerItem(OpticGlass, "OpticGlass");
-		GameRegistry.registerItem(Cloth, "Cloth");
-		GameRegistry.registerItem(TanCloth, "TanCloth");
-		GameRegistry.registerItem(GreenCloth, "GreenCloth");
+		registerBlockWithItem(TitaniumOre); //, "TitaniumOre");
+		registerItem(TitaniumIngot);
 
-		GameRegistry.register(TitaniumOre); //, "TitaniumOre");
-		GameRegistry.registerItem(TitaniumIngot, "TitaniumIngot");
+		registerBlockWithItem(LeadOre); //, "LeadOre");
+		registerItem(LeadIngot);
 
-		GameRegistry.register(LeadOre); //, "LeadOre");
-		GameRegistry.registerItem(LeadIngot, "LeadIngot");
+		registerBlockWithItem(CopperOre);
+		registerItem(CopperIngot);
 
-		GameRegistry.register(CopperOre); //, "CopperOre");
-		GameRegistry.registerItem(CopperIngot, "CopperIngot");
+		registerBlockWithItem(TinOre);
+		registerItem(TinIngot);
 
-		GameRegistry.register(TinOre); //, "TinOre");
-		GameRegistry.registerItem(TinIngot, "TinIngot");
-
-		GameRegistry.register(SulfurOre); //, "SulfurOre");
-		GameRegistry.registerItem(SulfurDust, "SulfurDust");
+		registerBlockWithItem(SulfurOre);
+		registerItem(SulfurDust);
 		
-		GameRegistry.register(BauxiteOre); //, "BauxiteOre");
-		GameRegistry.registerItem(AluminumIngot, "AluminumIngot");
-		GameRegistry.registerItem(AluminumPlate, "AluminumPlate");
+		registerBlockWithItem(BauxiteOre);
+		registerItem(AluminumIngot);
+		registerItem(AluminumPlate);
 		
-		GameRegistry.register(SiliconOre); //, "SiliconOre");
-		GameRegistry.registerItem(Silicon, "Silicon");
+		registerBlockWithItem(SiliconOre);
+		registerItem(Silicon);
 		
-		GameRegistry.register(TantalumOre); //, "TantalumOre");
-		GameRegistry.registerItem(TantalumIngot, "TantalumIngot");
+		registerBlockWithItem(TantalumOre);
+		registerItem(TantalumIngot);
 		
-		GameRegistry.register(RubyOre); //, "RubyOre");
-		GameRegistry.registerItem(Ruby, "Ruby");
+		registerBlockWithItem(RubyOre);
+		registerItem(Ruby);
 		
-		GameRegistry.registerItem(SteelDust, "SteelDust");
-		GameRegistry.registerItem(SteelIngot, "SteelIngot");
-		GameRegistry.registerItem(SteelPlate, "SteelPlate");
-		GameRegistry.registerItem(MiniSteelPlate, "MiniSteelPlate");
+		registerItem(SteelDust);
+		registerItem(SteelIngot);
+		registerItem(SteelPlate);
+		registerItem(MiniSteelPlate);
 		
-		GameRegistry.registerItem(WeaponStock, "WeaponStock");
-		GameRegistry.registerItem(RetractableStock, "RetractableStock");
-		GameRegistry.registerItem(SecondaryStock, "SecondaryStock");
-		GameRegistry.registerItem(WoodWeaponStock, "WoodWeaponStock");
-		GameRegistry.registerItem(WoodRifleStock, "WoodRifleStock");
+		registerItem(WeaponStock);
+		registerItem(RetractableStock);
+		registerItem(SecondaryStock);
+		registerItem(WoodWeaponStock);
+		registerItem(WoodRifleStock);
 		
-		GameRegistry.registerItem(WeaponReceiver, "WeaponReceiver");
-		GameRegistry.registerItem(SMGReceiver, "SMGReceiver");
-		GameRegistry.registerItem(UnderReceiver, "UnderReceiver");
-		GameRegistry.registerItem(RifleReceiver, "RifleReceiver");
-		GameRegistry.registerItem(PistolUnderReceiver, "PistolUnderReceiver");
-		GameRegistry.registerItem(P90Receiver, "P90Receiver");
+		registerItem(WeaponReceiver);
+		registerItem(SMGReceiver);
+		registerItem(UnderReceiver);
+		registerItem(RifleReceiver);
+		registerItem(PistolUnderReceiver);
+		registerItem(P90Receiver);
 		
-		GameRegistry.registerItem(RevolverAction, "RevolverAction");
-		GameRegistry.registerItem(RevolverGrip, "RevolverGrip");
-		GameRegistry.registerItem(RevolverReceiver, "RevolverReceiver");
+		registerItem(RevolverAction);
+		registerItem(RevolverGrip);
+		registerItem(RevolverReceiver);
 		
-		GameRegistry.registerItem(ShotgunReceiver, "ShotgunReceiver");
-		GameRegistry.registerItem(ShotgunGrip, "ShotgunGrip");
+		registerItem(ShotgunReceiver);
+		registerItem(ShotgunGrip);
 		
-		GameRegistry.registerItem(ScarReceiver, "ScarReceiver");
+		registerItem(ScarReceiver);
 		
-		GameRegistry.registerItem(DeagleReceiver, "DeagleReceiver");
+		registerItem(DeagleReceiver);
 		
-		GameRegistry.registerItem(LMGReceiver, "LMGReceiver");
+		registerItem(LMGReceiver);
 		
-		GameRegistry.registerItem(Transistor, "Transistor");
-		GameRegistry.registerItem(Resistor, "Resistor");
-		GameRegistry.registerItem(Inductor, "Inductor");
-		GameRegistry.registerItem(Diode, "Diode");
-		GameRegistry.registerItem(Capacitor, "Capacitor");
-		GameRegistry.registerItem(CopperWiring, "CopperWiring");
-		GameRegistry.registerItem(Piston, "Piston");
-		GameRegistry.registerItem(LaserPointer, "LaserPointer");
+		registerItem(Transistor);
+		registerItem(Resistor);
+		registerItem(Inductor);
+		registerItem(Diode);
+		registerItem(Capacitor);
+		registerItem(CopperWiring);
+		registerItem(Piston);
+		registerItem(LaserPointer);
 		
-		GameRegistry.registerItem(Barrel, "Barrel");
-		GameRegistry.registerItem(Plastic, "Plastic");
+		registerItem(Barrel);
+		registerItem(Plastic);
 		
 		OreDictionary.registerOre("ingotTitanium", TitaniumIngot);
 		OreDictionary.registerOre("ingotLead", LeadIngot);
@@ -753,6 +753,35 @@ public class CommonProxy {
 				.withModelClass("com.vicmatskiv.mw.models.Tactical")
 				.withHudTextureName("Tactical").build(isClient());
 
+	}
+	
+	private static void registerBlockWithItem(Block block) {
+		if(block.getRegistryName() == null) {
+			if(block.getUnlocalizedName().length() < ModernWarfareMod.MODID.length() + 2 + 5) {
+				throw new IllegalArgumentException("Unlocalize block name too short " + block.getUnlocalizedName());
+			}
+			String unlocalizedName = block.getUnlocalizedName();
+			String registryName = unlocalizedName.substring(5 + ModernWarfareMod.MODID.length() + 1);
+			System.out.println("Registering block " + block + " under " + registryName);
+			block.setRegistryName(ModernWarfareMod.MODID, registryName);
+		}
+		
+		GameRegistry.register(block);
+		ItemBlock itemBlock = new ItemBlock(block);
+		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
+	}
+
+	private static void registerItem(Item item) {
+		if(item.getRegistryName() == null) {
+			String registryName = item.getUnlocalizedName();
+			int indexOfPrefix = registryName.indexOf("." + ModernWarfareMod.MODID);
+			if(indexOfPrefix > 0) {
+				registryName = registryName.substring(indexOfPrefix + ModernWarfareMod.MODID.length() + 2);
+			}
+			item.setRegistryName(ModernWarfareMod.MODID, registryName);
+			System.out.println("Registering item " + item + " under " + registryName);
+		}
+		GameRegistry.register(item);
 	}
 
 }

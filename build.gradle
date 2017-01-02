@@ -1,3 +1,4 @@
+
 // For those who want the bleeding edge
 buildscript {
     repositories {
@@ -6,13 +7,9 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        flatDir dirs: '/Users/victor-jr/Development/proguard5.2.1/lib'
-        flatDir dirs: '/Users/victor-jr/Development/weaponlib-1.8.9/build/libs'
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-        classpath ':proguard:'
-        classpath ':weaponlib:1.0'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
@@ -23,15 +20,12 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.6"
-group= "com.vicmatskiv.mw" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "mw"
-
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+version = "1.0"
+group= "com.yourname.modid" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "modid"
 
 minecraft {
-    version = "1.8.9-11.15.1.1902-1.8.9"
+    version = "1.9.4-12.17.0.2051"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -39,7 +33,7 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "stable_20"
+    mappings = "snapshot_20160518"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
@@ -48,8 +42,6 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-    
-    compile files('/Users/victor-jr/Development/weaponlib-1.8.9/build/libs/weaponlib-1.0.jar')
       
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
@@ -88,22 +80,3 @@ processResources
         exclude 'mcmod.info'
     }
 }
-
-jar {
-    //baseName = project.name + '-all'
-    from { 
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
-    } {
-        include "com/vicmatskiv/weaponlib/**"
-    }
-    //with jar
-}
-
-
-task obfuscate(type: proguard.gradle.ProGuardTask) {
-  configuration 'proguard.cfg'
-  
-  injars "./build/libs/${archivesBaseName}-${version}.jar"
-  
-  outjars "./build/libs/${archivesBaseName}-${version}-${project.minecraft.version}.jar"
-} 

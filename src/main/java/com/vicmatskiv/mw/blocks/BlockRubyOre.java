@@ -15,7 +15,7 @@ public class BlockRubyOre extends Block {
 	public BlockRubyOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "RubyOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "RubyOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RubyOre");
 		setHardness(6F);
 		setResistance(600000F);

@@ -17,7 +17,7 @@ public class BlockSulfurOre extends Block
 	public BlockSulfurOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "SulfurOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "SulfurOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SulfurOre");
 		setHardness(4F);
 		setResistance(600000F);

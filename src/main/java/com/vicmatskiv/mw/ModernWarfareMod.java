@@ -73,10 +73,6 @@ public class ModernWarfareMod {
 	//@EventHandler
 	public void initRecipies(FMLInitializationEvent event) {
 		
-		if(true) return; 
-		
-		// TODO: fixme
-		
 		GameRegistry.addSmelting(CommonProxy.TitaniumOre, new ItemStack(CommonProxy.TitaniumIngot), 5f);
 		GameRegistry.addSmelting(CommonProxy.CopperOre, new ItemStack(CommonProxy.CopperIngot), 5f);
 		GameRegistry.addSmelting(CommonProxy.LeadOre, new ItemStack(CommonProxy.LeadIngot), 5f);

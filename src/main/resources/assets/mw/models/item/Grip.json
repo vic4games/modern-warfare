@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/AngledGrip"
+        "layer0": "mw:items/Grip"
     },
     "display": {
         "thirdperson": {

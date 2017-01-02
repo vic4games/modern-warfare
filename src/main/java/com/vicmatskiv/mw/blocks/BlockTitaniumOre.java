@@ -13,7 +13,7 @@ public class BlockTitaniumOre extends Block {
 
 	public BlockTitaniumOre() {
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
 		setHardness(6F);
 		setResistance(600000F);

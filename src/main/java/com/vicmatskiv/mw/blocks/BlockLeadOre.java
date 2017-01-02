@@ -14,7 +14,7 @@ public class BlockLeadOre extends Block {
 	public BlockLeadOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "LeadOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "LeadOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LeadOre");
 		setHardness(6F);
 		setResistance(600000F);

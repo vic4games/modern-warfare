@@ -14,7 +14,6 @@ public class BlockCopperOre extends Block {
 	public BlockCopperOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "CopperOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperOre");
 		setHardness(6F);
 		setResistance(600000F);

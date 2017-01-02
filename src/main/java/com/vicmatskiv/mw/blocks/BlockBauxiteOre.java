@@ -14,7 +14,7 @@ public class BlockBauxiteOre extends Block {
 	public BlockBauxiteOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
 		setHardness(6F);
 		setResistance(600000F);

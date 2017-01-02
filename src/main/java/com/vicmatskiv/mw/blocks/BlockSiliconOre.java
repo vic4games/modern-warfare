@@ -14,7 +14,7 @@ public class BlockSiliconOre extends Block
 	public BlockSiliconOre()
 	{
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "SiliconOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "SiliconOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SiliconOre");
 		setHardness(6F);
 		setResistance(600000F);

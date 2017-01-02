@@ -9,7 +9,7 @@ public class ItemCopperIngot extends Item
 	public ItemCopperIngot()
 	{
 		setMaxStackSize(64);
-		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperIngot"); 
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperIngot");
 		//setTextureName(ModernWarfareMod.MODID + ":" + "CopperIngot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}

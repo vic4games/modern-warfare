@@ -14,7 +14,7 @@ public class BlockTantalumOre extends Block
 
 	public BlockTantalumOre() {
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "TantalumOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "TantalumOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TantalumOre");
 		setHardness(4F);
 		setResistance(600000F);

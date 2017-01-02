@@ -11,7 +11,7 @@ public class ItemGrip extends ItemAttachment<Weapon>
 	private static final float RECOIL_REDUCTION_FACTOR = 0.7f;
 	
 	public ItemGrip() {
-		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new AngledGrip(), "AngledGrip.png", null,
+		super(ModernWarfareMod.MODID, AttachmentCategory.GRIP, new AngledGrip(), "Grip.png", null,
 				(attachment, weapon, player) -> {
 					weapon.changeRecoil(player, RECOIL_REDUCTION_FACTOR);
 				},
@@ -20,8 +20,8 @@ public class ItemGrip extends ItemAttachment<Weapon>
 				});
 		
 		setMaxStackSize(1);
-		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AngledGrip"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AngledGrip");
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Grip"); 
+		setTextureName(ModernWarfareMod.MODID + ":" + "Grip");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

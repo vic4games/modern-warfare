@@ -13,7 +13,7 @@ public class BlockTinOre extends Block {
 
 	public BlockTinOre() {
 		super(Material.ROCK);
-		setRegistryName(ModernWarfareMod.MODID + "_" + "TinOre");
+		//setRegistryName(ModernWarfareMod.MODID + "_" + "TinOre");
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TinOre");
 		setHardness(4F);
 		setResistance(600000F);
