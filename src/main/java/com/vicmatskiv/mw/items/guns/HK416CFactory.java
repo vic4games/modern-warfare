@@ -49,7 +49,7 @@ public class HK416CFactory implements GunFactory {
 		.withRecoil(2.8f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("M4")
+		.withShootSound("AR15")
 		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withReloadingTime(50)
@@ -129,29 +129,29 @@ public class HK416CFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
 			if(model instanceof Reflex) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
+			GL11.glTranslatef(.27F, -1.48F, -0.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.8F, 0.0F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
+				GL11.glTranslatef(0.202F, -1.73F, -0.2F);
+				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
 			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.53F, 0.2F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			GL11.glTranslatef(.28F, -1.53F, 0.2F);
+			GL11.glScaled(0.65F, 0.65F, 0.65F);
 			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
+				GL11.glTranslatef(0.202F, -1.83F, 0.35F);
+				GL11.glScaled(0.08F, 0.08F, 0.08F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			GL11.glTranslatef(.27F, -1.48F, 0.3F);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.675F, -0.45F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
+				GL11.glTranslatef(0.18F, -1.72F, -0.3F);
+				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
@@ -259,7 +259,7 @@ public class HK416CFactory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.07f, 0.3f);
+					GL11.glTranslatef(0.005F, 0.08f, 0.3f);
 				} 
 				
 				// Scope Zoom
@@ -268,7 +268,7 @@ public class HK416CFactory implements GunFactory {
 					GL11.glTranslatef(0.005F, -0.04f, 5f);
 				} 
 
-				// HP Zoom
+				// HP Zoomw
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0.005F, -0.04f, 5f);
@@ -277,18 +277,18 @@ public class HK416CFactory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.02f, 0.3f);
+					GL11.glTranslatef(0F, 0.04f, 0.3f);
 				} 
 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, -0.05f, 0.3f);
+					GL11.glTranslatef(0F, 0.04f, 0.2f);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.373F, -1.43f, 2.8f);
+					GL11.glTranslatef(1.373F, -1.32f, 2.4f);
 				} 
 				
 				// Everything else

@@ -42,7 +42,7 @@ public class KSG12Factory implements GunFactory {
 		.withShootSound("KSG12")
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("KSG12Reload")
-		.withReloadingTime(130)
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")

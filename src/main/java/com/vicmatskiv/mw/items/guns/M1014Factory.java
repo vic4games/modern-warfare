@@ -29,7 +29,7 @@ public class M1014Factory implements GunFactory {
 		.withShootSound("M1014")
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("KSG12Reload")
-		.withReloadingTime(130)
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")

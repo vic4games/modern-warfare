@@ -91,6 +91,7 @@ processResources
 
 jar {
     //baseName = project.name + '-all'
+    archiveName = "${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
     from { 
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
     } {
@@ -105,5 +106,5 @@ task obfuscate(type: proguard.gradle.ProGuardTask) {
   
   injars "./build/libs/${archivesBaseName}-${version}.jar"
   
-  outjars "./build/libs/${archivesBaseName}-${version}-${project.minecraft.version}.jar"
+  outjars "./build/libs/${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
 } 

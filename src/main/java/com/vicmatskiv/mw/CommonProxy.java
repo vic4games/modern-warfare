@@ -748,11 +748,15 @@ public class CommonProxy {
 		//GasSwatchest = gasswatArmorBuilder.buildChest(isClient());
 		//GasSwatboots = gasswatArmorBuilder.buildBoots(isClient());
 
-		new CustomArmor.Builder().withModId(ModernWarfareMod.MODID)
-				.withMaterial(Tactical).withUnlocalizedName("Tactical")
-				.withTextureName("Tactical")
-				.withModelClass("com.vicmatskiv.mw.models.Tactical")
-				.withHudTextureName("Tactical").build(isClient());
+		Builder tacticalArmorBuilder = new CustomArmor.Builder()
+			.withModId(ModernWarfareMod.MODID).withMaterial(Marine)
+			.withUnlocalizedName("Tactical").withTextureName("Tactical")
+			.withModelClass("com.vicmatskiv.mw.models.Tactical")
+			.withHudTextureName("Tactical");
+		
+		Tacticalhelmet = tacticalArmorBuilder.buildHelmet(isClient());
+		Tacticalchest = tacticalArmorBuilder.buildChest(isClient());
+		Tacticalboots = tacticalArmorBuilder.buildBoots(isClient());
 
 	}
 
