@@ -164,6 +164,7 @@ import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
 import com.vicmatskiv.weaponlib.ItemAmmo;
 import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.ItemMagazine;
 import com.vicmatskiv.weaponlib.Weapon;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -261,7 +262,19 @@ public class CommonProxy {
 	//public static Item GaussRifle;
 //	public static Item RPG;
 
-	public static ItemAmmo AK47Mag;
+	public static ItemMagazine Magazine762x39;
+	public static ItemMagazine AK12Mag;
+	public static ItemMagazine RPK74MMag;
+	public static ItemMagazine AK74Mag;
+	public static ItemMagazine AKS74UMag;
+	public static ItemMagazine NATOMag1;
+	public static ItemMagazine NATOMag2;
+	public static ItemMagazine NATOFamasMag;
+	public static ItemMagazine NATOG36Mag;
+	public static ItemMagazine DragunovMag;
+	public static ItemMagazine FALMag;
+	
+	//public static ItemAmmo AK47Mag;
 	public static ItemAmmo G18Mag;
 	public static ItemAmmo M9Mag;
 	public static ItemAmmo AR15Mag;
@@ -272,7 +285,7 @@ public class CommonProxy {
 	public static ItemAmmo G36CMag;
 	public static ItemAmmo ScarMag;
 	public static ItemAmmo MP5Mag;
-	public static ItemAmmo AK74UMag;
+	//public static ItemAmmo AK74UMag;
 	public static ItemAmmo MP7Mag;
 	public static ItemAmmo MagnumAmmo;
 	public static ItemAmmo FNFALMag;
@@ -282,7 +295,7 @@ public class CommonProxy {
 	public static ItemAmmo FamasMag;
 	public static ItemAmmo G21Mag;
 	public static ItemAmmo M107Mag;
-	public static ItemAmmo RPK74MMag;
+	//public static ItemAmmo RPK74MMag;
 	public static ItemAmmo DrumMag;
 	public static ItemAmmo ScarHMag;
 	public static ItemAmmo M1Mag;
@@ -439,7 +452,62 @@ public class CommonProxy {
 		MiniSteelPlate = new ItemMiniSteelPlate();
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
-		AK47Mag = new ItemAK47Mag();
+		Magazine762x39 = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.Magazine762x39(), "GunmetalTexture.png", 30);
+		Magazine762x39.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Magazine762x39"); 
+		Magazine762x39.setTextureName(ModernWarfareMod.MODID + ":" + "Magazine762x39");
+		Magazine762x39.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		AK12Mag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png", 31);
+		AK12Mag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AK12Mag"); 
+		AK12Mag.setTextureName(ModernWarfareMod.MODID + ":" + "AK12Mag");
+		AK12Mag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		RPK74MMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.RPK74MMag(), "GunmetalTexture.png", 40);
+		RPK74MMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "RPK74MMag"); 
+		RPK74MMag.setTextureName(ModernWarfareMod.MODID + ":" + "RPK74MMag");
+		RPK74MMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		AK74Mag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.Magazine762x39(), "GunmetalTexture.png", 30);
+		AK74Mag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AK74Mag"); 
+		AK74Mag.setTextureName(ModernWarfareMod.MODID + ":" + "AK74Mag");
+		AK74Mag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		AKS74UMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.Magazine762x39(), "AKS74UMag.png", 30);
+		AKS74UMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AKS74UMag"); 
+		AKS74UMag.setTextureName(ModernWarfareMod.MODID + ":" + "AKS74UMag");
+		AKS74UMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		NATOMag1 = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.NATOMag1(), "NATOMag1.png", 30);
+		NATOMag1.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "NATOMag1"); 
+		NATOMag1.setTextureName(ModernWarfareMod.MODID + ":" + "NATOMag1");
+		NATOMag1.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		NATOMag2 = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.NATOMag2(), "NATOMag2.png", 30);
+		NATOMag2.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "NATOMag2"); 
+		NATOMag2.setTextureName(ModernWarfareMod.MODID + ":" + "NATOMag2");
+		NATOMag2.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		NATOFamasMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.NATOFamasMag(), "NATOMag1.png", 30);
+		NATOFamasMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "NATOFamasMag"); 
+		NATOFamasMag.setTextureName(ModernWarfareMod.MODID + ":" + "NATOFamasMag");
+		NATOFamasMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		NATOG36Mag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.NATOG36Mag(), "GunmetalTexture.png", 30);
+		NATOG36Mag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "NATOG36Mag"); 
+		NATOG36Mag.setTextureName(ModernWarfareMod.MODID + ":" + "NATOG36Mag");
+		NATOG36Mag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		DragunovMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.DragunovMag(), "GunmetalTexture.png", 10);
+		DragunovMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "DragunovMag"); 
+		DragunovMag.setTextureName(ModernWarfareMod.MODID + ":" + "DragunovMag");
+		DragunovMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		FALMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.FNFALMag(), "GunmetalTexture.png", 20);
+		FALMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "FALMag"); 
+		FALMag.setTextureName(ModernWarfareMod.MODID + ":" + "FALMag");
+		FALMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		//AK47Mag = new ItemAK47Mag();
 		G18Mag = new ItemG18Mag();
 		M9Mag = new ItemM9Mag();
 		AR15Mag = new ItemAR15Mag();
@@ -450,7 +518,7 @@ public class CommonProxy {
 		G36CMag = new ItemG36CMag();
 		ScarMag = new ItemScarMag();
 		MP5Mag = new ItemMP5Mag();
-		AK74UMag = new ItemAK74UMag();
+		//AK74UMag = new ItemAK74UMag();
 		MP7Mag = new ItemMP7Mag();
 		MagnumAmmo = new ItemMagnumAmmo();
 		FNFALMag = new ItemFNFALMag();
@@ -460,7 +528,7 @@ public class CommonProxy {
 		FamasMag = new ItemFamasMag();
 		G21Mag = new ItemG21Mag();
 		M107Mag = new ItemM107Mag();
-		RPK74MMag = new ItemRPK74MMag();
+		//RPK74MMag = new ItemRPK74MMag();
 		DrumMag = new ItemDrumMag();
 		ScarHMag = new ItemScarHMag();
 		M1Mag = new ItemM1Mag();
@@ -579,7 +647,19 @@ public class CommonProxy {
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
 
-		GameRegistry.registerItem(AK47Mag, "AK47Mag");
+		GameRegistry.registerItem(Magazine762x39, "Magazine762x39");
+		GameRegistry.registerItem(AK12Mag, "AK12Mag");
+		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
+		GameRegistry.registerItem(AK74Mag, "AK74Mag");
+		GameRegistry.registerItem(AKS74UMag, "AKS74UMag");
+		GameRegistry.registerItem(NATOMag1, "NATOMag1");
+		GameRegistry.registerItem(NATOMag2, "NATOMag2");
+		GameRegistry.registerItem(NATOFamasMag, "NATOFamasMag");
+		GameRegistry.registerItem(NATOG36Mag, "NATOG36Mag");
+		GameRegistry.registerItem(DragunovMag, "DragunovMag");
+		GameRegistry.registerItem(FALMag, "FALMag");
+		
+		//GameRegistry.registerItem(AK47Mag, "AK47Mag");
 		GameRegistry.registerItem(G18Mag, "G18Mag");
 		GameRegistry.registerItem(M9Mag, "M9Mag");
 		GameRegistry.registerItem(AR15Mag, "AR15Mag");
@@ -590,7 +670,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(G36CMag, "G36CMag");
 		GameRegistry.registerItem(ScarMag, "ScarMag");
 		GameRegistry.registerItem(MP5Mag, "MP5Mag");
-		GameRegistry.registerItem(AK74UMag, "AK74UMag");
+		//GameRegistry.registerItem(AK74UMag, "AK74UMag");
 		GameRegistry.registerItem(MP7Mag, "MP7Mag");
 		GameRegistry.registerItem(MagnumAmmo, "MagnumAmmo");
 		GameRegistry.registerItem(FNFALMag, "FNFALMag");
@@ -600,7 +680,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(FamasMag, "FamasMag");
 		GameRegistry.registerItem(G21Mag, "G21Mag");
 		GameRegistry.registerItem(M107Mag, "M107Mag");
-		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
+		//GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
 		GameRegistry.registerItem(DrumMag, "DrumMag");
 		GameRegistry.registerItem(ScarHMag, "ScarHMag");
 		GameRegistry.registerItem(M1Mag, "M1Mag");

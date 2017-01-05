@@ -45,7 +45,7 @@ public class AN94Factory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("AN94")
-		.withAmmo(CommonProxy.AK47Mag)
+		//.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(30)
 		.withFireRate(0.5f)
 		.withRecoil(3.5f)

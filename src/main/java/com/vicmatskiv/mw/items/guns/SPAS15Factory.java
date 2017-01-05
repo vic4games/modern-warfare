@@ -19,7 +19,7 @@ public class SPAS15Factory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("SPAS-15")
-		.withAmmo(CommonProxy.AK47Mag)
+		//.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(8)
 		.withFireRate(0.3f)
 		.withRecoil(9f)

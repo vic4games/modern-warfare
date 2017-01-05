@@ -581,22 +581,22 @@ public class ModernWarfareMod {
 				'R', CommonProxy.WeaponStock
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.AK47Mag),
+		/*GameRegistry.addRecipe(new ItemStack(CommonProxy.AK47Mag),
 				" XX",
 				"XBX",
 				"ABX",
 				'X', CommonProxy.MiniSteelPlate,
 				'B', CommonProxy.Bullets
-		);
+		);*/
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.AK74UMag),
-				" XX",
-				"WBW",
-				"XBW",
-				'X', CommonProxy.MiniSteelPlate,
-				'B', CommonProxy.Bullets,
-				'W', Blocks.planks
-		);
+//		GameRegistry.addRecipe(new ItemStack(CommonProxy.AK74UMag),
+//				" XX",
+//				"WBW",
+//				"XBW",
+//				'X', CommonProxy.MiniSteelPlate,
+//				'B', CommonProxy.Bullets,
+//				'W', Blocks.planks
+//		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.AR15Mag),
 				" XX",
