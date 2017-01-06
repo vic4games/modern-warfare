@@ -1,12 +1,5 @@
 package com.vicmatskiv.mw;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
-
 import com.vicmatskiv.mw.attachments.ItemACOG;
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
 import com.vicmatskiv.mw.attachments.ItemAR15Iron;
@@ -32,8 +25,6 @@ import com.vicmatskiv.mw.blocks.BlockSulfurOre;
 import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
-import com.vicmatskiv.mw.items.ItemAK47Mag;
-import com.vicmatskiv.mw.items.ItemAK74UMag;
 import com.vicmatskiv.mw.items.ItemAR15Mag;
 import com.vicmatskiv.mw.items.ItemDragonuvMag;
 import com.vicmatskiv.mw.items.ItemDrumMag;
@@ -42,8 +33,6 @@ import com.vicmatskiv.mw.items.ItemFamasMag;
 import com.vicmatskiv.mw.items.ItemG18Mag;
 import com.vicmatskiv.mw.items.ItemG21Mag;
 import com.vicmatskiv.mw.items.ItemG36CMag;
-import com.vicmatskiv.mw.items.ItemG36Mag;
-import com.vicmatskiv.mw.items.ItemGrenades;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
 import com.vicmatskiv.mw.items.ItemM110Mag;
@@ -57,9 +46,7 @@ import com.vicmatskiv.mw.items.ItemMP5Mag;
 import com.vicmatskiv.mw.items.ItemMP7Mag;
 import com.vicmatskiv.mw.items.ItemMagnumAmmo;
 import com.vicmatskiv.mw.items.ItemPX90Mag;
-import com.vicmatskiv.mw.items.ItemRPK74MMag;
 import com.vicmatskiv.mw.items.ItemRemington870Mag;
-import com.vicmatskiv.mw.items.ItemSPAS15Mag;
 import com.vicmatskiv.mw.items.ItemScarHMag;
 import com.vicmatskiv.mw.items.ItemScarMag;
 import com.vicmatskiv.mw.items.ItemXWPMag;
@@ -106,7 +93,6 @@ import com.vicmatskiv.mw.items.guns.PX90Factory;
 import com.vicmatskiv.mw.items.guns.RPK74MFactory;
 import com.vicmatskiv.mw.items.guns.Remington900Factory;
 import com.vicmatskiv.mw.items.guns.SPAS12Factory;
-import com.vicmatskiv.mw.items.guns.SPAS15Factory;
 import com.vicmatskiv.mw.items.guns.ScarFactory;
 import com.vicmatskiv.mw.items.guns.ScarHFactory;
 import com.vicmatskiv.mw.items.guns.XEagleFactory;
@@ -169,6 +155,12 @@ import com.vicmatskiv.weaponlib.Weapon;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -452,10 +444,14 @@ public class CommonProxy {
 		MiniSteelPlate = new ItemMiniSteelPlate();
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
 
-		Magazine762x39 = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.Magazine762x39(), "GunmetalTexture.png", 30);
-		Magazine762x39.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Magazine762x39"); 
-		Magazine762x39.setTextureName(ModernWarfareMod.MODID + ":" + "Magazine762x39");
-		Magazine762x39.setCreativeTab(ModernWarfareMod.gunsTab);
+		Magazine762x39 = new ItemMagazine.Builder()
+				.withName("Magazine762x39")
+				.withModId(ModernWarfareMod.MODID)
+				.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.Magazine762x39())
+				.withAmmo(30)
+				.withTextureName("GunmetalTexture.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		AK12Mag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png", 31);
 		AK12Mag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AK12Mag"); 
@@ -646,8 +642,7 @@ public class CommonProxy {
 		
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
-
-		GameRegistry.registerItem(Magazine762x39, "Magazine762x39");
+		
 		GameRegistry.registerItem(AK12Mag, "AK12Mag");
 		GameRegistry.registerItem(RPK74MMag, "RPK74MMag");
 		GameRegistry.registerItem(AK74Mag, "AK74Mag");
