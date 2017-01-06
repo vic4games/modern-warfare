@@ -273,6 +273,8 @@ public class CommonProxy {
 	public static ItemMagazine NATOG36Mag;
 	public static ItemMagazine DragunovMag;
 	public static ItemMagazine FALMag;
+	public static ItemMagazine M110Mag;
+	public static ItemMagazine M14DMRMag;
 	
 	//public static ItemAmmo AK47Mag;
 	public static ItemAmmo G18Mag;
@@ -300,7 +302,7 @@ public class CommonProxy {
 	public static ItemAmmo ScarHMag;
 	public static ItemAmmo M1Mag;
 	public static ItemAmmo MP40Mag;
-	public static ItemAmmo M110Mag;
+	//public static ItemAmmo M110Mag;
 	//public static ItemAmmo SPAS15Mag;
 	public static ItemAmmo M1911Mag;
 	//public static ItemAmmo GaussMag;
@@ -507,6 +509,16 @@ public class CommonProxy {
 		FALMag.setTextureName(ModernWarfareMod.MODID + ":" + "FALMag");
 		FALMag.setCreativeTab(ModernWarfareMod.gunsTab);
 		
+		M110Mag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.M110Mag(), "NATOMag1.png", 10);
+		M110Mag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "M110Mag"); 
+		M110Mag.setTextureName(ModernWarfareMod.MODID + ":" + "M110Mag");
+		M110Mag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
+		M14DMRMag = new ItemMagazine(ModernWarfareMod.MODID, new com.vicmatskiv.mw.models.M14Mag(), "GunmetalTexture.png", 10);
+		M14DMRMag.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "M14DMRMag"); 
+		M14DMRMag.setTextureName(ModernWarfareMod.MODID + ":" + "M14DMRMag");
+		M14DMRMag.setCreativeTab(ModernWarfareMod.gunsTab);
+		
 		//AK47Mag = new ItemAK47Mag();
 		G18Mag = new ItemG18Mag();
 		M9Mag = new ItemM9Mag();
@@ -533,7 +545,7 @@ public class CommonProxy {
 		ScarHMag = new ItemScarHMag();
 		M1Mag = new ItemM1Mag();
 		MP40Mag = new ItemMP40Mag();
-		M110Mag = new ItemM110Mag();
+		//M110Mag = new ItemM110Mag();
 		//SPAS15Mag = new ItemSPAS15Mag();
 		M1911Mag = new ItemM1911Mag();
 		//GaussMag = new ItemGaussMag();
@@ -658,6 +670,8 @@ public class CommonProxy {
 		GameRegistry.registerItem(NATOG36Mag, "NATOG36Mag");
 		GameRegistry.registerItem(DragunovMag, "DragunovMag");
 		GameRegistry.registerItem(FALMag, "FALMag");
+		GameRegistry.registerItem(M110Mag, "M110Mag");
+		GameRegistry.registerItem(M14DMRMag, "M14DMRMag");
 		
 		//GameRegistry.registerItem(AK47Mag, "AK47Mag");
 		GameRegistry.registerItem(G18Mag, "G18Mag");
@@ -685,7 +699,7 @@ public class CommonProxy {
 		GameRegistry.registerItem(ScarHMag, "ScarHMag");
 		GameRegistry.registerItem(M1Mag, "M1Mag");
 		GameRegistry.registerItem(MP40Mag, "MP40Mag");
-		GameRegistry.registerItem(M110Mag, "M110Mag");
+		//GameRegistry.registerItem(M110Mag, "M110Mag");
 		//GameRegistry.registerItem(SPAS15Mag, "SPAS15Mag");
 		GameRegistry.registerItem(M1911Mag, "M1911Mag");
 	//	GameRegistry.registerItem(GaussMag, "GaussMag");
