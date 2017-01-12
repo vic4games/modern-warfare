@@ -673,15 +673,15 @@ public class ModernWarfareMod {
 				'W', Blocks.planks
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.MP5Mag),
-				"AXA",
-				"XBA",
-				"XBX",
-				'X', CommonProxy.SteelIngot,
-				'A', CommonProxy.MiniSteelPlate,
-				'B', CommonProxy.Bullets,
-				'W', Blocks.planks
-		);
+//		GameRegistry.addRecipe(new ItemStack(CommonProxy.MP5Mag),
+//				"AXA",
+//				"XBA",
+//				"XBX",
+//				'X', CommonProxy.SteelIngot,
+//				'A', CommonProxy.MiniSteelPlate,
+//				'B', CommonProxy.Bullets,
+//				'W', Blocks.planks
+//		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.MP7Mag),
 				"AXX",

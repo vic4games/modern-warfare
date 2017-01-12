@@ -61,6 +61,9 @@ public class M4A4Factory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
+			GL11.glTranslatef(0F, 0.1F, 0F);
+		})
 		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 		    	if(model instanceof M4Iron1) {
 					GL11.glTranslatef(0.162F, -1.75F, 1F);
@@ -182,7 +185,7 @@ public class M4A4Factory implements GunFactory {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 			})
 			.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-				GL11.glTranslatef(0.107F, -1.5F, -3.9F);
+				GL11.glTranslatef(0.107F, -1.5F, -4.5F);
 				GL11.glScaled(1F, 1F, 1F);
 			})
 			.withTextureNames("GunmetalTexture", "Electric")
@@ -215,7 +218,7 @@ public class M4A4Factory implements GunFactory {
 					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
 					})
 					
-				.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (player, itemStack) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -223,6 +226,13 @@ public class M4A4Factory implements GunFactory {
 				})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.NATOMag2, (player, itemStack) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.NATODrum100, (player, itemStack) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -332,6 +342,42 @@ public class M4A4Factory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag2,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.05F, 1F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATODrum100,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.4F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.4F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.NATODrum100,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);

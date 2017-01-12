@@ -26,8 +26,8 @@ public class MP7Factory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("HK MP7")
-		.withAmmo(CommonProxy.MP7Mag)
-		.withAmmoCapacity(20)
+//		.withAmmo(CommonProxy.MP7Mag)
+//		.withAmmoCapacity(20)
 		.withFireRate(0.61f)
 		.withRecoil(3.3f)
 		.withZoom(0.9f)
@@ -35,12 +35,14 @@ public class MP7Factory implements GunFactory {
 		.withShootSound("MP7")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
+		.withUnloadSound("Unload")
 		.withReloadingTime(37)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCompatibleAttachment(CommonProxy.HKMP7Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
 				GL11.glTranslatef(0.033F, -1.7F, 0.9F);
@@ -120,25 +122,32 @@ public class MP7Factory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.7F, 0.9F);
 				})
 			
+			.withFirstPersonCustomPositioning(CommonProxy.HKMP7Mag, (player, itemStack) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
 			.withFirstPersonPositioningReloading(
 					
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(-0.1F, -0.2F, -0.6F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 500),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(-0.1F, -0.2F, -0.6F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 20),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(-0.1F, -0.3F, -0.8F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+						GL11.glRotatef(-60F, 1f, 0f, 2f);
+						GL11.glTranslatef(1F, -1.2F, 0F);
+					}, 250, 500),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(-0.1F, -0.3F, -0.8F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+						GL11.glRotatef(-60F, 1f, 0f, 2f);
+						GL11.glTranslatef(1F, -1.2F, 0F);
+					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
 					GL11.glTranslatef(0F, -0.35F, -0.5F);
@@ -147,6 +156,61 @@ public class MP7Factory implements GunFactory {
 					GL11.glTranslatef(-0.4F, -0.7F, 0.9F);
 				}, 250, 0)
 			)
+			
+			.withFirstPersonPositioningUnloading(
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.1F, -0.3F, -0.8F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-60F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 150, 50),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.1F, -0.3F, -0.8F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-60F, 1f, 0f, 2f);
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 150, 50)
+			)
+			
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.HKMP7Mag,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 1.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.HKMP7Mag,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.05F, 1.3F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.2F, -0.285F, -0.4F);
@@ -273,6 +337,40 @@ public class MP7Factory implements GunFactory {
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
+			
+			.withFirstPersonLeftHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2f, 2f, 2.5f);
+						 GL11.glTranslatef(0.4f, 0.5f, 1.2f);
+						 GL11.glRotatef(60f, 0, 0f, 1f);
+						 GL11.glRotatef(-85f, 1f, 0f, 0f);
+						 GL11.glRotatef(60f, 0f, 0f, 1f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(2f, 2f, 2.5f);
+						 GL11.glTranslatef(0.4f, 0.5f, 1.2f);
+						 GL11.glRotatef(60f, 0, 0f, 1f);
+						 GL11.glRotatef(-90f, 1f, 0f, 0f);
+						 GL11.glRotatef(20f, 0f, 0f, 1f);
+					}, 50, 200)
+					)
+					
+			.withFirstPersonRightHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50))
+					
 			.build())
 		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.028f)

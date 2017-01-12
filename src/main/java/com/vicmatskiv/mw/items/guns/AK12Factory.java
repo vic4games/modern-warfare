@@ -426,7 +426,7 @@ public class AK12Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
 					
-					.withFirstPersonLeftHandPositioningUnloading(
+			.withFirstPersonLeftHandPositioningUnloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.65f, -0.2f, 0.37f);

@@ -122,8 +122,6 @@ public class MP40 extends ModelWithAttachments
     ModelRenderer gun99;
     ModelRenderer gun100;
     ModelRenderer gun101;
-    ModelRenderer gun102;
-    ModelRenderer gun103;
     ModelRenderer gun104;
     ModelRenderer gun105;
     ModelRenderer gun106;
@@ -751,18 +749,6 @@ public class MP40 extends ModelWithAttachments
       gun101.setTextureSize(64, 32);
       gun101.mirror = true;
       setRotation(gun101, 2.825574F, 0F, 0F);
-      gun102 = new ModelRenderer(this, 0, 0);
-      gun102.addBox(0F, 0F, 0F, 2, 20, 4);
-      gun102.setRotationPoint(1.2F, -9F, -19.5F);
-      gun102.setTextureSize(64, 32);
-      gun102.mirror = true;
-      setRotation(gun102, 0F, 0F, 0F);
-      gun103 = new ModelRenderer(this, 0, 0);
-      gun103.addBox(0F, 0F, 0F, 2, 20, 4);
-      gun103.setRotationPoint(1.8F, -9F, -19.5F);
-      gun103.setTextureSize(64, 32);
-      gun103.mirror = true;
-      setRotation(gun103, 0F, 0F, 0F);
       gun104 = new ModelRenderer(this, 0, 0);
       gun104.addBox(0F, 0F, 0F, 3, 1, 3);
       gun104.setRotationPoint(1F, -19.2F, -3F);
@@ -890,8 +876,6 @@ public class MP40 extends ModelWithAttachments
     gun99.render(f5);
     gun100.render(f5);
     gun101.render(f5);
-    gun102.render(f5);
-    gun103.render(f5);
     gun104.render(f5);
     gun105.render(f5);
     gun106.render(f5);

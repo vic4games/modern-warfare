@@ -59,7 +59,7 @@ public class AK74MFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withCompatibleAttachment(CommonProxy.AK74Mag, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.AK74MMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
@@ -136,7 +136,7 @@ public class AK74MFactory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.AK74Mag, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.AK74MMag, (player, itemStack) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -190,7 +190,7 @@ public class AK74MFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.AK74Mag,
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.AK74MMag,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -207,7 +207,7 @@ public class AK74MFactory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.AK74Mag,
+			.withFirstPersonCustomPositioningReloading(CommonProxy.AK74MMag,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0F, 0.7F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
