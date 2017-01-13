@@ -48,7 +48,7 @@ public class M240Factory implements GunFactory {
 		.withShootSound("M249")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("M249Reload")
-		.withReloadingTime(55)
+		.withReloadingTime(110)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
@@ -180,9 +180,7 @@ public class M240Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.3F, -4.4F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("M249", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "AKFade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("M249", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new M240())
@@ -241,7 +239,7 @@ public class M240Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0.03F, -0.3F, -0.17F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -293,9 +291,9 @@ public class M240Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.7F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);

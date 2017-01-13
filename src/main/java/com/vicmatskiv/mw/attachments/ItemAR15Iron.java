@@ -14,10 +14,10 @@ public class ItemAR15Iron extends ItemAttachment<Weapon>
 	public ItemAR15Iron() {
 		super(ModernWarfareMod.MODID, AttachmentCategory.SCOPE, "Sight");
 		
-		addModel(new M4Iron1(), "M4Iron1.png");
-		addModel(new M4Iron2(), "M4Iron2.png");
-		addModel(new FALIron(), "FALIron.png");
-		addModel(new AR15Iron(), "AR15Iron.png");
+		addModel(new M4Iron1(), "GunmetalTexture.png");
+		addModel(new M4Iron2(), "GunmetalTexture.png");
+		addModel(new FALIron(), "GunmetalTexture.png");
+		addModel(new AR15Iron(), "GunmetalTexture.png");
 		
 		setMaxStackSize(1);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AR15Iron"); 

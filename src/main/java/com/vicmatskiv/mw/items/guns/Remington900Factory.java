@@ -28,8 +28,8 @@ public class Remington900Factory implements GunFactory {
 		.withPumpTimeout(1000)
 		.withShootSound("Remington")
 		//.withSilencedShootSound("AR15silenced")
-		.withReloadSound("RemingtonReload")
-		.withReloadingTime(60)
+		.withReloadSound("KSG12Reload")
+		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
@@ -37,9 +37,7 @@ public class Remington900Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withTextureNames("Remington", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-				"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-				"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("Remington", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new Remington())
@@ -160,9 +158,9 @@ public class Remington900Factory implements GunFactory {
 			
 				})
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.8F, 0.8F, 0.8F);
+				GL11.glScaled(1F, 1F, 1F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.4F, -1.2F);
+				GL11.glTranslatef(0.3F, -0.05F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -178,7 +176,7 @@ public class Remington900Factory implements GunFactory {
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })

@@ -19,7 +19,7 @@ public class SPAS15Factory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("SPAS-15")
-		.withAmmo(CommonProxy.SPAS15Mag)
+		//.withAmmo(CommonProxy.AK47Mag)
 		.withAmmoCapacity(8)
 		.withFireRate(0.3f)
 		.withRecoil(9f)
@@ -97,7 +97,7 @@ public class SPAS15Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.21F, -0.313F, -0.41F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -127,7 +127,7 @@ public class SPAS15Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.8F, -1.2F);
+				GL11.glTranslatef(1F, -0.7F, -1.2F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);

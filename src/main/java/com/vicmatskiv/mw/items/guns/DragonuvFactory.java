@@ -37,9 +37,9 @@ public class DragonuvFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("Dragonuv")
-		.withAmmo(CommonProxy.DragonuvMag)
-		.withAmmoCapacity(10)
+		.withName("Dragunov")
+//		.withAmmo(CommonProxy.DragonuvMag)
+//		.withAmmoCapacity(10)
 		.withFireRate(0.16f)
 		.withRecoil(4f)
 		.withZoom(0.9f)
@@ -47,21 +47,23 @@ public class DragonuvFactory implements GunFactory {
 		.withShootSound("Dragonuv")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("AKReload")
+		.withUnloadSound("Unload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCompatibleAttachment(CommonProxy.DragunovMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.55F, -4.8F);
-				GL11.glScaled(0.65F, 0.65F, 0.65F);
+				GL11.glTranslatef(0.14F, -1.49F, -4F);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
 			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.092F, -1.89F, -1.3F);
+				GL11.glTranslatef(0.092F, -1.84F, -0.85F);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 			} else if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.155F, -1.74F, 1F);
@@ -79,11 +81,11 @@ public class DragonuvFactory implements GunFactory {
 				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof ScarIron1) {
-				GL11.glTranslatef(0.165F, -1.65F, 1F);
-				GL11.glScaled(0F, 0F, 0F);
+					GL11.glTranslatef(0.165F, -1.65F, 1F);
+					GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof ScarIron2) {
-				GL11.glTranslatef(0.25F, -1.55F, -2F);
-				GL11.glScaled(0F, 0F, 0F);
+					GL11.glTranslatef(0.25F, -1.55F, -2F);
+					GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof FALIron) {
 				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -95,52 +97,11 @@ public class DragonuvFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.033F, -1.7F, 0.5F);
-			GL11.glScaled(0.7F, 0.7F, 0.7F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.877F, 0.5F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-			GL11.glTranslatef(.135F, -0.7F, -2.5F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.25F, -1.4F, -2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.25F, -1.4F, -2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.4F, -6.4F);
+			GL11.glTranslatef(0.107F, -1.25F, -5.65F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("Dragunov", "Red", "Black", "Desert", "Green", "Blue", "Orange", "Purple", 
-		"Cyan", "White", "Arctic", "Electric", "Redline", "M4Cyrex", "Fade", "IceAndFire", "Fade2", "GreenElectric", "Handgun",
-		"Creativity", "Dragon", "ASMO", "Vulcan", "GreenVulcan", "Guardian")
+		.withTextureNames("Dragunov", "AK47Blue", "AK47Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new Dragunov())
@@ -164,12 +125,86 @@ public class DragonuvFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.3F, -0.32F, -0.1F);
+				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(-0.06F, -0.32F, -0.26F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				// Zoom
+
+				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				// Standard Iron Sight Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0f, 0f);
+				} 
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.08f, 0.7f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+
+				// HP Zoomw
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.04f, 0.3f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.04f, 0.6f);
+				} 
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(1.373F, -1.32f, 2.8f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.DragunovMag, (player, itemStack) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+			
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> { // Reload position
@@ -179,7 +214,7 @@ public class DragonuvFactory implements GunFactory {
 				
 					GL11.glRotatef(-45F, 1f, 0f, 2f);
 					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 1000),
+				}, 250, 500),
 				
 				new Transition((player, itemStack) -> { // Reload position
 					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
@@ -197,14 +232,71 @@ public class DragonuvFactory implements GunFactory {
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 0)
 			)
+			
+			.withFirstPersonPositioningUnloading(
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.28F, -0.22F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-10F, 0f, 0f, 1f);
+					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 150, 50),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.28F, -0.22F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-10F, 0f, 0f, 1f);
+					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 150, 50)
+			)
+			
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.DragunovMag,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.DragunovMag,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0F, 0.7F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(-0.06F, -0.32F, -0.26F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-
 				// Zoom
-				GL11.glTranslatef(0.135F, -1.1f, 1.3f);
+
+				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// ACOG Zoom
@@ -252,9 +344,9 @@ public class DragonuvFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(1F, -0.9F, -1.2F);
+				GL11.glTranslatef(0.5F, -0.35F, -1F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -335,6 +427,39 @@ public class DragonuvFactory implements GunFactory {
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
+					
+			.withFirstPersonLeftHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.65f, -0.2f, 0.37f);
+						 GL11.glRotatef(70f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.7f, 0.2f, 0.37f);
+						 GL11.glRotatef(50f, 0, 0f, 1f);
+						 GL11.glRotatef(-90f, 1f, 0f, 0f);
+						 GL11.glRotatef(-40f, 0f, 1f, 0f);
+					}, 50, 200)
+					)
+					
+			.withFirstPersonRightHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50))
+					
 			.build())
 		.withSpawnEntityDamage(28.5f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {

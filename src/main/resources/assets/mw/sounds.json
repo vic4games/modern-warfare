@@ -62,6 +62,15 @@
       }
     ]
   },
+   "Unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Unload",
+       "stream": false
+      }
+    ]
+  },
   "AKsilenced": {
     "category": "master",
     "sounds": [
@@ -323,7 +332,16 @@
       }
     ]
   },
-  "AR15silenced": {
+  "AR15Silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "AR15Silenced",
+       "stream": false
+      }
+    ]
+  },
+  "M1911": {
     "category": "master",
     "sounds": [
       {
