@@ -36,7 +36,7 @@ public class XWPFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("L96")
+		.withName("L115")
 		.withAmmo(CommonProxy.XWPMag)
 		.withAmmoCapacity(10)
 		.withFireRate(0.16f)

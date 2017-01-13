@@ -53,7 +53,6 @@ public class P90 extends ModelWithAttachments
     ModelRenderer gun76;
     ModelRenderer gun77;
     ModelRenderer gun78;
-    ModelRenderer gun79;
     ModelRenderer gun80;
     ModelRenderer gun81;
     ModelRenderer gun82;
@@ -326,12 +325,6 @@ public class P90 extends ModelWithAttachments
       gun78.setTextureSize(64, 32);
       gun78.mirror = true;
       setRotation(gun78, -0.0743572F, 0F, 0F);
-      gun79 = new ModelRenderer(this, 100, 0);
-      gun79.addBox(0F, 0F, 0F, 4, 2, 24);
-      gun79.setRotationPoint(0.5F, -16.8F, -2F);
-      gun79.setTextureSize(64, 32);
-      gun79.mirror = true;
-      setRotation(gun79, 0F, 0F, 0F);
       gun80 = new ModelRenderer(this, 0, 50);
       gun80.addBox(0F, 0F, 0F, 1, 2, 4);
       gun80.setRotationPoint(4F, -20F, -6F);
@@ -744,7 +737,6 @@ public class P90 extends ModelWithAttachments
     gun76.render(f5);
     gun77.render(f5);
     gun78.render(f5);
-    gun79.render(f5);
     gun80.render(f5);
     gun81.render(f5);
     gun82.render(f5);

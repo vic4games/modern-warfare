@@ -48,7 +48,7 @@ public class M249Factory implements GunFactory {
 		.withShootSound("M249")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("M249Reload")
-		.withReloadingTime(50)
+		.withReloadingTime(110)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")

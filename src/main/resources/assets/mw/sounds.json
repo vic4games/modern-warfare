@@ -62,6 +62,15 @@
       }
     ]
   },
+   "Unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Unload",
+       "stream": false
+      }
+    ]
+  },
   "AKsilenced": {
     "category": "master",
     "sounds": [

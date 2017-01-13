@@ -7,7 +7,8 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.G18;
+import com.vicmatskiv.mw.models.G21;
+import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -18,30 +19,31 @@ public class G18Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("Glock18")
-		.withAmmo(CommonProxy.G18Mag)
-		.withAmmoCapacity(20)
+		.withName("Glock-17")
+//		.withAmmo(CommonProxy.G18Mag)
+//		.withAmmoCapacity(20)
 		.withFireRate(0.8f)
-		.withRecoil(4f)
+		.withRecoil(5.5f)
 		.withZoom(0.9f)
-		//.withMaxShots(5)
+		.withMaxShots(1)
 		.withShootSound("G18")
 		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")
+		.withUnloadSound("Unload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		/*.withCompatibleAttachment(ModernWarfareMod.ACOG, (model) -> {
-			GL11.glTranslatef(0.107F, -1.625F, -0F);
-			GL11.glScaled(0.4F, 0.4F, 0.4F);
-			})*/
-		/*.withCompatibleAttachment(ModernWarfareMod.Grip, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -1.25F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})*/
+		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
+//			GL11.glTranslatef(0.1F, -0.5F, -1F);
+//			GL11.glRotatef(45F, 0f, 1f, 0f);
+//			GL11.glScaled(0.55F, 0.55F, 0.55F);
+		})
+		.withCompatibleAttachment(CommonProxy.Glock18Mag, (model) -> {
+			GL11.glTranslatef(0F, 0.1F, 0.1F);
+			})
 		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
 			GL11.glTranslatef(0.01F, -0.7F, -2F);
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
@@ -51,10 +53,10 @@ public class G18Factory implements GunFactory {
 			GL11.glTranslatef(-0.25F, -1.15F, -4.61F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
-		.withTextureNames("G18", "G18Blue", "G18Red", "Electric")
+		.withTextureNames("G18", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new G18())
+			.withModel(new G21())
 			//.withTextureName("G18")
 			//.withWeaponProximity(0.99F)
 			//.withYOffsetZoom(5F)
@@ -74,7 +76,6 @@ public class G18Factory implements GunFactory {
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
 				
-				
 			.withFirstPersonPositioning((player, itemStack) -> {
 				GL11.glTranslatef(0.1F, -0.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -82,33 +83,205 @@ public class G18Factory implements GunFactory {
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0F, -0.6F, -1.1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-10F, 1f, 0f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				})
+				
+			.withFirstPersonPositioningCustomRecoiled(CommonProxy.G18Top.getRenderablePart(), (player, itemStack) -> {
+				GL11.glTranslatef(0F, 0F, 0.5F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				})
+				
+				
+			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.G18Top.getRenderablePart(), (player, itemStack) -> {
+				GL11.glTranslatef(0F, 0F, 0.5F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				})
+				
+			.withFirstPersonPositioningCustomRecoiled(CommonProxy.Glock18Mag, (player, itemStack) -> {
+			})
+			
+			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Glock18Mag, (player, itemStack) -> {
+			})
+				
+			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-4F, 1f, 0f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.31F, -1.34f, 1.5f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+			/*	// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, ModernWarfareMod.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.3f, 1f);
+				} */
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.5f, 0.7f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
+			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.Glock18Mag, (player, itemStack) -> {})
+			
+			.withFirstPersonCustomPositioning(CommonProxy.G18Top.getRenderablePart(), (player, itemStack) -> {
+				if(Tags.getAmmo(itemStack) == 0) {
+					GL11.glTranslatef(0F, 0F, 0.5F);
+				}
+			})
+				
 			.withFirstPersonPositioningReloading(
 					
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0F, -0.3F, -0.4F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(-0.6F, -0.6F, -0.6F);
+						GL11.glRotatef(0F, 0f, 1f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
 					
-					GL11.glRotatef(-45F, 1f, 0f, 3f);
-					GL11.glTranslatef(0.4F, -1.7F, 0.6F);
-				}, 250, 500),
+						GL11.glRotatef(-60F, 1f, 0f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glTranslatef(1F, -1.2F, 0F);
+					}, 250, 500),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(-0.4F, -0.2F, -0.3F);
+						GL11.glRotatef(0F, 0f, 1f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+					
+						GL11.glRotatef(-30F, 1f, 0f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glTranslatef(1F, -1.2F, 0F);
+					}, 250, 1000),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0F, -0.3F, -0.4F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glTranslatef(-0.4F, -0.2F, -0.3F);
+					GL11.glRotatef(0F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					
-					GL11.glRotatef(-45F, 1f, 0f, 3f);
-					GL11.glTranslatef(0.4F, -1.7F, 0.6F);
-				}, 250, 100),
 				
+					GL11.glRotatef(-30F, 1f, 0f, 0f);
+					GL11.glRotatef(-10F, 0f, 0f, 1f);
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 50, 0)
+			)
+			
+			.withFirstPersonPositioningUnloading(
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.4F, -0.5F, -0.8F);
+					GL11.glTranslatef(-0.6F, -0.6F, -0.6F);
+					GL11.glRotatef(0F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-60F, 1f, 0f, 0f);
+					GL11.glRotatef(-10F, 0f, 0f, 1f);
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 150, 50),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.6F, -0.6F, -0.6F);
+					GL11.glRotatef(0F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+					GL11.glRotatef(-60F, 1f, 0f, 0f);
+					GL11.glRotatef(-10F, 0f, 0f, 1f);
+					GL11.glTranslatef(1F, -1.2F, 0F);
+				}, 150, 50)
+			)
+			
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.Glock18Mag,
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+//					GL11.glRotatef(-20F, 1f, 0f, 0f);
+////					GL11.glScaled(0.55F, 0.55F, 0.55F);
+////					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.Glock18Mag,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
-				}, 250, 30)
-			) 
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.G18Top.getRenderablePart(),
+					new Transition((player, itemStack) -> {
+						GL11.glTranslatef(0F, 0F, 0.5F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> {
+						GL11.glTranslatef(0F, 0F, 0.5F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 1000)
+						)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.G18Top.getRenderablePart(),
+					new Transition((player, itemStack) -> {
+						GL11.glTranslatef(0F, 0F, 0.5F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> {
+						GL11.glTranslatef(0F, 0F, 0.5F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+//						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 1000),
+					new Transition((player, itemStack) -> {
+//						GL11.glTranslatef(0F, 0F, 0.5F);
+//						GL11.glRotatef(45F, 0f, 1f, 0f);
+//					    GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					    GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 1000)
+						)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.2F, -0.3F, -0.4F);
@@ -188,23 +361,25 @@ public class G18Factory implements GunFactory {
 			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.9f, 0.6f, 0.5f);
+						 GL11.glTranslatef(0.9f, 0.8f, 0.5f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-100f, 20f, 20f, -20f);
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.9f, 0.6f, 0.5f);
-						 GL11.glRotatef(110f, 0, 0f, 1f);
-						 GL11.glRotatef(-60f, 20f, 20f, -20f);
+						 GL11.glTranslatef(0.5f, 0.5f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-30f, 1f, 0f, 0f);
+						 GL11.glRotatef(40f, 0f, 1f, 0f);
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.6f, -0.3f, 0.5f);
-						 GL11.glRotatef(100f, 0, 0f, 1f);
-						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.5f, 0.5f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-30f, 1f, 0f, 0f);
+						 GL11.glRotatef(40f, 0f, 1f, 0f);
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
@@ -228,8 +403,71 @@ public class G18Factory implements GunFactory {
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
+					
+			.withFirstPersonLeftHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.8f, 0.1f, 0.6f);
+						 GL11.glRotatef(60f, 0, 0f, 1f);
+						 GL11.glRotatef(-30f, 1f, 0f, 0f);
+						 GL11.glRotatef(40f, 0f, 1f, 0f);
+					}, 50, 200),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.8f, 0.1f, 0.6f);
+						 GL11.glRotatef(60f, 0, 0f, 1f);
+						 GL11.glRotatef(-30f, 1f, 0f, 0f);
+						 GL11.glRotatef(40f, 0f, 1f, 0f);
+					}, 50, 200)
+					)
+					
+			.withFirstPersonRightHandPositioningUnloading(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 1000),
+					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50))
+					
+			.withFirstPersonHandPositioningZooming(
+					(player,  itemStack) -> {
+						 GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.4f, -0.1f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-60f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.34f, 0.48f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-120f, 1f, 0f, 0f);
+						 GL11.glRotatef(10f, 0f, 0f, 1f);
+					 })
+					 
+			.withFirstPersonHandPositioningZooming(
+					(player,  itemStack) -> {
+						 GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.4f, -0.1f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-60f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.34f, 0.48f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-120f, 1f, 0f, 0f);
+						 GL11.glRotatef(10f, 0f, 0f, 1f);
+					 })
 			.build())
-		.withSpawnEntityDamage(5.5f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

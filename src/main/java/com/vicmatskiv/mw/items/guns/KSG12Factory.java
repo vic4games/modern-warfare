@@ -35,6 +35,8 @@ public class KSG12Factory implements GunFactory {
 		.withAmmo(CommonProxy.Remington870Mag)
 		.withAmmoCapacity(7)
 		.withFireRate(0.5f)
+		.withEjectRoundRequired()
+		.withEjectSpentRoundSound("AR15")
 		.withPumpTimeout(1000)
 		.withRecoil(9f)
 		.withZoom(0.9f)
@@ -50,6 +52,8 @@ public class KSG12Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCompatibleAttachment(CommonProxy.KSGPump, true, (model) -> {
+		})
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.161F, -1.61F, 0.3F);
@@ -198,12 +202,53 @@ public class KSG12Factory implements GunFactory {
 				})
 				
 				
+				
+				
 			.withFirstPersonPositioning((player, itemStack) -> {
 				GL11.glTranslatef(0.3F, -0.39F, -0.26F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.KSGPump.getRenderablePart(), (player, itemStack) -> {
+				})
+				
+			.withFirstPersonPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+						GL11.glRotatef(40F, 0f, 1f, 0f);
+						GL11.glRotatef(10F, 0f, 0f, 1f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+						GL11.glRotatef(40F, 0f, 1f, 0f);
+						GL11.glRotatef(10F, 0f, 0f, 1f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50)
+					
+					)
+					
+			.withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.KSGPump.getRenderablePart(),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0F, 0F, 0.6F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glRotatef(0F, 0f, 0f, 1f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+//						GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+//						GL11.glRotatef(40F, 0f, 1f, 0f);
+//						GL11.glRotatef(10F, 0f, 0f, 1f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+//						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50)
+					
+					)
 				
 			.withFirstPersonPositioningReloading(
 					
@@ -263,6 +308,42 @@ public class KSG12Factory implements GunFactory {
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+
+				}, 250, 50)
+			)
+			
+			
+			
+			
+			.withFirstPersonCustomPositioningReloading(
+				CommonProxy.KSGPump.getRenderablePart(),
+				new Transition((player, itemStack) -> { // Reload position
+					
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
+
+				}, 250, 50),
+				
+				new Transition((player, itemStack) -> { // Reload position
+					
 
 				}, 250, 50)
 			)
@@ -460,6 +541,39 @@ public class KSG12Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0)
 					)
+					
+			.withFirstPersonLeftHandPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.7f, -0.2f, 0.4f);
+						 GL11.glRotatef(95f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.7f, -0.2f, 0.3f);
+						 GL11.glRotatef(95f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+					}, 250, 50)
+					
+					)
+					
+			.withFirstPersonRightHandPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50)
+					
+					)
+					
 			.build())
 		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.8f)
