@@ -1524,12 +1524,12 @@ public class CommonProxy {
 		Tacticalhelmet = tacticalArmorBuilder.buildHelmet(isClient());
 		Tacticalchest = tacticalArmorBuilder.buildChest(isClient());
 		Tacticalboots = tacticalArmorBuilder.buildBoots(isClient());
-
-		new CustomArmor.Builder().withModId(ModernWarfareMod.MODID)
-				.withMaterial(Tactical).withUnlocalizedName("Tactical")
-				.withTextureName("Tactical")
-				.withModelClass("com.vicmatskiv.mw.models.Tactical")
-				.withHudTextureName("Tactical").build(isClient());
+//
+//		new CustomArmor.Builder().withModId(ModernWarfareMod.MODID)
+//				.withMaterial(Tactical).withUnlocalizedName("Tactical")
+//				.withTextureName("Tactical")
+//				.withModelClass("com.vicmatskiv.mw.models.Tactical")
+//				.withHudTextureName("Tactical").build(isClient());
 
 	}
 
