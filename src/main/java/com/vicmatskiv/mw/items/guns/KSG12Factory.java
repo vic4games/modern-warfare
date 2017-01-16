@@ -36,7 +36,7 @@ public class KSG12Factory implements GunFactory {
 		.withAmmoCapacity(7)
 		.withFireRate(0.5f)
 		.withEjectRoundRequired()
-		.withEjectSpentRoundSound("AR15")
+		.withEjectSpentRoundSound("KSG12Pump")
 		.withPumpTimeout(1000)
 		.withRecoil(9f)
 		.withZoom(0.9f)
@@ -200,15 +200,73 @@ public class KSG12Factory implements GunFactory {
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
-				
-				
-				
-				
+
 			.withFirstPersonPositioning((player, itemStack) -> {
 				GL11.glTranslatef(0.3F, -0.39F, -0.26F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-1F, 1f, 0f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.135F, -1.05f, 1.1f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.07f, 0.35f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+
+				// HP Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.02f, 0.3f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, -0.05f, 0.3f);
+				} 
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(1.373F, -1.43f, 2.8f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
 				})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.KSGPump.getRenderablePart(), (player, itemStack) -> {
@@ -297,56 +355,47 @@ public class KSG12Factory implements GunFactory {
 				
 				new Transition((player, itemStack) -> { // Reload position
 					GL11.glTranslatef(0.3F, -0.39F, -0.26F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(40F, 0f, 1f, 0f);
+					GL11.glRotatef(10F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-
 				}, 250, 50),
-				
 				new Transition((player, itemStack) -> { // Reload position
 					GL11.glTranslatef(0.3F, -0.39F, -0.26F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(40F, 0f, 1f, 0f);
+					GL11.glRotatef(10F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-
-				}, 250, 50)
+				}, 250, 50)	
 			)
-			
-			
-			
-			
-			.withFirstPersonCustomPositioningReloading(
-				CommonProxy.KSGPump.getRenderablePart(),
+	
+			.withFirstPersonCustomPositioningReloading(CommonProxy.KSGPump.getRenderablePart(),
 				new Transition((player, itemStack) -> { // Reload position
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position	
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position	
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position		
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0F, 0F, 0.6F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glRotatef(0F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					
 				}, 250, 50),
-				
 				new Transition((player, itemStack) -> { // Reload position
-					
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					
-
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					
-
+//					GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+//					GL11.glRotatef(40F, 0f, 1f, 0f);
+//					GL11.glRotatef(10F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 50)
-			)
+				
+				)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);

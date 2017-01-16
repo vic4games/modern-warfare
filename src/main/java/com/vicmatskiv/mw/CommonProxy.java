@@ -1,5 +1,12 @@
 package com.vicmatskiv.mw;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.attachments.ItemACOG;
@@ -37,14 +44,11 @@ import com.vicmatskiv.mw.items.ItemG21Mag;
 import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.ItemM107Mag;
-import com.vicmatskiv.mw.items.ItemM110Mag;
 import com.vicmatskiv.mw.items.ItemM14Mag;
 import com.vicmatskiv.mw.items.ItemM1911Mag;
 import com.vicmatskiv.mw.items.ItemM1Mag;
 import com.vicmatskiv.mw.items.ItemM249Mag;
 import com.vicmatskiv.mw.items.ItemM9Mag;
-import com.vicmatskiv.mw.items.ItemMP40Mag;
-import com.vicmatskiv.mw.items.ItemMP5Mag;
 import com.vicmatskiv.mw.items.ItemMP7Mag;
 import com.vicmatskiv.mw.items.ItemMagnumAmmo;
 import com.vicmatskiv.mw.items.ItemPX90Mag;
@@ -155,17 +159,12 @@ import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
 import com.vicmatskiv.weaponlib.ItemAmmo;
 import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
 import com.vicmatskiv.weaponlib.Weapon;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -212,6 +211,8 @@ public class CommonProxy {
 	public static ItemAttachment<Weapon> P2000Top;
 	public static ItemAttachment<Weapon> DeagleTop;
 	public static ItemAttachment<Weapon> KSGPump;
+	public static ItemAttachment<Weapon> L115Bolt1;
+	public static ItemAttachment<Weapon> L115Bolt2;
 
 	public static Item AK47;
 	public static Item AKM;
@@ -291,6 +292,8 @@ public class CommonProxy {
 	public static ItemMagazine M107BMag;
 	public static ItemMagazine HKMP7Mag;
 	public static ItemMagazine M1CarbineMag;
+	public static ItemMagazine M240Mag;
+	public static ItemMagazine L115Mag;
 	
 	//public static ItemAmmo AK47Mag;
 	public static ItemAmmo G18Mag;
@@ -469,9 +472,17 @@ public class CommonProxy {
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
+		
+		ItemBullet sampleBullet = new ItemBullet.Builder()
+			.withModId(ModernWarfareMod.MODID)
+			.withCreativeTab(ModernWarfareMod.gunsTab)
+			.withName("samplebullet")
+			.withTextureName("samplebullet")
+			.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
 
 		Magazine762x39 = new ItemMagazine.Builder()
 			    .withAmmo(30)
+			    .withCompatibleBullet(sampleBullet)
 				.withName("Magazine762x39")
 				.withModId(ModernWarfareMod.MODID)
 				.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1169,6 +1180,62 @@ public class CommonProxy {
 		.withTextureName("GunmetalTexture.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
+		M240Mag = new ItemMagazine.Builder()
+		.withAmmo(200)
+		.withName("M240Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.M240Mag())
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1F, -0.5F, 0.8F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-0.2F, 0.3F, 0.4F);
+			GL11.glRotatef(-180F, 0f, 1f, 0f);
+			GL11.glRotatef(-10F, 1f, 0f, 0f);
+			GL11.glRotatef(-10F, 0f, 0f, 1f);
+			GL11.glScaled(1.2F, 1.2F, 1.2f);
+		})
+		.withTextureName("M240Mag.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+		
+		L115Mag = new ItemMagazine.Builder()
+		.withAmmo(10)
+		.withName("LP115Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.L115Mag())
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1F, -0.5F, 0.8F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-0.2F, 0.3F, 0.4F);
+			GL11.glRotatef(-180F, 0f, 1f, 0f);
+			GL11.glRotatef(-10F, 1f, 0f, 0f);
+			GL11.glRotatef(-10F, 0f, 0f, 1f);
+			GL11.glScaled(1.2F, 1.2F, 1.2f);
+		})
+		.withTextureName("AK12.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+		
 		//AK47Mag = new ItemAK47Mag();
 		G18Mag = new ItemG18Mag();
 		M9Mag = new ItemM9Mag();
@@ -1268,6 +1335,24 @@ public class CommonProxy {
 				//.withCreativeTab(ModernWarfareMod.gunsTab)
 				.withModel(new com.vicmatskiv.mw.models.KSG12Pump(), "GunmetalTexture.png")
 				.withName("KSGPump")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		L115Bolt1 = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA2)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.L115Bolt1(), "AK12.png")
+				.withName("LP115Bolt")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		L115Bolt2 = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA3)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.L115Bolt2(), "AK12.png")
+				.withName("LP115Bolt2")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
 				.build(ModernWarfareMod.MOD_CONTEXT);

@@ -46,11 +46,11 @@ public class M4A1Factory implements GunFactory {
 		.withName("M4A1")
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.6f)
+		.withFireRate(0.65f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("AR15")
+		.withShootSound("M4A1")
 		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
@@ -249,7 +249,7 @@ public class M4A1Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.5F, -4F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AR15", "AR15Blue", "AR15Red", "AR15Tan", "Electric")
+		.withTextureNames("AK12", "AR15Blue", "AR15Red", "AR15Tan", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AR15())
@@ -303,21 +303,21 @@ public class M4A1Factory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glRotatef(-10F, 1f, 0f, 0f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
-					
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 500),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glRotatef(-10F, 1f, 0f, 0f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
-					
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
