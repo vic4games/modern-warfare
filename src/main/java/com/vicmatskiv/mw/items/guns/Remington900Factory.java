@@ -19,8 +19,13 @@ public class Remington900Factory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("Remington870")
-		.withAmmo(CommonProxy.Remington870Mag)
+//		.withAmmo(CommonProxy.Remington870Mag)
 		.withAmmoCapacity(4)
+		.withMaxBulletsPerReload(4)
+		.withFireRate(0.5f)
+		.withEjectRoundRequired()
+		.withEjectSpentRoundSound("KSG12Pump")
+		.withPumpTimeout(1000)
 		.withFireRate(0.1f)
 		.withRecoil(9f)
 		.withZoom(0.9f)
@@ -28,8 +33,8 @@ public class Remington900Factory implements GunFactory {
 		.withPumpTimeout(1000)
 		.withShootSound("Remington")
 		//.withSilencedShootSound("AR15silenced")
-		.withReloadSound("KSG12Reload")
-		.withReloadingTime(50)
+		.withReloadSound("ShotgunReload")
+		.withReloadingTime(15)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
 		.withCrosshairZoomed("Sight")
@@ -37,6 +42,9 @@ public class Remington900Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
+		})
+		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
 		.withTextureNames("Remington", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -68,6 +76,91 @@ public class Remington900Factory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0.55F, -0.42F, -0.1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(-0.07F, -0.313F, -0.27F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+				GL11.glRotatef(-1F, 1f, 0f, 0f);
+
+				// Zoom
+				GL11.glTranslatef(0.055F, -0.95f, 1.4f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
+				} 
+				// Holo Zoom
+				/*if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.1f, 3f);
+				} */
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.R870Pump.getRenderablePart(), (player, itemStack) -> {
+				})
+				
+			.withFirstPersonPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0.4F, -0.4F, 0F);
+						GL11.glRotatef(40F, 0f, 1f, 0f);
+						GL11.glRotatef(20F, 0f, 0f, 1f);
+						GL11.glRotatef(5F, 1f, 0f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0.4F, -0.4F, 0F);
+						GL11.glRotatef(40F, 0f, 1f, 0f);
+						GL11.glRotatef(20F, 0f, 0f, 1f);
+						GL11.glRotatef(5F, 1f, 0f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50)
+					
+					)
+					
+			.withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.R870Pump.getRenderablePart(),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glTranslatef(0F, 0F, 0.6F);
+//						GL11.glRotatef(0F, 0f, 1f, 0f);
+//						GL11.glRotatef(0F, 0f, 0f, 1f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+//						GL11.glTranslatef(0.3F, -0.39F, -0.26F);
+//						GL11.glRotatef(40F, 0f, 1f, 0f);
+//						GL11.glRotatef(10F, 0f, 0f, 1f);
+//						GL11.glScaled(0.55F, 0.55F, 0.55F);
+//						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 50)
+					
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.R870Pump.getRenderablePart(),
+				new Transition((player, itemStack) -> { // Reload position
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position
+				}, 250, 50)
+				)
+				
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> { // Reload position
@@ -86,51 +179,10 @@ public class Remington900Factory implements GunFactory {
 				
 					GL11.glRotatef(-45F, 1f, 0f, 2f);
 					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-					GL11.glRotatef(-45F, 1f, 0f, 2f);
-					GL11.glTranslatef(1F, -1.2F, 0F);
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.55F, -0.42F, -0.1F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.55F, -0.42F, -0.1F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-
-				}, 250, 50),
-				
-				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.55F, -0.42F, -0.1F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-
 				}, 250, 50)
 			)
 				
-				.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.07F, -0.313F, -0.27F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -170,7 +222,7 @@ public class Remington900Factory implements GunFactory {
 			.withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.7f, -0.2f, 0.2f);
+						 GL11.glTranslatef(0.7f, -0.25f, 0.2f);
 						 GL11.glRotatef(95f, 0, 0f, 1f);
 						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					 }, 
@@ -210,44 +262,7 @@ public class Remington900Factory implements GunFactory {
 						 GL11.glRotatef(60f, 0, 0f, 1f);
 						 GL11.glRotatef(-85f, 1f, 0f, 0f);
 						 GL11.glRotatef(60f, 0f, 0f, 1f);
-					}, 250, 50),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(2f, 2f, 2.5f);
-						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
-						 GL11.glRotatef(60f, 0, 0f, 1f);
-						 GL11.glRotatef(-90f, 1f, 0f, 0f);
-						 GL11.glRotatef(20f, 0f, 0f, 1f);
-					}, 250, 50),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(2f, 2f, 2.5f);
-						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
-						 GL11.glRotatef(60f, 0, 0f, 1f);
-						 GL11.glRotatef(-85f, 1f, 0f, 0f);
-						 GL11.glRotatef(60f, 0f, 0f, 1f);
-					}, 250, 50),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.7f, -0.2f, 0.2f);
-						 GL11.glRotatef(95f, 0, 0f, 1f);
-						 GL11.glRotatef(-50f, 1f, 0f, 0f);
-					}, 250, 0),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.7f, -0.2f, 0.3f);
-						 GL11.glRotatef(95f, 0, 0f, 1f);
-						 GL11.glRotatef(-50f, 1f, 0f, 0f);
-					}, 250, 0),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.7f, -0.2f, 0.2f);
-						 GL11.glRotatef(95f, 0, 0f, 1f);
-						 GL11.glRotatef(-50f, 1f, 0f, 0f);
-					}, 250, 0)
+					}, 250, 50)
 					)
 					
 			.withFirstPersonRightHandPositioningReloading(
@@ -263,41 +278,41 @@ public class Remington900Factory implements GunFactory {
 						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 50),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 1000),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 50),
-					
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 0),
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 0),
-					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, -0.1f, 1f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
-					}, 250, 0)
+					}, 250, 50)
 					)
+					
+			.withFirstPersonLeftHandPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.7f, -0.25f, 0.3f);
+						 GL11.glRotatef(95f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.7f, -0.25f, 0.2f);
+						 GL11.glRotatef(95f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+					}, 250, 50)
+					
+					)
+					
+			.withFirstPersonRightHandPositioningEjectSpentRound(
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 50)
+					
+					)
+					
 			.build())
 		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.8f)

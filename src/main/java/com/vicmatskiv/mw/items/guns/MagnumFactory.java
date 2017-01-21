@@ -19,10 +19,10 @@ public class MagnumFactory implements GunFactory {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
 		.withName("Magnum")
-		.withAmmo(CommonProxy.MagnumAmmo)
+//		.withAmmo(CommonProxy.MagnumAmmo)
 		.withAmmoCapacity(6)
-		.withFireRate(0.16f)
-		.withRecoil(7f)
+		.withFireRate(0.2f)
+		.withRecoil(5f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("Magnum")
@@ -33,12 +33,10 @@ public class MagnumFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)		
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(0.01F, -0.95F, -2.3F);
-			GL11.glScaled(1.1F, 1.1F, 1.1F);
-			GL11.glRotatef(-90F, 0f, 0f, -4f);
+		.withCreativeTab(ModernWarfareMod.gunsTab)	
+		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
+		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})
 		.withTextureNames("Magnum", "MagnumGold")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -52,12 +50,12 @@ public class MagnumFactory implements GunFactory {
 			})
 			.withInventoryPositioning(itemStack -> {
 				GL11.glScaled(0.35F, 0.35F, 0.35F);
-				GL11.glTranslatef(0, 0.8f, 0);
+				GL11.glTranslatef(-0.9F, 0.6f, 0.5F);
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((player, itemStack) -> {
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.6F, -1F, 1.7F);
+				GL11.glScaled(0.45F, 0.45F, 0.45F);
+				GL11.glTranslatef(-2F, -1.1F, 2.2F);
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
@@ -70,26 +68,107 @@ public class MagnumFactory implements GunFactory {
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(0.1F, -0.5F, -1F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				GL11.glRotatef(-10F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningCustomRecoiled(CommonProxy.RevolverCase.getRenderablePart(), (player, itemStack) -> {
+//				GL11.glTranslatef(0F, 0F, 0F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				})
+				
+				
+			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.RevolverCase.getRenderablePart(), (player, itemStack) -> {
+//				GL11.glTranslatef(0F, 0F, 0F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+				GL11.glTranslatef(-0.4F, -0.3F, -0.6F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+
+				// Zoom
+				GL11.glTranslatef(0.23F, -1.19f, 1.3f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+			/*	// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, ModernWarfareMod.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.3f, 1f);
+				} */
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
+				}
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.RevolverCase.getRenderablePart(), (player, itemStack) -> {
+				})
+				
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.5F, -0.4F, -0.6F);
+					GL11.glTranslatef(-0.1F, -0.1F, -0.9F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glRotatef(15F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 
 				}, 250, 100),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.5F, -0.4F, -0.6F);
+					GL11.glTranslatef(-0.1F, -0.1F, -0.9F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glRotatef(15F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 
 				}, 250, 100)
 			) 
+			
+			.withFirstPersonCustomPositioningReloading(CommonProxy.RevolverCase.getRenderablePart(),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
+//					GL11.glRotatef(45F, 0f, 1f, 0f);
+//					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glRotatef(60F, 0f, 0f, 1f);
+					GL11.glScaled(0.9F, 0.9F, 0.9F);
+					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				}, 250, 50),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
+//					GL11.glRotatef(45F, 0f, 1f, 0f);
+//					GL11.glRotatef(5F, 1f, 0f, 0f);
+					GL11.glRotatef(60F, 0f, 0f, 1f);
+					GL11.glScaled(0.9F, 0.9F, 0.9F);
+					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				}, 250, 50)
+				)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
 				GL11.glTranslatef(-0.4F, -0.195F, -0.6F);
@@ -168,17 +247,17 @@ public class MagnumFactory implements GunFactory {
 			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
+						 GL11.glTranslatef(0.65f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
-						 GL11.glRotatef(-8f, 1f, 0f, 0f);
+						 GL11.glRotatef(-4f, 1f, 0f, 0f);
 						 GL11.glRotatef(70f, 0f, 1f, 0f);
 					}, 50, 100),
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.6f, 0.3f, 0.4f);
+						 GL11.glTranslatef(0.65f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
-						 GL11.glRotatef(-20f, 1f, 0f, 0f);
+						 GL11.glRotatef(-10f, 1f, 0f, 0f);
 						 GL11.glRotatef(70f, 0f, 1f, 0f);
 					}, 50, 200))
 					
@@ -196,6 +275,22 @@ public class MagnumFactory implements GunFactory {
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 200))
+					
+			.withFirstPersonHandPositioningZooming(
+					(player,  itemStack) -> {
+						 GL11.glScalef(3f, 3f, 3f);
+						 GL11.glTranslatef(0.4f, -0.1f, 0.5f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-60f, 1f, 0f, 0f);
+					 }, 
+					 (player,  itemStack) -> {
+						 GL11.glScalef(3.3f, 3.3f, 3.3f);
+						 GL11.glTranslatef(-0.34f, 0.48f, 0.3f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-120f, 1f, 0f, 0f);
+						 GL11.glRotatef(10f, 0f, 0f, 1f);
+					 })
+					
 			.build())
 		.withSpawnEntityDamage(13f)
 		.withSpawnEntityGravityVelocity(0.016f)

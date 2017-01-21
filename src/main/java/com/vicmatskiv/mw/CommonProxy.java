@@ -1,23 +1,19 @@
 package com.vicmatskiv.mw;
 
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+
 import org.lwjgl.opengl.GL11;
 
-import com.vicmatskiv.mw.attachments.ItemACOG;
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
 import com.vicmatskiv.mw.attachments.ItemAR15Iron;
 import com.vicmatskiv.mw.attachments.ItemBipod;
-import com.vicmatskiv.mw.attachments.ItemExtra;
-import com.vicmatskiv.mw.attachments.ItemGrip;
-import com.vicmatskiv.mw.attachments.ItemGrip2;
-import com.vicmatskiv.mw.attachments.ItemHP;
-import com.vicmatskiv.mw.attachments.ItemHolo2;
-import com.vicmatskiv.mw.attachments.ItemKobra;
-import com.vicmatskiv.mw.attachments.ItemLaser;
-import com.vicmatskiv.mw.attachments.ItemLaser2;
-import com.vicmatskiv.mw.attachments.ItemReflex;
-import com.vicmatskiv.mw.attachments.ItemScope;
-import com.vicmatskiv.mw.attachments.ItemSilencer;
-import com.vicmatskiv.mw.attachments.ItemVGrip;
 import com.vicmatskiv.mw.blocks.BlockBauxiteOre;
 import com.vicmatskiv.mw.blocks.BlockCopperOre;
 import com.vicmatskiv.mw.blocks.BlockLeadOre;
@@ -27,28 +23,7 @@ import com.vicmatskiv.mw.blocks.BlockSulfurOre;
 import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
-import com.vicmatskiv.mw.items.ItemAR15Mag;
-import com.vicmatskiv.mw.items.ItemDragonuvMag;
-import com.vicmatskiv.mw.items.ItemDrumMag;
-import com.vicmatskiv.mw.items.ItemFNFALMag;
-import com.vicmatskiv.mw.items.ItemFamasMag;
-import com.vicmatskiv.mw.items.ItemG18Mag;
-import com.vicmatskiv.mw.items.ItemG21Mag;
-import com.vicmatskiv.mw.items.ItemG36CMag;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
-import com.vicmatskiv.mw.items.ItemM107Mag;
-import com.vicmatskiv.mw.items.ItemM14Mag;
-import com.vicmatskiv.mw.items.ItemM1911Mag;
-import com.vicmatskiv.mw.items.ItemM1Mag;
-import com.vicmatskiv.mw.items.ItemM249Mag;
-import com.vicmatskiv.mw.items.ItemM9Mag;
-import com.vicmatskiv.mw.items.ItemMP7Mag;
-import com.vicmatskiv.mw.items.ItemMagnumAmmo;
-import com.vicmatskiv.mw.items.ItemPX90Mag;
-import com.vicmatskiv.mw.items.ItemRemington870Mag;
-import com.vicmatskiv.mw.items.ItemScarHMag;
-import com.vicmatskiv.mw.items.ItemScarMag;
-import com.vicmatskiv.mw.items.ItemXWPMag;
 import com.vicmatskiv.mw.items.guns.ACRFactory;
 import com.vicmatskiv.mw.items.guns.AK12Factory;
 import com.vicmatskiv.mw.items.guns.AK47Factory;
@@ -97,6 +72,19 @@ import com.vicmatskiv.mw.items.guns.ScarFactory;
 import com.vicmatskiv.mw.items.guns.ScarHFactory;
 import com.vicmatskiv.mw.items.guns.XEagleFactory;
 import com.vicmatskiv.mw.items.guns.XWPFactory;
+import com.vicmatskiv.mw.models.AK47iron;
+import com.vicmatskiv.mw.models.AKMiron1;
+import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.FALIron;
+import com.vicmatskiv.mw.models.G36CIron1;
+import com.vicmatskiv.mw.models.G36CIron2;
+import com.vicmatskiv.mw.models.M14Iron;
+import com.vicmatskiv.mw.models.M4Iron1;
+import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MP5Iron;
+import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.ScarIron1;
+import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.parts.ItemBarrel;
 import com.vicmatskiv.mw.parts.ItemCapacitor;
 import com.vicmatskiv.mw.parts.ItemCopperWiring;
@@ -150,19 +138,12 @@ import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
-import com.vicmatskiv.weaponlib.ItemAmmo;
 import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
+import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -209,6 +190,14 @@ public class CommonProxy {
 	public static ItemAttachment<Weapon> P2000Top;
 	public static ItemAttachment<Weapon> DeagleTop;
 	public static ItemAttachment<Weapon> KSGPump;
+	public static ItemAttachment<Weapon> L115Bolt1;
+	public static ItemAttachment<Weapon> L115Bolt2;
+	public static ItemAttachment<Weapon> RevolverCase;
+	public static ItemAttachment<Weapon> R870Pump;
+	public static ItemAttachment<Weapon> M1911Top;
+	
+	public static ItemBullet ShotgunShell;
+	public static ItemBullet Magnum44Ammo;
 
 	public static Item AK47;
 	public static Item AKM;
@@ -287,33 +276,10 @@ public class CommonProxy {
 	public static ItemMagazine M107BMag;
 	public static ItemMagazine HKMP7Mag;
 	public static ItemMagazine M1CarbineMag;
-	
-	//public static ItemAmmo AK47Mag;
-	public static ItemAmmo G18Mag;
-	public static ItemAmmo M9Mag;
-	public static ItemAmmo AR15Mag;
-	public static ItemAmmo XWPMag;
-	public static ItemAmmo DragonuvMag;
-	public static ItemAmmo Remington870Mag;
-	public static ItemAmmo PX90Mag;
-	public static ItemAmmo G36CMag;
-	public static ItemAmmo ScarMag;
-	//public static ItemAmmo MP5Mag;
-	//public static ItemAmmo AK74UMag;
-	public static ItemAmmo MP7Mag;
-	public static ItemAmmo MagnumAmmo;
-	public static ItemAmmo FNFALMag;
-	public static ItemAmmo M14Mag;
-	//public static ItemAmmo Grenades;
-	public static ItemAmmo M249Mag;
-	public static ItemAmmo FamasMag;
-	public static ItemAmmo G21Mag;
-	public static ItemAmmo M107Mag;
 
-	public static ItemAmmo DrumMag;
-	public static ItemAmmo ScarHMag;
-	public static ItemAmmo M1Mag;
-	public static ItemAmmo M1911Mag;
+	public static ItemMagazine M240Mag;
+	public static ItemMagazine L115Mag;
+	public static ItemMagazine ColtM1911Mag;
 
 	public static Item Bullets;
 	public static Item Electronics;
@@ -455,12 +421,68 @@ public class CommonProxy {
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
 
+		OreDictionary.registerOre("ingotSteel", SteelIngot);
+		
+		ShotgunShell = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("ShotgunShell")
+		.withModel(new com.vicmatskiv.mw.models.ShotgunShell(), "ShotgunShell.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1.2F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.8F, 0.8F, 0.8F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.9F, -0.29F, 0.8F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.7F, 0.7F, 0.7F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.6F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Magnum44Ammo = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Magnum44Ammo")
+		.withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.3F, 0.3F, 0.3F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.6F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+
+
 		Magazine762x39 = new ItemMagazine.Builder()
 			    .withAmmo(30)
+			    //.withCompatibleBullet(sampleBullet)
 				.withName("Magazine762x39")
 				.withModId(ModernWarfareMod.MODID)
 				.withCreativeTab(ModernWarfareMod.gunsTab)
-				.withModel(new com.vicmatskiv.mw.models.Magazine762x39())
+				.withModel(new com.vicmatskiv.mw.models.Magazine762x39(), "GunmetalTexture.png")
 				.withFirstPersonPositioning((player, itemStack) -> {
 					GL11.glTranslatef(0.1F, -0.7F, 0.4F);
 					GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -479,7 +501,7 @@ public class CommonProxy {
 					GL11.glRotatef(-30F, 0f, 0f, 1f);
 					GL11.glScaled(0.9F, 0.9F, 0.9f);
 				})
-				.withTextureName("GunmetalTexture.png")
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		
@@ -488,7 +510,7 @@ public class CommonProxy {
 		        .withName("AK12Mag")
 		        .withModId(ModernWarfareMod.MODID)
 		        .withCreativeTab(ModernWarfareMod.gunsTab)
-		        .withModel(new com.vicmatskiv.mw.models.AK12Mag())
+		        .withModel(new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png")
 		        .withFirstPersonPositioning((player, itemStack) -> {
 					GL11.glTranslatef(0.1F, -0.7F, 0.4F);
 					GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -507,7 +529,7 @@ public class CommonProxy {
 					GL11.glRotatef(-30F, 0f, 0f, 1f);
 					GL11.glScaled(0.9F, 0.9F, 0.9f);
 				})
-		        .withTextureName("GunmetalTexture.png")
+		        .withTextureName("Dummy.png")
 		        .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		RPK74MMag = new ItemMagazine.Builder()
@@ -515,7 +537,7 @@ public class CommonProxy {
 		.withName("RPK74MMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.RPK74MMag())
+		.withModel(new com.vicmatskiv.mw.models.RPK74MMag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -535,7 +557,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(0.8F, 0.8F, 0.8f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		AK74MMag = new ItemMagazine.Builder()
@@ -543,7 +565,7 @@ public class CommonProxy {
 		.withName("AK74MMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.AK12Mag())
+		.withModel(new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -563,7 +585,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		AKS74UMag = new ItemMagazine.Builder()
@@ -571,7 +593,7 @@ public class CommonProxy {
 		.withName("AKS74UMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.Magazine762x39())
+		.withModel(new com.vicmatskiv.mw.models.Magazine762x39(), "AKS74UMag.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -591,7 +613,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("AKS74UMag.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		NATOMag1 = new ItemMagazine.Builder()
@@ -599,7 +621,7 @@ public class CommonProxy {
 		.withName("NATOMag1")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.NATOMag1())
+		.withModel(new com.vicmatskiv.mw.models.NATOMag1(), "NATOMag1.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -619,7 +641,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("NATOMag1.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		NATOMag2 = new ItemMagazine.Builder()
@@ -627,7 +649,7 @@ public class CommonProxy {
 		.withName("NATOMag2")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.NATOMag2())
+		.withModel(new com.vicmatskiv.mw.models.NATOMag2(), "NATOMag2.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -647,7 +669,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("NATOMag2.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		NATOFamasMag = new ItemMagazine.Builder()
@@ -655,7 +677,7 @@ public class CommonProxy {
 		.withName("NATOFamasMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.NATOFamasMag())
+		.withModel(new com.vicmatskiv.mw.models.NATOFamasMag(), "NATOMag1.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -675,7 +697,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("NATOMag1.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		NATOG36Mag = new ItemMagazine.Builder()
@@ -683,7 +705,7 @@ public class CommonProxy {
 		.withName("NATOG36Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.NATOG36Mag())
+		.withModel(new com.vicmatskiv.mw.models.NATOG36Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -703,7 +725,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		DragunovMag = new ItemMagazine.Builder()
@@ -711,7 +733,7 @@ public class CommonProxy {
 		.withName("DragunovMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.DragunovMag())
+		.withModel(new com.vicmatskiv.mw.models.DragunovMag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -731,7 +753,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		FALMag = new ItemMagazine.Builder()
@@ -739,7 +761,7 @@ public class CommonProxy {
 		.withName("FALMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.FNFALMag())
+		.withModel(new com.vicmatskiv.mw.models.FNFALMag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -759,7 +781,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		M110Mag = new ItemMagazine.Builder()
@@ -767,7 +789,7 @@ public class CommonProxy {
 		.withName("M110Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.M110Mag())
+		.withModel(new com.vicmatskiv.mw.models.M110Mag(), "NATOMag1.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -787,7 +809,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("NATOMag1.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		M14DMRMag = new ItemMagazine.Builder()
@@ -795,7 +817,7 @@ public class CommonProxy {
 		.withName("M14DMRMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.M14Mag())
+		.withModel(new com.vicmatskiv.mw.models.M14Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -815,7 +837,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		Glock21Mag = new ItemMagazine.Builder()
@@ -823,7 +845,7 @@ public class CommonProxy {
 		.withName("Glock21Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.GlockMagazine())
+		.withModel(new com.vicmatskiv.mw.models.GlockMagazine(), "GunmetalTexture.png")
 
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -843,15 +865,15 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		Glock18Mag = new ItemMagazine.Builder()
-		.withAmmo(20)
+		.withAmmo(17)
 		.withName("Glock18Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.GlockMagazine())
+		.withModel(new com.vicmatskiv.mw.models.GlockMagazine(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -871,7 +893,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		M9BerettaMag = new ItemMagazine.Builder()
@@ -879,7 +901,7 @@ public class CommonProxy {
 		.withName("M9BerettaMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.M9Mag())
+		.withModel(new com.vicmatskiv.mw.models.M9Mag(), "M9Mag.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -899,7 +921,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("M9Mag.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		NATODrum100 = new ItemMagazine.Builder()
@@ -907,7 +929,7 @@ public class CommonProxy {
 		.withName("NATODrum100")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.NATODrum100())
+		.withModel(new com.vicmatskiv.mw.models.NATODrum100(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -927,7 +949,7 @@ public class CommonProxy {
 			GL11.glRotatef(0F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		MP40Mag = new ItemMagazine.Builder()
@@ -935,7 +957,7 @@ public class CommonProxy {
 		.withName("MP40Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.MP40Mag())
+		.withModel(new com.vicmatskiv.mw.models.MP40Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -955,7 +977,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		MP5KMag = new ItemMagazine.Builder()
@@ -963,7 +985,7 @@ public class CommonProxy {
 		.withName("MP5KMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.MP5Mag())
+		.withModel(new com.vicmatskiv.mw.models.MP5Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -983,7 +1005,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		DeagleMag = new ItemMagazine.Builder()
@@ -991,7 +1013,7 @@ public class CommonProxy {
 		.withName("DeagleMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.DeagleMag())
+		.withModel(new com.vicmatskiv.mw.models.DeagleMag(), "Deagle.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1011,7 +1033,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("Deagle.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		AS50Mag = new ItemMagazine.Builder()
@@ -1019,7 +1041,7 @@ public class CommonProxy {
 		.withName("AS50Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.AS50Mag())
+		.withModel(new com.vicmatskiv.mw.models.AS50Mag(), "NATOMag1.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1039,7 +1061,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("NATOMag1.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		FNP90Mag = new ItemMagazine.Builder()
@@ -1047,7 +1069,7 @@ public class CommonProxy {
 		.withName("FNP90Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.P90Mag())
+		.withModel(new com.vicmatskiv.mw.models.P90Mag(), "P90Mag.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.3F, 0.4F);
@@ -1067,7 +1089,7 @@ public class CommonProxy {
 			GL11.glRotatef(0F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("P90Mag.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		M107BMag = new ItemMagazine.Builder()
@@ -1075,7 +1097,7 @@ public class CommonProxy {
 		.withName("M107BMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.M107Mag())
+		.withModel(new com.vicmatskiv.mw.models.M107Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1095,7 +1117,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		HKMP7Mag = new ItemMagazine.Builder()
@@ -1103,7 +1125,7 @@ public class CommonProxy {
 		.withName("HKMP7Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.MP7Mag())
+		.withModel(new com.vicmatskiv.mw.models.MP7Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1123,7 +1145,7 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(0.9F, 0.9F, 0.9f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
 		M1CarbineMag = new ItemMagazine.Builder()
@@ -1131,7 +1153,7 @@ public class CommonProxy {
 		.withName("M1CarbineMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withModel(new com.vicmatskiv.mw.models.M14Mag())
+		.withModel(new com.vicmatskiv.mw.models.M14Mag(), "GunmetalTexture.png")
 		
 		.withFirstPersonPositioning((player, itemStack) -> {
 			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1151,64 +1173,121 @@ public class CommonProxy {
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
 		})
-		.withTextureName("GunmetalTexture.png")
+		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 		
-		//AK47Mag = new ItemAK47Mag();
-		G18Mag = new ItemG18Mag();
-		M9Mag = new ItemM9Mag();
-		AR15Mag = new ItemAR15Mag();
-		XWPMag = new ItemXWPMag();
-		DragonuvMag = new ItemDragonuvMag();
-		Remington870Mag = new ItemRemington870Mag();
-		PX90Mag = new ItemPX90Mag();
-		G36CMag = new ItemG36CMag();
-		ScarMag = new ItemScarMag();
-		//MP5Mag = new ItemMP5Mag();
-		//AK74UMag = new ItemAK74UMag();
-		MP7Mag = new ItemMP7Mag();
-		MagnumAmmo = new ItemMagnumAmmo();
-		FNFALMag = new ItemFNFALMag();
-		M14Mag = new ItemM14Mag();
-		//Grenades = new ItemGrenades();
-		M249Mag = new ItemM249Mag();
-		FamasMag = new ItemFamasMag();
-		G21Mag = new ItemG21Mag();
-		M107Mag = new ItemM107Mag();
-//<<<<<<< HEAD
-//		RPK74MMag = new ItemRPK74MMag();
-//		DrumMag = new ItemDrumMag();
-//		ScarHMag = new ItemScarHMag();
-//		M1Mag = new ItemM1Mag();
-//		MP40Mag = new ItemMP40Mag();
-//		M110Mag = new ItemM110Mag();
-//=======
-		//RPK74MMag = new ItemRPK74MMag();
-		DrumMag = new ItemDrumMag();
-		ScarHMag = new ItemScarHMag();
-		M1Mag = new ItemM1Mag();
-		//SPAS15Mag = new ItemSPAS15Mag();
-		M1911Mag = new ItemM1911Mag();
-		//GaussMag = new ItemGaussMag();
-	//	RPGAmmo = new ItemRPGAmmo();
+		M240Mag = new ItemMagazine.Builder()
+		.withAmmo(200)
+		.withName("M240Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.M240Mag(), "M240Mag.png")
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1F, -0.5F, 0.8F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-0.2F, 0.3F, 0.4F);
+			GL11.glRotatef(-180F, 0f, 1f, 0f);
+			GL11.glRotatef(-10F, 1f, 0f, 0f);
+			GL11.glRotatef(-10F, 0f, 0f, 1f);
+			GL11.glScaled(1.2F, 1.2F, 1.2f);
+		})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+		
+		L115Mag = new ItemMagazine.Builder()
+		.withAmmo(10)
+		.withName("LP115Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.L115Mag(), "AK12.png")
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.3F, -0.5F, 0.6F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.9F, 0.9F, 0.9F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1.2F, -0.5F, 0.9F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-1F, 0.3F, 0.4F);
+			GL11.glRotatef(-130F, 0f, 1f, 0f);
+			GL11.glRotatef(20F, 1f, 0f, 0f);
+			GL11.glRotatef(-30F, 0f, 0f, 1f);
+			GL11.glScaled(1.2F, 1.2F, 1.2f);
+		})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+		
 
-		Reflex = new ItemReflex();
-		Holo2 = new ItemHolo2();
-		Kobra = new ItemKobra();
-		ACOG = new ItemACOG();
-		Scope = new ItemScope();
-		HP = new ItemHP();
-		Silencer = new ItemSilencer();
-		Laser = new ItemLaser();
-		Laser2 = new ItemLaser2();
-		Grip2 = new ItemGrip2();
-		Grip = new ItemGrip();
-		VGrip = new ItemVGrip();
+		ColtM1911Mag = new ItemMagazine.Builder()
+		.withAmmo(10)
+		.withName("ColtM1911Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.GlockMagazine(), "AK12.png")
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1F, -0.5F, 0.8F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-0.6F, -0.3F, 0.4F);
+			GL11.glRotatef(-130F, 0f, 1f, 0f);
+			GL11.glRotatef(20F, 1f, 0f, 0f);
+			GL11.glRotatef(-30F, 0f, 0f, 1f);
+			GL11.glScaled(1F, 1F, 1f);
+		})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+
 		Bipod = new ItemBipod();
 
 		AKMIron = new ItemAKMIron();
 		AR15Iron = new ItemAR15Iron();
-		Extra = new ItemExtra();
+//		Extra = new ItemExtra();
+		
+		Extra = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+		        .withModel(new AKMiron1(), "GunmetalTexture.png")
+		        .withModel(new AKMiron2(), "GunmetalTexture.png")
+		        .withModel(new AK47iron(), "GunmetalTexture.png")
+		        .withModel(new M4Iron1(), "GunmetalTexture.png")
+		        .withModel(new M4Iron2(), "GunmetalTexture.png")
+		        .withModel(new P90iron(), "GunmetalTexture.png")
+		        .withModel(new G36CIron1(), "GunmetalTexture.png")
+		        .withModel(new G36CIron2(), "GunmetalTexture.png")
+		        .withModel(new ScarIron1(), "GunmetalTexture.png")
+		        .withModel(new ScarIron2(), "GunmetalTexture.png")
+		        .withModel(new FALIron(), "GunmetalTexture.png")
+		        .withModel(new M14Iron(), "GunmetalTexture.png")
+		        .withModel(new MP5Iron(), "AK12.png")
+				.withName("Extra")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		GlockTop = new AttachmentBuilder<Weapon>()
 			.withCategory(AttachmentCategory.EXTRA)
@@ -1217,7 +1296,9 @@ public class CommonProxy {
 			.withName("GlockTop")
 			.withRenderablePart()
 			.withModId(ModernWarfareMod.MODID)
+			.withTextureName("Dummy.png")
 			.build(ModernWarfareMod.MOD_CONTEXT);
+		
 		G18Top = new AttachmentBuilder<Weapon>()
 				.withCategory(AttachmentCategory.EXTRA)
 				//.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1225,6 +1306,7 @@ public class CommonProxy {
 				.withName("G18Top")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		M9Top = new AttachmentBuilder<Weapon>()
@@ -1234,6 +1316,7 @@ public class CommonProxy {
 				.withName("M9Top")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		P2000Top = new AttachmentBuilder<Weapon>()
@@ -1243,6 +1326,7 @@ public class CommonProxy {
 				.withName("P2000Top")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		DeagleTop = new AttachmentBuilder<Weapon>()
@@ -1252,6 +1336,7 @@ public class CommonProxy {
 				.withName("DeagleTop")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
 		
 		KSGPump = new AttachmentBuilder<Weapon>()
@@ -1261,7 +1346,703 @@ public class CommonProxy {
 				.withName("KSGPump")
 				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		L115Bolt1 = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA2)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.L115Bolt1(), "AK12.png")
+				.withName("LP115Bolt")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		L115Bolt2 = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA3)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.L115Bolt2(), "AK12.png")
+				.withName("LP115Bolt2")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		RevolverCase = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA3)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.MagnumCase(), "MagnumCase.png")
+				.withName("RevolverCase")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		R870Pump = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.R870Pump(), "Remington.png")
+				.withName("R870Pump")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		M1911Top = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.EXTRA)
+				//.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.M1911Top(), "M1911.png")
+				.withName("M1911Top")
+				.withRenderablePart()
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		
+		
+		Reflex = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.SCOPE)
+				.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.Reflex(), "Reflex.png")
+				.withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+		        .withFirstPersonModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.Reflex) {
+		        		GL11.glTranslatef(0.1F, -0.8F, 0.2F);
+			        	GL11.glRotatef(30F, 0f, 1f, 0f);
+			        	GL11.glScaled(0.5F, 0.5F, 0.5F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+			        	GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        	
+		        })
+		        .withThirdPersonModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.Reflex) {
+		        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+		        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+		        		GL11.glRotatef(80F, 1f, 0f, 0f);
+		        		GL11.glScaled(0.3F, 0.3F, 0.3F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+			        	GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        })
+		        .withInventoryModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.Reflex) {
+		        		GL11.glTranslatef(-0.6F, -0.1F, 1.15F);
+		        		GL11.glRotatef(10F, 1f, 0f, 0f);
+		        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+		        		GL11.glRotatef(0F, 0f, 0f, 1f);
+		        		GL11.glScaled(1F, 1F, 1f);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+		        		GL11.glScaled(0F, 0F, 0F);
+		        		
+		        	}
+		        })
+		        .withEntityModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.Reflex) {
+		        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+		        		GL11.glRotatef(90F, 0f, 0f, 1f);
+		        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+		        		GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        })
+		        .withName("Reflex")
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        ACOG = new AttachmentBuilder<Weapon>()
+				.withCategory(AttachmentCategory.SCOPE)
+				.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withModel(new com.vicmatskiv.mw.models.ACOG(), "Acog.png")
+				.withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
+				.withApply((a, weapon, player) -> {
+							weapon.changeZoom(player, 0.8f);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeZoom(player, 1);
+						})
+		        .withFirstPersonModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+		        		GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+			        	GL11.glRotatef(30F, 0f, 1f, 0f);
+			        	GL11.glScaled(0.7F, 0.7F, 0.7F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+			        	GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        	
+		        })
+		        .withThirdPersonModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+		        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+		        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+		        		GL11.glRotatef(80F, 1f, 0f, 0f);
+		        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+			        	GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        })
+		        .withInventoryModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+		        		GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+		        		GL11.glRotatef(10F, 1f, 0f, 0f);
+		        		GL11.glRotatef(-190F, 0f, 1f, 0f);
+		        		GL11.glRotatef(0F, 0f, 0f, 1f);
+		        		GL11.glScaled(1.2F, 1.2F, 1.2f);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+		        		GL11.glScaled(0F, 0F, 0F);
+		        		
+		        	}
+		        })
+		        .withEntityModelPositioning((model, itemStack) -> {
+		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+		        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+		        		GL11.glRotatef(90F, 0f, 0f, 1f);
+		        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+		        		GL11.glScaled(0F, 0F, 0F);
+		        	}
+		        })
+				.withName("Acog")
+				.withModId(ModernWarfareMod.MODID)
+				.withTextureName("Dummy.png")
+				.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Holo2 = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.SCOPE)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Holographic(), "Holographic.png")
+						.withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Holographic) {
+				        		GL11.glTranslatef(0.1F, -0.8F, 0.2F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Holo2) {
+					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Holographic) {
+				        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Holo2) {
+					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Holographic) {
+				        		GL11.glTranslatef(-0.6F, -0.1F, 0.3F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1F, 1F, 1f);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Holo2) {
+				        		GL11.glScaled(0F, 0F, 0F);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Holographic) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Holo2) {
+				        		GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withName("Holographic")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Kobra = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.SCOPE)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Kobra(), "Kobra.png")
+						.withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Kobra) {
+				        		GL11.glTranslatef(0.4F, -0.8F, 0.5F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.7F, 0.7F, 0.7F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Kobra) {
+				        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Kobra) {
+				        		GL11.glTranslatef(-0.6F, -0.1F, 0.3F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1F, 1F, 1f);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+				        		GL11.glScaled(0F, 0F, 0F);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Kobra) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+				        	} else if(model instanceof com.vicmatskiv.mw.models.Reflex2) {
+				        		GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withName("Kobra")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Scope = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.SCOPE)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withCrosshair("LP")
+						.withModel(new com.vicmatskiv.mw.models.LP(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeZoom(player, 0.2f);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeZoom(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.LP) {
+				        		GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.7F, 0.7F, 0.7F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.LP) {
+				        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.LP) {
+				        		GL11.glTranslatef(-0.6F, -0.6F, 0.5F);
+				        		GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-190F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.8F, 0.8F, 0.8f);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//				        		GL11.glScaled(0F, 0F, 0F);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.LP) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//				        		GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+						.withName("LPScope")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        HP = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.SCOPE)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withCrosshair("HP")
+						.withModel(new com.vicmatskiv.mw.models.HP(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeZoom(player, 0.01f);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeZoom(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.HP) {
+				        		GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.7F, 0.7F, 0.7F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.HP) {
+				        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//					        	GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.HP) {
+				        		GL11.glTranslatef(-0.6F, -0.6F, 0.6F);
+				        		GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-190F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.65F, 0.65F, 0.65f);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//				        		GL11.glScaled(0F, 0F, 0F);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.HP) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+//				        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+//				        		GL11.glScaled(0F, 0F, 0F);
+				        	}
+				        })
+						.withName("HPScope")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Silencer = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.SILENCER)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Suppressor(), "Silencer.png")
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Suppressor) {
+				        		GL11.glTranslatef(0.5F, -1.3F, -0.1F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Suppressor) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Suppressor) {
+				        		GL11.glTranslatef(0.6F, 0.1F, 0.3F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1F, 1F, 1f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Suppressor) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+				        	}
+				        })
+				        .withName("Silencer")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Laser = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Laser(), "AK12.png")
+						.withPostRender(new LaserBeamRenderer())
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser) {
+				        		GL11.glTranslatef(0.5F, -1.3F, -0.1F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser) {
+				        		GL11.glTranslatef(0.6F, -0.3F, 0.65F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1.8F, 1.8F, 1.8f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+				        	}
+				        })
+				        .withName("Laser")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Laser2 = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Laser2(), "AK12.png")
+						.withPostRender(new LaserBeamRenderer())
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser2) {
+				        		GL11.glTranslatef(0.5F, -1.3F, -0.1F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser2) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser2) {
+				        		GL11.glTranslatef(0.6F, -0.3F, 0.65F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1.8F, 1.8F, 1.8f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Laser2) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.4F, 0.4F, 0.4F);
+				        	}
+				        })
+				        .withName("Laser2")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Grip2 = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Grip2(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeRecoil(player, 0.7F);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeRecoil(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Grip2) {
+				        		GL11.glTranslatef(0.7F, -1.2F, 0.5F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Grip2) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Grip2) {
+				        		GL11.glTranslatef(0.6F, 0.3F, -0.5F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1.3F, 1.3F, 1.3f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Grip2) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        })
+				        .withName("Grip2")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Grip = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.AngledGrip(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeRecoil(player, 0.5F);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeRecoil(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.AngledGrip) {
+				        		GL11.glTranslatef(0.7F, -1.1F, 0.5F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.AngledGrip) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.AngledGrip) {
+				        		GL11.glTranslatef(0.6F, 0.8F, -0.45F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1.2F, 1.2F, 1.2f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.AngledGrip) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        })
+				        .withName("AngledGrip")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        VGrip = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.VGrip(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeRecoil(player, 0.7F);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeRecoil(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.VGrip) {
+				        		GL11.glTranslatef(0.7F, -1.1F, 0.5F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.VGrip) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.VGrip) {
+				        		GL11.glTranslatef(0.6F, 0.3F, -0.5F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(1.3F, 1.3F, 1.3f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.VGrip) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        })
+				        .withName("VGrip")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
+		        
+		        Bipod = new AttachmentBuilder<Weapon>()
+						.withCategory(AttachmentCategory.GRIP)
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.Bipod(), "AK12.png")
+						.withApply((a, weapon, player) -> {
+							weapon.changeRecoil(player, 0.4F);
+						})
+						.withRemove((attachment, weapon, player) -> {
+							weapon.changeRecoil(player, 1);
+						})
+				        .withFirstPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Bipod) {
+				        		GL11.glTranslatef(0.7F, -1.1F, 0.5F);
+					        	GL11.glRotatef(30F, 0f, 1f, 0f);
+					        	GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        	
+				        })
+				        .withThirdPersonModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Bipod) {
+				        		GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
+				        		GL11.glRotatef(-50F, 0f, 1f, 0f);
+				        		GL11.glRotatef(80F, 1f, 0f, 0f);
+				        		GL11.glScaled(0.5F, 0.5F, 0.5F);
+				        	}
+				        })
+				        .withInventoryModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Bipod) {
+				        		GL11.glTranslatef(0.6F, -0.05F, -0.5F);
+				        		//GL11.glRotatef(10F, 1f, 0f, 0f);
+				        		GL11.glRotatef(-180F, 0f, 1f, 0f);
+				        		GL11.glRotatef(0F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.9F, 0.9F, 0.9f);
+				        		
+				        	}
+				        })
+				        .withEntityModelPositioning((model, itemStack) -> {
+				        	if(model instanceof com.vicmatskiv.mw.models.Bipod) {
+				        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+				        		GL11.glRotatef(90F, 0f, 0f, 1f);
+				        		GL11.glScaled(0.6F, 0.6F, 0.6F);
+				        	}
+				        })
+				        .withName("Bipod")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
 
 		AK47 = new AK47Factory().createGun(this);
 		AKM = new AKMFactory().createGun(this);
@@ -1350,50 +2131,12 @@ public class CommonProxy {
 		
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
-		GameRegistry.registerItem(G18Mag, "G18Mag");
-		GameRegistry.registerItem(M9Mag, "M9Mag");
-		GameRegistry.registerItem(AR15Mag, "AR15Mag");
-		GameRegistry.registerItem(XWPMag, "XWPMag");
-		GameRegistry.registerItem(DragonuvMag, "DragonuvMag");
-		GameRegistry.registerItem(Remington870Mag, "Remington870Mag");
-		GameRegistry.registerItem(PX90Mag, "PX90Mag");
-		GameRegistry.registerItem(G36CMag, "G36CMag");
-		GameRegistry.registerItem(ScarMag, "ScarMag");
-		//GameRegistry.registerItem(MP5Mag, "MP5Mag");
-		//GameRegistry.registerItem(AK74UMag, "AK74UMag");
-		GameRegistry.registerItem(MP7Mag, "MP7Mag");
-		GameRegistry.registerItem(MagnumAmmo, "MagnumAmmo");
-		GameRegistry.registerItem(FNFALMag, "FNFALMag");
-		GameRegistry.registerItem(M14Mag, "M14Mag");
-		//GameRegistry.registerItem(Grenades, "Grenades");
-		GameRegistry.registerItem(M249Mag, "M249Mag");
-		GameRegistry.registerItem(FamasMag, "FamasMag");
-		GameRegistry.registerItem(G21Mag, "G21Mag");
-		GameRegistry.registerItem(M107Mag, "M107Mag");
-		
-		GameRegistry.registerItem(DrumMag, "DrumMag");
-		GameRegistry.registerItem(ScarHMag, "ScarHMag");
-		GameRegistry.registerItem(M1Mag, "M1Mag");
 
-		GameRegistry.registerItem(M1911Mag, "M1911Mag");
-
-		GameRegistry.registerItem(ACOG, "ACOG");
-		GameRegistry.registerItem(Reflex, "Reflex");
-		GameRegistry.registerItem(Scope, "LP");
-		GameRegistry.registerItem(Silencer, "Silencer");
-		GameRegistry.registerItem(Laser, "Laser");
-		GameRegistry.registerItem(HP, "HP");
-		GameRegistry.registerItem(Holo2, "Holo2");
-		GameRegistry.registerItem(Grip2, "Grip2");
 		GameRegistry.registerItem(Bipod, "Bipod");
-		GameRegistry.registerItem(Laser2, "Laser2");
-		GameRegistry.registerItem(Grip, "Grip");
-		GameRegistry.registerItem(VGrip, "VGrip");
-		GameRegistry.registerItem(Kobra, "Kobra");
 
 		GameRegistry.registerItem(AKMIron, "AKMIron");
 		GameRegistry.registerItem(AR15Iron, "AR15Iron");
-		GameRegistry.registerItem(Extra, "Extra");
+		//GameRegistry.registerItem(Extra, "Extra");
 
 		GameRegistry.registerItem(Bullets, "Bullets");
 		GameRegistry.registerItem(Electronics, "Electronics");

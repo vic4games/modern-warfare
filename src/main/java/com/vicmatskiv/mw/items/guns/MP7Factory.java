@@ -91,7 +91,7 @@ public class MP7Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.26F, -2.6F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("GunmetalTexture", "Electric")
+		.withTextureNames("AK12", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new MP7())

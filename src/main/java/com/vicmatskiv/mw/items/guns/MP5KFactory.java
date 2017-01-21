@@ -45,8 +45,8 @@ public class MP5KFactory implements GunFactory {
 		.withRecoil(3.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("MP5K")
-		.withSilencedShootSound("RifleSilencer")
+		.withShootSound("MP5")
+		.withSilencedShootSound("MP5Silenced")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
 		.withReloadingTime(43)
@@ -191,21 +191,21 @@ public class MP5KFactory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glRotatef(-10F, 1f, 0f, 0f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
-					
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 500),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-10F, 0f, 0f, 1f);
+						GL11.glRotatef(-10F, 1f, 0f, 0f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
-					
-						GL11.glRotatef(-45F, 1f, 0f, 2f);
-						GL11.glTranslatef(1F, -1.2F, 0F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
