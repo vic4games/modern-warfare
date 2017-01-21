@@ -49,7 +49,7 @@ public class M14Factory implements GunFactory {
 		.withRecoil(2f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
-		.withShootSound("M14")
+		.withShootSound("M14DMR")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
@@ -184,14 +184,14 @@ public class M14Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.36F, -0.18F);
+				GL11.glTranslatef(0.3F, -0.36F, -0.18F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.36F, -0.18F);
+				GL11.glTranslatef(0.3F, -0.36F, -0.18F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
@@ -285,7 +285,7 @@ public class M14Factory implements GunFactory {
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.25F, -0.36F, -0.18F);
+					GL11.glTranslatef(0.3F, -0.36F, -0.18F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
@@ -414,7 +414,7 @@ public class M14Factory implements GunFactory {
 			.withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
+						 GL11.glTranslatef(0.65f, -0.3f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					 }, 
@@ -458,7 +458,7 @@ public class M14Factory implements GunFactory {
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
+						 GL11.glTranslatef(0.65f, -0.3f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					}, 250, 0))

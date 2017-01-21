@@ -19,7 +19,7 @@ public class XEagleFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("Deagle")
+		.withName(".357 Desert Eagle")
 //		.withAmmo(CommonProxy.M9Mag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.2f)

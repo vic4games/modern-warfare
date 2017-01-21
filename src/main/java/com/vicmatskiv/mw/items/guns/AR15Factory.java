@@ -119,7 +119,7 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AR15Iron) {
 				GL11.glTranslatef(0.037F, 0.04F, 0.07F);
-				GL11.glScaled(0.8F, 1F, 1.1F);
+				GL11.glScaled(0.8F, 1F, 1.05F);
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
