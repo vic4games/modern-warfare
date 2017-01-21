@@ -1284,7 +1284,6 @@ public class CommonProxy {
 		        .withModel(new M14Iron(), "GunmetalTexture.png")
 		        .withModel(new MP5Iron(), "AK12.png")
 				.withName("Extra")
-				.withRenderablePart()
 				.withModId(ModernWarfareMod.MODID)
 				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
