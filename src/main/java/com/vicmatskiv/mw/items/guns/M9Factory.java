@@ -44,11 +44,6 @@ public class M9Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.M9BerettaMag, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(0.01F, -0.7F, -2F);
-			GL11.glScaled(1.1F, 1.1F, 1.1F);
-			GL11.glRotatef(-90F, 0f, 0f, -4f);
-		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.23F, -4.52F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
