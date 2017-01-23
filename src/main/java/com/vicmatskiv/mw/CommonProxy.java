@@ -434,8 +434,6 @@ public class CommonProxy {
 		SteelIngot = new ItemSteelIngot();
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
-
-		OreDictionary.registerOre("ingotSteel", SteelIngot);
 		
 		ShotgunShell = new ItemBullet.Builder()
 		.withModId(ModernWarfareMod.MODID)
@@ -2632,7 +2630,6 @@ public class CommonProxy {
 			}
 			String unlocalizedName = block.getUnlocalizedName();
 			String registryName = unlocalizedName.substring(5 + ModernWarfareMod.MODID.length() + 1);
-			System.out.println("Registering block " + block + " under " + registryName);
 			block.setRegistryName(ModernWarfareMod.MODID, registryName);
 		}
 		
@@ -2649,7 +2646,6 @@ public class CommonProxy {
 				registryName = registryName.substring(indexOfPrefix + ModernWarfareMod.MODID.length() + 2);
 			}
 			item.setRegistryName(ModernWarfareMod.MODID, registryName);
-			System.out.println("Registering item " + item + " under " + registryName);
 		}
 		GameRegistry.register(item);
 	}
