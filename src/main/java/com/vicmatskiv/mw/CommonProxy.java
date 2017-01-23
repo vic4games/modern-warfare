@@ -199,6 +199,18 @@ public class CommonProxy {
 	
 	public static ItemBullet ShotgunShell;
 	public static ItemBullet Magnum44Ammo;
+	public static ItemBullet Bullet762x39;
+	public static ItemBullet Bullet556x39;
+	public static ItemBullet Bullet556x45;
+	public static ItemBullet Bullet762x54;
+	public static ItemBullet Bullet762x51;
+	public static ItemBullet Bullet45ACP;
+	public static ItemBullet Bullet9mm;
+	public static ItemBullet Bullet357;
+	public static ItemBullet BMG50;
+	public static ItemBullet Bullet57x28;
+	public static ItemBullet Bullet46x30;
+	public static ItemBullet Carbine30;
 
 	public static Item AK47;
 	public static Item AKM;
@@ -476,11 +488,323 @@ public class CommonProxy {
 				})
 		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Carbine30 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Carbine30")
+		.withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.6F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.3F, 0.5F, 0.3F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.8F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet357 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet357")
+		.withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.6F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.3F, 0.5F, 0.3F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.8F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet9mm = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet9mm")
+		.withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.3F, 0.3F, 0.3F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.6F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet45ACP = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet45ACP")
+		.withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.3F, 0.3F, 0.3F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.6F, 1.6F, 1.6f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet762x39 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet762x39")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.6F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.4F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet46x30 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet46x30")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.6F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.4F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet57x28 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet57x28")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.6F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.4F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet556x39 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet556x39")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.3F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.45F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.3F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet556x45 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet556x45")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.4F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.5F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.4F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet762x54 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet762x54")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.5F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.6F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.5F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		Bullet762x51 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("Bullet762x51")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.45F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.55F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.45F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		BMG50 = new ItemBullet.Builder()
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withName("BMG50")
+		.withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+		.withFirstPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(0.1F, -1F, 0.4F);
+					GL11.glRotatef(30F, 0f, 1f, 0f);
+					GL11.glScaled(0.4F, 0.7F, 0.4F);
+				})
+				.withThirdPersonPositioning((player, itemStack) -> {
+					GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+					GL11.glRotatef(-50F, 0f, 1f, 0f);
+					GL11.glRotatef(80F, 1f, 0f, 0f);
+					GL11.glScaled(0.5F, 0.7F, 0.5F);
+				})
+				.withInventoryPositioning((itemStack) -> {
+					GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(2F, 1f, 0f, 0f);
+					GL11.glRotatef(0F, 0f, 0f, 1f);
+					GL11.glScaled(1.4F, 1.8F, 1.4f);
+				})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
 
 
 		Magazine762x39 = new ItemMagazine.Builder()
 			    .withAmmo(30)
-			    //.withCompatibleBullet(sampleBullet)
+			    .withCompatibleBullet(Bullet762x39)
 				.withName("Magazine762x39")
 				.withModId(ModernWarfareMod.MODID)
 				.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -508,7 +832,8 @@ public class CommonProxy {
 		
 		
 		AK12Mag = new ItemMagazine.Builder()
-		.withAmmo(31)
+				.withAmmo(31)
+				.withCompatibleBullet(Bullet556x39)
 		        .withName("AK12Mag")
 		        .withModId(ModernWarfareMod.MODID)
 		        .withCreativeTab(ModernWarfareMod.gunsTab)
@@ -536,6 +861,7 @@ public class CommonProxy {
 		
 		RPK74MMag = new ItemMagazine.Builder()
 		.withAmmo(40)
+		.withCompatibleBullet(Bullet762x39)
 		.withName("RPK74MMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -564,6 +890,7 @@ public class CommonProxy {
 		
 		AK74MMag = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x39)
 		.withName("AK74MMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -592,6 +919,7 @@ public class CommonProxy {
 		
 		AKS74UMag = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x39)
 		.withName("AKS74UMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -620,6 +948,7 @@ public class CommonProxy {
 		
 		NATOMag1 = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("NATOMag1")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -648,6 +977,7 @@ public class CommonProxy {
 		
 		NATOMag2 = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("NATOMag2")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -676,6 +1006,7 @@ public class CommonProxy {
 		
 		NATOFamasMag = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("NATOFamasMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -704,6 +1035,7 @@ public class CommonProxy {
 		
 		NATOG36Mag = new ItemMagazine.Builder()
 		.withAmmo(30)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("NATOG36Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -732,6 +1064,7 @@ public class CommonProxy {
 		
 		DragunovMag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(Bullet762x54)
 		.withName("DragunovMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -760,6 +1093,7 @@ public class CommonProxy {
 		
 		FALMag = new ItemMagazine.Builder()
 		.withAmmo(20)
+		.withCompatibleBullet(Bullet762x51)
 		.withName("FALMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -788,6 +1122,7 @@ public class CommonProxy {
 		
 		M110Mag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(Bullet762x51)
 		.withName("M110Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -816,6 +1151,7 @@ public class CommonProxy {
 		
 		M14DMRMag = new ItemMagazine.Builder()
 		.withAmmo(20)
+		.withCompatibleBullet(Bullet762x51)
 		.withName("M14DMRMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -844,6 +1180,7 @@ public class CommonProxy {
 		
 		Glock21Mag = new ItemMagazine.Builder()
 		.withAmmo(13)
+		.withCompatibleBullet(Bullet45ACP)
 		.withName("Glock21Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -872,6 +1209,7 @@ public class CommonProxy {
 		
 		Glock18Mag = new ItemMagazine.Builder()
 		.withAmmo(17)
+		.withCompatibleBullet(Bullet9mm)
 		.withName("Glock18Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -900,6 +1238,7 @@ public class CommonProxy {
 		
 		M9BerettaMag = new ItemMagazine.Builder()
 		.withAmmo(15)
+		.withCompatibleBullet(Bullet9mm)
 		.withName("M9BerettaMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -928,6 +1267,7 @@ public class CommonProxy {
 		
 		NATODrum100 = new ItemMagazine.Builder()
 		.withAmmo(100)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("NATODrum100")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -956,6 +1296,7 @@ public class CommonProxy {
 		
 		MP40Mag = new ItemMagazine.Builder()
 		.withAmmo(32)
+		.withCompatibleBullet(Bullet9mm)
 		.withName("MP40Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -984,6 +1325,7 @@ public class CommonProxy {
 		
 		MP5KMag = new ItemMagazine.Builder()
 		.withAmmo(25)
+		.withCompatibleBullet(Bullet9mm)
 		.withName("MP5KMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1012,6 +1354,7 @@ public class CommonProxy {
 		
 		DeagleMag = new ItemMagazine.Builder()
 		.withAmmo(9)
+		.withCompatibleBullet(Bullet357)
 		.withName("DeagleMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1040,6 +1383,7 @@ public class CommonProxy {
 		
 		AS50Mag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(BMG50)
 		.withName("AS50Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1068,6 +1412,7 @@ public class CommonProxy {
 		
 		FNP90Mag = new ItemMagazine.Builder()
 		.withAmmo(50)
+		.withCompatibleBullet(Bullet57x28)
 		.withName("FNP90Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1096,6 +1441,7 @@ public class CommonProxy {
 		
 		M107BMag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(BMG50)
 		.withName("M107BMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1124,6 +1470,7 @@ public class CommonProxy {
 		
 		HKMP7Mag = new ItemMagazine.Builder()
 		.withAmmo(20)
+		.withCompatibleBullet(Bullet46x30)
 		.withName("HKMP7Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1152,6 +1499,7 @@ public class CommonProxy {
 		
 		M1CarbineMag = new ItemMagazine.Builder()
 		.withAmmo(15)
+		.withCompatibleBullet(Carbine30)
 		.withName("M1CarbineMag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1180,6 +1528,7 @@ public class CommonProxy {
 		
 		M240Mag = new ItemMagazine.Builder()
 		.withAmmo(200)
+		.withCompatibleBullet(Bullet556x45)
 		.withName("M240Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1208,6 +1557,7 @@ public class CommonProxy {
 		
 		L115Mag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(BMG50)
 		.withName("LP115Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1237,6 +1587,7 @@ public class CommonProxy {
 
 		ColtM1911Mag = new ItemMagazine.Builder()
 		.withAmmo(10)
+		.withCompatibleBullet(Bullet45ACP)
 		.withName("ColtM1911Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
