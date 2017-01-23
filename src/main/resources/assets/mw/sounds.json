@@ -233,15 +233,6 @@
       }
     ]
   },
-   "M107Silenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:M107Silenced",
-       "stream": false
-      }
-    ]
-  },
   "KSG12": {
     "category": "master",
     "sounds": [
@@ -287,15 +278,6 @@
       }
     ]
   },
-  "G18silenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:G18silenced",
-       "stream": false
-      }
-    ]
-  },
   "M9": {
     "category": "master",
     "sounds": [
@@ -318,7 +300,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "AR15Silenced",
+       "name": "mw:AR15Silenced",
        "stream": false
       }
     ]
@@ -350,38 +332,11 @@
       }
     ]
   },
-  "ScarHSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:ScarHSilenced",
-       "stream": false
-      }
-    ]
-  },
-  "ScarSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:ScarSilenced",
-       "stream": false
-      }
-    ]
-  },
   "Deagle": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:Deagle",
-       "stream": false
-      }
-    ]
-  },
-  "DeagleSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:DeagleSilenced",
        "stream": false
       }
     ]
@@ -404,15 +359,6 @@
       }
     ]
   },
-  "DragonuvSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:DragonuvSilenced",
-       "stream": false
-      }
-    ]
-  },
   "P90": {
     "category": "master",
     "sounds": [
@@ -422,29 +368,11 @@
       }
     ]
   },
-  "P90s": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:P90s",
-       "stream": false
-      }
-    ]
-  },
   "AK12": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:AK12",
-       "stream": false
-      }
-    ]
-  },
-  "AK12Silenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:AK12Silenced",
        "stream": false
       }
     ]
@@ -476,29 +404,11 @@
       }
     ]
   },
-  "MP5KSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:MP5KSilenced",
-       "stream": false
-      }
-    ]
-  },
   "Famas": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:Famas",
-       "stream": false
-      }
-    ]
-  },
-  "FamasSilenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:FamasSilenced",
        "stream": false
       }
     ]
@@ -544,24 +454,6 @@
     "sounds": [
       {
        "name": "mw:PistolReload",
-       "stream": false
-      }
-    ]
-  },
-  "MP7Reload": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:MP7Reload",
-       "stream": false
-      }
-    ]
-  },
-  "MP7S": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:MP7S",
        "stream": false
       }
     ]
