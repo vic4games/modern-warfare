@@ -233,15 +233,6 @@
       }
     ]
   },
-   "M107Silenced": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "M107Silenced",
-       "stream": false
-      }
-    ]
-  },
   "KSG12": {
     "category": "master",
     "sounds": [
