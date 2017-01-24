@@ -112,18 +112,18 @@ item.mw_Carbine30.name=.30 Carbine Bullet
 item.mw_Bullet57x28.name=5.7x28mm Bullet
 item.mw_Bullet46x30.name=4.6x30mm Bullet
 
-item.mw_ACOG.name=Trigicon Acog Scope
+item.mw_Acog.name=Trigicon Acog Scope
 item.mw_Reflex.name=Sightmark Sure Shot Reflex
-item.mw_LP.name=LP-Scope
+item.mw_LPScope.name=Low-Powered Scope
 item.mw_Silencer.name=Sound-Suppressor
 item.mw_Grip.name=Angled Grip
 item.mw_Laser.name=Secondary Tactical Laser
 item.mw_Laser2.name=Tactical Laser
-item.mw_HP.name=HP-Scope
-item.mw_Holo2.name=EOTech 512 A65 Holographic 
+item.mw_HPScope.name=High-Powered Scope
+item.mw_Holographic.name=EOTech 512 A65 Holographic 
 item.mw_Grip2.name=Grip
 item.mw_Bipod.name=Bipod
-item.mw_VGrip.name=ForeGrip
+item.mw_VGrip.name=Foregrip
 item.mw_Kobra.name=Kobra Sight
 
 item.mw_LaserPointer.name=Laser Cell
@@ -208,6 +208,8 @@ item.mw_AKMIron.name=Standard Iron-Sight
 item.mw_AR15Iron.name=AR-15 Action/Iron Sight
 
 itemGroup.guns_tab=Modern Warfare
+
+key.categories.weaponlib=Modern Warfare
 
 key.reload=Reload Gun
 
