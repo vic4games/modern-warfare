@@ -50,7 +50,7 @@ public class M4A1Factory implements GunFactory {
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("M4A1")
+		.withShootSound("AR15")
 		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
