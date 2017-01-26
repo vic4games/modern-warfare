@@ -433,7 +433,7 @@ public class AK74UFactory implements GunFactory {
 		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (block == Blocks.glass) {
+			if (WorldHelper.isGlassBlock(block)) {
 				WorldHelper.destroyBlock(world, position);
 			}
 		 })
