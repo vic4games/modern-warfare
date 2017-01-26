@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -48,6 +50,9 @@ public class M1CarbineFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.5f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M1CarbineMag, (model) -> {
 			GL11.glTranslatef(0.02F, 0.1F, -0.4F);
 			GL11.glScaled(0.9F, 1F, 1F);
@@ -195,15 +200,17 @@ public class M1CarbineFactory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.5F, -0.36F, 0.2F);
+						GL11.glTranslatef(0.5F, -0.2F, -0.2F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-20F, 0f, 0f, 1f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(0F, -1F, 0.9F);
 					}, 250, 500),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0.5F, -0.36F, 0.2F);
+						GL11.glTranslatef(0.5F, -0.2F, -0.2F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-20F, 0f, 0f, 1f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(0F, -1F, 0.9F);
 					}, 250, 20),
@@ -218,14 +225,16 @@ public class M1CarbineFactory implements GunFactory {
 			
 			.withFirstPersonPositioningUnloading(
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.5F, -0.36F, 0.2F);
+					GL11.glTranslatef(0.5F, -0.2F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-20F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(0F, -1F, 0.9F);
 				}, 150, 50),
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.5F, -0.36F, 0.2F);
+					GL11.glTranslatef(0.5F, -0.2F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-20F, 0f, 0f, 1f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(0F, -1F, 0.9F);
 				}, 150, 50)
@@ -442,7 +451,7 @@ public class M1CarbineFactory implements GunFactory {
 					}, 250, 50))	
 					
 			.build())
-		.withSpawnEntityDamage(8.5f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

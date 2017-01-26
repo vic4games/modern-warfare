@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -55,7 +57,10 @@ public class M249Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withCompatibleAttachment(CommonProxy.M240Mag, (model) -> {
+		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		"Caliber: 5.56x45mm NATO", "Magazines:", "200rnd 5.56x45mm NATO Magazine",
+		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.M249Mag, (model) -> {
 			GL11.glTranslatef(0F, -0.1F, 0F);
 		})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
@@ -195,7 +200,7 @@ public class M249Factory implements GunFactory {
 				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.M240Mag, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.M249Mag, (player, itemStack) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -223,10 +228,12 @@ public class M249Factory implements GunFactory {
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.3F, -0.28F, -0.15F);
+					GL11.glTranslatef(0.3F, -0.15F, 0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(20F, 0f, 0f, 1f);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 0)
 			)
 			
@@ -249,7 +256,7 @@ public class M249Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.M240Mag,
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.M249Mag,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -266,7 +273,7 @@ public class M249Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.M240Mag,
+			.withFirstPersonCustomPositioningReloading(CommonProxy.M249Mag,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -456,7 +463,7 @@ public class M249Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(4.8f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -2,6 +2,8 @@ package com.vicmatskiv.mw.items.guns;
 
 
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -57,6 +59,9 @@ public class AK12Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {

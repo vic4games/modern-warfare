@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -55,6 +57,9 @@ public class M240Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7.5", 
+		"Caliber: 7.62x51mm NATO", "Magazines:", "200rnd 7.62x51mm NATO Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.M240Mag, (model) -> {
 			GL11.glTranslatef(0F, -0.1F, 0F);
 			}
@@ -209,10 +214,12 @@ public class M240Factory implements GunFactory {
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.3F, -0.28F, -0.15F);
+					GL11.glTranslatef(0.3F, -0.15F, 0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(20F, 0f, 0f, 1f);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 0)
 			)
 			
@@ -442,7 +449,7 @@ public class M240Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(4.2f)
+		.withSpawnEntityDamage(7.5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
