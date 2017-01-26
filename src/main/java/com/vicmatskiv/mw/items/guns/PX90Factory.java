@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -55,6 +57,9 @@ public class PX90Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 5.5", 
+		"Caliber: 5.7x28mm", "Magazines:", "50rnd 5.7x28mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.FNP90Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {

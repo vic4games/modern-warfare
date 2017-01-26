@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -59,6 +61,10 @@ public class HK416CFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
+		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
@@ -574,7 +580,7 @@ public class HK416CFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(6.8f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

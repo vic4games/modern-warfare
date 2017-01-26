@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -60,6 +62,9 @@ public class G36Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine (Type 3)",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATOG36Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.2F);

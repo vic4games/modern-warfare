@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -54,6 +56,9 @@ public class DragonuvFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.DragunovMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {

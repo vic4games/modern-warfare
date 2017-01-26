@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -42,6 +44,9 @@ public class M1911Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		"Caliber: .45 ACP", "Magazines:", "10rnd .45 ACP Magazine",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M1911Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -451,7 +456,7 @@ public class M1911Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(9f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

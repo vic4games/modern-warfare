@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.util.MovingObjectPosition;
@@ -61,6 +63,9 @@ public class AN94Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {
 			GL11.glTranslatef(-0.05F, 0F, 0.25F);
 			//GL11.glRotatef(5F, 0f, 0f, 1f);

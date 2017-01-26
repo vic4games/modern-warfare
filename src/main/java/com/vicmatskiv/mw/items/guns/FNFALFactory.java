@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -59,6 +61,9 @@ public class FNFALFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
+		"Caliber: 7.62x51mm NATO", "Magazines:", "10rnd 7.62x51mm NATO Magazine",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.FALMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
