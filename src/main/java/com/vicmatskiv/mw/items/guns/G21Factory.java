@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -36,6 +38,9 @@ public class G21Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		"Caliber: .45 ACP", "Magazines:", "13rnd .45 ACP Magazine",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.GlockTop, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);

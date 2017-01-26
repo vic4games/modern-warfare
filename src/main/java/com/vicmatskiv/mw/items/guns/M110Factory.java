@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -59,6 +61,9 @@ public class M110Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
+		"Caliber: 7.62x51mm NATO", "Magazines:", "10rnd 7.62x51mm NATO Magazine (Type 2)",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M110Mag, (model) -> {
 			GL11.glScaled(1F, 1F, 0.9F);
 			GL11.glTranslatef(0F, -0.1F, -0.08F);
@@ -219,7 +224,7 @@ public class M110Factory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
-				GL11.glTranslatef(-0.1F, -0.3F, -0.3F);
+				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -231,13 +236,13 @@ public class M110Factory implements GunFactory {
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0f, 0f);
+					GL11.glTranslatef(0F, 0f, -0.7f);
 				} 
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.08f, 0.7f);
+					GL11.glTranslatef(0.005F, 0.07f, 0.3f);
 				} 
 				
 				// Scope Zoom
@@ -246,7 +251,7 @@ public class M110Factory implements GunFactory {
 					GL11.glTranslatef(0.005F, -0.04f, 5f);
 				} 
 
-				// HP Zoomw
+				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0.005F, -0.04f, 5f);
@@ -255,18 +260,18 @@ public class M110Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.04f, 0.3f);
+					GL11.glTranslatef(0F, 0.02f, 0.3f);
 				} 
 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.04f, 0.6f);
+					GL11.glTranslatef(0F, -0.05f, 0.3f);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.373F, -1.32f, 2.8f);
+					GL11.glTranslatef(1.373F, -1.43f, 2.8f);
 				} 
 				
 				// Everything else
@@ -543,7 +548,7 @@ public class M110Factory implements GunFactory {
 					}, 250, 50))
 					
 				.build())
-			.withSpawnEntityDamage(9.5f)
+			.withSpawnEntityDamage(13f)
 			.withSpawnEntityGravityVelocity(0.0118f)
 			.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

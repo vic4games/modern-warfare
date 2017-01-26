@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -54,6 +56,8 @@ public class M107Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 37.8", 
+		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 2)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M107BMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -168,35 +172,35 @@ public class M107Factory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glTranslatef(0.3F, -0.26F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.1377F, -1f, 1.35f);
+				GL11.glTranslatef(0.1377F, -1.1f, 0.5f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.21f, 0.1f);
+					GL11.glTranslatef(-0.005F, 0.09f, 0.4f);
 				}  
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.18f, 3f);
+					GL11.glTranslatef(0F, 0.18f, 99f);
 				} 
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.18f, 5f);
+					GL11.glTranslatef(0F, 0.18f, 99f);
 				} 
 				
 				// Reflex Zoom

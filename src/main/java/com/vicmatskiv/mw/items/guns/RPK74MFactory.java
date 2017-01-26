@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -48,6 +50,9 @@ public class RPK74MFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		"Caliber: 7.62x39mm", "Magazines:", "40rnd 7.62x39mm NATO Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.RPK74MMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {

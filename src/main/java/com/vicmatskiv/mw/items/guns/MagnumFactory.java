@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -34,6 +36,8 @@ public class MagnumFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
+		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
+		"Ammo: .44 Bullet", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})

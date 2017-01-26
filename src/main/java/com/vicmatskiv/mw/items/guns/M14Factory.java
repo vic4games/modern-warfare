@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -59,6 +61,9 @@ public class M14Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 15", 
+		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
+		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M14DMRMag, (model) -> {
 			GL11.glTranslatef(0F, 0F, -0.1F);
 		})
@@ -518,7 +523,7 @@ public class M14Factory implements GunFactory {
 					}, 250, 50))		
 					
 			.build())
-		.withSpawnEntityDamage(28f)
+		.withSpawnEntityDamage(15f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
 			if (WorldHelper.isGlassBlock(block)) {
