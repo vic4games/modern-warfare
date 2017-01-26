@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -59,6 +61,9 @@ public class AK74MFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 5", 
+		"Caliber: 5.56x39mm", "Magazines:", "30rnd 5.56x39mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK74MMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -397,7 +402,7 @@ public class AK74MFactory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {

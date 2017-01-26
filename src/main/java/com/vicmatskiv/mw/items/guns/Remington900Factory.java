@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
@@ -31,7 +33,7 @@ public class Remington900Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withPumpTimeout(1000)
-		.withShootSound("Remington")
+		.withShootSound("M1014")
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("ShotgunReload")
 		.withReloadingTime(15)
@@ -42,6 +44,10 @@ public class Remington900Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
+		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
+		.withCompatibleAttachment(CommonProxy.KSGPump, true, (model) -> {
+		})
 		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})

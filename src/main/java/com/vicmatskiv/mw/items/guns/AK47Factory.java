@@ -1,5 +1,6 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import net.minecraft.block.Block;
@@ -52,6 +53,9 @@ public class AK47Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 4.8", 
+		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -421,7 +425,7 @@ public class AK47Factory implements GunFactory {
 					}, 250, 50))
 			 
 			.build())
-		.withSpawnEntityDamage(6.8f)
+		.withSpawnEntityDamage(4.8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

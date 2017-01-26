@@ -293,6 +293,7 @@ public class CommonProxy {
 	public static ItemMagazine M240Mag;
 	public static ItemMagazine L115Mag;
 	public static ItemMagazine ColtM1911Mag;
+	public static ItemMagazine M249Mag;
 
 	public static Item Bullets;
 	public static Item Electronics;
@@ -1526,7 +1527,7 @@ public class CommonProxy {
 		
 		M240Mag = new ItemMagazine.Builder()
 		.withAmmo(200)
-		.withCompatibleBullet(Bullet556x45)
+		.withCompatibleBullet(Bullet762x51)
 		.withName("M240Mag")
 		.withModId(ModernWarfareMod.MODID)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1608,6 +1609,35 @@ public class CommonProxy {
 			GL11.glRotatef(20F, 1f, 0f, 0f);
 			GL11.glRotatef(-30F, 0f, 0f, 1f);
 			GL11.glScaled(1F, 1F, 1f);
+		})
+		.withTextureName("Dummy.png")
+		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+		
+		M249Mag = new ItemMagazine.Builder()
+		.withAmmo(200)
+		.withCompatibleBullet(Bullet556x45)
+		.withName("M249Mag")
+		.withModId(ModernWarfareMod.MODID)
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withModel(new com.vicmatskiv.mw.models.M240Mag(), "M240Mag.png")
+		
+		.withFirstPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+			GL11.glRotatef(30F, 0f, 1f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withThirdPersonPositioning((player, itemStack) -> {
+			GL11.glTranslatef(-1F, -0.5F, 0.8F);
+			GL11.glRotatef(-50F, 0f, 1f, 0f);
+			GL11.glRotatef(80F, 1f, 0f, 0f);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		})
+		.withInventoryPositioning((itemStack) -> {
+			GL11.glTranslatef(-0.2F, 0.3F, 0.4F);
+			GL11.glRotatef(-180F, 0f, 1f, 0f);
+			GL11.glRotatef(-10F, 1f, 0f, 0f);
+			GL11.glRotatef(-10F, 0f, 0f, 1f);
+			GL11.glScaled(1.2F, 1.2F, 1.2f);
 		})
 		.withTextureName("Dummy.png")
 		.build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);

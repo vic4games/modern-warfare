@@ -1,41 +1,32 @@
 package com.vicmatskiv.mw.items.guns;
 
+import java.util.Arrays;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.AN94;
-import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
-import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 
 public class AN94Factory implements GunFactory {
 
@@ -59,6 +50,9 @@ public class AN94Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
+		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {
 			GL11.glTranslatef(-0.05F, 0F, 0.25F);
 			//GL11.glRotatef(5F, 0f, 0f, 1f);
@@ -454,7 +448,7 @@ public class AN94Factory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
-				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
+		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
 			if (WorldHelper.isGlassBlock(block)) {
 				WorldHelper.destroyBlock(world, position);
