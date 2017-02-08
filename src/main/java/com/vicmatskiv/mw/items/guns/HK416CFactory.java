@@ -121,13 +121,14 @@ public class HK416CFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
+		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.61F, 0.4F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -429,7 +430,7 @@ public class HK416CFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.05f, 0.3f);
 				} 
 
 				// HP Zoomw

@@ -145,8 +145,8 @@ public class M16A4Factory implements GunFactory {
 			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+				GL11.glTranslatef(0.197F, -1.785F, 1.2F);
+				GL11.glScaled(0.03F, 0.03F, 0.03F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -448,7 +448,7 @@ public class M16A4Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.45f);
 				} 
 
 				// HP Zoom

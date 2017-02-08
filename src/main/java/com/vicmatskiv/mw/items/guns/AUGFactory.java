@@ -48,7 +48,7 @@ public class AUGFactory implements GunFactory {
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(3f)
+		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
@@ -120,12 +120,13 @@ public class AUGFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
+		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.62F, 0.8F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.2F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
@@ -164,14 +165,6 @@ public class AUGFactory implements GunFactory {
 				GL11.glTranslatef(0.202F, -1.72F, -0.24F);
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
-		})
-		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -0.2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -0.2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
 			GL11.glTranslatef(0.107F, -1.35F, -2.7F);
@@ -319,7 +312,7 @@ public class AUGFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.9f);
 				} 
 
 				// HP Zoom

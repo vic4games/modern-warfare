@@ -182,13 +182,14 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
+		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.62F, 0.8F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -296,7 +297,6 @@ public class AR15Factory implements GunFactory {
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
 				GL11.glTranslatef(-0.1F, -0.3F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
@@ -318,7 +318,7 @@ public class AR15Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.45f);
 				} 
 
 				// HP Zoomw
@@ -556,7 +556,7 @@ public class AR15Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.38f);
 				} 
 
 				// HP Zoomw

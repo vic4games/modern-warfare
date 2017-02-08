@@ -26,6 +26,141 @@
       }
     ]
   },
+   "AWP": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "AWP",
+       "stream": false
+      }
+    ]
+  },
+   "L115": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "L115",
+       "stream": false
+      }
+    ]
+  },
+  "SV98": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SV98",
+       "stream": false
+      }
+    ]
+  },
+  "MosinNagant": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MosinNagant",
+       "stream": false
+      }
+    ]
+  },
+  "MosinReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MosinReload",
+       "stream": false
+      }
+    ]
+  },
+   "M21": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M21",
+       "stream": false
+      }
+    ]
+  },
+   "M41A": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M41A",
+       "stream": false
+      }
+    ]
+  },
+  "HK33": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "HK33",
+       "stream": false
+      }
+    ]
+  },
+  "10mm": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "10mm",
+       "stream": false
+      }
+    ]
+  },
+   "M93R": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M93R",
+       "stream": false
+      }
+    ]
+  },
+   "Python": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Python",
+       "stream": false
+      }
+    ]
+  },
+  "USP45": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "USP45",
+       "stream": false
+      }
+    ]
+  },
+   "Makarov": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Makarov",
+       "stream": false
+      }
+    ]
+  },
+    "MakarovPMM": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MakarovPMM",
+       "stream": false
+      }
+    ]
+  },
+   "MosinBoltAction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MosinBoltAction",
+       "stream": false
+      }
+    ]
+  },
    "M1Carbine": {
     "category": "master",
     "sounds": [

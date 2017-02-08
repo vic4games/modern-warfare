@@ -37,6 +37,9 @@ public class ModernWarfareMod {
 		
 	public static CreativeTabs gunsTab = new GunsTab(
 			CreativeTabs.getNextID(), "guns_tab");
+	
+	public static CreativeTabs FunGunsTab = new FunGunsTab(
+			CreativeTabs.getNextID(), "FunGuns_tab");
 
 	@SidedProxy(serverSide = "com.vicmatskiv.mw.CommonProxy", 
 			clientSide = "com.vicmatskiv.mw.ClientProxy")

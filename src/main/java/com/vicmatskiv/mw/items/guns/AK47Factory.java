@@ -40,7 +40,7 @@ public class AK47Factory implements GunFactory {
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.55f)
-		.withRecoil(4f)
+		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK47")
@@ -53,10 +53,11 @@ public class AK47Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 4.8", 
-		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7.7", 
+		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine", "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.PMAG762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
@@ -99,7 +100,7 @@ public class AK47Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withTextureNames("AK47", "AK47Blue", "AK47Red", "Electric")
+		.withTextureNames("AK47", "AK47Blue", "AK47Red", "AKGold", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AK47())
@@ -130,6 +131,13 @@ public class AK47Factory implements GunFactory {
 				})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.Magazine762x39, (player, itemStack) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+					
+			.withFirstPersonCustomPositioning(CommonProxy.PMAG762x39, (player, itemStack) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -228,6 +236,44 @@ public class AK47Factory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.Magazine762x39,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0F, 0.7F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.PMAG762x39,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.PMAG762x39,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0F, 0.7F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -425,7 +471,7 @@ public class AK47Factory implements GunFactory {
 					}, 250, 50))
 			 
 			.build())
-		.withSpawnEntityDamage(4.8f)
+		.withSpawnEntityDamage(7.7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -59,7 +59,7 @@ public class AK12Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		.withInformationProvider(stack -> Arrays.asList("Damage: 8.3", 
 		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {})
@@ -68,11 +68,12 @@ public class AK12Factory implements GunFactory {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AKMiron2) {
-				GL11.glTranslatef(0.13F, -1.52F, -3.05F);
-				GL11.glScaled(0.65F, 0.65F, 0.65F);
+				GL11.glTranslatef(0.135F, -1.48F, -3.05F);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
 			} else if(model instanceof AK47iron) {
-				GL11.glTranslatef(0.092F, -1.85F, 0.89F);
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glTranslatef(0.092F, -1.75F, 0.8F);
+				GL11.glScaled(0.7F, 0.55F, 0.7F);
+				//GL11.glRotatef(-90F, 0f, 1f, 0f);
 			} else if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.155F, -1.74F, 1F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -107,19 +108,19 @@ public class AK12Factory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
 			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.06F, -1.59F, 0.5F);
+			GL11.glTranslatef(0.06F, -1.56F, 0.5F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.199F, -1.73F, 0.5F);
+				GL11.glTranslatef(0.199F, -1.7F, 0.5F);
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
 			if(model instanceof Reflex) {
-			GL11.glTranslatef(.27F, -1.4F, 0F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			GL11.glTranslatef(.25F, -1.4F, -0.2F);
+			GL11.glScaled(0.4F, 0.4F, 0.4F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.74F, 0.0F);
+				GL11.glTranslatef(0.195F, -1.65F, -0.2F);
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
@@ -134,10 +135,10 @@ public class AK12Factory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
 			if(model instanceof Holographic) {
-			GL11.glTranslatef(.264F, -1.45F, 0.2F);
+			GL11.glTranslatef(.264F, -1.43F, 0.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Holo2) {
-				GL11.glTranslatef(0.202F, -1.69F, 0.3F);
+				GL11.glTranslatef(0.202F, -1.67F, 0.3F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -300,13 +301,13 @@ public class AK12Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				// Zoom
 
-				GL11.glTranslatef(0.135F, -1.08f, 1.3f);
+				GL11.glTranslatef(0.135F, -1.1f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
+					GL11.glTranslatef(0.005F, 0.19f, 0.3f);
 				} 
 
 				// Scope Zoom
@@ -324,18 +325,18 @@ public class AK12Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.23f, 0.2f);
+					GL11.glTranslatef(0F, 0.17f, 0.2f);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.1f, 0.2f);
+					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
+					GL11.glTranslatef(1.373F, -1.18f, 2.5f);
 				} 
 
 				// Everything else
@@ -471,7 +472,7 @@ public class AK12Factory implements GunFactory {
 //			 }, null)
 			 
 			.build())
-		.withSpawnEntityDamage(6.8f)
+		.withSpawnEntityDamage(8.3f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

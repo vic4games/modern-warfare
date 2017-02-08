@@ -37,7 +37,7 @@ public class AN94Factory implements GunFactory {
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.5f)
-		.withRecoil(3.5f)
+		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AKM")
@@ -50,7 +50,7 @@ public class AN94Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 6.8", 
+		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
 		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {

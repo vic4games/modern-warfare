@@ -45,7 +45,7 @@ public class AK74UFactory implements GunFactory {
 		//.withAmmo(CommonProxy.AK74UMag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(4f)
+		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AK74U")
@@ -58,7 +58,7 @@ public class AK74UFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 4.5", 
+		.withInformationProvider(stack -> Arrays.asList("Damage: 6", 
 		"Caliber: 5.56x39mm", "Magazines:", "30rnd 5.56x39mm Magazine (the orange one)",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AKS74UMag, (model) -> {})
@@ -428,7 +428,7 @@ public class AK74UFactory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(4.5f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {

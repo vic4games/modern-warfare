@@ -643,7 +643,7 @@ public class M4A1Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

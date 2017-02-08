@@ -47,7 +47,7 @@ public class XWPFactory implements GunFactory {
 		.withRecoil(4f)
 		.withZoom(0.8f)
 		.withMaxShots(1)
-		.withShootSound("L96")
+		.withShootSound("L115")
 		.withPumpTimeout(2000)
 		//.withSilencedShootSound("AR15silenced")
 		.withReloadSound("NoBoltReload")
@@ -175,10 +175,10 @@ public class XWPFactory implements GunFactory {
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -2.33F);
+			GL11.glTranslatef(.135F, -0.6F, -2.33F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
 		})
-		.withTextureNames("L96", "L96Blue", "L96Red", "Electric")
+		.withTextureNames("L115", "L96Blue", "L96Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new L96())

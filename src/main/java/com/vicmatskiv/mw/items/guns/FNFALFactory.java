@@ -62,7 +62,7 @@ public class FNFALFactory implements GunFactory {
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
-		"Caliber: 7.62x51mm NATO", "Magazines:", "10rnd 7.62x51mm NATO Magazine",
+		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.FALMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
@@ -116,13 +116,14 @@ public class FNFALFactory implements GunFactory {
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.6F);
+		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.65F, 0.6F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.2F);
-				GL11.glScaled(0F, 0F, 0F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -243,7 +244,7 @@ public class FNFALFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
+					GL11.glTranslatef(0F, 0.148f, 0.6f);
 				} 
 				
 				// Scope Zoom
@@ -387,7 +388,7 @@ public class FNFALFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
+					GL11.glTranslatef(0F, 0.148f, 0.6f);
 				} 
 				
 				// Scope Zoom

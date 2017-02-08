@@ -38,7 +38,7 @@ public class G21Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("Damage: 10", 
 		"Caliber: .45 ACP", "Magazines:", "13rnd .45 ACP Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.GlockTop, true, (model) -> {
@@ -457,7 +457,7 @@ public class G21Factory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(10f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

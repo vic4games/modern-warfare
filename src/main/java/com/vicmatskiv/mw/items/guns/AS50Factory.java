@@ -111,13 +111,23 @@ public class AS50Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.75F, -0F);
+		 .withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.76F, 0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof LPscope) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0F, 0F, 0F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
+			}
+		})
+		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
+			if(model instanceof HP) {
+			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+			} else if(model instanceof HP2) {
+				GL11.glTranslatef(0.197F, -1.78F, 1F);
+				GL11.glScaled(0.04F, 0.04F, 0.04F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
@@ -186,8 +196,8 @@ public class AS50Factory implements GunFactory {
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 
 				// Zoom
 				GL11.glTranslatef(0.1377F, -1f, 1.35f);
@@ -202,7 +212,7 @@ public class AS50Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.18f, 3f);
+					GL11.glTranslatef(0F, 0.15f, 0.4f);
 				} 
 				
 				// Scope Zoom
@@ -335,7 +345,7 @@ public class AS50Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.18f, 3f);
+					GL11.glTranslatef(0F, 0.15f, 0.4f);
 				} 
 				
 				// Scope Zoom

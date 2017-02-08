@@ -46,8 +46,6 @@ public class Remington900Factory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
-		.withCompatibleAttachment(CommonProxy.KSGPump, true, (model) -> {
-		})
 		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})

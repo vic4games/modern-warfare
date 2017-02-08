@@ -45,7 +45,7 @@ public class AKMFactory implements GunFactory {
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.6f)
-		.withRecoil(4f)
+		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
 		.withShootSound("AKM")
@@ -58,10 +58,11 @@ public class AKMFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 5.2", 
-		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Damage: 7.9", 
+		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine" , "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.PMAG762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
@@ -109,7 +110,7 @@ public class AKMFactory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.27F, -4.65F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("AKM", "AKMBlue", "AKMRed", "Electric")
+		.withTextureNames("AKM", "AKMBlue", "AKMRed", "AKMAntiGold", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new AKM())
@@ -145,6 +146,13 @@ public class AKMFactory implements GunFactory {
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})	
+				
+			.withFirstPersonCustomPositioning(CommonProxy.PMAG762x39, (player, itemStack) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
 				
 			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
 				GL11.glTranslatef(0.25F, -0.32F, -0.15F);
@@ -234,6 +242,44 @@ public class AKMFactory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.Magazine762x39,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0F, 0.7F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.PMAG762x39,
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.PMAG762x39,
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0F, 0.7F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -430,7 +476,7 @@ public class AKMFactory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(5.2f)
+		.withSpawnEntityDamage(7.9f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
