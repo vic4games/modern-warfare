@@ -64,7 +64,7 @@ public class FamasG2Factory implements GunFactory {
 		})
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {
-				GL11.glTranslatef(0.17F, -1.8F, 0.9F);
+				GL11.glTranslatef(0.17F, -1.8F, 0.98F);
 				GL11.glScaled(0.25F, 0.25F, 0.25F);
 			} else if(model instanceof M4Iron2) {
 				GL11.glTranslatef(0.23F, -1.74F, -1.25F);
@@ -104,12 +104,12 @@ public class FamasG2Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.033F, -1.95F, 0.5F);
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -2.11F, 0.5F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.03F, -1.9F, 0.4F);
+			GL11.glScaled(0.7F, 0.7F, 0.7F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -295,7 +295,7 @@ public class FamasG2Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.285f, 0.3f);
+					GL11.glTranslatef(0.005F, 0.246f, 0.3f);
 				} 
 				
 				// Scope Zoom

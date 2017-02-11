@@ -109,13 +109,13 @@ public class KSG12Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.06F, -1.5F, 0F);
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.2F, -1.65F, 0F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.55F, -0.2F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
@@ -315,7 +315,7 @@ public class KSG12Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.01f, 1f);
+					GL11.glTranslatef(0.005F, 0.02f, 1.3f);
 				} 
 				
 				// Scope Zoom

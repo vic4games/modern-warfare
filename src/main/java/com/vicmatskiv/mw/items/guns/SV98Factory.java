@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.L115Mag;
 import com.vicmatskiv.mw.models.L96;
 import com.vicmatskiv.mw.models.LP;
+import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
@@ -113,31 +114,33 @@ public class SV98Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.4F, 0.3F);
+		.withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+	    	
+			GL11.glTranslatef(0.055F, -1.45F, 0.1F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.19999F, -1.565F, 0.5F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
+				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.4F, 0.3F);
+		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.45F, 0.3F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.19999F, -1.565F, 0.5F);
-				GL11.glScaled(0F, 0F, 0F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.08F, -1.47F, 0.3F);
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.59F, 0.4F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.45F, 0.2F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
@@ -500,19 +503,19 @@ public class SV98Factory implements GunFactory {
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, -0.2f, 7f);
+					GL11.glTranslatef(0F, 0.16f, 0.15f);
 				} 
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, 0f, 7f);
+					GL11.glTranslatef(0F, 0.16f, 0.15f);
 				} 
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.19f, 2.8f);
+					GL11.glTranslatef(1.38F, -1.19f, 2.9f);
 				} 
 				
 				/* // Reflex Zoom

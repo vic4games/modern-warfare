@@ -48,12 +48,12 @@ public class MP7Factory implements GunFactory {
 		"Caliber: 4.6x30mm", "Magazines:", "20rnd 4.6x30mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.HKMP7Mag, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.033F, -1.7F, 0.9F);
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.877F, 0.7F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.64F, 0.6F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -229,7 +229,7 @@ public class MP7Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.26f, 0.7f);
+					GL11.glTranslatef(0.005F, 0.155f, 1.5f);
 				} 
 				
 				// Reflex Zoom

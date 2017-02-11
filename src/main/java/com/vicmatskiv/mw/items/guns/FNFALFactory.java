@@ -107,13 +107,13 @@ public class FNFALFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.06F, -1.65F, 0.5F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.65F, 0.6F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.199F, -1.795F, 0.5F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
@@ -126,13 +126,14 @@ public class FNFALFactory implements GunFactory {
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.6F);
+		.withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.61F, 0.4F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0F, 0F, 0F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
+				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
@@ -382,7 +383,7 @@ public class FNFALFactory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(-0.005F, 0.1315f, 0.5f);
+					GL11.glTranslatef(-0.005F, 0.1315f, 0.75f);
 				} 
 				
 				// Scope Zoom
@@ -394,7 +395,7 @@ public class FNFALFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
+					GL11.glTranslatef(0F, 0.1f, 0.6f);
 				} 
 				
 				// Reflex Zoom

@@ -154,18 +154,18 @@ item.mw_Bullet10x24.name=10x24mm Bullet
 item.mw_Bullet10mm.name=10mm Bullet
 
 item.mw_Acog.name=Trigicon Acog Scope
-item.mw_Reflex.name=Sightmark Sure Shot Reflex
-item.mw_LPScope.name=Low-Powered Scope
+item.mw_Reflex.name=15 MOA Reflex
+item.mw_LPScope.name=Barska AR6 1-6x24 Scope
 item.mw_Silencer.name=Sound-Suppressor
 item.mw_AngledGrip.name=Angled Grip
-item.mw_Laser.name=Secondary Tactical Laser
-item.mw_Laser2.name=Tactical Laser
-item.mw_HPScope.name=High-Powered Scope
+item.mw_Laser.name=UTG Tactical Laser
+item.mw_Laser2.name=LD19206-IR Tactical Laser
+item.mw_HPScope.name=JPU HP 3-9x40 Scope
 item.mw_Holographic.name=EOTech 512 A65 Holographic 
 item.mw_Grip2.name=Grip
 item.mw_Bipod.name=Bipod
 item.mw_VGrip.name=Foregrip
-item.mw_Kobra.name=Kobra Sight
+item.mw_Kobra.name=8-18 Kobra Sight
 
 item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit

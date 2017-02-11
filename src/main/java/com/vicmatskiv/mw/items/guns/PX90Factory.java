@@ -103,15 +103,15 @@ public class PX90Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.08F, -1.95F, 0.5F);
-			GL11.glScaled(0.5F, 0.5F, 0.5F);
-		} else if(model instanceof Acog2) {
-			GL11.glTranslatef(0.2F, -2.06F, 0.5F);
-			GL11.glScaled(0.05F, 0.05F, 0.05F);
-		}
-	})
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.95F, 0.6F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 	.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
 		if(model instanceof Reflex) {
 		GL11.glTranslatef(.25F, -1.8F, 0F);
@@ -282,7 +282,7 @@ public class PX90Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.12f, 0.2f);
+					GL11.glTranslatef(0.005F, 0.15f, 0.45f);
 				} 
 				
 				// Scope Zoom

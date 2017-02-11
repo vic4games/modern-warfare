@@ -173,12 +173,12 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.033F, -1.7F, 0.5F);
-				GL11.glScaled(0.7F, 0.7F, 0.7F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.877F, 0.5F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.64F, 0.6F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
@@ -192,13 +192,14 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
+		 .withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+	    	
+	    	GL11.glTranslatef(0.055F, -1.58F, 0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.197F, -1.78F, 1F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
+				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
@@ -550,7 +551,7 @@ public class AR15Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.08f, 0.7f);
+					GL11.glTranslatef(0.005F, -0.032f, 0.65f);
 				} 
 				
 				// Scope Zoom
@@ -562,7 +563,7 @@ public class AR15Factory implements GunFactory {
 				// HP Zoomw
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.08f, 0.5f);
 				} 
 				
 				// Reflex Zoom

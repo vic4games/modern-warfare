@@ -101,13 +101,13 @@ public class M107Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-			GL11.glTranslatef(0.06F, -1.65F, 0.5F);
+		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.64F, 0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.199F, -1.795F, 0.5F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
@@ -120,13 +120,13 @@ public class M107Factory implements GunFactory {
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.625F, -0F);
+		.withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+			GL11.glTranslatef(0.055F, -1.6F, 0.3F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.202F, -1.76F, 0.4F);
-				GL11.glScaled(0.05F, 0.05F, 0.05F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
+				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
@@ -322,7 +322,7 @@ public class M107Factory implements GunFactory {
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, -0.2f, 7f);
+					GL11.glTranslatef(0.01F, 0.31f, -0.05f);
 				} 
 				
 				// HP Zoom
@@ -334,7 +334,7 @@ public class M107Factory implements GunFactory {
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.19f, 2.8f);
+					GL11.glTranslatef(1.38F, -0.995f, 2.8f);
 				} 
 				
 				/* // Reflex Zoom

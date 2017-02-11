@@ -110,15 +110,6 @@ public class M21Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.09F, -1.48F, -0.75F);
-				GL11.glScaled(0.45F, 0.45F, 0.45F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.595F, -0.55F);
-				GL11.glScaled(0.03F, 0.03F, 0.03F);
-			}
-		})
 //		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
 //			if(model instanceof LP) {
 //			GL11.glTranslatef(0.055F, -1.625F, 0.8F);
