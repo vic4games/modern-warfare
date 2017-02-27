@@ -1,17 +1,9 @@
 package com.vicmatskiv.mw;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.oredict.OreDictionary;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
 import com.vicmatskiv.mw.attachments.ItemAR15Iron;
-import com.vicmatskiv.mw.attachments.ItemBipod;
 import com.vicmatskiv.mw.blocks.BlockBauxiteOre;
 import com.vicmatskiv.mw.blocks.BlockCopperOre;
 import com.vicmatskiv.mw.blocks.BlockLeadOre;
@@ -166,16 +158,22 @@ import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
+import com.vicmatskiv.weaponlib.ItemScope;
 import com.vicmatskiv.weaponlib.LaserBeamRenderer;
-import com.vicmatskiv.weaponlib.ViewfinderRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -2404,18 +2402,18 @@ public class CommonProxy {
 						.withTextureName("Dummy.png")
 						.build(ModernWarfareMod.MOD_CONTEXT);
 		        
-		        Scope = new AttachmentBuilder<Weapon>()
+		        Scope = new ItemScope.Builder()
+		        		.withOpticalZoom()
+		        		.withZoomRange(1f, 0.05f)
+		        		.withViewfinderPositioning((p, s) -> {
+		        		    GL11.glScalef(1.1f, 1.1f, 1.1f);
+                            GL11.glTranslatef(0.1f, 0.4f, 0.6f);
+                        })
                         .withCategory(AttachmentCategory.SCOPE)
                         .withCreativeTab(ModernWarfareMod.gunsTab)
                         .withCrosshair("LP")
                         .withModel(new com.vicmatskiv.mw.models.LP(), "AK12.png")
                         .withModel(new com.vicmatskiv.mw.models.LPscope(), "LPscope.png")
-                        .withApply((a, weapon, player) -> {
-                            weapon.changeZoom(player, 0.1f, true);
-                        })
-                        .withRemove((attachment, weapon, player) -> {
-                            weapon.changeZoom(player, 1, true);
-                        })
                         .withFirstPersonModelPositioning((model, itemStack) -> {
                             if(model instanceof com.vicmatskiv.mw.models.LP) {
                                 GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -2457,11 +2455,12 @@ public class CommonProxy {
 				        	}
                         })
                         .withName("LPScope")
-                        .withPostRender(new ViewfinderRenderer(
-                                (p, s) -> {
-                                    GL11.glScalef(1.1f, 1.1f, 1.1f);
-                                    GL11.glTranslatef(0.1f, 0.4f, 0.6f);
-                                }))
+//                        .withPostRender(new ViewfinderRenderer(
+//                        		ModernWarfareMod.MOD_CONTEXT,
+//                                (p, s) -> {
+//                                    GL11.glScalef(1.1f, 1.1f, 1.1f);
+//                                    GL11.glTranslatef(0.1f, 0.4f, 0.6f);
+//                                }))
                         .withModId(ModernWarfareMod.MODID)
                         .withTextureName("Dummy.png")
                         .build(ModernWarfareMod.MOD_CONTEXT);
