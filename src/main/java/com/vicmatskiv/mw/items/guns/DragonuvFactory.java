@@ -56,7 +56,7 @@ public class DragonuvFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 25.5", 
 		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.DragunovMag, (model) -> {})
@@ -102,7 +102,7 @@ public class DragonuvFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer762x54, (model) -> {
 			GL11.glTranslatef(0.107F, -1.25F, -5.65F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -130,7 +130,7 @@ public class DragonuvFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
@@ -361,10 +361,10 @@ public class DragonuvFactory implements GunFactory {
 			 
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+						 GL11.glScalef(1.8f, 1.8f, 3f);
+						 GL11.glTranslatef(0.73f, -0.22f, 0.24f);
+						 GL11.glRotatef(110f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
@@ -466,7 +466,7 @@ public class DragonuvFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(28.5f)
+		.withSpawnEntityDamage(25.5f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
 			if (WorldHelper.isGlassBlock(block)) {

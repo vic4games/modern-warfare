@@ -37,8 +37,9 @@ public class P2000Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 11", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.P2000Top, true, (model) -> {
@@ -54,7 +55,7 @@ public class P2000Factory implements GunFactory {
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 			GL11.glRotatef(-90F, 0f, 0f, -4f);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.15F, -4.61F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -455,7 +456,7 @@ public class P2000Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(11f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -40,7 +41,7 @@ public class PX90Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("FN P90")
+		.withName("FN P90 TR")
 //		.withAmmo(CommonProxy.PX90Mag)
 //		.withAmmoCapacity(50)
 		.withFireRate(0.75f)  
@@ -56,8 +57,9 @@ public class PX90Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.5", 
 		"Caliber: 5.7x28mm", "Magazines:", "50rnd 5.7x28mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.FNP90Mag, (model) -> {})
@@ -130,6 +132,15 @@ public class PX90Factory implements GunFactory {
 			GL11.glScaled(0.06F, 0.06F, 0.06F);
 		}
 	})
+	.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+		if(model instanceof Holographic2) {
+		GL11.glTranslatef(.264F, -1.85F, 0.2F);
+		GL11.glScaled(0.5F, 0.5F, 0.5F);
+		} else if(model instanceof Holo2) {
+			GL11.glTranslatef(0.202F, -2.085F, 0.3F);
+			GL11.glScaled(0.06F, 0.06F, 0.06F);
+		}
+	})
 	.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 		if(model instanceof Kobra) {
 		GL11.glTranslatef(.264F, -1.85F, 0.2F);
@@ -139,15 +150,7 @@ public class PX90Factory implements GunFactory {
 			GL11.glScaled(0.06F, 0.06F, 0.06F);
 		}
 	})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.25F, -1.8F, -0.42F);
-			GL11.glScaled(0.7F, 0.7F, 0.7F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.25F, -1.8F, -0.42F);
-			GL11.glScaled(0.7F, 0.7F, 0.7F);
-		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer57x38, (model) -> {
 			GL11.glTranslatef(0.107F, -1.2F, -2.14F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -304,6 +307,12 @@ public class PX90Factory implements GunFactory {
 				} 
 				
 				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.15f, 0.2f);
+				} 
+				
+				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
@@ -434,7 +443,7 @@ public class PX90Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(6.5f)
 		.withSpawnEntityGravityVelocity(0.028f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

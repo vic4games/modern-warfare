@@ -36,7 +36,7 @@ public class AN94Factory implements GunFactory {
 		.withName("AN94")
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.5f)
+		.withFireRate(0.65f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -50,7 +50,7 @@ public class AN94Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.3", 
 		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {
@@ -123,8 +123,8 @@ public class AN94Factory implements GunFactory {
 			GL11.glTranslatef(.3F, -1.3F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.3F, -4.63F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x39, (model) -> {
+			GL11.glTranslatef(0.107F, -1.34F, -4.63F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("AK12", "Electric")
@@ -446,7 +446,7 @@ public class AN94Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(7.3f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

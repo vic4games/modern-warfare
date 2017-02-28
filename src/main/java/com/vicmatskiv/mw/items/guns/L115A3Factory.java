@@ -51,7 +51,7 @@ public class L115A3Factory implements GunFactory {
 		.withMaxShots(1)
 		.withShootSound("L115")
 		.withPumpTimeout(2000)
-		//.withSilencedShootSound("AR15silenced")
+		.withSilencedShootSound("RifleSilenced")
 		.withReloadSound("NoBoltReload")
 		.withUnloadSound("Unload")
 		.withReloadingTime(40)
@@ -60,7 +60,7 @@ public class L115A3Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 32.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 32.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 3)", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
@@ -189,6 +189,10 @@ public class L115A3Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
 			GL11.glTranslatef(.135F, -0.6F, -2.33F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
+		})
+		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+			GL11.glTranslatef(0.107F, -1.45F, -6.95F);
+			GL11.glScaled(1.1F, 1.1F, 1.3F);
 		})
 		.withTextureNames("L115A3", "L96Blue", "L96Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()

@@ -56,7 +56,7 @@ public class M107Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 37.8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 37.8", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 2)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M107BMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
@@ -133,9 +133,9 @@ public class M107Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.84F, -2.1F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.48F, -5.8F);
-			GL11.glScaled(1.3F, 1.3F, 1.3F);
+		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+			GL11.glTranslatef(0.107F, -1.48F, -7.9F);
+			GL11.glScaled(1.3F, 1.3F, 1.6F);
 		})
 		.withTextureNames("M107", "M107Blue", "M107Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
@@ -311,43 +311,38 @@ public class M107Factory implements GunFactory {
 					)
 				
 			.withFirstPersonPositioningZooming((player, itemStack) -> {
-				GL11.glTranslatef(0.2F, -0.3F, 0.1F);
+				GL11.glTranslatef(0.3F, -0.26F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.17F, -0.95f, 0.5f);
+				GL11.glTranslatef(0.1377F, -1.1f, 0.5f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.08f, 0.75f);
+				}  
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.01F, 0.31f, -0.05f);
+					GL11.glTranslatef(0F, 0.04f, 0.05f);
 				} 
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.01F, 0.31f, 0.15f);
+					//System.out.println("Position me for Scope")
+					GL11.glTranslatef(0.01F, 0.04f, 0.5f);
 				} 
 				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -0.995f, 2.8f);
-				} 
-				
-				/* // Reflex Zoom
+				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.2f, 0.7f);
 				} 
-				// Holo Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo)) {
-					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1f, 3f);
-				} 
-				*/
+				
 				// Everything else
 				else {
 					GL11.glTranslatef(1.373F, -1.34f, 2.4f);

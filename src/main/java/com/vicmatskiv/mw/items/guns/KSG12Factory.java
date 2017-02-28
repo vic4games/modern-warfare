@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.KSG12;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -52,7 +53,7 @@ public class KSG12Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("KSG12")
-		//.withSilencedShootSound("AR15silenced")
+		.withSilencedShootSound("ShotgunSilenced")
 		.withReloadSound("ShotgunReload")
 		.withReloadingTime(15)
 		.withCrosshair("gun")
@@ -62,7 +63,7 @@ public class KSG12Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Bullpup pump-action shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
 		.withCompatibleAttachment(CommonProxy.KSGPump, true, (model) -> {
 		})
@@ -136,6 +137,15 @@ public class KSG12Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.4F, -0.3F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.64F, -0.15F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.27F, -1.4F, -0.2F);
@@ -145,7 +155,11 @@ public class KSG12Factory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
-		.withTextureNames("GunmetalTexture", "Electric")
+		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+			GL11.glTranslatef(0.107F, -1.32F, -4F);
+			GL11.glScaled(1.3F, 1.3F, 1.3F);
+		})
+		.withTextureNames("AK12", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new KSG12())
@@ -315,7 +329,7 @@ public class KSG12Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.02f, 1.3f);
+					GL11.glTranslatef(0.005F, 0.02f, 1.4f);
 				} 
 				
 				// Scope Zoom
@@ -333,18 +347,25 @@ public class KSG12Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.02f, 0.3f);
+					GL11.glTranslatef(0F, 0f, 1.5f);
 				} 
 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, -0.015f, 0.3f);
+					GL11.glTranslatef(0F, -0.025f, 1.4f);
 				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, -0.025f, 1.4f);
+				} 
+				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.373F, -1.36f, 2.8f);
+					GL11.glTranslatef(1.373F, -1.38f, 3.8f);
 				} 
 				
 				// Everything else

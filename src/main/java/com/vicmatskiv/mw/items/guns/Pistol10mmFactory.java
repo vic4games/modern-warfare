@@ -38,8 +38,9 @@ public class Pistol10mmFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.FunGunsTab)
-		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Damage: 13",
+		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 9",
 		"Caliber: 10mm", "Magazines:", "10rnd 10mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.Mag10mm, (model) -> {
@@ -376,7 +377,7 @@ public class Pistol10mmFactory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(13f)
+		.withSpawnEntityDamage(9f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

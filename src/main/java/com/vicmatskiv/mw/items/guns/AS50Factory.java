@@ -56,7 +56,7 @@ public class AS50Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 30.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 30.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 1)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.AS50Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
@@ -143,9 +143,9 @@ public class AS50Factory implements GunFactory {
 			GL11.glTranslatef(.25F, -1.4F, -2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.5F, -5.8F);
-			GL11.glScaled(1F, 1F, 1F);
+		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+			GL11.glTranslatef(0.107F, -1.52F, -5.8F);
+			GL11.glScaled(1.1F, 1.1F, 1.3F);
 		})
 		.withTextureNames("AS50", "AS50Blue", "AS50Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()

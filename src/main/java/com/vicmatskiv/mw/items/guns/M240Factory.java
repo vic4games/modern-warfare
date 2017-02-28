@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M240;
@@ -47,7 +48,7 @@ public class M240Factory implements GunFactory {
 		.withRecoil(2.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
-		.withShootSound("M249")
+		.withShootSound("M240")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("M249Reload")
 		.withUnloadSound("Unload")
@@ -57,7 +58,7 @@ public class M240Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: General-purpose machine gun", "Damage: 8.5", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "200rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.M240Mag, (model) -> {
@@ -143,6 +144,15 @@ public class M240Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.48F, 0.2F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.72F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
 			GL11.glTranslatef(.32F, -1.28F, -2.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -151,7 +161,7 @@ public class M240Factory implements GunFactory {
 			GL11.glTranslatef(.32F, -1.28F, -2.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer762x51, (model) -> {
 			GL11.glTranslatef(0.107F, -1.42F, -5.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -180,7 +190,7 @@ public class M240Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.3F, -0.4F, -0.2F);
+				GL11.glTranslatef(0.45F, -0.47F, -0.25F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
@@ -321,6 +331,12 @@ public class M240Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(-0.01F, 0.2f, 0f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.36F, -1.14f, 2.5f);
 				} 
 				
@@ -449,7 +465,7 @@ public class M240Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityDamage(8.5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

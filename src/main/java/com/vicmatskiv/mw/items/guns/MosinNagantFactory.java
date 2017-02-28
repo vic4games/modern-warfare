@@ -59,7 +59,7 @@ public class MosinNagantFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
+		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.MosinBolt, true, (model) -> {
 			if(model instanceof MosinBolt) {
 	    		GL11.glTranslatef(0F, 0F, 0F);

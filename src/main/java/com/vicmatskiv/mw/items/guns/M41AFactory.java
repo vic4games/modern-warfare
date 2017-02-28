@@ -63,7 +63,7 @@ public class M41AFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.FunGunsTab)
-		.withInformationProvider(stack -> Arrays.asList("--ALIEN was a good movie--", "", "Damage: 4",
+		.withInformationProvider(stack -> Arrays.asList("--ALIEN was a good movie--", "", "Type: Pulse rifle", "Damage: 4",
 		"Caliber: 10x24mm", "Magazines:", "99rnd 10x24mm Magazine", "Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.M41AMag, (model) -> {
 		})

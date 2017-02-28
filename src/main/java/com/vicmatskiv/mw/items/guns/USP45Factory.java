@@ -38,9 +38,10 @@ public class USP45Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 10", 
-		"Caliber: 9mm, .45 ACP", "Magazines:", "15rnd 9mm Magazine", "13rnd .45 ACP Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
+		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.USP45Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
@@ -50,11 +51,8 @@ public class USP45Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.M9BerettaMag, (model) -> {
 			GL11.glTranslatef(0F, 0F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Glock21Mag, (model) -> {
-			GL11.glTranslatef(0F, 0.2F, 0.05F);
-			})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(-0.25F, -1.23F, -4.6F);
+		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
+			GL11.glTranslatef(-0.25F, -1.2F, -4.6F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
 		.withTextureNames("AK12", "Electric")
@@ -112,10 +110,6 @@ public class USP45Factory implements GunFactory {
 			.withFirstPersonPositioningCustomRecoiled(CommonProxy.M9BerettaMag, (player, itemStack) -> {})
 			
 			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M9BerettaMag, (player, itemStack) -> {})
-			
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.Glock21Mag, (player, itemStack) -> {})
-			
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Glock21Mag, (player, itemStack) -> {})
 				
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
 				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
@@ -156,8 +150,6 @@ public class USP45Factory implements GunFactory {
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.M9BerettaMag, (player, itemStack) -> {})
-			
-			.withFirstPersonCustomPositioning(CommonProxy.Glock21Mag, (player, itemStack) -> {})
 			
 			.withFirstPersonCustomPositioning(CommonProxy.USP45Top.getRenderablePart(), (player, itemStack) -> {
 				if(Tags.getAmmo(itemStack) == 0) {
@@ -254,43 +246,7 @@ public class USP45Factory implements GunFactory {
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000)
 					)
-					
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.Glock21Mag,
-				new Transition((player, itemStack) -> {
-//					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
-//					GL11.glRotatef(-20F, 1f, 0f, 0f);
-////					GL11.glScaled(0.55F, 0.55F, 0.55F);
-////					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((player, itemStack) -> {
-					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
-//					GL11.glRotatef(0F, 0f, 1f, 0f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000)
-					)
-					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.Glock21Mag,
-				new Transition((player, itemStack) -> {
-					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
-//					GL11.glRotatef(0F, 0f, 1f, 0f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((player, itemStack) -> {
-//					GL11.glTranslatef(0.5F, 0F, -0.2F);
-//					GL11.glRotatef(0F, 0f, 1f, 0f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((player, itemStack) -> {
-					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-				}, 250, 1000)
-					)
-					
+	
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.USP45Top.getRenderablePart(),
 				new Transition((player, itemStack) -> {
 					GL11.glTranslatef(0F, 0F, 0.5F);
@@ -495,7 +451,7 @@ public class USP45Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(10f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

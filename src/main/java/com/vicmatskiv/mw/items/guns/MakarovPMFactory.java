@@ -38,8 +38,9 @@ public class MakarovPMFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 10.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: 9mm", "Magazines:", "10rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.MakarovTop, true, (model) -> {
@@ -50,7 +51,7 @@ public class MakarovPMFactory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.Magazine9mm, (model) -> {
 			GL11.glTranslatef(0F, 0F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.14F, -4.23F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -451,7 +452,7 @@ public class MakarovPMFactory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(10.5f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

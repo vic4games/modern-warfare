@@ -13,6 +13,7 @@ import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.MP7;
 import com.vicmatskiv.mw.models.Reflex;
@@ -30,7 +31,7 @@ public class MP7Factory implements GunFactory {
 		.withName("HK MP7")
 //		.withAmmo(CommonProxy.MP7Mag)
 //		.withAmmoCapacity(20)
-		.withFireRate(0.61f)
+		.withFireRate(0.7f)
 		.withRecoil(3.3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -44,7 +45,7 @@ public class MP7Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.6", 
 		"Caliber: 4.6x30mm", "Magazines:", "20rnd 4.6x30mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.HKMP7Mag, (model) -> {})
@@ -75,6 +76,15 @@ public class MP7Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.53F, 0.6F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.76F, 0.6F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.264F, -1.53F, 0.6F);
@@ -92,7 +102,7 @@ public class MP7Factory implements GunFactory {
 			GL11.glTranslatef(.3F, -1.2F, -0.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
+		.withCompatibleAttachment(CommonProxy.SilencerMP7, (model) -> {
 			GL11.glTranslatef(0.107F, -1.26F, -2.6F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -245,6 +255,12 @@ public class MP7Factory implements GunFactory {
 				} 
 				
 				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.14f, 0.7f);
+				} 
+				
+				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.19f, 3.2f);
@@ -377,7 +393,7 @@ public class MP7Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(6.6f)
 		.withSpawnEntityGravityVelocity(0.028f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -34,7 +34,7 @@ public class Remington900Factory implements GunFactory {
 		.withMaxShots(1)
 		.withPumpTimeout(1000)
 		.withShootSound("M1014")
-		//.withSilencedShootSound("AR15silenced")
+		.withSilencedShootSound("ShotgunSilenced")
 		.withReloadSound("ShotgunReload")
 		.withReloadingTime(15)
 		.withCrosshair("gun")
@@ -44,9 +44,13 @@ public class Remington900Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
 		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
+		})
+		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+			GL11.glTranslatef(0.107F, -1.4F, -5.75F);
+			GL11.glScaled(1.1F, 1.1F, 1.1F);
 		})
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
 		.withTextureNames("Remington", "Electric")

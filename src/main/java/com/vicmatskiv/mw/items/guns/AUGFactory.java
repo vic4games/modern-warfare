@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -47,7 +48,7 @@ public class AUGFactory implements GunFactory {
 		.withName("AUG")
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.6f)
+		.withFireRate(0.7f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -61,7 +62,7 @@ public class AUGFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.5f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
@@ -148,6 +149,15 @@ public class AUGFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.53F, 0.2F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.264F, -1.53F, 0.2F);
@@ -157,8 +167,8 @@ public class AUGFactory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.35F, -2.7F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.36F, -2.7F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("AUG", "AUGBlue", "AUGRed", "Electric")
@@ -315,19 +325,25 @@ public class AUGFactory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.02f, 0.3f);
+					GL11.glTranslatef(0F, 0.02f, 1.5f);
 				} 
 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, -0.045f, 0.3f);
+					GL11.glTranslatef(0F, -0.045f, 1.5f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, -0.045f, 1.5f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1.39f, 2.8f);
+					GL11.glTranslatef(1.373F, -1.39f, 4.2f);
 				}
 				
 				// Everything else
@@ -459,7 +475,7 @@ public class AUGFactory implements GunFactory {
 					}, 250, 50))		
 					
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

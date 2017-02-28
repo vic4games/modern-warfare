@@ -46,7 +46,7 @@ public class AKMSFactory implements GunFactory {
 		.withName("AKMS")
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.6f)
+		.withFireRate(0.67f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -60,7 +60,7 @@ public class AKMSFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7.9", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7.4", 
 		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine", "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
@@ -108,8 +108,8 @@ public class AKMSFactory implements GunFactory {
 			}
 		})
 		
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.27F, -4.65F);
+		.withCompatibleAttachment(CommonProxy.Silencer762x39, (model) -> {
+			GL11.glTranslatef(0.107F, -1.25F, -4.65F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("AKMS", "AKGold", "Electric")
@@ -136,7 +136,7 @@ public class AKMSFactory implements GunFactory {
 				})
 			
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
@@ -197,14 +197,24 @@ public class AKMSFactory implements GunFactory {
 					GL11.glRotatef(5F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 20),
+				}, 250, 140),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glTranslatef(0.25F, -0.2F, -0.18F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 0)
+					GL11.glRotatef(7F, 1f, 0f, 0f);
+					GL11.glRotatef(5F, 0f, 0f, 1f);
+				}, 350, 0),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.25F, -0.2F, -0.18F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					GL11.glRotatef(7F, 1f, 0f, 0f);
+					GL11.glRotatef(5F, 0f, 0f, 1f);
+				}, 70, 0)
 			)
 			
 			.withFirstPersonPositioningUnloading(
@@ -261,6 +271,12 @@ public class AKMSFactory implements GunFactory {
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000)
 					)
 					
@@ -293,6 +309,12 @@ public class AKMSFactory implements GunFactory {
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000),
 				new Transition((player, itemStack) -> {
 					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -367,10 +389,10 @@ public class AKMSFactory implements GunFactory {
 			 
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+						 GL11.glScalef(1.8f, 1.8f, 3f);
+						 GL11.glTranslatef(0.73f, -0.22f, 0.24f);
+						 GL11.glRotatef(110f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
@@ -415,6 +437,12 @@ public class AKMSFactory implements GunFactory {
 						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.7f, 1.7f, 3f);
+						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
@@ -434,9 +462,17 @@ public class AKMSFactory implements GunFactory {
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.4f, -0.2f, 0.6f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.05f, -0.05f, 0.05f);
+						 GL11.glRotatef(30f, 0, 0f, 1f);
+						 GL11.glRotatef(-160f, 1f, 0f, 0f);
+						 //GL11.glRotatef(85f, 0f, 1f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.05f, -0.05f, 0.05f);
+						 GL11.glRotatef(30f, 0, 0f, 1f);
+						 GL11.glRotatef(-180f, 1f, 0f, 0f);
+						 //GL11.glRotatef(85f, 0f, 1f, 0f);
 					}, 250, 0))
 			 
 //			 .withFirstPersonHandPositioningZooming((player,  itemStack) -> {
@@ -478,7 +514,7 @@ public class AKMSFactory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(7.9f)
+		.withSpawnEntityDamage(7.4f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

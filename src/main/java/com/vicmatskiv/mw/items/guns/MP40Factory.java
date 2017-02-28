@@ -36,7 +36,7 @@ public class MP40Factory implements GunFactory {
 		.withName("MP40")
 //		.withAmmo(CommonProxy.MP40Mag)
 //		.withAmmoCapacity(32)
-		.withFireRate(0.61f)
+		.withFireRate(0.66f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -49,8 +49,9 @@ public class MP40Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.5f)
+		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 4.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 5.5", 
 		"Caliber: 9mm", "Magazines:", "32rnd 9mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.MP40Mag, (model) -> {})
@@ -132,8 +133,8 @@ public class MP40Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})*/
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.11F, -1.5F, -5.2F);
+		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
+			GL11.glTranslatef(0.11F, -1.5F, -5.1F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("MP40")
@@ -414,7 +415,7 @@ public class MP40Factory implements GunFactory {
 					}, 250, 50))
 				
 			.build())
-		.withSpawnEntityDamage(4.5f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.028f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

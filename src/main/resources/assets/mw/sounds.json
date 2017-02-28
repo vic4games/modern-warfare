@@ -152,6 +152,186 @@
       }
     ]
   },
+  "G36C": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "G36C",
+       "stream": false
+      }
+    ]
+  },
+  "ShotgunSilenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "ShotgunSilenced",
+       "stream": false
+      }
+    ]
+  },
+  "Spas12": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Spas12",
+       "stream": false
+      }
+    ]
+  },
+  "P225": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "P225",
+       "stream": false
+      }
+    ]
+  },
+  "P30": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "P30",
+       "stream": false
+      }
+    ]
+  },
+  "MAC10": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "MAC10",
+       "stream": false
+      }
+    ]
+  },
+   "G3": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "G3",
+       "stream": false
+      }
+    ]
+  },
+  "G3Silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "G3Silenced",
+       "stream": false
+      }
+    ]
+  },
+  "AK12U": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "AK12U",
+       "stream": false
+      }
+    ]
+  },
+  "QBS09": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "QBS09",
+       "stream": false
+      }
+    ]
+  },
+  "PPBizon": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "PPBizon",
+       "stream": false
+      }
+    ]
+  },
+  "PPBizonSilenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "PPBizonSilenced",
+       "stream": false
+      }
+    ]
+  },
+  "Glock32": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Glock32",
+       "stream": false
+      }
+    ]
+  },
+  "Glock32Silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Glock32Silenced",
+       "stream": false
+      }
+    ]
+  },
+   "SR25": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SR25",
+       "stream": false
+      }
+    ]
+  },
+  "SR25Silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SR25Silenced",
+       "stream": false
+      }
+    ]
+  },
+  "Minimi": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Minimi",
+       "stream": false
+      }
+    ]
+  },
+  "M240": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M240",
+       "stream": false
+      }
+    ]
+  },
+  "Vector": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Vector",
+       "stream": false
+      }
+    ]
+  },
+  "VectorSilenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "VectorSilenced",
+       "stream": false
+      }
+    ]
+  },
    "MosinBoltAction": {
     "category": "master",
     "sounds": [

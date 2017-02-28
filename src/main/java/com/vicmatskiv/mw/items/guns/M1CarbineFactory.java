@@ -50,7 +50,7 @@ public class M1CarbineFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.5f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 7", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M1CarbineMag, (model) -> {

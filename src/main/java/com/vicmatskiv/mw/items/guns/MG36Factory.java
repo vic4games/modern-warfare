@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -48,8 +49,8 @@ public class MG36Factory implements GunFactory {
 		.withName("MG36")
 //		.withAmmo(CommonProxy.DrumMag)
 //		.withAmmoCapacity(100)
-		.withFireRate(0.47f)
-		.withRecoil(3f)
+		.withFireRate(0.7f)
+		.withRecoil(2.5f)
 		.withZoom(0.8f)
 		//.withMaxShots(5)
 		.withShootSound("G36")
@@ -62,7 +63,8 @@ public class MG36Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7.2", "100rnd 5.56x45mm NATO Beta-C Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Type: Light machine gun", "Damage: 7", 
+		"Caliber: 5.56x45mm NATO", "Magazines:", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.2F);
@@ -155,31 +157,20 @@ public class MG36Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -1.2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.53F, 0.2F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
 		})
-		.withCompatibleAttachment(CommonProxy.Grip, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -1.2F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-		})
-		.withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-			GL11.glTranslatef(.135F, -0.5F, -1.2F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
-			GL11.glTranslatef(.3F, -1.15F, -1.25F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
-			GL11.glTranslatef(.3F, -1.15F, -1.25F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.3F, -4.5F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.3F, -4.8F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("GunmetalTexture", "Electric")
+		.withTextureNames("AK12", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new MG36())
@@ -203,7 +194,7 @@ public class MG36Factory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.2F, -0.3F, -0.15F);
+				GL11.glTranslatef(0.35F, -0.33F, -0.06F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 				GL11.glTranslatef(-0.2F, -0.7F, 0.8F);
@@ -219,7 +210,7 @@ public class MG36Factory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0F, -0.4F, -0.4F);
+						GL11.glTranslatef(0.3F, -0.48F, -0.3F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
 						GL11.glRotatef(-10F, 1f, 0f, 0f);
@@ -228,7 +219,7 @@ public class MG36Factory implements GunFactory {
 					}, 250, 500),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glTranslatef(0F, -0.4F, -0.4F);
+						GL11.glTranslatef(0.3F, -0.48F, -0.3F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
 						GL11.glRotatef(-10F, 1f, 0f, 0f);
@@ -237,16 +228,24 @@ public class MG36Factory implements GunFactory {
 					}, 250, 20),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.2F, -0.3F, -0.15F);
+					GL11.glTranslatef(0.32F, -0.33F, -0.12F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.6F, 0.6F, 0.6F);
 					GL11.glTranslatef(-0.2F, -0.7F, 0.8F);
-				}, 250, 0)
+					GL11.glRotatef(-4F, 1f, 0f, 0f);
+				}, 500, 100),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(0.32F, -0.33F, -0.12F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.6F, 0.6F, 0.6F);
+					GL11.glTranslatef(-0.2F, -0.7F, 0.8F);
+					GL11.glRotatef(-4F, 1f, 0f, 0f);
+				}, 70, 0)
 			)
 			
 			.withFirstPersonPositioningUnloading(
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0F, -0.4F, -0.4F);
+					GL11.glTranslatef(0.3F, -0.48F, -0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(-10F, 0f, 0f, 1f);
 					GL11.glRotatef(-10F, 1f, 0f, 0f);
@@ -254,7 +253,7 @@ public class MG36Factory implements GunFactory {
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 150, 50),
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0F, -0.4F, -0.4F);
+					GL11.glTranslatef(0.3F, -0.48F, -0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(-10F, 0f, 0f, 1f);
 					GL11.glRotatef(-10F, 1f, 0f, 0f);
@@ -290,6 +289,12 @@ public class MG36Factory implements GunFactory {
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000),
 				new Transition((player, itemStack) -> {
 					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -340,6 +345,12 @@ public class MG36Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.17f, 0f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.17f, 2.5f);
 				} 
 				
@@ -364,7 +375,7 @@ public class MG36Factory implements GunFactory {
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.32f, 0.37f);
+						 GL11.glTranslatef(0.65f, -0.32f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					 }, 
@@ -407,10 +418,18 @@ public class MG36Factory implements GunFactory {
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.32f, 0.37f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+						GL11.glScalef(1.5f, 1.5f, 2.7f);
+						 GL11.glTranslatef(0.9f, -0.3f, 0.32f);
+						 GL11.glRotatef(120f, 0, 0f, 1f);
+						 GL11.glRotatef(-45f, 1f, 0f, 0f);
+						 //GL11.glRotatef(-40f, 0f, 1f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.5f, 1.5f, 2.7f);
+						 GL11.glTranslatef(1f, -0.3f, 0.32f);
+						 GL11.glRotatef(120f, 0, 0f, 1f);
+						 GL11.glRotatef(-25f, 1f, 0f, 0f);
+//						 GL11.glRotatef(-40f, 0f, 1f, 0f);
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
@@ -430,7 +449,13 @@ public class MG36Factory implements GunFactory {
 					
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.4f, -0.2f, 0.6f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 0))
@@ -468,7 +493,7 @@ public class MG36Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.2f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

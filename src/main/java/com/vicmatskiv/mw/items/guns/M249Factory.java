@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M249;
@@ -57,7 +58,7 @@ public class M249Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Light machine gun", "Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "200rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.M249Mag, (model) -> {
@@ -141,7 +142,20 @@ public class M249Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.48F, 0.2F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.72F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.54F, -1F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
 			GL11.glTranslatef(.135F, -0.54F, -1F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
@@ -165,8 +179,8 @@ public class M249Factory implements GunFactory {
 			GL11.glTranslatef(.32F, -1.14F, -1.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.42F, -4F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.43F, -4.1F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("GunmetalTexture", "Electric")
@@ -194,7 +208,7 @@ public class M249Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.3F, -0.4F, -0.2F);
+				GL11.glTranslatef(0.45F, -0.47F, -0.25F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.5F, -0.6F, 0.9F);
@@ -335,6 +349,12 @@ public class M249Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(-0.01F, 0.2f, 0f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.36F, -1.14f, 2.5f);
 				} 
 				
@@ -463,7 +483,7 @@ public class M249Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

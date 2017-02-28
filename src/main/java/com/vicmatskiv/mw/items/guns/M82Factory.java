@@ -56,7 +56,7 @@ public class M82Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 36.4", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 36.4", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 2)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M107BMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
@@ -133,9 +133,9 @@ public class M82Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.84F, -2.1F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.48F, -5.8F);
-			GL11.glScaled(1.3F, 1.3F, 1.3F);
+		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+			GL11.glTranslatef(0.107F, -1.48F, -7.9F);
+			GL11.glScaled(1.3F, 1.3F, 1.6F);
 		})
 		.withTextureNames("M82", "M107Blue", "M107Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()

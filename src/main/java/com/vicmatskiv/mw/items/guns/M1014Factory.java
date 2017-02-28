@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M1014;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -49,7 +50,7 @@ public class M1014Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("M1014")
-		//.withSilencedShootSound("AR15silenced")
+		.withSilencedShootSound("ShotgunSilenced")
 		.withReloadSound("ShotgunReload")
 		.withReloadingTime(15)
 		.withCrosshair("gun")
@@ -59,11 +60,11 @@ public class M1014Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Combat shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Semi"))
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
-		.withTextureNames("GunmetalTexture", "Electric")
-		 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+		.withTextureNames("AK12", "Electric")
+		 .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.161F, -1.61F, 0.3F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -83,7 +84,7 @@ public class M1014Factory implements GunFactory {
 				GL11.glTranslatef(0.092F, -1.91F, -0.9F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof G36CIron1) {
-				GL11.glTranslatef(0.165F, -1.45F, 0.5F);
+				GL11.glTranslatef(0.168F, -1.45F, 0.65F);
 				GL11.glScaled(0.16F, 0.16F, 0.16F);
 			} else if(model instanceof G36CIron2) {
 				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
@@ -95,11 +96,11 @@ public class M1014Factory implements GunFactory {
 				GL11.glTranslatef(0.25F, -1.55F, -2F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof FALIron) {
-				GL11.glTranslatef(0.152F, -1.66F, -1.9F);
-				GL11.glScaled(0F, 0F, 0F);
+				GL11.glTranslatef(0.165F, -1.44F, -3.2F);
+				GL11.glScaled(0.3F, 0.3F, 1F);
 			} else if(model instanceof M14Iron) {
-				GL11.glTranslatef(0.145F, -1.58F, 0.55F);
-				GL11.glScaled(0.33F, 0.33F, 0.33F);
+				GL11.glTranslatef(0.137F, -1.6F, 0.7F);
+				GL11.glScaled(0.4F, 0.4F, 0.5F);
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -132,6 +133,15 @@ public class M1014Factory implements GunFactory {
 				GL11.glScaled(0.04F, 0.04F, 0.04F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.248F, -1.36F, -0.2F);
+			GL11.glScaled(0.4F, 0.4F, 0.4F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.195F, -1.56F, -0.1F);
+				GL11.glScaled(0.04F, 0.04F, 0.04F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.25F, -1.38F, 0F);
@@ -140,6 +150,10 @@ public class M1014Factory implements GunFactory {
 				GL11.glTranslatef(0.195F, -1.485F, -0.45F);
 				GL11.glScaled(0.15F, 0.15F, 0.15F);
 			}
+		})
+		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+			GL11.glTranslatef(0.107F, -1.35F, -5.4F);
+			GL11.glScaled(1.3F, 1.3F, 1.3F);
 		})
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -165,44 +179,50 @@ public class M1014Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.55F, -0.42F, -0.1F);
+				GL11.glTranslatef(0.5F, -0.2F, -0.15F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glScaled(0.65F, 0.65F, 0.65F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
 			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
-				GL11.glTranslatef(0.55F, -0.42F, -0.1F);
+				GL11.glTranslatef(0.5F, -0.2F, -0.15F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glScaled(0.65F, 0.65F, 0.65F);
+				GL11.glTranslatef(-0.4F, -0.8F, 0.93F);
+				GL11.glRotatef(-2F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
 				GL11.glTranslatef(-0.11F, -0.3F, -0.31F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glRotatef(-0.4F, 1f, 0f, 0f);
 
 				// Zoom
-				GL11.glTranslatef(0.055F, -0.95f, 1.4f);
+				GL11.glTranslatef(0.055F, -0.95f, 1.43f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(-0F, 0.14F, 0.3F);
+					GL11.glTranslatef(-0F, 0.19F, 0.5F);
 				} 
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.37F, -1.22f, 2.5f);
+					GL11.glTranslatef(0F, 0.11f, 0.8f);
 				} 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(-0F, 0.117F, 0.3F);
+					GL11.glTranslatef(-0F, 0.117F, 0.6F);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(-0F, 0.117F, 0.6F);
 				} 
 				
 				// Holo Zoom
@@ -222,7 +242,7 @@ public class M1014Factory implements GunFactory {
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+					GL11.glTranslatef(0.3F, -0.05F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
@@ -231,7 +251,7 @@ public class M1014Factory implements GunFactory {
 				}, 250, 50),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+					GL11.glTranslatef(0.3F, -0.05F, -0.2F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
@@ -257,13 +277,19 @@ public class M1014Factory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.37F, -1.22f, 2.5f);
+					GL11.glTranslatef(0F, 0.11f, 0.8f);
 				} 
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(-0F, 0.117F, 0.3F);
+					GL11.glTranslatef(-0F, 0.117F, 0.6F);
 				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(-0F, 0.117F, 0.6F);
+				}
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
@@ -281,7 +307,7 @@ public class M1014Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((player, itemStack) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(0.5F, -0.35F, -1F);
+				GL11.glTranslatef(0.7F, -0.4F, -0.4F);
 			 })
 			 .withFirstPersonPositioningModifying((player, itemStack) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -292,13 +318,13 @@ public class M1014Factory implements GunFactory {
 			.withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.7f, -0.2f, 0.15f);
-						 GL11.glRotatef(95f, 0, 0f, 1f);
-						 GL11.glRotatef(-50f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.8f, -0.11f, 0.15f);
+						 GL11.glRotatef(110f, 0, 0f, 1f);
+						 GL11.glRotatef(-45f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glScalef(1.9f, 1.9f, 2.7f);
+						 GL11.glTranslatef(-0.17f, 0f, 0.95f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
@@ -311,8 +337,8 @@ public class M1014Factory implements GunFactory {
 						 GL11.glRotatef(-60f, 20f, 20f, -20f);
 					 }, 
 					 (player,  itemStack) -> {
-						 GL11.glScalef(1.8f, 1.8f, 2.5f);
-						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glScalef(1.9f, 1.9f, 2.7f);
+						 GL11.glTranslatef(-0.17f, 0f, 0.95f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })

@@ -59,7 +59,7 @@ public class XWPFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 34.3", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 34.3", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 3)", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
@@ -180,6 +180,10 @@ public class XWPFactory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
 			GL11.glTranslatef(.135F, -0.6F, -2.33F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
+		})
+		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+			GL11.glTranslatef(0.107F, -1.45F, -6.95F);
+			GL11.glScaled(1.1F, 1.1F, 1.3F);
 		})
 		.withTextureNames("L115", "L96Blue", "L96Red", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()

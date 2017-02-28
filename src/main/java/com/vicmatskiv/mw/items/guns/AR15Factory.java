@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -45,10 +46,10 @@ public class AR15Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("AR15")
+		.withName("Colt AR15")
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.6f)
+		.withFireRate(0.7f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
@@ -62,7 +63,7 @@ public class AR15Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic rifle","Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Semi"))
@@ -184,17 +185,17 @@ public class AR15Factory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
 	    	
-	    	GL11.glTranslatef(0.055F, -1.62F, 0.8F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-		},(model) -> {
-			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.055F, -1.62F, 0.8F);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+			},(model) -> {
+				if(model instanceof LPscope) {
 				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
-			}
-		})
-		 .withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+			 	}
+			})
+		.withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
 	    	
-	    	GL11.glTranslatef(0.055F, -1.58F, 0.2F);
+			GL11.glTranslatef(0.055F, -1.62F, 0.4F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		},(model) -> {
 			 if(model instanceof LPscope) {
@@ -220,6 +221,15 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.08F, 0.08F, 0.08F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.28F, -1.53F, 0.2F);
+			GL11.glScaled(0.65F, 0.65F, 0.65F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.83F, 0.35F);
+				GL11.glScaled(0.08F, 0.08F, 0.08F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.27F, -1.48F, 0.3F);
@@ -230,6 +240,10 @@ public class AR15Factory implements GunFactory {
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.7F, -1.25F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
 			GL11.glTranslatef(.135F, -0.7F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
@@ -253,8 +267,8 @@ public class AR15Factory implements GunFactory {
 			GL11.glTranslatef(.3F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.5F, -4F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.5F, -4.2F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("AK12", "AR15Blue", "AR15Red", "AR15Tan", "Electric")
@@ -281,18 +295,18 @@ public class AR15Factory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioning((player, itemStack) -> {
-				GL11.glTranslatef(0.3F, -0.28F, -0.15F);
+				GL11.glTranslatef(0.44F, -0.32F, -0.11F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
 				})
 				
 			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
-				GL11.glTranslatef(0.3F, -0.28F, -0.15F);
+				GL11.glTranslatef(0.37F, -0.28F, -0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glRotatef(-2F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
@@ -301,8 +315,9 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.135F, -0.97f, 1.3f);
+				GL11.glTranslatef(0.135F, -0.97f, 1.43f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.7F, 1f, 0f, 0f);
 				
 				// Standard Iron Sight Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.AKMIron)) {
@@ -313,25 +328,25 @@ public class AR15Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.08f, 0.7f);
+					GL11.glTranslatef(0.005F, -0.025f, 0.55f);
 				} 
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 0.45f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
 				} 
 
 				// HP Zoomw
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
 				} 
 				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.04f, 0.3f);
+					GL11.glTranslatef(0F, 0.03f, 0.3f);
 				} 
 
 				// Holo Zoom
@@ -339,6 +354,13 @@ public class AR15Factory implements GunFactory {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.04f, 0.6f);
 				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.04f, 0.6f);
+				} 
+				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
@@ -392,14 +414,22 @@ public class AR15Factory implements GunFactory {
 						GL11.glRotatef(-10F, 1f, 0f, 0f);
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-					}, 250, 20),
+					}, 250, 170),
 				
 				new Transition((player, itemStack) -> { // Reload position
-					GL11.glTranslatef(0.3F, -0.28F, -0.15F);
+					GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-15F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
-				}, 250, 0)
+				}, 400, 0),
+				new Transition((player, itemStack) -> { // Reload position
+					GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glRotatef(-15F, 1f, 0f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+				}, 60, 0)
 			)
 			
 			.withFirstPersonPositioningUnloading(
@@ -456,6 +486,12 @@ public class AR15Factory implements GunFactory {
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000)
 					)
 					
@@ -488,6 +524,12 @@ public class AR15Factory implements GunFactory {
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000),
 				new Transition((player, itemStack) -> {
 					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -530,6 +572,12 @@ public class AR15Factory implements GunFactory {
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((player, itemStack) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000)
 					)
 				
@@ -539,7 +587,7 @@ public class AR15Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.135F, -0.97f, 1.3f);
+				GL11.glTranslatef(0.135F, -0.97f, 1.4f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Standard Iron Sight Zoom
@@ -551,25 +599,25 @@ public class AR15Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.032f, 0.65f);
+					GL11.glTranslatef(0.005F, -0.025f, 0.55f);
 				} 
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.04f, 0.38f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
 				} 
 
 				// HP Zoomw
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, -0.08f, 0.5f);
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
 				} 
 				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.04f, 0.3f);
+					GL11.glTranslatef(0F, 0.03f, 0.3f);
 				} 
 
 				// Holo Zoom
@@ -577,6 +625,13 @@ public class AR15Factory implements GunFactory {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.04f, 0.6f);
 				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.04f, 0.6f);
+				} 
+				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
@@ -606,9 +661,9 @@ public class AR15Factory implements GunFactory {
 			 .withFirstPersonHandPositioning(
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.3f);
-						 GL11.glRotatef(90f, 0, 0f, 1f);
-						 GL11.glRotatef(-55f, 1f, 0f, 0f);
+						 GL11.glTranslatef(0.75f, -0.25f, 0.22f);
+						 GL11.glRotatef(110f, 0, 0f, 1f);
+						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					 }, 
 					 (player,  itemStack) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
@@ -649,11 +704,18 @@ public class AR15Factory implements GunFactory {
 					}, 50, 200),
 					
 					new Transition((player, itemStack) -> { // Reload position
-						GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.9f, -0.15f, 0.3f);
-						 GL11.glRotatef(120f, 0, 0f, 1f);
-						 GL11.glRotatef(-60f, 1f, 0f, 0f);
-						 GL11.glRotatef(20f, 1f, 0f, 0f);
+						GL11.glScalef(1.6f, 1.6f, 1.6f);
+						 GL11.glTranslatef(0.76f, -0.6f, 1.1f);
+						 GL11.glRotatef(113f, 0, 0f, 1f);
+						 GL11.glRotatef(-38f, 1f, 0f, 0f);
+						 GL11.glRotatef(-20f, 0f, 1f, 0f);
+					}, 250, 0),
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.6f, 1.6f, 1.6f);
+						 GL11.glTranslatef(0.76f, -0.6f, 1.1f);
+						 GL11.glRotatef(113f, 0, 0f, 1f);
+						 GL11.glRotatef(-30f, 1f, 0f, 0f);
+						 GL11.glRotatef(-20f, 0f, 1f, 0f);
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
@@ -671,6 +733,12 @@ public class AR15Factory implements GunFactory {
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50),
 					
+					new Transition((player, itemStack) -> { // Reload position
+						GL11.glScalef(1.8f, 1.8f, 2.5f);
+						 GL11.glTranslatef(-0.15f, 0f, 1f);
+						 GL11.glRotatef(90f, 0, 0f, 1f);
+						 GL11.glRotatef(-95f, 1f, 0f, 0f);
+					}, 250, 0),
 					new Transition((player, itemStack) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
@@ -711,7 +779,7 @@ public class AR15Factory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

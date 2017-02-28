@@ -21,6 +21,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -47,7 +48,7 @@ public class ScarFactory implements GunFactory {
 		.withName("Scar")
 //		.withAmmo(CommonProxy.ScarMag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.55f)
+		.withFireRate(0.7f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
 		//.withMaxShots(5)
@@ -61,7 +62,7 @@ public class ScarFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.6f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7.8", "Nickname: Scar-L", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.2", "Nickname: Scar-L", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine","Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
@@ -168,7 +169,20 @@ public class ScarFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.27F, -1.48F, 0.21F);
+			GL11.glScaled(0.6F, 0.6F, 0.6F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.77F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.5F, -1.25F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
 			GL11.glTranslatef(.135F, -0.5F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
@@ -192,8 +206,8 @@ public class ScarFactory implements GunFactory {
 			GL11.glTranslatef(.25F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.27F, -3.8F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.27F, -4.1F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("Scar", "ScarBlue", "ScarRed", "Electric")
@@ -404,6 +418,12 @@ public class ScarFactory implements GunFactory {
 				} 
 				
 				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.13f, 0.4f);
+				} 
+				
+				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.369F, -1.21f, 2.8f);
@@ -533,7 +553,7 @@ public class ScarFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.8f)
+		.withSpawnEntityDamage(7.2f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

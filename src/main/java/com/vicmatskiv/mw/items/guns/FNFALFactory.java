@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -61,7 +62,7 @@ public class FNFALFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Battle rifle", "Damage: 13", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.FALMag, (model) -> {})
@@ -147,10 +148,10 @@ public class FNFALFactory implements GunFactory {
 		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
-			GL11.glTranslatef(.27F, -1.48F, 0F);
+			GL11.glTranslatef(.27F, -1.55F, 0.5F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 			} else if(model instanceof Reflex2) {
-				GL11.glTranslatef(0.202F, -1.675F, -0.45F);
+				GL11.glTranslatef(0.202F, -1.75F, 0.1F);
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
@@ -163,7 +164,20 @@ public class FNFALFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.53F, 0.2F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.76F, 0.3F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.8F, -1.25F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
 			GL11.glTranslatef(.135F, -0.8F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
@@ -183,8 +197,8 @@ public class FNFALFactory implements GunFactory {
 			GL11.glTranslatef(.2F, -1.5F, -1.25F);
 			GL11.glScaled(0.7F, 0.7F, 0.7F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.47F, -4F);
+		.withCompatibleAttachment(CommonProxy.Silencer762x51, (model) -> {
+			GL11.glTranslatef(0.107F, -1.45F, -4.8F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("AK12", "Electric")
@@ -406,11 +420,17 @@ public class FNFALFactory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(-0.01F, 0.06f, 0.8f);
+					GL11.glTranslatef(-0.01F, 0.125f, 0.8f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.105f, 1f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.369F, -1.23f, 3f);
 				} 

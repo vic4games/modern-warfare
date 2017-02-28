@@ -36,10 +36,10 @@ public class XEagleFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withInaccuracy(2)
+		.withInaccuracy(4)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 12.7", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
 		"Caliber: .357", "Magazines:", "9rnd .357 Magazine", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.DeagleTop, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
@@ -50,9 +50,9 @@ public class XEagleFactory implements GunFactory {
 			GL11.glTranslatef(-0.03F, -0.1F, 0.14F);
 			GL11.glScaled(0.7F, 1F, 1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(-0.25F, -1.18F, -4.83F);
-			GL11.glScaled(1.5F, 1.5F, 1.5F);
+		.withCompatibleAttachment(CommonProxy.Silencer357, (model) -> {
+			GL11.glTranslatef(-0.25F, -1.18F, -5.15F);
+			GL11.glScaled(1.5F, 1.5F, 1.7F);
 		})
 		.withTextureNames("Deagle", "DeagleGold", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
@@ -450,7 +450,7 @@ public class XEagleFactory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(12.7f)
+		.withSpawnEntityDamage(11f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

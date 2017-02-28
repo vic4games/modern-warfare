@@ -43,8 +43,9 @@ public class M1911Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.4f)
+		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: .45 ACP", "Magazines:", "10rnd .45 ACP Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M1911Top, true, (model) -> {
@@ -55,8 +56,8 @@ public class M1911Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.ColtM1911Mag, (model) -> {
 			GL11.glTranslatef(0F, 0.2F, 0.12F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(-0.23F, -1.25F, -4.92F);
+		.withCompatibleAttachment(CommonProxy.Silencer45ACP, (model) -> {
+			GL11.glTranslatef(-0.23F, -1.14F, -4.92F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
 		.withTextureNames("M1911")
@@ -456,7 +457,7 @@ public class M1911Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

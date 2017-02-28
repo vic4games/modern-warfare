@@ -22,6 +22,7 @@ import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
+import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
@@ -61,7 +62,7 @@ public class FamasFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.8f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage: 7.4", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Bullpup assault rifle", "Damage: 6.9", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine (Type 2)",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.NATOFamasMag, (model) -> {
@@ -146,6 +147,15 @@ public class FamasFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+			if(model instanceof Holographic2) {
+			GL11.glTranslatef(.264F, -1.53F, 0.5F);
+			GL11.glScaled(0.5F, 0.5F, 0.5F);
+			} else if(model instanceof Holo2) {
+				GL11.glTranslatef(0.202F, -1.76F, 0.5F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
 		.withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
 			if(model instanceof Kobra) {
 			GL11.glTranslatef(.27F, -1.48F, 0F);
@@ -156,6 +166,10 @@ public class FamasFactory implements GunFactory {
 			}
 		})
 		.withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+			GL11.glTranslatef(.135F, -0.6F, -0.4F);
+			GL11.glScaled(0.8F, 0.8F, 0.8F);
+		})
+		.withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
 			GL11.glTranslatef(.135F, -0.6F, -0.4F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
@@ -171,8 +185,8 @@ public class FamasFactory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.6F, -0.7F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer, (model) -> {
-			GL11.glTranslatef(0.107F, -1.37F, -3F);
+		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+			GL11.glTranslatef(0.107F, -1.38F, -3.3F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withTextureNames("Famas2", "Famas2Blue", "Famas2Red", "Electric")
@@ -339,7 +353,13 @@ public class FamasFactory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
+					GL11.glTranslatef(-0.01F, 0.16f, 0.8f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.19f, 3.3f);
 				} 
 				
 				// Everything else
@@ -471,7 +491,7 @@ public class FamasFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.4f)
+		.withSpawnEntityDamage(6.9f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

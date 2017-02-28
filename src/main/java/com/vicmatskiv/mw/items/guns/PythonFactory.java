@@ -36,8 +36,9 @@ public class PythonFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
-		.withInformationProvider(stack -> Arrays.asList("Damage: 12.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 10", 
 		"Ammo: .357 Bullet", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.PythonCase, true, (model) -> {
 		})
@@ -297,7 +298,7 @@ public class PythonFactory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(12.5f)
+		.withSpawnEntityDamage(10f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

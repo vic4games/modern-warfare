@@ -29,8 +29,8 @@ public class SPAS12Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withPumpTimeout(1100)
-		.withShootSound("M1014")
-		//.withSilencedShootSound("AR15silenced")
+		.withShootSound("Spas12")
+		.withSilencedShootSound("ShotgunSilenced")
 		.withReloadSound("ShotgunReload")
 		.withReloadingTime(15)
 		.withCrosshair("gun")
@@ -40,9 +40,13 @@ public class SPAS12Factory implements GunFactory {
 		.withPellets(10)
 		.withFlashIntensity(1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Damage per Pellet: 5", "Pellets per Shot: 10", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Combat shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Semi"))
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+			GL11.glTranslatef(0.107F, -1.34F, -5.9F);
+			GL11.glScaled(1.2F, 1.2F, 1.2F);
+		})
 		.withTextureNames("SPAS12", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)

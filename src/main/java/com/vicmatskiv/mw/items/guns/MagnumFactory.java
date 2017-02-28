@@ -35,8 +35,9 @@ public class MagnumFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
-		.withInformationProvider(stack -> Arrays.asList("Damage: 13", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 9", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
@@ -296,7 +297,7 @@ public class MagnumFactory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(13f)
+		.withSpawnEntityDamage(9f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
