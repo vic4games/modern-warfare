@@ -2404,7 +2404,7 @@ public class CommonProxy {
 		        
 		        Scope = new ItemScope.Builder()
 		        		.withOpticalZoom()
-		        		.withZoomRange(1f, 0.05f)
+		        		.withZoomRange(0.3f, 0.05f)
 		        		.withViewfinderPositioning((p, s) -> {
 		        		    GL11.glScalef(1.1f, 1.1f, 1.1f);
                             GL11.glTranslatef(0.1f, 0.4f, 0.6f);
