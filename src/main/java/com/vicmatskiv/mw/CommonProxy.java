@@ -93,6 +93,7 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
+import com.vicmatskiv.weaponlib.ItemScope;
 import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.ViewfinderRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -2499,67 +2500,64 @@ public class CommonProxy {
 				.withTextureName("Dummy.png")
 				.build(ModernWarfareMod.MOD_CONTEXT);
 		        
-				ACOG = new AttachmentBuilder<Weapon>()
-				.withCategory(AttachmentCategory.SCOPE)
-				.withCreativeTab(ModernWarfareMod.gunsTab)
-				.withModel(new com.vicmatskiv.mw.models.ACOG(), "Acog.png")
-				.withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
-				.withApply((a, weapon, player) -> {
-                            weapon.changeZoom(player, 0.15f, true);
-                        })
-                        .withRemove((attachment, weapon, player) -> {
-                            weapon.changeZoom(player, 1, true);
-                        })
-		        .withFirstPersonModelPositioning((model, itemStack) -> {
-		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
-		        		GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-			        	GL11.glRotatef(30F, 0f, 1f, 0f);
-			        	GL11.glScaled(0.7F, 0.7F, 0.7F);
-		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
-			        	GL11.glScaled(0F, 0F, 0F);
-		        	}
-		        	
-		        })
-		        .withThirdPersonModelPositioning((model, itemStack) -> {
-		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
-		        		GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-		        		GL11.glRotatef(-50F, 0f, 1f, 0f);
-		        		GL11.glRotatef(80F, 1f, 0f, 0f);
-		        		GL11.glScaled(0.5F, 0.5F, 0.5F);
-		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
-			        	GL11.glScaled(0F, 0F, 0F);
-		        	}
-		        })
-		        .withInventoryModelPositioning((model, itemStack) -> {
-		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
-		        		GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
-		        		GL11.glRotatef(10F, 1f, 0f, 0f);
-		        		GL11.glRotatef(-190F, 0f, 1f, 0f);
-		        		GL11.glRotatef(0F, 0f, 0f, 1f);
-		        		GL11.glScaled(1.2F, 1.2F, 1.2f);
-		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
-		        		GL11.glScaled(0F, 0F, 0F);
-		        		
-		        	}
-		        })
-		        .withEntityModelPositioning((model, itemStack) -> {
-		        	if(model instanceof com.vicmatskiv.mw.models.ACOG) {
-		        		GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-		        		GL11.glRotatef(90F, 0f, 0f, 1f);
-		        		GL11.glScaled(0.4F, 0.4F, 0.4F);
-		        	} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
-		        		GL11.glScaled(0F, 0F, 0F);
-		        	}
-		        })
-				.withName("Acog")
-				.withPostRender(new ViewfinderRenderer(
-                                (p, s) -> {
-                                    GL11.glScalef(1f, 1f, 1f);
-                                    GL11.glTranslatef(0.12f, 0.37f, 0.45f);
-                                }))
-				.withModId(ModernWarfareMod.MODID)
-				.withTextureName("Dummy.png")
-				.build(ModernWarfareMod.MOD_CONTEXT);
+				ACOG = 
+						new ItemScope.Builder()
+						.withOpticalZoom()
+						.withZoomRange(0.3f, 0.05f)
+						.withViewfinderPositioning((p, s) -> {
+							GL11.glScalef(1f, 1f, 1f);
+							GL11.glTranslatef(0.12f, 0.37f, 0.45f);
+						})
+
+						.withCreativeTab(ModernWarfareMod.gunsTab)
+						.withModel(new com.vicmatskiv.mw.models.ACOG(), "Acog.png")
+						.withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
+
+						.withFirstPersonModelPositioning((model, itemStack) -> {
+							if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+								GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+								GL11.glRotatef(30F, 0f, 1f, 0f);
+								GL11.glScaled(0.7F, 0.7F, 0.7F);
+							} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+								GL11.glScaled(0F, 0F, 0F);
+							}
+
+						})
+						.withThirdPersonModelPositioning((model, itemStack) -> {
+							if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+								GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+								GL11.glRotatef(-50F, 0f, 1f, 0f);
+								GL11.glRotatef(80F, 1f, 0f, 0f);
+								GL11.glScaled(0.5F, 0.5F, 0.5F);
+							} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+								GL11.glScaled(0F, 0F, 0F);
+							}
+						})
+						.withInventoryModelPositioning((model, itemStack) -> {
+							if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+								GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+								GL11.glRotatef(10F, 1f, 0f, 0f);
+								GL11.glRotatef(-190F, 0f, 1f, 0f);
+								GL11.glRotatef(0F, 0f, 0f, 1f);
+								GL11.glScaled(1.2F, 1.2F, 1.2f);
+							} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+								GL11.glScaled(0F, 0F, 0F);
+
+							}
+						})
+						.withEntityModelPositioning((model, itemStack) -> {
+							if(model instanceof com.vicmatskiv.mw.models.ACOG) {
+								GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+								GL11.glRotatef(90F, 0f, 0f, 1f);
+								GL11.glScaled(0.4F, 0.4F, 0.4F);
+							} else if(model instanceof com.vicmatskiv.mw.models.Acog2) {
+								GL11.glScaled(0F, 0F, 0F);
+							}
+						})
+						.withName("Acog")
+						.withModId(ModernWarfareMod.MODID)
+						.withTextureName("Dummy.png")
+						.build(ModernWarfareMod.MOD_CONTEXT);
 		        
 		        Holo2 = new AttachmentBuilder<Weapon>()
 						.withCategory(AttachmentCategory.SCOPE)
@@ -2764,18 +2762,18 @@ public class CommonProxy {
 						.withTextureName("Dummy.png")
 						.build(ModernWarfareMod.MOD_CONTEXT);
 		        
-		        Scope = new AttachmentBuilder<Weapon>()
+		        Scope = new ItemScope.Builder()
+		        		.withOpticalZoom()
+		        		.withZoomRange(0.3f, 0.05f)
+		        		.withViewfinderPositioning((p, s) -> {
+		        		    GL11.glScalef(1.1f, 1.1f, 1.1f);
+                            GL11.glTranslatef(0.1f, 0.4f, 0.6f);
+                        })
                         .withCategory(AttachmentCategory.SCOPE)
                         .withCreativeTab(ModernWarfareMod.gunsTab)
                         .withCrosshair("LP")
                         .withModel(new com.vicmatskiv.mw.models.LP(), "AK12.png")
                         .withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
-                        .withApply((a, weapon, player) -> {
-                            weapon.changeZoom(player, 0.1f, true);
-                        })
-                        .withRemove((attachment, weapon, player) -> {
-                            weapon.changeZoom(player, 1, true);
-                        })
                         .withFirstPersonModelPositioning((model, itemStack) -> {
                             if(model instanceof com.vicmatskiv.mw.models.LP) {
                                 GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -2817,27 +2815,22 @@ public class CommonProxy {
 				        	}
                         })
                         .withName("LPScope")
-                        .withPostRender(new ViewfinderRenderer(
-                                (p, s) -> {
-                                    GL11.glScalef(1.1f, 1.1f, 1.1f);
-                                    GL11.glTranslatef(0.1f, 0.4f, 0.6f);
-                                }))
+           
                         .withModId(ModernWarfareMod.MODID)
                         .withTextureName("Dummy.png")
                         .build(ModernWarfareMod.MOD_CONTEXT);
 		        
-		        HP = new AttachmentBuilder<Weapon>()
-						.withCategory(AttachmentCategory.SCOPE)
+		        HP = new ItemScope.Builder()
+		        		.withOpticalZoom()
+		        		.withZoomRange(0.3f, 0.05f)
+		        		.withViewfinderPositioning((p, s) -> {
+		        			GL11.glScalef(1.65f, 1.65f, 1.65f);
+                            GL11.glTranslatef(0.0285f, 0.492f, 0.7f);
+                        })
 						.withCreativeTab(ModernWarfareMod.gunsTab)
 						.withCrosshair("HP")
 						.withModel(new com.vicmatskiv.mw.models.HP(), "AK12.png")
 						.withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
-						 .withApply((a, weapon, player) -> {
-                            weapon.changeZoom(player, 0.05f, true);
-                        })
-                        .withRemove((attachment, weapon, player) -> {
-                            weapon.changeZoom(player, 1, true);
-                        })
 				        .withFirstPersonModelPositioning((model, itemStack) -> {
 				        	if(model instanceof com.vicmatskiv.mw.models.HP) {
 				        		GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -2879,11 +2872,6 @@ public class CommonProxy {
 				        	}
 				        })
                         .withName("HPScope")
-                        .withPostRender(new ViewfinderRenderer(
-                                (p, s) -> {
-                                    GL11.glScalef(1.65f, 1.65f, 1.65f);
-                                    GL11.glTranslatef(0.0285f, 0.492f, 0.7f);
-                                }))
                         .withModId(ModernWarfareMod.MODID)
                         .withTextureName("Dummy.png")
                         .build(ModernWarfareMod.MOD_CONTEXT);
