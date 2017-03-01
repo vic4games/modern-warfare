@@ -2,9 +2,6 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -24,7 +21,6 @@ import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -39,6 +35,9 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 public class ACRFactory implements GunFactory {
 
