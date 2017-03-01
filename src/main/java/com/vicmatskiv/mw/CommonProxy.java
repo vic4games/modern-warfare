@@ -308,6 +308,7 @@ public class CommonProxy {
 	public static Item Glock32;
 	public static Item SR25;
 	public static Item Minimi;
+	public static Item ACR2;
 //  public static Item SMAW;
 //	public static Item GaussRifle;
 //	public static Item RPG;
@@ -3828,6 +3829,7 @@ public class CommonProxy {
 		M16A3 = new M16A3Factory().createGun(this);
 		M16A4 = new M16A4Factory().createGun(this);
 		HK416C = new HK416CFactory().createGun(this);
+		ACR2 = new ACR2Factory().createGun(this);
 		ACR = new ACRFactory().createGun(this);
 		Scar = new ScarFactory().createGun(this);
 		ScarH = new ScarHFactory().createGun(this);
