@@ -274,7 +274,7 @@ public class ACRFactory implements GunFactory {
 				GL11.glTranslatef(1, 0.8f, 0);
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
-			.withThirdPersonPositioning((player, itemStack) -> {
+			.withThirdPersonPositioning((renderContext) -> {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 				GL11.glTranslatef(-1.8F, 0.3F, 1.5F);
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
@@ -282,28 +282,28 @@ public class ACRFactory implements GunFactory {
 				})
 				
 				
-			.withFirstPersonPositioning((player, itemStack) -> {
+			.withFirstPersonPositioning((renderContext) -> {
 				GL11.glTranslatef(0.37F, -0.32F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.NATOMag2, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.NATOMag2, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.NATODrum100, (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.NATODrum100, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -312,7 +312,7 @@ public class ACRFactory implements GunFactory {
 				
 			.withFirstPersonPositioningReloading(
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
@@ -321,7 +321,7 @@ public class ACRFactory implements GunFactory {
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 300),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
@@ -332,7 +332,7 @@ public class ACRFactory implements GunFactory {
 			)
 			
 			.withFirstPersonPositioningUnloading(
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0F, -0.4F, -0.4F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(-10F, 0f, 0f, 1f);
@@ -340,7 +340,7 @@ public class ACRFactory implements GunFactory {
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 150, 50),
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0F, -0.4F, -0.4F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(-10F, 0f, 0f, 1f);
@@ -351,13 +351,13 @@ public class ACRFactory implements GunFactory {
 			)
 			
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATOMag1,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
 					GL11.glRotatef(10F, 1f, 0f, 0f);
 					GL11.glRotatef(10F, 0f, 1f, 0f);
@@ -368,13 +368,13 @@ public class ACRFactory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag1,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.5F, 0F, -0.2F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -383,13 +383,13 @@ public class ACRFactory implements GunFactory {
 					)
 			
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATOMag2,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
 					GL11.glRotatef(10F, 1f, 0f, 0f);
 					GL11.glRotatef(10F, 0f, 1f, 0f);
@@ -400,13 +400,13 @@ public class ACRFactory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag2,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.5F, 0F, -0.2F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -415,13 +415,13 @@ public class ACRFactory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATODrum100,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.2F, 0.4F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.2F, 0.4F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -430,13 +430,13 @@ public class ACRFactory implements GunFactory {
 					)
 					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATODrum100,
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
-				new Transition((player, itemStack) -> {
+				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.5F, 0F, -0.2F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -444,7 +444,7 @@ public class ACRFactory implements GunFactory {
 				}, 250, 1000)
 					)
 				
-			.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((renderContext) -> {
 				GL11.glTranslatef(0.101F, -0.3F, -0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -454,43 +454,43 @@ public class ACRFactory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// ACOG Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0F, 0.03f, 0.75f);
 				} 
 				
 				// Scope Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.Scope)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0F, 0.035f, 0.6f);
 				} 
 				
 				// Scope Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.HP)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0F, 0.035f, 0.25f);
 				} 
 				
 				// Reflex Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.14f, 0.4f);
 				} 
 
 				// Holo Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.1f, 0.4f);
 				} 
 				
 				// Holo Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holographic2)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.1f, 0.4f);
 				} 
 				
 				// Holo Zoom
-				else if(Weapon.isActiveAttachment(itemStack, CommonProxy.Kobra)) {
+				else if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.14f, 0.4f);
 				} 
@@ -502,24 +502,24 @@ public class ACRFactory implements GunFactory {
 				
 			
 				})
-			.withFirstPersonPositioningRunning((player, itemStack) -> {
+			.withFirstPersonPositioningRunning((renderContext) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
 				GL11.glTranslatef(1F, -0.7f, -1.2F);
 			 })
-			 .withFirstPersonPositioningModifying((player, itemStack) -> {
+			 .withFirstPersonPositioningModifying((renderContext) -> {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);
 				GL11.glTranslatef(1F, -0.8F, -1.5F);
 			 })
 			.withFirstPersonHandPositioning(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.65f, -0.35f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -527,13 +527,13 @@ public class ACRFactory implements GunFactory {
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(2.2f, 2.2f, 2.2f);
 						 GL11.glTranslatef(1f, 0.4f, -0.1f);
 						 GL11.glRotatef(99f, 0, 0f, 1f);
 						 GL11.glRotatef(-60f, 20f, 20f, -20f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -541,7 +541,7 @@ public class ACRFactory implements GunFactory {
 					 })
 					 
 			.withFirstPersonLeftHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(2f, 2f, 2.5f);
 						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
 						 GL11.glRotatef(60f, 0, 0f, 1f);
@@ -549,7 +549,7 @@ public class ACRFactory implements GunFactory {
 						 GL11.glRotatef(20f, 0f, 0f, 1f);
 					}, 50, 200),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(2f, 2f, 2.5f);
 						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
 						 GL11.glRotatef(60f, 0, 0f, 1f);
@@ -558,14 +558,14 @@ public class ACRFactory implements GunFactory {
 					}, 50, 200))
 					
 			.withFirstPersonRightHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 1000),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -573,14 +573,14 @@ public class ACRFactory implements GunFactory {
 					}, 250, 50))
 					
 			.withFirstPersonLeftHandPositioningUnloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.65f, -0.2f, 0.37f);
 						 GL11.glRotatef(70f, 0, 0f, 1f);
 						 GL11.glRotatef(-50f, 1f, 0f, 0f);
 					}, 50, 200),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.7f, 0f, 0.37f);
 						 GL11.glRotatef(50f, 0, 0f, 1f);
@@ -590,14 +590,14 @@ public class ACRFactory implements GunFactory {
 					)
 					
 			.withFirstPersonRightHandPositioningUnloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 1000),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);

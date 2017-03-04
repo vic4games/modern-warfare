@@ -59,7 +59,7 @@ public class PythonFactory implements GunFactory {
 				GL11.glTranslatef(-0.9F, 0.6f, 0.5F);
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
-			.withThirdPersonPositioning((player, itemStack) -> {
+			.withThirdPersonPositioning((renderContext) -> {
 				GL11.glScaled(0.45F, 0.45F, 0.45F);
 				GL11.glTranslatef(-2F, -1.1F, 2.2F);
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
@@ -67,14 +67,14 @@ public class PythonFactory implements GunFactory {
 				})
 				
 				
-			.withFirstPersonPositioning((player, itemStack) -> {
+			.withFirstPersonPositioning((renderContext) -> {
 				GL11.glTranslatef(0.1F, -0.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
-			.withFirstPersonPositioningRecoiled((player, itemStack) -> {
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
 				GL11.glTranslatef(0.1F, -0.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -82,20 +82,20 @@ public class PythonFactory implements GunFactory {
 				GL11.glRotatef(-10F, 1f, 0f, 0f);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.PythonCase.getRenderablePart(), (player, itemStack) -> {
+			.withFirstPersonPositioningCustomRecoiled(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
 				
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.PythonCase.getRenderablePart(), (player, itemStack) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
-			.withFirstPersonPositioningZoomingRecoiled((player, itemStack) -> {
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(-0.4F, -0.3F, -0.6F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(-5F, 1f, 0f, 0f);
@@ -106,19 +106,19 @@ public class PythonFactory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 			/*	// ACOG Zoom
-				if(Weapon.isActiveAttachment(itemStack, ModernWarfareMod.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0F, 0.3f, 1f);
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}
@@ -131,12 +131,12 @@ public class PythonFactory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.PythonCase.getRenderablePart(), (player, itemStack) -> {
+			.withFirstPersonCustomPositioning(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
 				})
 				
 			.withFirstPersonPositioningReloading(
 					
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.1F, -0.1F, -0.9F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(5F, 1f, 0f, 0f);
@@ -146,7 +146,7 @@ public class PythonFactory implements GunFactory {
 
 				}, 250, 100),
 				
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.1F, -0.1F, -0.9F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glRotatef(5F, 1f, 0f, 0f);
@@ -158,7 +158,7 @@ public class PythonFactory implements GunFactory {
 			) 
 			
 			.withFirstPersonCustomPositioningReloading(CommonProxy.PythonCase.getRenderablePart(),
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
 //					GL11.glRotatef(45F, 0f, 1f, 0f);
 //					GL11.glRotatef(5F, 1f, 0f, 0f);
@@ -166,7 +166,7 @@ public class PythonFactory implements GunFactory {
 					GL11.glScaled(0.9F, 0.9F, 0.9F);
 					GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				}, 250, 50),
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
 //					GL11.glRotatef(45F, 0f, 1f, 0f);
 //					GL11.glRotatef(5F, 1f, 0f, 0f);
@@ -176,7 +176,7 @@ public class PythonFactory implements GunFactory {
 				}, 250, 50)
 				)
 				
-			.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((renderContext) -> {
 				GL11.glTranslatef(-0.4F, -0.195F, -0.6F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -186,19 +186,19 @@ public class PythonFactory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 			/*	// ACOG Zoom
-				if(Weapon.isActiveAttachment(itemStack, ModernWarfareMod.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0F, 0.3f, 1f);
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}
@@ -210,7 +210,7 @@ public class PythonFactory implements GunFactory {
 				
 			
 				})
-			.withFirstPersonPositioningRunning((player, itemStack) -> {
+			.withFirstPersonPositioningRunning((renderContext) -> {
 				GL11.glTranslatef(0.1F, -1.5F, -1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(-50F, 1f, 0f, 0f);
@@ -218,19 +218,19 @@ public class PythonFactory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 			 })
-			 .withFirstPersonPositioningModifying((player, itemStack) -> {
+			 .withFirstPersonPositioningModifying((renderContext) -> {
 				 GL11.glScaled(1.2F, 1.2F, 1.2F);
 					GL11.glRotatef(-35F, 2f, 1f, 1f);
 					GL11.glTranslatef(-1F, 0.1F, 0F);
 			 })
 			 .withFirstPersonHandPositioning(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.6f, -0.1f, 0.4f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-40f, 1f, 0f, 0f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(3.3f, 3.3f, 3.3f);
 						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -238,20 +238,20 @@ public class PythonFactory implements GunFactory {
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.6f, 1.6f, 1.6f);
 						 GL11.glTranslatef(1.5f, 0.1f, -0.2f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-10f, 1f, 0f, 0f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(3.3f, 3.3f, 3.3f);
 						 GL11.glTranslatef(-0.1f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					 })
 			.withFirstPersonLeftHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.65f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
@@ -259,7 +259,7 @@ public class PythonFactory implements GunFactory {
 						 GL11.glRotatef(70f, 0f, 1f, 0f);
 					}, 50, 100),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.65f, 0.3f, 0.4f);
 						 GL11.glRotatef(130f, 0, 0f, 1f);
@@ -268,14 +268,14 @@ public class PythonFactory implements GunFactory {
 					}, 50, 200))
 					
 			.withFirstPersonRightHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(3.3f, 3.3f, 3.3f);
 						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 100),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(3.3f, 3.3f, 3.3f);
 						 GL11.glTranslatef(-0.13f, 0.38f, 0.52f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -283,13 +283,13 @@ public class PythonFactory implements GunFactory {
 					}, 250, 200))
 					
 			.withFirstPersonHandPositioningZooming(
-					(player,  itemStack) -> {
+					(renderContext) -> {
 						 GL11.glScalef(3f, 3f, 3f);
 						 GL11.glTranslatef(0.4f, -0.1f, 0.5f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-60f, 1f, 0f, 0f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(3.3f, 3.3f, 3.3f);
 						 GL11.glTranslatef(-0.34f, 0.48f, 0.3f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
