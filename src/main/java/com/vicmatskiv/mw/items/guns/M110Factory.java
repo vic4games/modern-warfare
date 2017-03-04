@@ -51,7 +51,7 @@ public class M110Factory implements GunFactory {
 		.withFireRate(0.2f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
-		.withMaxShots(1)
+		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("M110")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")

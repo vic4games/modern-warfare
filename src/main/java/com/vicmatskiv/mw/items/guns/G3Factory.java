@@ -49,7 +49,7 @@ public class G3Factory implements GunFactory {
 		.withFireRate(0.4f)
 		.withRecoil(2.3f)
 		.withZoom(0.95f)
-		.withMaxShots(1)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		.withShootSound("G3")
 		.withSilencedShootSound("G3Silenced")
 		.withReloadSound("StandardReload")

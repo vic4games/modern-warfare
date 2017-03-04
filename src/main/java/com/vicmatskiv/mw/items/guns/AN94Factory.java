@@ -39,6 +39,7 @@ public class AN94Factory implements GunFactory {
 		.withFireRate(0.65f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 2)
 		//.withMaxShots(5)
 		.withShootSound("AKM")
 		.withSilencedShootSound("AKsilenced")

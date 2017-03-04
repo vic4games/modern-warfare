@@ -39,6 +39,7 @@ public class RPK74MFactory implements GunFactory {
 		.withFireRate(0.7f)
 		.withRecoil(4f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("RPK")
 		.withSilencedShootSound("AKsilenced")

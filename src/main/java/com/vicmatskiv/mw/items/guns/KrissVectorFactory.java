@@ -54,6 +54,7 @@ public class KrissVectorFactory implements GunFactory {
 		.withFireRate(0.75f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("Vector")
 		.withSilencedShootSound("VectorSilenced")

@@ -51,6 +51,7 @@ public class AK12Factory implements GunFactory {
 		.withFireRate(0.75f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("AK12")
 		.withSilencedShootSound("AKsilenced")

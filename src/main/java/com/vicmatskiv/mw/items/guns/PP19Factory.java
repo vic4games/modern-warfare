@@ -48,6 +48,7 @@ public class PP19Factory implements GunFactory {
 		.withFireRate(0.75f)
 		.withRecoil(2.5f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 1)
 		//.withMaxShots(5)
 		.withShootSound("PPBizon")
 		.withSilencedShootSound("PPBizonSilenced")

@@ -271,7 +271,6 @@ public class CommonProxy {
 	public static Item M82;
 	public static Item M21;
 	public static Item HK33;
-	public static Item RAS47;
 	public static Item M93R;
 	public static Item Python;
 	public static Item AK101;
@@ -2503,7 +2502,7 @@ public class CommonProxy {
 				ACOG = 
 						new ItemScope.Builder()
 						.withOpticalZoom()
-						.withZoomRange(0.3f, 0.05f)
+						.withZoomRange(0.22f, 0.1f)
 						.withViewfinderPositioning((p, s) -> {
 							GL11.glScalef(1f, 1f, 1f);
 							GL11.glTranslatef(0.12f, 0.37f, 0.45f);
@@ -2764,7 +2763,7 @@ public class CommonProxy {
 		        
 		        Scope = new ItemScope.Builder()
 		        		.withOpticalZoom()
-		        		.withZoomRange(0.3f, 0.05f)
+		        		.withZoomRange(0.22f, 0.06f)
 		        		.withViewfinderPositioning((p, s) -> {
 		        		    GL11.glScalef(1.1f, 1.1f, 1.1f);
                             GL11.glTranslatef(0.1f, 0.4f, 0.6f);
@@ -2822,7 +2821,7 @@ public class CommonProxy {
 		        
 		        HP = new ItemScope.Builder()
 		        		.withOpticalZoom()
-		        		.withZoomRange(0.3f, 0.05f)
+		        		.withZoomRange(0.22f, 0.04f)
 		        		.withViewfinderPositioning((p, s) -> {
 		        			GL11.glScalef(1.65f, 1.65f, 1.65f);
                             GL11.glTranslatef(0.0285f, 0.492f, 0.7f);
@@ -3807,7 +3806,6 @@ public class CommonProxy {
 		AK104 = new AK104Factory().createGun(this);
 		AK106 = new AK106Factory().createGun(this);
 		AK107 = new AK107Factory().createGun(this);
-		RAS47 = new RAS47Factory().createGun(this);
 		AR15 = new AR15Factory().createGun(this);
 		M4A1 = new M4A1Factory().createGun(this);
 		M4A2 = new M4A2Factory().createGun(this);

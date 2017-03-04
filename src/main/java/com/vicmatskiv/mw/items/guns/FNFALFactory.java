@@ -51,7 +51,7 @@ public class FNFALFactory implements GunFactory {
 		.withFireRate(0.2f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
-		.withMaxShots(1)
+		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("FNFAL")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")

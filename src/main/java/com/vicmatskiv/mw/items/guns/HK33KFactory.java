@@ -48,6 +48,7 @@ public class HK33KFactory implements GunFactory {
 		.withFireRate(0.75f)
 		.withRecoil(2.3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("HK33")
 		.withSilencedShootSound("AR15Silenced")

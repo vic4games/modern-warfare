@@ -52,6 +52,7 @@ public class AUGA3Factory implements GunFactory {
 		.withFireRate(0.7f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
 		.withSilencedShootSound("AR15Silenced")

@@ -47,6 +47,7 @@ public class AK74UFactory implements GunFactory {
 		.withFireRate(0.67f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 1)
 		//.withMaxShots(5)
 		.withShootSound("AK74U")
 		.withSilencedShootSound("AKsilenced")

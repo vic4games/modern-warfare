@@ -52,6 +52,7 @@ public class M16A3Factory implements GunFactory {
 		.withFireRate(0.7f)
 		.withRecoil(3.2f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(3)
 		.withShootSound("AR15")
 		.withSilencedShootSound("RifleSilencer")

@@ -48,6 +48,7 @@ public class MP5NFactory implements GunFactory {
 		.withFireRate(0.75f)
 		.withRecoil(2.3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 1)
 		//.withMaxShots(5)
 		.withShootSound("MP5")
 		.withSilencedShootSound("MP5Silenced")
