@@ -74,6 +74,7 @@ public class M16A4Factory implements GunFactory {
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Burst"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {

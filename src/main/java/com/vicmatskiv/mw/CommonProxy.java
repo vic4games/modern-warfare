@@ -85,6 +85,7 @@ import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
 import com.vicmatskiv.weaponlib.ItemScope;
+import com.vicmatskiv.weaponlib.ItemSkin;
 import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
@@ -356,6 +357,8 @@ public class CommonProxy {
 	public static ItemMagazine G3Mag;
 	public static ItemMagazine PP19Mag;
 	public static ItemMagazine Glock32Mag;
+	
+	public static ItemSkin ElectricSkin;
 
 	public static Item Bullets;
 	public static Item Electronics;
@@ -502,13 +505,13 @@ public class CommonProxy {
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
-//		
-//		ItemBullet sampleBullet = new ItemBullet.Builder()
-//			.withModId(ModernWarfareMod.MODID)
-//			.withCreativeTab(ModernWarfareMod.gunsTab)
-//			.withName("samplebullet")
-//			.withTextureName("samplebullet")
-//			.build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+		
+		ElectricSkin = new ItemSkin.Builder()
+				.withModId(ModernWarfareMod.MODID)
+				.withCreativeTab(ModernWarfareMod.gunsTab)
+				.withName("Electric")
+				.withTextureName("Electric.png")
+				.build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 		
 		ShotgunShell = new ItemBullet.Builder()
 		.withModId(ModernWarfareMod.MODID)
@@ -2818,7 +2821,7 @@ public class CommonProxy {
 		        
 		        HP = new ItemScope.Builder()
 		        		.withOpticalZoom()
-		        		.withZoomRange(0.3f, 0.05f)
+		        		.withZoomRange(0.3f, 0.01f)
 		        		.withViewfinderPositioning((p, s) -> {
 		        			GL11.glScalef(1.65f, 1.65f, 1.65f);
                             GL11.glTranslatef(0.0285f, 0.492f, 0.7f);
