@@ -54,7 +54,7 @@ public class SPAS15Factory implements GunFactory {
 				GL11.glTranslatef(1, 0.8f, 0);
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
-			.withThirdPersonPositioning((player, itemStack) -> {
+			.withThirdPersonPositioning((renderContext) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glTranslatef(-1.6F, 0.5F, 1.3F);
 				GL11.glRotatef(-45F, 0f, 1f, 0f);
@@ -62,7 +62,7 @@ public class SPAS15Factory implements GunFactory {
 				})
 				
 				
-			.withFirstPersonPositioning((player, itemStack) -> {
+			.withFirstPersonPositioning((renderContext) -> {
 				GL11.glTranslatef(0.2F, -0.15F, -0.45F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -71,7 +71,7 @@ public class SPAS15Factory implements GunFactory {
 				
 			.withFirstPersonPositioningReloading(
 					
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -80,7 +80,7 @@ public class SPAS15Factory implements GunFactory {
 					GL11.glTranslatef(1F, -1.2F, 0F);
 				}, 250, 1000),
 				
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0.1F, -0.2F, -0.3F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -89,7 +89,7 @@ public class SPAS15Factory implements GunFactory {
 					GL11.glTranslatef(1F, -1.2F, 0F);
 				}, 250, 20),
 				
-				new Transition((player, itemStack) -> { // Reload position
+				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0.2F, -0.15F, -0.45F);
 					GL11.glRotatef(45F, 0f, 1f, 0f);
 					GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -97,7 +97,7 @@ public class SPAS15Factory implements GunFactory {
 				}, 250, 0)
 			)
 				
-			.withFirstPersonPositioningZooming((player, itemStack) -> {
+			.withFirstPersonPositioningZooming((renderContext) -> {
 				GL11.glTranslatef(-0.21F, -0.313F, -0.41F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -107,12 +107,12 @@ public class SPAS15Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(itemStack, CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
 				} 
 				// Holo Zoom
-				/*if(Weapon.isActiveAttachment(itemStack, CommonProxy.Holo)) {
+				/*if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.1f, 3f);
 				} */
@@ -124,24 +124,24 @@ public class SPAS15Factory implements GunFactory {
 				
 			
 				})
-			.withFirstPersonPositioningRunning((player, itemStack) -> {
+			.withFirstPersonPositioningRunning((renderContext) -> {
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 				GL11.glRotatef(-20F, -4f, 1f, -2f);
 				GL11.glTranslatef(1F, -0.7F, -1.2F);
 			 })
-			 .withFirstPersonPositioningModifying((player, itemStack) -> {
+			 .withFirstPersonPositioningModifying((renderContext) -> {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glRotatef(-35F, 2f, 1f, 1f);
 				GL11.glTranslatef(1F, -0.8F, -1F);
 			 })
 			.withFirstPersonHandPositioning(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -149,13 +149,13 @@ public class SPAS15Factory implements GunFactory {
 					 })
 					 
 			.withFirstPersonHandPositioningModifying(
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(2.2f, 2.2f, 2.2f);
 						 GL11.glTranslatef(1f, 0.2f, 0.2f);
 						 GL11.glRotatef(99f, 0, 0f, 1f);
 						 GL11.glRotatef(-60f, 20f, 20f, -20f);
 					 }, 
-					 (player,  itemStack) -> {
+					 (renderContext) -> {
 						 GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -163,7 +163,7 @@ public class SPAS15Factory implements GunFactory {
 					 })
 					 
 			.withFirstPersonLeftHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(2f, 2f, 2.5f);
 						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
 						 GL11.glRotatef(60f, 0, 0f, 1f);
@@ -171,7 +171,7 @@ public class SPAS15Factory implements GunFactory {
 						 GL11.glRotatef(20f, 0f, 0f, 1f);
 					}, 50, 200),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(2f, 2f, 2.5f);
 						 GL11.glTranslatef(0.4f, 0.5f, 0.8f);
 						 GL11.glRotatef(60f, 0, 0f, 1f);
@@ -179,7 +179,7 @@ public class SPAS15Factory implements GunFactory {
 						 GL11.glRotatef(60f, 0f, 0f, 1f);
 					}, 50, 200),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.7f, 1.7f, 3f);
 						 GL11.glTranslatef(0.65f, -0.35f, 0.37f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
@@ -187,21 +187,21 @@ public class SPAS15Factory implements GunFactory {
 					}, 250, 0))
 					
 			.withFirstPersonRightHandPositioningReloading(
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 1000),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.15f, 0f, 1f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-95f, 1f, 0f, 0f);
 					}, 250, 50),
 					
-					new Transition((player, itemStack) -> { // Reload position
+					new Transition((renderContext) -> { // Reload position
 						GL11.glScalef(1.8f, 1.8f, 2.5f);
 						 GL11.glTranslatef(-0.4f, -0.2f, 0.6f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
