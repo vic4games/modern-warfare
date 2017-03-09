@@ -3849,32 +3849,32 @@ public class CommonProxy {
 		compatibility.registerItem(TanCloth, "TanCloth");
 		compatibility.registerItem(GreenCloth, "GreenCloth");
 
-		compatibility.registerBlock(TitaniumOre, "TitaniumOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, TitaniumOre, "TitaniumOre");
 		compatibility.registerItem(TitaniumIngot, "TitaniumIngot");
 
-		compatibility.registerBlock(LeadOre, "LeadOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, LeadOre, "LeadOre");
 		compatibility.registerItem(LeadIngot, "LeadIngot");
 
-		compatibility.registerBlock(CopperOre, "CopperOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, CopperOre, "CopperOre");
 		compatibility.registerItem(CopperIngot, "CopperIngot");
 
-		compatibility.registerBlock(TinOre, "TinOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, TinOre, "TinOre");
 		compatibility.registerItem(TinIngot, "TinIngot");
 
-		compatibility.registerBlock(SulfurOre, "SulfurOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, SulfurOre, "SulfurOre");
 		compatibility.registerItem(SulfurDust, "SulfurDust");
 		
-		compatibility.registerBlock(BauxiteOre, "BauxiteOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, BauxiteOre, "BauxiteOre");
 		compatibility.registerItem(AluminumIngot, "AluminumIngot");
 		compatibility.registerItem(AluminumPlate, "AluminumPlate");
 		
-		compatibility.registerBlock(SiliconOre, "SiliconOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, SiliconOre, "SiliconOre");
 		compatibility.registerItem(Silicon, "Silicon");
 		
-		compatibility.registerBlock(TantalumOre, "TantalumOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, TantalumOre, "TantalumOre");
 		compatibility.registerItem(TantalumIngot, "TantalumIngot");
 		
-		compatibility.registerBlock(RubyOre, "RubyOre");
+		compatibility.registerBlock(ModernWarfareMod.MODID, RubyOre, "RubyOre");
 		compatibility.registerItem(Ruby, "Ruby");
 		
 		compatibility.registerItem(SteelDust, "SteelDust");
