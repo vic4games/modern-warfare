@@ -1,4 +1,13 @@
 {
+  "click": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "click",
+       "stream": false
+      }
+    ]
+  },
   "AK47": {
     "category": "master",
     "sounds": [

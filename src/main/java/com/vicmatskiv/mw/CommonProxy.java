@@ -457,6 +457,10 @@ public class CommonProxy {
 
 		ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
+		ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("click");
+		
+		ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("click");
+		
 		Bullets = new ItemBullets();
 		Electronics = new ItemElectronics();
 		CGrip = new ItemCGrip();
@@ -507,10 +511,10 @@ public class CommonProxy {
 		OreDictionary.registerOre("ingotSteel", SteelIngot);
 		
 		ElectricSkin = new ItemSkin.Builder()
+				.withTextureVariant("Electric", "M14Blue", "M14Red")
 				.withModId(ModernWarfareMod.MODID)
 				.withCreativeTab(ModernWarfareMod.gunsTab)
 				.withName("Electric")
-				.withTextureName("Electric.png")
 				.build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 		
 		ShotgunShell = new ItemBullet.Builder()
