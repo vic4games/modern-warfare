@@ -3835,90 +3835,90 @@ public class CommonProxy {
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
 		
-		compatibility.registerItem(Bipod, "Bipod");
+		compatibility.registerItem(ModernWarfareMod.MODID, Bipod, "Bipod");
 
-		compatibility.registerItem(AKMIron, "AKMIron");
-		compatibility.registerItem(AR15Iron, "AR15Iron");
-		//compatibility.registerItem(Extra, "Extra");
+		compatibility.registerItem(ModernWarfareMod.MODID, AKMIron, "AKMIron");
+		compatibility.registerItem(ModernWarfareMod.MODID, AR15Iron, "AR15Iron");
+		//compatibility.registerItem(ModernWarfareMod.MODID, Extra, "Extra");
 
-		compatibility.registerItem(Bullets, "Bullets");
-		compatibility.registerItem(Electronics, "Electronics");
-		compatibility.registerItem(CGrip, "CGrip");
-		compatibility.registerItem(OpticGlass, "OpticGlass");
-		compatibility.registerItem(Cloth, "Cloth");
-		compatibility.registerItem(TanCloth, "TanCloth");
-		compatibility.registerItem(GreenCloth, "GreenCloth");
+		compatibility.registerItem(ModernWarfareMod.MODID, Bullets, "Bullets");
+		compatibility.registerItem(ModernWarfareMod.MODID, Electronics, "Electronics");
+		compatibility.registerItem(ModernWarfareMod.MODID, CGrip, "CGrip");
+		compatibility.registerItem(ModernWarfareMod.MODID, OpticGlass, "OpticGlass");
+		compatibility.registerItem(ModernWarfareMod.MODID, Cloth, "Cloth");
+		compatibility.registerItem(ModernWarfareMod.MODID, TanCloth, "TanCloth");
+		compatibility.registerItem(ModernWarfareMod.MODID, GreenCloth, "GreenCloth");
 
 		compatibility.registerBlock(ModernWarfareMod.MODID, TitaniumOre, "TitaniumOre");
-		compatibility.registerItem(TitaniumIngot, "TitaniumIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, TitaniumIngot, "TitaniumIngot");
 
 		compatibility.registerBlock(ModernWarfareMod.MODID, LeadOre, "LeadOre");
-		compatibility.registerItem(LeadIngot, "LeadIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, LeadIngot, "LeadIngot");
 
 		compatibility.registerBlock(ModernWarfareMod.MODID, CopperOre, "CopperOre");
-		compatibility.registerItem(CopperIngot, "CopperIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, CopperIngot, "CopperIngot");
 
 		compatibility.registerBlock(ModernWarfareMod.MODID, TinOre, "TinOre");
-		compatibility.registerItem(TinIngot, "TinIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, TinIngot, "TinIngot");
 
 		compatibility.registerBlock(ModernWarfareMod.MODID, SulfurOre, "SulfurOre");
-		compatibility.registerItem(SulfurDust, "SulfurDust");
+		compatibility.registerItem(ModernWarfareMod.MODID, SulfurDust, "SulfurDust");
 		
 		compatibility.registerBlock(ModernWarfareMod.MODID, BauxiteOre, "BauxiteOre");
-		compatibility.registerItem(AluminumIngot, "AluminumIngot");
-		compatibility.registerItem(AluminumPlate, "AluminumPlate");
+		compatibility.registerItem(ModernWarfareMod.MODID, AluminumIngot, "AluminumIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, AluminumPlate, "AluminumPlate");
 		
 		compatibility.registerBlock(ModernWarfareMod.MODID, SiliconOre, "SiliconOre");
-		compatibility.registerItem(Silicon, "Silicon");
+		compatibility.registerItem(ModernWarfareMod.MODID, Silicon, "Silicon");
 		
 		compatibility.registerBlock(ModernWarfareMod.MODID, TantalumOre, "TantalumOre");
-		compatibility.registerItem(TantalumIngot, "TantalumIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, TantalumIngot, "TantalumIngot");
 		
 		compatibility.registerBlock(ModernWarfareMod.MODID, RubyOre, "RubyOre");
-		compatibility.registerItem(Ruby, "Ruby");
+		compatibility.registerItem(ModernWarfareMod.MODID, Ruby, "Ruby");
 		
-		compatibility.registerItem(SteelDust, "SteelDust");
-		compatibility.registerItem(SteelIngot, "SteelIngot");
-		compatibility.registerItem(SteelPlate, "SteelPlate");
-		compatibility.registerItem(MiniSteelPlate, "MiniSteelPlate");
+		compatibility.registerItem(ModernWarfareMod.MODID, SteelDust, "SteelDust");
+		compatibility.registerItem(ModernWarfareMod.MODID, SteelIngot, "SteelIngot");
+		compatibility.registerItem(ModernWarfareMod.MODID, SteelPlate, "SteelPlate");
+		compatibility.registerItem(ModernWarfareMod.MODID, MiniSteelPlate, "MiniSteelPlate");
 		
-		compatibility.registerItem(WeaponStock, "WeaponStock");
-		compatibility.registerItem(RetractableStock, "RetractableStock");
-		compatibility.registerItem(SecondaryStock, "SecondaryStock");
-		compatibility.registerItem(WoodWeaponStock, "WoodWeaponStock");
-		compatibility.registerItem(WoodRifleStock, "WoodRifleStock");
+		compatibility.registerItem(ModernWarfareMod.MODID, WeaponStock, "WeaponStock");
+		compatibility.registerItem(ModernWarfareMod.MODID, RetractableStock, "RetractableStock");
+		compatibility.registerItem(ModernWarfareMod.MODID, SecondaryStock, "SecondaryStock");
+		compatibility.registerItem(ModernWarfareMod.MODID, WoodWeaponStock, "WoodWeaponStock");
+		compatibility.registerItem(ModernWarfareMod.MODID, WoodRifleStock, "WoodRifleStock");
 		
-		compatibility.registerItem(WeaponReceiver, "WeaponReceiver");
-		compatibility.registerItem(SMGReceiver, "SMGReceiver");
-		compatibility.registerItem(UnderReceiver, "UnderReceiver");
-		compatibility.registerItem(RifleReceiver, "RifleReceiver");
-		compatibility.registerItem(PistolUnderReceiver, "PistolUnderReceiver");
-		compatibility.registerItem(P90Receiver, "P90Receiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, WeaponReceiver, "WeaponReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, SMGReceiver, "SMGReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, UnderReceiver, "UnderReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, RifleReceiver, "RifleReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, PistolUnderReceiver, "PistolUnderReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, P90Receiver, "P90Receiver");
 		
-		compatibility.registerItem(RevolverAction, "RevolverAction");
-		compatibility.registerItem(RevolverGrip, "RevolverGrip");
-		compatibility.registerItem(RevolverReceiver, "RevolverReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, RevolverAction, "RevolverAction");
+		compatibility.registerItem(ModernWarfareMod.MODID, RevolverGrip, "RevolverGrip");
+		compatibility.registerItem(ModernWarfareMod.MODID, RevolverReceiver, "RevolverReceiver");
 		
-		compatibility.registerItem(ShotgunReceiver, "ShotgunReceiver");
-		compatibility.registerItem(ShotgunGrip, "ShotgunGrip");
+		compatibility.registerItem(ModernWarfareMod.MODID, ShotgunReceiver, "ShotgunReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, ShotgunGrip, "ShotgunGrip");
 		
-		compatibility.registerItem(ScarReceiver, "ScarReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, ScarReceiver, "ScarReceiver");
 		
-		compatibility.registerItem(DeagleReceiver, "DeagleReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, DeagleReceiver, "DeagleReceiver");
 		
-		compatibility.registerItem(LMGReceiver, "LMGReceiver");
+		compatibility.registerItem(ModernWarfareMod.MODID, LMGReceiver, "LMGReceiver");
 		
-		compatibility.registerItem(Transistor, "Transistor");
-		compatibility.registerItem(Resistor, "Resistor");
-		compatibility.registerItem(Inductor, "Inductor");
-		compatibility.registerItem(Diode, "Diode");
-		compatibility.registerItem(Capacitor, "Capacitor");
-		compatibility.registerItem(CopperWiring, "CopperWiring");
-		compatibility.registerItem(Piston, "Piston");
-		compatibility.registerItem(LaserPointer, "LaserPointer");
+		compatibility.registerItem(ModernWarfareMod.MODID, Transistor, "Transistor");
+		compatibility.registerItem(ModernWarfareMod.MODID, Resistor, "Resistor");
+		compatibility.registerItem(ModernWarfareMod.MODID, Inductor, "Inductor");
+		compatibility.registerItem(ModernWarfareMod.MODID, Diode, "Diode");
+		compatibility.registerItem(ModernWarfareMod.MODID, Capacitor, "Capacitor");
+		compatibility.registerItem(ModernWarfareMod.MODID, CopperWiring, "CopperWiring");
+		compatibility.registerItem(ModernWarfareMod.MODID, Piston, "Piston");
+		compatibility.registerItem(ModernWarfareMod.MODID, LaserPointer, "LaserPointer");
 		
-		compatibility.registerItem(Barrel, "Barrel");
-		compatibility.registerItem(Plastic, "plastic");
+		compatibility.registerItem(ModernWarfareMod.MODID, Barrel, "Barrel");
+		compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
 
 		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
 
