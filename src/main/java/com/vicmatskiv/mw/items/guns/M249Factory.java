@@ -222,7 +222,7 @@ public class M249Factory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningReloading(
-					
+
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -231,7 +231,7 @@ public class M249Factory implements GunFactory {
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 500),
-					
+
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -240,15 +240,15 @@ public class M249Factory implements GunFactory {
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 20),
-				
-				new Transition((renderContext) -> { // Reload position
-					GL11.glTranslatef(0.3F, -0.15F, 0.3F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glRotatef(20F, 0f, 0f, 1f);
-					GL11.glRotatef(10F, 1f, 0f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 0)
+
+					new Transition((renderContext) -> { // Reload position
+						GL11.glTranslatef(0.3F, -0.15F, 0.3F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(20F, 0f, 0f, 1f);
+						GL11.glRotatef(10F, 1f, 0f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+					}, 250, 2000)
 			)
 			
 			.withFirstPersonPositioningUnloading(

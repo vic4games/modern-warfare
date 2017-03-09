@@ -2,14 +2,10 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -18,13 +14,10 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M16;
@@ -40,6 +33,11 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.ItemSkin;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 public class M16A4Factory implements GunFactory {
 
@@ -63,10 +61,19 @@ public class M16A4Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.7f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.LOW, 
+				CommonProxy.Barrel,
+				CommonProxy.SteelPlate,
+				CommonProxy.WeaponReceiver,
+				CommonProxy.CGrip,
+				CommonProxy.SecondaryStock)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 6.8", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Burst"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, (a, i) -> {
+			i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("M14Blue"));
+		}, (a, i) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
@@ -291,7 +298,7 @@ public class M16A4Factory implements GunFactory {
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 500),
-					
+
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, -0.4F, -0.4F);
 						GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -300,21 +307,21 @@ public class M16A4Factory implements GunFactory {
 						GL11.glScaled(0.55F, 0.55F, 0.55F);
 						GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 					}, 250, 170),
-				
-				new Transition((renderContext) -> { // Reload position
-					GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glRotatef(-15F, 1f, 0f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
-				}, 400, 0),
-				new Transition((renderContext) -> { // Reload position
-					GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glRotatef(-15F, 1f, 0f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
-				}, 60, 0)
+
+					new Transition((renderContext) -> { // Reload position
+						GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-15F, 1f, 0f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+					}, 400, 0),
+					new Transition((renderContext) -> { // Reload position
+						GL11.glTranslatef(-0.1F, -0.52F, -0.5F);
+						GL11.glRotatef(45F, 0f, 1f, 0f);
+						GL11.glRotatef(-15F, 1f, 0f, 0f);
+						GL11.glScaled(0.55F, 0.55F, 0.55F);
+						GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
+					}, 120, 0)
 			)
 			
 			.withFirstPersonPositioningUnloading(
