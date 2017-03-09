@@ -25,7 +25,7 @@ public class Glock18Factory implements GunFactory {
 //		.withAmmo(CommonProxy.G18Mag)
 //		.withAmmoCapacity(20)
 		.withFireRate(0.6f)
-		.withRecoil(5.5f)
+		.withRecoil(3f)
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		.withShootSound("Glock18")
@@ -45,6 +45,20 @@ public class Glock18Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: 9mm", "Magazines:", "17rnd 9mm Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
+		.withCompatibleAttachment(CommonProxy.Fade, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("G18Fade"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);

@@ -67,6 +67,20 @@ public class AWMFactory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt2, true, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
+		.withCompatibleAttachment(CommonProxy.LightningStrike, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.LightningStrike.getTextureVariantIndex("AWPLightningStrike"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
 	    		GL11.glTranslatef(0.17F, -1.42F, 0.43F);

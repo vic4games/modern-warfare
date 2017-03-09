@@ -182,6 +182,7 @@ item.mw_PP19Mag.name=65rnd 9mm Magazine
 item.mw_Glock32Mag.name=14rnd .357 Magazine
 item.mw_G18Mag.name=20rnd 9mm Magazine
 item.mw_NATO20rnd.name=20rnd 5.56x45mm NATO Magazine
+item.mw_NATO40rnd.name=40rnd 5.56x45mm NATO Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet
@@ -230,6 +231,12 @@ item.mw_Silencer65x39.name=6.5x39mm NATO Silencer
 item.mw_SilencerMP7.name=4.6x30mm Silencer
 item.mw_StubbyGrip.name=Stubby Grip
 item.mw_Holographic2.name=EOTech EXPS3-0 (Tan)
+
+item.mw_Electric.name=Electric skin
+item.mw_Asiimov.name=Asiimov skin
+item.mw_Voltaic.name=Voltaic skin
+item.mw_Fade.name=Ruby skin
+item.mw_LightningStrike.name=Lightning Strike skin
 
 item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit

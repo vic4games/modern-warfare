@@ -71,6 +71,13 @@ public class KSG12Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.KSGPump, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof M4Iron1) {
 				GL11.glTranslatef(0.161F, -1.61F, 0.3F);

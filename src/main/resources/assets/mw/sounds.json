@@ -332,6 +332,15 @@
       }
     ]
   },
+   "M4A4": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M4A4",
+       "stream": false
+      }
+    ]
+  },
   "Vector": {
     "category": "master",
     "sounds": [

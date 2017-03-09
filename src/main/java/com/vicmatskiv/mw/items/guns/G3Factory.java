@@ -66,6 +66,13 @@ public class G3Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Battle rifle", "Damage: 15", 
 		"Caliber: 7.62x51mm", "Magazines:", "21rnd 7.62x51mm Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.G3Mag, (model) -> {})
 	  .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof G36CIron1) {

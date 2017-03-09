@@ -1,6 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
+import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -42,6 +43,7 @@ import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class M21Factory implements GunFactory {
+	
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
@@ -69,6 +71,13 @@ public class M21Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper", "Damage: 26", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.M14DMRMag, (model) -> {
 			GL11.glTranslatef(0F, -0.15F, -0.1F);
 		})

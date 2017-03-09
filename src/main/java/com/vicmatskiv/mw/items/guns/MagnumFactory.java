@@ -42,6 +42,13 @@ public class MagnumFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 9", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})
