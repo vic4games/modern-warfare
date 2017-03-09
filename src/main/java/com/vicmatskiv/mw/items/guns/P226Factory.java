@@ -9,10 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.P2000;
 import com.vicmatskiv.mw.models.P220;
-import com.vicmatskiv.mw.models.P225;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -38,7 +35,10 @@ public class P226Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.4f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.5f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 

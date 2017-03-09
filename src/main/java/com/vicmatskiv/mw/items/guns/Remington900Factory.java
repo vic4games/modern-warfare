@@ -43,6 +43,9 @@ public class Remington900Factory implements GunFactory {
 		.withInaccuracy(10)
 		.withPellets(10)
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))

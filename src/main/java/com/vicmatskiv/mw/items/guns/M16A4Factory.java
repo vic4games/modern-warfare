@@ -2,6 +2,9 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -34,13 +37,11 @@ import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-import com.vicmatskiv.weaponlib.ItemSkin;
-
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 
 public class M16A4Factory implements GunFactory {
 
+
+	
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
@@ -50,7 +51,7 @@ public class M16A4Factory implements GunFactory {
 		.withFireRate(0.7f)
 		.withRecoil(3.2f)
 		.withZoom(0.9f)
-		.withMaxShots(3, Integer.MAX_VALUE, 1)
+		.withMaxShots(3, 1)
 		.withShootSound("AR15")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
@@ -59,7 +60,10 @@ public class M16A4Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withCrafting(CraftingComplexity.LOW, 
 				CommonProxy.Barrel,
@@ -71,10 +75,15 @@ public class M16A4Factory implements GunFactory {
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Burst"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, (a, i) -> {
-			i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("M14Blue"));
-		}, (a, i) -> {})
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0F);
@@ -267,7 +276,88 @@ public class M16A4Factory implements GunFactory {
 				GL11.glTranslatef(-0.3F, -0.8F, 0.8F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.44F, -0.32F, -0.11F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.3F, -0.8F, 1F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(-0.1F, -0.3F, -0.3F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.135F, -0.97f, 1.41f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				
+				// Standard Iron Sight Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.AKMIron)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0f, 0f);
+				} 
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.025f, 0.55f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
+				} 
+
+				// HP Zoomw
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 0.2f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.03f, 0.3f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.04f, 0.6f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.04f, 0.6f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(1.373F, -1.32f, 2.8f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
 			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (renderContext) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.NATO20rnd, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -360,7 +450,51 @@ public class M16A4Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATO20rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag1,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.05F, 1F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.NATO20rnd,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);

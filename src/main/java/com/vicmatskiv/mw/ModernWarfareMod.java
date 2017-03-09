@@ -2,9 +2,6 @@ package com.vicmatskiv.mw;
 
 import java.io.File;
 
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -20,6 +17,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+
+import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
 public class ModernWarfareMod {

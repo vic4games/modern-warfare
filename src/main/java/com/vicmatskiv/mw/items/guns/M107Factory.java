@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -17,9 +16,6 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M107;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -55,10 +51,20 @@ public class M107Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 37.8", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 2)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.M107BMag, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof AKMiron1) {
 				GL11.glTranslatef(0.125F, -1.8F, -0.5F);

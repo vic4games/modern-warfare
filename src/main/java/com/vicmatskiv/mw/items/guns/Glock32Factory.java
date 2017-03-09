@@ -9,9 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.G21;
 import com.vicmatskiv.mw.models.Glock32;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -37,12 +35,22 @@ public class Glock32Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.4f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.5f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
 		"Caliber: .357", "Magazines:", "14rnd .357 Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);

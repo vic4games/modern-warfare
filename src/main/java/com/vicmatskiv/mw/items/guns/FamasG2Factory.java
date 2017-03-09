@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -46,8 +45,9 @@ public class FamasG2Factory implements GunFactory {
 		.withFireRate(0.7f)
 		.withRecoil(3.5f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3)
 		//.withMaxShots(5)
-		.withShootSound("Famas")
+		.withShootSound("Famas2")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
@@ -56,11 +56,24 @@ public class FamasG2Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(0.8f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.15f)
+		.withFlashOffsetY(() -> 0.15f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Bullpup assault rifle", "Damage: 6.9", 
-		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
+		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine", "20rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Voltaic, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.Voltaic.getTextureVariantIndex("Famas2Voltaic"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
+			GL11.glTranslatef(0F, 0.1F, 2F);
+		})
+		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 2F);
 		})
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
@@ -173,7 +186,7 @@ public class FamasG2Factory implements GunFactory {
 			GL11.glTranslatef(0.107F, -1.34F, -3F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("Famas", "FamasBlue", "FamasRed", "Electric")
+		.withTextureNames("Famas", "FamasBlue", "FamasRed", "Famas2Voltaic", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
 			.withModel(new Famas())
@@ -203,7 +216,78 @@ public class FamasG2Factory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.1F, -0.33F, -0.4F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.05F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.135F, -0.96f, 1.32f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.246f, 0.3f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+
+				// HP Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, -0.04f, 5f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.33f, 0.28f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.3f, 0.5f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.04f, 2.8f);
+				} 
+				
+				
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
+				
 			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (renderContext) -> {
+//				GL11.glTranslatef(-0.2F, -0.32F, 0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.NATO20rnd, (renderContext) -> {
 //				GL11.glTranslatef(-0.2F, -0.32F, 0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -296,6 +380,42 @@ public class FamasG2Factory implements GunFactory {
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
 				}, 250, 1000)
 					)
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATO20rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.2F, 0.9F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.NATO20rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.05F, 1F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
@@ -367,7 +487,7 @@ public class FamasG2Factory implements GunFactory {
 			.withFirstPersonHandPositioning(
 					 (renderContext) -> {
 						 GL11.glScalef(1.7f, 1.7f, 3f);
-						 GL11.glTranslatef(0.65f, -0.35f, 0.6f);
+						 GL11.glTranslatef(0.62f, -0.35f, 0.5f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-55f, 1f, 0f, 0f);
 					 }, 

@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -17,11 +16,7 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.L115A3;
-import com.vicmatskiv.mw.models.L96;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -59,9 +54,19 @@ public class L115A3Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 32.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 3)", "Fire Rate: Bolt Action"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt2, true, (model) -> {})
@@ -236,36 +241,36 @@ public class L115A3Factory implements GunFactory {
 				GL11.glTranslatef(0.2F, -0.28F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.2F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.3F);
+				GL11.glRotatef(-4F, 1f, 0f, 0f);
 				})
 				
-			.withFirstPersonPositioningZooming((renderContext) -> {
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(0.2F, -0.3F, 0.1F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 
 				// Zoom
-				GL11.glTranslatef(0.17F, -0.95f, 0.5f);
+				GL11.glTranslatef(0.17F, -0.95f, 0.52f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-1F, 1f, 0f, 0f);
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, -0.2f, 7f);
-				} 
-				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.16f, 0.15f);
 				} 
 				
 				// HP Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.16f, 0.2f);
+				} 
+				
+				// HP Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.19f, 2.8f);
+					GL11.glTranslatef(1.38F, -1.19f, 2.9f);
 				} 
 				
 				/* // Reflex Zoom

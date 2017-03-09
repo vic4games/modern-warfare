@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -18,9 +17,6 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -55,9 +51,19 @@ public class AS50Factory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 30.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 1)", "Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.AS50Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -181,24 +187,24 @@ public class AS50Factory implements GunFactory {
 				GL11.glTranslatef(0.25F, -0.23F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glTranslatef(-0.4F, -0.8F, 1F);
+				GL11.glRotatef(-4F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(0F, -0.3F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 
 				// Zoom
-				GL11.glTranslatef(0.1377F, -1f, 1.35f);
+				GL11.glTranslatef(0.1377F, -1f, 1.3f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-1F, 1f, 0f, 0f);
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.21f, 0.1f);
+					GL11.glTranslatef(0F, 0.185f, 0.75f);
 				}  
 				
 				// Scope Zoom
@@ -210,7 +216,7 @@ public class AS50Factory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.18f, 5f);
+					GL11.glTranslatef(0F, 0.15f, 0.1f);
 				} 
 				
 				// Reflex Zoom

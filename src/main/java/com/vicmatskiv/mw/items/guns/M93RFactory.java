@@ -9,9 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.M9;
 import com.vicmatskiv.mw.models.M93R;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -28,7 +26,7 @@ public class M93RFactory implements GunFactory {
 		.withFireRate(0.6f)
 		.withRecoil(5f)
 		.withZoom(0.9f)
-		.withMaxShots(1)
+		.withMaxShots(3)
 		.withShootSound("M93R")
 		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")
@@ -37,7 +35,10 @@ public class M93RFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.4f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.5f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 8", 

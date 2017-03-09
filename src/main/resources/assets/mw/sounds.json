@@ -323,6 +323,33 @@
       }
     ]
   },
+  "Famas2": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:Famas2",
+       "stream": false
+      }
+    ]
+  },
+  "Glock18": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:Glock18",
+       "stream": false
+      }
+    ]
+  },
+   "M4A4": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:M4A4",
+       "stream": false
+      }
+    ]
+  },
   "Vector": {
     "category": "master",
     "sounds": [

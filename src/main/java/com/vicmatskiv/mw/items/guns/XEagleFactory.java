@@ -10,7 +10,6 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.Deagle;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -38,6 +37,9 @@ public class XEagleFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withInaccuracy(4)
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.7f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
 		"Caliber: .357", "Magazines:", "9rnd .357 Magazine", "Fire Rate: Semi"))

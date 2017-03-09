@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -17,13 +16,10 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -33,7 +29,6 @@ import com.vicmatskiv.mw.models.MX;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.Scar;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -52,6 +47,7 @@ public class MXFactory implements GunFactory {
 		.withFireRate(0.55f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("AR15")
 		.withSilencedShootSound("AR15Silenced")
@@ -61,7 +57,10 @@ public class MXFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.6f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.6", 
 		"Caliber: 6.5x39mm NATO", "Magazines:", "30rnd 6.5x39mm NATO Magazine"))
@@ -236,6 +235,74 @@ public class MXFactory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.3F, -0.3F, -0.3F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.1F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(-0.047F, -0.315F, -0.25F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.136F, -1.035f, 1.36f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.08f, 0.75f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.061f, 0.43f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0F, 0.061f, 0.3f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(-0.01F, 0.13f, 0.4f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.13f, 0.4f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.13f, 0.4f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.369F, -1.21f, 2.8f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
 				})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.MXMag, (renderContext) -> {

@@ -36,9 +36,10 @@ public class AN94Factory implements GunFactory {
 		.withName("AN94")
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.65f)
+		.withFireRate(0.5f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 2)
 		//.withMaxShots(5)
 		.withShootSound("AKM")
 		.withSilencedShootSound("AKsilenced")
@@ -48,12 +49,22 @@ public class AN94Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.3", 
-		"Caliber: 5.56x39mm", "Magazines:", "31rnd 5.56x39mm Magazine",
+		"Caliber: 5.56x39mm", "Magazines:", "30rnd 5.56x39mm Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.AK12Mag, (model) -> {
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
+		.withCompatibleAttachment(CommonProxy.AK74MMag, (model) -> {
 			GL11.glTranslatef(-0.05F, 0F, 0.25F);
 			//GL11.glRotatef(5F, 0f, 0f, 1f);
 		})
@@ -151,46 +162,80 @@ public class AN94Factory implements GunFactory {
 				})
 				
 		   .withFirstPersonPositioning((renderContext) -> {
-				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
+				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.05F);
+				GL11.glRotatef(-2.5F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(-0.06F, -0.315F, -0.26F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.135F, -1.08f, 1.4f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.26f, 0.3f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+				
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.29f, 0.2f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.22f, 0.2f);
+				} 
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(1.373F, -1.18f, 2.9f);
+				} 
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
 			
-			.withFirstPersonCustomPositioning(CommonProxy.AK12Mag, (renderContext) -> {
+				})
+			
+			.withFirstPersonCustomPositioning(CommonProxy.AK74MMag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
-			
-			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0.25F, -0.32F, -0.15F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				})
-				
-			/*.withFirstPersonPositioningShooting((renderContext) -> {
-
-				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				
-				float xRandomOffset = 0.01f * (random.nextFloat() - 0.5f) * 2;
-				float yRandomOffset = 0.01f * (random.nextFloat() - 0.5f) * 2;
-				float zRandomOffset = 0.01f * (random.nextFloat() - 0.5f) * 2;
-				GL11.glTranslatef(xRandomOffset, yRandomOffset, zRandomOffset);
-				})*/
-				
-			/*.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.0F);
-				})*/
-			
+	
 			.withFirstPersonPositioningReloading(
 					
 				new Transition((renderContext) -> { // Reload position
@@ -238,7 +283,7 @@ public class AN94Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.AK12Mag,
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.AK74MMag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -255,7 +300,7 @@ public class AN94Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.AK12Mag,
+			.withFirstPersonCustomPositioningReloading(CommonProxy.AK74MMag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0F, 0.7F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);

@@ -9,9 +9,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.M9;
 import com.vicmatskiv.mw.models.MAC10;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -37,13 +35,23 @@ public class MAC11Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.8f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.7f)
+		.withFlashOffsetX(() -> 0.45f)
+		.withFlashOffsetY(() -> 0.22f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 6", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
-			GL11.glTranslatef(-0.32F, 0.1F, 1.2F);
+			GL11.glTranslatef(-0.32F, 0.1F, 1.12F);
 			})
 		.withCompatibleAttachment(CommonProxy.Silencer45ACP, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.1F, -3.8F);
@@ -74,29 +82,30 @@ public class MAC11Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioning((renderContext) -> {
-				GL11.glTranslatef(0.1F, -0.45F, -1F);
+				GL11.glTranslatef(0F, -0.3F, -0.7F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glRotatef(-2F, 1f, 0f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0F, -0.6F, -1.1F);
+				GL11.glTranslatef(0F, -0.3F, -0.7F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-10F, 1f, 0f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+				GL11.glRotatef(-7F, 1f, 0f, 0f);
+				GL11.glScaled(0.6F, 0.6F, 0.6F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.7F);
 				})
-		
+				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
+				GL11.glTranslatef(-0.20F, -0.31F, -0.4F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-4F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.31F, -1.34f, 1.5f);
+				GL11.glTranslatef(0.31F, -1.31f, 1.6f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
 			/*	// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {
@@ -113,7 +122,7 @@ public class MAC11Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
+					GL11.glTranslatef(1.38F, -1.17f, 3.3f);
 				} 
 				
 				// Everything else
@@ -123,7 +132,7 @@ public class MAC11Factory implements GunFactory {
 				
 			
 				})
-				
+		
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
 			.withFirstPersonCustomPositioning(CommonProxy.VectorMag, (renderContext) -> {})
@@ -257,7 +266,7 @@ public class MAC11Factory implements GunFactory {
 				GL11.glRotatef(-50F, 1f, 0f, 0f);
 				GL11.glRotatef(0F, 0f, 0f, 1f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.1F, -0.76F, 1.35F);
+				GL11.glTranslatef(-1.1F, -0.2F, 1.6F);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
 				 GL11.glScaled(1.2F, 1.2F, 1.2F);
@@ -267,9 +276,10 @@ public class MAC11Factory implements GunFactory {
 			  .withFirstPersonHandPositioning(
 					 (renderContext) -> {
 						 GL11.glScalef(3f, 3f, 3f);
-						 GL11.glTranslatef(0.6f, -0.1f, 0.4f);
+						 GL11.glTranslatef(0.55f, -0.1f, 0.28f);
 						 GL11.glRotatef(90f, 0, 0f, 1f);
 						 GL11.glRotatef(-40f, 1f, 0f, 0f);
+						 GL11.glRotatef(-4f, 1, 0f, 0f);
 					 }, 
 					 (renderContext) -> {
 						 GL11.glScalef(3.3f, 3.3f, 3.3f);

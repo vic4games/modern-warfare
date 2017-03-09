@@ -9,31 +9,21 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Grip2;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Holographic2;
-import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MP5K;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -47,9 +37,10 @@ public class MP5KFactory implements GunFactory {
 		.withName("HK MP5K")
 //		.withAmmo(CommonProxy.MP5Mag)
 //		.withAmmoCapacity(25)
-		.withFireRate(0.7f)
+		.withFireRate(0.85f)
 		.withRecoil(2.3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 1)
 		//.withMaxShots(5)
 		.withShootSound("MP5K")
 		.withSilencedShootSound("MP5Silenced")
@@ -59,7 +50,10 @@ public class MP5KFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.16f)
+		.withFlashOffsetY(() -> 0.12f)
 		.withInaccuracy(2)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.6", 
@@ -205,6 +199,62 @@ public class MP5KFactory implements GunFactory {
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
 				GL11.glTranslatef(-0.4F, -0.7F, 0.9F);
 				})
+				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.5F, -0.2F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.7F, 0.7F, 0.7F);
+				GL11.glTranslatef(-0.4F, -0.7F, 1.2F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(0F, -0.3F, -0.2F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+
+				// Zoom
+				GL11.glTranslatef(0.315F, -1.25f, 1.62f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+				
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.21f, 0.6f);
+				} 
+				
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.26f, 0.7f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.19f, 0.7f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.19f, 0.7f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.15f, 3.2f);
+				}
+				
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+				
+			
+				})
 			
 			.withFirstPersonCustomPositioning(CommonProxy.MP5KMag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -348,16 +398,16 @@ public class MP5KFactory implements GunFactory {
 					
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.MP5KGrip.getRenderablePart(),
 				new Transition((renderContext) -> {
-					GL11.glTranslatef(0F, 0.5F, -0.2F);
-					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glTranslatef(0F, 0.5F, -0.2F);
+//					GL11.glRotatef(-20F, 1f, 0f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000),
 				new Transition((renderContext) -> {
-					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
-					GL11.glRotatef(10F, 1f, 0f, 0f);
-					GL11.glRotatef(10F, 0f, 1f, 0f);
-					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+//					GL11.glRotatef(10F, 1f, 0f, 0f);
+//					GL11.glRotatef(10F, 0f, 1f, 0f);
+//					GL11.glRotatef(-90F, 0f, 0f, 1f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
 //					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				}, 250, 1000)

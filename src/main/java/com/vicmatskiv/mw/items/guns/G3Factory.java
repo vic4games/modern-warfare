@@ -9,28 +9,18 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G3;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HK33;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Holographic2;
-import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -49,7 +39,7 @@ public class G3Factory implements GunFactory {
 		.withFireRate(0.4f)
 		.withRecoil(2.3f)
 		.withZoom(0.95f)
-		.withMaxShots(1)
+		.withMaxShots(1, 3, Integer.MAX_VALUE)
 		.withShootSound("G3")
 		.withSilencedShootSound("G3Silenced")
 		.withReloadSound("StandardReload")
@@ -58,11 +48,21 @@ public class G3Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Battle rifle", "Damage: 15", 
 		"Caliber: 7.62x51mm", "Magazines:", "21rnd 7.62x51mm Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.G3Mag, (model) -> {})
 	  .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof G36CIron1) {

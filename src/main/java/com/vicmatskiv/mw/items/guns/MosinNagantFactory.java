@@ -19,7 +19,6 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.L96;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -58,6 +57,9 @@ public class MosinNagantFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.MosinBolt, true, (model) -> {

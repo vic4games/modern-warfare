@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -17,14 +16,7 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
-import com.vicmatskiv.mw.models.M14;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M14Rail;
 import com.vicmatskiv.mw.models.M21;
@@ -32,8 +24,6 @@ import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -42,6 +32,7 @@ import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class M21Factory implements GunFactory {
+	
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
@@ -61,11 +52,21 @@ public class M21Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper", "Damage: 26", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.M14DMRMag, (model) -> {
 			GL11.glTranslatef(0F, -0.15F, -0.1F);
 		})

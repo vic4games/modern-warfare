@@ -48,11 +48,21 @@ public class M1CarbineFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.5f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 7", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.M1CarbineMag, (model) -> {
 			GL11.glTranslatef(0.02F, 0.1F, -0.4F);
 			GL11.glScaled(0.9F, 1F, 1F);

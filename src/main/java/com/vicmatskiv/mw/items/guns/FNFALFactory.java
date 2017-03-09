@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -18,13 +17,10 @@ import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.FNFAL;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -48,10 +44,10 @@ public class FNFALFactory implements GunFactory {
 		.withName("FNFAL")
 //		.withAmmo(CommonProxy.FNFALMag)
 //		.withAmmoCapacity(20)
-		.withFireRate(0.2f)
+		.withFireRate(0.5f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
-		.withMaxShots(1)
+		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("FNFAL")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
@@ -60,11 +56,21 @@ public class FNFALFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Battle rifle", "Damage: 13", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.FALMag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -236,24 +242,24 @@ public class FNFALFactory implements GunFactory {
 				GL11.glTranslatef(0.35F, -0.3F, -0.25F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glTranslatef(-0.4F, -0.8F, 1F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(-0.05F, -0.3F, -0.25F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.137F, -1.055f, 1.14f);
+				GL11.glTranslatef(0.137F, -1.055f, 1.17f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(-0.005F, 0.1315f, 0.5f);
+					GL11.glTranslatef(-0.005F, 0.1315f, 0.75f);
 				} 
 				
 				// Scope Zoom
@@ -265,7 +271,7 @@ public class FNFALFactory implements GunFactory {
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
+					GL11.glTranslatef(0F, 0.1f, 0.6f);
 				} 
 				
 				// Reflex Zoom
@@ -276,11 +282,17 @@ public class FNFALFactory implements GunFactory {
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(-0.01F, 0.06f, 0.8f);
+					GL11.glTranslatef(-0.01F, 0.125f, 0.8f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(0F, 0.105f, 1f);
+				} 
+				
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.369F, -1.23f, 3f);
 				} 

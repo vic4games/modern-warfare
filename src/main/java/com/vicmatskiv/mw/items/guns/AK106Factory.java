@@ -9,31 +9,18 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
-import com.vicmatskiv.mw.models.AK101;
 import com.vicmatskiv.mw.models.AK106;
 import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AK74M;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
-import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -49,9 +36,10 @@ public class AK106Factory implements GunFactory {
 		.withName("AK106")
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.67f)
+		.withFireRate(0.55f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
+		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
 		.withShootSound("AK74M")
 		.withSilencedShootSound("AKsilenced")
@@ -61,11 +49,21 @@ public class AK106Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7.5", 
 		"Caliber: 5.56x45mm", "Magazines:", "32rnd 5.56x45mm Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.AK101Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -143,6 +141,66 @@ public class AK106Factory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
+				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.05F);
+				GL11.glRotatef(-2.5F, 1f, 0f, 0f);
+				})
+				
+			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+				GL11.glTranslatef(-0.06F, -0.32F, -0.26F);
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				// Zoom
+
+				GL11.glTranslatef(0.135F, -1.08f, 1.43f);
+				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.5F, 1f, 0, 0f);
+
+				// ACOG Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+					//System.out.println("Position me for Acog");
+					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
+				} 
+
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+
+				// Scope Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+					//System.out.println("Position me for Scope");
+					GL11.glTranslatef(0F, 0.148f, 5f);
+				} 
+
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.23f, 0.2f);
+				} 
+				// Reflex Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+					//System.out.println("Position me for Reflex");
+					GL11.glTranslatef(0F, 0.1f, 0.8f);
+				} 
+
+				// Holo Zoom
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+					//System.out.println("Position me for Holo");
+					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
+				} 
+
+				// Everything else
+				else {
+					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+				}
+
+			})
+		
 			.withFirstPersonCustomPositioning(CommonProxy.AK101Mag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);

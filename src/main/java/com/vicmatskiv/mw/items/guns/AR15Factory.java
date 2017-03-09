@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.ACOG;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -19,13 +18,10 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.HP;
-import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
@@ -61,13 +57,25 @@ public class AR15Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.7f)
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic rifle","Damage: 7", 
-		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
+		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine", "20rnd 5.56x45mm NATO Magazine", "40rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.NATO40rnd, (model) -> {})
+		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATOMag2, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0F);
@@ -382,6 +390,20 @@ public class AR15Factory implements GunFactory {
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 				
+			.withFirstPersonCustomPositioning(CommonProxy.NATO20rnd, (renderContext) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
+			.withFirstPersonCustomPositioning(CommonProxy.NATO40rnd, (renderContext) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+				
 			.withFirstPersonCustomPositioning(CommonProxy.NATOMag2, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -468,7 +490,95 @@ public class AR15Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATO20rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATO40rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+					GL11.glRotatef(-20F, 1f, 0f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+					GL11.glRotatef(10F, 1f, 0f, 0f);
+					GL11.glRotatef(10F, 0f, 1f, 0f);
+					GL11.glRotatef(-90F, 0f, 0f, 1f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000)
+					)
+					
 			.withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag1,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.05F, 1F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.NATO40rnd,
+				new Transition((renderContext) -> {
+					GL11.glTranslatef(0.05F, 1F, 0F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.5F, 0F, -0.2F);
+//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000),
+				new Transition((renderContext) -> {
+					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+					GL11.glRotatef(45F, 0f, 1f, 0f);
+					GL11.glScaled(0.55F, 0.55F, 0.55F);
+					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+				}, 250, 1000)
+					)
+					
+			.withFirstPersonCustomPositioningReloading(CommonProxy.NATO20rnd,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);

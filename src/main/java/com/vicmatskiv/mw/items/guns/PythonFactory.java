@@ -9,7 +9,6 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.Magnum;
 import com.vicmatskiv.mw.models.Python;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -36,6 +35,9 @@ public class PythonFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.5f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 10", 

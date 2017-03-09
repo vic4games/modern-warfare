@@ -35,10 +35,20 @@ public class MagnumFactory implements GunFactory {
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.5f)
+		.withFlashOffsetX(() -> 0.2f)
+		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 9", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+				(a, i) -> {
+					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+				}, 
+				(a, i) -> {
+				}
+		)
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})
