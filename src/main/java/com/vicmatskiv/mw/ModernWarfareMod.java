@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw;
 
+import java.io.File;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -8,9 +10,8 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-import java.io.File;
-
 import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -50,7 +51,7 @@ public class ModernWarfareMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		configure(event.getSuggestedConfigurationFile());
-		proxy.preInit(this, event);
+		proxy.init(this, new CompatibleFmlInitializationEvent(event));
 	}
 
 	private void configure(File suggestedConfig) {

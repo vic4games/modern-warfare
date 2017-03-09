@@ -31,8 +31,6 @@ import com.vicmatskiv.weaponlib.animation.Transition;
 
 public class AK47Factory implements GunFactory {
 	
-	private Random random = new Random();
-
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)

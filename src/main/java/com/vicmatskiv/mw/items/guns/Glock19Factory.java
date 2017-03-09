@@ -10,7 +10,6 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.G21;
-import com.vicmatskiv.weaponlib.Tags;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
@@ -24,10 +23,10 @@ public class Glock19Factory implements GunFactory {
 		.withName("Glock19")
 //		.withAmmo(CommonProxy.G18Mag)
 //		.withAmmoCapacity(20)
-		.withFireRate(0.8f)
+		.withFireRate(0.5f)
 		.withRecoil(5.5f)
 		.withZoom(0.9f)
-		.withMaxShots(1)
+		.withMaxShots(5,1, Integer.MAX_VALUE)
 		.withShootSound("G18")
 		.withSilencedShootSound("silencer")
 		.withReloadSound("PistolReload")

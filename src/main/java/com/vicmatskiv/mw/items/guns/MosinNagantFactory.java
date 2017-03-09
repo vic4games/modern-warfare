@@ -19,7 +19,6 @@ import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
-import com.vicmatskiv.mw.models.L96;
 import com.vicmatskiv.mw.models.LP;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;

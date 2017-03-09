@@ -2,8 +2,6 @@ package com.vicmatskiv.mw;
 
 import java.util.Random;
 
-import com.vicmatskiv.mw.CommonProxy;
-
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
