@@ -1,10 +1,11 @@
 package com.vicmatskiv.mw;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 public class ClientProxy extends CommonProxy {
 
@@ -14,7 +15,7 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@Override
-	public void init(Object mod, FMLInitializationEvent event) {
+	public void init(Object mod, CompatibleFmlInitializationEvent event) {
 		super.init(mod, event);
 		
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()

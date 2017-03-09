@@ -3,6 +3,7 @@ package com.vicmatskiv.mw;
 import java.io.File;
 
 import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
@@ -53,7 +54,7 @@ public class ModernWarfareMod {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		proxy.init(this, event);
+		proxy.init(this, new CompatibleFmlInitializationEvent(event));
 		initRecipies(event);
 	}
 

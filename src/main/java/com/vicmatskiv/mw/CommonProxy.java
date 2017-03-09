@@ -91,14 +91,12 @@ import com.vicmatskiv.weaponlib.ItemSkin;
 import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
@@ -440,9 +438,9 @@ public class CommonProxy {
 	public static Item Barrel;
 	public static Item Plastic;
 
-	static ArmorMaterial Marine = EnumHelper.addArmorMaterial("Marine", "Marine", 40, 
+	static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, 
 			new int[] { 3, 5, 4, 3 }, 15, null, 0); // TODO: last argument, how does it work?
-	static ArmorMaterial Tactical = EnumHelper.addArmorMaterial("Tactical", "Tactical", 40,
+	static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40,
 			new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO: last argument, how does it work?
 
 	// private ClientEventHandler clientEventHandler = new ClientEventHandler();
@@ -455,7 +453,7 @@ public class CommonProxy {
 		return false;
 	}
 
-	public void init(Object mod, FMLInitializationEvent event) {
+	public void init(Object mod, CompatibleFmlInitializationEvent event) {
 
 		ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
@@ -473,32 +471,25 @@ public class CommonProxy {
 
 		TitaniumOre = new BlockTitaniumOre();
 		TitaniumIngot = new ItemTitaniumIngot();
-		OreDictionary.registerOre("ingotTitanium", TitaniumIngot);
 
 		LeadOre = new BlockLeadOre();
 		LeadIngot = new ItemLeadIngot();
-		OreDictionary.registerOre("ingotLead", LeadIngot);
 
 		CopperOre = new BlockCopperOre();
 		CopperIngot = new ItemCopperIngot();
-		OreDictionary.registerOre("ingotCopper", CopperIngot);
 
 		TinOre = new BlockTinOre();
 		TinIngot = new ItemTinIngot();
-		OreDictionary.registerOre("ingotTin", TinIngot);
 
 		SulfurOre = new BlockSulfurOre();
 		SulfurDust = new ItemSulfurDust();
-		OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
 		
 		BauxiteOre = new BlockBauxiteOre();
 		AluminumIngot = new ItemAluminumIngot();
 		AluminumPlate = new ItemAluminumPlate();
-		OreDictionary.registerOre("ingotAluminum", AluminumIngot);
 		
 		RubyOre = new BlockRubyOre();
 		Ruby = new  ItemRuby();
-		OreDictionary.registerOre("Ruby", Ruby);
 		
 		SiliconOre = new BlockSiliconOre();
 		Silicon = new ItemSilicon();
@@ -510,7 +501,6 @@ public class CommonProxy {
 		SteelIngot = new ItemSteelIngot();
 		SteelPlate = new ItemSteelPlate();
 		MiniSteelPlate = new ItemMiniSteelPlate();
-		OreDictionary.registerOre("ingotSteel", SteelIngot);
 		
 		ElectricSkin = new ItemSkin.Builder()
 				.withTextureVariant("Electric", "M14Blue", "M14Red")
@@ -3919,8 +3909,17 @@ public class CommonProxy {
 		
 		compatibility.registerItem(ModernWarfareMod.MODID, Barrel, "Barrel");
 		compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
+		
+		OreDictionary.registerOre("ingotTitanium", TitaniumIngot);
+        OreDictionary.registerOre("ingotLead", LeadIngot);
+        OreDictionary.registerOre("ingotCopper", CopperIngot);
+        OreDictionary.registerOre("ingotTin", TinIngot);
+        OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
+        OreDictionary.registerOre("ingotAluminum", AluminumIngot);
+        OreDictionary.registerOre("Ruby", Ruby);
+        OreDictionary.registerOre("ingotSteel", SteelIngot);
 
-		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
+		compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
 
 		Builder marineArmorBuilder = new CustomArmor.Builder()
 				.withModId(ModernWarfareMod.MODID).withMaterial(Marine)
