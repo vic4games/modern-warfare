@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw;
 
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.attachments.ItemAKMIron;
@@ -3833,90 +3835,90 @@ public class CommonProxy {
 		Barrel = new ItemBarrel();
 		Plastic = new ItemPlastic();
 		
-		GameRegistry.registerItem(Bipod, "Bipod");
+		compatibility.registerItem(Bipod, "Bipod");
 
-		GameRegistry.registerItem(AKMIron, "AKMIron");
-		GameRegistry.registerItem(AR15Iron, "AR15Iron");
-		//GameRegistry.registerItem(Extra, "Extra");
+		compatibility.registerItem(AKMIron, "AKMIron");
+		compatibility.registerItem(AR15Iron, "AR15Iron");
+		//compatibility.registerItem(Extra, "Extra");
 
-		GameRegistry.registerItem(Bullets, "Bullets");
-		GameRegistry.registerItem(Electronics, "Electronics");
-		GameRegistry.registerItem(CGrip, "CGrip");
-		GameRegistry.registerItem(OpticGlass, "OpticGlass");
-		GameRegistry.registerItem(Cloth, "Cloth");
-		GameRegistry.registerItem(TanCloth, "TanCloth");
-		GameRegistry.registerItem(GreenCloth, "GreenCloth");
+		compatibility.registerItem(Bullets, "Bullets");
+		compatibility.registerItem(Electronics, "Electronics");
+		compatibility.registerItem(CGrip, "CGrip");
+		compatibility.registerItem(OpticGlass, "OpticGlass");
+		compatibility.registerItem(Cloth, "Cloth");
+		compatibility.registerItem(TanCloth, "TanCloth");
+		compatibility.registerItem(GreenCloth, "GreenCloth");
 
-		GameRegistry.registerBlock(TitaniumOre, "TitaniumOre");
-		GameRegistry.registerItem(TitaniumIngot, "TitaniumIngot");
+		compatibility.registerBlock(TitaniumOre, "TitaniumOre");
+		compatibility.registerItem(TitaniumIngot, "TitaniumIngot");
 
-		GameRegistry.registerBlock(LeadOre, "LeadOre");
-		GameRegistry.registerItem(LeadIngot, "LeadIngot");
+		compatibility.registerBlock(LeadOre, "LeadOre");
+		compatibility.registerItem(LeadIngot, "LeadIngot");
 
-		GameRegistry.registerBlock(CopperOre, "CopperOre");
-		GameRegistry.registerItem(CopperIngot, "CopperIngot");
+		compatibility.registerBlock(CopperOre, "CopperOre");
+		compatibility.registerItem(CopperIngot, "CopperIngot");
 
-		GameRegistry.registerBlock(TinOre, "TinOre");
-		GameRegistry.registerItem(TinIngot, "TinIngot");
+		compatibility.registerBlock(TinOre, "TinOre");
+		compatibility.registerItem(TinIngot, "TinIngot");
 
-		GameRegistry.registerBlock(SulfurOre, "SulfurOre");
-		GameRegistry.registerItem(SulfurDust, "SulfurDust");
+		compatibility.registerBlock(SulfurOre, "SulfurOre");
+		compatibility.registerItem(SulfurDust, "SulfurDust");
 		
-		GameRegistry.registerBlock(BauxiteOre, "BauxiteOre");
-		GameRegistry.registerItem(AluminumIngot, "AluminumIngot");
-		GameRegistry.registerItem(AluminumPlate, "AluminumPlate");
+		compatibility.registerBlock(BauxiteOre, "BauxiteOre");
+		compatibility.registerItem(AluminumIngot, "AluminumIngot");
+		compatibility.registerItem(AluminumPlate, "AluminumPlate");
 		
-		GameRegistry.registerBlock(SiliconOre, "SiliconOre");
-		GameRegistry.registerItem(Silicon, "Silicon");
+		compatibility.registerBlock(SiliconOre, "SiliconOre");
+		compatibility.registerItem(Silicon, "Silicon");
 		
-		GameRegistry.registerBlock(TantalumOre, "TantalumOre");
-		GameRegistry.registerItem(TantalumIngot, "TantalumIngot");
+		compatibility.registerBlock(TantalumOre, "TantalumOre");
+		compatibility.registerItem(TantalumIngot, "TantalumIngot");
 		
-		GameRegistry.registerBlock(RubyOre, "RubyOre");
-		GameRegistry.registerItem(Ruby, "Ruby");
+		compatibility.registerBlock(RubyOre, "RubyOre");
+		compatibility.registerItem(Ruby, "Ruby");
 		
-		GameRegistry.registerItem(SteelDust, "SteelDust");
-		GameRegistry.registerItem(SteelIngot, "SteelIngot");
-		GameRegistry.registerItem(SteelPlate, "SteelPlate");
-		GameRegistry.registerItem(MiniSteelPlate, "MiniSteelPlate");
+		compatibility.registerItem(SteelDust, "SteelDust");
+		compatibility.registerItem(SteelIngot, "SteelIngot");
+		compatibility.registerItem(SteelPlate, "SteelPlate");
+		compatibility.registerItem(MiniSteelPlate, "MiniSteelPlate");
 		
-		GameRegistry.registerItem(WeaponStock, "WeaponStock");
-		GameRegistry.registerItem(RetractableStock, "RetractableStock");
-		GameRegistry.registerItem(SecondaryStock, "SecondaryStock");
-		GameRegistry.registerItem(WoodWeaponStock, "WoodWeaponStock");
-		GameRegistry.registerItem(WoodRifleStock, "WoodRifleStock");
+		compatibility.registerItem(WeaponStock, "WeaponStock");
+		compatibility.registerItem(RetractableStock, "RetractableStock");
+		compatibility.registerItem(SecondaryStock, "SecondaryStock");
+		compatibility.registerItem(WoodWeaponStock, "WoodWeaponStock");
+		compatibility.registerItem(WoodRifleStock, "WoodRifleStock");
 		
-		GameRegistry.registerItem(WeaponReceiver, "WeaponReceiver");
-		GameRegistry.registerItem(SMGReceiver, "SMGReceiver");
-		GameRegistry.registerItem(UnderReceiver, "UnderReceiver");
-		GameRegistry.registerItem(RifleReceiver, "RifleReceiver");
-		GameRegistry.registerItem(PistolUnderReceiver, "PistolUnderReceiver");
-		GameRegistry.registerItem(P90Receiver, "P90Receiver");
+		compatibility.registerItem(WeaponReceiver, "WeaponReceiver");
+		compatibility.registerItem(SMGReceiver, "SMGReceiver");
+		compatibility.registerItem(UnderReceiver, "UnderReceiver");
+		compatibility.registerItem(RifleReceiver, "RifleReceiver");
+		compatibility.registerItem(PistolUnderReceiver, "PistolUnderReceiver");
+		compatibility.registerItem(P90Receiver, "P90Receiver");
 		
-		GameRegistry.registerItem(RevolverAction, "RevolverAction");
-		GameRegistry.registerItem(RevolverGrip, "RevolverGrip");
-		GameRegistry.registerItem(RevolverReceiver, "RevolverReceiver");
+		compatibility.registerItem(RevolverAction, "RevolverAction");
+		compatibility.registerItem(RevolverGrip, "RevolverGrip");
+		compatibility.registerItem(RevolverReceiver, "RevolverReceiver");
 		
-		GameRegistry.registerItem(ShotgunReceiver, "ShotgunReceiver");
-		GameRegistry.registerItem(ShotgunGrip, "ShotgunGrip");
+		compatibility.registerItem(ShotgunReceiver, "ShotgunReceiver");
+		compatibility.registerItem(ShotgunGrip, "ShotgunGrip");
 		
-		GameRegistry.registerItem(ScarReceiver, "ScarReceiver");
+		compatibility.registerItem(ScarReceiver, "ScarReceiver");
 		
-		GameRegistry.registerItem(DeagleReceiver, "DeagleReceiver");
+		compatibility.registerItem(DeagleReceiver, "DeagleReceiver");
 		
-		GameRegistry.registerItem(LMGReceiver, "LMGReceiver");
+		compatibility.registerItem(LMGReceiver, "LMGReceiver");
 		
-		GameRegistry.registerItem(Transistor, "Transistor");
-		GameRegistry.registerItem(Resistor, "Resistor");
-		GameRegistry.registerItem(Inductor, "Inductor");
-		GameRegistry.registerItem(Diode, "Diode");
-		GameRegistry.registerItem(Capacitor, "Capacitor");
-		GameRegistry.registerItem(CopperWiring, "CopperWiring");
-		GameRegistry.registerItem(Piston, "Piston");
-		GameRegistry.registerItem(LaserPointer, "LaserPointer");
+		compatibility.registerItem(Transistor, "Transistor");
+		compatibility.registerItem(Resistor, "Resistor");
+		compatibility.registerItem(Inductor, "Inductor");
+		compatibility.registerItem(Diode, "Diode");
+		compatibility.registerItem(Capacitor, "Capacitor");
+		compatibility.registerItem(CopperWiring, "CopperWiring");
+		compatibility.registerItem(Piston, "Piston");
+		compatibility.registerItem(LaserPointer, "LaserPointer");
 		
-		GameRegistry.registerItem(Barrel, "Barrel");
-		GameRegistry.registerItem(Plastic, "plastic");
+		compatibility.registerItem(Barrel, "Barrel");
+		compatibility.registerItem(Plastic, "plastic");
 
 		GameRegistry.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
 
