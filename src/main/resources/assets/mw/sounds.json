@@ -12,7 +12,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "dry-fire",
+       "name": "mw:dry-fire",
        "stream": false
       }
     ]
