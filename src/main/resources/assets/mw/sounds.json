@@ -8,6 +8,15 @@
       }
     ]
   },
+  "dryfire": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "dry-fire",
+       "stream": false
+      }
+    ]
+  },
   "AK47": {
     "category": "master",
     "sounds": [
