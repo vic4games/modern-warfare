@@ -471,9 +471,9 @@ public class CommonProxy {
 
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
-        ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("click");
+        ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
 
-        ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("click");
+        ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("GunFireModeSwitch");
 
         Bullets = new ItemBullets();
         Electronics = new ItemElectronics();
