@@ -20,6 +20,7 @@ import com.vicmatskiv.mw.blocks.BlockSulfurOre;
 import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
+import com.vicmatskiv.mw.items.ItemGrenades;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.guns.*;
 import com.vicmatskiv.mw.models.AK47iron;
@@ -88,6 +89,7 @@ import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
+import com.vicmatskiv.weaponlib.ItemAmmo;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
@@ -310,6 +312,8 @@ public class CommonProxy {
     // public static Item SMAW;
     // public static Item GaussRifle;
     // public static Item RPG;
+    
+	private static Item GrenadeLauncher;
 
     // Fun guns :)
     public static Item M41A;
@@ -445,6 +449,8 @@ public class CommonProxy {
 
     public static Item Barrel;
     public static Item Plastic;
+    
+    public static ItemAmmo Grenades;
 
     static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, new int[] { 3, 5, 4, 3 }, 15,
             null, 0); // TODO: last
@@ -453,10 +459,12 @@ public class CommonProxy {
                       // it work?
     static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40,
             new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
+
                                                     // last
                                                     // argument,
                                                     // how does
                                                     // it work?
+	
 
     // private ClientEventHandler clientEventHandler = new ClientEventHandler();
 
@@ -478,6 +486,8 @@ public class CommonProxy {
         
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dryfire");
 
+        Grenades = new ItemGrenades();
+        
         Bullets = new ItemBullets();
         Electronics = new ItemElectronics();
         CGrip = new ItemCGrip();
@@ -3165,6 +3175,8 @@ public class CommonProxy {
         Barrel = new ItemBarrel();
         Plastic = new ItemPlastic();
 
+        compatibility.registerItem(ModernWarfareMod.MODID, Grenades, "Grenades");
+        
         compatibility.registerItem(ModernWarfareMod.MODID, Bipod, "Bipod");
 
         compatibility.registerItem(ModernWarfareMod.MODID, AKMIron, "AKMIron");
@@ -3416,7 +3428,7 @@ public class CommonProxy {
         M41A = new M41AFactory().createGun(this);
         Pistol10mm = new Pistol10mmFactory().createGun(this);
 
-        // GrenadeLauncher = new GrenadeLauncherFactory().createGun(this);
+        GrenadeLauncher = new GrenadeLauncherFactory().createGun(this);
         // GaussRifle = new GaussRifleFactory().createGun(this);
         // RPG = new RPGFactory().createGun(this);
 
