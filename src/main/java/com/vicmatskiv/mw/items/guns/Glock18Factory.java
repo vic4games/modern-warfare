@@ -42,7 +42,7 @@ public class Glock18Factory implements GunFactory {
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
-		"Caliber: 9mm", "Magazines:", "17rnd 9mm Magazine",
+		"Caliber: 9mm", "Magazines:", "20rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
 				(a, i) -> {

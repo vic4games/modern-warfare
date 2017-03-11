@@ -65,6 +65,13 @@ public class AK47Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Vulcan, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Vulcan.getTextureVariantIndex("AK47Vulcan"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.PMAG762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
@@ -143,7 +150,7 @@ public class AK47Factory implements GunFactory {
 				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.05F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.1F);
 				GL11.glRotatef(-2.5F, 1f, 0f, 0f);
 				})
 				

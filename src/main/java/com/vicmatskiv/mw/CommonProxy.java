@@ -366,6 +366,7 @@ public class CommonProxy {
     public static ItemSkin LightningStrike;
     public static ItemSkin Asiimov;
     public static ItemSkin Fade;
+    public static ItemSkin Vulcan;
 
     public static Item Bullets;
     public static Item Electronics;
@@ -537,6 +538,10 @@ public class CommonProxy {
 
         Fade = new ItemSkin.Builder().withTextureVariant("G18Fade").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withName("Fade")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+        
+        Vulcan = new ItemSkin.Builder().withTextureVariant("AK47Vulcan").withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.gunsTab).withName("Vulcan")
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         ShotgunShell = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
