@@ -35,6 +35,24 @@
       }
     ]
   },
+  "GunFireModeSwitch": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "GunFireModeSwitch",
+       "stream": false
+      }
+    ]
+  },
+  "OpticZoom": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "OpticZoom",
+       "stream": false
+      }
+    ]
+  },
   "RPK": {
     "category": "master",
     "sounds": [
