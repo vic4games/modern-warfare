@@ -71,6 +71,27 @@ public class KrissVectorTacticalFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
 			GL11.glTranslatef(-0.43F, 0.8F, 0.2F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
@@ -248,12 +269,12 @@ public class KrissVectorTacticalFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0.34F, -0.4F, -0.05F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.3F);
-				GL11.glRotatef(-4F, 1f, 0f, 0f);
-				})
+                GL11.glTranslatef(0.34F, -0.4F, -0.05F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glTranslatef(-0.4F, -0.8F, 1.4F);
+                GL11.glRotatef(-3F, 1f, 0f, 0f);
+                })
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(0.077F, -0.35F, -0.26F);

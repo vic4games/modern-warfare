@@ -66,6 +66,20 @@ public class M14Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.M14DMRMag, (model) -> {
 			GL11.glTranslatef(0F, 0F, -0.1F);
 		})

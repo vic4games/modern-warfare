@@ -43,6 +43,13 @@ public class MAC11Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 6", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
 				(a, i) -> {
 					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
@@ -50,6 +57,34 @@ public class MAC11Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
 			GL11.glTranslatef(-0.32F, 0.1F, 1.12F);
 			})
@@ -90,22 +125,22 @@ public class MAC11Factory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0F, -0.3F, -0.7F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-7F, 1f, 0f, 0f);
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.1F, -0.76F, 1.7F);
-				})
-				
-			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-				GL11.glTranslatef(-0.20F, -0.31F, -0.4F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glTranslatef(0F, -0.3F, -0.7F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glRotatef(-7F, 1f, 0f, 0f);
+                GL11.glScaled(0.6F, 0.6F, 0.6F);
+                GL11.glTranslatef(-1.1F, -0.76F, 1.8F);
+                })
+                
+            .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+                GL11.glTranslatef(-0.20F, -0.31F, -0.4F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
 
-				// Zoom
-				GL11.glTranslatef(0.31F, -1.31f, 1.6f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+                // Zoom
+                GL11.glTranslatef(0.31F, -1.31f, 1.7f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
 			/*	// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {

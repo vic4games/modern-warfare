@@ -74,6 +74,27 @@ public class M4A1Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO40rnd, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {})

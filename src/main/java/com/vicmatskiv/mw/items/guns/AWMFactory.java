@@ -71,12 +71,26 @@ public class AWMFactory implements GunFactory {
 				}
 		)
 		.withCompatibleAttachment(CommonProxy.LightningStrike, 
-				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.LightningStrike.getTextureVariantIndex("AWPLightningStrike"));
-				}, 
-				(a, i) -> {
-				}
-		)
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.LightningStrike.getTextureVariantIndex("AWPLightningStrike"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
 	    		GL11.glTranslatef(0.17F, -1.42F, 0.43F);

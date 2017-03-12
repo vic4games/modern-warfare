@@ -137,6 +137,7 @@ item.SR25.name=SR-25
 item.Minimi.name=FN Minimi
 item.ACR.name=Remington ACR
 item.Glock18.name=Glock-18
+item.SMAW.name=Mk153 SMAW
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
@@ -202,6 +203,7 @@ item.mw_Bullet65x39.name=6.5x39mm NATO Bullet
 item.mw_Bullet10x24.name=10x24mm Bullet
 item.mw_Bullet10mm.name=10mm Bullet
 item.mw_Bullet300Blackout.name=.300 AAC Blackout Bullet
+item.mw_SMAWRocket.name=Mk153 SMAW Rocket
 
 item.mw_Acog.name=Trigicon Acog Scope
 item.mw_Reflex.name=15 MOA Reflex
@@ -237,6 +239,10 @@ item.mw_Asiimov.name=Asiimov skin
 item.mw_Voltaic.name=Voltaic skin
 item.mw_Fade.name=Ruby skin
 item.mw_LightningStrike.name=Lightning Strike skin
+item.mw_Vulcan.name=Vulcan skin
+item.mw_Emerald.name=Emerald skin
+item.mw_Diamond.name=Diamond skin
+item.mw_Gold.name=Gold skin
 
 item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit

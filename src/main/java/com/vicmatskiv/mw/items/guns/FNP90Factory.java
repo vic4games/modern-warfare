@@ -52,6 +52,41 @@ public class FNP90Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.FNP90Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.FNP90Sight, true, (model) -> {
 			if(model instanceof FNP90Sight) {

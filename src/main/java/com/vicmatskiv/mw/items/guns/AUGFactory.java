@@ -72,6 +72,27 @@ public class AUGFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		 .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
 			GL11.glTranslatef(0.04F, 0.1F, 2.1F);
 			GL11.glScaled(0.8F, 0.9F, 0.9F);

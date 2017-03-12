@@ -64,6 +64,13 @@ public class MG36EFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Light machine gun", "Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "100rnd 5.56x45mm NATO Beta-C Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.2F);
 		})

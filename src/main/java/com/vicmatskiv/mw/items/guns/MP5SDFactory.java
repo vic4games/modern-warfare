@@ -58,6 +58,34 @@ public class MP5SDFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("--Automatically Silenced--", "", "Type: Submachine gun", "Damage: 6.5", 
 		"Caliber: 9mm", "Magazines:", "25rnd 9mm Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.MP5KMag, (model) -> {})
 	  .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof G36CIron1) {

@@ -62,6 +62,24 @@
       }
     ]
   },
+   "SMAW": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SMAW",
+       "stream": false
+      }
+    ]
+  },
+   "RocketLauncherReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "RocketLauncherReload",
+       "stream": false
+      }
+    ]
+  },
    "AWP": {
     "category": "master",
     "sounds": [

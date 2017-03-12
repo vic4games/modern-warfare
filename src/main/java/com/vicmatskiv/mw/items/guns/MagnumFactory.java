@@ -49,6 +49,13 @@ public class MagnumFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})

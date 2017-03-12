@@ -116,6 +116,21 @@ public class AK47Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        
+         .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withTextureNames("AK47", "AK47Blue", "AK47Red", "AKGold", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)

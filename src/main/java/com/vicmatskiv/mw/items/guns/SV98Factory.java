@@ -68,6 +68,13 @@ public class SV98Factory implements GunFactory {
 				GL11.glRotatef(-10F, 1f, 0f, 0f);
 			}
 		})
+		 .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt2, true, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {

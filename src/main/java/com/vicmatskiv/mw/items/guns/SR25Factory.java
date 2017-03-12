@@ -64,6 +64,41 @@ public class SR25Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Designated marksmen rifle", "Damage: 15", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "10rnd 7.62x51mm NATO Magazine (Type 2)",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.M110Mag, (model) -> {
 			GL11.glScaled(1F, 1F, 0.9F);
 			GL11.glTranslatef(0F, -0.1F, -0.08F);

@@ -57,6 +57,27 @@ public class MP40Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 5.5", 
 		"Caliber: 9mm", "Magazines:", "32rnd 9mm Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.MP40Mag, (model) -> {})
 	    .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
 			if(model instanceof G36CIron1) {

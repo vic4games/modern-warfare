@@ -74,6 +74,20 @@ public class AWPFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		 .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.L115Bolt2, true, (model) -> {})

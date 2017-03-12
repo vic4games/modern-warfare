@@ -51,6 +51,34 @@ public class MP7Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.6", 
 		"Caliber: 4.6x30mm", "Magazines:", "20rnd 4.6x30mm Magazine",
 		"Fire Rate: Auto"))
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.HKMP7Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
 			GL11.glTranslatef(0.055F, -1.64F, 0.6F);

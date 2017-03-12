@@ -44,6 +44,34 @@ public class G18Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: 9mm", "Magazines:", "17rnd 9mm Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("G18Fade"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);

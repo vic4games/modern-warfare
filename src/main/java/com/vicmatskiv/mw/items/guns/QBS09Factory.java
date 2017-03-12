@@ -71,6 +71,13 @@ public class QBS09Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
 		.withTextureNames("QBS09", "Electric")
 		 .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {

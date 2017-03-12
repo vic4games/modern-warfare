@@ -44,6 +44,13 @@ public class MakarovPMMFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
 		"Caliber: 9mm", "Magazines:", "10rnd 9mm Magazine",
 		"Fire Rate: Semi"))
+		 .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.MakarovTop, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
