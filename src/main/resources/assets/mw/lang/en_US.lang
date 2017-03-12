@@ -138,6 +138,7 @@ item.Minimi.name=FN Minimi
 item.ACR.name=Remington ACR
 item.Glock18.name=Glock-18
 item.SMAW.name=Mk153 SMAW
+item.HecateII.name=PGM Hecate II
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
@@ -184,6 +185,7 @@ item.mw_Glock32Mag.name=14rnd .357 Magazine
 item.mw_G18Mag.name=20rnd 9mm Magazine
 item.mw_NATO20rnd.name=20rnd 5.56x45mm NATO Magazine
 item.mw_NATO40rnd.name=40rnd 5.56x45mm NATO Magazine
+item.mw_HecateIIMag.name=7rnd .50 BMG Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet

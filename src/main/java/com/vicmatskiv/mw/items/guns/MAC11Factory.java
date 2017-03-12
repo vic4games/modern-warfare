@@ -181,7 +181,7 @@ public class MAC11Factory implements GunFactory {
 						GL11.glRotatef(-60F, 1f, 0f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
 						GL11.glTranslatef(1F, -1.2F, 0F);
-					}, 250, 500),
+					}, 250, 100),
 					
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(-0.4F, -0.2F, -0.3F);

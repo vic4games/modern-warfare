@@ -8,6 +8,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.oredict.OreDictionary;
 
 import org.lwjgl.opengl.GL11;
+
 import com.vicmatskiv.mw.blocks.BlockBauxiteOre;
 import com.vicmatskiv.mw.blocks.BlockCopperOre;
 import com.vicmatskiv.mw.blocks.BlockLeadOre;
@@ -176,6 +177,7 @@ public class CommonProxy {
     public static ItemAttachment<Weapon> P226Top;
     public static ItemAttachment<Weapon> P30Top;
     public static ItemAttachment<Weapon> MP5KGrip;
+    public static ItemAttachment<Weapon> HecateIIBoltAction;
 
     public static ItemBullet ShotgunShell;
     public static ItemBullet Magnum44Ammo;
@@ -307,6 +309,7 @@ public class CommonProxy {
     public static Item Minimi;
     public static Item ACR2;
     public static Item Glock18;
+    public static Item HecateII;
     // public static Item GaussRifle;
     // public static Item RPG;
 
@@ -361,6 +364,7 @@ public class CommonProxy {
     public static ItemMagazine G3Mag;
     public static ItemMagazine PP19Mag;
     public static ItemMagazine Glock32Mag;
+    public static ItemMagazine HecateIIMag;
 
     public static ItemSkin ElectricSkin;
     public static ItemSkin Voltaic;
@@ -1641,6 +1645,33 @@ public class CommonProxy {
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
+        HecateIIMag = new ItemMagazine.Builder()
+                .withAmmo(7)
+                .withCompatibleBullet(BMG50)
+                .withName("HecateIIMag")
+                .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.AS50Mag(), "NATOMag1.png")
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.6F, 0.7F);
+                })
+                .withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-1F, -0.5F, 0.8F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.6F, 0.7F);
+                })
+                .withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.9F, 0.2F, 0.4F);
+                    GL11.glRotatef(-130F, 0f, 1f, 0f);
+                    GL11.glRotatef(20F, 1f, 0f, 0f);
+                    GL11.glRotatef(-30F, 0f, 0f, 1f);
+                    GL11.glScaled(1F, 0.9F, 1f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         FNP90Mag = new ItemMagazine.Builder().withAmmo(50).withCompatibleBullet(Bullet57x28).withName("FNP90Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
@@ -2172,6 +2203,14 @@ public class CommonProxy {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.Grip2(), "GunmetalTexture.png").withName("MP5KGrip")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        HecateIIBoltAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                .withModel(new com.vicmatskiv.mw.models.HecateIIBoltAction(), "AK12.png")
+                .withName("HecateIIBoltAction")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Reflex = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -3326,11 +3365,6 @@ public class CommonProxy {
 
         compatibility.registerItem(ModernWarfareMod.MODID, Grenades, "Grenades");
 
-        compatibility.registerItem(ModernWarfareMod.MODID, Bipod, "Bipod");
-
-        compatibility.registerItem(ModernWarfareMod.MODID, AKMIron, "AKMIron");
-        compatibility.registerItem(ModernWarfareMod.MODID, AR15Iron, "AR15Iron");
-        // compatibility.registerItem(ModernWarfareMod.MODID, Extra, "Extra");
 
         compatibility.registerItem(ModernWarfareMod.MODID, Bullets, "Bullets");
         compatibility.registerItem(ModernWarfareMod.MODID, Electronics, "Electronics");
@@ -3556,6 +3590,7 @@ public class CommonProxy {
         AWP = new AWPFactory().createGun(this);
         AWM = new AWMFactory().createGun(this);
         SV98 = new SV98Factory().createGun(this);
+        HecateII = new HecateIIFactory().createGun(this);
         MosinNagant = new MosinNagantFactory().createGun(this);
         Dragonuv = new DragonuvFactory().createGun(this);
         M14 = new M14Factory().createGun(this);

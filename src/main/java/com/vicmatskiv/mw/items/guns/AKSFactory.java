@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;

@@ -35,6 +35,24 @@
       }
     ]
   },
+   "HecateII": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "HecateII",
+       "stream": false
+      }
+    ]
+  },
+  "BoltActionReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "BoltActionReload",
+       "stream": false
+      }
+    ]
+  },
   "GunFireModeSwitch": {
     "category": "master",
     "sounds": [

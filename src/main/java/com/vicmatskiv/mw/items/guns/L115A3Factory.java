@@ -443,7 +443,7 @@ public class L115A3Factory implements GunFactory {
 					GL11.glRotatef(-10F, 1f, 0f, 0f);
 					GL11.glScaled(0.55F, 0.55F, 0.55F);
 					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
+				}, 250, 100),
 				
 				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(0.2F, -0.5F, -0.3F);
