@@ -217,7 +217,7 @@ public class ModernWarfareMod {
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.SMAWRocket),
                 "AXX",
                 'X', CommonProxy.SteelPlate,
-                'A', Blocks.tnt
+                'A', Blocks.TNT
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Bullets, 32),

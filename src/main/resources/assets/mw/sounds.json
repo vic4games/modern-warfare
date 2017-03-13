@@ -39,7 +39,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "HecateII",
+       "name": "mw:HecateII",
        "stream": false
       }
     ]
@@ -48,7 +48,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "BoltActionReload",
+       "name": "mw:BoltActionReload",
        "stream": false
       }
     ]
@@ -57,7 +57,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "GunFireModeSwitch",
+       "name": "mw:GunFireModeSwitch",
        "stream": false
       }
     ]
@@ -66,7 +66,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "OpticZoom",
+       "name": "mw:OpticZoom",
        "stream": false
       }
     ]
@@ -84,7 +84,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "SMAW",
+       "name": "mw:SMAW",
        "stream": false
       }
     ]
@@ -93,7 +93,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "RocketLauncherReload",
+       "name": "mw:RocketLauncherReload",
        "stream": false
       }
     ]
