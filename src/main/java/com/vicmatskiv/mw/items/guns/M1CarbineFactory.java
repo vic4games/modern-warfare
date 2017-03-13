@@ -70,6 +70,13 @@ public class M1CarbineFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		 .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.M1CarbineMag, (model) -> {
 			GL11.glTranslatef(0.02F, 0.1F, -0.4F);
 			GL11.glScaled(0.9F, 1F, 1F);

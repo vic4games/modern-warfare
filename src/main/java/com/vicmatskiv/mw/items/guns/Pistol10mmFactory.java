@@ -48,6 +48,13 @@ public class Pistol10mmFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 9",
 		"Caliber: 10mm", "Magazines:", "10rnd 10mm Magazine",
 		"Fire Rate: Semi"))
+		.withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Mag10mm, (model) -> {
 			GL11.glTranslatef(0F, -0.2F, 0.14F);
 			GL11.glScaled(1F, 1F, 1F);

@@ -379,6 +379,11 @@ public class CommonProxy {
     public static ItemSkin Diamond;
     public static ItemSkin Gold;
     public static ItemSkin Sapphire;
+    public static ItemSkin Desert;
+    public static ItemSkin Forest;
+    public static ItemSkin Amber;
+    public static ItemSkin Arctic;
+    public static ItemSkin Amethyst;
 
     public static Item Bullets;
     public static Item Electronics;
@@ -728,6 +733,43 @@ public class CommonProxy {
                 .withName("Sapphire")
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
         
+        Desert = new ItemSkin.Builder()
+            .withTextureVariant("Desert")
+            .withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.gunsTab)
+            .withName("Desert")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+        
+        Forest = new ItemSkin.Builder()
+            .withTextureVariant("Forest")
+            .withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.gunsTab)
+            .withName("Forest")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+
+        Amber = new ItemSkin.Builder()
+            .withTextureVariant("Amber")
+            .withTextureVariant("M14Amber")
+            .withTextureVariant("HecateIIAmber")
+            .withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.gunsTab)
+            .withName("Amber")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+        
+        Arctic = new ItemSkin.Builder()
+            .withTextureVariant("Arctic")
+            .withTextureVariant("HecateIIArctic")
+            .withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.gunsTab)
+            .withName("Arctic")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+        
+        Amethyst = new ItemSkin.Builder()
+            .withTextureVariant("Amethyst")
+            .withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.gunsTab)
+            .withName("Amethyst")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Vulcan = new ItemSkin.Builder().withTextureVariant("AK47Vulcan").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withName("Vulcan")
@@ -3254,14 +3296,28 @@ public class CommonProxy {
 
         Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withModel(new com.vicmatskiv.mw.models.Laser(), "AK12.png")
-                .withPostRender(new LaserBeamRenderer()).withFirstPersonModelPositioning((model, itemStack) -> {
+                .withPostRender(new LaserBeamRenderer((p, s) -> {
+                    GL11.glTranslatef(-0.2F, 1.4F, 1.8F);
+//                    GL11.glRotatef(30F, 0f, 1f, 0f);
+//                    GL11.glScaled(0.6F, 0.6F, 0.6F);
+                }))
+                .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Laser) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
 
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                })
+                .withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR15Iron) {
+                       
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                })
+                .withThirdPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Laser) {
                         GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
@@ -3288,7 +3344,12 @@ public class CommonProxy {
 
         Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withModel(new com.vicmatskiv.mw.models.Laser2(), "AK12.png")
-                .withPostRender(new LaserBeamRenderer()).withFirstPersonModelPositioning((model, itemStack) -> {
+                .withPostRender(new LaserBeamRenderer((p, s) -> {
+                    GL11.glTranslatef(-0.2F, 1.3F, 1.8F);
+//                    GL11.glRotatef(30F, 0f, 1f, 0f);
+//                    GL11.glScaled(0.6F, 0.6F, 0.6F);
+                }))
+                .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Laser2) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);

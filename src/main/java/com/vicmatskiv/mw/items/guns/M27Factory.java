@@ -77,6 +77,13 @@ public class M27Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
@@ -225,11 +232,11 @@ public class M27Factory implements GunFactory {
 				GL11.glTranslatef(.135F, -0.7F, -1.25F);
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 			})
-			.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+			.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 				GL11.glTranslatef(.3F, -1.4F, -1.6F);
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 			})
-			.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+			.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 				GL11.glTranslatef(.3F, -1.4F, -1.6F);
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 			})

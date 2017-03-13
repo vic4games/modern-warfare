@@ -68,6 +68,13 @@ public class G3Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Amber, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Emerald, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));

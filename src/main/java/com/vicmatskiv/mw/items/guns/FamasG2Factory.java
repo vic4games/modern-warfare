@@ -103,6 +103,7 @@ public class FamasG2Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 2F);
 		})
@@ -207,11 +208,11 @@ public class FamasG2Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.6F, -0.7F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.25F, -1.4F, -1.3F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.25F, -1.4F, -1.3F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})

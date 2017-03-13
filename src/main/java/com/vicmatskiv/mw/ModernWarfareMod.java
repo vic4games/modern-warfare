@@ -637,8 +637,8 @@ public class ModernWarfareMod {
 		);
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Holo2),
-				"A  ",
-				"OR ",
+				"  A",
+				" RO",
 				"AXX",
 				'R', CommonProxy.Electronics,
 				'A', CommonProxy.MiniSteelPlate,
@@ -646,6 +646,17 @@ public class ModernWarfareMod {
 				'O', CommonProxy.OpticGlass,
 				'G', Blocks.GLASS_PANE
 		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Holographic2),
+                "  A",
+                "XRO",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Reflex),
 				"A  ",
@@ -705,6 +716,13 @@ public class ModernWarfareMod {
 				'A', CommonProxy.MiniSteelPlate
 		);
 		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.StubbyGrip),
+                "AXA",
+                " X ",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        );
+		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.VGrip),
 				"XAX",
 				" X ",
@@ -740,6 +758,63 @@ public class ModernWarfareMod {
 				'R', CommonProxy.LaserPointer,
 				'E', CommonProxy.Electronics
 		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Diamond),
+                "A",
+                'A', Items.diamond
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Gold),
+                "A",
+                'A', Items.gold_ingot
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Emerald),
+                "A",
+                'A', Items.emerald
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Sapphire),
+                "A",
+                'A', new ItemStack(Items.dye, 4, 4)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Fade),
+                "A",
+                'A', CommonProxy.Ruby
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Voltaic),
+                "AF",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'F', new ItemStack(Items.dye, 8, 8)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.LightningStrike),
+                "AF",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'F', new ItemStack(Items.dye, 9, 9)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.ElectricSkin),
+                "AF",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'F', new ItemStack(Items.dye, 12, 12)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Vulcan),
+                "AFR",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'F', new ItemStack(Items.dye, 12, 12),
+                'R', new ItemStack(Items.dye, 15, 15)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Asiimov),
+                "AFR",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'F', new ItemStack(Items.dye, 14, 14),
+                'R', new ItemStack(Items.dye, 15, 15)
+        );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.LaserPointer),
 				"XXX",

@@ -199,11 +199,11 @@ public class MXFactory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.5F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.35F, -1.2F, -2F);
 			GL11.glScaled(0.7F, 0.7F, 0.7F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.35F, -1.2F, -2F);
 			GL11.glScaled(0.7F, 0.7F, 0.7F);
 		})
