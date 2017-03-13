@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MP5NFactory implements GunFactory {
 
@@ -55,6 +56,10 @@ public class MP5NFactory implements GunFactory {
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(2)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.7", 
 		"Caliber: 9mm", "Magazines:", "25rnd 9mm Magazine",
 		"Fire Rate: Auto"))

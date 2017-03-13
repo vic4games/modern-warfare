@@ -290,6 +290,8 @@ item.mw_SteelDust.name=Steel Dust
 item.mw_SteelIngot.name=Steel Ingot
 item.mw_SteelPlate.name=Steel Plate
 item.mw_MiniSteelPlate.name=Small Steel Plate
+item.mw_BigSteelPlate.name=Big Steel Plate
+item.mw_MetalComponents.name=Metal Components
 
 item.mw_WeaponStock.name=Weapon Stock
 item.mw_WoodWeaponStock.name=Weapon Stock (Wood)
@@ -330,6 +332,10 @@ item.mw_AR15Iron.name=AR-15 Action/Iron Sight
 itemGroup.guns_tab=Modern Warfare
 
 key.categories.weaponlib=Modern Warfare
+
+key.texture_change=Change Gun Skin
+
+key.fire_mode=Selective Fire
 
 key.reload=Reload Gun
 

@@ -36,6 +36,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M16A3Factory implements GunFactory {
 
@@ -63,6 +64,10 @@ public class M16A3Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 6.8", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",

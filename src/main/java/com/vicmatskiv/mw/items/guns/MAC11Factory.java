@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MAC11Factory implements GunFactory {
 
@@ -40,6 +41,9 @@ public class MAC11Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.45f)
 		.withFlashOffsetY(() -> 0.22f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 6", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))

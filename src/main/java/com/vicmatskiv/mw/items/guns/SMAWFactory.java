@@ -26,6 +26,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SMAWFactory implements GunFactory {
 
@@ -33,7 +34,6 @@ public class SMAWFactory implements GunFactory {
         return new Weapon.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("SMAW")
-                .withAmmo(CommonProxy.Grenades)
                 .withAmmoCapacity(1)
                 .withFireRate(0.5f)
                 .withRecoil(2f)
@@ -47,6 +47,10 @@ public class SMAWFactory implements GunFactory {
                 .withCrosshairRunning("Running")
                 .withCrosshairZoomed("Sight")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCrafting(CraftingComplexity.HIGH, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MetalComponents,
+                CommonProxy.BigSteelPlate)
                 .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
                     if (model instanceof M4Iron1) {
                         GL11.glTranslatef(0.41F, -2.13F, 1.1F);

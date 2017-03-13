@@ -34,6 +34,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M240Factory implements GunFactory {
 
@@ -60,6 +61,11 @@ public class M240Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: General-purpose machine gun", "Damage: 8.5", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "200rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Auto"))

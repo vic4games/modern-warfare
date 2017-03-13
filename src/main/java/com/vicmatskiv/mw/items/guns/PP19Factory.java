@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class PP19Factory implements GunFactory {
 
@@ -54,6 +55,9 @@ public class PP19Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.HIGH, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun","Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "65rnd 9mm Magazine",
 		"Fire Rate: Auto"))

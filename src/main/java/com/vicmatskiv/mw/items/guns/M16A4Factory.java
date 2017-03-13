@@ -65,12 +65,10 @@ public class M16A4Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withCrafting(CraftingComplexity.LOW, 
-				CommonProxy.Barrel,
+		.withCrafting(CraftingComplexity.MEDIUM, 
 				CommonProxy.SteelPlate,
-				CommonProxy.WeaponReceiver,
-				CommonProxy.CGrip,
-				CommonProxy.SecondaryStock)
+				CommonProxy.MiniSteelPlate,
+				CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 6.8", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"30rnd 5.56x45mm NATO PMAG Magazine", "100rnd 5.56x45mm NATO Beta-C Magazine",

@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MP40Factory implements GunFactory {
 
@@ -54,7 +55,10 @@ public class MP40Factory implements GunFactory {
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 5.5", 
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
+		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "32rnd 9mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Diamond, 
@@ -489,7 +493,7 @@ public class MP40Factory implements GunFactory {
 					}, 250, 50))
 				
 			.build())
-		.withSpawnEntityDamage(5.5f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.028f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M41AFactory implements GunFactory {
 
@@ -53,6 +54,11 @@ public class M41AFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.15f)
 		.withFlashOffsetY(() -> 0.2f)
 		.withCreativeTab(ModernWarfareMod.FunGunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MetalComponents,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("--ALIEN was a good movie--", "", "Type: Pulse rifle", "Damage: 4",
 		"Caliber: 10x24mm", "Magazines:", "99rnd 10x24mm Magazine", "Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Gold, 

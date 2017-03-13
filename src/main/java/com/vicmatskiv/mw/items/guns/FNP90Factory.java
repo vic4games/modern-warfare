@@ -16,6 +16,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class FNP90Factory implements GunFactory {
 
@@ -42,6 +43,10 @@ public class FNP90Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.29f)
 		.withFlashOffsetY(() -> 0.3f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.5", 
 		"Caliber: 5.7x28mm", "Magazines:", "50rnd 5.7x28mm Magazine",
 		"Fire Rate: Auto"))

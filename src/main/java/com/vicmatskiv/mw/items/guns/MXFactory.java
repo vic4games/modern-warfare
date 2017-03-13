@@ -35,6 +35,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MXFactory implements GunFactory {
 
@@ -62,7 +63,11 @@ public class MXFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.6", 
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents)
+		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 8", 
 		"Caliber: 6.5x39mm NATO", "Magazines:", "30rnd 6.5x39mm NATO Magazine"))
 		.withCompatibleAttachment(CommonProxy.MXMag, (model) -> {
 			GL11.glTranslatef(0F, 0F, 0.07F);
@@ -572,7 +577,7 @@ public class MXFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(7.6f)
+		.withSpawnEntityDamage(8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

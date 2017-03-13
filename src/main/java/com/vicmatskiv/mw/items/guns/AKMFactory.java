@@ -3,6 +3,7 @@ package com.vicmatskiv.mw.items.guns;
 import java.util.Arrays;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -27,6 +28,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class AKMFactory implements GunFactory {
 
@@ -54,6 +56,11 @@ public class AKMFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents,
+                Blocks.planks)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.4", 
 		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine" , "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))

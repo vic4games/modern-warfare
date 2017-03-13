@@ -34,6 +34,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class KrissVectorTacticalFactory implements GunFactory {
 
@@ -61,6 +62,11 @@ public class KrissVectorTacticalFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.2f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.LOW, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot,
+                CommonProxy.BigSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.5", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))

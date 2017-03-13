@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class XEagleFactory implements GunFactory {
 
@@ -41,6 +42,9 @@ public class XEagleFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
 		"Caliber: .357", "Magazines:", "9rnd .357 Magazine", "Fire Rate: Semi"))
 		 .withCompatibleAttachment(CommonProxy.Diamond, 

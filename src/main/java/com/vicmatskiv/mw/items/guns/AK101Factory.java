@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class AK101Factory implements GunFactory {
 
@@ -54,6 +55,10 @@ public class AK101Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7.5", 
 		"Caliber: 5.56x45mm", "Magazines:", "32rnd 5.56x45mm Magazine",
 		"Fire Rate: Auto"))
