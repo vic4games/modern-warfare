@@ -24,7 +24,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlock;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 import net.minecraft.block.Block;
@@ -60,7 +60,7 @@ public class AK74NFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CompatibleBlock.PLANK)
+                CompatibleBlocks.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7.4", 
 		"Caliber: 5.56x39mm", "Magazines:", "32rnd 5.56x39mm Magazine",
 		"Fire Rate: Auto"))
