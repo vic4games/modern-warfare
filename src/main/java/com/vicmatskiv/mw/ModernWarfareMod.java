@@ -655,7 +655,7 @@ public class ModernWarfareMod {
                 'A', CommonProxy.MiniSteelPlate,
                 'X', CommonProxy.SteelIngot,
                 'O', CommonProxy.OpticGlass,
-                'G', Blocks.glass_pane
+                'G', Blocks.GLASS_PANE
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Reflex),
@@ -761,22 +761,22 @@ public class ModernWarfareMod {
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Diamond),
                 "A",
-                'A', Items.diamond
+                'A', Items.DIAMOND
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Gold),
                 "A",
-                'A', Items.gold_ingot
+                'A', Items.GOLD_INGOT
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Emerald),
                 "A",
-                'A', Items.emerald
+                'A', Items.EMERALD
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Sapphire),
                 "A",
-                'A', new ItemStack(Items.dye, 4, 4)
+                'A', new ItemStack(Items.DYE, 4, 4)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Fade),
@@ -786,34 +786,34 @@ public class ModernWarfareMod {
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Voltaic),
                 "AF",
-                'A', new ItemStack(Items.dye, 5, 5),
-                'F', new ItemStack(Items.dye, 8, 8)
+                'A', new ItemStack(Items.DYE, 5, 5),
+                'F', new ItemStack(Items.DYE, 8, 8)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.LightningStrike),
                 "AF",
-                'A', new ItemStack(Items.dye, 5, 5),
-                'F', new ItemStack(Items.dye, 9, 9)
+                'A', new ItemStack(Items.DYE, 5, 5),
+                'F', new ItemStack(Items.DYE, 9, 9)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.ElectricSkin),
                 "AF",
-                'A', new ItemStack(Items.dye, 0, 0),
-                'F', new ItemStack(Items.dye, 12, 12)
+                'A', new ItemStack(Items.DYE, 0, 0),
+                'F', new ItemStack(Items.DYE, 12, 12)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Vulcan),
                 "AFR",
-                'A', new ItemStack(Items.dye, 0, 0),
-                'F', new ItemStack(Items.dye, 12, 12),
-                'R', new ItemStack(Items.dye, 15, 15)
+                'A', new ItemStack(Items.DYE, 0, 0),
+                'F', new ItemStack(Items.DYE, 12, 12),
+                'R', new ItemStack(Items.DYE, 15, 15)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Asiimov),
                 "AFR",
-                'A', new ItemStack(Items.dye, 0, 0),
-                'F', new ItemStack(Items.dye, 14, 14),
-                'R', new ItemStack(Items.dye, 15, 15)
+                'A', new ItemStack(Items.DYE, 0, 0),
+                'F', new ItemStack(Items.DYE, 14, 14),
+                'R', new ItemStack(Items.DYE, 15, 15)
         );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.LaserPointer),
