@@ -59,7 +59,7 @@ public class DragonuvFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CompatibleBlock.PLANK.getBlock())
+                CompatibleBlock.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 25.5", 
 		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))

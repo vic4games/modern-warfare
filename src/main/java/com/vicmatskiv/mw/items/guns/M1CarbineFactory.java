@@ -59,7 +59,7 @@ public class M1CarbineFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot,
-                CompatibleBlock.PLANK.getBlock())
+                CompatibleBlock.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 6", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
 		"Fire Rate: Semi"))

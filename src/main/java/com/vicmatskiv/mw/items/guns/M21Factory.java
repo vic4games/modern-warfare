@@ -63,7 +63,7 @@ public class M21Factory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CompatibleBlock.PLANK.getBlock())
+                CompatibleBlock.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper", "Damage: 26", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "20rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))

@@ -60,7 +60,7 @@ public class AKMNFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CompatibleBlock.PLANK.getBlock())
+                CompatibleBlock.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7.4", 
 		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine", "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))
