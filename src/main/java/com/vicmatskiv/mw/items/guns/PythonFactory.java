@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class PythonFactory implements GunFactory {
 
@@ -40,8 +41,25 @@ public class PythonFactory implements GunFactory {
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
 		.withCreativeTab(ModernWarfareMod.gunsTab)	
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 10", 
 		"Ammo: .357 Bullet", "Fire Rate: Semi"))
+		 .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.PythonCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Bullet357, (model) -> {})

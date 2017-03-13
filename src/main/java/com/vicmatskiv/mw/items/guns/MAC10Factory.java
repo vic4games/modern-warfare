@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MAC10Factory implements GunFactory {
 
@@ -40,10 +41,47 @@ public class MAC10Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.45f)
 		.withFlashOffsetY(() -> 0.22f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 5", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
-		
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
 			GL11.glTranslatef(-0.32F, 0.1F, 1.12F);
 			})
@@ -88,7 +126,7 @@ public class MAC10Factory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(-7F, 1f, 0f, 0f);
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
-				GL11.glTranslatef(-1.1F, -0.76F, 1.7F);
+				GL11.glTranslatef(-1.1F, -0.76F, 1.8F);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -97,7 +135,7 @@ public class MAC10Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 
 				// Zoom
-				GL11.glTranslatef(0.31F, -1.31f, 1.6f);
+				GL11.glTranslatef(0.31F, -1.31f, 1.7f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
@@ -140,7 +178,7 @@ public class MAC10Factory implements GunFactory {
 						GL11.glRotatef(-60F, 1f, 0f, 0f);
 						GL11.glRotatef(-10F, 0f, 0f, 1f);
 						GL11.glTranslatef(1F, -1.2F, 0F);
-					}, 250, 500),
+					}, 250, 100),
 					
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(-0.4F, -0.2F, -0.3F);

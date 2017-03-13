@@ -1,9 +1,9 @@
 package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
-import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -28,6 +28,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class AK47Factory implements GunFactory {
 	
@@ -55,6 +56,11 @@ public class AK47Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+		        CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents,
+                Blocks.planks)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7.2", 
 		"Caliber: 7.62x39mm", "Magazines:", "30rnd 7.62x39mm Magazine", "30rnd 7.62x39mm PMAG Magazine",
 		"Fire Rate: Auto"))
@@ -65,6 +71,13 @@ public class AK47Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Vulcan, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Vulcan.getTextureVariantIndex("AK47Vulcan"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Magazine762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.PMAG762x39, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
@@ -109,6 +122,21 @@ public class AK47Factory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Fade, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        
+         .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withTextureNames("AK47", "AK47Blue", "AK47Red", "AKGold", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -143,7 +171,7 @@ public class AK47Factory implements GunFactory {
 				GL11.glTranslatef(0.47F, -0.38F, -0.19F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.05F);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.1F);
 				GL11.glRotatef(-2.5F, 1f, 0f, 0f);
 				})
 				

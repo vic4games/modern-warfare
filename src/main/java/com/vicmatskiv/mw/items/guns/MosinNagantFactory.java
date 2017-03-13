@@ -3,6 +3,7 @@ package com.vicmatskiv.mw.items.guns;
 import java.util.Arrays;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -33,6 +34,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MosinNagantFactory implements GunFactory {
 
@@ -61,6 +63,11 @@ public class MosinNagantFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.MetalComponents,
+                Blocks.planks)
 		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.MosinBolt, true, (model) -> {
 			if(model instanceof MosinBolt) {
@@ -68,6 +75,27 @@ public class MosinNagantFactory implements GunFactory {
 				GL11.glScaled(1F, 1F, 1F);
 			}
 		})
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("MosinNagantEmerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("MosinNagantGold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleBullet(CommonProxy.Bullet762x54, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
@@ -184,8 +212,8 @@ public class MosinNagantFactory implements GunFactory {
 				GL11.glTranslatef(0.25F, -0.13F, -0.3F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.2F);
-				GL11.glRotatef(-5F, 1f, 0f, 0f);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.3F);
+				GL11.glRotatef(-4F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -194,9 +222,9 @@ public class MosinNagantFactory implements GunFactory {
 				GL11.glScaled(0.6F, 0.6F, 0.6F);
 
 				// Zoom
-				GL11.glTranslatef(0.17F, -1.07f, 0.6f);
+				GL11.glTranslatef(0.17F, -1.07f, 0.7f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-2F, 1f, 0f, 0f);
+				GL11.glRotatef(-1F, 1f, 0f, 0f);
 				
 				// HP Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {

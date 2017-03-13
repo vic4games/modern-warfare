@@ -3,6 +3,7 @@ package com.vicmatskiv.mw.items.guns;
 import java.util.Arrays;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -27,6 +28,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1CarbineFactory implements GunFactory {
 
@@ -53,7 +55,12 @@ public class M1CarbineFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 7", 
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot,
+                Blocks.planks)
+		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 6", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -461,7 +468,7 @@ public class M1CarbineFactory implements GunFactory {
 					}, 250, 50))	
 					
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

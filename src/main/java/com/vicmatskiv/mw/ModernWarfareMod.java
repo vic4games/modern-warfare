@@ -28,7 +28,7 @@ public class ModernWarfareMod {
 	private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
 	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
 	public static final String MODID = "mw";
-	public static final String VERSION = "1.1";
+	public static final String VERSION = "1.8";
 	
 	@SidedProxy(serverSide = "com.vicmatskiv.weaponlib.CommonModContext", clientSide = "com.vicmatskiv.weaponlib.ClientModContext")
 	public static ModContext MOD_CONTEXT;
@@ -189,11 +189,36 @@ public class ModernWarfareMod {
 				'X', CommonProxy.SteelIngot
 		);
 		
-		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelPlate, 6),
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.SteelPlate, 2),
 				"XXX",
 				"XXX",
 				'X', CommonProxy.SteelIngot
 		);
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.BigSteelPlate),
+                "XAX",
+                'X', CommonProxy.SteelPlate,
+                'A', CommonProxy.MiniSteelPlate
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.MetalComponents),
+                "XA",
+                "AX",
+                'X', CommonProxy.SteelPlate,
+                'A', CommonProxy.SteelIngot
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.M9SD),
+                "AX",
+                'X', CommonProxy.M9,
+                'A', CommonProxy.Silencer9mm
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.SMAWRocket),
+                "AXX",
+                'X', CommonProxy.SteelPlate,
+                'A', Blocks.tnt
+        );
 		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Bullets, 32),
 				" R ",
@@ -1342,6 +1367,45 @@ public class ModernWarfareMod {
 					'X', CommonProxy.Bullet45ACP
 					
 			));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.G3Mag,
+                "XF",
+                "XA",
+                "FF",
+                    'A', CommonProxy.SteelIngot,
+                    'X', CommonProxy.Bullet762x51,
+                    'F', CommonProxy.MiniSteelPlate
+                    
+            ));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.PP19Mag,
+                "AAF",
+                "XXX",
+                "AAF",
+                    'A', CommonProxy.SteelIngot,
+                    'X', CommonProxy.Bullet9mm,
+                    'F', CommonProxy.MiniSteelPlate
+                    
+            ));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Glock32Mag,
+                "XA",
+                "XA",
+                "AF",
+                    'A', CommonProxy.SteelIngot,
+                    'X', CommonProxy.Bullet357,
+                    'F', CommonProxy.MiniSteelPlate
+                    
+            ));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.HecateIIMag,
+                "XFF",
+                "AXA",
+                    'A', CommonProxy.SteelIngot,
+                    'X', CommonProxy.BMG50,
+                    'F', CommonProxy.MiniSteelPlate
+                    
+            ));
 		
 	}
 }

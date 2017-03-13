@@ -34,6 +34,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class KrissVectorFactory implements GunFactory {
 
@@ -60,6 +61,11 @@ public class KrissVectorFactory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.2f)
+		.withCrafting(CraftingComplexity.LOW, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot,
+                CommonProxy.BigSteelPlate)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.5", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
@@ -71,6 +77,28 @@ public class KrissVectorFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("KrissVectorEmerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("KrissVectorGold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("KrissVectorSapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
 			GL11.glTranslatef(-0.43F, 0.8F, 0.2F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
@@ -251,8 +279,8 @@ public class KrissVectorFactory implements GunFactory {
 				GL11.glTranslatef(0.34F, -0.4F, -0.05F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 1.3F);
-				GL11.glRotatef(-4F, 1f, 0f, 0f);
+				GL11.glTranslatef(-0.4F, -0.8F, 1.4F);
+				GL11.glRotatef(-3F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

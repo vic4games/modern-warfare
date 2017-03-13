@@ -35,11 +35,65 @@
       }
     ]
   },
+   "HecateII": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "HecateII",
+       "stream": false
+      }
+    ]
+  },
+  "BoltActionReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "BoltActionReload",
+       "stream": false
+      }
+    ]
+  },
+  "GunFireModeSwitch": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "GunFireModeSwitch",
+       "stream": false
+      }
+    ]
+  },
+  "OpticZoom": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "OpticZoom",
+       "stream": false
+      }
+    ]
+  },
   "RPK": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:RPK",
+       "stream": false
+      }
+    ]
+  },
+   "SMAW": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "SMAW",
+       "stream": false
+      }
+    ]
+  },
+   "RocketLauncherReload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "RocketLauncherReload",
        "stream": false
       }
     ]

@@ -35,6 +35,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class ScarHFactory implements GunFactory {
 
@@ -62,6 +63,10 @@ public class ScarHFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.12f)
 		.withFlashOffsetY(() -> 0.15f)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate,
+                CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Battle rifle", "Damage: 7.4", "Nickname: Scar-H", 
 		"Caliber: .300 AAC Blackout", "Magazines:", "30rnd .300 AAC Blackout Magazine", "Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -71,6 +76,20 @@ public class ScarHFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.ScarHMag, (model) -> {
 			GL11.glTranslatef(0F, 0F, 0.07F);
 		})

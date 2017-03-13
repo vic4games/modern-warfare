@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MagnumFactory implements GunFactory {
 
@@ -39,7 +40,10 @@ public class MagnumFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
-		.withCreativeTab(ModernWarfareMod.gunsTab)	
+		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 9", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -49,6 +53,13 @@ public class MagnumFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})

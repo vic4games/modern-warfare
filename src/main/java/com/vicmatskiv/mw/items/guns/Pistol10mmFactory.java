@@ -14,6 +14,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class Pistol10mmFactory implements GunFactory {
 
@@ -41,6 +42,9 @@ public class Pistol10mmFactory implements GunFactory {
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.FunGunsTab)
+		.withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelPlate,
+                CommonProxy.MetalComponents)
 		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 9",
 		"Caliber: 10mm", "Magazines:", "10rnd 10mm Magazine",
 		"Fire Rate: Semi"))
