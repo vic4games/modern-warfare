@@ -60,6 +60,13 @@ public class PythonFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.PythonCase, true, (model) -> {
 		})
 		.withCompatibleBullet(CommonProxy.Bullet357, (model) -> {})

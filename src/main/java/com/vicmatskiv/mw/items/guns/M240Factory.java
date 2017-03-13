@@ -189,11 +189,11 @@ public class M240Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.32F, -1.28F, -2.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.32F, -1.28F, -2.2F);
 			GL11.glScaled(0.5F, 0.5F, 0.5F);
 		})

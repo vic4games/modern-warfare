@@ -83,6 +83,13 @@ public class Glock32Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -91,7 +98,7 @@ public class Glock32Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.Glock32Mag, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(0.01F, -0.7F, -2F);
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 			GL11.glRotatef(-90F, 0f, 0f, -4f);

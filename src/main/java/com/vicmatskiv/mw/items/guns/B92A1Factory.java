@@ -90,6 +90,13 @@ public class B92A1Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.M9Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);

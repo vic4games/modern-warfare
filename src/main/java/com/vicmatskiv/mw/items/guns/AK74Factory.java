@@ -78,6 +78,13 @@ public class AK74Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
          .withCompatibleAttachment(CommonProxy.Gold, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));

@@ -56,7 +56,7 @@ public class P30Factory implements GunFactory {
 		.withCompatibleAttachment(CommonProxy.M9BerettaMag, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(0.01F, -0.7F, -2.2F);
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 			GL11.glRotatef(-90F, 0f, 0f, -4f);

@@ -104,6 +104,13 @@ public class SR25Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.M110Mag, (model) -> {
 			GL11.glScaled(1F, 1F, 0.9F);
 			GL11.glTranslatef(0F, -0.1F, -0.08F);

@@ -83,6 +83,20 @@ public class FNFALFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withCompatibleAttachment(CommonProxy.Emerald, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
@@ -239,7 +253,7 @@ public class FNFALFactory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.8F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.2F, -1.5F, -1.25F);
 			GL11.glScaled(0.7F, 0.7F, 0.7F);
 		})

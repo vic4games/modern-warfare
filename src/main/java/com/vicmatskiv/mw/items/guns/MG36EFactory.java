@@ -76,6 +76,20 @@ public class MG36EFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Amber, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATODrum100, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.2F);
 		})

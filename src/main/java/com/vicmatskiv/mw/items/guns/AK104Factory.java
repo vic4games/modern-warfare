@@ -69,6 +69,20 @@ public class AK104Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Amber, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Fade, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));

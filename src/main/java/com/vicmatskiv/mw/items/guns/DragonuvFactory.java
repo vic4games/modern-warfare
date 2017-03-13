@@ -70,6 +70,13 @@ public class DragonuvFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Amber, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Fade, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));

@@ -195,11 +195,11 @@ public class L115A3Factory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 				GL11.glTranslatef(.3F, -1.15F, -1.8F);
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 				GL11.glTranslatef(.3F, -1.15F, -1.8F);
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
 		})

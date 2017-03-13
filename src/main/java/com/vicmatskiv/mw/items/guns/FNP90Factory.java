@@ -57,6 +57,13 @@ public class FNP90Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Amber, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Fade, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
@@ -92,6 +99,13 @@ public class FNP90Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.FNP90Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.FNP90Sight, true, (model) -> {
 			if(model instanceof FNP90Sight) {
@@ -102,7 +116,7 @@ public class FNP90Factory implements GunFactory {
 				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.34F, -1.7F, -0.1F);
 			GL11.glScaled(0.65F, 0.65F, 0.65F);
 		})

@@ -100,6 +100,20 @@ public class M4A2Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+         .withCompatibleAttachment(CommonProxy.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO40rnd, (model) -> {})
@@ -294,11 +308,11 @@ public class M4A2Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.7F, -1.25F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.3F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.3F, -1.4F, -1.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})

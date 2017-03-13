@@ -55,6 +55,13 @@ public class USP45Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Fade, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));

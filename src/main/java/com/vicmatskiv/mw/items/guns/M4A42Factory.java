@@ -85,6 +85,13 @@ public class M4A42Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		 .withCompatibleAttachment(CommonProxy.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO40rnd, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.NATO20rnd, (model) -> {})

@@ -68,6 +68,13 @@ public class MP40Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withCompatibleAttachment(CommonProxy.Gold, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));

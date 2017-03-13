@@ -69,6 +69,13 @@ public class M82Factory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		 .withCompatibleAttachment(CommonProxy.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Emerald, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));

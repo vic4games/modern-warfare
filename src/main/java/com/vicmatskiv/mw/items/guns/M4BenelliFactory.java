@@ -76,6 +76,13 @@ public class M4BenelliFactory implements GunFactory {
 				(a, i) -> {
 				}
 		)
+		.withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.Emerald, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));

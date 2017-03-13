@@ -55,6 +55,13 @@ public class M93RFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withCompatibleAttachment(CommonProxy.Gold, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));

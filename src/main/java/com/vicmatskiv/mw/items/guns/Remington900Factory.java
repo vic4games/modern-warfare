@@ -54,6 +54,13 @@ public class Remington900Factory implements GunFactory {
                 CommonProxy.SteelIngot)
 		.withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
+		.withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
 		})
 		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {

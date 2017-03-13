@@ -97,6 +97,20 @@ public class AS50Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.AS50Mag, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 			if(model instanceof AKMiron1) {
@@ -174,11 +188,11 @@ public class AS50Factory implements GunFactory {
 			GL11.glTranslatef(.135F, -0.84F, -2.1F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser2, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
 			GL11.glTranslatef(.25F, -1.4F, -2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
 			GL11.glTranslatef(.25F, -1.4F, -2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		})

@@ -98,6 +98,13 @@ public class AUGFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
 		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
 			GL11.glTranslatef(0.04F, 0.1F, 2.1F);
 			GL11.glScaled(0.8F, 0.9F, 0.9F);
