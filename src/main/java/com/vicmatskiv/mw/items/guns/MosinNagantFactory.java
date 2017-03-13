@@ -30,7 +30,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlock;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 import net.minecraft.block.Block;
@@ -67,7 +67,7 @@ public class MosinNagantFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CompatibleBlock.PLANK)
+                CompatibleBlocks.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.MosinBolt, true, (model) -> {
 			if(model instanceof MosinBolt) {

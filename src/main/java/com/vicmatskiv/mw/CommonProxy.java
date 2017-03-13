@@ -93,7 +93,7 @@ import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 import net.minecraft.block.Block;
@@ -738,7 +738,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.ShotgunShell(), "ShotgunShell.png")
                 .withCrafting(8, CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1.2F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -783,7 +783,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8, CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1.2F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -806,7 +806,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
                 .withCrafting(8, CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -829,7 +829,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
                 .withCrafting(8, CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -852,7 +852,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -875,7 +875,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -898,7 +898,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -921,7 +921,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -944,7 +944,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -967,7 +967,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -990,7 +990,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1013,7 +1013,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1036,7 +1036,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1059,7 +1059,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1082,7 +1082,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1105,7 +1105,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1127,7 +1127,7 @@ public class CommonProxy {
                 .withName("BMG50").withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.MEDIUM, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1150,7 +1150,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8,CraftingComplexity.LOW, 
                         "ingotCopper",
-                        CompatibleItem.GUNPOWDER)
+                        CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);

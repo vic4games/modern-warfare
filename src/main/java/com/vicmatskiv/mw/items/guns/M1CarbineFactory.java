@@ -24,7 +24,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlock;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 import net.minecraft.block.Block;
@@ -59,7 +59,7 @@ public class M1CarbineFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot,
-                CompatibleBlock.PLANK)
+                CompatibleBlocks.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 6", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
 		"Fire Rate: Semi"))
