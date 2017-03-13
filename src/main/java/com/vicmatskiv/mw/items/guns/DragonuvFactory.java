@@ -2,10 +2,6 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -28,7 +24,11 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlock;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 
 public class DragonuvFactory implements GunFactory {
 
@@ -59,7 +59,7 @@ public class DragonuvFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                Blocks.planks)
+                CompatibleBlock.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 25.5", 
 		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))
