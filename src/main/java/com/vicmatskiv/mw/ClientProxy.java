@@ -58,6 +58,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.AluminumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AluminumIngot", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.AluminumPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AluminumPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Barrel, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Barrel", "inventory"));
+	    renderItem.getItemModelMesher().register(CommonProxy.BigSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "BigSteelPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Bullets, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Bullets", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.CGrip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "CGrip", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Capacitor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Capacitor", "inventory"));
@@ -72,6 +73,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(CommonProxy.LMGReceiver, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LMGReceiver", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.LaserPointer, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LaserPointer", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.LeadIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LeadIngot", "inventory"));
+        renderItem.getItemModelMesher().register(CommonProxy.MetalComponents, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "MetalComponents", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.MiniSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "MiniSteelPlate", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.OpticGlass, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "OpticGlass", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.P90Receiver, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "P90Receiver", "inventory"));
