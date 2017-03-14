@@ -82,6 +82,13 @@ public class MosinNagantFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("MosinNagantForest"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));

@@ -742,6 +742,7 @@ public class CommonProxy {
         
         Forest = new ItemSkin.Builder()
             .withTextureVariant("Forest")
+            .withTextureVariant("MosinNagantForest")
             .withModId(ModernWarfareMod.MODID)
             .withCreativeTab(ModernWarfareMod.gunsTab)
             .withName("Forest")
