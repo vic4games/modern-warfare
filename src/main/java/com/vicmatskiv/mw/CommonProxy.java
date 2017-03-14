@@ -163,6 +163,7 @@ public class CommonProxy {
     public static ItemAttachment<Weapon> M9Top;
     public static ItemAttachment<Weapon> P2000Top;
     public static ItemAttachment<Weapon> DeagleTop;
+    public static ItemAttachment<Weapon> Deagle44Top;
     public static ItemAttachment<Weapon> KSGPump;
     public static ItemAttachment<Weapon> L115Bolt1;
     public static ItemAttachment<Weapon> L115Bolt2;
@@ -313,6 +314,7 @@ public class CommonProxy {
     public static Item ACR2;
     public static Item Glock18;
     public static Item HecateII;
+//    public static Item Deagle44;
     // public static Item GaussRifle;
     // public static Item RPG;
 
@@ -742,6 +744,7 @@ public class CommonProxy {
         
         Forest = new ItemSkin.Builder()
             .withTextureVariant("Forest")
+            .withTextureVariant("MosinNagantForest")
             .withModId(ModernWarfareMod.MODID)
             .withCreativeTab(ModernWarfareMod.gunsTab)
             .withName("Forest")
@@ -2358,6 +2361,13 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.DeagleTop(), "Deagle.png").withName("DeagleTop")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Deagle44Top = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.DeagleTop(), "Deagle44.png").withName("Deagle44Top")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
 
         KSGPump = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
@@ -3662,6 +3672,7 @@ public class CommonProxy {
         M9SD = new M9SDFactory().createGun(this);
         USP45 = new USP45Factory().createGun(this);
         XEagle = new XEagleFactory().createGun(this);
+//        Deagle44 = new Deagle44Factory().createGun(this);
         P2000 = new P2000Factory().createGun(this);
         P30 = new P30Factory().createGun(this);
         P220 = new P220Factory().createGun(this);
