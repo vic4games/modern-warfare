@@ -41,7 +41,7 @@ public class M9SDFactory implements GunFactory {
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
 		.withCreativeTab(ModernWarfareMod.gunsTab)
-		.withInformationProvider(stack -> Arrays.asList("--Automatically Silenced--", "",  "Type: Pistol", "Damage: 7", 
+		.withInformationProvider(stack -> Arrays.asList("--Automatically Silenced--", "",  "Type: Pistol", "Damage: 4.5", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.Emerald, 
@@ -508,7 +508,7 @@ public class M9SDFactory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(4.5f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

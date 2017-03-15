@@ -418,6 +418,32 @@ public class ModernWarfareMod {
                 'A', new ItemStack(Items.dye, 4, 4)
         );
 		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Arctic),
+                "AR",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'R', new ItemStack(Items.dye, 15, 15)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Amber),
+                "A",
+                'A', new ItemStack(Items.dye, 14, 14)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Amethyst),
+                "A",
+                'A', new ItemStack(Items.dye, 5, 5)
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Desert),
+                "A",
+                'A', Blocks.sand
+        );
+		
+		GameRegistry.addRecipe(new ItemStack(CommonProxy.Forest),
+                "A",
+                'A', Blocks.leaves
+        );
+		
 		GameRegistry.addRecipe(new ItemStack(CommonProxy.Fade),
                 "A",
                 'A', CommonProxy.Ruby
@@ -719,404 +745,377 @@ public class ModernWarfareMod {
 		);
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Magazine762x39,
-				" AX",
-				"XAX",
+				"  X",
+				"X X",
 				"XX ",
-				'X', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet762x39
+				'X', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.PMAG762x39,
-				" AR",
-				"RAX",
+				"  R",
+				"R X",
 				"XR ",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet762x39
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AK12Mag,
-				" AR",
-				"XAR",
+				"  R",
+				"X R",
 				"XR ",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet556x39
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.RPK74MMag,
-				" AX",
-				"XAX",
+				"  X",
+				"X X",
 				"RR ",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet762x39
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AK74MMag,
-				" AR",
-				"RAX",
+				"  R",
+				"R X",
 				"RX ",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet556x39
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AK74Mag,
-				" AX",
-				"XAX",
-				"XX ",
+				"  R",
+				"X X",
+				"RX ",
 				'X', Items.iron_ingot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet556x39
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AKS74UMag,
-				" XX",
-				"XAR",
+				"  X",
+				"X R",
 				"XR ",
 				'X', Items.iron_ingot,
-				'R', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet556x39
+				'R', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.NATOMag1,
-				" AX",
-				"XAX",
+				"  X",
+				"X X",
 				"XX ",
-				'X', CommonProxy.AluminumIngot,
-				'A', CommonProxy.Bullet556x45
+				'X', CommonProxy.AluminumIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.NATOMag2,
-				" AX",
-				"XAR",
+				"  X",
+				"X R",
 				"XR ",
 				'X', CommonProxy.AluminumIngot,
-				'R', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet556x45
+				'R', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.NATOFamasMag,
-				"XAX",
-				" AX",
+				"X X",
+				"  X",
 				" XX",
 				'X', CommonProxy.AluminumIngot,
-				'R', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet556x45
+				'R', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.NATOG36Mag,
-				" AX",
-				"XAX",
-				"X  ",
+				"  X",
+				"X X",
+				"RR ",
 				'X', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet556x45
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.DragunovMag,
-				"XAX",
-				" XX",
+				"X X",
+				" RR",
 				'X', CommonProxy.SteelIngot,
-				'A', CommonProxy.Bullet762x54
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.FALMag,
-				"XAR",
-				" AR",
+				"X R",
+				"  R",
 				" RR",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet762x51
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M110Mag,
-				"XAR",
-				" AR",
+				"X R",
+				"  R",
 				" XR",
 				'X', Items.iron_ingot,
-				'R', CommonProxy.AluminumIngot,
-				'A', CommonProxy.Bullet762x51
+				'R', CommonProxy.AluminumIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M14DMRMag,
-				"AR",
-				"AR",
+				" R",
+				" R",
 				"XX",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet762x51
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Glock21Mag,
-				"AX",
-				"AX",
+				"X",
+				"X",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet45ACP
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Glock18Mag,
-				"AR",
-				"AX",
+				"R",
+				"X",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet9mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
+		
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.G18Mag,
+                "R",
+                "X",
+                "X",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+                
+        ));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.NATODrum100,
 				" X ",
-				"XAX",
-				"RAR",
+				"R R",
+				"R R",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet556x45
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
-		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M9BerettaMag,
-				"AX",
-				"AR",
+		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M9BerettaMag, 
+				"X",
+				"R",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet9mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.MP40Mag,
-				"AX",
-				"AX",
-				"AX",
+				"X",
+				"X",
+				"X",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet9mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.MP5KMag,
-				" AX",
-				" AX",
-				" X ",
+				" R",
+				" X",
+				"X ",
 				'X', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.Bullet9mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.DeagleMag,
-				" AX",
-				" AX",
-				'X', CommonProxy.AluminumIngot,
-				'A', CommonProxy.Bullet357
+				"X",
+				"X",
+				'X', CommonProxy.AluminumIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AS50Mag,
 				"RXR",
-				" AX",
+				"  X",
 				'R', CommonProxy.AluminumIngot,
-				'X', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.BMG50
+				'X', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.FNP90Mag,
-				"AAA",
 				"XXX",
-				'X', CommonProxy.CopperIngot,
-				'A', CommonProxy.Bullet57x28
+				'X', CommonProxy.CopperIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M107BMag,
-				"AAA",
-				" XA",
-				'A', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.BMG50
+				"RAR",
+				"  A",
+				'R', CommonProxy.MiniSteelPlate,
+				'A', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.HKMP7Mag,
-				" AA",
-				" XA",
-				" A ",
+				"RA",
+				" A",
+				"A ",
 				'A', CommonProxy.SteelIngot,
-				'X', CommonProxy.Bullet46x30
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M1CarbineMag,
-				" XA",
-				" XA",
-				" A ",
+				" A",
+				" R",
+				"A ",
 				'A', CommonProxy.SteelIngot,
-				'X', CommonProxy.Carbine30
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M240Mag,
-				" XA",
-				"AXA",
+				"  A",
+				"A A",
 				"AAA",
-				'A', Items.iron_ingot,
-				'X', CommonProxy.Bullet762x51
+				'A', Items.iron_ingot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M249Mag,
-				" XA",
-				"AXA",
+				"  R",
+				"A A",
 				"AAA",
 				'A', Items.iron_ingot,
-				'X', CommonProxy.Bullet556x45
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.MXMag,
-				"XR",
-				"XA",
+				" R",
+				" A",
 				"AR",
 				'A', Items.iron_ingot,
-				'R', CommonProxy.SteelIngot,
-				'X', CommonProxy.Bullet65x39
+				'R', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.M41AMag,
-				"XA",
-				"XA",
+				" A",
+				" R",
 				"AA",
 				'A', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.Bullet10x24
+				'A', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.L115Mag,
 				"AA",
-				"XA",
-				'A', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.BMG50
+				" A",
+				'A', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.ColtM1911Mag,
-				"XR",
-				"XA",
+				"R",
+				"A",
 				'A', CommonProxy.MiniSteelPlate,
-				'R', CommonProxy.SteelIngot,
-				'X', CommonProxy.Bullet45ACP
+				'R', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.HK33Mag,
-				" XR",
-				"RXA",
+				"  R",
+				"R A",
 				"AR ",
 				'R', CommonProxy.MiniSteelPlate,
-				'A', CommonProxy.SteelIngot,
-				'X', CommonProxy.Bullet45ACP
+				'A', CommonProxy.SteelIngot
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Mag10mm,
-				"XA",
-				"XA",
+				" A",
+				" R",
 				'A', CommonProxy.SteelIngot,
-				'X', CommonProxy.Bullet10mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Magazine9mm,
-				"XA",
-				"XA",
+				" A",
+				" A",
 				"RR",
 				'A', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.Bullet9mm
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.ScarHMag,
 				"RR",
-				"XA",
-				"XA",
+				" A",
+				" A",
 				'A', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.Bullet300Blackout
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.AK101Mag,
-			" XA",
-			"AXR",
+			"  A",
+			"A R",
 			"AR ",
 				'A', CommonProxy.SteelIngot,
-				'R', CommonProxy.MiniSteelPlate,
-				'X', CommonProxy.Bullet556x45
+				'R', CommonProxy.MiniSteelPlate
 				
 		));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.VectorMag,
-				"XA",
-				"XA",
+				" A",
+				" A",
 				"AA",
-					'A', CommonProxy.SteelIngot,
-					'X', CommonProxy.Bullet45ACP
+					'A', CommonProxy.SteelIngot
 					
 			));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.G3Mag,
-                "XF",
-                "XA",
+                " F",
+                " A",
                 "FF",
                     'A', CommonProxy.SteelIngot,
-                    'X', CommonProxy.Bullet762x51,
                     'F', CommonProxy.MiniSteelPlate
                     
             ));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.PP19Mag,
                 "AAF",
-                "XXX",
+                "   ",
                 "AAF",
                     'A', CommonProxy.SteelIngot,
-                    'X', CommonProxy.Bullet9mm,
                     'F', CommonProxy.MiniSteelPlate
                     
             ));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.Glock32Mag,
-                "XA",
-                "XA",
+                " A",
+                " A",
                 "AF",
                     'A', CommonProxy.SteelIngot,
-                    'X', CommonProxy.Bullet357,
                     'F', CommonProxy.MiniSteelPlate
                     
             ));
 		
 		GameRegistry.addRecipe(new ShapedOreRecipe(CommonProxy.HecateIIMag,
-                "XFF",
-                "AXA",
+                " FF",
+                "A A",
                     'A', CommonProxy.SteelIngot,
-                    'X', CommonProxy.BMG50,
                     'F', CommonProxy.MiniSteelPlate
                     
             ));

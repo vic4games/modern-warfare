@@ -45,7 +45,7 @@ public class G21Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 9", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5.5", 
 		"Caliber: .45 ACP", "Magazines:", "13rnd .45 ACP Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.Fade, 
@@ -492,7 +492,7 @@ public class G21Factory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(9f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

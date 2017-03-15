@@ -45,7 +45,7 @@ public class Glock32Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 6", 
 		"Caliber: .357", "Magazines:", "14rnd .357 Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -521,7 +521,7 @@ public class Glock32Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(11f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
