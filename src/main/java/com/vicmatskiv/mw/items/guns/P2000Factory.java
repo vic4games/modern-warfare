@@ -45,7 +45,7 @@ public class P2000Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.P2000Top, true, (model) -> {

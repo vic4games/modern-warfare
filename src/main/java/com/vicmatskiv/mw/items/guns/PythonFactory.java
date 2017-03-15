@@ -44,7 +44,7 @@ public class PythonFactory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 10", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 6", 
 		"Ammo: .357 Bullet", "Fire Rate: Semi"))
 		 .withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
@@ -325,7 +325,7 @@ public class PythonFactory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(10f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

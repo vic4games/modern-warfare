@@ -45,7 +45,7 @@ public class B92A1Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol","Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol","Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -505,7 +505,7 @@ public class B92A1Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

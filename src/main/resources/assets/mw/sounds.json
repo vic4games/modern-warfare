@@ -26,6 +26,15 @@
       }
     ]
   },
+  "M16": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:M16",
+       "stream": false
+      }
+    ]
+  },
    "AKM": {
     "category": "master",
     "sounds": [

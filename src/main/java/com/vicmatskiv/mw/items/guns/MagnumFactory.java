@@ -44,7 +44,7 @@ public class MagnumFactory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 9", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 5.5", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
 				(a, i) -> {
@@ -318,7 +318,7 @@ public class MagnumFactory implements GunFactory {
 					 })
 					
 			.build())
-		.withSpawnEntityDamage(9f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

@@ -45,7 +45,7 @@ public class Pistol10mmFactory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MetalComponents)
-		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 9",
+		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 6",
 		"Caliber: 10mm", "Magazines:", "10rnd 10mm Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.Amethyst, 
@@ -389,7 +389,7 @@ public class Pistol10mmFactory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(9f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.016f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);
