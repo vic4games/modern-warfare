@@ -162,37 +162,6 @@ public class MosinNagantFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (model) -> {
-			if(model instanceof HP) {
-			GL11.glTranslatef(0.055F, -1.4F, 0.3F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.19999F, -1.565F, 0.5F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Scope, (model) -> {
-			if(model instanceof LP) {
-			GL11.glTranslatef(0.055F, -1.4F, 0.3F);
-			GL11.glScaled(0.6F, 0.6F, 0.6F);
-			} else if(model instanceof HP2) {
-				GL11.glTranslatef(0.19999F, -1.565F, 0.5F);
-				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (model) -> {
-			if(model instanceof ACOG) {
-				GL11.glTranslatef(0.08F, -1.47F, 0.3F);
-				GL11.glScaled(0.5F, 0.5F, 0.5F);
-			} else if(model instanceof Acog2) {
-				GL11.glTranslatef(0.197F, -1.59F, 0.4F);
-				GL11.glScaled(0.04F, 0.04F, 0.04F);
-			}
-		})
-		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-			GL11.glTranslatef(.135F, -0.6F, -2.33F);
-			GL11.glScaled(0.9F, 0.9F, 0.9F);
-		})
 		.withTextureNames("MosinNagant", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)

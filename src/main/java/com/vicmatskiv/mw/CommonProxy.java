@@ -265,13 +265,10 @@ public class CommonProxy {
     public static Item AN94;
     public static Item M1911;
     public static Item AUGA3;
-    public static Item AKMN;
     public static Item AK74;
     public static Item AKS;
     public static Item MX;
-    public static Item AK74N;
     public static Item M4A42;
-    public static Item AKMS;
     public static Item M9SD;
     public static Item L96;
     public static Item AWP;
@@ -289,8 +286,6 @@ public class CommonProxy {
     public static Item MakarovPM;
     public static Item MakarovPMM;
     public static Item G36A3;
-    public static Item G36K;
-    public static Item G36V;
     public static Item G36KV;
     public static Item MG36E;
     public static Item HK33K;
@@ -3705,15 +3700,12 @@ public class CommonProxy {
         AK47 = new AK47Factory().createGun(this);
         AKS = new AKSFactory().createGun(this);
         AKM = new AKMFactory().createGun(this);
-        AKMN = new AKMNFactory().createGun(this);
-        AKMS = new AKMSFactory().createGun(this);
         AK12 = new AK12Factory().createGun(this);
         AK12U = new AK12UFactory().createGun(this);
         AN94 = new AN94Factory().createGun(this);
         AK74U = new AK74UFactory().createGun(this);
         AK74 = new AK74Factory().createGun(this);
         AK74M = new AK74MFactory().createGun(this);
-        AK74N = new AK74NFactory().createGun(this);
         AK101 = new AK101Factory().createGun(this);
         AK103 = new AK103Factory().createGun(this);
         AK104 = new AK104Factory().createGun(this);
@@ -3767,8 +3759,6 @@ public class CommonProxy {
         G36 = new G36Factory().createGun(this);
         G36A3 = new G36A3Factory().createGun(this);
         G36C = new G36CFactory().createGun(this);
-        G36K = new G36KFactory().createGun(this);
-        G36V = new G36VFactory().createGun(this);
         G36KV = new G36KVFactory().createGun(this);
         AUG = new AUGFactory().createGun(this);
         AUGA3 = new AUGA3Factory().createGun(this);
