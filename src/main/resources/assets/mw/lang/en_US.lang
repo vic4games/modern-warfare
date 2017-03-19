@@ -23,7 +23,7 @@ item.Glock-17.name=Glock-17
 item.M9.name=M9-Beretta
 item.M4A1.name=M4A1
 item.Colt AR15.name=Colt AR15
-item..357 Desert Eagle.name=.357 Desert Eagle
+item..357 Desert Eagle.name=.357 IMI Desert Eagle
 item.L115.name=L115
 item.Dragunov.name=SVD-Dragunov
 item.Remington870.name=Remington-870
@@ -139,7 +139,8 @@ item.ACR.name=Remington ACR
 item.Glock18.name=Glock-18
 item.SMAW.name=Mk153 SMAW
 item.HecateII.name=PGM Hecate II
-item..44 Desert Eagle.name=.44 Deagle
+item.Deagle50.name=.50 AE IMI Desert Eagle
+item.VSS Vintorez.name=VSS Vintorez
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
@@ -187,6 +188,8 @@ item.mw_G18Mag.name=20rnd 9mm Magazine
 item.mw_NATO20rnd.name=20rnd 5.56x45mm NATO Magazine
 item.mw_NATO40rnd.name=40rnd 5.56x45mm NATO Magazine
 item.mw_HecateIIMag.name=7rnd .50 BMG Magazine
+item.mw_Deagle50Mag.name=7rnd .50 Action Express Magazine
+item.mw_VSSVintorezMag.name=10rnd 9x39mm Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet
@@ -207,6 +210,8 @@ item.mw_Bullet10x24.name=10x24mm Bullet
 item.mw_Bullet10mm.name=10mm Bullet
 item.mw_Bullet300Blackout.name=.300 AAC Blackout Bullet
 item.mw_SMAWRocket.name=Mk153 SMAW Rocket
+item.mw_Bullet50AE.name=.50 Action Express Bullet
+item.mw_Bullet9x39mm.name=9x39mm Bullet
 
 item.mw_Acog.name=Trigicon Acog Scope
 item.mw_Reflex.name=15 MOA Reflex
@@ -300,36 +305,12 @@ item.mw_MiniSteelPlate.name=Small Steel Plate
 item.mw_BigSteelPlate.name=Big Steel Plate
 item.mw_MetalComponents.name=Metal Components
 
-item.mw_WeaponStock.name=Weapon Stock
-item.mw_WoodWeaponStock.name=Weapon Stock (Wood)
-item.mw_SecondaryStock.name=Secondary Weapon Stock
-item.mw_RetractableStock.name=Retractable Weapon Stock
-item.mw_WoodRifleStock.name=Wood Sniper Stock
-
-item.mw_WeaponReceiver.name=Weapon Receiver
-item.mw_UnderReceiver.name=Weapon Receiver (Under-Part)
-item.mw_PistolUnderReceiver.name=Pistol Receiver (Under-Part)
-item.mw_SMGReceiver.name=Weapon Receiver (SMG)
-item.mw_RifleReceiver.name=Weapon Receiver (Sniper)
-item.mw_P90Receiver.name=Weapon Receiver (P90)
-item.mw_ScarReceiver.name=Weapon Receiver (Scar)
-item.mw_DeagleReceiver.name=Weapon Receiver (Desert-Eagle)
-item.mw_LMGReceiver.name=Weapon Receiver (LMG)
-
-item.mw_RevolverAction.name=Revolver Action
-item.mw_RevolverGrip.name=Revolver Grip
-item.mw_RevolverReceiver.name=Revolver Receiver
-
-item.mw_ShotgunReceiver.name=Shotgun Receiver
-item.mw_ShotgunGrip.name=Shotgun Grip
-
 item.mw_Transistor.name=Transistor
 item.mw_Diode.name=Diode
 item.mw_Inductor.name=Inductor
 item.mw_Resistor.name=Resistor
 item.mw_CopperWiring.name=Copper Wiring
 item.mw_Capacitor.name=Capacitor
-item.mw_Barrel.name=Gunmetal Barrel
 item.mw_Plastic.name=Plastic
 item.mw_Piston.name=Piston
 
@@ -337,6 +318,18 @@ item.mw_AKMIron.name=Standard Iron-Sight
 item.mw_AR15Iron.name=AR-15 Action/Iron Sight
 
 itemGroup.guns_tab=Modern Warfare
+
+itemGroup.AssaultRifles_tab=VMW Automatic Rifles Section 1
+
+itemGroup.AR2Tab=VMW Automatic Rifles Section 2
+
+itemGroup.ShotgunsTab=VMW Shotguns/Heavy/LMGs
+
+itemGroup.SnipersTab=VMW Snipers/Marksmen Rifles
+
+itemGroup.Pistols_tab=VMW Pistols/Machine Pistols
+
+itemGroup.SMG_tab=VMW SMGs/PDWs
 
 key.categories.weaponlib=Modern Warfare
 

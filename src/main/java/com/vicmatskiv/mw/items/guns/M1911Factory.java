@@ -41,11 +41,11 @@ public class M1911Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.PistolsTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 8", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5.5", 
 		"Caliber: .45 ACP", "Magazines:", "10rnd .45 ACP Magazine",
 		"Fire Rate: Semi"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -485,7 +485,7 @@ public class M1911Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.02f)
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
 			Block block = WorldHelper.getBlockAtPosition(world, position);

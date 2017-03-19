@@ -17,6 +17,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.HP;
 import com.vicmatskiv.mw.models.HP2;
 import com.vicmatskiv.mw.models.LP;
+import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
@@ -24,6 +25,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MosinBolt;
 import com.vicmatskiv.mw.models.MosinNagant;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.PSO12;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -62,7 +64,7 @@ public class MosinNagantFactory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SnipersTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
@@ -103,6 +105,20 @@ public class MosinNagantFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(CommonProxy.PSO1, (player, stack) -> {
+            
+            GL11.glTranslatef(0.349F, -1.1F, -0.2F);
+            GL11.glScaled(0.7F, 0.7F, 0.7F);
+        },(model) -> {
+             if(model instanceof LPscope) {
+                GL11.glTranslatef(-0.209F, -0.485F, 1.27F);
+                GL11.glScaled(0.07F, 0.07F, 0.07F);
+            }
+             else if(model instanceof PSO12) {
+                 GL11.glTranslatef(-0.27F, -0.6F, 1.21F);
+                 GL11.glScaled(0.8F, 0.8F, 0.8F);
+             }
+        })
 		.withCompatibleBullet(CommonProxy.Bullet762x54, (model) -> {})
 		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
@@ -224,49 +240,25 @@ public class MosinNagantFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-				GL11.glTranslatef(0.2F, -0.3F, 0.1F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.6F, 0.6F, 0.6F);
+			    GL11.glTranslatef(0.2F, -0.3F, 0.1F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(0.6F, 0.6F, 0.6F);
 
-				// Zoom
-				GL11.glTranslatef(0.17F, -1.07f, 0.7f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-1F, 1f, 0f, 0f);
+                // Zoom
+                GL11.glTranslatef(0.17F, -1.07f, 0.61f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glRotatef(-0.4F, 1f, 0f, 0f);
 				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, -0.2f, 7f);
-				} 
-				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, 0f, 7f);
-				} 
-				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.19f, 2.8f);
-				} 
-				
-				/* // Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
-					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.2f, 0.7f);
-				} 
-				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo)) {
-					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1f, 3f);
-				} 
-				*/
-				// Everything else
-				else {
-					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-				}
-				
+				// Scope Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(1.37F, -1.12f, 2.6f);
+                }   
+
+                // Everything else
+                else {
+                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+                }  
 			
 				})
 				
@@ -413,40 +405,16 @@ public class MosinNagantFactory implements GunFactory {
 				GL11.glTranslatef(0.17F, -1.07f, 0.6f);
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, -0.2f, 7f);
-				} 
-				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0.5F, 0f, 7f);
-				} 
-				
-				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(1.38F, -1.19f, 2.8f);
-				} 
-				
-				/* // Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
-					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.2f, 0.7f);
-				} 
-				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo)) {
-					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1f, 3f);
-				} 
-				*/
-				// Everything else
-				else {
-					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-				}
-				
+				// Scope Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(1.37F, -1.12f, 2.6f);
+                }   
+
+                // Everything else
+                else {
+                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
+                }   
 			
 				})
 			.withFirstPersonPositioningRunning((renderContext) -> {

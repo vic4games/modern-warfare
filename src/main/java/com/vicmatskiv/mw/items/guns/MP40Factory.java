@@ -54,7 +54,7 @@ public class MP40Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.15f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(4)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)

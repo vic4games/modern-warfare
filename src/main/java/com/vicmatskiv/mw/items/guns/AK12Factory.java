@@ -63,7 +63,7 @@ public class AK12Factory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.13f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.AR2Tab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
 		        CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

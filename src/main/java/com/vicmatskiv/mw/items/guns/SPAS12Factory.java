@@ -47,7 +47,7 @@ public class SPAS12Factory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.ShotgunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Combat shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Semi"))
 		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})

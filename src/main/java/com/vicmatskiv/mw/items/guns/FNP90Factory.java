@@ -42,7 +42,7 @@ public class FNP90Factory implements GunFactory {
 		.withFlashScale(() -> 0.6f)
 		.withFlashOffsetX(() -> 0.29f)
 		.withFlashOffsetY(() -> 0.3f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

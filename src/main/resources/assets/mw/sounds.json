@@ -35,6 +35,15 @@
       }
     ]
   },
+  "VSSVintorez": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "VSSVintorez",
+       "stream": false
+      }
+    ]
+  },
    "AKM": {
     "category": "master",
     "sounds": [

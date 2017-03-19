@@ -66,7 +66,7 @@ public class KrissVectorFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot,
                 CommonProxy.BigSteelPlate)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.5", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))

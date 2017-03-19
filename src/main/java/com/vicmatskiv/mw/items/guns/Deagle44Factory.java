@@ -21,11 +21,11 @@ public class Deagle44Factory implements GunFactory {
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName(".44 Desert Eagle")
+        .withName("Deagle50")
 //      .withAmmo(CommonProxy.M9Mag)
 //      .withAmmoCapacity(10)
         .withFireRate(0.2f)
-        .withRecoil(6f)
+        .withRecoil(7f)
         .withZoom(0.9f)
         .withMaxShots(1)
         .withShootSound("Deagle")
@@ -36,17 +36,17 @@ public class Deagle44Factory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withInaccuracy(4)
+        .withInaccuracy(5)
         .withFlashIntensity(1f)
         .withFlashScale(() -> 0.7f)
         .withFlashOffsetX(() -> 0.2f)
         .withFlashOffsetY(() -> 0.1f)
-        .withCreativeTab(ModernWarfareMod.gunsTab)
+        .withCreativeTab(ModernWarfareMod.PistolsTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-        .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 11", 
-        "Caliber: .357", "Magazines:", "9rnd .357 Magazine", "Fire Rate: Semi"))
+        .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 6.5", 
+        "Caliber: .50 Action Express", "Magazines:", "7rnd .50 Action Express Magazine", "Fire Rate: Semi"))
          .withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
@@ -66,14 +66,14 @@ public class Deagle44Factory implements GunFactory {
 //          GL11.glRotatef(45F, 0f, 1f, 0f);
 //          GL11.glScaled(0.55F, 0.55F, 0.55F);
         })
-        .withCompatibleAttachment(CommonProxy.DeagleMag, (model) -> {
+        .withCompatibleAttachment(CommonProxy.Deagle50Mag, (model) -> {
             GL11.glTranslatef(-0.03F, -0.1F, 0.14F);
             GL11.glScaled(0.7F, 1F, 1F);
             })
-        .withCompatibleAttachment(CommonProxy.Silencer357, (model) -> {
-            GL11.glTranslatef(-0.25F, -1.18F, -5.15F);
-            GL11.glScaled(1.5F, 1.5F, 1.7F);
-        })
+//        .withCompatibleAttachment(CommonProxy.Silencer357, (model) -> {
+//            GL11.glTranslatef(-0.25F, -1.18F, -5.15F);
+//            GL11.glScaled(1.5F, 1.5F, 1.7F);
+//        })
         .withTextureNames("Deagle44", "DeagleGold", "Electric")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
@@ -107,9 +107,9 @@ public class Deagle44Factory implements GunFactory {
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glTranslatef(0.1F, -0.5F, -1F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(-10F, 1f, 0f, 0f);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                 GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+                GL11.glRotatef(-10F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.Deagle44Top.getRenderablePart(), (renderContext) -> {
@@ -125,19 +125,19 @@ public class Deagle44Factory implements GunFactory {
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.DeagleMag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomRecoiled(CommonProxy.Deagle50Mag, (renderContext) -> {})
             
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.DeagleMag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Deagle50Mag, (renderContext) -> {})
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-                GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
+                GL11.glTranslatef(-0.3F, -0.2F, -0.5F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(-4F, 1f, 0f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glScaled(0.6F, 0.6F, 0.6F);
 
                 // Zoom
-                GL11.glTranslatef(0.31F, -1.34f, 1.5f);
+                GL11.glTranslatef(0.23F, -1.32f, 1.3f);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glRotatef(-2F, 1f, 0f, 0f);
                 
             /*  // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {
@@ -167,7 +167,7 @@ public class Deagle44Factory implements GunFactory {
                 
             //.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
                 
-            .withFirstPersonCustomPositioning(CommonProxy.DeagleMag, (renderContext) -> {})
+            .withFirstPersonCustomPositioning(CommonProxy.Deagle50Mag, (renderContext) -> {})
             
             .withFirstPersonCustomPositioning(CommonProxy.Deagle44Top.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
@@ -229,7 +229,7 @@ public class Deagle44Factory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.DeagleMag,
+            .withFirstPersonCustomPositioningUnloading(CommonProxy.Deagle50Mag,
                 new Transition((renderContext) -> {
 //                  GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                  GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -244,7 +244,7 @@ public class Deagle44Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.DeagleMag,
+            .withFirstPersonCustomPositioningReloading(CommonProxy.Deagle50Mag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -470,7 +470,7 @@ public class Deagle44Factory implements GunFactory {
                          GL11.glRotatef(10f, 0f, 0f, 1f);
                      })
             .build())
-        .withSpawnEntityDamage(11f)
+        .withSpawnEntityDamage(6.3f)
         .withSpawnEntityGravityVelocity(0.016f)
         .withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
             Block block = WorldHelper.getBlockAtPosition(world, position);
