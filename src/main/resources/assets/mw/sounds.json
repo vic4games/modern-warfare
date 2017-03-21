@@ -44,6 +44,15 @@
       }
     ]
   },
+  "UMP45": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "UMP45",
+       "stream": false
+      }
+    ]
+  },
    "AKM": {
     "category": "master",
     "sounds": [

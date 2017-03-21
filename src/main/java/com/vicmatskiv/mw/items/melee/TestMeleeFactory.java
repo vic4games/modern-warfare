@@ -1,14 +1,12 @@
 package com.vicmatskiv.mw.items.melee;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.item.Item;
+
+import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
-import com.vicmatskiv.weaponlib.animation.DebugPositioner;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.melee.ItemMelee;
 import com.vicmatskiv.weaponlib.melee.MeleeRenderer;
@@ -23,6 +21,12 @@ public class TestMeleeFactory implements MeleeFactory {
                 .withName("TacKnifeStandard")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withTextureNames("TacKnifeStandard")
+                .withAttackDamage(7f)
+                .withHeavyAttackDamage(12f)
+                .withPrepareStubTimeout(() -> 100)
+                .withPrepareHeavyStubTimeout(() -> 530)
+                .withAttackCooldownTimeout(() -> 500)
+                .withHeavyAttackCooldownTimeout(() -> 1500)
 //                .withCompatibleSkin(CommonProxy.TestMeleeSkin, "Electric")
                 .withRenderer(
                         new MeleeRenderer.Builder()
@@ -83,7 +87,7 @@ public class TestMeleeFactory implements MeleeFactory {
                                             GL11.glRotatef(-30F, 0f, 1f, 0f);
                                             GL11.glRotatef(-80F, 0f, 0f, 1f);
                                             GL11.glTranslatef(0.7f, 0.4f, -1f);
-                                        }, 40, 100 ))
+                                        }, 40, 50 ))
 //                                        1000 * 60 * 3600
 
                                 .withFirstPersonLeftHandPositioningAttacking(
@@ -135,7 +139,7 @@ public class TestMeleeFactory implements MeleeFactory {
                                             GL11.glRotatef(20F, 1f, 0f, 0f);
                                             GL11.glRotatef(10F, 0f, 1f, 0f);
                                             GL11.glRotatef(-110F, 0f, 0f, 1f);
-                                        }, 180, 80),
+                                        }, 180, 0),
 
                                         new Transition<RenderContext<RenderableState>>(renderContext -> {
                                             GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -144,7 +148,7 @@ public class TestMeleeFactory implements MeleeFactory {
                                             GL11.glRotatef(-100.000000f, 0f, 0f, 1f);
                                             GL11.glTranslatef(0.675000f, 0.075000f, -1.574999f); 
 
-                                        }, 300, 150), 
+                                        }, 200, 150), 
                                         
                                         new Transition<RenderContext<RenderableState>>(renderContext -> {
                                             GL11.glScalef(1.000000f, 1.000000f, 1.000000f);

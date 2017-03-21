@@ -33,19 +33,18 @@ import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
-public class VSSVintorezFactory implements GunFactory {
+public class ASValFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName("VSS Vintorez")
+        .withName("AS Val")
         //.withAmmo(CommonProxy.AK47Mag)
 //      .withAmmoCapacity(30)
-        .withFireRate(0.8f)
+        .withFireRate(0.55f)
         .withRecoil(2.5f)
         .withZoom(0.9f)
-        .withMaxShots(1)
-        //.withMaxShots(5)
+        //.withMaxShots(1)
         .withShootSound("VSSVintorez")
         .withReloadSound("AKReload")
         .withUnloadSound("Unload")
@@ -63,9 +62,9 @@ public class VSSVintorezFactory implements GunFactory {
                 CommonProxy.MetalComponents,
                 CommonProxy.SteelIngot)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
-        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Sniper Rifle","Damage: 9", 
+        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 9", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine",
-        "Fire Rate: Semi"))
+        "Fire Rate: Auto"))
         .withCompatibleAttachment(CommonProxy.Fade, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
@@ -83,6 +82,13 @@ public class VSSVintorezFactory implements GunFactory {
          .withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(CommonProxy.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
