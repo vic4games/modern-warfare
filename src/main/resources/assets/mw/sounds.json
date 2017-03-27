@@ -35,6 +35,15 @@
       }
     ]
   },
+  "TAR21": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "TAR21",
+       "stream": false
+      }
+    ]
+  },
   "VSSVintorez": {
     "category": "master",
     "sounds": [

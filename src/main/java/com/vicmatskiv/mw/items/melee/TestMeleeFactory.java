@@ -21,29 +21,34 @@ public class TestMeleeFactory implements MeleeFactory {
                 .withName("TacKnifeStandard")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withTextureNames("TacKnifeStandard")
-                .withAttackDamage(7f)
-                .withHeavyAttackDamage(12f)
+                .withAttackDamage(8.5f)
+                .withHeavyAttackDamage(17f)
                 .withPrepareStubTimeout(() -> 100)
                 .withPrepareHeavyStubTimeout(() -> 530)
                 .withAttackCooldownTimeout(() -> 500)
                 .withHeavyAttackCooldownTimeout(() -> 1500)
-//                .withCompatibleSkin(CommonProxy.TestMeleeSkin, "Electric")
+                .withCompatibleSkin(CommonProxy.CrimsonBlood, "TacKnifeCrimsonBlood")
+                .withCompatibleSkin(CommonProxy.Chrome, "TacKnifeChrome")
+                .withCompatibleSkin(CommonProxy.GodWillsIt, "TacKnifeGodWillsIt")
+                .withCompatibleSkin(CommonProxy.Murasaki, "TacKnifeMurasaki")
+                .withCompatibleSkin(CommonProxy.Evangelion, "TacKnifeEvangelion")
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)
                                 .withModel(new com.vicmatskiv.mw.models.TacKnifeStandard())
                                 .withAnimationDuration(500)
-                                
-                                
-//                                .withPartDebugPositioning((part, context) -> {
-//                                    if(part == Part.LEFT_HAND && context.getToState() == RenderableState.ATTACKING) {
-////                                        GL11.glScalef(3f, 3f, 3f);
-//                                        if(DebugPositioner.isDebugModeEnabled()) {
-//                                            DebugPositioner.position();
-//                                        }
-//                                    }
-//                                })
-                                
+                                .withInventoryPositioning(itemStack -> {
+                                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                                    GL11.glTranslatef(1, 1.3f, -1.3f);
+                                    GL11.glRotatef(230F, 0f, 1f, 0f);
+                                    GL11.glRotatef(45F, 1f, 0f, 0f);
+                                })
+                                .withThirdPersonPositioning((renderContext) -> {
+                                        GL11.glScaled(0.8F, 0.8F, 0.8F);
+                                        GL11.glTranslatef(-1.2F, -0.45F, 1F);
+                                        GL11.glRotatef(-45F, 0f, 1f, 0f);
+                                        GL11.glRotatef(70F, 1f, 0f, 0f);
+                                })     
                                 .withFirstPersonPositioning(context -> {
                                     //  GL11.glScalef(0.3f, 0.3f, 0.3f);
                                         GL11.glRotatef(20F, 1f, 0f, 0f);
@@ -229,11 +234,11 @@ public class TestMeleeFactory implements MeleeFactory {
                                                 },
 
                                                 context -> { // right hand
-                                                     GL11.glScalef(3f, 3f, 3f);
-                                                     GL11.glRotatef(0F, 1f, 0f, 0f);
-                                                     GL11.glRotatef(-30f, 0f, 1f, 0f);
-                                                     GL11.glRotatef(-90F, 1f, 0f, 0f);
-                                                     GL11.glTranslatef(0.55f, -0.6f, 0.2f);
+                                                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                                                    GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                                                    GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                                                    GL11.glRotatef(-30.000000f, 0f, 0f, 1f);
+                                                    GL11.glTranslatef(0.275000f, -0.125000f, -0.050000f);
                                                 })
 
                                 .build())
