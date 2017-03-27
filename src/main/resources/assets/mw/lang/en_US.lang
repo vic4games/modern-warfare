@@ -144,6 +144,9 @@ item.VSS Vintorez.name=VSS Vintorez
 item.AS Val.name=AS Val
 item.HK UMP45.name=HK UMP-45
 item.HK UMP9.name=HK UMP-9
+item.TAR21.name=TAR-21
+
+item.TacKnifeStandard.name=U.S. Marine Tactical Knife
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
