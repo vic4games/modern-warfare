@@ -2,6 +2,7 @@ package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -79,7 +80,10 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.electronics.ItemTablet;
+import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
 import com.vicmatskiv.weaponlib.melee.MeleeSkin;
+import com.vicmatskiv.weaponlib.model.TabletModel;
 
 public class CommonProxy {
 
@@ -3680,6 +3684,81 @@ public class CommonProxy {
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         new TestMeleeFactory().createMelee(this);
+        
+        
+        float aspectRatio = (float)Minecraft.getMinecraft().displayWidth / Minecraft.getMinecraft().displayHeight;
+        new ItemTablet.Builder<>().withOpticalZoom().withZoomRange(0.22f, 0.02f)
+                .withViewfinderPositioning((p, s) -> {
+                    float scale = 5.9f;
+                    GL11.glScalef(scale, scale / aspectRatio, scale);
+                    GL11.glTranslatef(-0.12f, 0.56f, 0.01f);
+                })
+                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCrosshair("HP")
+                .withModel(new TabletModel(), "AK12.png")
+                //.withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
+                .withFirstPersonPositioning((player, itemStack) -> {
+//                    GL11.glTranslatef(0.5F, -1.5F, -0.7F);
+                    
+                    GL11.glRotatef(55F, 0f, 1f, 0f);
+                    GL11.glRotatef(2F, 1f, 0f, 0f);
+//                    GL11.glRotatef(125F, 0f, 1f, 0f);
+//                    GL11.glScaled(0.8F, 0.8F, 0.8F);
+                    GL11.glTranslatef(0.6F, -1.35F, 1F);
+                    GL11.glScaled(1F, 1F, 1F);
+                })
+                .withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.HP) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withInventoryModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.HP) {
+                        GL11.glTranslatef(-0.6F, -0.6F, 0.6F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.65F, 0.65F, 0.65f);
+                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withEntityModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.HP) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withFirstPersonHandPositioning(
+                        c -> {
+                            GL11.glRotatef(190F, 1f, 0f, 0f);
+                            GL11.glRotatef(10F, 0f, 1f, 0f);
+                            GL11.glRotatef(30F, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.1F, -1.75F, 0F);
+                        }, 
+                        c -> {
+                            GL11.glRotatef(190F, 1f, 0f, 0f);
+                            GL11.glRotatef(0F, 0f, 1f, 0f);
+                            GL11.glRotatef(-10F, 0f, 0f, 1f);
+                            GL11.glTranslatef(-0.15F, -0.4F, 0.4F);
+                        })
+                .withName("Tablet")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
 
+        ItemWirelessCamera wirelessCamera = new ItemWirelessCamera(ModernWarfareMod.MOD_CONTEXT);
+        wirelessCamera.setUnlocalizedName(ModernWarfareMod.MODID + "_" + "wcam"); 
+        wirelessCamera.setTextureName(ModernWarfareMod.MODID + ":" + "Barrel");
+        wirelessCamera.setCreativeTab(ModernWarfareMod.gunsTab);
+        
+        compatibility.registerItem(wirelessCamera, "wcam");
+        
     }
 }
