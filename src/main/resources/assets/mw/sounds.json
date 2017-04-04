@@ -44,11 +44,38 @@
       }
     ]
   },
+  "KN44": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "KN44",
+       "stream": false
+      }
+    ]
+  },
   "VSSVintorez": {
     "category": "master",
     "sounds": [
       {
        "name": "VSSVintorez",
+       "stream": false
+      }
+    ]
+  },
+  "Weevil": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "Weevil",
+       "stream": false
+      }
+    ]
+  },
+  "M8A7": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "M8A7",
        "stream": false
       }
     ]

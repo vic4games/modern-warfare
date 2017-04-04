@@ -45,8 +45,8 @@ public class USP45Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5", 
-		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5.5", 
+		"Caliber: .45 ACP", "Magazines:", "10rnd .45 ACP Magazine",
 		"Fire Rate: Semi"))
 		 .withCompatibleAttachment(CommonProxy.Diamond, 
                 (a, i) -> {
@@ -81,10 +81,10 @@ public class USP45Factory implements GunFactory {
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
 //			GL11.glScaled(0.55F, 0.55F, 0.55F);
 		})
-		.withCompatibleAttachment(CommonProxy.M9BerettaMag, (model) -> {
-			GL11.glTranslatef(0F, 0F, 0.1F);
+		.withCompatibleAttachment(CommonProxy.ColtM1911Mag, (model) -> {
+			GL11.glTranslatef(0F, 0.15F, 0F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
+		.withCompatibleAttachment(CommonProxy.Silencer45ACP, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.2F, -4.6F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -140,9 +140,9 @@ public class USP45Factory implements GunFactory {
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.M9BerettaMag, (renderContext) -> {})
+			.withFirstPersonPositioningCustomRecoiled(CommonProxy.ColtM1911Mag, (renderContext) -> {})
 			
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M9BerettaMag, (renderContext) -> {})
+			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.ColtM1911Mag, (renderContext) -> {})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
@@ -182,7 +182,7 @@ public class USP45Factory implements GunFactory {
 				
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.M9BerettaMag, (renderContext) -> {})
+			.withFirstPersonCustomPositioning(CommonProxy.ColtM1911Mag, (renderContext) -> {})
 			
 			.withFirstPersonCustomPositioning(CommonProxy.USP45Top.getRenderablePart(), (renderContext) -> {
 				if(renderContext.getWeaponInstance().getAmmo() == 0) {
@@ -244,7 +244,7 @@ public class USP45Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.M9BerettaMag,
+			.withFirstPersonCustomPositioningUnloading(CommonProxy.ColtM1911Mag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -259,7 +259,7 @@ public class USP45Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.M9BerettaMag,
+			.withFirstPersonCustomPositioningReloading(CommonProxy.ColtM1911Mag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -484,14 +484,9 @@ public class USP45Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(5f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.02f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

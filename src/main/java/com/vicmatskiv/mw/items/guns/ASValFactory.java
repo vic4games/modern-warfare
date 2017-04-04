@@ -62,7 +62,7 @@ public class ASValFactory implements GunFactory {
                 CommonProxy.MetalComponents,
                 CommonProxy.SteelIngot)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
-        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 9", 
+        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 12", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine",
         "Fire Rate: Auto"))
         .withCompatibleAttachment(CommonProxy.Fade, 
@@ -496,14 +496,9 @@ public class ASValFactory implements GunFactory {
                         GL11.glRotatef(-95f, 1f, 0f, 0f);
                     }, 250, 50))
             .build())
-        .withSpawnEntityDamage(9f)
+        .withSpawnEntityDamage(12f)
         .withSpawnEntityGravityVelocity(0.0118f)
-        .withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-            Block block = WorldHelper.getBlockAtPosition(world, position);
-            if (WorldHelper.isGlassBlock(block)) {
-                WorldHelper.destroyBlock(world, position);
-            }
-         })
+        
          
         .build(ModernWarfareMod.MOD_CONTEXT);
     }

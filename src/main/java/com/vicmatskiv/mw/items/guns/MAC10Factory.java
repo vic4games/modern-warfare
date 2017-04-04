@@ -44,7 +44,7 @@ public class MAC10Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 5.5", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.Emerald, 
@@ -441,14 +441,9 @@ public class MAC10Factory implements GunFactory {
 						 GL11.glRotatef(10f, 0f, 0f, 1f);
 					 })
 			.build())
-		.withSpawnEntityDamage(5f)
+		.withSpawnEntityDamage(5.5f)
 		.withSpawnEntityGravityVelocity(0.02f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

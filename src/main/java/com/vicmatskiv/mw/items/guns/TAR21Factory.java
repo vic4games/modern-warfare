@@ -63,14 +63,13 @@ public class TAR21Factory implements GunFactory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.2f)
         .withFlashOffsetY(() -> 0.18f)
-        .withInaccuracy(2)
         .withCreativeTab(ModernWarfareMod.SMGTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot)
-        .withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 7", 
-        "Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
+        .withInformationProvider(stack -> Arrays.asList("Type: Assault Rifle", "Damage: 7", 
+        "Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
         "Fire Rate: Auto"))
         .withCompatibleAttachment(CommonProxy.ElectricSkin, 
                 (a, i) -> {
@@ -677,12 +676,7 @@ public class TAR21Factory implements GunFactory {
             .build())
         .withSpawnEntityDamage(7f)
         .withSpawnEntityGravityVelocity(0.028f)
-        .withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-            Block block = WorldHelper.getBlockAtPosition(world, position);
-            if (WorldHelper.isGlassBlock(block)) {
-                WorldHelper.destroyBlock(world, position);
-            }
-         })
+        
         .build(ModernWarfareMod.MOD_CONTEXT);
     }
 }
