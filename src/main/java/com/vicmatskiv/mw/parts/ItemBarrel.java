@@ -10,7 +10,7 @@ public class ItemBarrel extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Barrel"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Barrel");
+		setTextureName(ModernWarfareMod.MODID + ":" + "barrel");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

@@ -10,7 +10,7 @@ public class ItemP90Receiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "P90Receiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "P90Receiver");
+		setTextureName(ModernWarfareMod.MODID + ":" + "p90receiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

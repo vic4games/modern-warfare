@@ -10,7 +10,7 @@ public class ItemPiston extends Item
 	{
 		setMaxStackSize(16);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Piston"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Piston");
+		setTextureName(ModernWarfareMod.MODID + ":" + "piston");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

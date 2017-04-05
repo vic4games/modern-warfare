@@ -19,7 +19,7 @@ public class BlockTitaniumOre extends Block
 	{
 		super(Material.rock);
 		setBlockName(ModernWarfareMod.MODID + "_" + "TitaniumOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "TitaniumOre");
+		setBlockTextureName(ModernWarfareMod.MODID + ":" + "titaniumore");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

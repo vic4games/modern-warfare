@@ -19,7 +19,7 @@ public class BlockBauxiteOre extends Block
 	{
 		super(Material.rock);
 		setBlockName(ModernWarfareMod.MODID + "_" + "BauxiteOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "BauxiteOre");
+		setBlockTextureName(ModernWarfareMod.MODID + ":" + "bauxiteore");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

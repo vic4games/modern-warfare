@@ -10,7 +10,7 @@ public class ItemShotgunGrip extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "ShotgunGrip"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "ShotgunGrip");
+		setTextureName(ModernWarfareMod.MODID + ":" + "shotgungrip");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

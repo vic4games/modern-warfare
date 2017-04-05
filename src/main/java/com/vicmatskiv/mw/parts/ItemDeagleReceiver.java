@@ -10,7 +10,7 @@ public class ItemDeagleReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "DeagleReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "DeagleReceiver");
+		setTextureName(ModernWarfareMod.MODID + ":" + "deaglereceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

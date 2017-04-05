@@ -3796,11 +3796,10 @@ public class CommonProxy {
         new KarambitFactory().createMelee(this);
         
         
-        float aspectRatio = (float)Minecraft.getMinecraft().displayWidth / Minecraft.getMinecraft().displayHeight;
         new ItemTablet.Builder<>().withOpticalZoom().withZoomRange(0.22f, 0.02f)
                 .withViewfinderPositioning((p, s) -> {
                     float scale = 5.9f;
-                    GL11.glScalef(scale, scale / aspectRatio, scale);
+                    GL11.glScalef(scale, scale / compatibility.getAspectRatio(ModernWarfareMod.MOD_CONTEXT), scale);
                     GL11.glTranslatef(-0.12f, 0.56f, 0.01f);
                 })
                 .withCreativeTab(ModernWarfareMod.gunsTab)

@@ -10,7 +10,7 @@ public class ItemSilicon extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Silicon"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Silicon");
+		setTextureName(ModernWarfareMod.MODID + ":" + "silicon");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

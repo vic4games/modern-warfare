@@ -10,7 +10,7 @@ public class ItemAluminumPlate extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "AluminumPlate"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "AluminumPlate");
+		setTextureName(ModernWarfareMod.MODID + ":" + "aluminumplate");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

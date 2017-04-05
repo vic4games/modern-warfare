@@ -10,7 +10,7 @@ public class ItemMetalComponents extends Item
     {
         setMaxStackSize(64);
         setUnlocalizedName(ModernWarfareMod.MODID + "_" + "MetalComponents"); 
-        setTextureName(ModernWarfareMod.MODID + ":" + "MetalComponents");
+        setTextureName(ModernWarfareMod.MODID + ":" + "metalcomponents");
         setCreativeTab(ModernWarfareMod.gunsTab);
     }
     

@@ -10,7 +10,7 @@ public class ItemScarReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "ScarReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "ScarReceiver");
+		setTextureName(ModernWarfareMod.MODID + ":" + "scarreceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

@@ -10,7 +10,7 @@ public class ItemWoodWeaponStock extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "WoodWeaponStock"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "WoodWeaponStock");
+		setTextureName(ModernWarfareMod.MODID + ":" + "woodweaponstock");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

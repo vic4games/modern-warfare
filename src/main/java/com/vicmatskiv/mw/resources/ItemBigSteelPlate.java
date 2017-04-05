@@ -10,7 +10,7 @@ public class ItemBigSteelPlate extends Item
     {
         setMaxStackSize(64);
         setUnlocalizedName(ModernWarfareMod.MODID + "_" + "BigSteelPlate"); 
-        setTextureName(ModernWarfareMod.MODID + ":" + "BigSteelPlate");
+        setTextureName(ModernWarfareMod.MODID + ":" + "bigsteelplate");
         setCreativeTab(ModernWarfareMod.gunsTab);
     }
     

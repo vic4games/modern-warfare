@@ -10,7 +10,7 @@ public class ItemPlastic extends Item
 	{
 		setMaxStackSize(16);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Plastic"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "Plastic");
+		setTextureName(ModernWarfareMod.MODID + ":" + "plastic");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

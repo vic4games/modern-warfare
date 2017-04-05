@@ -19,7 +19,7 @@ public class BlockTantalumOre extends Block
 	{
 		super(Material.rock);
 		setBlockName(ModernWarfareMod.MODID + "_" + "TantalumOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "TantalumOre");
+		setBlockTextureName(ModernWarfareMod.MODID + ":" + "tantalumore");
 		setHardness(4F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 

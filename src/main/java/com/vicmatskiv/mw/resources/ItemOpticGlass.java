@@ -10,7 +10,7 @@ public class ItemOpticGlass extends Item
 	{
 		setMaxStackSize(16);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "OpticGlass"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "OpticGlass");
+		setTextureName(ModernWarfareMod.MODID + ":" + "opticglass");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

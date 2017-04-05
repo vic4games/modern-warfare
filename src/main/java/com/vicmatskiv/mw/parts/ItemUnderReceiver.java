@@ -10,7 +10,7 @@ public class ItemUnderReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "UnderReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "UnderReceiver");
+		setTextureName(ModernWarfareMod.MODID + ":" + "underreceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

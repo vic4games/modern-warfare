@@ -10,7 +10,7 @@ public class ItemSteelIngot extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SteelIngot"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "SteelIngot");
+		setTextureName(ModernWarfareMod.MODID + ":" + "steelingot");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

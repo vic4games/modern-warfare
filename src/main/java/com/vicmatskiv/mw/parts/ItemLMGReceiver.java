@@ -10,7 +10,7 @@ public class ItemLMGReceiver extends Item
 	{
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LMGReceiver"); 
-		setTextureName(ModernWarfareMod.MODID + ":" + "LMGReceiver");
+		setTextureName(ModernWarfareMod.MODID + ":" + "lmgreceiver");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
 	

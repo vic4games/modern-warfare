@@ -163,20 +163,20 @@ public class M8A7Factory implements GunFactory {
             }
         })
       .withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
-          GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
-          GL11.glScaled(0.8F, 0.8F, 0.8F);
+          GL11.glTranslatef(-0.2F, -0.1F, -2.9F);
+          GL11.glScaled(1F, 1F, 1F);
       })
       .withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
-          GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
-          GL11.glScaled(0.8F, 0.8F, 0.8F);
+          GL11.glTranslatef(-0.2F, -0.1F, -2.9F);
+          GL11.glScaled(1F, 1F, 1F);
       })
        .withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
-           GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
-           GL11.glScaled(0.8F, 0.8F, 0.8F);
+           GL11.glTranslatef(-0.2F, -0.1F, -2.9F);
+           GL11.glScaled(1F, 1F, 1F);
       })
       .withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
-          GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
-          GL11.glScaled(0.8F, 0.8F, 0.8F);
+          GL11.glTranslatef(-0.2F, -0.1F, -2.9F);
+          GL11.glScaled(1F, 1F, 1F);
       })
         .withCompatibleAttachment(CommonProxy.Silencer300AACBlackout, (model) -> {
             GL11.glTranslatef(-0.2F, -1.11F, -6.8F);
@@ -426,8 +426,8 @@ public class M8A7Factory implements GunFactory {
                      
             .withFirstPersonHandPositioningModifying(
                      (renderContext) -> {
-                         GL11.glScalef(2.7f, 2.7f, 2.7f);
-                         GL11.glTranslatef(0.9f, 0.4f, -0.5f);
+                         GL11.glScalef(3f, 3f, 3f);
+                         GL11.glTranslatef(0.9f, 0.5f, -0.4f);
                          GL11.glRotatef(99f, 0, 0f, 1f);
                          GL11.glRotatef(-60f, 20f, 20f, -20f);
                      }, 

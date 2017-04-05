@@ -19,7 +19,7 @@ public class BlockCopperOre extends Block
 	{
 		super(Material.rock);
 		setBlockName(ModernWarfareMod.MODID + "_" + "CopperOre");
-		setBlockTextureName(ModernWarfareMod.MODID + ":" + "CopperOre");
+		setBlockTextureName(ModernWarfareMod.MODID + ":" + "copperore");
 		setHardness(6F);
 		setResistance(600000F);
 		setStepSound(soundTypeStone); 
