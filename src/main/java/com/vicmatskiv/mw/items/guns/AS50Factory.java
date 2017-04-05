@@ -55,7 +55,7 @@ public class AS50Factory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SnipersTab)
 		.withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

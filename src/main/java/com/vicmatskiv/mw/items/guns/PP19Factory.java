@@ -54,7 +54,7 @@ public class PP19Factory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)

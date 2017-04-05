@@ -41,7 +41,7 @@ public class XEagleFactory implements GunFactory {
 		.withFlashScale(() -> 0.7f)
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.PistolsTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
@@ -105,11 +105,11 @@ public class XEagleFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glTranslatef(0.1F, -0.5F, -1F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-10F, 1f, 0f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+			    GL11.glTranslatef(0.1F, -0.5F, -1F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
+                GL11.glRotatef(-10F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningCustomRecoiled(CommonProxy.DeagleTop.getRenderablePart(), (renderContext) -> {
@@ -130,14 +130,14 @@ public class XEagleFactory implements GunFactory {
 			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.DeagleMag, (renderContext) -> {})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-4F, 1f, 0f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+			    GL11.glTranslatef(-0.3F, -0.2F, -0.5F);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(0.6F, 0.6F, 0.6F);
 
-				// Zoom
-				GL11.glTranslatef(0.31F, -1.34f, 1.5f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+                // Zoom
+                GL11.glTranslatef(0.23F, -1.32f, 1.3f);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glRotatef(-2F, 1f, 0f, 0f);
 				
 			/*	// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), ModernWarfareMod.ACOG)) {

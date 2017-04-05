@@ -40,7 +40,7 @@ public class M9SDFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(3)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.PistolsTab)
 		.withInformationProvider(stack -> Arrays.asList("--Automatically Silenced--", "",  "Type: Pistol", "Damage: 4.5", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))

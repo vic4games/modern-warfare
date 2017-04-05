@@ -61,7 +61,7 @@ public class PX90Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.29f)
 		.withFlashOffsetY(() -> 0.3f)
 		.withInaccuracy(3)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)

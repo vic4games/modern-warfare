@@ -55,7 +55,7 @@ public class MP5SDFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(2)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.LOW, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MetalComponents,

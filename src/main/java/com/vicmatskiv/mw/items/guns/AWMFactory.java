@@ -62,7 +62,7 @@ public class AWMFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.BigSteelPlate)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SnipersTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle","Damage: 31.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 3)", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})

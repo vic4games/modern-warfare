@@ -61,13 +61,13 @@ public class KrissVectorTacticalFactory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.2f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.LOW, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.SteelIngot,
                 CommonProxy.BigSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.5", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Submachine gun", "Damage: 6.8", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
@@ -609,7 +609,7 @@ public class KrissVectorTacticalFactory implements GunFactory {
 						 GL11.glRotatef(-100f, 1f, 0f, 0f);
 					}, 250, 50))
 			.build())
-		.withSpawnEntityDamage(6.5f)
+		.withSpawnEntityDamage(6.8f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 		
 		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {

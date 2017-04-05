@@ -40,7 +40,7 @@ public class MAC11Factory implements GunFactory {
 		.withFlashScale(() -> 0.7f)
 		.withFlashOffsetX(() -> 0.45f)
 		.withFlashOffsetY(() -> 0.22f)
-		.withCreativeTab(ModernWarfareMod.gunsTab)
+		.withCreativeTab(ModernWarfareMod.PistolsTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
