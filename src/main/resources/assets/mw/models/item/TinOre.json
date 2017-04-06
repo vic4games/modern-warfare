@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/TinOre",
+    "parent":"mw:block/tinore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

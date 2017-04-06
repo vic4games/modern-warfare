@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/DrumMag"
+        "layer0": "mw:items/drummag"
     },
     "display": {
         "thirdperson": {

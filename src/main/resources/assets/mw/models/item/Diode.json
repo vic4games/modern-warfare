@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Diode"
+        "layer0": "mw:items/diode"
     },
     "display": {
         "thirdperson": {

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/SteelPlate"
+        "layer0": "mw:items/steelplate"
     },
     "display": {
         "thirdperson": {

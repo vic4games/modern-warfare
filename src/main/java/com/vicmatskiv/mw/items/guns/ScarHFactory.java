@@ -607,12 +607,7 @@ public class ScarHFactory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(7.4f)
 		.withSpawnEntityGravityVelocity(0.0118f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

@@ -295,7 +295,7 @@ public class AK12UFactory implements GunFactory {
 				GL11.glTranslatef(0.7F, -0.2F, -0.03F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(0.7F, 0.7F, 0.7F);
-				GL11.glTranslatef(-0.4F, -0.7F, 1.05F);
+				GL11.glTranslatef(-0.4F, -0.7F, 1.15F);
 				GL11.glRotatef(-3F, 1f, 0f, 0f);
 				})
 				
@@ -717,12 +717,7 @@ public class AK12UFactory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(7.3f)
 		.withSpawnEntityGravityVelocity(0.028f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}
 }

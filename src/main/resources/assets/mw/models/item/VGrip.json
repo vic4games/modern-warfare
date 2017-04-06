@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/VGrip"
+        "layer0": "mw:items/vgrip"
     },
     "display": {
         "thirdperson": {

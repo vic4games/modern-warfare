@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/LeadOre",
+    "parent":"mw:block/leadore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

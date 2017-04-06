@@ -145,8 +145,12 @@ item.AS Val.name=AS Val
 item.HK UMP45.name=HK UMP-45
 item.HK UMP9.name=HK UMP-9
 item.TAR21.name=TAR-21
+item.KN44.name=KN-44
+item.MP9.name=MP9
+item.M8A7.name=M8A7
 
 item.TacKnifeStandard.name=U.S. Marine Tactical Knife
+item.Karambit.name=Karambit Knife
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
@@ -196,6 +200,8 @@ item.mw_NATO40rnd.name=40rnd 5.56x45mm NATO Magazine
 item.mw_HecateIIMag.name=7rnd .50 BMG Magazine
 item.mw_Deagle50Mag.name=7rnd .50 Action Express Magazine
 item.mw_VSSVintorezMag.name=10rnd 9x39mm Magazine
+item.mw_KN44Mag.name=30rnd 5.56x39mm Magazine (Type 2)
+item.mw_M8A7Mag.name=32rnd .300 AAC Blackout Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet
@@ -249,6 +255,7 @@ item.mw_Silencer65x39.name=6.5x39mm NATO Silencer
 item.mw_SilencerMP7.name=4.6x30mm Silencer
 item.mw_StubbyGrip.name=Stubby Grip
 item.mw_Holographic2.name=EOTech EXPS3-0 (Tan)
+item.mw_PSO1.name=PSO-1 Scope
 
 item.mw_Electric.name=Electric Skin
 item.mw_Asiimov.name=Asiimov Skin

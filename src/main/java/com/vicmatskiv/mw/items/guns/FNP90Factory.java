@@ -477,12 +477,7 @@ public class FNP90Factory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(6.5f)
 		.withSpawnEntityGravityVelocity(0.028f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

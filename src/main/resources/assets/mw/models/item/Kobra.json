@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Kobra"
+        "layer0": "mw:items/kobra"
     },
     "display": {
         "thirdperson": {

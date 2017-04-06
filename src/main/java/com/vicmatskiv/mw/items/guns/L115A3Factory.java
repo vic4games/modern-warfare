@@ -988,12 +988,7 @@ public class L115A3Factory implements GunFactory {
 			.build())
 		.withSpawnEntityDamage(32.5f)
 		.withSpawnEntityGravityVelocity(0f)
-		.withSpawnEntityBlockImpactHandler((world, player, entity, position) -> {
-			Block block = WorldHelper.getBlockAtPosition(world, position);
-			if (WorldHelper.isGlassBlock(block)) {
-				WorldHelper.destroyBlock(world, position);
-			}
-		 })
+		
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}

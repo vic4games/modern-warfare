@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/MagnumAmmo"
+        "layer0": "mw:items/magnumammo"
     },
     "display": {
         "thirdperson": {

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/M249Mag"
+        "layer0": "mw:items/m249mag"
     },
     "display": {
         "thirdperson": {

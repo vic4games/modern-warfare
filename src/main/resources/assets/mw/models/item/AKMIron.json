@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/AKMIron"
+        "layer0": "mw:items/akmiron"
     },
     "display": {
         "thirdperson": {

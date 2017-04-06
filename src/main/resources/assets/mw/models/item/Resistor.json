@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Resistor"
+        "layer0": "mw:items/resistor"
     },
     "display": {
         "thirdperson": {

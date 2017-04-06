@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/SteelDust"
+        "layer0": "mw:items/steeldust"
     },
     "display": {
         "thirdperson": {

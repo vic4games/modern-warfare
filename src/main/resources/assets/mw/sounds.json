@@ -17,191 +17,218 @@
       }
     ]
   },
-  "AK47": {
+  "ak47": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AK47",
+       "name": "mw:ak47",
        "stream": false
       }
     ]
   },
-  "M16": {
+  "m16": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M16",
+       "name": "mw:m16",
        "stream": false
       }
     ]
   },
-  "TAR21": {
+  "tar21": {
     "category": "master",
     "sounds": [
       {
-       "name": "TAR21",
+       "name": "mw:tar21",
        "stream": false
       }
     ]
   },
-  "VSSVintorez": {
+  "kn44": {
     "category": "master",
     "sounds": [
       {
-       "name": "VSSVintorez",
+       "name": "mw:kn44",
        "stream": false
       }
     ]
   },
-  "UMP45": {
+  "vssvintorez": {
     "category": "master",
     "sounds": [
       {
-       "name": "UMP45",
+       "name": "mw:vssvintorez",
        "stream": false
       }
     ]
   },
-   "AKM": {
+  "weevil": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AKM",
+       "name": "mw:weevil",
        "stream": false
       }
     ]
   },
-   "HecateII": {
+  "m8a7": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:HecateII",
+       "name": "mw:m8a7",
        "stream": false
       }
     ]
   },
-  "BoltActionReload": {
+  "ump45": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:BoltActionReload",
+       "name": "mw:ump45",
        "stream": false
       }
     ]
   },
-  "GunFireModeSwitch": {
+   "akm": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:GunFireModeSwitch",
+       "name": "mw:akm",
        "stream": false
       }
     ]
   },
-  "OpticZoom": {
+   "hecateii": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:OpticZoom",
+       "name": "mw:hecateii",
        "stream": false
       }
     ]
   },
-  "RPK": {
+  "boltactionreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:RPK",
+       "name": "mw:boltactionreload",
        "stream": false
       }
     ]
   },
-   "SMAW": {
+  "gunfiremodeswitch": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:SMAW",
+       "name": "mw:gunfiremodeswitch",
        "stream": false
       }
     ]
   },
-   "RocketLauncherReload": {
+  "opticzoom": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:RocketLauncherReload",
+       "name": "mw:opticzoom",
        "stream": false
       }
     ]
   },
-   "AWP": {
+  "rpk": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AWP",
+       "name": "mw:rpk",
        "stream": false
       }
     ]
   },
-   "L115": {
+   "smaw": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:L115",
+       "name": "mw:smaw",
        "stream": false
       }
     ]
   },
-  "SV98": {
+   "rocketlauncherreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:SV98",
+       "name": "mw:rocketlauncherreload",
        "stream": false
       }
     ]
   },
-  "MosinNagant": {
+   "awp": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MosinNagant",
+       "name": "mw:awp",
        "stream": false
       }
     ]
   },
-  "MosinReload": {
+   "l115": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MosinReload",
+       "name": "mw:l115",
        "stream": false
       }
     ]
   },
-   "M21": {
+  "sv98": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M21",
+       "name": "mw:sv98",
        "stream": false
       }
     ]
   },
-   "M41A": {
+  "mosinnagant": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M41A",
+       "name": "mw:mosinnagant",
        "stream": false
       }
     ]
   },
-  "HK33": {
+  "mosinreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:HK33",
+       "name": "mw:mosinreload",
+       "stream": false
+      }
+    ]
+  },
+   "m21": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m21",
+       "stream": false
+      }
+    ]
+  },
+   "m41a": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m41a",
+       "stream": false
+      }
+    ]
+  },
+  "hk33": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:hk33",
        "stream": false
       }
     ]
@@ -215,290 +242,290 @@
       }
     ]
   },
-   "M93R": {
+   "m93r": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M93R",
+       "name": "mw:m93r",
        "stream": false
       }
     ]
   },
-   "Python": {
+   "python": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Python",
+       "name": "mw:python",
        "stream": false
       }
     ]
   },
-  "USP45": {
+  "usp45": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:USP45",
+       "name": "mw:usp45",
        "stream": false
       }
     ]
   },
-   "Makarov": {
+   "makarov": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Makarov",
+       "name": "mw:makarov",
        "stream": false
       }
     ]
   },
-    "MakarovPMM": {
+  "makarovpmm": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MakarovPMM",
+       "name": "mw:makarovpmm",
        "stream": false
       }
     ]
   },
-  "G36C": {
+  "g36c": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:G36C",
+       "name": "mw:g36c",
        "stream": false
       }
     ]
   },
-  "ShotgunSilenced": {
+  "shotgunsilenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:ShotgunSilenced",
+       "name": "mw:shotgunsilenced",
        "stream": false
       }
     ]
   },
-  "Spas12": {
+  "spas12": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Spas12",
+       "name": "mw:spas12",
        "stream": false
       }
     ]
   },
-  "P225": {
+  "p225": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:P225",
+       "name": "mw:p225",
        "stream": false
       }
     ]
   },
-  "P30": {
+  "p30": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:P30",
+       "name": "mw:p30",
        "stream": false
       }
     ]
   },
-  "MAC10": {
+  "mac10": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MAC10",
+       "name": "mw:mac10",
        "stream": false
       }
     ]
   },
-   "G3": {
+   "g3": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:G3",
+       "name": "mw:g3",
        "stream": false
       }
     ]
   },
-  "G3Silenced": {
+  "g3silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:G3Silenced",
+       "name": "mw:g3silenced",
        "stream": false
       }
     ]
   },
-  "AK12U": {
+  "ak12u": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AK12U",
+       "name": "mw:ak12u",
        "stream": false
       }
     ]
   },
-  "QBS09": {
+  "qbs09": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:QBS09",
+       "name": "mw:qbs09",
        "stream": false
       }
     ]
   },
-  "PPBizon": {
+  "ppbizon": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:PPBizon",
+       "name": "mw:ppbizon",
        "stream": false
       }
     ]
   },
-  "PPBizonSilenced": {
+  "ppbizonsilenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:PPBizonSilenced",
+       "name": "mw:ppbizonsilenced",
        "stream": false
       }
     ]
   },
-  "Glock32": {
+  "glock32": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Glock32",
+       "name": "mw:glock32",
        "stream": false
       }
     ]
   },
-  "Glock32Silenced": {
+  "glock32silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Glock32Silenced",
+       "name": "mw:glock32silenced",
        "stream": false
       }
     ]
   },
-   "SR25": {
+   "sr25": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:SR25",
+       "name": "mw:sr25",
        "stream": false
       }
     ]
   },
-  "SR25Silenced": {
+  "sr25silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:SR25Silenced",
+       "name": "mw:sr25silenced",
        "stream": false
       }
     ]
   },
-  "Minimi": {
+  "minimi": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Minimi",
+       "name": "mw:minimi",
        "stream": false
       }
     ]
   },
-  "M240": {
+  "m240": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M240",
+       "name": "mw:m240",
        "stream": false
       }
     ]
   },
-  "Famas2": {
+  "famas2": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Famas2",
+       "name": "mw:famas2",
        "stream": false
       }
     ]
   },
-  "Glock18": {
+  "glock18": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Glock18",
+       "name": "mw:glock18",
        "stream": false
       }
     ]
   },
-   "M4A4": {
+   "m4a4": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M4A4",
+       "name": "mw:m4a4",
        "stream": false
       }
     ]
   },
-  "Vector": {
+  "vector": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Vector",
+       "name": "mw:vector",
        "stream": false
       }
     ]
   },
-  "VectorSilenced": {
+  "vectorsilenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:VectorSilenced",
+       "name": "mw:vectorsilenced",
        "stream": false
       }
     ]
   },
-   "MosinBoltAction": {
+   "mosinboltaction": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MosinBoltAction",
+       "name": "mw:mosinboltaction",
        "stream": false
       }
     ]
   },
-   "M1Carbine": {
+   "m1carbine": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M1Carbine",
+       "name": "mw:m1carbine",
        "stream": false
       }
     ]
   },
-   "M1CarbineReload": {
+   "m1carbinereload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M1CarbineReload",
+       "name": "mw:m1carbinereload",
        "stream": false
       }
     ]
   },
-   "MP40": {
+   "mp40": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MP40",
+       "name": "mw:mp40",
        "stream": false
       }
     ]
@@ -512,443 +539,452 @@
       }
     ]
   },
-  "KSG12Pump": {
+  "ksg12pump": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:KSG12Pump",
+       "name": "mw:ksg12pump",
        "stream": false
       }
     ]
   },
-   "M4A1": {
+   "m4a1": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M4A1",
+       "name": "mw:m4a1",
        "stream": false
       }
     ]
   },
-   "Unload": {
+   "unload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Unload",
+       "name": "mw:unload",
        "stream": false
       }
     ]
   },
-   "L96BoltAction": {
+   "l96boltaction": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:L96BoltAction",
+       "name": "mw:l96boltaction",
        "stream": false
       }
     ]
   },
-   "M1014Reload": {
+   "m1014reload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M1014Reload",
+       "name": "mw:m1014reload",
        "stream": false
       }
     ]
   },
-   "RevolverClick": {
+   "revolverclick": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:RevolverClick",
+       "name": "mw:revolverclick",
        "stream": false
       }
     ]
   },
-  "M14DMR": {
+  "m14dmr": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M14DMR",
+       "name": "mw:m14dmr",
        "stream": false
       }
     ]
   },
-  "ShotgunReload": {
+  "shotgunreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:ShotgunReload",
+       "name": "mw:shotgunreload",
        "stream": false
       }
     ]
   },
-  "AKsilenced": {
+  "aksilenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AKsilenced",
+       "name": "mw:aksilenced",
        "stream": false
       }
     ]
   },
-   "M14": {
+   "m14": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M14",
+       "name": "mw:m14",
        "stream": false
       }
     ]
   },
-   "RifleSilencer": {
+   "riflesilencer": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:RifleSilencer",
+       "name": "mw:riflesilencer",
        "stream": false
       }
     ]
   },
-  "M110": {
+  "m110": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M110",
+       "name": "mw:m110",
        "stream": false
       }
     ]
   },
-  "M1014": {
+  "m1014": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M1014",
+       "name": "mw:m1014",
        "stream": false
       }
     ]
   },
-  "SPAS15": {
+  "spas15": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:SPAS15",
+       "name": "mw:spas15",
        "stream": false
       }
     ]
   },
-  "NoBoltReload": {
+  "noboltreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:NoBoltReload",
+       "name": "mw:noboltreload",
        "stream": false
       }
     ]
   },
-  "G36": {
+  "g36": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:G36",
+       "name": "mw:g36",
        "stream": false
       }
     ]
   },
-  "AK74M": {
+  "ak74m": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AK74M",
+       "name": "mw:ak74m",
        "stream": false
       }
     ]
   },
-  "P2000": {
+  "p2000": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:P2000",
+       "name": "mw:p2000",
        "stream": false
       }
     ]
   },
-  "M107": {
+  "m107": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M107",
+       "name": "mw:m107",
        "stream": false
       }
     ]
   },
-  "KSG12": {
+  "ksg12": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:KSG12",
+       "name": "mw:ksg12",
        "stream": false
       }
     ]
   },
-  "KSG12Reload": {
+  "ksg12reload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:KSG12Reload",
+       "name": "mw:ksg12reload",
        "stream": false
       }
     ]
   },
-  "M249": {
+  "m249": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M249",
+       "name": "mw:m249",
        "stream": false
       }
     ]
   },
-  "M249Reload": {
+  "m249reload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M249Reload",
+       "name": "mw:m249reload",
        "stream": false
       }
     ]
   },
-  "G18": {
+  "g18": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:G18",
+       "name": "mw:g18",
        "stream": false
       }
     ]
   },
-  "M9": {
+  "m9": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M9",
+       "name": "mw:m9",
        "stream": false
       }
     ]
   },
-  "AR15": {
+  "ar15": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AR15",
+       "name": "mw:ar15",
        "stream": false
       }
     ]
   },
-  "AR15Silenced": {
+  "ar15silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AR15Silenced",
+       "name": "mw:ar15silenced",
        "stream": false
       }
     ]
   },
-  "M1911": {
+  "m1911": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:M1911",
+       "name": "mw:m1911",
        "stream": false
       }
     ]
   },
-  "Scar": {
+  "scar": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Scar",
+       "name": "mw:scar",
        "stream": false
       }
     ]
   },
-  "ScarH": {
+  "scarh": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:ScarH",
+       "name": "mw:scarh",
        "stream": false
       }
     ]
   },
-  "Deagle": {
+  "deagle": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Deagle",
+       "name": "mw:deagle",
        "stream": false
       }
     ]
   },
-   "L96": {
+   "l96": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:L96",
+       "name": "mw:l96",
        "stream": false
       }
     ]
   },
-   "Dragonuv": {
+   "dragonuv": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Dragonuv",
+       "name": "mw:dragonuv",
        "stream": false
       }
     ]
   },
-  "P90": {
+  "remington": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:P90",
+       "name": "mw:remington",
        "stream": false
       }
     ]
   },
-  "AK12": {
+  "p90": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AK12",
+       "name": "mw:p90",
        "stream": false
       }
     ]
   },
-  "MP5": {
+  "ak12": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MP5",
+       "name": "mw:ak12",
        "stream": false
       }
     ]
   },
-  "MP5Silenced": {
+  "mp5": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MP5Silenced",
+       "name": "mw:mp5",
        "stream": false
       }
     ]
   },
-  "MP5K": {
+  "mp5silenced": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MP5K",
+       "name": "mw:mp5silenced",
        "stream": false
       }
     ]
   },
-  "Famas": {
+  "mp5k": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Famas",
+       "name": "mw:mp5k",
        "stream": false
       }
     ]
   },
-  "AK74U": {
+  "famas": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AK74U",
+       "name": "mw:famas",
        "stream": false
       }
     ]
   },
-  "P90Reload": {
+  "ak74u": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:P90Reload",
+       "name": "mw:ak74u",
        "stream": false
       }
     ]
   },
-  "StandardReload": {
+  "p90reload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:StandardReload",
+       "name": "mw:p90reload",
        "stream": false
       }
     ]
   },
-  "AKReload": {
+  "standardreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AKReload",
+       "name": "mw:standardreload",
        "stream": false
       }
     ]
   },
-  "PistolReload": {
+  "akreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:PistolReload",
+       "name": "mw:akreload",
        "stream": false
       }
     ]
   },
-  "MP7": {
+  "pistolreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MP7",
+       "name": "mw:pistolreload",
        "stream": false
       }
     ]
   },
-  "Magnum": {
+  "mp7": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:Magnum",
+       "name": "mw:mp7",
        "stream": false
       }
     ]
   },
-  "MagnumReload": {
+  "magnum": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:MagnumReload",
+       "name": "mw:magnum",
        "stream": false
       }
     ]
   },
-  "AS50": {
+  "magnumreload": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:AS50",
+       "name": "mw:magnumreload",
        "stream": false
       }
     ]
   },
-  "FNFAL": {
+  "as50": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:FNFAL",
+       "name": "mw:as50",
+       "stream": false
+      }
+    ]
+  },
+  "fnfal": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:fnfal",
        "stream": false
       }
     ]

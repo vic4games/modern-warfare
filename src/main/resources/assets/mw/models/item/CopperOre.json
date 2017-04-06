@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/CopperOre",
+    "parent":"mw:block/copperore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/FamasMag"
+        "layer0": "mw:items/famasmag"
     },
     "display": {
         "thirdperson": {

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/P90Receiver"
+        "layer0": "mw:items/p90receiver"
     },
     "display": {
         "thirdperson": {

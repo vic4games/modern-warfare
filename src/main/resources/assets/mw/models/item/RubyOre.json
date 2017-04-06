@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/RubyOre",
+    "parent":"mw:block/rubyore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

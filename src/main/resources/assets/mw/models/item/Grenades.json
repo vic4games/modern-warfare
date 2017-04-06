@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Grenades"
+        "layer0": "mw:items/grenades"
     },
     "display": {
         "thirdperson": {

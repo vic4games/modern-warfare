@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/ScarMag"
+        "layer0": "mw:items/scarmag"
     },
     "display": {
         "thirdperson": {
