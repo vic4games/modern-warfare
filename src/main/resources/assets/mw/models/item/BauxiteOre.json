@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/BauxiteOre",
+    "parent":"mw:block/bauxiteore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

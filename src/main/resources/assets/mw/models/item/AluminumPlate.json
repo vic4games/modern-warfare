@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/AluminumPlate"
+        "layer0": "mw:items/aluminumplate"
     },
     "display": {
         "thirdperson": {

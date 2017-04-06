@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/WeaponStock"
+        "layer0": "mw:items/weaponstock"
     },
     "display": {
         "thirdperson": {

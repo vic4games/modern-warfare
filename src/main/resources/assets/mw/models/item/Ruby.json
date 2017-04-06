@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Ruby"
+        "layer0": "mw:items/ruby"
     },
     "display": {
         "thirdperson": {

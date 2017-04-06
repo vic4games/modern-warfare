@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Barrel"
+        "layer0": "mw:items/barrel"
     },
     "display": {
         "thirdperson": {

@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Bipod"
+        "layer0": "mw:items/bipod"
     },
     "display": {
         "thirdperson": {

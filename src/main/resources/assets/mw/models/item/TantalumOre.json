@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/TantalumOre",
+    "parent":"mw:block/tantalumore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

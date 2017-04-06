@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/RevolverReceiver"
+        "layer0": "mw:items/revolverreceiver"
     },
     "display": {
         "thirdperson": {

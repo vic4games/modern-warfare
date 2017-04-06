@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/CopperWiring"
+        "layer0": "mw:items/copperwiring"
     },
     "display": {
         "thirdperson": {

@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/TitaniumOre",
+    "parent":"mw:block/titaniumore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

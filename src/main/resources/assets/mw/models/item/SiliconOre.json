@@ -1,5 +1,5 @@
 {
-    "parent":"mw:block/SiliconOre",
+    "parent":"mw:block/siliconore",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],

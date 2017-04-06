@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/FNFALMag"
+        "layer0": "mw:items/fnfalmag"
     },
     "display": {
         "thirdperson": {

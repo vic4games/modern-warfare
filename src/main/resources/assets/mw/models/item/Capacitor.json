@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Capacitor"
+        "layer0": "mw:items/capacitor"
     },
     "display": {
         "thirdperson": {

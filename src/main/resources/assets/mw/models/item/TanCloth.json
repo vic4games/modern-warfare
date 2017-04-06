@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/TanCloth"
+        "layer0": "mw:items/tancloth"
     },
     "display": {
         "thirdperson": {

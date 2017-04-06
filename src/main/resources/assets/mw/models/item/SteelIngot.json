@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/SteelIngot"
+        "layer0": "mw:items/steelingot"
     },
     "display": {
         "thirdperson": {

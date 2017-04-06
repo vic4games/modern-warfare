@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Laser2"
+        "layer0": "mw:items/laser2"
     },
     "display": {
         "thirdperson": {

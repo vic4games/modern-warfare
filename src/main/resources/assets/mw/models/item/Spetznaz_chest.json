@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Spetznaz_chest"
+        "layer0": "mw:items/spetznaz_chest"
     },
     "display": {
         "thirdperson": {

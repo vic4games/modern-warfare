@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/GunmetalMiniPlate"
+        "layer0": "mw:items/gunmetalminiplate"
     },
     "display": {
         "thirdperson": {

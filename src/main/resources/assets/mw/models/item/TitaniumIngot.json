@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/TitaniumIngot"
+        "layer0": "mw:items/titaniumingot"
     },
     "display": {
         "thirdperson": {

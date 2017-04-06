@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/RPK74MMag"
+        "layer0": "mw:items/rpk74mmag"
     },
     "display": {
         "thirdperson": {

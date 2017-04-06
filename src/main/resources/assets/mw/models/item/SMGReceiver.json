@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/SMGReceiver"
+        "layer0": "mw:items/smgreceiver"
     },
     "display": {
         "thirdperson": {

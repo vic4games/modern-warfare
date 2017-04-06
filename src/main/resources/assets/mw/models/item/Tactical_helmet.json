@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "mw:items/Tactical_helmet"
+        "layer0": "mw:items/tactical_helmet"
     },
     "display": {
         "thirdperson": {
