@@ -22,12 +22,10 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
-import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class M1CarbineFactory implements GunFactory {

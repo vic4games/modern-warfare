@@ -10,11 +10,9 @@ import com.vicmatskiv.mw.models.HecateII;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
-import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class HecateIIFactory implements GunFactory {
