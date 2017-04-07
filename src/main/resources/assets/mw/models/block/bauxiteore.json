@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "mw:blocks/TinOre"
+        "all": "mw:blocks/bauxiteore"
     }
 }

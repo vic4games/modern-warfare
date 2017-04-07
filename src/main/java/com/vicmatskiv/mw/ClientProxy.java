@@ -17,94 +17,94 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void init(Object mod, CompatibleFmlInitializationEvent event) {
 		super.init(mod, event);
-		
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.BauxiteOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "BauxiteOre", "inventory"));
 
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.CopperOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "CopperOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.BauxiteOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "bauxiteore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.LeadOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LeadOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.CopperOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "copperore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.RubyOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "RubyOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.LeadOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "leadore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.SiliconOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SiliconOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.RubyOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "rubyore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.SulfurOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SulfurOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.SiliconOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "siliconore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.TantalumOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TantalumOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.SulfurOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "sulfurore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.TinOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TinOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.TantalumOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tantalumore", "inventory"));
+
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-		.register(Item.getItemFromBlock(CommonProxy.TitaniumOre), 0, 
-				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TitaniumOre", "inventory"));
-		
+		.register(Item.getItemFromBlock(CommonProxy.TinOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tinore", "inventory"));
+
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
+		.register(Item.getItemFromBlock(CommonProxy.TitaniumOre), 0,
+				new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "titaniumore", "inventory"));
+
 		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-		renderItem.getItemModelMesher().register(CommonProxy.AluminumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AluminumIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.AluminumPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AluminumPlate", "inventory"));
-	    renderItem.getItemModelMesher().register(CommonProxy.BigSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "BigSteelPlate", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Bullets, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Bullets", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.CGrip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "CGrip", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Capacitor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Capacitor", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Cloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Cloth", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.CopperIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "CopperIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.CopperWiring, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "CopperWiring", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Diode, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Diode", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Electronics, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Electronics", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.GreenCloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "GreenCloth", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Inductor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Inductor", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.LaserPointer, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LaserPointer", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.LeadIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "LeadIngot", "inventory"));
-        renderItem.getItemModelMesher().register(CommonProxy.MetalComponents, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "MetalComponents", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.MiniSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "MiniSteelPlate", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.OpticGlass, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "OpticGlass", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Piston, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Piston", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Plastic, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Plastic", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Resistor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Resistor", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Ruby, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Ruby", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Silicon, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Silicon", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.SteelDust, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SteelDust", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.SteelIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SteelIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.SteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SteelPlate", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.SulfurDust, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "SulfurDust", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.TanCloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TanCloth", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.TantalumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TantalumIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.TinIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TinIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.TitaniumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "TitaniumIngot", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Transistor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Transistor", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.AR15Iron, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AR15Iron", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.AKMIron, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "AKMIron", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.AluminumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "aluminumingot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.AluminumPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "aluminumplate", "inventory"));
+	    renderItem.getItemModelMesher().register(CommonProxy.BigSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "bigsteelplate", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Bullets, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "bullets", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.CGrip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "cgrip", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Capacitor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "capacitor", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Cloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "cloth", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.CopperIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "copperingot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.CopperWiring, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "copperwiring", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Diode, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "diode", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Electronics, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "electronics", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.GreenCloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "greencloth", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Inductor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "inductor", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.LaserPointer, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "laserpointer", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.LeadIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "leadingot", "inventory"));
+        renderItem.getItemModelMesher().register(CommonProxy.MetalComponents, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "metalcomponents", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.MiniSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "ministeelplate", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.OpticGlass, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "opticglass", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Piston, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "piston", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Plastic, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "plastic", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Resistor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "resistor", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Ruby, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "ruby", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Silicon, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "silicon", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.SteelDust, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "steeldust", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.SteelIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "steelingot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.SteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "steelplate", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.SulfurDust, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "sulfurdust", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.TanCloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tancloth", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.TantalumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tantalumingot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.TinIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tiningot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.TitaniumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "titaniumingot", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Transistor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "transistor", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.AR15Iron, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "ar15iron", "inventory"));
+//		renderItem.getItemModelMesher().register(CommonProxy.AKMIron, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "akmiron", "inventory"));
 
-		
-		renderItem.getItemModelMesher().register(CommonProxy.Marineboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_boots", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Marinechest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_chest", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Marinehelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Marine_helmet", "inventory"));
-		
-		renderItem.getItemModelMesher().register(CommonProxy.Spetznazboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_boots", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Spetznazchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_chest", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Spetznazhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Spetznaz_helmet", "inventory"));
-		
-		renderItem.getItemModelMesher().register(CommonProxy.Swatboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_boots", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Swatchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_chest", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Swathelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Swat_helmet", "inventory"));
-		
-		renderItem.getItemModelMesher().register(CommonProxy.Tacticalboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Tactical_boots", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Tacticalchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Tactical_chest", "inventory"));
-		renderItem.getItemModelMesher().register(CommonProxy.Tacticalhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "Tactical_helmet", "inventory"));
+
+		renderItem.getItemModelMesher().register(CommonProxy.Marineboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "marine_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Marinechest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "marine_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Marinehelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "marine_helmet", "inventory"));
+
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spetznaz_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spetznaz_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Spetznazhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spetznaz_helmet", "inventory"));
+
+		renderItem.getItemModelMesher().register(CommonProxy.Swatboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "swat_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Swatchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "swat_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Swathelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "swat_helmet", "inventory"));
+
+		renderItem.getItemModelMesher().register(CommonProxy.Tacticalboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_boots", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Tacticalchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_chest", "inventory"));
+		renderItem.getItemModelMesher().register(CommonProxy.Tacticalhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_helmet", "inventory"));
 	}
 }
