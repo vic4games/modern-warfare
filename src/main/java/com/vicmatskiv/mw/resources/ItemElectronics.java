@@ -9,9 +9,9 @@ public class ItemElectronics extends Item
 	public ItemElectronics()
 	{
 		setMaxStackSize(32);
-		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Electronics"); 
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "Electronics");
 		//setTextureName(ModernWarfareMod.MODID + ":" + "Electronics");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	
+
 }
