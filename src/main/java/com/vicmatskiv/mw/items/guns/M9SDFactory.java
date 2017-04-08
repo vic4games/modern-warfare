@@ -9,10 +9,8 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.M9;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
-import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class M9SDFactory implements GunFactory {

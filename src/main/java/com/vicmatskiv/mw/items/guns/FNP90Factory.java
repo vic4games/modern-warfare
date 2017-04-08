@@ -11,11 +11,9 @@ import com.vicmatskiv.mw.models.FNP90Sight;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
-import com.vicmatskiv.weaponlib.WorldHelper;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 
 public class FNP90Factory implements GunFactory {
