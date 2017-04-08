@@ -35,6 +35,15 @@
       }
     ]
   },
+  "m1garand": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "m1garand",
+       "stream": false
+      }
+    ]
+  },
   "tar21": {
     "category": "master",
     "sounds": [

@@ -148,6 +148,7 @@ item.TAR21.name=TAR-21
 item.KN44.name=KN-44
 item.MP9.name=MP9
 item.M8A7.name=M8A7
+item.M1Garand.name=M1 Garand
 
 item.TacKnifeStandard.name=U.S. Marine Tactical Knife
 item.Karambit.name=Karambit Knife
@@ -225,6 +226,7 @@ item.mw_Bullet300Blackout.name=.300 AAC Blackout Bullet
 item.mw_SMAWRocket.name=Mk153 SMAW Rocket
 item.mw_Bullet50AE.name=.50 Action Express Bullet
 item.mw_Bullet9x39mm.name=9x39mm Bullet
+item.mw_BulletSpringfield3006.name=.30-06 Springfield Bullet
 
 item.mw_Acog.name=Trigicon Acog Scope
 item.mw_Reflex.name=15 MOA Reflex
