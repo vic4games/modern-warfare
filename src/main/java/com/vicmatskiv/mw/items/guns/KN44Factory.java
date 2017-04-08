@@ -66,7 +66,7 @@ public class KN44Factory implements GunFactory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.12f)
         .withFlashOffsetY(() -> 0.12f)
-        .withCreativeTab(ModernWarfareMod.SMGTab)
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
