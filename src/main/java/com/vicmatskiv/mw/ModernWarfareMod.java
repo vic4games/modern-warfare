@@ -6,9 +6,6 @@ import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.Mod;
@@ -18,8 +15,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
 public class ModernWarfareMod {
@@ -28,7 +23,7 @@ public class ModernWarfareMod {
     private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
     private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
     public static final String MODID = "mw";
-    public static final String VERSION = "1.8.1";
+    public static final String VERSION = "1.9";
 
     @SidedProxy(serverSide = "com.vicmatskiv.weaponlib.CommonModContext", clientSide = "com.vicmatskiv.weaponlib.ClientModContext")
     public static ModContext MOD_CONTEXT;
