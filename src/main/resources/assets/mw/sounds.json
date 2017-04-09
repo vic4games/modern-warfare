@@ -39,7 +39,7 @@
     "category": "master",
     "sounds": [
       {
-       "name": "m1garand",
+       "name": "mw:m1garand",
        "stream": false
       }
     ]
