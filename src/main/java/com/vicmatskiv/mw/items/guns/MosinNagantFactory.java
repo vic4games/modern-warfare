@@ -2,6 +2,8 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
+import net.minecraft.item.Item;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -28,8 +30,6 @@ import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-
-import net.minecraft.item.Item;
 
 public class MosinNagantFactory implements GunFactory {
 
@@ -63,7 +63,7 @@ public class MosinNagantFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Ammo:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
+		.withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 20", "Cartridge:", "7.62x54mm Bullet" ,"Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(CommonProxy.MosinBolt, true, (model) -> {
 			if(model instanceof MosinBolt) {
 	    		GL11.glTranslatef(0F, 0F, 0F);
@@ -584,7 +584,7 @@ public class MosinNagantFactory implements GunFactory {
 					}, 350, 1050))
 					
 			.build())
-		.withSpawnEntityDamage(27f)
+		.withSpawnEntityDamage(20f)
 		.withSpawnEntityGravityVelocity(0f)
 		
 		 

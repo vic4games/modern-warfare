@@ -9,8 +9,8 @@ public class ItemLaserPointer extends Item
 	public ItemLaserPointer()
 	{
 		setMaxStackSize(64);
-		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LaserPointer"); 
+		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LaserPointer");
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	
+
 }

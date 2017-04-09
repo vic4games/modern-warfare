@@ -2,6 +2,8 @@ package com.vicmatskiv.mw.items.guns;
 
 import java.util.Arrays;
 
+import net.minecraft.item.Item;
+
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -32,8 +34,6 @@ import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
-import net.minecraft.item.Item;
-
 public class TAR21Factory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
@@ -59,7 +59,7 @@ public class TAR21Factory implements GunFactory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.2f)
         .withFlashOffsetY(() -> 0.18f)
-        .withCreativeTab(ModernWarfareMod.SMGTab)
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
