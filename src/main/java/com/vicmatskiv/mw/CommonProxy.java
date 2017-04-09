@@ -190,6 +190,7 @@ public class CommonProxy {
     public static ItemBullet SMAWRocket;
     public static ItemBullet Bullet50;
     public static ItemBullet Bullet9x39mm;
+    public static ItemBullet BulletSpringfield3006;
 
     public static Item AK47;
     public static Item AKM;
@@ -304,6 +305,7 @@ public class CommonProxy {
     public static Item KN44;
     public static Item MP9;
     public static Item M8A7;
+    public static Item M1Garand;
     // public static Item GaussRifle;
     // public static Item RPG;
 
@@ -758,6 +760,27 @@ public class CommonProxy {
         Carbine30 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withName("Carbine30")
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet44.png")
+                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.4F, 0.6F, 0.4F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.3F, 0.5F, 0.3F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glRotatef(10F, 0f, 1f, 0f);
+                    GL11.glRotatef(2F, 1f, 0f, 0f);
+                    GL11.glRotatef(0F, 0f, 0f, 1f);
+                    GL11.glScaled(1.6F, 1.8F, 1.6f);
+                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+        
+        BulletSpringfield3006 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.gunsTab).withName("BulletSpringfield3006")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
                 .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
@@ -3747,6 +3770,7 @@ public class CommonProxy {
         KN44 = new KN44Factory().createGun(this);
         MP9 = new MP9Factory().createGun(this);
         M8A7 = new M8A7Factory().createGun(this);
+        M1Garand = new M1GarandFactory().createGun(this);
 
         // Fun Guns :)
         M41A = new M41AFactory().createGun(this);
