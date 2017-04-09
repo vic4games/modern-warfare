@@ -23,7 +23,7 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.8.1"
+version = "1.9"
 group= "com.vicmatskiv.mw" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "mw"
 
@@ -33,7 +33,7 @@ targetCompatibility = JavaVersion.VERSION_1_8
 minecraft {
     version = "1.10.2-12.18.3.2215"
     runDir = "run"
-    
+
     // the mappings can be changed at any time, and must be in the following format.
     // snapshot_YYYYMMDD   snapshot are built nightly.
     // stable_#            stables are built at the discretion of the MCP team.
@@ -48,9 +48,9 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
-      
+
     compile files('/Users/victor-jr/Development/weaponlib-1.10.2/build/libs/weaponlib-1.0.jar')
-      
+
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -78,11 +78,11 @@ processResources
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
-                
+
         // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
-        
+
     // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
@@ -91,8 +91,8 @@ processResources
 jar {
     //baseName = project.name + '-all'
     archiveName = "${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
-    from { 
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     } {
         include "com/vicmatskiv/weaponlib/**"
     }
@@ -102,8 +102,8 @@ jar {
 
 task obfuscate(type: proguard.gradle.ProGuardTask) {
   configuration 'proguard.cfg'
-  
+
   injars "./build/libs/${archivesBaseName}-${version}.jar"
-  
+
   outjars "./build/libs/${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
-} 
+}
