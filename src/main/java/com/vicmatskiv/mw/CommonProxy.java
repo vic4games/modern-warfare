@@ -2,7 +2,6 @@ package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
@@ -3652,9 +3651,13 @@ public class CommonProxy {
         // GasSwatchest = gasswatArmorBuilder.buildChest(isClient());
         // GasSwatboots = gasswatArmorBuilder.buildBoots(isClient());
 
-        new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Tactical)
+        Builder tacticalArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Tactical)
                 .withUnlocalizedName("Tactical").withTextureName("Tactical")
-                .withModelClass("com.vicmatskiv.mw.models.Tactical").withHudTextureName("Tactical").build(isClient());
+                .withModelClass("com.vicmatskiv.mw.models.Tactical").withHudTextureName("Tactical");
+        
+        Tacticalhelmet = tacticalArmorBuilder.buildHelmet(isClient());
+        Tacticalchest = tacticalArmorBuilder.buildChest(isClient());
+        Tacticalboots = tacticalArmorBuilder.buildBoots(isClient());
 
         // Try not to change the order of the guns to ensure stable recipes
 
@@ -3841,13 +3844,11 @@ public class CommonProxy {
                     GL11.glScaled(1F, 1F, 1F);
                 })
                 .withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.HP) {
+                    if (model instanceof TabletModel) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(-45F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
-                        GL11.glScaled(0F, 0F, 0F);
+                        GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HP) {
@@ -3883,7 +3884,7 @@ public class CommonProxy {
                             GL11.glTranslatef(-0.1F, -0.45F, 0.4F);
                             GL11.glScaled(1.1F, 1.1F, 1.1F);
                         })
-                .withName("Tablet")
+                .withName("tablet")
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -3901,13 +3902,11 @@ public class CommonProxy {
                 GL11.glScaled(1F, 1F, 1F);
         })
         .withThirdPersonModelPositioning((model, itemStack) -> {
-            if (model instanceof com.vicmatskiv.mw.models.HP) {
-                GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+            if (model instanceof CameraModel) {
+                GL11.glTranslatef(-0.9F, -0.8F, 0.5F);
                 GL11.glRotatef(-50F, 0f, 1f, 0f);
                 GL11.glRotatef(80F, 1f, 0f, 0f);
                 GL11.glScaled(0.5F, 0.5F, 0.5F);
-            } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
-                GL11.glScaled(0F, 0F, 0F);
             }
         }).withInventoryModelPositioning((model, itemStack) -> {
             if (model instanceof com.vicmatskiv.mw.models.HP) {

@@ -332,6 +332,9 @@ item.mw_Piston.name=Piston
 item.mw_AKMIron.name=Standard Iron-Sight
 item.mw_AR15Iron.name=AR-15 Action/Iron Sight
 
+item.mw_wcam.name=Wireless Camera
+item.mw_tablet.name=Tablet
+
 itemGroup.guns_tab=Modern Warfare
 
 itemGroup.AssaultRifles_tab=VMW Automatic Rifles Section 1

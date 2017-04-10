@@ -48,7 +48,7 @@ public class TAR21Factory implements GunFactory {
         .withMaxShots(Integer.MAX_VALUE, 3, 1)
         //.withMaxShots(5)
         .withShootSound("TAR21")
-        .withSilencedShootSound("TAR21Silenced")
+        .withSilencedShootSound("MP5Silenced")
         .withReloadSound("StandardReload")
         .withUnloadSound("Unload")
         .withReloadingTime(43)
