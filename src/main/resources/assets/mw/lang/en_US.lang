@@ -218,7 +218,6 @@ item.mw_BMG50.name=.50 BMG Bullet
 item.mw_Carbine30.name=.30 Carbine Bullet
 item.mw_Bullet57x28.name=5.7x28mm Bullet
 item.mw_Bullet46x30.name=4.6x30mm Bullet
-
 item.mw_Bullet65x39.name=6.5x39mm NATO Bullet
 item.mw_Bullet10x24.name=10x24mm Bullet
 item.mw_Bullet10mm.name=10mm Bullet
@@ -236,7 +235,6 @@ item.mw_Laser.name=UTG Tactical Laser
 item.mw_Laser2.name=LD19206-IR Tactical Laser
 item.mw_HPScope.name=JPU HP 3-9x40 Scope
 item.mw_Holographic.name=EOTech 512 A65 Holographic 
-
 item.mw_Grip2.name=Grip
 item.mw_Bipod.name=Bipod
 item.mw_VGrip.name=Foregrip
@@ -333,6 +331,9 @@ item.mw_Piston.name=Piston
 
 item.mw_AKMIron.name=Standard Iron-Sight
 item.mw_AR15Iron.name=AR-15 Action/Iron Sight
+
+item.mw_wcam.name=Wireless Camera
+item.mw_tablet.name=Tablet
 
 itemGroup.guns_tab=Modern Warfare
 
