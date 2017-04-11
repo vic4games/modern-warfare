@@ -8,12 +8,12 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
 public class BlockSulfurOre extends Block 
 
 {
-	
 	public BlockSulfurOre()
 	{
 		super(Material.ROCK);
@@ -25,9 +25,9 @@ public class BlockSulfurOre extends Block
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	public Item getItemDropped(int meta, Random rand, int fortune)
-		{
-			return CommonProxy.SulfurDust;
-		}
-		
+	
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+	    return CommonProxy.SulfurDust;
 	}
+}
