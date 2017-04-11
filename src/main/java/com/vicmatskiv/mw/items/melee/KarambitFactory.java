@@ -27,6 +27,8 @@ public class KarambitFactory implements MeleeFactory {
                 .withPrepareHeavyStubTimeout(() -> 530)
                 .withAttackCooldownTimeout(() -> 300)
                 .withHeavyAttackCooldownTimeout(() -> 1000)
+                .withAttackSound("swoosh")
+                .withHeavyAttackSound("swoosh")
                 .withCompatibleSkin(CommonProxy.CrimsonBlood, "TacKnifeCrimsonBlood")
                 .withCompatibleSkin(CommonProxy.Chrome, "TacKnifeChrome")
                 .withCompatibleSkin(CommonProxy.GodWillsIt, "TacKnifeGodWillsIt")
