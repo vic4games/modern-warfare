@@ -35,6 +35,15 @@
       }
     ]
   },
+  "swoosh": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "swoosh",
+       "stream": false
+      }
+    ]
+  },
   "m1garand": {
     "category": "master",
     "sounds": [
