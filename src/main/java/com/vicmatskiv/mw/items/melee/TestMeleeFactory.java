@@ -27,6 +27,8 @@ public class TestMeleeFactory implements MeleeFactory {
                 .withPrepareHeavyStubTimeout(() -> 530)
                 .withAttackCooldownTimeout(() -> 500)
                 .withHeavyAttackCooldownTimeout(() -> 1500)
+                .withAttackSound("swoosh")
+                .withHeavyAttackSound("swoosh")
                 .withCompatibleSkin(CommonProxy.CrimsonBlood, "TacKnifeCrimsonBlood")
                 .withCompatibleSkin(CommonProxy.Chrome, "TacKnifeChrome")
                 .withCompatibleSkin(CommonProxy.GodWillsIt, "TacKnifeGodWillsIt")
