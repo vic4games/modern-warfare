@@ -54,13 +54,13 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 			addOreSpawn(CommonProxy.LeadOre, 0, Blocks.stone, world, random, 
 					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
 			
-			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
+			addOreSpawn(CommonProxy.TantalumOre, 0, Blocks.stone, world, random, 
 					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
 			addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.stone, world, random, 
 					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
-			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.stone, world, random, 
+			addOreSpawn(CommonProxy.TinOre, 0, Blocks.stone, world, random, 
 					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
 			
 			addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.stone, world, random, 
