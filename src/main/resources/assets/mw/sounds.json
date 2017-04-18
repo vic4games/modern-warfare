@@ -53,6 +53,15 @@
       }
     ]
   },
+  "armalitear15": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "armalitear15",
+       "stream": false
+      }
+    ]
+  },
   "tar21": {
     "category": "master",
     "sounds": [

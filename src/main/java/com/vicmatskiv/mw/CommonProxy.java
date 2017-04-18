@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.items.melee.TestMeleeFactory;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.AR15CarryHandle;
 import com.vicmatskiv.mw.models.AR15Iron;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
@@ -167,6 +168,7 @@ public class CommonProxy {
     public static ItemAttachment<Weapon> P30Top;
     public static ItemAttachment<Weapon> MP5KGrip;
     public static ItemAttachment<Weapon> HecateIIBoltAction;
+    public static ItemAttachment<Weapon> AR15Action;
 
     public static ItemBullet ShotgunShell;
     public static ItemBullet Magnum44Ammo;
@@ -270,7 +272,6 @@ public class CommonProxy {
     public static Item MG36E;
     public static Item HK33K;
     public static Item AK106;
-    public static Item M4A2;
     public static Item KrissVector;
     public static Item KrissVectorTactical;
     public static Item P225;
@@ -2218,31 +2219,32 @@ public class CommonProxy {
         AR15Iron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withModel(new M4Iron1(), "AK12.png")
                 .withModel(new M4Iron2(), "AK12.png").withModel(new FALIron(), "AK12.png")
-                .withModel(new AR15Iron(), "AK12.png").withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.AR15Iron) {
-                        GL11.glTranslatef(-0.6F, 1.2F, 1.6F);
+                .withModel(new AR15CarryHandle(), "AK12.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR15CarryHandle) {
+                        GL11.glTranslatef(-0.6F, 0F, 0.2F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                        GL11.glScaled(0.6F, 0.7F, 0.75f);
                     } else {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.AR15Iron) {
+                    if (model instanceof com.vicmatskiv.mw.models.AR15CarryHandle) {
                         GL11.glTranslatef(0.1F, 0F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                        GL11.glScaled(0.5F, 0.7F, 0.7F);
                     } else {
                         GL11.glScaled(0F, 0F, 0F);
                     }
 
                 }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.AR15Iron) {
+                    if (model instanceof com.vicmatskiv.mw.models.AR15CarryHandle) {
                         GL11.glTranslatef(-1.6F, -0.5F, 1.2F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                        GL11.glScaled(0.3F, 0.5F, 0.5F);
                     } else {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -2429,6 +2431,11 @@ public class CommonProxy {
         HecateIIBoltAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.HecateIIBoltAction(), "AK12.png")
                 .withName("HecateIIBoltAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.AR15Action(), "AK12.png")
+                .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         Reflex = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -3675,7 +3682,6 @@ public class CommonProxy {
         AK107 = new AK107Factory().createGun(this);
         AR15 = new AR15Factory().createGun(this);
         M4A1 = new M4A1Factory().createGun(this);
-        M4A2 = new M4A2Factory().createGun(this);
         M4A42 = new M4A42Factory().createGun(this);
         M27 = new M27Factory().createGun(this);
         M4A4 = new M4A4Factory().createGun(this);
