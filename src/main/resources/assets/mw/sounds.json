@@ -62,6 +62,51 @@
       }
     ]
   },
+  "hk416c": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "hk416c",
+       "stream": false
+      }
+    ]
+  },
+  "hk416a5": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "hk416a5",
+       "stream": false
+      }
+    ]
+  },
+   "ak74": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "ak74",
+       "stream": false
+      }
+    ]
+  },
+  "ak101": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "ak101",
+       "stream": false
+      }
+    ]
+  },
+  "ak107": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "ak107",
+       "stream": false
+      }
+    ]
+  },
   "tar21": {
     "category": "master",
     "sounds": [
@@ -161,11 +206,11 @@
       }
     ]
   },
-  "rpk": {
+  "rpk74m": {
     "category": "master",
     "sounds": [
       {
-       "name": "rpk",
+       "name": "rpk74m",
        "stream": false
       }
     ]

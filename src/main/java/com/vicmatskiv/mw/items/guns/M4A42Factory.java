@@ -159,24 +159,24 @@ public class M4A42Factory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-//        .withCompatibleAttachment(CommonProxy.AR15Iron, true, (model) -> {
-//            if(model instanceof M4Iron1) {
-//                GL11.glTranslatef(-0.145F, -1.55F, -0.35F);
-//                GL11.glScaled(0.2F, 0.2F, 0.2F);
-//            } else if(model instanceof M4Iron2) {
-//                GL11.glTranslatef(0.255F, -1.55F, -2.25F);
-//                GL11.glScaled(0F, 0F, 0F);
-//            } else if(model instanceof FALIron) {
-//                GL11.glTranslatef(0.127F, -1.77F, -2.22F);
-//                GL11.glScaled(0F, 0F, 0F);
-//            } else if(model instanceof AR15CarryHandle) {
-//                GL11.glTranslatef(-0.063F, -1.07F, -0.43F);
-//                GL11.glScaled(0.31F, 0.45F, 0.54F);
-//            } else if(model instanceof MP5Iron) {
-//                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
-//                GL11.glScaled(0F, 0F, 0F);
-//            }
-//        })
+        .withCompatibleAttachment(CommonProxy.AR15Iron, (model) -> {
+            if(model instanceof M4Iron1) {
+                GL11.glTranslatef(-0.145F, -1.55F, -0.35F);
+                GL11.glScaled(0.2F, 0.2F, 0.2F);
+            } else if(model instanceof M4Iron2) {
+                GL11.glTranslatef(0.255F, -1.55F, -2.25F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof FALIron) {
+                GL11.glTranslatef(0.127F, -1.77F, -2.22F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof AR15CarryHandle) {
+                GL11.glTranslatef(-0.063F, -1.07F, -0.43F);
+                GL11.glScaled(0.31F, 0.45F, 0.54F);
+            } else if(model instanceof MP5Iron) {
+                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                GL11.glScaled(0F, 0F, 0F);
+            }
+        })
          .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
             if(model instanceof M4Iron1) {
                 GL11.glTranslatef(-0.16F, -1.5F, -0.3F);

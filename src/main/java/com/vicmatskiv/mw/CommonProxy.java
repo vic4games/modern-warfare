@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.items.melee.TestMeleeFactory;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.AKiron3;
 import com.vicmatskiv.mw.models.AR15CarryHandle;
 import com.vicmatskiv.mw.models.AR15Iron;
 import com.vicmatskiv.mw.models.FALIron;
@@ -169,6 +170,12 @@ public class CommonProxy {
     public static ItemAttachment<Weapon> MP5KGrip;
     public static ItemAttachment<Weapon> HecateIIBoltAction;
     public static ItemAttachment<Weapon> AR15Action;
+    public static ItemAttachment<Weapon> AKIron;
+    public static ItemAttachment<Weapon> AKpart;
+    public static ItemAttachment<Weapon> AKaction;
+    public static ItemAttachment<Weapon> AKS74UIron;
+    public static ItemAttachment<Weapon> AKRail;
+    public static ItemAttachment<Weapon> ScarAction;
 
     public static ItemBullet ShotgunShell;
     public static ItemBullet Magnum44Ammo;
@@ -192,6 +199,7 @@ public class CommonProxy {
     public static ItemBullet Bullet50;
     public static ItemBullet Bullet9x39mm;
     public static ItemBullet BulletSpringfield3006;
+    public static ItemBullet Bullet545x39;
 
     public static Item AK47;
     public static Item AKM;
@@ -248,7 +256,6 @@ public class CommonProxy {
     public static Item M1911;
     public static Item AUGA3;
     public static Item AK74;
-    public static Item AKS;
     public static Item MX;
     public static Item M4A42;
     public static Item M9SD;
@@ -264,14 +271,12 @@ public class CommonProxy {
     public static Item M93R;
     public static Item Python;
     public static Item AK101;
-    public static Item AK107;
     public static Item MakarovPM;
     public static Item MakarovPMM;
     public static Item G36A3;
     public static Item G36KV;
     public static Item MG36E;
     public static Item HK33K;
-    public static Item AK106;
     public static Item KrissVector;
     public static Item KrissVectorTactical;
     public static Item P225;
@@ -306,6 +311,7 @@ public class CommonProxy {
     public static Item MP9;
     public static Item M8A7;
     public static Item M1Garand;
+    public static Item AKMN;
     // public static Item GaussRifle;
     // public static Item RPG;
 
@@ -316,11 +322,11 @@ public class CommonProxy {
     public static Item Pistol10mm;
 
     public static ItemMagazine Magazine762x39;
+    public static ItemMagazine Mag75rnd762x39;
     public static ItemMagazine PMAG762x39;
     public static ItemMagazine AK12Mag;
     public static ItemMagazine RPK74MMag;
     public static ItemMagazine AK74MMag;
-    public static ItemMagazine AK74Mag;
     public static ItemMagazine AKS74UMag;
     public static ItemMagazine NATOMag1;
     public static ItemMagazine NATO20rnd;
@@ -986,6 +992,27 @@ public class CommonProxy {
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(1.4F, 1.3F, 1.4f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+        
+        Bullet545x39 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.gunsTab).withName("Bullet545x39")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
+                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.4F, 0.3F, 0.4F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glRotatef(10F, 0f, 1f, 0f);
+                    GL11.glRotatef(2F, 1f, 0f, 0f);
+                    GL11.glRotatef(0F, 0f, 0f, 1f);
+                    GL11.glScaled(1.4F, 1.3F, 1.4f);
+                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
 
         Bullet556x45 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withName("Bullet556x45")
@@ -1125,9 +1152,29 @@ public class CommonProxy {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.2F, 0.4F);
+                    GL11.glTranslatef(-0.8F, 0.5F, -1.4F);
                     GL11.glRotatef(-120F, 0f, 1f, 0f);
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
+                    GL11.glRotatef(-30F, 0f, 0f, 1f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
+                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
+        Mag75rnd762x39 = new ItemMagazine.Builder().withAmmo(75).withCompatibleBullet(Bullet762x39)
+                .withName("Mag75rnd762x39").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.Mag75rnd(), "GunmetalTexture.png")
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-1F, -0.7F, 0.8F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, 0.2F, -0.6F);
+                    GL11.glRotatef(-180F, 0f, 1f, 0f);
+                    GL11.glRotatef(-30F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1174,7 +1221,7 @@ public class CommonProxy {
 
         AK101Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet556x45).withName("AK101Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png")
+                .withModel(new com.vicmatskiv.mw.models.Magazine545x39(), "GunmetalTexture.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -0.7F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1185,11 +1232,11 @@ public class CommonProxy {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.2F, 0.4F);
+                    GL11.glTranslatef(-0.8F, 0.3F, -1F);
                     GL11.glRotatef(-120F, 0f, 1f, 0f);
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
-                    GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
         M8A7Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet300Blackout).withName("M8A7Mag")
@@ -1294,10 +1341,9 @@ public class CommonProxy {
                     GL11.glScaled(0.8F, 0.8F, 0.8f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
-        AK74MMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x39).withName("AK74MMag")
+        AK74MMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet545x39).withName("AK74MMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.AK12Mag(), "GunmetalTexture.png")
-
+                .withModel(new com.vicmatskiv.mw.models.Magazine545x39(), "AK12.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -0.7F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -1308,16 +1354,16 @@ public class CommonProxy {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.6F, -0.2F, 0.4F);
+                    GL11.glTranslatef(-0.8F, 0.3F, -1F);
                     GL11.glRotatef(-120F, 0f, 1f, 0f);
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
-                    GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
-        AK74Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet556x39).withName("AK74Mag")
+        AKS74UMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet545x39).withName("AKS74UMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.AK12Mag(), "AKS74UMag.png")
+                .withModel(new com.vicmatskiv.mw.models.Magazine545x39(), "AKS74UMag.png")
 
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -0.7F, 0.4F);
@@ -1329,32 +1375,11 @@ public class CommonProxy {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.6F, -0.2F, 0.4F);
+                    GL11.glTranslatef(-0.8F, 0.3F, -1F);
                     GL11.glRotatef(-120F, 0f, 1f, 0f);
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
-                    GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
-
-        AKS74UMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x39).withName("AKS74UMag")
-                .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.Magazine762x39(), "AKS74UMag.png")
-
-                .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -0.7F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-1F, -0.7F, 0.8F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.2F, 0.4F);
-                    GL11.glRotatef(-120F, 0f, 1f, 0f);
-                    GL11.glRotatef(-10F, 1f, 0f, 0f);
-                    GL11.glRotatef(-30F, 0f, 0f, 1f);
-                    GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATOMag1 = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x45).withName("NATOMag1")
@@ -1693,7 +1718,7 @@ public class CommonProxy {
                     GL11.glScaled(1F, 1F, 1f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
-        Magazine9mm = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet10mm).withName("Magazine9mm")
+        Magazine9mm = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet9mm).withName("Magazine9mm")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.MakarovMag(), "MakarovMag.png")
 
@@ -2436,6 +2461,40 @@ public class CommonProxy {
         AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.AR15Action(), "AK12.png")
                 .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AKIron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.AKiron3(), "AK12.png")
+                .withName("AKIron3").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AKpart = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
+                .withModel(new com.vicmatskiv.mw.models.AKpart(), "AK12.png")
+                .withName("AKpart").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AKS74UIron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
+                .withModel(new com.vicmatskiv.mw.models.AKS74UIron(), "AK12.png")
+                .withName("AKS74UIron").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AKRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "AK12.png")
+                .withName("AKRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AKaction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.AKaction(), "AK12.png")
+                .withName("AKaction").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        ScarAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.ScarAction(), "AK12.png")
+                .withName("ScarAction").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         Reflex = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -3669,8 +3728,8 @@ public class CommonProxy {
         // Try not to change the order of the guns to ensure stable recipes
 
         AK47 = new AK47Factory().createGun(this);
-        AKS = new AKSFactory().createGun(this);
         AKM = new AKMFactory().createGun(this);
+        AKMN = new AKMNFactory().createGun(this);
         AK12 = new AK12Factory().createGun(this);
         AK12U = new AK12UFactory().createGun(this);
         AN94 = new AN94Factory().createGun(this);
@@ -3678,8 +3737,6 @@ public class CommonProxy {
         AK74 = new AK74Factory().createGun(this);
         AK74M = new AK74MFactory().createGun(this);
         AK101 = new AK101Factory().createGun(this);
-        AK106 = new AK106Factory().createGun(this);
-        AK107 = new AK107Factory().createGun(this);
         AR15 = new AR15Factory().createGun(this);
         M4A1 = new M4A1Factory().createGun(this);
         M4A42 = new M4A42Factory().createGun(this);

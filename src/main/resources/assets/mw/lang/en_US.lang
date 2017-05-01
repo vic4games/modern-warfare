@@ -157,7 +157,7 @@ item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
 item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
 item.mw_AK74MMag.name=30rnd 5.56x39mm Magazine
 item.mw_RPK74MMag.name=40rnd 7.62x39mm Magazine
-item.mw_AKS74UMag.name=30rnd 5.56x39mm Magazine
+item.mw_AKS74UMag.name=30rnd 5.45x39mm Magazine (Type 2)
 item.mw_NATOMag1.name=30rnd 5.56x45mm NATO Magazine 
 item.mw_NATOMag2.name=30rnd 5.56x45mm NATO PMAG Magazine
 item.mw_NATOFamasMag.name=30rnd 5.56x45mm NATO Magazine (Type 2)
@@ -203,6 +203,7 @@ item.mw_Deagle50Mag.name=7rnd .50 Action Express Magazine
 item.mw_VSSVintorezMag.name=10rnd 9x39mm Magazine
 item.mw_KN44Mag.name=30rnd 5.56x39mm Magazine (Type 2)
 item.mw_M8A7Mag.name=32rnd .300 AAC Blackout Magazine
+item.mw_Mag75rnd762x39.name=75rnd 7.62x39mm Drum Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet
@@ -330,7 +331,7 @@ item.mw_Plastic.name=Plastic
 item.mw_Piston.name=Piston
 
 item.mw_AKMIron.name=Standard Iron-Sight
-item.mw_AR15Iron.name=AR-15 Action/Iron Sight
+item.mw_AR15Iron.name=AR Carry Handle
 
 item.mw_wcam.name=Wireless Camera
 item.mw_tablet.name=Tablet
