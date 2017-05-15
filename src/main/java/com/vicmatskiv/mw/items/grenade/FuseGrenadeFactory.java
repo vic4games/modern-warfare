@@ -23,8 +23,8 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withName("fuse-grenade")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withTextureNames("ak12")
-                .withExplosionStrength(3f)
-                .withExplosionTimeout(3000)
+                .withExplosionStrength(1.2f)
+                .withExplosionTimeout(5000)
                 .withCompatibleAttachment(CommonProxy.GrenadeSafetyPin, (p, s) -> {})
                 .withRenderer(
                         new GrenadeRenderer.Builder()
@@ -85,7 +85,7 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                                     GL11.glRotatef(15.000000f, 0f, 1f, 0f);
                                     GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
                                     GL11.glTranslatef(-0.325000f, -0.725000f, 0.025000f);
-                                }, 150, 50 ),
+                                }, 550, 50 ),
 
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
