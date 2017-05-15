@@ -52,7 +52,7 @@ public class AKMNFactory implements GunFactory {
         .withZoom(0.9f)
         .withMaxShots(Integer.MAX_VALUE, 1)
         //.withMaxShots(5)
-        .withShootSound("AKM")
+        .withShootSound("AK47")
         .withSilencedShootSound("AKsilenced")
         .withReloadSound("AKReload")
         .withUnloadSound("Unload")

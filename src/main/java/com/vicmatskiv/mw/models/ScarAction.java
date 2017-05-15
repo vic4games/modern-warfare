@@ -11,12 +11,13 @@
 
 package com.vicmatskiv.mw.models;
 
+import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
 
-public class ScarAction extends ModelWithAttachments
+public class ScarAction extends ModelBase
 {
   //fields
     ModelRenderer gun149;
@@ -72,6 +73,13 @@ public class ScarAction extends ModelWithAttachments
     gun151.render(f5);
     gun152.render(f5);
     gun116.render(f5);
+ }
+  
+  private void setRotation(ModelRenderer model, float x, float y, float z)
+  {
+    model.rotateAngleX = x;
+    model.rotateAngleY = y;
+    model.rotateAngleZ = z;
   }
 
 }

@@ -245,12 +245,12 @@ public class ScarFactory implements GunFactory {
             GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
-            GL11.glTranslatef(0.05F, -1.18F, -3.2F);
-            GL11.glScaled(0.7F, 0.7F, 0.7F);
+            GL11.glTranslatef(0F, -1.25F, -4F);
+            GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
-            GL11.glTranslatef(0.05F, -1.18F, -3.2F);
-            GL11.glScaled(0.7F, 0.7F, 0.7F);
+            GL11.glTranslatef(0F, -1.25F, -4F);
+            GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
             GL11.glTranslatef(-0.2F, -1.32F, -7.2F);
@@ -408,43 +408,43 @@ public class ScarFactory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag2.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag2.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATO20rnd.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATO20rnd.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATO40rnd.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATO40rnd.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATODrum100.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATODrum100.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, 1f);
+                GL11.glTranslatef(0f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningReloading(

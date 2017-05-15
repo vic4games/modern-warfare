@@ -43,7 +43,7 @@ public class AK101Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 1)
 		//.withMaxShots(5)
-		.withShootSound("ak101")
+		.withShootSound("AK74M")
 		.withSilencedShootSound("AKsilenced")
 		.withReloadSound("AKReload")
 		.withUnloadSound("Unload")
@@ -303,7 +303,7 @@ public class AK101Factory implements GunFactory {
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
                 })
                 
-             .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {

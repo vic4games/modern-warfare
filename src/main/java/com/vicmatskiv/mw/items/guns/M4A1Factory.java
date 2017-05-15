@@ -11,6 +11,11 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
+import com.vicmatskiv.mw.models.AKRail;
+import com.vicmatskiv.mw.models.AKRail2;
+import com.vicmatskiv.mw.models.AKRail3;
+import com.vicmatskiv.mw.models.AKRail4;
+import com.vicmatskiv.mw.models.AKRail5;
 import com.vicmatskiv.mw.models.AR15;
 import com.vicmatskiv.mw.models.AR15CarryHandle;
 import com.vicmatskiv.mw.models.AR15Iron;
@@ -198,8 +203,10 @@ public class M4A1Factory implements GunFactory {
 				GL11.glTranslatef(0.127F, -1.77F, -2.22F);
 				GL11.glScaled(0F, 0F, 0F);
 			} else if(model instanceof AR15CarryHandle) {
+//				GL11.glTranslatef(-0.055F, -1.07F, -0.43F);
+//				GL11.glScaled(0.35F, 0.45F, 0.54F);
 				GL11.glTranslatef(-0.063F, -1.07F, -0.43F);
-				GL11.glScaled(0.31F, 0.45F, 0.54F);
+                GL11.glScaled(0.31F, 0.45F, 0.54F);
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -342,6 +349,27 @@ public class M4A1Factory implements GunFactory {
 			GL11.glTranslatef(-0.2F, -1.235F, -6.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
+//		.withCompatibleAttachment(CommonProxy.M4Rail, true, (model) -> {
+//            if(model instanceof AKRail) {
+//                GL11.glTranslatef(0.13F, -1.17F, -3.5F);
+//                GL11.glScaled(0.6F, 0.6F, 0.6F);
+//                GL11.glRotatef(90F, 0f, 0f, 1f);
+//            } else if(model instanceof AKRail2) {
+//                GL11.glTranslatef(-0.37F, -1.005F, -3.5F);
+//                GL11.glScaled(0.6F, 0.6F, 0.6F);
+//                GL11.glRotatef(-90F, 0f, 0f, 1f);
+//            } else if(model instanceof AKRail3) {
+//                GL11.glTranslatef(-0.03F, -0.84F, -3.64F);
+//                GL11.glScaled(0.6F, 0.6F, 0.65F);
+//                GL11.glRotatef(180F, 0f, 0f, 1f);
+//            } else if(model instanceof AKRail4) {
+//                GL11.glTranslatef(-0.2F, -1.32F, -1.82f);
+//                GL11.glScaled(0.6F, 0.8F, 0.78F);
+//            } else if(model instanceof AKRail5) {
+//                GL11.glTranslatef(-0.2F, -1.32F, -3.65f);
+//                GL11.glScaled(0.6F, 0.8F, 0.68F);
+//            }
+//        })
 		.withTextureNames("AK12")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -367,14 +395,14 @@ public class M4A1Factory implements GunFactory {
 				
 			.withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(1F, 1F, 1F);
-                GL11.glTranslatef(0.05f, -0.175000f, 0.625000f);
+                GL11.glScalef(1.6f, 1.6f, 1.6f);
+                GL11.glTranslatef(-0.150000f, 0.450000f, 0.225000f);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
 			    GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(1F, 1F, 1F);
-                GL11.glTranslatef(0.05f, -0.175000f, 1f);
+                GL11.glScalef(1.6f, 1.6f, 1.6f);
+                GL11.glTranslatef(-0.150000f, 0.450000f, 0.5f);
 				GL11.glRotatef(-2F, 1f, 0f, 0f);
 				})
 				
@@ -481,6 +509,57 @@ public class M4A1Factory implements GunFactory {
 				
 			.withFirstPersonCustomPositioning(CommonProxy.AR15Action.getRenderablePart(), (renderContext) -> {
                 })
+//                
+//            .withFirstPersonCustomPositioning(CommonProxy.M4Rail.getRenderablePart(), (renderContext) -> {
+//                })
+//
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M4Rail.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.M4Rail.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATODrum100.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATODrum100.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag2.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag2.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATO20rnd.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATO20rnd.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATO40rnd.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
+//                
+//            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATO40rnd.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, 0F, 0F);
+//                })
 				
 			.withFirstPersonPositioningReloading(
 					
@@ -572,7 +651,27 @@ public class M4A1Factory implements GunFactory {
                 new Transition((renderContext) -> {
                 }, 250, 1000)
                     )
-					
+                    
+//            .withFirstPersonCustomPositioningUnloading(CommonProxy.M4Rail.getRenderablePart(),
+//                new Transition((renderContext) -> {
+//                }, 500, 1000),
+//                new Transition((renderContext) -> {
+//                }, 500, 1000)
+//                    )
+//                    
+//            .withFirstPersonCustomPositioningReloading(CommonProxy.M4Rail.getRenderablePart(),
+//                new Transition((renderContext) -> {
+//                }, 250, 1000),
+//                new Transition((renderContext) -> {
+//                }, 250, 1000),
+//                new Transition((renderContext) -> {
+//                }, 250, 1000),
+//                new Transition((renderContext) -> {
+//                }, 250, 1000),
+//                new Transition((renderContext) -> {
+//                }, 250, 1000)
+//                    )
+                    
 			.withFirstPersonCustomPositioningUnloading(CommonProxy.NATO40rnd,
 			        new Transition((renderContext) -> {
 	                    GL11.glTranslatef(-0.04F, 0F, 0F);
@@ -884,8 +983,8 @@ public class M4A1Factory implements GunFactory {
 			 
 			 .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         GL11.glScalef(2.4f, 2.4f, 3.7f);
-                         GL11.glTranslatef(0.5f, 0.05f, -0.05f);
+                         GL11.glScalef(3f, 3f, 5f);
+                         GL11.glTranslatef(0.48f, 0.08f, -0.05f);
                          GL11.glRotatef(115f, 0, 0f, 1f);
                          GL11.glRotatef(-70f, 1f, 0f, 0f);
                          GL11.glRotatef(30f, 1f, 1f, 0f);

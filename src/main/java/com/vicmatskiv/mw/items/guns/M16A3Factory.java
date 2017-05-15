@@ -373,14 +373,14 @@ public class M16A3Factory implements GunFactory {
                 
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(1F, 1F, 1F);
-                GL11.glTranslatef(0.05f, -0.175000f, 0.625000f);
+                GL11.glScalef(1.6f, 1.6f, 1.6f);
+                GL11.glTranslatef(-0.150000f, 0.450000f, 0.225000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(1F, 1F, 1F);
-                GL11.glTranslatef(0.05f, -0.175000f, 1f);
+                GL11.glScalef(1.6f, 1.6f, 1.6f);
+                GL11.glTranslatef(-0.150000f, 0.450000f, 0.5f);
                 GL11.glRotatef(-2F, 1f, 0f, 0f);
                 })
                 
@@ -890,8 +890,8 @@ public class M16A3Factory implements GunFactory {
              
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         GL11.glScalef(2.4f, 2.4f, 3.7f);
-                         GL11.glTranslatef(0.5f, 0.05f, -0.05f);
+                         GL11.glScalef(3f, 3f, 5f);
+                         GL11.glTranslatef(0.48f, 0.08f, -0.05f);
                          GL11.glRotatef(115f, 0, 0f, 1f);
                          GL11.glRotatef(-70f, 1f, 0f, 0f);
                          GL11.glRotatef(30f, 1f, 1f, 0f);

@@ -89,24 +89,6 @@
       }
     ]
   },
-  "ak101": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "ak101",
-       "stream": false
-      }
-    ]
-  },
-  "ak107": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "ak107",
-       "stream": false
-      }
-    ]
-  },
   "tar21": {
     "category": "master",
     "sounds": [
@@ -121,6 +103,15 @@
     "sounds": [
       {
        "name": "kn44",
+       "stream": false
+      }
+    ]
+  },
+  "acr": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "acr",
        "stream": false
       }
     ]
