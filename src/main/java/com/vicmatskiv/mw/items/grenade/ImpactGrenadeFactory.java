@@ -4,6 +4,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.models.ImpactGrenade;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
@@ -19,13 +20,23 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
     public Item createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
-                .withName("impact-grenade")
+                .withName("ImpactGrenade")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withTextureNames("ak12").withExplosionOnImpact()
+                .withTextureNames("ImpactGrenade")
+                .withExplosionStrength(1.2f)
+                .withVelocity(() -> 1.3f)
+                .withGravityVelocity(() -> 0.06f)
+                .withRotationSlowdownFactor(() -> 0.99f)
+                .withExplosionOnImpact()
                 .withRenderer(new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)
-                        .withModel(new CameraModel())
+                        .withModel(new ImpactGrenade())
                         .withAnimationDuration(500)
+                         .withThrownEntityPositioning(() -> {
+                            GL11.glScalef(0.2f, 0.2f, 0.2f);
+                            GL11.glRotatef(180, 0f, 0f, 0f);
+                        })
+                        .withEntityRotationCenterOffsets(() -> -0.025f, () -> 0.2f, () -> -0.025f)
                         .withInventoryPositioning(itemStack -> {
                             GL11.glScaled(0.7F, 0.7F, 0.7F);
                             GL11.glTranslatef(1, 1.3f, -1.3f);
@@ -39,21 +50,20 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                             GL11.glRotatef(-260F, 1f, 0f, 0f);
                         })
                         .withFirstPersonPositioning(context -> {
-                            GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                            GL11.glRotatef(85.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(-35.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(-0.475000f, -0.750000f, -0.075000f);
+                            GL11.glScalef(0.4f, 0.4f, 0.4f);
+                            GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(-3f, -0.6f, -2.2f);
                         })
 
-                        .withFirstPersonHandPositioning(context -> { // left
-                            // hand
-                            GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                            GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(60.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(0.175000f, -0.525000f, 0.425000f);
-                        },
+                        .withFirstPersonHandPositioning(
+                                context -> { // left hand
+                                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                                    GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                                    GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                                    GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                                    GL11.glTranslatef(0.175000f, -0.525000f, 0.425000f);
+                                },
 
                                 context -> { // right hand
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -66,10 +76,11 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                         .withFirstPersonPositioningThrowing(
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                                    GL11.glRotatef(55.000000f, 1f, 0f, 0f);
-                                    GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-                                    GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
-                                    GL11.glTranslatef(-0.500000f, -0.475000f, 0.550000f);
+                                    GL11.glScalef(0.100000f, 0.100000f, 0.100000f);
+                                    GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+                                    GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                                    GL11.glRotatef(15.000000f, 0f, 0f, 1f);
+                                    GL11.glTranslatef(0f, -6.849998f, -2.400000f);
                                 }, 260, 120),
 
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
@@ -122,10 +133,10 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                         .withFirstPersonRightHandPositioningThrowing(
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                                    GL11.glRotatef(-185.000000f, 1f, 0f, 0f);
-                                    GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                                    GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                                    GL11.glTranslatef(0.100000f, -0.150000f, 0.175000f);
+                                    GL11.glRotatef(-150.000000f, 1f, 0f, 0f);
+                                    GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                                    GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                                    GL11.glTranslatef(0.5f, -0.200000f, -0.300000f);
                                 }, 70, 0),
 
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
@@ -133,25 +144,33 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                                     GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
                                     GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
                                     GL11.glRotatef(15.000000f, 0f, 0f, 1f);
-                                    GL11.glTranslatef(0.250000f, -0.450000f, -0.300000f);
+                                    GL11.glTranslatef(0.250000f, -0.50000f, -0.300000f);
 
                                 }, 70, 0),
 
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
-
+                                    //                                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                                    //                                    GL11.glRotatef(-30.000000f, 1f, 0f, 0f);
+                                    //                                    GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                                    //                                    GL11.glRotatef(15.000000f, 0f, 0f, 1f);
+                                    //                                    GL11.glTranslatef(0.275000f, -0.400000f, 0.200000f);
                                 }, 70, 0))
-
-                        .withFirstPersonHandPositioningThrown(context -> { // left
-                            // hand
-                            GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                            GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(45.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(55.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(0.100000f, -0.725000f, 0.700000f);
-                        },
+                                
+                         .withFirstPersonHandPositioningThrown(
+                                context -> { // left hand
+                                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                                    GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                                    GL11.glRotatef(45.000000f, 0f, 1f, 0f);
+                                    GL11.glRotatef(55.000000f, 0f, 0f, 1f);
+                                    GL11.glTranslatef(0.100000f, -0.725000f, 0.700000f);
+                                },
 
                                 context -> { // right hand
-
+                                    //                                  GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                                    //                                  GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                                    //                                  GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                                    //                                  GL11.glRotatef(15.000000f, 0f, 0f, 1f);
+//                                                                      GL11.glTranslatef(0f, 0.8f, 0.7f);
                                 })
 
                         .build())

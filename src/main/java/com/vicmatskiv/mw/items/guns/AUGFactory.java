@@ -48,7 +48,7 @@ public class AUGFactory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
-		.withShootSound("AR15")
+		.withShootSound("aug")
 		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")

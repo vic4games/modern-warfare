@@ -26,6 +26,15 @@
       }
     ]
   },
+  "aug": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "aug",
+       "stream": false
+      }
+    ]
+  },
   "m16": {
     "category": "master",
     "sounds": [
