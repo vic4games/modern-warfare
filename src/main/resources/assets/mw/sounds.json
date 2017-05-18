@@ -1,9 +1,9 @@
 {
-  "grenade-explosion": {
+  "grenadeexplosion": {
     "category": "master",
     "sounds": [
       {
-       "name": "grenade-explosion",
+       "name": "grenadeexplosion",
        "stream": false
       }
     ]
