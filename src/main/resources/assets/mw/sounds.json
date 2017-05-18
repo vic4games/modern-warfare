@@ -1,4 +1,31 @@
 {
+  "grenade-explosion": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "grenade-explosion",
+       "stream": false
+      }
+    ]
+  },
+  "grenade-soft-bounce": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "grenade-soft-bounce",
+       "stream": false
+      }
+    ]
+  },
+  "grenade-hard-bounce": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "grenade-hard-bounce",
+       "stream": false
+      }
+    ]
+  },
   "click": {
     "category": "master",
     "sounds": [

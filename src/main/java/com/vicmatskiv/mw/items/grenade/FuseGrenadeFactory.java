@@ -25,6 +25,12 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withTextureNames("M67Frag")
                 .withExplosionStrength(1.2f)
                 .withExplosionTimeout(5000)
+                .withExplosionSound("grenade-explosion")
+                .withBounceSoftSound("grenade-soft-bounce")
+                .withBounceHardSound("grenade-hard-bounce")
+                .withEffectiveRadius(30f)
+                .withFragmentCount(150)
+                .withFragmentDamage(15f)
                 .withCompatibleAttachment(CommonProxy.GrenadeSafetyPin, (p, s) -> {})
                 .withVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
@@ -34,20 +40,20 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                         .withModId(ModernWarfareMod.MODID)
                         .withModel(new M67Frag())
                         .withAnimationDuration(500)
-                        
+
                         .withThrownEntityPositioning(() -> {
                             GL11.glScalef(0.2f, 0.2f, 0.2f);
                             GL11.glRotatef(180, 0f, 0f, 0f);
                         })
                         .withEntityRotationCenterOffsets(() -> -0.025f, () -> 0.2f, () -> -0.025f)
-                        
+
                         .withInventoryPositioning(itemStack -> {
                             GL11.glScaled(0.7F, 0.7F, 0.7F);
                             GL11.glTranslatef(1, 1.3f, -1.3f);
                             GL11.glRotatef(230F, 0f, 1f, 0f);
                             GL11.glRotatef(45F, 1f, 0f, 0f);
                         })
-                        
+
                         .withThirdPersonPositioning((renderContext) -> {
                             GL11.glScaled(0.9F, 0.9F, 0.9F);
                             GL11.glTranslatef(-1F, -0.4F, 1.1F);
