@@ -32,7 +32,8 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withFragmentCount(150)
                 .withFragmentDamage(15f)
                 .withCompatibleAttachment(CommonProxy.GrenadeSafetyPin, (p, s) -> {})
-                .withVelocity(() -> 1.3f)
+                .withVelocity(() -> 0.8f)
+                .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
                 .withRenderer(
