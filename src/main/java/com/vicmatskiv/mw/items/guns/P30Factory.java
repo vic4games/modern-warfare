@@ -19,7 +19,7 @@ public class P30Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK P30")
+		.withName("HKP30")
 //		.withAmmo(CommonProxy.M9Mag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.6f)

@@ -19,7 +19,7 @@ public class USP45Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK USP .45")
+		.withName("HKUSP45")
 //		.withAmmo(CommonProxy.M9Mag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.4f)

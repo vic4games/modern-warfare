@@ -32,7 +32,7 @@ public class MP5SDFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK MP5SD")
+		.withName("HKMP5SD")
 //		.withAmmo(CommonProxy.MP5Mag)
 //		.withAmmoCapacity(25)
 		.withFireRate(0.8f)

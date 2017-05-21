@@ -36,7 +36,7 @@ public class MosinNagantFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("Mosin Nagant M91/30")
+		.withName("MosinNagantM91-30")
 //		.withAmmo(CommonProxy.XWPMag)
 		.withAmmoCapacity(5)
 		.withFireRate(0.16f)

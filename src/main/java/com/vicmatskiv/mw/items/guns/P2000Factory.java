@@ -19,7 +19,7 @@ public class P2000Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK P2000")
+		.withName("HKP2000")
 //		.withAmmo(CommonProxy.M9Mag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.6f)

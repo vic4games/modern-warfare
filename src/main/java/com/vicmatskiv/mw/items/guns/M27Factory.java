@@ -41,7 +41,7 @@ public class M27Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK M27 IAR")
+		.withName("HKM27IAR")
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.7f)
