@@ -1,6 +1,11 @@
 package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.lwjgl.opengl.GL11;
 
@@ -16,15 +21,14 @@ import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
 import com.vicmatskiv.mw.items.grenade.FuseGrenadeFactory;
 import com.vicmatskiv.mw.items.grenade.ImpactGrenadeFactory;
+import com.vicmatskiv.mw.items.grenade.SmokeGrenadeFactory;
 import com.vicmatskiv.mw.items.guns.*;
 import com.vicmatskiv.mw.items.melee.KarambitFactory;
 import com.vicmatskiv.mw.items.melee.TestMeleeFactory;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.AKiron3;
 import com.vicmatskiv.mw.models.AR15CarryHandle;
-import com.vicmatskiv.mw.models.AR15Iron;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -86,12 +90,6 @@ import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.melee.MeleeSkin;
 import com.vicmatskiv.weaponlib.model.CameraModel;
 import com.vicmatskiv.weaponlib.model.TabletModel;
-
-import net.minecraft.block.Block;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class CommonProxy {
 
@@ -182,6 +180,7 @@ public class CommonProxy {
     public static ItemAttachment<Weapon> AKIron;
     public static ItemAttachment<Weapon> AKpart;
     public static ItemAttachment<Weapon> AKaction;
+    public static ItemAttachment<Weapon> AK12action;
     public static ItemAttachment<Weapon> AKS74UIron;
     public static ItemAttachment<Weapon> AKRail;
     public static ItemAttachment<Weapon> AUGRail;
@@ -504,6 +503,8 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("GunFireModeSwitch");
 
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dryfire");
+        
+        ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
 
         Electronics = new ItemElectronics();
         OpticGlass = new ItemOpticGlass();
@@ -2582,6 +2583,13 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
+        AK12action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.AK12action(), "AK12.png")
+                .withName("AK12action").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
         ScarAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.ScarAction(), "AK12.png")
@@ -4300,12 +4308,8 @@ public class CommonProxy {
         new FuseGrenadeFactory().createGrenade(this);
 
         new ImpactGrenadeFactory().createGrenade(this);
+        
+        new SmokeGrenadeFactory().createGrenade(this);
     }
-
-
-
-
-
-
 
 }

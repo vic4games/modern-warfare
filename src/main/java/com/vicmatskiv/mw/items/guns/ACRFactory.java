@@ -67,8 +67,8 @@ public class ACRFactory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)
-		.withFlashOffsetX(() -> 0.1f)
-		.withFlashOffsetY(() -> 0.1f)
+		.withFlashOffsetX(() -> 0.15f)
+        .withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
@@ -273,13 +273,13 @@ public class ACRFactory implements GunFactory {
             GL11.glScaled(1F, 1F, 1F);
 		})
 		.withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
-			GL11.glTranslatef(.28F, -1.25F, -1F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
-		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
-			GL11.glTranslatef(.28F, -1.25F, -1F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
+            GL11.glTranslatef(0.08F, -1.15F, -3F);
+            GL11.glScaled(0.8F, 0.8F, 0.8F);
+        })
+        .withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
+            GL11.glTranslatef(0.08F, -1.15F, -3F);
+            GL11.glScaled(0.8F, 0.8F, 0.8F);
+        })
 		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
 			GL11.glTranslatef(-0.19F, -1.205F, -6.8F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
@@ -348,7 +348,7 @@ public class ACRFactory implements GunFactory {
 			    GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45.000000f, 0f, 1f, 0f);
                 GL11.glTranslatef(-0.400000f, 0.825000f, 0.2f);
-				GL11.glRotatef(-3F, 1f, 0f, 0f);
+                GL11.glRotatef(-2F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

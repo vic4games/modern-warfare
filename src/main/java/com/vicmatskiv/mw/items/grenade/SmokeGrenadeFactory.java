@@ -6,6 +6,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.models.M18;
 import com.vicmatskiv.mw.models.M67Frag;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
@@ -14,25 +15,24 @@ import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
 
-public class FuseGrenadeFactory implements GrenadeFactory {
+public class SmokeGrenadeFactory implements GrenadeFactory {
 
     @Override
     public Item createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
-                .withName("M67Frag")
+                .withName("M18White")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withTextureNames("M67Frag")
-                .withExplosionStrength(1.8f)
-                .withExplosionTimeout(5000)
-                .withExplosionSound("grenadeexplosion")
+                .withTextureNames("M18White")
+                .withExplosionStrength(0.4f)
+                .withSmokeOnly()
+                .withExplosionTimeout(1000)
+                .withActiveDuration(20000)
+                //.withExplosionSound("grenadeexplosion")
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
                 .withThrowSound("grenadethrow")
                 .withSafetyPinOffSound("safetypinoff")
-                .withEffectiveRadius(15f)
-                .withFragmentCount(1500)
-                .withFragmentDamage(30f)
                 .withCompatibleAttachment(CommonProxy.GrenadeSafetyPin, (p, s) -> {})
                 .withVelocity(() -> 0.8f)
                 .withFarVelocity(() -> 1.3f)
@@ -41,7 +41,7 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)
-                        .withModel(new M67Frag())
+                        .withModel(new M18())
                         .withAnimationDuration(500)
 
                         .withThrownEntityPositioning(() -> {

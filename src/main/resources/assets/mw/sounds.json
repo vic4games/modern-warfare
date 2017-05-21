@@ -8,6 +8,24 @@
       }
     ]
   },
+  "grenadethrow": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "grenadethrow",
+       "stream": false
+      }
+    ]
+  },
+  "safetypinoff": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "safetypinoff",
+       "stream": false
+      }
+    ]
+  },
   "grenade-soft-bounce": {
     "category": "master",
     "sounds": [
