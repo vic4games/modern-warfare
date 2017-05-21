@@ -45,7 +45,7 @@ public class L96Factory implements GunFactory {
 		.withMaxShots(1)
 		.withShootSound("L96")
 		.withPumpTimeout(2000)
-		.withSilencedShootSound("RifleSilenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("BoltActionReload")
 		.withUnloadSound("Unload")
 		.withReloadingTime(40)

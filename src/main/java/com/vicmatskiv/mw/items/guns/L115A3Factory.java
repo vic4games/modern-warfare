@@ -45,7 +45,7 @@ public class L115A3Factory implements GunFactory {
 		.withMaxShots(1)
 		.withShootSound("L115")
 		.withPumpTimeout(2000)
-		.withSilencedShootSound("RifleSilenced")
+		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("BoltActionReload")
 		.withUnloadSound("Unload")
 		.withReloadingTime(40)
