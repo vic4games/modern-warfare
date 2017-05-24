@@ -3,11 +3,7 @@
   "modid": "mw",
   "name": "Modern Warfare",
   "description": "Modern Warfare Mod",
-<<<<<<< HEAD
-  "version": "1.9.1",
-=======
   "version": "1.10",
->>>>>>> 9c34dd9b53beb29f69708ba3959e9169e615e6ce
   "mcversion": "1.11.2",
   "url": "",
   "updateUrl": "",
