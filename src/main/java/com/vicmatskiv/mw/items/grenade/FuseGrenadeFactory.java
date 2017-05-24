@@ -52,16 +52,16 @@ public class FuseGrenadeFactory implements GrenadeFactory {
 
                         .withInventoryPositioning(itemStack -> {
                             GL11.glScaled(0.7F, 0.7F, 0.7F);
-                            GL11.glTranslatef(1, 1.3f, -1.3f);
+                            GL11.glTranslatef(1, 1.8f, -1.6f);
                             GL11.glRotatef(230F, 0f, 1f, 0f);
                             GL11.glRotatef(45F, 1f, 0f, 0f);
                         })
 
                         .withThirdPersonPositioning((renderContext) -> {
-                            GL11.glScaled(0.9F, 0.9F, 0.9F);
-                            GL11.glTranslatef(-1F, -0.4F, 1.1F);
+                            GL11.glScaled(0.3F, 0.3F, 0.3F);
+                            GL11.glTranslatef(-3F, -1F, 3F);
                             GL11.glRotatef(-225F, 0f, 1f, 0f);
-                            GL11.glRotatef(-260F, 1f, 0f, 0f);
+                            GL11.glRotatef(-45F, 1f, 0f, 0f);
                         })
                         .withFirstPersonPositioning(context -> {
                             GL11.glScalef(0.4f, 0.4f, 0.4f);
