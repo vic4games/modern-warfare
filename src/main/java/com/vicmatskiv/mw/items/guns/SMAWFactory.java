@@ -44,6 +44,7 @@ public class SMAWFactory implements GunFactory {
                 .withCrosshair("gun")
                 .withCrosshairRunning("Running")
                 .withCrosshairZoomed("Sight")
+                .withShellCasingEjectEnabled(false)
                 .withCreativeTab(ModernWarfareMod.ShotgunsTab)
                 .withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,
