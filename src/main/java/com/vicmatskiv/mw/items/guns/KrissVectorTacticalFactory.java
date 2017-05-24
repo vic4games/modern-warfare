@@ -59,6 +59,7 @@ public class KrissVectorTacticalFactory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.2f)
+		.withInaccuracy(2f)
 		.withCreativeTab(ModernWarfareMod.SMGTab)
 		.withCrafting(CraftingComplexity.LOW, 
                 CommonProxy.SteelPlate,
@@ -266,17 +267,15 @@ public class KrissVectorTacticalFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioning((renderContext) -> {
-				GL11.glTranslatef(0.34F, -0.4F, -0.05F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				})
-				
-			.withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glTranslatef(0.34F, -0.4F, -0.05F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                GL11.glTranslatef(-0.4F, -0.8F, 1.4F);
+                GL11.glScaled(1.5F, 1.5F, 1.5F);
+                GL11.glTranslatef(-0.400000f, 0.350000f, -0.375000f);
+                })
+                
+            .withFirstPersonPositioningRecoiled((renderContext) -> {
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(1.5F, 1.5F, 1.5F);
+                GL11.glTranslatef(-0.400000f, 0.350000f, 0.3f);
                 GL11.glRotatef(-3F, 1f, 0f, 0f);
                 })
 				
@@ -489,16 +488,20 @@ public class KrissVectorTacticalFactory implements GunFactory {
 			})
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
-				GL11.glScaled(0.8F, 0.8F, 0.8F);
-				GL11.glRotatef(-20F, -4f, 1f, -2f);
-				GL11.glTranslatef(0.2F, -0.35F, -0.8F);
-			 })
-			 
-			 .withFirstPersonPositioningModifying((renderContext) -> {
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-				GL11.glRotatef(-35F, 2f, 1f, 1f);
-				GL11.glTranslatef(0F, -1F, -0.5F);
-			 })
+                GL11.glScalef(1.5f, 1.5f, 1.5f);
+                GL11.glRotatef(15.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.225000f, 0.500000f, -0.700000f);
+             })
+             
+             .withFirstPersonPositioningModifying((renderContext) -> {
+                GL11.glScalef(1.5f, 1.5f, 1.5f);
+                GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.925000f, 0.275000f, 0.125000f);
+             })
 			 
 			 .withFirstPersonHandPositioning(
 					 (renderContext) -> {

@@ -6,7 +6,7 @@ buildscript {
             url = "http://files.minecraftforge.net/maven"
         }
         flatDir dirs: '/Users/victor-jr/Development/proguard5.2.1/lib'
-        flatDir dirs: '/Users/victor-jr/Development/weaponlib-1.11.2/build/libs'
+        flatDir dirs: '/Users/victor-jr/Development/weaponlib-1.10.2/build/libs'
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
@@ -23,12 +23,10 @@ plugins {
     id "net.minecraftforge.gradle.forge" version "2.0.2"
 }
 */
-version = "1.9.1"
+version = "1.10"
 group= "com.vicmatskiv.mw" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "mw"
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
 
 minecraft {
     version = "1.11.2-13.20.0.2265"
@@ -49,8 +47,6 @@ dependencies {
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
       
-    compile files('/Users/victor-jr/Development/weaponlib-1.11.2/build/libs/weaponlib-1.0.jar')
-
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
@@ -86,23 +82,4 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
-}
-jar {
-    //baseName = project.name + '-all'
-    archiveName = "${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
-    from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    } {
-        include "com/vicmatskiv/weaponlib/**"
-    }
-    //with jar
-}
-
-
-task obfuscate(type: proguard.gradle.ProGuardTask) {
-  configuration 'proguard.cfg'
-
-  injars "./build/libs/${archivesBaseName}-${version}.jar"
-
-  outjars "./build/libs/${archivesBaseName}-${version}_mc${project.minecraft.version}.jar"
 }
