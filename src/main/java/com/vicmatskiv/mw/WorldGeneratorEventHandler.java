@@ -45,32 +45,32 @@ public class WorldGeneratorEventHandler implements IWorldGenerator {
 	private void generateSurface(World world, Random random, int x, int z) {
 		
 		if(oreGenerationEnabled) {
-			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.STONE, world, random, 
-					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
-			
-			addOreSpawn(CommonProxy.CopperOre, 0, Blocks.STONE, world, random, 
-					x, z, 9, 9, 6 + random.nextInt(4), 15, 2, 110);
-			
-			addOreSpawn(CommonProxy.SulfurOre, 0, Blocks.STONE, world, random, 
-					x, z, 13, 13, 6 + random.nextInt(7), 20, 5, 90);
-			
-			addOreSpawn(CommonProxy.LeadOre, 0, Blocks.STONE, world, random, 
-					x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
-			
-			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.STONE, world, random, 
-					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
-			
-			addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.STONE, world, random, 
-					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
-			
-			addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.STONE, world, random, 
-					x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
-			
-			addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.STONE, world, random, 
-					x, z, 7, 7, 4 + random.nextInt(2), 15, 2, 90);
-			
-			addOreSpawn(CommonProxy.RubyOre, 0, Blocks.STONE, world, random, 
-					x, z, 6, 6, 2 + random.nextInt(2), 15, 2, 15);
+		    addOreSpawn(CommonProxy.TitaniumOre, 0, Blocks.STONE, world, random, 
+                    x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
+            
+            addOreSpawn(CommonProxy.CopperOre, 0, Blocks.STONE, world, random, 
+                    x, z, 9, 9, 6 + random.nextInt(4), 15, 2, 110);
+            
+            addOreSpawn(CommonProxy.SulfurOre, 0, Blocks.STONE, world, random, 
+                    x, z, 13, 13, 6 + random.nextInt(7), 20, 5, 90);
+            
+            addOreSpawn(CommonProxy.LeadOre, 0, Blocks.STONE, world, random, 
+                    x, z, 10, 10, 4 + random.nextInt(5), 20, 5, 90);
+            
+            addOreSpawn(CommonProxy.TantalumOre, 0, Blocks.STONE, world, random, 
+                    x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
+            
+            addOreSpawn(CommonProxy.BauxiteOre, 0, Blocks.STONE, world, random, 
+                    x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
+            
+            addOreSpawn(CommonProxy.TinOre, 0, Blocks.STONE, world, random, 
+                    x, z, 8, 8, 3 + random.nextInt(4), 15, 2, 60);
+            
+            addOreSpawn(CommonProxy.SiliconOre, 0, Blocks.STONE, world, random, 
+                    x, z, 7, 7, 4 + random.nextInt(2), 15, 2, 90);
+            
+            addOreSpawn(CommonProxy.RubyOre, 0, Blocks.STONE, world, random, 
+                    x, z, 6, 6, 2 + random.nextInt(2), 15, 2, 15);
 		}
 		
 	}
