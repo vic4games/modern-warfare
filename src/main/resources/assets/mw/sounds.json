@@ -1,4 +1,49 @@
 {
+  "grenadeexplosion": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:grenadeexplosion",
+       "stream": false
+      }
+    ]
+  },
+  "grenadethrow": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:grenadethrow",
+       "stream": false
+      }
+    ]
+  },
+  "safetypinoff": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:safetypinoff",
+       "stream": false
+      }
+    ]
+  },
+  "grenade-soft-bounce": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:grenade-soft-bounce",
+       "stream": false
+      }
+    ]
+  },
+  "grenade-hard-bounce": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:grenade-hard-bounce",
+       "stream": false
+      }
+    ]
+  },
   "click": {
     "category": "master",
     "sounds": [
@@ -26,6 +71,15 @@
       }
     ]
   },
+  "aug": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:aug",
+       "stream": false
+      }
+    ]
+  },
   "m16": {
     "category": "master",
     "sounds": [
@@ -35,11 +89,56 @@
       }
     ]
   },
+  "swoosh": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:swoosh",
+       "stream": false
+      }
+    ]
+  },
   "m1garand": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:m1garand",
+       "stream": false
+      }
+    ]
+  },
+  "armalitear15": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:armalitear15",
+       "stream": false
+      }
+    ]
+  },
+  "hk416c": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:hk416c",
+       "stream": false
+      }
+    ]
+  },
+  "hk416a5": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:hk416a5",
+       "stream": false
+      }
+    ]
+  },
+   "ak74": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ak74",
        "stream": false
       }
     ]
@@ -58,6 +157,15 @@
     "sounds": [
       {
        "name": "mw:kn44",
+       "stream": false
+      }
+    ]
+  },
+  "acr": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:acr",
        "stream": false
       }
     ]
@@ -143,11 +251,11 @@
       }
     ]
   },
-  "rpk": {
+  "rpk74m": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:rpk",
+       "name": "mw:rpk74m",
        "stream": false
       }
     ]

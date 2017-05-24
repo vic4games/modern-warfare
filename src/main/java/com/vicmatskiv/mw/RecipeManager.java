@@ -548,14 +548,14 @@ public class RecipeManager {
 
                 );
 
-        compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.AK74Mag),
-                "  R",
-                "X X",
-                "RX ",
-                'X', Items.IRON_INGOT,
-                'R', CommonProxy.MiniSteelPlate
-
-                );
+//        compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.AK74Mag),
+//                "  R",
+//                "X X",
+//                "RX ",
+//                'X', Items.IRON_INGOT,
+//                'R', CommonProxy.MiniSteelPlate
+//
+//                );
 
         compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.AKS74UMag),
                 "  X",

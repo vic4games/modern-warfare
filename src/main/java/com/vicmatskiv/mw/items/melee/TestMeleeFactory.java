@@ -27,6 +27,8 @@ public class TestMeleeFactory implements MeleeFactory {
                 .withPrepareHeavyStubTimeout(() -> 530)
                 .withAttackCooldownTimeout(() -> 500)
                 .withHeavyAttackCooldownTimeout(() -> 1500)
+                .withAttackSound("swoosh")
+                .withHeavyAttackSound("swoosh")
                 .withCompatibleSkin(CommonProxy.CrimsonBlood, "TacKnifeCrimsonBlood")
                 .withCompatibleSkin(CommonProxy.Chrome, "TacKnifeChrome")
                 .withCompatibleSkin(CommonProxy.GodWillsIt, "TacKnifeGodWillsIt")
@@ -36,7 +38,7 @@ public class TestMeleeFactory implements MeleeFactory {
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)
                                 .withModel(new com.vicmatskiv.mw.models.TacKnifeStandard())
-                                .withAnimationDuration(500)
+                                .withAnimationDuration(200)
                                 .withInventoryPositioning(itemStack -> {
                                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                                     GL11.glTranslatef(1, 1.3f, -1.3f);
