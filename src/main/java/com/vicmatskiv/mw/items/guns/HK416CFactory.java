@@ -42,7 +42,7 @@ public class HK416CFactory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK 416C")
+		.withName("HK416C")
 //		.withAmmo(CommonProxy.AR15Mag)
 //		.withAmmoCapacity(30)
 		.withFireRate(0.7f)

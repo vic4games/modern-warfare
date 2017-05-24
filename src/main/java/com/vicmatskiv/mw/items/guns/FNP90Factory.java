@@ -21,7 +21,7 @@ public class FNP90Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("FN P90")
+		.withName("FNP90")
 //		.withAmmo(CommonProxy.PX90Mag)
 //		.withAmmoCapacity(50)
 		.withFireRate(0.75f)  

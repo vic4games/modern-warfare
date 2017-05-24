@@ -34,7 +34,7 @@ public class ASValFactory implements GunFactory {
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName("AS Val")
+        .withName("ASVal")
         //.withAmmo(CommonProxy.AK47Mag)
 //      .withAmmoCapacity(30)
         .withFireRate(0.55f)

@@ -26,7 +26,7 @@ public class MP7Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("HK MP7")
+		.withName("HKMP7")
 //		.withAmmo(CommonProxy.MP7Mag)
 //		.withAmmoCapacity(20)
 		.withFireRate(0.7f)

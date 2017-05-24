@@ -39,7 +39,7 @@ public class PX90Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("FN P90 TR")
+		.withName("FNP90 TR")
 //		.withAmmo(CommonProxy.PX90Mag)
 //		.withAmmoCapacity(50)
 		.withFireRate(0.75f)  
