@@ -34,7 +34,7 @@ public class VSSVintorezFactory implements GunFactory {
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName("VSS Vintorez")
+        .withName("VSSVintorez")
         //.withAmmo(CommonProxy.AK47Mag)
 //      .withAmmoCapacity(30)
         .withFireRate(0.8f)

@@ -1547,7 +1547,7 @@ public class CommonProxy {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.3F, 0.4F, 0.4F);
+                    GL11.glTranslatef(-0.3F, 2.1F, -2.8F);
                     GL11.glRotatef(-130F, 0f, 1f, 0f);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);

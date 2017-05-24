@@ -39,7 +39,7 @@ public class UMP9Factory implements GunFactory {
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName("HK UMP9")
+        .withName("HKUMP9")
 //      .withAmmo(CommonProxy.MP5Mag)
 //      .withAmmoCapacity(25)
         .withFireRate(0.6f)
