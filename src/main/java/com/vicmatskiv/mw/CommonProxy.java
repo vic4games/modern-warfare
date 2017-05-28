@@ -83,6 +83,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
+import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.electronics.ItemTablet;
 import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
@@ -494,16 +495,18 @@ public class CommonProxy {
         return false;
     }
 
-    public void init(Object mod, CompatibleFmlInitializationEvent event) {
+    public void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
 
-        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, new CompatibleChannel(ModernWarfareMod.CHANNEL));
+        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID,
+                configurationManager,
+                new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
 
         ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("GunFireModeSwitch");
 
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dryfire");
-        
+
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
 
         Electronics = new ItemElectronics();
@@ -616,7 +619,7 @@ public class CommonProxy {
         OreDictionary.registerOre("ingotTin", TinIngot);
         OreDictionary.registerOre("ingotSulfurDust", SulfurDust);
         OreDictionary.registerOre("ingotAluminum", AluminumIngot);
-        OreDictionary.registerOre("Ruby", Ruby);
+        OreDictionary.registerOre("ruby", Ruby);
         OreDictionary.registerOre("ingotSteel", SteelIngot);
 
         ElectricSkin = new ItemSkin.Builder().withTextureVariant("Electric").withModId(ModernWarfareMod.MODID)
@@ -1017,7 +1020,7 @@ public class CommonProxy {
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(1.4F, 1.3F, 1.4f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
-        
+
         Bullet545x39 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.gunsTab).withName("Bullet545x39")
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
@@ -1183,7 +1186,7 @@ public class CommonProxy {
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
-        
+
         Mag75rnd762x39 = new ItemMagazine.Builder().withAmmo(75).withCompatibleBullet(Bullet762x39)
                 .withName("Mag75rnd762x39").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.Mag75rnd(), "GunmetalTexture.png")
@@ -2318,7 +2321,7 @@ public class CommonProxy {
         M14Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.M14Rail(), "GunmetalTexture.png").withName("M14Rail")
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FamasCarryHandle = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.FamasCarryHandle(), "AK12.png")
@@ -2326,7 +2329,7 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FelinCarryHandle = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.FelinCarryHandle(), "AK12.png")
@@ -2498,44 +2501,44 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.HecateIIBoltAction(), "AK12.png")
                 .withName("HecateIIBoltAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.AR15Action(), "AK12.png")
                 .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         BushmasterACRAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.ACRAction(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.ACRAction2(), "AK12.png")
                 .withName("BushmasterACRAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         RemingtonACRAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.ACRAction(), "ACR.png")
                 .withModel(new com.vicmatskiv.mw.models.ACRAction2(), "AK12.png")
                 .withName("RemingtonACRAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AKIron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.AKiron3(), "AK12.png")
                 .withName("AKIron3").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AKpart = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.vicmatskiv.mw.models.AKpart(), "AK12.png")
                 .withName("AKpart").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AKS74UIron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.vicmatskiv.mw.models.AKS74UIron(), "AK12.png")
                 .withName("AKS74UIron").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AKRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "AK12.png")
                 .withName("AKRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AUGRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "AK12.png")
@@ -2543,7 +2546,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.AKRail4(), "AK12.png")
                 .withName("AUGRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         BushmasterACRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "AK12.png")
@@ -2552,7 +2555,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "AK12.png")
                 .withName("BushmasterACRRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         RemingtonACRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "ACR.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "ACR.png")
@@ -2561,7 +2564,7 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "ACR.png")
                 .withName("RemingtonACRRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         M4Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "AK12.png")
@@ -2570,68 +2573,68 @@ public class CommonProxy {
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "AK12.png")
                 .withName("M4Rail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         G36Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
-                .withModel(new com.vicmatskiv.mw.models.G36Rail(), "AK12.png")  
+                .withModel(new com.vicmatskiv.mw.models.G36Rail(), "AK12.png")
                 .withName("G36Rail").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AKaction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.AKaction(), "AK12.png")
                 .withName("AKaction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AK12action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.AK12action(), "AK12.png")
                 .withName("AK12action").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         ScarAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.ScarAction(), "AK12.png")
                 .withName("ScarAction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         G36Action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.G36Action(), "AK12.png")
                 .withName("G36Action").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FamasAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.FamasAction(), "AK12.png")
                 .withName("FamasAction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AUGAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.AUGAction(), "AK12.png")
                 .withName("AUGAction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FelinAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.FelinAction(), "AK12.png")
                 .withName("FelinAction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FamasBipod1 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.FamasBipod(), "AK12.png")
                 .withName("FamasBipod1").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         FamasBipod2 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.vicmatskiv.mw.models.FamasBipod(), "AK12.png")
@@ -2731,7 +2734,7 @@ public class CommonProxy {
                     }
                 }).withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         G36Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.5f, 1.5f, 1.5f);
@@ -2778,7 +2781,7 @@ public class CommonProxy {
                     }
                 }).withName("G36Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
+
         AUGScope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.65f, 1.65f, 1.6f);
@@ -3148,6 +3151,13 @@ public class CommonProxy {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withCraftingRecipe("ARX",
+                "ORO",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass)
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer556x45 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3917,7 +3927,7 @@ public class CommonProxy {
                 }).withName("Bipod").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
+        compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
 
         Builder marineArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Marine)
                 .withUnlocalizedName("Marine").withTextureName("Marine")
@@ -4308,7 +4318,7 @@ public class CommonProxy {
         new FuseGrenadeFactory().createGrenade(this);
 
         new ImpactGrenadeFactory().createGrenade(this);
-        
+
         new SmokeGrenadeFactory().createGrenade(this);
     }
 

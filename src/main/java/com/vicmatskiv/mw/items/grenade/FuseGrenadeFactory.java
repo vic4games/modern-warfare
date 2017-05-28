@@ -23,7 +23,7 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withName("M67Frag")
                 .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withTextureNames("M67Frag")
-                .withExplosionStrength(1.8f)
+                .withExplosionStrength(1f)
                 .withExplosionTimeout(5000)
                 .withExplosionSound("grenadeexplosion")
                 .withBounceSoftSound("grenade-soft-bounce")

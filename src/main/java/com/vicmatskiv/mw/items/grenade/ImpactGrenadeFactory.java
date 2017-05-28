@@ -10,7 +10,6 @@ import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
-import com.vicmatskiv.weaponlib.model.CameraModel;
 
 import net.minecraft.item.Item;
 
@@ -24,7 +23,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                 .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withTextureNames("ImpactGrenade")
                 .withExplosionSound("grenadeexplosion")
-                .withExplosionStrength(1.8f)
+                .withExplosionStrength(1f)
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
                 .withEffectiveRadius(15f)
@@ -161,7 +160,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                                     //                                    GL11.glRotatef(15.000000f, 0f, 0f, 1f);
                                     //                                    GL11.glTranslatef(0.275000f, -0.400000f, 0.200000f);
                                 }, 70, 0))
-                                
+
                          .withFirstPersonHandPositioningThrown(
                                 context -> { // left hand
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
