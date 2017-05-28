@@ -258,6 +258,17 @@ public class RecipeManager {
         );
 
         GameRegistry.addRecipe(new ItemStack(CommonProxy.Scope),
+                "A R",
+                "OGO",
+                "XXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        );
+        
+        GameRegistry.addRecipe(new ItemStack(CommonProxy.Leupold),
                 "ARR",
                 "OGO",
                 "XXX",
@@ -342,8 +353,9 @@ public class RecipeManager {
         );
 
         GameRegistry.addRecipe(new ItemStack(CommonProxy.Gold),
-                "A",
-                'A', Items.gold_ingot
+                "AA",
+                "AA",
+                'A', Items.gold_nugget
         );
 
         GameRegistry.addRecipe(new ItemStack(CommonProxy.Emerald),

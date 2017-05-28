@@ -56,7 +56,7 @@ public class AK47Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.13f)
 		.withFlashOffsetY(() -> 0.13f)
 		.withInaccuracy(1f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
 		        CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

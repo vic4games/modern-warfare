@@ -60,7 +60,7 @@ public class G36CFactory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.13f)
 		.withFlashOffsetY(() -> 0.1f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

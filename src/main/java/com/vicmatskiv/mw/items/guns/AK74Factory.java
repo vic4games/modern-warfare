@@ -61,9 +61,9 @@ public class AK74Factory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 6.9", 
-		"Caliber: 5.56x39mm", "Magazines:", "30rnd 5.45x39mm Magazine (Type 2)",
+		"Caliber: 5.45x39mm", "Magazines:", "30rnd 5.45x39mm Magazine (Type 2)",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
 				(a, i) -> {

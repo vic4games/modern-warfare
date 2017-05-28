@@ -53,7 +53,7 @@ public class M8A7Factory implements GunFactory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.12f)
         .withFlashOffsetY(() -> 0.12f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.FunGunsTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,

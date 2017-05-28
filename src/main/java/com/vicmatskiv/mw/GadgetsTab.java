@@ -5,9 +5,9 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class GunsTab extends CreativeTabs
+public class GadgetsTab extends CreativeTabs
 {
-	public GunsTab(int par1, String par2Str)
+	public GadgetsTab(int par1, String par2Str)
 	{
 		super(par1, par2Str);
 	}
@@ -16,7 +16,7 @@ public class GunsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.CopperIngot;
+		return CommonProxy.Tablet;
 	}
 
 }

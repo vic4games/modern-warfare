@@ -17,11 +17,11 @@ import com.vicmatskiv.weaponlib.grenade.RenderableState;
 public class FuseGrenadeFactory implements GrenadeFactory {
 
     @Override
-    public Item createGrenade(CommonProxy commonProxy) {
+    public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("M67Frag")
-                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M67Frag")
                 .withExplosionStrength(1.8f)
                 .withExplosionTimeout(5000)

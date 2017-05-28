@@ -18,11 +18,11 @@ import com.vicmatskiv.weaponlib.grenade.RenderableState;
 public class SmokeGrenadeFactory implements GrenadeFactory {
 
     @Override
-    public Item createGrenade(CommonProxy commonProxy) {
+    public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("M18White")
-                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M18White")
                 .withExplosionStrength(0.4f)
                 .withSmokeOnly()

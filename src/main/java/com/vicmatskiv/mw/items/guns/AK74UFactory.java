@@ -57,14 +57,14 @@ public class AK74UFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.13f)
 		.withFlashOffsetY(() -> 0.12f)
 		.withInaccuracy(2f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 6.9", 
-		"Caliber: 5.56x39mm", "Magazines:", "30rnd 5.45x39mm Magazine (Type 2)",
+		"Caliber: 5.45x39mm", "Magazines:", "30rnd 5.45x39mm Magazine (Type 2)",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
 				(a, i) -> {

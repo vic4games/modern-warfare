@@ -17,11 +17,11 @@ import net.minecraft.item.Item;
 public class ImpactGrenadeFactory implements GrenadeFactory {
 
     @Override
-    public Item createGrenade(CommonProxy commonProxy) {
+    public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("ImpactGrenade")
-                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("ImpactGrenade")
                 .withExplosionSound("grenadeexplosion")
                 .withExplosionStrength(1.8f)

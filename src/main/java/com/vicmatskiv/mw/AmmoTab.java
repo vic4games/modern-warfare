@@ -5,9 +5,9 @@ import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class AR2Tab extends CreativeTabs
+public class AmmoTab extends CreativeTabs
 {
-	public AR2Tab(int par1, String par2Str)
+	public AmmoTab(int par1, String par2Str)
 	{
 		super(par1, par2Str);
 	}
@@ -16,7 +16,7 @@ public class AR2Tab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.AK47;
+		return CommonProxy.NATOMag1;
 	}
 
 }

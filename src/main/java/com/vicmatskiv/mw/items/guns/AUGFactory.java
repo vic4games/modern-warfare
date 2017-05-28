@@ -61,7 +61,7 @@ public class AUGFactory implements GunFactory {
 		.withFlashOffsetX(() -> 0.11f)
 		.withFlashOffsetY(() -> 0.08f)
 		.withShellCasingForwardOffset(-0.1f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
