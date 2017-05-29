@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -69,47 +73,47 @@ public class M21Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper", "Damage: 14", 
 		"Caliber: 7.62x51mm NATO", "Magazines:", "21rnd 7.62x51mm NATO Magazine",
 		"Fire Rate: Semi"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Diamond, 
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Emerald, 
+        .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.M14DMRMag, (model) -> {
+		.withCompatibleAttachment(Magazines.M14DMRMag, (model) -> {
             GL11.glTranslatef(-0.4F, 0.9F, -2.1F);
             GL11.glScaled(1.4F, 1.5F, 1.5F);
             GL11.glRotatef(-5F, 1f, 0f, 0f);
         })
-        .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -151,7 +155,7 @@ public class M21Factory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Leupold, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.Leupold, (player, stack) -> {
             GL11.glTranslatef(-0.157F, -1.22F, -2.85F);
             GL11.glScaled(0.55F, 0.55F, 0.55F);
         },(model) -> {
@@ -160,20 +164,20 @@ public class M21Factory implements GunFactory {
                 GL11.glScaled(0.09F, 0.09F, 0.09F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.M14Action, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.M14Action, true, (model) -> {
             if(model instanceof M14Action) {
                 GL11.glTranslatef(0F, 0.01F, 0F);
                 GL11.glScaled(1F, 1F, 1F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.M14Action2, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.M14Action2, true, (model) -> {
             if(model instanceof M14Action2) {
                 GL11.glTranslatef(0F, 0.02F, 0F);
                 GL11.glScaled(1F, 1F, 1F);
             }
         })
         
-        .withCompatibleAttachment(CommonProxy.Silencer762x51, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer762x51, (model) -> {
             GL11.glTranslatef(-0.2F, -1.3F, -10.63F);
             GL11.glScaled(1F, 1F, 1.2F);
         })
@@ -220,7 +224,7 @@ public class M21Factory implements GunFactory {
                 GL11.glTranslatef(0.350000f, 0.8f, 0.65f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f);
                 
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Leupold)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Leupold)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.008F, 0.26f, 0.07f);
                 } 
@@ -232,54 +236,54 @@ public class M21Factory implements GunFactory {
             
                 })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.M14DMRMag, (renderContext) -> {
+            .withFirstPersonCustomPositioning(Magazines.M14DMRMag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
                 
-             .withFirstPersonPositioningCustomRecoiled(CommonProxy.M14DMRMag, (renderContext) -> {
+             .withFirstPersonPositioningCustomRecoiled(Magazines.M14DMRMag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M14DMRMag, (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.M14DMRMag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.M14Action.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.M14Action.getRenderablePart(), (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.M14Action2.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.M14Action2.getRenderablePart(), (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.M14Action.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.M14Action.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1.2F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M14Action.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.M14Action.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1.2F);
                 })
         
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.M14Action2.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.M14Action2.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.34F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.M14Action2.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.M14Action2.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.34F);
                 })
                 
@@ -343,7 +347,7 @@ public class M21Factory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.M14DMRMag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.M14DMRMag,
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -351,7 +355,7 @@ public class M21Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.M14DMRMag,
+            .withFirstPersonCustomPositioningReloading(Magazines.M14DMRMag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.05F, 1F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -384,7 +388,7 @@ public class M21Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.M14Action.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.M14Action.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                    GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -401,7 +405,7 @@ public class M21Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.M14Action.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M14Action.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0F, 0F, 1F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -434,7 +438,7 @@ public class M21Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.M14Action2.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.M14Action2.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                    GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -451,7 +455,7 @@ public class M21Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.M14Action2.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M14Action2.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0F, 0F, 1F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -489,7 +493,7 @@ public class M21Factory implements GunFactory {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glTranslatef(0.350000f, 0.8f, 0.4f);
                 
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Leupold)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Leupold)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.008F, 0.26f, 0.2f);
                 } 

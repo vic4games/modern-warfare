@@ -4,8 +4,11 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -50,7 +53,7 @@ public class SMAWFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MetalComponents,
                 CommonProxy.BigSteelPlate)
-                .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+                .withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
                     if (model instanceof M4Iron1) {
                         GL11.glTranslatef(0.41F, -2.13F, 1.1F);
                         GL11.glScaled(0.3F, 0.3F, 0.3F);
@@ -92,7 +95,7 @@ public class SMAWFactory implements GunFactory {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+                .withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
                     GL11.glTranslatef(0.4F, -2F, 1.2F);
                     GL11.glScaled(0.6F, 0.6F, 0.6F);
                 },(model) -> {
@@ -101,33 +104,33 @@ public class SMAWFactory implements GunFactory {
                         GL11.glScaled(0.06F, 0.06F, 0.06F);
                     }
                 })
-                .withCompatibleAttachment(CommonProxy.SMAWRocket, (model) -> {
+                .withCompatibleAttachment(Bullets.SMAWRocket, (model) -> {
                     GL11.glTranslatef(0F, 0F, 0.07F);
                 })
-                .withCompatibleAttachment(CommonProxy.Fade, 
+                .withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("SMAWRuby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("SMAWRuby"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("SMAWGold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("SMAWGold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("SMAWSapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("SMAWSapphire"));
                 }, 
                 (a, i) -> {
                 }
@@ -189,7 +192,7 @@ public class SMAWFactory implements GunFactory {
                                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                                 
                              // ACOG Zoom
-                                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                                     //System.out.println("Position me for Acog");
                                     GL11.glTranslatef(-0.09F, -0.03F, -0.13F);
                                 } 
@@ -206,7 +209,7 @@ public class SMAWFactory implements GunFactory {
                                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                                 
                              // ACOG Zoom
-                                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                                     //System.out.println("Position me for Acog");
                                     GL11.glTranslatef(-0.09F, -0.03F, -0.13F);
                                 } 

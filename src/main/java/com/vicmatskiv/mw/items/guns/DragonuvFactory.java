@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -63,56 +67,56 @@ public class DragonuvFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 15", 
 		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Amber, 
+		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Fade, 
+		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Emerald, 
+        .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Diamond, 
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.PSO1, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.PSO1, (player, stack) -> {
             
             GL11.glTranslatef(0.14F, -0.95F, -1.2F);
             GL11.glScaled(1.2F, 1.2F, 1.2F);
@@ -126,16 +130,16 @@ public class DragonuvFactory implements GunFactory {
                  GL11.glScaled(0.8F, 0.8F, 0.8F);
              }
         })
-         .withCompatibleAttachment(CommonProxy.AKIron, true, (model) -> {
+         .withCompatibleAttachment(AuxiliaryAttachments.AKIron, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.06F, -9.35F);
             GL11.glScaled(0.6F, 0.55F, 0.5F);
         })
-        .withCompatibleAttachment(CommonProxy.AKaction, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
             GL11.glTranslatef(0F, 0F, -0.3F);
             GL11.glScaled(1F, 1F, 1.05F);
         })
-		.withCompatibleAttachment(CommonProxy.DragunovMag, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+		.withCompatibleAttachment(Magazines.DragunovMag, (model) -> {})
+		.withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -177,7 +181,7 @@ public class DragonuvFactory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-		.withCompatibleAttachment(CommonProxy.Silencer762x54, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer762x54, (model) -> {
 			GL11.glTranslatef(-0.2F, -1.06F, -11.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -223,7 +227,7 @@ public class DragonuvFactory implements GunFactory {
 	                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 
 	                // Scope Zoom
-	                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+	                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
 	                    //System.out.println("Position me for Scope");
 	                    GL11.glTranslatef(-0.01F, 0.222f, 0.25f);
 	                }   
@@ -235,38 +239,38 @@ public class DragonuvFactory implements GunFactory {
 
 	            })
 				
-			.withFirstPersonCustomPositioning(CommonProxy.DragunovMag, (renderContext) -> {
+			.withFirstPersonCustomPositioning(Magazines.DragunovMag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
-            .withFirstPersonCustomPositioning(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
-            .withFirstPersonCustomPositioning(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0F);
                 }
             })
             
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.DragunovMag.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(Magazines.DragunovMag.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.DragunovMag.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.DragunovMag.getRenderablePart(), (renderContext) -> {
                 })
                 
-           .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+           .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
                 
 			.withFirstPersonPositioningReloading(
@@ -329,7 +333,7 @@ public class DragonuvFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.DragunovMag,
+			.withFirstPersonCustomPositioningUnloading(Magazines.DragunovMag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -344,7 +348,7 @@ public class DragonuvFactory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.DragunovMag,
+			.withFirstPersonCustomPositioningReloading(Magazines.DragunovMag,
 				new Transition((renderContext) -> {
 				    GL11.glTranslatef(0F, 2F, 0F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -378,7 +382,7 @@ public class DragonuvFactory implements GunFactory {
                 }, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.AKaction.getRenderablePart(),
+			.withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                    GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -395,7 +399,7 @@ public class DragonuvFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AKaction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0F, 0.7F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -428,7 +432,7 @@ public class DragonuvFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AKIron.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKIron.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                    GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -445,7 +449,7 @@ public class DragonuvFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AKIron.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKIron.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                    GL11.glTranslatef(0F, 0.7F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -483,7 +487,7 @@ public class DragonuvFactory implements GunFactory {
                 GL11.glTranslatef(0.805f, -0.423f, 0.625000f);
 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(-0.01F, 0.222f, 0.25f);
                 }   

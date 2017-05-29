@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -69,44 +73,44 @@ public class AUGFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		 .withCompatibleAttachment(CommonProxy.Diamond, 
+		 .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Forest, 
+        .withCompatibleAttachment(GunSkins.Forest, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.AUGAction, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AUGAction, true, (model) -> {
         })
-        .withCompatibleAttachment(CommonProxy.AUGScope, true, true, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.AUGScope, true, true, (player, stack) -> {
             GL11.glTranslatef(-0.165F, -1.4F, -1.05F);
             GL11.glScaled(0.6F, 0.6F, 0.6F);
         },(model) -> {
@@ -115,12 +119,12 @@ public class AUGFactory implements GunFactory {
                 GL11.glScaled(0.09F, 0.1F, 0.08F);
             }
         })
-		.withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
+		.withCompatibleAttachment(Magazines.NATOMag1, (model) -> {
 		    GL11.glTranslatef(-0.335F, 0.9F, 1.2F);
             GL11.glScaled(1F, 1.5F, 1.5F);
             GL11.glRotatef(-5F, 1f, 0f, 0f);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
 			GL11.glTranslatef(-0.2F, -1F, -5.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -169,7 +173,7 @@ public class AUGFactory implements GunFactory {
                 GL11.glTranslatef(0F, 0F, 0.05F);
                 
                 // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.AUGScope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AUGScope)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0.39f, 0.77f, -0.225000f);
                 } 
@@ -182,29 +186,29 @@ public class AUGFactory implements GunFactory {
             
                 })
 				
-			.withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (renderContext) -> {
+			.withFirstPersonCustomPositioning(Magazines.NATOMag1, (renderContext) -> {
 //				GL11.glTranslatef(-0.2F, -0.32F, 0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
 			
-			.withFirstPersonCustomPositioning(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 })
 		
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(Magazines.NATOMag1.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.NATOMag1.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
 			
@@ -254,7 +258,7 @@ public class AUGFactory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.NATOMag1,
+            .withFirstPersonCustomPositioningUnloading(Magazines.NATOMag1,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.2F, 0.5F, -0.2F);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -269,7 +273,7 @@ public class AUGFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag1,
+            .withFirstPersonCustomPositioningReloading(Magazines.NATOMag1,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.05F, 1F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -296,14 +300,14 @@ public class AUGFactory implements GunFactory {
                 }, 250, 1000)
                     )
            
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AUGAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AUGAction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AUGAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AUGAction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -321,7 +325,7 @@ public class AUGFactory implements GunFactory {
 				GL11.glScaled(2F, 2F, 2F);
 				
 				// ACOG Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.AUGScope)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AUGScope)) {
 					//System.out.println("Position me for Acog");
 				    GL11.glTranslatef(0.39f, 0.77f, -0.225000f);
 				} 

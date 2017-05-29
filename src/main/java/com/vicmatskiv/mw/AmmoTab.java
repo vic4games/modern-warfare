@@ -16,7 +16,7 @@ public class AmmoTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.NATOMag1;
+		return Magazines.NATOMag1;
 	}
 
 }

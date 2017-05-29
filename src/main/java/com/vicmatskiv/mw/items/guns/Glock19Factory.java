@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.G21;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -46,55 +50,55 @@ public class Glock19Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "17rnd 9mm Magazine",
 		"Fire Rate: Semi"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Fade, 
+		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("G18Fade"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("G18Fade"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Emerald, 
+        .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.G18Top, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.G18Top, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
 //			GL11.glScaled(0.55F, 0.55F, 0.55F);
 		})
-		.withCompatibleAttachment(CommonProxy.Glock18Mag, (model) -> {
+		.withCompatibleAttachment(Magazines.Glock18Mag, (model) -> {
 			GL11.glTranslatef(0F, 0.1F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
+		.withCompatibleAttachment(Attachments.Laser, (p, s) -> {
 			GL11.glTranslatef(0.01F, -0.7F, -2F);
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 			GL11.glRotatef(-90F, 0f, 0f, -4f);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer9mm, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.2F, -4.61F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -136,23 +140,23 @@ public class Glock19Factory implements GunFactory {
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.G18Top.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.G18Top.getRenderablePart(), (renderContext) -> {
 				GL11.glTranslatef(0F, 0F, 0.5F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
 				
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.G18Top.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.G18Top.getRenderablePart(), (renderContext) -> {
 				GL11.glTranslatef(0F, 0F, 0.5F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.Glock18Mag, (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(Magazines.Glock18Mag, (renderContext) -> {
 			})
 			
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Glock18Mag, (renderContext) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(Magazines.Glock18Mag, (renderContext) -> {
 			})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -172,13 +176,13 @@ public class Glock19Factory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
 				} 
@@ -193,9 +197,9 @@ public class Glock19Factory implements GunFactory {
 				
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.Glock18Mag, (renderContext) -> {})
+			.withFirstPersonCustomPositioning(Magazines.Glock18Mag, (renderContext) -> {})
 			
-			.withFirstPersonCustomPositioning(CommonProxy.G18Top.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.G18Top.getRenderablePart(), (renderContext) -> {
 				if(renderContext.getWeaponInstance().getAmmo() == 0) {
 					GL11.glTranslatef(0F, 0F, 0.5F);
 				}
@@ -255,7 +259,7 @@ public class Glock19Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.Glock18Mag,
+			.withFirstPersonCustomPositioningUnloading(Magazines.Glock18Mag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -270,7 +274,7 @@ public class Glock19Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.Glock18Mag,
+			.withFirstPersonCustomPositioningReloading(Magazines.Glock18Mag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -292,7 +296,7 @@ public class Glock19Factory implements GunFactory {
 					)
 					
 					
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.G18Top.getRenderablePart(),
+			.withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.G18Top.getRenderablePart(),
 					new Transition((renderContext) -> {
 						GL11.glTranslatef(0F, 0F, 0.5F);
 //						GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -307,7 +311,7 @@ public class Glock19Factory implements GunFactory {
 					}, 250, 1000)
 						)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.G18Top.getRenderablePart(),
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.G18Top.getRenderablePart(),
 					new Transition((renderContext) -> {
 						GL11.glTranslatef(0F, 0F, 0.5F);
 //						GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -344,13 +348,13 @@ public class Glock19Factory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
 				} 

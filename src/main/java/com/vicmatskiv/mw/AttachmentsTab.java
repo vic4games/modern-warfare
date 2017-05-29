@@ -16,7 +16,7 @@ public class AttachmentsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.Leupold;
+		return Attachments.Leupold;
 	}
 
 }

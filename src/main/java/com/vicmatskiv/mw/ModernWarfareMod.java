@@ -24,7 +24,7 @@ public class ModernWarfareMod {
 	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
 	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
 	public static final String MODID = "mw";
-	public static final String VERSION = "1.10";
+	public static final String VERSION = "1.10.1";
 
 	@SidedProxy(serverSide = "com.vicmatskiv.weaponlib.CommonModContext", clientSide = "com.vicmatskiv.weaponlib.ClientModContext")
 	public static ModContext MOD_CONTEXT;
@@ -33,7 +33,7 @@ public class ModernWarfareMod {
 
 	public static CreativeTabs gunsTab = new GunsTab(
 			CreativeTabs.getNextID(), "guns_tab");
-	
+
 	public static CreativeTabs ArmorTab = new ArmorTab(
             CreativeTabs.getNextID(), "ArmorTab");
 
@@ -51,16 +51,16 @@ public class ModernWarfareMod {
 
 	public static CreativeTabs SnipersTab = new SnipersTab(
             CreativeTabs.getNextID(), "SnipersTab");
-	
+
 	public static CreativeTabs AmmoTab = new AmmoTab(
             CreativeTabs.getNextID(), "AmmoTab");
-	
+
 	public static CreativeTabs AttachmentsTab = new AttachmentsTab(
             CreativeTabs.getNextID(), "AttachmentsTab");
-	
+
 	public static CreativeTabs GrenadesTab = new GrenadesTab(
             CreativeTabs.getNextID(), "GrenadesTab");
-	
+
 	public static CreativeTabs GadgetsTab = new GadgetsTab(
             CreativeTabs.getNextID(), "GadgetsTab");
 
@@ -108,6 +108,6 @@ public class ModernWarfareMod {
 	// ItemRecipes
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-	    RecipeManager.init();
+	    RecipeManager.init(MOD_CONTEXT);
 	}
 }
