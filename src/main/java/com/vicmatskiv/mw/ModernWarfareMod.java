@@ -2,25 +2,26 @@ package com.vicmatskiv.mw;
 
 import java.io.File;
 
+import javax.xml.transform.stream.StreamSource;
+
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
 
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
 public class ModernWarfareMod {
 
-	private static final String CONFIG_PROPERTY_CATEGORY_GENERAL = "general";
-	private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
+	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
 	private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
 	public static final String MODID = "mw";
 	public static final String VERSION = "1.10";
@@ -72,26 +73,37 @@ public class ModernWarfareMod {
 
 	public static boolean oreGenerationEnabled = true;
 
+	private ConfigurationManager configurationManager;
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		configure(event.getSuggestedConfigurationFile());
-		proxy.init(this, new CompatibleFmlInitializationEvent(event));
+
+	    initConfigurationManager(event);
+
+		proxy.init(this, configurationManager, new CompatibleFmlInitializationEvent(event));
 	}
 
-	private void configure(File suggestedConfig) {
-		File parentDirectory = suggestedConfig.getParentFile();
-		File configFile;
-		if(parentDirectory != null) {
-			configFile = new File(parentDirectory, MODERN_WARFARE_CONFIG_FILE_NAME);
-		} else {
-			configFile = new File(MODERN_WARFARE_CONFIG_FILE_NAME);
-		}
-		Configuration config = new Configuration(configFile);
-		config.load();
-		Property oreGenerationEnabled = config.get(CONFIG_PROPERTY_CATEGORY_GENERAL, CONFIG_PROPERTY_ORE_GENERATION_ENABLED, true);
-		ModernWarfareMod.oreGenerationEnabled = oreGenerationEnabled.getBoolean();
-		config.save();
-	}
+	@EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        if(configurationManager != null) {
+            configurationManager.save();
+        }
+    }
+
+
+    private void initConfigurationManager(FMLPreInitializationEvent event) {
+        File parentDirectory = event.getSuggestedConfigurationFile().getParentFile();
+	    File configFile;
+	    if(parentDirectory != null) {
+	        configFile = new File(parentDirectory, MODERN_WARFARE_CONFIG_FILE_NAME);
+	    } else {
+	        configFile = new File(MODERN_WARFARE_CONFIG_FILE_NAME);
+	    }
+		configurationManager = new ConfigurationManager.Builder()
+		        .withUserConfiguration(configFile)
+		        .withDefaultConfiguration(new StreamSource(getClass().getResourceAsStream(DEFAULT_CONFIG_RESOURCE)))
+		        .build();
+    }
 
 	// ItemRecipes
 	@EventHandler

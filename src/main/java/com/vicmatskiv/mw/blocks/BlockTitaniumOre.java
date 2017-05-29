@@ -10,11 +10,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class BlockTitaniumOre extends Block 
+public class BlockTitaniumOre extends Block
 
 {
 	private static final String name = "titaniumore";
-	
+
 	public BlockTitaniumOre()
 	{
 		super(Material.rock);
@@ -22,7 +22,7 @@ public class BlockTitaniumOre extends Block
 		setBlockTextureName(ModernWarfareMod.MODID + ":" + "titaniumore");
 		setHardness(6F);
 		setResistance(600000F);
-		setStepSound(soundTypeStone); 
+		setStepSound(soundTypeStone);
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
@@ -30,5 +30,5 @@ public class BlockTitaniumOre extends Block
 		{
 			return CommonProxy.TitaniumOre;
 		}
-		
+
 	}

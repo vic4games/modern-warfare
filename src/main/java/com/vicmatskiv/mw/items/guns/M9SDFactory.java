@@ -42,6 +42,10 @@ public class M9SDFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("--Automatically Silenced--", "",  "Type: Pistol", "Damage: 4.5", 
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
+		.withCraftingRecipe("AX",
+                'X', CommonProxy.M9,
+                'A', CommonProxy.Silencer9mm
+        )
 		.withCompatibleAttachment(CommonProxy.Emerald, 
                 (a, i) -> {
                     i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));

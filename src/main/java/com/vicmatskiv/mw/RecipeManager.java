@@ -417,19 +417,19 @@ public class RecipeManager {
                 'F', new ItemStack(Items.dye, 12, 12)
         );
 
-        GameRegistry.addRecipe(new ItemStack(CommonProxy.Vulcan),
-                "AFR",
-                'A', new ItemStack(Items.dye, 0, 0),
-                'F', new ItemStack(Items.dye, 12, 12),
-                'R', new ItemStack(Items.dye, 15, 15)
-        );
+//        GameRegistry.addRecipe(new ItemStack(CommonProxy.Vulcan),
+//                "AFR",
+//                'A', new ItemStack(Items.dye, 0, 0),
+//                'F', new ItemStack(Items.dye, 12, 12),
+//                'R', new ItemStack(Items.dye, 15, 15)
+//        );
 
-        GameRegistry.addRecipe(new ItemStack(CommonProxy.Asiimov),
-                "AFR",
-                'A', new ItemStack(Items.dye, 0, 0),
-                'F', new ItemStack(Items.dye, 14, 14),
-                'R', new ItemStack(Items.dye, 15, 15)
-        );
+//        GameRegistry.addRecipe(new ItemStack(CommonProxy.Asiimov),
+//                "AFR",
+//                'A', new ItemStack(Items.dye, 0, 0),
+//                'F', new ItemStack(Items.dye, 14, 14),
+//                'R', new ItemStack(Items.dye, 15, 15)
+//        );
 
         GameRegistry.addRecipe(new ItemStack(CommonProxy.LaserPointer),
                 "XXX",
@@ -523,6 +523,14 @@ public class RecipeManager {
                 'X', CommonProxy.SteelIngot
 
         );
+        
+        compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.Mag75rnd762x39),
+                "  X",
+                "XXX",
+                "XX ",
+                'X', CommonProxy.SteelIngot
+
+        );
 
         compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.PMAG762x39),
                 "  R",
@@ -559,7 +567,7 @@ public class RecipeManager {
                 'R', CommonProxy.MiniSteelPlate
 
         );
-        
+
         compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.AKS74UMag),
                 "  X",
                 "X R",
@@ -842,6 +850,15 @@ public class RecipeManager {
         compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.AK101Mag),
                 "  A",
                 "A R",
+                "AR ",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+                );
+        
+        compatibility.addShapedOreRecipe(new ItemStack(CommonProxy.M8A7Mag),
+                "  A",
+                "ARA",
                 "AR ",
                 'A', CommonProxy.SteelIngot,
                 'R', CommonProxy.MiniSteelPlate

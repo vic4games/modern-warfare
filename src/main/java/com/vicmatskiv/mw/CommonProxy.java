@@ -3,7 +3,10 @@ package com.vicmatskiv.mw;
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 import net.minecraft.block.Block;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -83,6 +86,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
+import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.electronics.ItemTablet;
 import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
@@ -407,9 +411,9 @@ public class CommonProxy {
     public static ItemSkin ElectricSkin;
     public static ItemSkin Voltaic;
     public static ItemSkin LightningStrike;
-    public static ItemSkin Asiimov;
+//    public static ItemSkin Asiimov;
     public static ItemSkin Fade;
-    public static ItemSkin Vulcan;
+//    public static ItemSkin Vulcan;
     public static ItemSkin Emerald;
     public static ItemSkin Diamond;
     public static ItemSkin Gold;
@@ -504,9 +508,9 @@ public class CommonProxy {
         return false;
     }
 
-    public void init(Object mod, CompatibleFmlInitializationEvent event) {
+    public void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
 
-        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, new CompatibleChannel(ModernWarfareMod.CHANNEL));
+        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
 
@@ -631,68 +635,111 @@ public class CommonProxy {
 
         ElectricSkin = new ItemSkin.Builder().withTextureVariant("Electric").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Electric")
+                .withCraftingRecipe("AF",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'F', new ItemStack(Items.dye, 12, 12))
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Voltaic = new ItemSkin.Builder().withTextureVariant("voltaic").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Voltaic")
+                .withCraftingRecipe("AF",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'F', new ItemStack(Items.dye, 8, 8))
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         LightningStrike = new ItemSkin.Builder().withTextureVariant("AWPLightningStrike")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withCraftingRecipe("AF",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'F', new ItemStack(Items.dye, 9, 9))
                 .withName("LightningStrike").build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
-        Asiimov = new ItemSkin.Builder().withTextureVariant("M4A4Asiimov").withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Asiimov")
-                .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+//        Asiimov = new ItemSkin.Builder().withTextureVariant("M4A4Asiimov").withModId(ModernWarfareMod.MODID)
+//                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Asiimov")
+//                .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Fade = new ItemSkin.Builder().withTextureVariant("G18Fade").withTextureVariant("SMAWRuby")
-                .withTextureVariant("Ruby").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withTextureVariant("Ruby")
+                .withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withCraftingRecipe("A",
+                'A', CommonProxy.Ruby
+        )
                 .withName("Fade").build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Emerald = new ItemSkin.Builder().withTextureVariant("Emerald").withTextureVariant("KrissVectorEmerald")
                 .withTextureVariant("MosinNagantEmerald").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Emerald")
+                .withCraftingRecipe("A",
+                'A', Items.emerald
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Diamond = new ItemSkin.Builder().withTextureVariant("Diamond").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Diamond")
+                .withCraftingRecipe("A",
+                'A', Items.diamond
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Gold = new ItemSkin.Builder().withTextureVariant("Gold").withTextureVariant("KrissVectorGold")
                 .withTextureVariant("MosinNagantGold").withTextureVariant("SMAWGold")
                 .withTextureVariant("HecateIIGold").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Gold")
+                .withCraftingRecipe("AA",
+                "AA",
+                'A', Items.gold_nugget
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Sapphire = new ItemSkin.Builder().withTextureVariant("Sapphire").withTextureVariant("KrissVectorSapphire")
                 .withTextureVariant("SMAWSapphire").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Sapphire")
+                .withCraftingRecipe("A",
+                'A', new ItemStack(Items.dye, 4, 4)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Desert = new ItemSkin.Builder().withTextureVariant("Desert").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Desert")
+                .withCraftingRecipe("A",
+                'A', Blocks.sand
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Forest = new ItemSkin.Builder().withTextureVariant("Forest").withTextureVariant("MosinNagantForest")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Forest")
+                .withCraftingRecipe("A",
+                'A', Blocks.leaves
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Amber = new ItemSkin.Builder().withTextureVariant("Amber").withTextureVariant("M14Amber")
                 .withTextureVariant("HecateIIAmber").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Amber")
+                .withCraftingRecipe("A",
+                'A', new ItemStack(Items.dye, 14, 14)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Arctic = new ItemSkin.Builder().withTextureVariant("Arctic").withTextureVariant("HecateIIArctic")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Arctic")
+                .withCraftingRecipe("AR",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'R', new ItemStack(Items.dye, 15, 15)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         Amethyst = new ItemSkin.Builder().withTextureVariant("Amethyst").withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Amethyst")
+                .withCraftingRecipe("A",
+                'A', new ItemStack(Items.dye, 5, 5)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
-        Vulcan = new ItemSkin.Builder().withTextureVariant("AK47Vulcan").withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Vulcan")
-                .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
+//        Vulcan = new ItemSkin.Builder().withTextureVariant("AK47Vulcan").withModId(ModernWarfareMod.MODID)
+//                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withName("Vulcan")
+//                .build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 
         ShotgunShell = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab).withName("ShotgunShell")
@@ -754,7 +801,12 @@ public class CommonProxy {
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(0.6F, 0.6F, 0.6f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("AXX",
+                'X', CommonProxy.SteelPlate,
+                'A', Blocks.tnt
+        )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
 
         Bullet10x24 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.FunGunsTab).withName("Bullet10x24")
@@ -1192,7 +1244,14 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("  X",
+                "X X",
+                "XX ",
+                'X', CommonProxy.SteelIngot
+
+        )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
         Mag75rnd762x39 = new ItemMagazine.Builder().withAmmo(75).withCompatibleBullet(Bullet762x39)
                 .withName("Mag75rnd762x39").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1212,7 +1271,14 @@ public class CommonProxy {
                     GL11.glRotatef(-30F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("  X",
+                "XXX",
+                "XX ",
+                'X', CommonProxy.SteelIngot
+
+        )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
 //        KN44Mag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x39)
 //                .withName("KN44Mag").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1252,7 +1318,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.8F, 0.8F, 0.8f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe(" F",
+                " A",
+                "FF",
+                'A', CommonProxy.SteelIngot,
+                'F', CommonProxy.MiniSteelPlate
+
+                )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         AK101Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet556x45).withName("AK101Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1272,7 +1346,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("  A",
+                "A R",
+                "AR ",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+                )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M8A7Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet300Blackout).withName("M8A7Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.FunGunsTab)
@@ -1292,7 +1374,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("  A",
+                "ARA",
+                "AR ",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+                )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         PMAG762x39 = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet762x39).withName("PMAG762x39")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1312,7 +1402,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  R",
+                "R X",
+                "XR ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         AK12Mag = new ItemMagazine.Builder().withAmmo(31).withCompatibleBullet(Bullet556x39).withName("AK12Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1332,7 +1430,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  R",
+                "X R",
+                "XR ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         RPK74MMag = new ItemMagazine.Builder().withAmmo(40).withCompatibleBullet(Bullet762x39).withName("RPK74MMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1353,7 +1459,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.8F, 0.8F, 0.8f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  X",
+                "X X",
+                "RR ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
 //        KN44Mag45 = new ItemMagazine.Builder().withAmmo(45).withCompatibleBullet(Bullet556x39).withName("KN44Mag45")
 //                .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1394,7 +1508,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  R",
+                "R X",
+                "RX ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         AKS74UMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet545x39).withName("AKS74UMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1415,7 +1537,15 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.7F, 0.7F, 0.7f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  X",
+                "X R",
+                "XR ",
+                'X', Items.iron_ingot,
+                'R', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATOMag1 = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x45).withName("NATOMag1")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1436,7 +1566,14 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  X",
+                "X X",
+                "XX ",
+                'X', CommonProxy.AluminumIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATO20rnd = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullet556x45).withName("NATO20rnd")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1457,7 +1594,14 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(
+                " XX",
+                "XX ",
+                'X', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATO40rnd = new ItemMagazine.Builder().withAmmo(40).withCompatibleBullet(Bullet556x45).withName("NATO40rnd")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1478,7 +1622,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(
+                " XX",
+                "XXX",
+                "XX ",
+                'X', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATOMag2 = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x45).withName("NATOMag2")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1499,7 +1651,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  X",
+                "X R",
+                "XR ",
+                'X', CommonProxy.AluminumIngot,
+                'R', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATOFamasMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x45)
                 .withName("NATOFamasMag").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1520,7 +1680,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X X",
+                "  X",
+                " XX",
+                'X', CommonProxy.AluminumIngot,
+                'R', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATOG36Mag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet556x45).withName("NATOG36Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1541,7 +1709,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  X",
+                "X X",
+                "RR ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         DragunovMag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet762x54)
                 .withName("DragunovMag").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1562,7 +1738,14 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X X",
+                " RR",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         FALMag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullet762x51).withName("FALMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1583,7 +1766,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X R",
+                "  R",
+                " RR",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M110Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet762x51).withName("M110Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1604,7 +1795,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X R",
+                "  R",
+                " XR",
+                'X', Items.iron_ingot,
+                'R', CommonProxy.AluminumIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M14DMRMag = new ItemMagazine.Builder().withAmmo(21).withCompatibleBullet(Bullet762x51).withName("M14DMRMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1625,7 +1824,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" R",
+                " R",
+                "XX",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Glock21Mag = new ItemMagazine.Builder().withAmmo(13).withCompatibleBullet(Bullet45ACP).withName("Glock21Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1646,7 +1853,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X",
+                "X",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Glock18Mag = new ItemMagazine.Builder().withAmmo(17).withCompatibleBullet(Bullet9mm).withName("Glock18Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1667,7 +1881,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("R",
+                "X",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         G18Mag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullet9mm).withName("G18Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1688,7 +1909,15 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("R",
+                "X",
+                "X",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Glock32Mag = new ItemMagazine.Builder().withAmmo(14).withCompatibleBullet(Bullet357).withName("Glock32Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1709,7 +1938,15 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " A",
+                "AF",
+                    'A', CommonProxy.SteelIngot,
+                    'F', CommonProxy.MiniSteelPlate
+
+            )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M9BerettaMag = new ItemMagazine.Builder().withAmmo(15).withCompatibleBullet(Bullet9mm).withName("M9BerettaMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1730,7 +1967,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X",
+                "R",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Mag10mm = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet10mm).withName("Mag10mm")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.FunGunsTab)
@@ -1751,7 +1995,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " R",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Magazine9mm = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet9mm).withName("Magazine9mm")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1772,7 +2023,15 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " A",
+                "RR",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         NATODrum100 = new ItemMagazine.Builder().withAmmo(100).withCompatibleBullet(Bullet556x45)
                 .withName("NATODrum100").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1793,7 +2052,15 @@ public class CommonProxy {
                     GL11.glRotatef(10F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" X ",
+                "R R",
+                "R R",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         MP40Mag = new ItemMagazine.Builder().withAmmo(32).withCompatibleBullet(Bullet9mm).withName("MP40Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1814,7 +2081,15 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X",
+                "X",
+                "X",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         VectorMag = new ItemMagazine.Builder().withAmmo(26).withCompatibleBullet(Bullet45ACP).withName("VectorMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1835,7 +2110,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " A",
+                "AA",
+                'A', CommonProxy.SteelIngot
+
+                )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         MP5KMag = new ItemMagazine.Builder().withAmmo(25).withCompatibleBullet(Bullet9mm).withName("MP5KMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1856,7 +2138,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.8F, 0.8F, 0.8f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" R",
+                " X",
+                "X ",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         DeagleMag = new ItemMagazine.Builder().withAmmo(9).withCompatibleBullet(Bullet357).withName("DeagleMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1877,7 +2167,13 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X",
+                "X",
+                'X', CommonProxy.AluminumIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Deagle50Mag = new ItemMagazine.Builder().withAmmo(7).withCompatibleBullet(Bullet50).withName("Deagle50Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1898,7 +2194,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("X",
+                "R",
+                'X', CommonProxy.AluminumIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         VSSVintorezMag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet9x39mm)
                 .withName("VSSVintorezMag").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1919,7 +2222,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(
+                "R X",
+                " XR",
+                'X', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         AS50Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(BMG50).withName("AS50Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1940,7 +2251,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("RXR",
+                "  X",
+                'R', CommonProxy.AluminumIngot,
+                'X', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         HecateIIMag = new ItemMagazine.Builder().withAmmo(7).withCompatibleBullet(BMG50).withName("HecateIIMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1960,7 +2278,13 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 0.9F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" FF",
+                "A A",
+                    'A', CommonProxy.SteelIngot,
+                    'F', CommonProxy.MiniSteelPlate
+
+            ).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         FNP90Mag = new ItemMagazine.Builder().withAmmo(50).withCompatibleBullet(Bullet57x28).withName("FNP90Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1981,7 +2305,12 @@ public class CommonProxy {
                     GL11.glRotatef(10F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("XXX",
+                'X', CommonProxy.CopperIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M107BMag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(BMG50).withName("M107BMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2002,7 +2331,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("RAR",
+                "  A",
+                'R', CommonProxy.MiniSteelPlate,
+                'A', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         HKMP7Mag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullet46x30).withName("HKMP7Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2023,7 +2359,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("RA",
+                " A",
+                "A ",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M1CarbineMag = new ItemMagazine.Builder().withAmmo(15).withCompatibleBullet(Carbine30).withName("M1CarbineMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2044,7 +2388,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " R",
+                "A ",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M240Mag = new ItemMagazine.Builder().withAmmo(200).withCompatibleBullet(Bullet762x51).withName("M240Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2065,7 +2417,14 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-10F, 0f, 0f, 1f);
                     GL11.glScaled(1.2F, 1.2F, 1.2f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  A",
+                "A A",
+                "AAA",
+                'A', Items.iron_ingot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         L115Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(BMG50).withName("LP115Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2086,7 +2445,13 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1.2F, 1.2F, 1.2f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("AA",
+                " A",
+                'A', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         ColtM1911Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullet45ACP)
                 .withName("ColtM1911Mag").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2107,7 +2472,14 @@ public class CommonProxy {
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("R",
+                "A",
+                'A', CommonProxy.MiniSteelPlate,
+                'R', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M249Mag = new ItemMagazine.Builder().withAmmo(200).withCompatibleBullet(Bullet556x45).withName("M249Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2128,7 +2500,14 @@ public class CommonProxy {
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                     GL11.glRotatef(-10F, 0f, 0f, 1f);
                     GL11.glScaled(1.2F, 1.2F, 1.2f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  R",
+                "A A",
+                "AAA",
+                'A', Items.iron_ingot,
+                'R', CommonProxy.MiniSteelPlate
+
+        ).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         MXMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet65x39).withName("MXMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2149,7 +2528,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1F, 1F, 1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" R",
+                " A",
+                "AR",
+                'A', Items.iron_ingot,
+                'R', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         M41AMag = new ItemMagazine.Builder().withAmmo(99).withCompatibleBullet(Bullet65x39).withName("M41AMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.FunGunsTab)
@@ -2170,7 +2557,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1.3F, 1.3F, 1.3f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe(" A",
+                " R",
+                "AA",
+                'A', CommonProxy.MiniSteelPlate,
+                'A', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         HK33Mag = new ItemMagazine.Builder().withAmmo(31).withCompatibleBullet(Bullet556x45).withName("HK33Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2191,7 +2586,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(0.8F, 0.8F, 0.8f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("  R",
+                "R A",
+                "AR ",
+                'R', CommonProxy.MiniSteelPlate,
+                'A', CommonProxy.SteelIngot
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         ScarHMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullet300Blackout).withName("ScarHMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2212,7 +2615,15 @@ public class CommonProxy {
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
                     GL11.glScaled(1.1F, 1.1F, 1.1f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("RR",
+                " A",
+                " A",
+                'A', CommonProxy.SteelIngot,
+                'R', CommonProxy.MiniSteelPlate
+
+        )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         PP19Mag = new ItemMagazine.Builder().withAmmo(65).withCompatibleBullet(Bullet9mm).withName("PP19Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -2233,7 +2644,15 @@ public class CommonProxy {
                     GL11.glRotatef(10F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+                })
+                .withCraftingRecipe("AAF",
+                "   ",
+                "AAF",
+                    'A', CommonProxy.SteelIngot,
+                    'F', CommonProxy.MiniSteelPlate
+
+            )
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         AKMIron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new AKMiron1(), "AK12.png")
@@ -2272,7 +2691,11 @@ public class CommonProxy {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
+                .withCraftingRecipe(
+                "AAA",
+                    'A', CommonProxy.SteelIngot
 
+            )
                 .withName("AKMIron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -2309,7 +2732,13 @@ public class CommonProxy {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
+                .withCraftingRecipe(
+                " AA",
+                "F F",
+                    'A', CommonProxy.SteelIngot,
+                    'F', CommonProxy.SteelPlate
 
+            )
                 .withName("AR15Iron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -2708,7 +3137,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Reflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("A  ",
+                "ORX",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("Reflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         ACOG = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
@@ -2757,7 +3196,18 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Acog2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("FXA",
+                "ORG",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane,
+                'F', CommonProxy.CopperWiring
+        )
+                .withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G36Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
@@ -2804,7 +3254,19 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("G36Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("FXA",
+                "XAX",
+                "OOG",
+                "AXA",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane,
+                'F', CommonProxy.CopperWiring
+        )
+                .withName("G36Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGScope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
@@ -2895,7 +3357,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Holo2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Holographic").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("  A",
+                "XRO",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("Holographic").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         FNP90Sight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
@@ -2982,7 +3454,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Holo2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Holographic2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("  A",
+                "XRO",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("Holographic2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Kobra = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -3025,7 +3507,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Kobra").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("X  ",
+                "OGX",
+                "ARX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("Kobra").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
@@ -3071,8 +3563,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("LPScope")
-
+                })
+                .withCraftingRecipe("A R",
+                "OGO",
+                "XXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("LPScope")
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         Leupold = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.04f)
@@ -3118,8 +3619,17 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.LeupoldReticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("Leupold")
-
+                })
+                .withCraftingRecipe("ARR",
+                "OGO",
+                "XXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
+                .withName("Leupold")
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         PSO1 = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
@@ -3175,8 +3685,18 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.PSO12) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("PSO1")
-
+                }).
+                withName("PSO1")
+                .withCraftingRecipe("ARR",
+                "XXX",
+                "OGO",
+                "  X",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass,
+                'G', Blocks.glass_pane
+        )
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         HP = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.02f)
@@ -3222,7 +3742,16 @@ public class CommonProxy {
                     } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                }).withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("ARX",
+                "ORO",
+                "AXX",
+                'R', CommonProxy.Electronics,
+                'A', CommonProxy.MiniSteelPlate,
+                'X', CommonProxy.SteelIngot,
+                'O', CommonProxy.OpticGlass
+        )
+                .withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer556x45 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3257,7 +3786,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer556x45").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer556x45").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer9mm = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3292,7 +3825,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer9mm").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("Silencer9mm").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         SilencerMP7 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3327,7 +3863,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("SilencerMP7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("SilencerMP7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer357 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3362,7 +3901,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer357").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("Silencer357").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer57x38 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3397,7 +3939,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer57x38").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("Silencer57x38").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer45ACP = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3432,7 +3977,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer45ACP").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("Silencer45ACP").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer12Gauge = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3467,7 +4015,10 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer12Gauge").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate).withName("Silencer12Gauge").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x54 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3502,7 +4053,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer762x54").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer762x54").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x51 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3537,7 +4092,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer762x51").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer762x51").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer50BMG = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3572,7 +4131,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer50BMG").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer50BMG").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3607,7 +4170,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer762x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer762x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer556x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3642,7 +4209,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer556x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer556x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer300AACBlackout = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3677,7 +4248,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer300AACBlackout").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer300AACBlackout").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer65x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -3712,7 +4287,11 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer65x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCrafting(CraftingComplexity.MEDIUM, 
+                CommonProxy.SteelIngot,
+                CommonProxy.SteelPlate)
+                .withName("Silencer65x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3757,7 +4336,16 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Laser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe(" X ",
+                "ARE",
+                "AXX",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate,
+                'R', CommonProxy.LaserPointer,
+                'E', CommonProxy.Electronics
+        )
+                .withName("Laser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3795,7 +4383,16 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Laser2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("AXA",
+                "XRE",
+                "AXX",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate,
+                'R', CommonProxy.LaserPointer,
+                'E', CommonProxy.Electronics
+        )
+                .withName("Laser2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Grip2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3831,7 +4428,14 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
-                }).withName("Grip2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("AXX",
+                " X ",
+                " X ",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        )
+                .withName("Grip2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3869,7 +4473,13 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
-                }).withName("AngledGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("X A",
+                " XX",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        )
+                .withName("AngledGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         StubbyGrip = new AttachmentBuilder<Weapon>()
@@ -3917,7 +4527,13 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
-                }).withName("StubbyGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("AXA",
+                " X ",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        )
+                .withName("StubbyGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         VGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3953,7 +4569,14 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
-                }).withName("VGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe("XAX",
+                " X ",
+                " X ",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        )
+                .withName("VGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Bipod = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -3989,10 +4612,17 @@ public class CommonProxy {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
-                }).withName("Bipod").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                })
+                .withCraftingRecipe(" X ",
+                "A A",
+                "X X",
+                'X', CommonProxy.SteelIngot,
+                'A', CommonProxy.MiniSteelPlate
+        )
+                .withName("Bipod").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(ModernWarfareMod.oreGenerationEnabled), 0);
+        compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
 
         Builder marineArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Marine)
                 .withUnlocalizedName("Marine").withTextureName("Marine")
@@ -4166,6 +4796,10 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withName("CrimsonBlood")
+                .withCraftingRecipe("AR",
+                'A', new ItemStack(Items.dye, 0, 0),
+                'R', new ItemStack(Items.dye, 1, 1)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         Chrome = new MeleeSkin.Builder()
@@ -4173,6 +4807,10 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withName("Chrome")
+                .withCraftingRecipe("AR",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'R', new ItemStack(Items.dye, 11, 11)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         GodWillsIt = new MeleeSkin.Builder()
@@ -4180,6 +4818,10 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withName("GodWillsIt")
+                .withCraftingRecipe("AR",
+                'A', new ItemStack(Items.dye, 11, 11),
+                'R', new ItemStack(Items.dye, 15, 15)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         Murasaki = new MeleeSkin.Builder()
@@ -4187,6 +4829,9 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withName("Murasaki")
+                .withCraftingRecipe("AA",
+                'A', new ItemStack(Items.dye, 5, 5)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         Evangelion = new MeleeSkin.Builder()
@@ -4194,6 +4839,10 @@ public class CommonProxy {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withName("Evangelion")
+                .withCraftingRecipe("AR",
+                'A', new ItemStack(Items.dye, 5, 5),
+                'R', new ItemStack(Items.dye, 10, 10)
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         new TestMeleeFactory().createMelee(this);
@@ -4265,6 +4914,14 @@ public class CommonProxy {
                 .withName("tablet")
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png")
+                .withCraftingRecipe(" R ",
+                "XXX",
+                "XGX",
+                "XEX",
+                'X', CommonProxy.SteelIngot,
+                'E', CommonProxy.Electronics,
+                'G', Blocks.glass_pane
+        )
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         new ItemWirelessCamera.Builder()
