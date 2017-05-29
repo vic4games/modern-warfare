@@ -16,7 +16,7 @@ public class GrenadesTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.FuseGrenade;
+		return Grenades.FuseGrenade;
 	}
 
 }

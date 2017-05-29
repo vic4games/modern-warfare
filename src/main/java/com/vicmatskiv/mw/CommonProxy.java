@@ -16,9 +16,6 @@ import com.vicmatskiv.mw.blocks.BlockTantalumOre;
 import com.vicmatskiv.mw.blocks.BlockTinOre;
 import com.vicmatskiv.mw.blocks.BlockTitaniumOre;
 import com.vicmatskiv.mw.items.ItemLaserPointer;
-import com.vicmatskiv.mw.items.grenade.FuseGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.ImpactGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.SmokeGrenadeFactory;
 import com.vicmatskiv.mw.items.melee.KarambitFactory;
 import com.vicmatskiv.mw.items.melee.TestMeleeFactory;
 import com.vicmatskiv.mw.parts.ItemCapacitor;
@@ -50,24 +47,11 @@ import com.vicmatskiv.mw.resources.ItemTanCloth;
 import com.vicmatskiv.mw.resources.ItemTantalumIngot;
 import com.vicmatskiv.mw.resources.ItemTinIngot;
 import com.vicmatskiv.mw.resources.ItemTitaniumIngot;
-import com.vicmatskiv.weaponlib.AttachmentBuilder;
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 
 public class CommonProxy {
-
-    public static ItemAttachment<ItemGrenade> GrenadeSafetyPin;
-
-    
-
-    public static ItemGrenade FuseGrenade;
-    public static ItemGrenade ImpactGrenade;
-    public static ItemGrenade SmokeGrenade;
-
     public static Item Electronics;
     public static Item CGrip;
     public static Item OpticGlass;
@@ -262,6 +246,7 @@ public class CommonProxy {
         Magazines.init(mod, configurationManager, event);
         Guns.init(mod, configurationManager, event, this);
         com.vicmatskiv.mw.Electronics.init(mod, configurationManager, event);
+        Grenades.init(mod, configurationManager, event, this);
 
         new TestMeleeFactory().createMelee(this);
 
@@ -269,17 +254,6 @@ public class CommonProxy {
         
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
 
-
-        GrenadeSafetyPin = new AttachmentBuilder<ItemGrenade>().withCategory(AttachmentCategory.EXTRA)
-                .withModel(new com.vicmatskiv.mw.models.Pin(), "AK12.png")
-                .withName("GrenadeSafetyPin").withRenderablePart().withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-
-        FuseGrenade = new FuseGrenadeFactory().createGrenade(this);
-
-        ImpactGrenade = new ImpactGrenadeFactory().createGrenade(this);
-
-        SmokeGrenade = new SmokeGrenadeFactory().createGrenade(this);
     }
 
 }
