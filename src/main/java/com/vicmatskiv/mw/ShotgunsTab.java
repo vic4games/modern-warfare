@@ -16,7 +16,7 @@ public class ShotgunsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.KSG12;
+		return Guns.KSG12;
 	}
 
 }

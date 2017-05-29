@@ -16,7 +16,7 @@ public class SnipersTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.HecateII;
+		return Guns.HecateII;
 	}
 
 }

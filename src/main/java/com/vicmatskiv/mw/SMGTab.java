@@ -16,7 +16,7 @@ public class SMGTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.MP7;
+		return Guns.MP7;
 	}
 
 }

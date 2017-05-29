@@ -9,6 +9,7 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Guns;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.GunSkins;
@@ -47,7 +48,7 @@ public class M9SDFactory implements GunFactory {
 		"Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
 		"Fire Rate: Semi"))
 		.withCraftingRecipe("AX",
-                'X', CommonProxy.M9,
+                'X', Guns.M9,
                 'A', Attachments.Silencer9mm
         )
 		.withCompatibleAttachment(GunSkins.Emerald, 

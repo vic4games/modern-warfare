@@ -16,7 +16,7 @@ public class AssaultRiflesTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.M16A4;
+		return Guns.M16A4;
 	}
 
 }

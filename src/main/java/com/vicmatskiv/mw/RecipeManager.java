@@ -142,9 +142,9 @@ public class RecipeManager {
                 'A', CommonProxy.SteelIngot
                 );
 
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.M9SD),
+        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Guns.M9SD),
                 "AX",
-                'X', CommonProxy.M9,
+                'X', Guns.M9,
                 'A', Attachments.Silencer9mm
                 );
 
