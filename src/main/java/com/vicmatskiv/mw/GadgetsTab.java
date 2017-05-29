@@ -16,7 +16,7 @@ public class GadgetsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.Tablet;
+		return Electronics.Tablet;
 	}
 
 }
