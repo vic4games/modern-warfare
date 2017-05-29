@@ -16,7 +16,7 @@ public class ArmorTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.Marinechest;
+		return Armors.Marinechest;
 	}
 
 }

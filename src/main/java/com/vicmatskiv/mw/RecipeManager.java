@@ -22,42 +22,42 @@ public class RecipeManager {
         compatibility.addSmelting(CommonProxy.SulfurDust, compatibility.createItemStack(CompatibleItems.GUNPOWDER, 1, 0), 5f);
         compatibility.addSmelting(CommonProxy.SteelDust, new ItemStack(CommonProxy.SteelIngot), 5f);
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Marinehelmet,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Marinehelmet,
                 "AAA",
                 "AGA",
                 "X X",
                 'A', CommonProxy.TanCloth,
                 'X', "ingotTitanium");
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Marinechest,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Marinechest,
                 "A A",
                 "AAA",
                 "XXX",
                 'A', CommonProxy.TanCloth,
                 'X', "ingotTitanium");
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Marineboots,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Marineboots,
                 "A A",
                 "A A",
                 "X X",
                 'A', CommonProxy.TanCloth,
                 'X', "ingotTitanium");
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Spetznazhelmet,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazhelmet,
                 "AAA",
                 "AGA",
                 "X X",
                 'A', CommonProxy.GreenCloth,
                 'X', "ingotTitanium");
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Spetznazchest,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazchest,
                 "A A",
                 "AAA",
                 "XXX",
                 'A', CommonProxy.GreenCloth,
                 'X', "ingotTitanium");
 
-        modContext.getRecipeManager().registerShapedRecipe(CommonProxy.Spetznazboots,
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazboots,
                 "A A",
                 "A A",
                 "X X",
