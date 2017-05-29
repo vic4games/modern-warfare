@@ -273,12 +273,6 @@ public class CommonProxy {
 
     public static Item Plastic;
 
-    public static MeleeSkin CrimsonBlood;
-    public static MeleeSkin Chrome;
-    public static MeleeSkin GodWillsIt;
-    public static MeleeSkin Murasaki;
-    public static MeleeSkin Evangelion;
-
     static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, new int[] { 3, 5, 4, 3 }, 15,
             null, 0); // TODO: last
                       // argument,
@@ -432,6 +426,7 @@ public class CommonProxy {
         Attachments.init(mod, configurationManager, event);
         AuxiliaryAttachments.init(mod, configurationManager, event);
         GunSkins.init(mod, configurationManager, event);
+        MeleeSkins.init(mod, configurationManager, event);
         Bullets.init(mod, configurationManager, event);
         Magazines.init(mod, configurationManager, event);
 
@@ -603,60 +598,6 @@ public class CommonProxy {
         SMAW = new SMAWFactory().createGun(this);
         // GaussRifle = new GaussRifleFactory().createGun(this);
         // RPG = new RPGFactory().createGun(this);
-
-        CrimsonBlood = new MeleeSkin.Builder()
-                .withTextureVariant("TacKnifeCrimsonBlood")
-                .withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withName("CrimsonBlood")
-                .withCraftingRecipe("AR",
-                'A', compatibility.createItemStack(CompatibleItems.DYE, 0, 0),
-                'R', compatibility.createItemStack(CompatibleItems.DYE, 1, 1)
-        )
-                .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
-
-        Chrome = new MeleeSkin.Builder()
-                .withTextureVariant("TacKnifeChrome")
-                .withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withName("Chrome")
-                .withCraftingRecipe("AR",
-                'A', compatibility.createItemStack(CompatibleItems.DYE, 5, 5),
-                'R', compatibility.createItemStack(CompatibleItems.DYE, 11, 11)
-        )
-                .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
-
-        GodWillsIt = new MeleeSkin.Builder()
-                .withTextureVariant("TacKnifeGodWillsIt")
-                .withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withName("GodWillsIt")
-                .withCraftingRecipe("AR",
-                'A', compatibility.createItemStack(CompatibleItems.DYE, 11, 11),
-                'R', compatibility.createItemStack(CompatibleItems.DYE, 15, 15)
-        )
-                .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
-
-        Murasaki = new MeleeSkin.Builder()
-                .withTextureVariant("TacKnifeMurasaki")
-                .withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withName("Murasaki")
-                .withCraftingRecipe("AA",
-                'A', compatibility.createItemStack(CompatibleItems.DYE, 5, 5)
-        )
-                .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
-
-        Evangelion = new MeleeSkin.Builder()
-                .withTextureVariant("TacKnifeEvangelion")
-                .withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withName("Evangelion")
-                .withCraftingRecipe("AR",
-                'A', compatibility.createItemStack(CompatibleItems.DYE, 5, 5),
-                'R', compatibility.createItemStack(CompatibleItems.DYE, 10, 10)
-        )
-                .build(ModernWarfareMod.MOD_CONTEXT, MeleeSkin.class);
 
         new TestMeleeFactory().createMelee(this);
 
