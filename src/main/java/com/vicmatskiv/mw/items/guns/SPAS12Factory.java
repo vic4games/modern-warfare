@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.SPAS12;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -44,25 +48,25 @@ public class SPAS12Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withCreativeTab(ModernWarfareMod.ShotgunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Combat shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Semi"))
-		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+		.withCompatibleBullet(Bullets.ShotgunShell, (model) -> {})
+		.withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
 			GL11.glTranslatef(0.107F, -1.34F, -5.9F);
 			GL11.glScaled(1.2F, 1.2F, 1.2F);
 		})
-		.withCompatibleAttachment(CommonProxy.Amber, 
+		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Arctic, 
+         .withCompatibleAttachment(GunSkins.Arctic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
                 }, 
                 (a, i) -> {
                 }
@@ -117,7 +121,7 @@ public class SPAS12Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
 				} 
@@ -166,7 +170,7 @@ public class SPAS12Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
 				} 

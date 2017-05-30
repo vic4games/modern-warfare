@@ -6,8 +6,13 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -66,58 +71,58 @@ public class AUGA3Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withShellCasingForwardOffset(-0.1f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "30rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		 .withCompatibleAttachment(CommonProxy.Diamond, 
+		 .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Forest, 
+        .withCompatibleAttachment(GunSkins.Forest, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
                 }, 
                 (a, i) -> {
                 }
         )
 		
-		.withCompatibleAttachment(CommonProxy.AUGAction, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.AUGAction, true, (model) -> {
         })
-        .withCompatibleAttachment(CommonProxy.NATOMag1, (model) -> {
+        .withCompatibleAttachment(Magazines.NATOMag1, (model) -> {
             GL11.glTranslatef(-0.335F, 0.9F, 1.2F);
             GL11.glScaled(1F, 1.5F, 1.5F);
             GL11.glRotatef(-5F, 1f, 0f, 0f);
         })
-        .withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+        .withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
             if(model instanceof M4Iron1) {
                 GL11.glTranslatef(-0.16F, -1.5F, -0.3F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -159,7 +164,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.AUGRail, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AUGRail, true, (model) -> {
             if(model instanceof AKRail) {
                 GL11.glTranslatef(0.16F, -0.88F, -3.5F);
                 GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -177,7 +182,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.8F, 1F, 1.4F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
             GL11.glTranslatef(-0.28F, -1.37F, -0.3F);
             GL11.glScaled(0.7F, 0.7F, 0.7F);
         },(model) -> {
@@ -186,7 +191,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.06F, 0.06F, 0.06F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
             GL11.glTranslatef(-0.36F, -1.37F, -0.3F);
             GL11.glScaled(1F, 1F, 1F);
             },(model) -> {
@@ -204,7 +209,7 @@ public class AUGA3Factory implements GunFactory {
 //                GL11.glScaled(0.1F, 0.1F, 0.1F);
 //            }
 //        })
-        .withCompatibleAttachment(CommonProxy.Reflex, (model) -> {
+        .withCompatibleAttachment(Attachments.Reflex, (model) -> {
             if(model instanceof Reflex) {
                 GL11.glTranslatef(-0.072F, -1.17F, -0.9F);
                 GL11.glScaled(0.4F, 0.4F, 0.4F);
@@ -213,7 +218,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Holo2, (model) -> {
+        .withCompatibleAttachment(Attachments.Holo2, (model) -> {
             if(model instanceof Holographic) {
                 GL11.glTranslatef(-0.053F, -1.22F, -0.6F);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -222,7 +227,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Holographic2, (model) -> {
+        .withCompatibleAttachment(Attachments.Holographic2, (model) -> {
             if(model instanceof Holographic2) {
                 GL11.glTranslatef(-0.053F, -1.22F, -0.6F);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -231,7 +236,7 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Kobra, (model) -> {
+        .withCompatibleAttachment(Attachments.Kobra, (model) -> {
             if(model instanceof Kobra) {
                 GL11.glTranslatef(-0.053F, -1.2F, -0.6F);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -240,11 +245,11 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+        .withCompatibleAttachment(Attachments.Grip2, (model) -> {
             GL11.glTranslatef(-0.17F, -0.1F, -2.8F);
             GL11.glScaled(0.8F, 1F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
+        .withCompatibleAttachment(Attachments.StubbyGrip, (model) -> {
             GL11.glTranslatef(-0.17F, -0.2F, -2.8F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
@@ -252,23 +257,23 @@ public class AUGA3Factory implements GunFactory {
 //            GL11.glTranslatef(-0.2F, -0.35F, -2.9F);
 //            GL11.glScaled(1F, 1F, 1F);
 //        })
-        .withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
+        .withCompatibleAttachment(Attachments.VGrip, (model) -> {
             GL11.glTranslatef(-0.17F, -0.1F, -2.8F);
             GL11.glScaled(0.8F, 1F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
+        .withCompatibleAttachment(Attachments.Bipod, (model) -> {
             GL11.glTranslatef(-0.17F, -0.1F, -3.2F);
             GL11.glScaled(0.8F, 1F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.Laser2, (p, s) -> {
+        .withCompatibleAttachment(Attachments.Laser2, (p, s) -> {
             GL11.glTranslatef(-0.17F, -0.2F, -2.8F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
-        .withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
+        .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
             GL11.glTranslatef(0.05F, -0.9F, -2.8F);
             GL11.glScaled(0.7F, 0.7F, 0.7F);
         })
-        .withCompatibleAttachment(CommonProxy.Silencer556x45, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
             GL11.glTranslatef(-0.2F, -0.97F, -5.12F);
             GL11.glScaled(1F, 1F, 1F);
         })
@@ -315,49 +320,49 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glRotatef(-1F, 1f, 0f, 0f);
                 
                 // Standard Iron Sight Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.AKMIron)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0f, 0f);
                 } 
                 
                 // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.005F, 0.278f, 0.64f);
                 } 
                 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.37f, 0.3f);
                 } 
 
                 // HP Zoomw
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, -0.0017f, 0f);
                 } 
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.185f, 0.3f);
                 } 
 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.22f, 0.4f);
                 } 
                 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.219f, 0.3f);
                 } 
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(1.373F, -1.14f, 2.8f);
                 } 
@@ -370,40 +375,40 @@ public class AUGA3Factory implements GunFactory {
             
                 })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.NATOMag1, (renderContext) -> {
+            .withFirstPersonCustomPositioning(Magazines.NATOMag1, (renderContext) -> {
 //              GL11.glTranslatef(-0.2F, -0.32F, 0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
             
-            .withFirstPersonCustomPositioning(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.AUGRail.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AUGRail.getRenderablePart(), (renderContext) -> {
                 })
         
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AUGAction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AUGAction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 1F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(Magazines.NATOMag1.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.NATOMag1.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.NATOMag1.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AUGRail.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AUGRail.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AUGRail.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AUGRail.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0F);
                 })
                 
@@ -454,7 +459,7 @@ public class AUGA3Factory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.NATOMag1,
+            .withFirstPersonCustomPositioningUnloading(Magazines.NATOMag1,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.2F, 0.5F, -0.2F);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -469,7 +474,7 @@ public class AUGA3Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.NATOMag1,
+            .withFirstPersonCustomPositioningReloading(Magazines.NATOMag1,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.05F, 1F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -496,7 +501,7 @@ public class AUGA3Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-           .withFirstPersonCustomPositioningUnloading(CommonProxy.AUGRail.getRenderablePart(),
+           .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AUGRail.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                  GL11.glScaled(0.55F, 0.55F, 0.55F);
 //                  GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
@@ -507,7 +512,7 @@ public class AUGA3Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AUGRail.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AUGRail.getRenderablePart(),
                 new Transition((renderContext) -> {
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
 //                  GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -533,14 +538,14 @@ public class AUGA3Factory implements GunFactory {
                 }, 250, 1000)
                     )
            
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AUGAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AUGAction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AUGAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AUGAction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -559,49 +564,49 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glTranslatef(-0.908F, 1.75F, -2.9F);
                 
                 // Standard Iron Sight Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.AKMIron)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0f, 0f);
                 } 
                 
                 // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.005F, 0.278f, 0.8f);
                 } 
                 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.37f, 0.3f);
                 } 
 
                 // HP Zoomw
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, -0.0017f, 0f);
                 } 
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.185f, 0.3f);
                 } 
 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.22f, 0.4f);
                 } 
                 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.219f, 0.3f);
                 } 
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(1.373F, -1.14f, 2.8f);
                 } 

@@ -10,21 +10,20 @@ import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
-import com.vicmatskiv.weaponlib.model.CameraModel;
 
 import net.minecraft.item.Item;
 
 public class ImpactGrenadeFactory implements GrenadeFactory {
 
     @Override
-    public Item createGrenade(CommonProxy commonProxy) {
+    public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("ImpactGrenade")
-                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("ImpactGrenade")
                 .withExplosionSound("grenadeexplosion")
-                .withExplosionStrength(1.8f)
+                .withExplosionStrength(1f)
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
                 .withEffectiveRadius(15f)
@@ -50,10 +49,10 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                             GL11.glRotatef(45F, 1f, 0f, 0f);
                         })
                         .withThirdPersonPositioning((renderContext) -> {
-                            GL11.glScaled(0.9F, 0.9F, 0.9F);
-                            GL11.glTranslatef(-1F, -0.4F, 1.1F);
+                            GL11.glScaled(0.3F, 0.3F, 0.3F);
+                            GL11.glTranslatef(-3F, -1F, 3F);
                             GL11.glRotatef(-225F, 0f, 1f, 0f);
-                            GL11.glRotatef(-260F, 1f, 0f, 0f);
+                            GL11.glRotatef(-45F, 1f, 0f, 0f);
                         })
                         .withFirstPersonPositioning(context -> {
                             GL11.glScalef(0.4f, 0.4f, 0.4f);
@@ -161,7 +160,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                                     //                                    GL11.glRotatef(15.000000f, 0f, 0f, 1f);
                                     //                                    GL11.glTranslatef(0.275000f, -0.400000f, 0.200000f);
                                 }, 70, 0))
-                                
+
                          .withFirstPersonHandPositioningThrown(
                                 context -> { // left hand
                                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);

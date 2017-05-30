@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.HecateII;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -49,52 +53,52 @@ public class HecateIIFactory implements GunFactory {
                 CommonProxy.BigSteelPlate)
         .withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 35",
         "Caliber: .50 BMG", "Magazines:", "7rnd .50 BMG Magazine", "Fire Rate: Bolt Action"))
-        .withCompatibleAttachment(CommonProxy.ElectricSkin,
+        .withCompatibleAttachment(GunSkins.ElectricSkin,
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 },
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Amber,
+        .withCompatibleAttachment(GunSkins.Amber,
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("HecateIIAmber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("HecateIIAmber"));
                 },
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Arctic,
+        .withCompatibleAttachment(GunSkins.Arctic,
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("HecateIIArctic"));
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("HecateIIArctic"));
                 },
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold,
+        .withCompatibleAttachment(GunSkins.Gold,
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("HecateIIGold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("HecateIIGold"));
                 },
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Diamond,
+        .withCompatibleAttachment(GunSkins.Diamond,
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 },
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.HecateIIMag, (model) -> {
+        .withCompatibleAttachment(Magazines.HecateIIMag, (model) -> {
             GL11.glTranslatef(0F, -0.25F, 0F);
             GL11.glScaled(1.2F, 0.7F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.HecateIIBoltAction, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.HecateIIBoltAction, true, (model) -> {
             GL11.glTranslatef(-0.01F, 0.02F, 0.03F);
             GL11.glScaled(1F, 1F, 1F);
         })
 
 
-        .withCompatibleAttachment(CommonProxy.HP, true, true, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.HP, true, true, (player, stack) -> {
 
             GL11.glTranslatef(0.06F, -1.37F, 0.3F);
             GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -104,11 +108,11 @@ public class HecateIIFactory implements GunFactory {
                 GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Bipod, true, (model) -> {
+        .withCompatibleAttachment(Attachments.Bipod, true, (model) -> {
             GL11.glTranslatef(.135F, -0.55F, -1.2F);
             GL11.glScaled(0.9F, 0.9F, 0.9F);
         })
-        .withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer50BMG, (model) -> {
             GL11.glTranslatef(0.107F, -1.45F, -6.95F);
             GL11.glScaled(1.1F, 1.1F, 1.3F);
         })
@@ -143,7 +147,7 @@ public class HecateIIFactory implements GunFactory {
                 GL11.glTranslatef(-0.4F, -0.8F, 0.8F);
                 })
 
-            .withFirstPersonCustomPositioning(CommonProxy.HecateIIMag, (renderContext) -> {
+            .withFirstPersonCustomPositioning(Magazines.HecateIIMag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -169,19 +173,19 @@ public class HecateIIFactory implements GunFactory {
                 GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.15f);
                 }
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.15f);
                 }
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.38F, -1.19f, 2.9f);
                 }
@@ -205,7 +209,7 @@ public class HecateIIFactory implements GunFactory {
 
                 })
 
-            .withFirstPersonCustomPositioning(CommonProxy.HecateIIBoltAction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.HecateIIBoltAction.getRenderablePart(), (renderContext) -> {
 //                GL11.glTranslatef(-0.01F, 0.02F, 0.1F);
 //                GL11.glScaled(0.97F, 0.97F, 0.97F);
                 })
@@ -242,7 +246,7 @@ public class HecateIIFactory implements GunFactory {
 
                     )
 
-            .withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.HecateIIBoltAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.HecateIIBoltAction.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
 //                      GL11.glTranslatef(0F, 0F, 0.6F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -274,7 +278,7 @@ public class HecateIIFactory implements GunFactory {
 
                     )
 
-            .withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.HecateIIMag.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(Magazines.HecateIIMag.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
 //                      GL11.glTranslatef(0F, 0F, 0.6F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -382,7 +386,7 @@ public class HecateIIFactory implements GunFactory {
                 }, 150, 50)
             )
 
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.HecateIIMag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.HecateIIMag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.2F, 0.5F, -0.2F);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -399,7 +403,7 @@ public class HecateIIFactory implements GunFactory {
                 }, 250, 1000)
                     )
 
-            .withFirstPersonCustomPositioningReloading(CommonProxy.HecateIIMag,
+            .withFirstPersonCustomPositioningReloading(Magazines.HecateIIMag,
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0.05F, 1F, 0F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -444,7 +448,7 @@ public class HecateIIFactory implements GunFactory {
                 }, 250, 1000)
                     )
 
-            .withFirstPersonCustomPositioningReloading(CommonProxy.HecateIIBoltAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.HecateIIBoltAction.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
@@ -486,7 +490,7 @@ public class HecateIIFactory implements GunFactory {
                 }, 250, 50)
                 )
 
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.HecateIIBoltAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.HecateIIBoltAction.getRenderablePart(),
                     new Transition((renderContext) -> {
 //                      GL11.glTranslatef(0F, 0F, 0.5F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -511,19 +515,19 @@ public class HecateIIFactory implements GunFactory {
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.15f);
                 }
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.15f);
                 }
 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.38F, -1.19f, 2.9f);
                 }

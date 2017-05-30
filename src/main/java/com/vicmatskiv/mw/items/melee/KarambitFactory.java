@@ -5,6 +5,7 @@ import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.MeleeSkins;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -29,11 +30,11 @@ public class KarambitFactory implements MeleeFactory {
                 .withHeavyAttackCooldownTimeout(() -> 1000)
                 .withAttackSound("swoosh")
                 .withHeavyAttackSound("swoosh")
-                .withCompatibleSkin(CommonProxy.CrimsonBlood, "TacKnifeCrimsonBlood")
-                .withCompatibleSkin(CommonProxy.Chrome, "TacKnifeChrome")
-                .withCompatibleSkin(CommonProxy.GodWillsIt, "TacKnifeGodWillsIt")
-                .withCompatibleSkin(CommonProxy.Murasaki, "TacKnifeMurasaki")
-                .withCompatibleSkin(CommonProxy.Evangelion, "TacKnifeEvangelion")
+                .withCompatibleSkin(MeleeSkins.CrimsonBlood, "TacKnifeCrimsonBlood")
+                .withCompatibleSkin(MeleeSkins.Chrome, "TacKnifeChrome")
+                .withCompatibleSkin(MeleeSkins.GodWillsIt, "TacKnifeGodWillsIt")
+                .withCompatibleSkin(MeleeSkins.Murasaki, "TacKnifeMurasaki")
+                .withCompatibleSkin(MeleeSkins.Evangelion, "TacKnifeEvangelion")
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)

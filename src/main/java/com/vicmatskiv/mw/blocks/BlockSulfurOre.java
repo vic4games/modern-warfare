@@ -2,8 +2,8 @@ package com.vicmatskiv.mw.blocks;
 
 import java.util.Random;
 
-import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -27,7 +27,7 @@ public class BlockSulfurOre extends Block
 	}
 	public Item getItemDropped(int meta, Random rand, int fortune)
 		{
-			return CommonProxy.SulfurDust;
+			return Ores.SulfurDust;
 		}
 		
 	}

@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Deagle;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -45,26 +49,26 @@ public class Deagle44Factory implements GunFactory {
                 CommonProxy.MiniSteelPlate)
         .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 6.5", 
         "Caliber: .50 Action Express", "Magazines:", "7rnd .50 Action Express Magazine", "Fire Rate: Semi"))
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Amethyst, 
+        .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Deagle44Top, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.Deagle44Top, true, (model) -> {
 //          GL11.glTranslatef(0.1F, -0.5F, -1F);
 //          GL11.glRotatef(45F, 0f, 1f, 0f);
 //          GL11.glScaled(0.55F, 0.55F, 0.55F);
         })
-        .withCompatibleAttachment(CommonProxy.Deagle50Mag, (model) -> {
+        .withCompatibleAttachment(Magazines.Deagle50Mag, (model) -> {
             GL11.glTranslatef(-0.03F, -0.1F, 0.14F);
             GL11.glScaled(0.7F, 1F, 1F);
             })
@@ -110,22 +114,22 @@ public class Deagle44Factory implements GunFactory {
                 GL11.glRotatef(-10F, 1f, 0f, 0f);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.Deagle44Top.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.Deagle44Top.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.5F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Deagle44Top.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.Deagle44Top.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.5F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.Deagle50Mag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomRecoiled(Magazines.Deagle50Mag, (renderContext) -> {})
             
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Deagle50Mag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.Deagle50Mag, (renderContext) -> {})
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glTranslatef(-0.3F, -0.2F, -0.5F);
@@ -144,13 +148,13 @@ public class Deagle44Factory implements GunFactory {
                 } */
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.5f, 0.7f);
                 } 
 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(1.38F, -1.115f, 3.2f);
                 } 
@@ -165,9 +169,9 @@ public class Deagle44Factory implements GunFactory {
                 
             //.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
                 
-            .withFirstPersonCustomPositioning(CommonProxy.Deagle50Mag, (renderContext) -> {})
+            .withFirstPersonCustomPositioning(Magazines.Deagle50Mag, (renderContext) -> {})
             
-            .withFirstPersonCustomPositioning(CommonProxy.Deagle44Top.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.Deagle44Top.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0.5F);
                 }
@@ -227,7 +231,7 @@ public class Deagle44Factory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.Deagle50Mag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.Deagle50Mag,
                 new Transition((renderContext) -> {
 //                  GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                  GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -242,7 +246,7 @@ public class Deagle44Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.Deagle50Mag,
+            .withFirstPersonCustomPositioningReloading(Magazines.Deagle50Mag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -264,7 +268,7 @@ public class Deagle44Factory implements GunFactory {
                     )
                     
                     
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.Deagle44Top.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.Deagle44Top.getRenderablePart(),
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0F, 0F, 0.5F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -279,7 +283,7 @@ public class Deagle44Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.Deagle44Top.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.Deagle44Top.getRenderablePart(),
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0F, 0F, 0.5F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -316,13 +320,13 @@ public class Deagle44Factory implements GunFactory {
                 } */
                 
                 // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
                 } 
                 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(1.37F, -1.226f, 3.2f);
                 }

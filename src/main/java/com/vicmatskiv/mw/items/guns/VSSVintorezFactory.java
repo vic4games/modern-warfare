@@ -6,8 +6,13 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -34,7 +39,7 @@ public class VSSVintorezFactory implements GunFactory {
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
-        .withName("VSS Vintorez")
+        .withName("VSSVintorez")
         //.withAmmo(CommonProxy.AK47Mag)
 //      .withAmmoCapacity(30)
         .withFireRate(0.8f)
@@ -57,40 +62,40 @@ public class VSSVintorezFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
         .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Sniper Rifle","Damage: 12", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine",
         "Fire Rate: Semi"))
-        .withCompatibleAttachment(CommonProxy.Fade, 
+        .withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Arctic, 
+         .withCompatibleAttachment(GunSkins.Arctic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Gold, 
+         .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.PSO1, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.PSO1, (player, stack) -> {
             
             GL11.glTranslatef(0.4F, -1.1F, 0.2F);
             GL11.glScaled(0.9F, 0.9F, 0.9F);
@@ -104,8 +109,8 @@ public class VSSVintorezFactory implements GunFactory {
                  GL11.glScaled(0.8F, 0.8F, 0.8F);
              }
         })
-        .withCompatibleAttachment(CommonProxy.VSSVintorezMag, (model) -> {})
-        .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+        .withCompatibleAttachment(Magazines.VSSVintorezMag, (model) -> {})
+        .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -196,7 +201,7 @@ public class VSSVintorezFactory implements GunFactory {
                 GL11.glRotatef(-0.4F, 1f, 0f, 0f);
 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.36F, -1.14f, 2.5f);
                 }   
@@ -209,7 +214,7 @@ public class VSSVintorezFactory implements GunFactory {
 
             })
             
-            .withFirstPersonCustomPositioning(CommonProxy.VSSVintorezMag, (renderContext) -> {
+            .withFirstPersonCustomPositioning(Magazines.VSSVintorezMag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -280,7 +285,7 @@ public class VSSVintorezFactory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.VSSVintorezMag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.VSSVintorezMag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.2F, 0.5F, -0.2F);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -297,7 +302,7 @@ public class VSSVintorezFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.VSSVintorezMag,
+            .withFirstPersonCustomPositioningReloading(Magazines.VSSVintorezMag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0F, 0.7F, 0F);
 //                  GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -334,7 +339,7 @@ public class VSSVintorezFactory implements GunFactory {
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.36F, -1.14f, 2.5f);
                 }   

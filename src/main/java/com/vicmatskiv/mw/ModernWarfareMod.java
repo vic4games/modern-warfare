@@ -2,16 +2,18 @@ package com.vicmatskiv.mw;
 
 import java.io.File;
 
+import javax.xml.transform.stream.StreamSource;
+
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -19,11 +21,10 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
 public class ModernWarfareMod {
 
-    private static final String CONFIG_PROPERTY_CATEGORY_GENERAL = "general";
-    private static final String CONFIG_PROPERTY_ORE_GENERATION_ENABLED = "Ore generation enabled";
+	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
     private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
     public static final String MODID = "mw";
-    public static final String VERSION = "1.10";
+	public static final String VERSION = "1.10.1";
 
     @SidedProxy(serverSide = "com.vicmatskiv.weaponlib.CommonModContext", clientSide = "com.vicmatskiv.weaponlib.ClientModContext")
     public static ModContext MOD_CONTEXT;
@@ -32,6 +33,9 @@ public class ModernWarfareMod {
 
 	public static CreativeTabs gunsTab = new GunsTab(
 			CreativeTabs.getNextID(), "guns_tab");
+
+	public static CreativeTabs ArmorTab = new ArmorTab(
+            CreativeTabs.getNextID(), "ArmorTab");
 
 	public static CreativeTabs AssaultRiflesTab = new AssaultRiflesTab(
             CreativeTabs.getNextID(), "AssaultRifles_tab");
@@ -48,8 +52,17 @@ public class ModernWarfareMod {
 	public static CreativeTabs SnipersTab = new SnipersTab(
             CreativeTabs.getNextID(), "SnipersTab");
 
-	public static CreativeTabs AR2Tab = new AR2Tab(
-            CreativeTabs.getNextID(), "AR2Tab");
+	public static CreativeTabs AmmoTab = new AmmoTab(
+            CreativeTabs.getNextID(), "AmmoTab");
+
+	public static CreativeTabs AttachmentsTab = new AttachmentsTab(
+            CreativeTabs.getNextID(), "AttachmentsTab");
+
+	public static CreativeTabs GrenadesTab = new GrenadesTab(
+            CreativeTabs.getNextID(), "GrenadesTab");
+
+	public static CreativeTabs GadgetsTab = new GadgetsTab(
+            CreativeTabs.getNextID(), "GadgetsTab");
 
 	public static CreativeTabs FunGunsTab = new FunGunsTab(
 			CreativeTabs.getNextID(), "FunGuns_tab");
@@ -59,36 +72,43 @@ public class ModernWarfareMod {
     public static CommonProxy proxy;
 
     public static boolean oreGenerationEnabled = true;
+    private ConfigurationManager configurationManager;
 
     @EventHandler
     public void init(FMLPreInitializationEvent event) {
-        configure(event.getSuggestedConfigurationFile());
+        initConfigurationManager(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        proxy.init(this, new CompatibleFmlInitializationEvent(event));
+        proxy.init(this, configurationManager, new CompatibleFmlInitializationEvent(event));
         initRecipies(event);
     }
 
-    private void configure(File suggestedConfig) {
-        File parentDirectory = suggestedConfig.getParentFile();
-        File configFile;
-        if(parentDirectory != null) {
-            configFile = new File(parentDirectory, MODERN_WARFARE_CONFIG_FILE_NAME);
-        } else {
-            configFile = new File(MODERN_WARFARE_CONFIG_FILE_NAME);
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        if(configurationManager != null) {
+            configurationManager.save();
         }
-        Configuration config = new Configuration(configFile);
-        config.load();
-        Property oreGenerationEnabled = config.get(CONFIG_PROPERTY_CATEGORY_GENERAL, CONFIG_PROPERTY_ORE_GENERATION_ENABLED, true);
-        ModernWarfareMod.oreGenerationEnabled = oreGenerationEnabled.getBoolean();
-        config.save();
+    }
+
+    private void initConfigurationManager(FMLPreInitializationEvent event) {
+        File parentDirectory = event.getSuggestedConfigurationFile().getParentFile();
+	    File configFile;
+	    if(parentDirectory != null) {
+	        configFile = new File(parentDirectory, MODERN_WARFARE_CONFIG_FILE_NAME);
+	    } else {
+	        configFile = new File(MODERN_WARFARE_CONFIG_FILE_NAME);
+	    }
+		configurationManager = new ConfigurationManager.Builder()
+		        .withUserConfiguration(configFile)
+		        .withDefaultConfiguration(new StreamSource(getClass().getResourceAsStream(DEFAULT_CONFIG_RESOURCE)))
+		        .build();
     }
 
     // ItemRecipes
     //@EventHandler
     public void initRecipies(FMLInitializationEvent event) {
-        RecipeManager.init();
+        RecipeManager.init(MOD_CONTEXT);
     }
 }
