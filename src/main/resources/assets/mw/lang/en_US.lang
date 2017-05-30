@@ -23,25 +23,25 @@ item.Glock-17.name=Glock-17
 item.M9.name=M9-Beretta
 item.M4A1.name=M4A1
 item.AR15.name=ArmaLite AR-15
-item..357 Desert Eagle.name=.357 IMI Desert Eagle
+item.357DesertEagle.name=.357 IMI Desert Eagle
 item.L115.name=L115
 item.Dragunov.name=Dragunov SVD 
 item.Remington870.name=Remington-870
-item.FN P90.name=FN P90
-item.FN P90 TR.name=FN P90 TR
+item.FNP90.name=FN P90
+item.FNP90 TR.name=FN P90 TR
 item.M16A4.name=M16A4
 item.AKM.name=AKM
 item.G36C.name=HK G36C
-item.HK 416A5.name=HK 416A5
+item.HK416A5.name=HK 416A5
 item.AK12.name=AK-12
 item.Scar.name=Mk16
 item.ScarH.name=Mk17
 item.AUG.name=AUG
-item.HK MP5.name=HK MP5
+item.HKMP5.name=HK MP5
 item.FamasG2.name=Famas-G2
-item.HK MP5K.name=HK MP5K
+item.HKMP5K.name=HK MP5K
 item.AKS74U.name=AKS-74U
-item.HK MP7.name=HK MP7
+item.HKMP7.name=HK MP7
 item.Magnum.name=.44 Magnum
 item.AS50.name=AS50
 item.FNFAL.name=FN FAL
@@ -50,7 +50,7 @@ item.KSG12.name=KSG-12
 item.M249.name=M249 SAW
 item.Famas.name=FELIN Famas
 item.Glock21.name=Glock-21
-item.HK P2000.name=HK P2000
+item.HKP2000.name=HK P2000
 item.M16A3.name=M16A3
 item.M107.name=Barrett M107
 item.M240.name=M240 SAW
@@ -59,7 +59,7 @@ item.RPK74M.name=RPK-74M
 item.MG36.name=HK MG36
 item.AK74M.name=AK-74M
 item.ACRTac.name=Bushmaster ACR
-item.HK 416C.name=HK 416-C
+item.HK416C.name=HK 416-C
 item.M1Carbine.name=M1 Carbine
 item.MP40.name=MP40
 item.AN94.name=AN-94
@@ -82,18 +82,18 @@ item.AWP.name=AWP
 item.SV98.name=SV-98
 item.L115A3.name=L115A3
 item.AWM.name=AWM
-item.Mosin Nagant M91/30.name=Mosin Nagant M91/30
+item.MosinNagantM91-30.name=Mosin Nagant M91/30
 item.M82.name= Barrett M82 
 item.M21.name=M21
 item.M41A.name=M41A 
 item.HK33.name=HK33
-item.HK M27 IAR.name= HK M27 IAR
+item.HKM27IAR.name= HK M27 IAR
 item.RAS47.name=RAS-47
 item.10mmPistol.name=10mm Pistol
 item.Beretta 92A1.name= Beretta 92A1
 item.M93R.name=M93R
 item.Python.name=.357 Colt Python
-item.HK USP .45.name=HK USP .45 
+item.HKUSP45.name=HK USP .45 
 item.AK101.name=AK-101
 item.AK107.name=AK-107
 item.MakarovPM.name=Makarov PM
@@ -121,12 +121,12 @@ item.P225.name=P225
 item.P220.name=P220
 item.P226.name=P226
 item.Glock19.name=Glock-19
-item.HK P30.name=HK P30
-item.HK MP5A5.name=HK MP5A5
-item.HK MP5SD.name=HK MP5SD
+item.HKP30.name=HK P30
+item.HKMP5A5.name=HK MP5A5
+item.HKMP5SD.name=HK MP5SD
 item.MAC-10.name=MAC-10
 item.MAC-11.name=MAC-11
-item.HK MP5N.name=HK MP5N
+item.HKMP5N.name=HK MP5N
 item.G3.name=HK G3
 item.AK12U.name=AK-12U
 item.QBS09.name=QBS-09
@@ -140,10 +140,10 @@ item.Glock18.name=Glock-18
 item.SMAW.name=Mk153 SMAW
 item.HecateII.name=PGM Hecate II
 item.Deagle50.name=.50 AE IMI Desert Eagle
-item.VSS Vintorez.name=VSS Vintorez
-item.AS Val.name=AS Val
-item.HK UMP45.name=HK UMP-45
-item.HK UMP9.name=HK UMP-9
+item.VSSVintorez.name=VSS Vintorez
+item.ASVal.name=AS Val
+item.HKUMP45.name=HK UMP-45
+item.HKUMP9.name=HK UMP-9
 item.TAR21.name=TAR-21
 item.KN44.name=KN-44
 item.MP9.name=MP9
@@ -159,8 +159,8 @@ item.mw_ImpactGrenade.name=Impact Grenade
 item.mw_M18White.name=M18 Smoke Grenade (White)
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
-item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
-item.mw_AK74MMag.name=30rnd 5.56x39mm Magazine
+item.mw_AK12Mag.name=31rnd 5.45x39mm Magazine
+item.mw_AK74MMag.name=30rnd 5.45x39mm Magazine
 item.mw_RPK74MMag.name=40rnd 7.62x39mm Magazine
 item.mw_AKS74UMag.name=30rnd 5.45x39mm Magazine (Type 2)
 item.mw_NATOMag1.name=30rnd 5.56x45mm NATO Magazine 
@@ -170,7 +170,7 @@ item.mw_NATOG36Mag.name=30rnd 5.56x45mm NATO Magazine (Type 3)
 item.mw_DragunovMag.name=10rnd 7.62x54mm Magazine
 item.mw_FALMag.name=20rnd 7.62x51mm NATO Magazine
 item.mw_M110Mag.name=10rnd 7.62x51mm NATO Magazine (Type 2)
-item.mw_M14DMRMag.name=20rnd 7.62x51mm NATO Magazine
+item.mw_M14DMRMag.name=21rnd 7.62x51mm NATO Magazine
 item.mw_Glock21Mag.name=13rnd .45 ACP Magazine
 item.mw_Glock18Mag.name=17rnd 9mm Magazine
 item.mw_M9BerettaMag.name=15rnd 9mm Magazine
@@ -224,7 +224,6 @@ item.mw_BMG50.name=.50 BMG Bullet
 item.mw_Carbine30.name=.30 Carbine Bullet
 item.mw_Bullet57x28.name=5.7x28mm Bullet
 item.mw_Bullet46x30.name=4.6x30mm Bullet
-
 item.mw_Bullet65x39.name=6.5x39mm NATO Bullet
 item.mw_Bullet10x24.name=10x24mm Bullet
 item.mw_Bullet10mm.name=10mm Bullet
@@ -241,8 +240,8 @@ item.mw_AngledGrip.name=Angled Grip
 item.mw_Laser.name=UTG Tactical Laser
 item.mw_Laser2.name=LD19206-IR Tactical Laser
 item.mw_HPScope.name=JPU HP 3-9x40 Scope
+item.mw_Leupold.name=Leupold Scope
 item.mw_Holographic.name=EOTech 512 A65 Holographic 
-
 item.mw_Grip2.name=Grip
 item.mw_Bipod.name=Bipod
 item.mw_VGrip.name=Foregrip
@@ -264,6 +263,7 @@ item.mw_SilencerMP7.name=4.6x30mm Silencer
 item.mw_StubbyGrip.name=Stubby Grip
 item.mw_Holographic2.name=EOTech EXPS3-0 (Tan)
 item.mw_PSO1.name=PSO-1 Scope
+item.mw_G36Scope.name=UFC G36 Scope
 
 item.mw_Electric.name=Electric Skin
 item.mw_Asiimov.name=Asiimov Skin
@@ -280,6 +280,12 @@ item.mw_Forest.name=Forest Skin
 item.mw_Amber.name=Amber Skin
 item.mw_Arctic.name=Arctic Skin
 item.mw_Amethyst.name=Amethyst Skin
+
+item.mw_Murasaki.name=Murasaki Knife Skin
+item.mw_Evangelion.name=Evangelion Knife Skin
+item.mw_GodWillsIt.name=God Wills It Knife Skin
+item.mw_Chrome.name=Chrome Knife Skin
+item.mw_CrimsonBlood.name=Crimson Garnet Knife Skin
 
 item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit
@@ -343,11 +349,9 @@ item.mw_AR15Iron.name=AR Carry Handle
 item.mw_wcam.name=Wireless Camera
 item.mw_tablet.name=Tablet
 
-itemGroup.guns_tab=Modern Warfare
+itemGroup.guns_tab=Vic's Modern Warfare Resources
 
-itemGroup.AssaultRifles_tab=VMW Automatic Rifles Section 1
-
-itemGroup.AR2Tab=VMW Automatic Rifles Section 2
+itemGroup.AssaultRifles_tab=VMW Assault Rifles/Carbines
 
 itemGroup.ShotgunsTab=VMW Shotguns/Heavy/LMGs
 
@@ -356,6 +360,16 @@ itemGroup.SnipersTab=VMW Snipers/Marksmen Rifles
 itemGroup.Pistols_tab=VMW Pistols/Machine Pistols
 
 itemGroup.SMG_tab=VMW SMGs/PDWs
+
+itemGroup.AmmoTab=VMW Ammunition
+
+itemGroup.AttachmentsTab=VMW Attachments
+
+itemGroup.ArmorTab=VMW Armor
+
+itemGroup.GrenadesTab=VMW Grenades
+
+itemGroup.GadgetsTab=VMW Gadgets 
 
 key.categories.weaponlib=Modern Warfare
 

@@ -1,14 +1,13 @@
 package com.vicmatskiv.mw;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class AR2Tab extends CreativeTabs
+public class AmmoTab extends CreativeTabs
 {
-	public AR2Tab(int par1, String par2Str)
+	public AmmoTab(int par1, String par2Str)
 	{
 		super(par1, par2Str);
 	}
@@ -17,7 +16,7 @@ public class AR2Tab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(CommonProxy.AK47);
+		return new ItemStack(Magazines.NATOMag1);
 	}
 
 }

@@ -6,8 +6,11 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Pistol10mm;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -46,14 +49,14 @@ public class Pistol10mmFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("--Fallout 4's starting pistol--", "", "Type: Pistol", "Damage: 6",
 		"Caliber: 10mm", "Magazines:", "10rnd 10mm Magazine",
 		"Fire Rate: Semi"))
-		.withCompatibleAttachment(CommonProxy.Amethyst, 
+		.withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Mag10mm, (model) -> {
+		.withCompatibleAttachment(Magazines.Mag10mm, (model) -> {
 			GL11.glTranslatef(0F, -0.2F, 0.14F);
 			GL11.glScaled(1F, 1F, 1F);
 			GL11.glRotatef(15F, 1f, 0f, 0f);
@@ -101,9 +104,9 @@ public class Pistol10mmFactory implements GunFactory {
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.Mag10mm, (renderContext) -> {})
+			.withFirstPersonPositioningCustomRecoiled(Magazines.Mag10mm, (renderContext) -> {})
 			
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Mag10mm, (renderContext) -> {})
+			.withFirstPersonPositioningCustomZoomingRecoiled(Magazines.Mag10mm, (renderContext) -> {})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
@@ -122,13 +125,13 @@ public class Pistol10mmFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
 				} 
@@ -143,7 +146,7 @@ public class Pistol10mmFactory implements GunFactory {
 				
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.Mag10mm, (renderContext) -> {})
+			.withFirstPersonCustomPositioning(Magazines.Mag10mm, (renderContext) -> {})
 			
 			.withFirstPersonPositioningReloading(
 					
@@ -189,7 +192,7 @@ public class Pistol10mmFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.Mag10mm,
+			.withFirstPersonCustomPositioningUnloading(Magazines.Mag10mm,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -204,7 +207,7 @@ public class Pistol10mmFactory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.Mag10mm,
+			.withFirstPersonCustomPositioningReloading(Magazines.Mag10mm,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -235,13 +238,13 @@ public class Pistol10mmFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
 				} 

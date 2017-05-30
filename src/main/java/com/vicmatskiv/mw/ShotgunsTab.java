@@ -16,7 +16,7 @@ public class ShotgunsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(CommonProxy.KSG12);
+		return new ItemStack(Guns.KSG12);
 	}
 
 }

@@ -6,8 +6,13 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
+import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Remington;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -49,23 +54,23 @@ public class Remington900Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
-		.withCompatibleAttachment(CommonProxy.Amethyst, 
+		.withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.R870Pump, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.R870Pump, true, (model) -> {
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer12Gauge, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
 			GL11.glTranslatef(0.107F, -1.4F, -5.75F);
 			GL11.glScaled(1.1F, 1.1F, 1.1F);
 		})
-		.withCompatibleBullet(CommonProxy.ShotgunShell, (model) -> {})
+		.withCompatibleBullet(Bullets.ShotgunShell, (model) -> {})
 		.withTextureNames("Remington", "Electric")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -116,7 +121,7 @@ public class Remington900Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
 				} 
@@ -134,7 +139,7 @@ public class Remington900Factory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.R870Pump.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.R870Pump.getRenderablePart(), (renderContext) -> {
 				})
 				
 			.withFirstPersonPositioningEjectSpentRound(
@@ -157,7 +162,7 @@ public class Remington900Factory implements GunFactory {
 					
 					)
 					
-			.withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.R870Pump.getRenderablePart(),
+			.withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.R870Pump.getRenderablePart(),
 					new Transition((renderContext) -> { // Reload position
 						GL11.glTranslatef(0F, 0F, 0.6F);
 //						GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -175,7 +180,7 @@ public class Remington900Factory implements GunFactory {
 					
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.R870Pump.getRenderablePart(),
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.R870Pump.getRenderablePart(),
 				new Transition((renderContext) -> { // Reload position
 				}, 250, 50),
 				new Transition((renderContext) -> { // Reload position
@@ -213,7 +218,7 @@ public class Remington900Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(1.37F, -1.4f, 3.4f);
 				} 

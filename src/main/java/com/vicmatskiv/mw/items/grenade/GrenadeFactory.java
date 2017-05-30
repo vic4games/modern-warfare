@@ -1,10 +1,9 @@
 package com.vicmatskiv.mw.items.grenade;
 
 import com.vicmatskiv.mw.CommonProxy;
-
-import net.minecraft.item.Item;
+import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 
 public interface GrenadeFactory {
 
-	public Item createGrenade(CommonProxy commonProxy);
+	public ItemGrenade createGrenade(CommonProxy commonProxy);
 }

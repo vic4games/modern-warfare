@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
+import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Magnum;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -44,23 +48,23 @@ public class MagnumFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 5.5", 
 		"Ammo: .44 Bullet", "Fire Rate: Semi"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Gold, 
+		.withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.RevolverCase, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.RevolverCase, true, (model) -> {
 		})
-		.withCompatibleBullet(CommonProxy.Magnum44Ammo, (model) -> {})
+		.withCompatibleBullet(Bullets.Magnum44Ammo, (model) -> {})
 		.withTextureNames("Magnum", "MagnumGold")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -100,14 +104,14 @@ public class MagnumFactory implements GunFactory {
 				GL11.glRotatef(-10F, 1f, 0f, 0f);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.RevolverCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.RevolverCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
 				
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.RevolverCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.RevolverCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -130,13 +134,13 @@ public class MagnumFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}
@@ -149,7 +153,7 @@ public class MagnumFactory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.RevolverCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.RevolverCase.getRenderablePart(), (renderContext) -> {
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -175,7 +179,7 @@ public class MagnumFactory implements GunFactory {
 				}, 250, 100)
 			) 
 			
-			.withFirstPersonCustomPositioningReloading(CommonProxy.RevolverCase.getRenderablePart(),
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.RevolverCase.getRenderablePart(),
 				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
 //					GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -210,13 +214,13 @@ public class MagnumFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}

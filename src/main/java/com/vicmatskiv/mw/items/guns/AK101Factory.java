@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK101;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AK74M;
@@ -56,7 +60,7 @@ public class AK101Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withInaccuracy(1f)
-		.withCreativeTab(ModernWarfareMod.AR2Tab)
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
@@ -64,63 +68,63 @@ public class AK101Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle","Damage: 7", 
 		"Caliber: 5.56x45mm NATO", "Magazines:", "32rnd 5.56x45mm NATO Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Amber, 
+		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Fade, 
+		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Amethyst, 
+        .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Emerald, 
+        .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Gold, 
+         .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.PSO1, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.PSO1, (player, stack) -> {
             
             GL11.glTranslatef(0.14F, -0.9F, -1.1F);
             GL11.glScaled(1.2F, 1.2F, 1.2F);
@@ -138,22 +142,22 @@ public class AK101Factory implements GunFactory {
 //          GL11.glTranslatef(0.107F, -1.25F, -4.9F);
 //          GL11.glScaled(1F, 1F, 1F);
 //      })
-         .withCompatibleAttachment(CommonProxy.AKIron, true, (model) -> {
+         .withCompatibleAttachment(AuxiliaryAttachments.AKIron, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.06F, -5.96F);
             GL11.glScaled(0.6F, 0.55F, 0.5F);
         })
-        .withCompatibleAttachment(CommonProxy.AKpart, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AKpart, true, (model) -> {
             GL11.glTranslatef(-0.14F, -0.81F, -5.96F);
             GL11.glScaled(0.5F, 0.5F, 3F);
         })
-        .withCompatibleAttachment(CommonProxy.AKaction, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
         })
-        .withCompatibleAttachment(CommonProxy.AK101Mag, (model) -> {
+        .withCompatibleAttachment(Magazines.AK101Mag, (model) -> {
 //          GL11.glRotatef(7F, 1f, 0f, 0f);
             GL11.glTranslatef(-0.01F, 0F, 0F);
             GL11.glScaled(0.95F, 1F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -195,17 +199,17 @@ public class AK101Factory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-        .withCompatibleAttachment(CommonProxy.Fade, 
+        .withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
         
-         .withCompatibleAttachment(CommonProxy.Gold, 
+         .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
@@ -255,7 +259,7 @@ public class AK101Factory implements GunFactory {
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.355F, -1.19f, 2.3f);
                 }   
@@ -267,46 +271,46 @@ public class AK101Factory implements GunFactory {
 
             })
                 
-            .withFirstPersonCustomPositioning(CommonProxy.AK101Mag, (renderContext) -> {
+            .withFirstPersonCustomPositioning(Magazines.AK101Mag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
 //              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 })
-            .withFirstPersonCustomPositioning(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
-            .withFirstPersonCustomPositioning(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKpart.getRenderablePart(), (renderContext) -> {
                 })
-            .withFirstPersonCustomPositioning(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0F);
                 }
             })
             
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AK101Mag.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(Magazines.AK101Mag.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AK101Mag.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.AK101Mag.getRenderablePart(), (renderContext) -> {
                 })
                 
-           .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+           .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKIron.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKIron.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKpart.getRenderablePart(), (renderContext) -> {
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.AKpart.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKpart.getRenderablePart(), (renderContext) -> {
                 })
             
             .withFirstPersonPositioningReloading(
@@ -366,14 +370,14 @@ public class AK101Factory implements GunFactory {
                     GL11.glTranslatef(-0.425000f, 0.075000f, 0.075000f);
                 }, 150, 50)
             )
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AKaction.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AKaction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -387,14 +391,14 @@ public class AK101Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AKIron.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKIron.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AKIron.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKIron.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -407,14 +411,14 @@ public class AK101Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-             .withFirstPersonCustomPositioningUnloading(CommonProxy.AKpart.getRenderablePart(),
+             .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKpart.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AKpart.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKpart.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -427,7 +431,7 @@ public class AK101Factory implements GunFactory {
                 }, 250, 1000)
                     )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.AK101Mag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.AK101Mag,
                 new Transition((renderContext) -> {
 //                  GL11.glTranslatef(0F, 1.3F, 0.5F);
 //                    GL11.glRotatef(20F, 1f, 0f, 0f);
@@ -442,7 +446,7 @@ public class AK101Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.AK101Mag,
+            .withFirstPersonCustomPositioningReloading(Magazines.AK101Mag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0F, 1.3F, 0.5F);
                     GL11.glRotatef(20F, 1f, 0f, 0f);
@@ -485,7 +489,7 @@ public class AK101Factory implements GunFactory {
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
 
                 // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.355F, -1.19f, 2.3f);
                 }   

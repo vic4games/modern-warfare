@@ -6,8 +6,11 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.MAC10;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -46,66 +49,66 @@ public class MAC11Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Machine pistol", "Damage: 6", 
 		"Caliber: .45 ACP", "Magazines:", "26rnd .45 ACP Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.Emerald, 
+		.withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Amber, 
+		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Amethyst, 
+        .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Fade, 
+		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Diamond, 
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.VectorMag, (model) -> {
+		.withCompatibleAttachment(Magazines.VectorMag, (model) -> {
 			GL11.glTranslatef(-0.32F, 0.1F, 1.12F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer45ACP, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer45ACP, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.1F, -3.8F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -166,13 +169,13 @@ public class MAC11Factory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.17f, 3.3f);
 				} 
@@ -187,7 +190,7 @@ public class MAC11Factory implements GunFactory {
 		
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.VectorMag, (renderContext) -> {})
+			.withFirstPersonCustomPositioning(Magazines.VectorMag, (renderContext) -> {})
 			.withFirstPersonPositioningReloading(
 					
 					new Transition((renderContext) -> { // Reload position
@@ -242,7 +245,7 @@ public class MAC11Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.VectorMag,
+			.withFirstPersonCustomPositioningUnloading(Magazines.VectorMag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -257,7 +260,7 @@ public class MAC11Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.VectorMag,
+			.withFirstPersonCustomPositioningReloading(Magazines.VectorMag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -294,13 +297,13 @@ public class MAC11Factory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.17f, 3.3f);
 				} 

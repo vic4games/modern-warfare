@@ -6,8 +6,13 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.FNP90;
 import com.vicmatskiv.mw.models.FNP90Sight;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -21,7 +26,7 @@ public class FNP90Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("FN P90")
+		.withName("FNP90")
 //		.withAmmo(CommonProxy.PX90Mag)
 //		.withAmmoCapacity(50)
 		.withFireRate(0.75f)  
@@ -44,68 +49,68 @@ public class FNP90Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.5", 
 		"Caliber: 5.7x28mm", "Magazines:", "50rnd 5.7x28mm Magazine",
 		"Fire Rate: Auto"))
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
-					i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
 				}, 
 				(a, i) -> {
 				}
 		)
-		.withCompatibleAttachment(CommonProxy.Amber, 
+		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Fade, 
+		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Emerald, 
+        .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Emerald.getTextureVariantIndex("Emerald"));
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Diamond, 
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Sapphire, 
+        .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Sapphire.getTextureVariantIndex("Sapphire"));
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Amethyst, 
+         .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.FNP90Mag, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.FNP90Sight, true, (model) -> {
+		.withCompatibleAttachment(Magazines.FNP90Mag, (model) -> {})
+		.withCompatibleAttachment(AuxiliaryAttachments.FNP90Sight, true, (model) -> {
 			if(model instanceof FNP90Sight) {
 				GL11.glTranslatef(0.045F, -1.7F, -0.3F);
 				GL11.glScaled(0.75F, 0.9F, 0.9F);
@@ -114,11 +119,11 @@ public class FNP90Factory implements GunFactory {
 				GL11.glScaled(0.2F, 0.2F, 0.2F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Laser, (p, s) -> {
+		.withCompatibleAttachment(Attachments.Laser, (p, s) -> {
 			GL11.glTranslatef(.34F, -1.7F, -0.1F);
 			GL11.glScaled(0.65F, 0.65F, 0.65F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer57x38, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer57x38, (model) -> {
 			GL11.glTranslatef(0.107F, -1.2F, -2.14F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
@@ -173,37 +178,37 @@ public class FNP90Factory implements GunFactory {
 				GL11.glRotatef(-0.5F, 1f, 0f, 0f);
 				
 				// ACOG Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0.005F, 0.15f, 0.45f);
 				} 
 				
 				// Scope Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.4f, 0.5f);
 				} 
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
 				} 
@@ -215,7 +220,7 @@ public class FNP90Factory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.FNP90Mag, (renderContext) -> {
+			.withFirstPersonCustomPositioning(Magazines.FNP90Mag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -266,7 +271,7 @@ public class FNP90Factory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.FNP90Mag,
+			.withFirstPersonCustomPositioningUnloading(Magazines.FNP90Mag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -282,7 +287,7 @@ public class FNP90Factory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.FNP90Mag,
+			.withFirstPersonCustomPositioningReloading(Magazines.FNP90Mag,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0F, -0.15F, 0.6F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -313,37 +318,37 @@ public class FNP90Factory implements GunFactory {
 				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				
 				// ACOG Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
 					GL11.glTranslatef(0.005F, 0.15f, 0.45f);
 				} 
 				
 				// Scope Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.4f, 0.5f);
 				} 
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holographic2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(0F, 0.15f, 0.2f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Kobra)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.373F, -1.19f, 2.5f);
 				} 
