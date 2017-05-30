@@ -85,7 +85,7 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "X X",
                 "XX ",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
 
         )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -112,7 +112,7 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "XXX",
                 "XX ",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
 
         )
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -159,7 +159,7 @@ public class Magazines {
                 .withCraftingRecipe(" F",
                 " A",
                 "FF",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'F', CommonProxy.MiniSteelPlate
 
                 )
@@ -187,7 +187,7 @@ public class Magazines {
                 .withCraftingRecipe("  A",
                 "A R",
                 "AR ",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
                 )
@@ -215,7 +215,7 @@ public class Magazines {
                 .withCraftingRecipe("  A",
                 "ARA",
                 "AR ",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
                 )
@@ -243,7 +243,7 @@ public class Magazines {
                 .withCraftingRecipe("  R",
                 "R X",
                 "XR ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -271,7 +271,7 @@ public class Magazines {
                 .withCraftingRecipe("  R",
                 "X R",
                 "XR ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -300,7 +300,7 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "X X",
                 "RR ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -349,7 +349,7 @@ public class Magazines {
                 .withCraftingRecipe("  R",
                 "R X",
                 "RX ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -379,7 +379,7 @@ public class Magazines {
                 "X R",
                 "XR ",
                 'X', CompatibleItems.IRON_INGOT,
-                'R', CommonProxy.SteelIngot
+                'R', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -407,7 +407,7 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "X X",
                 "XX ",
-                'X', CommonProxy.AluminumIngot
+                'X', Ores.INGOT_ALUMINIUM
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -435,7 +435,7 @@ public class Magazines {
                 .withCraftingRecipe(
                 " XX",
                 "XX ",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -464,7 +464,7 @@ public class Magazines {
                 " XX",
                 "XXX",
                 "XX ",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -492,8 +492,8 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "X R",
                 "XR ",
-                'X', CommonProxy.AluminumIngot,
-                'R', CommonProxy.SteelIngot
+                'X', Ores.INGOT_ALUMINIUM,
+                'R', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -521,8 +521,8 @@ public class Magazines {
                 .withCraftingRecipe("X X",
                 "  X",
                 " XX",
-                'X', CommonProxy.AluminumIngot,
-                'R', CommonProxy.SteelIngot
+                'X', Ores.INGOT_ALUMINIUM,
+                'R', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -550,7 +550,7 @@ public class Magazines {
                 .withCraftingRecipe("  X",
                 "X X",
                 "RR ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -578,7 +578,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("X X",
                 " RR",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -607,7 +607,7 @@ public class Magazines {
                 .withCraftingRecipe("X R",
                 "  R",
                 " RR",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -637,7 +637,7 @@ public class Magazines {
                 "  R",
                 " XR",
                 'X', CompatibleItems.IRON_INGOT,
-                'R', CommonProxy.AluminumIngot
+                'R', Ores.INGOT_ALUMINIUM
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -665,7 +665,7 @@ public class Magazines {
                 .withCraftingRecipe(" R",
                 " R",
                 "XX",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -693,7 +693,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("X",
                 "X",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -721,7 +721,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("R",
                 "X",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -750,7 +750,7 @@ public class Magazines {
                 .withCraftingRecipe("R",
                 "X",
                 "X",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -779,7 +779,7 @@ public class Magazines {
                 .withCraftingRecipe(" A",
                 " A",
                 "AF",
-                    'A', CommonProxy.SteelIngot,
+                    'A', Ores.INGOT_STEEL,
                     'F', CommonProxy.MiniSteelPlate
 
             )
@@ -807,7 +807,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("X",
                 "R",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -835,7 +835,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe(" A",
                 " R",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -864,7 +864,7 @@ public class Magazines {
                 .withCraftingRecipe(" A",
                 " A",
                 "RR",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -893,7 +893,7 @@ public class Magazines {
                 .withCraftingRecipe(" X ",
                 "R R",
                 "R R",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -922,7 +922,7 @@ public class Magazines {
                 .withCraftingRecipe("X",
                 "X",
                 "X",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -951,7 +951,7 @@ public class Magazines {
                 .withCraftingRecipe(" A",
                 " A",
                 "AA",
-                'A', CommonProxy.SteelIngot
+                'A', Ores.INGOT_STEEL
 
                 )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -979,7 +979,7 @@ public class Magazines {
                 .withCraftingRecipe(" R",
                 " X",
                 "X ",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1007,7 +1007,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("X",
                 "X",
-                'X', CommonProxy.AluminumIngot
+                'X', Ores.INGOT_ALUMINIUM
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1034,7 +1034,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("X",
                 "R",
-                'X', CommonProxy.AluminumIngot,
+                'X', Ores.INGOT_ALUMINIUM,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1063,7 +1063,7 @@ public class Magazines {
                 .withCraftingRecipe(
                 "R X",
                 " XR",
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1091,7 +1091,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe("RXR",
                 "  X",
-                'R', CommonProxy.AluminumIngot,
+                'R', Ores.INGOT_ALUMINIUM,
                 'X', CommonProxy.MiniSteelPlate
 
         )
@@ -1118,7 +1118,7 @@ public class Magazines {
                 })
                 .withCraftingRecipe(" FF",
                 "A A",
-                    'A', CommonProxy.SteelIngot,
+                    'A', Ores.INGOT_STEEL,
                     'F', CommonProxy.MiniSteelPlate
 
             ).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1144,7 +1144,7 @@ public class Magazines {
                     GL11.glScaled(0.9F, 0.9F, 0.9f);
                 })
                 .withCraftingRecipe("XXX",
-                'X', CommonProxy.CopperIngot
+                'X', Ores.INGOT_COPPER
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1172,7 +1172,7 @@ public class Magazines {
                 .withCraftingRecipe("RAR",
                 "  A",
                 'R', CommonProxy.MiniSteelPlate,
-                'A', CommonProxy.SteelIngot
+                'A', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1200,7 +1200,7 @@ public class Magazines {
                 .withCraftingRecipe("RA",
                 " A",
                 "A ",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1229,7 +1229,7 @@ public class Magazines {
                 .withCraftingRecipe(" A",
                 " R",
                 "A ",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1313,7 +1313,7 @@ public class Magazines {
                 .withCraftingRecipe("R",
                 "A",
                 'A', CommonProxy.MiniSteelPlate,
-                'R', CommonProxy.SteelIngot
+                'R', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1370,7 +1370,7 @@ public class Magazines {
                 " A",
                 "AR",
                 'A', CompatibleItems.IRON_INGOT,
-                'R', CommonProxy.SteelIngot
+                'R', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1399,7 +1399,7 @@ public class Magazines {
                 " R",
                 "AA",
                 'A', CommonProxy.MiniSteelPlate,
-                'A', CommonProxy.SteelIngot
+                'A', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1428,7 +1428,7 @@ public class Magazines {
                 "R A",
                 "AR ",
                 'R', CommonProxy.MiniSteelPlate,
-                'A', CommonProxy.SteelIngot
+                'A', Ores.INGOT_STEEL
 
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
@@ -1456,7 +1456,7 @@ public class Magazines {
                 .withCraftingRecipe("RR",
                 " A",
                 " A",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'R', CommonProxy.MiniSteelPlate
 
         )
@@ -1485,7 +1485,7 @@ public class Magazines {
                 .withCraftingRecipe("AAF",
                 "   ",
                 "AAF",
-                    'A', CommonProxy.SteelIngot,
+                    'A', Ores.INGOT_STEEL,
                     'F', CommonProxy.MiniSteelPlate
 
             )

@@ -16,7 +16,7 @@ public class GunsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.CopperIngot;
+		return Ores.CopperIngot;
 	}
 
 }

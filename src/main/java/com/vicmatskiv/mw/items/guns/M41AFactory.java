@@ -11,6 +11,7 @@ import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
@@ -60,7 +61,7 @@ public class M41AFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MetalComponents,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withInformationProvider(stack -> Arrays.asList("--ALIEN was a good movie--", "", "Type: Pulse rifle", "Damage: 4",
 		"Caliber: 10x24mm", "Magazines:", "99rnd 10x24mm Magazine", "Fire Rate: Auto"))
 		.withCompatibleAttachment(GunSkins.Gold, 

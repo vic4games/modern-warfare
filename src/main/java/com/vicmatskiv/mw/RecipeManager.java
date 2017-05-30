@@ -12,57 +12,57 @@ public class RecipeManager {
 
     public static void init(ModContext modContext) {
 
-        compatibility.addSmelting(CommonProxy.TitaniumOre, new ItemStack(CommonProxy.TitaniumIngot), 5f);
-        compatibility.addSmelting(CommonProxy.CopperOre, new ItemStack(CommonProxy.CopperIngot), 5f);
-        compatibility.addSmelting(CommonProxy.LeadOre, new ItemStack(CommonProxy.LeadIngot), 5f);
-        compatibility.addSmelting(CommonProxy.TinOre, new ItemStack(CommonProxy.TinIngot), 5f);
-        compatibility.addSmelting(CommonProxy.BauxiteOre, new ItemStack(CommonProxy.AluminumIngot), 5f);
-        compatibility.addSmelting(CommonProxy.SiliconOre, new ItemStack(CommonProxy.Silicon), 5f);
-        compatibility.addSmelting(CommonProxy.TantalumOre, new ItemStack(CommonProxy.TantalumIngot), 5f);
-        compatibility.addSmelting(CommonProxy.SulfurDust, compatibility.createItemStack(CompatibleItems.GUNPOWDER, 1, 0), 5f);
-        compatibility.addSmelting(CommonProxy.SteelDust, new ItemStack(CommonProxy.SteelIngot), 5f);
+        compatibility.addSmelting(Ores.TitaniumOre, new ItemStack(Ores.TitaniumIngot), 5f);
+        compatibility.addSmelting(Ores.CopperOre, new ItemStack(Ores.CopperIngot), 5f);
+        compatibility.addSmelting(Ores.LeadOre, new ItemStack(Ores.LeadIngot), 5f);
+        compatibility.addSmelting(Ores.TinOre, new ItemStack(Ores.TinIngot), 5f);
+        compatibility.addSmelting(Ores.BauxiteOre, new ItemStack(Ores.AluminumIngot), 5f);
+        compatibility.addSmelting(Ores.SiliconOre, new ItemStack(Ores.Silicon), 5f);
+        compatibility.addSmelting(Ores.TantalumOre, new ItemStack(Ores.TantalumIngot), 5f);
+        compatibility.addSmelting(Ores.SulfurDust, compatibility.createItemStack(CompatibleItems.GUNPOWDER, 1, 0), 5f);
+        compatibility.addSmelting(Ores.SteelDust, new ItemStack(Ores.SteelIngot), 5f);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Marinehelmet,
                 "AAA",
                 "AGA",
                 "X X",
                 'A', CommonProxy.TanCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Marinechest,
                 "A A",
                 "AAA",
                 "XXX",
                 'A', CommonProxy.TanCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Marineboots,
                 "A A",
                 "A A",
                 "X X",
                 'A', CommonProxy.TanCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazhelmet,
                 "AAA",
                 "AGA",
                 "X X",
                 'A', CommonProxy.GreenCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazchest,
                 "A A",
                 "AAA",
                 "XXX",
                 'A', CommonProxy.GreenCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(Armors.Spetznazboots,
                 "A A",
                 "A A",
                 "X X",
                 'A', CommonProxy.GreenCloth,
-                'X', "ingotTitanium");
+                'X', Ores.INGOT_TITANIUM);
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.Cloth, 3),
                 "XAX",
@@ -105,7 +105,7 @@ public class RecipeManager {
                 "XBX",
                 "  A",
                 'A', CommonProxy.SteelPlate,
-                'X', CommonProxy.SteelIngot,
+                'X', Ores.INGOT_STEEL,
                 'B', CompatibleBlocks.STONE_BUTTON
                 );
 
@@ -113,20 +113,20 @@ public class RecipeManager {
                 "XAX",
                 "AEA",
                 "XAX",
-                'X', "ingotTitanium",
+                'X', Ores.INGOT_TITANIUM,
                 'E', CommonProxy.CopperWiring,
                 'A', CompatibleBlocks.GLASS_PANE
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.MiniSteelPlate, 2),
                 "XX",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.SteelPlate, 2),
                 "XXX",
                 "XXX",
-                'X', CommonProxy.SteelIngot
+                'X', Ores.INGOT_STEEL
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.BigSteelPlate),
@@ -139,7 +139,7 @@ public class RecipeManager {
                 "XA",
                 "AX",
                 'X', CommonProxy.SteelPlate,
-                'A', CommonProxy.SteelIngot
+                'A', Ores.INGOT_STEEL
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Guns.M9SD),
@@ -153,7 +153,7 @@ public class RecipeManager {
                 "AAR",
                 "XXX",
                 'X', CommonProxy.MiniSteelPlate,
-                'A', CommonProxy.Ruby,
+                'A', Ores.Ruby,
                 'R', CommonProxy.Capacitor
                 );
 
@@ -161,7 +161,7 @@ public class RecipeManager {
                 "A",
                 "X",
                 "A",
-                'A', CommonProxy.SteelIngot,
+                'A', Ores.INGOT_STEEL,
                 'X', CompatibleItems.COAL
                 );
 
@@ -169,8 +169,8 @@ public class RecipeManager {
                 "AA",
                 "XX",
                 "XX",
-                'A', CommonProxy.SteelIngot,
-                'X', CommonProxy.Silicon
+                'A', Ores.INGOT_STEEL,
+                'X', Ores.Silicon
 
                 );
 
@@ -178,9 +178,9 @@ public class RecipeManager {
                 "XX",
                 "AA",
                 "RR",
-                'X', CommonProxy.AluminumIngot,
+                'X', Ores.INGOT_ALUMINIUM,
                 'A', CommonProxy.Plastic,
-                'R', CommonProxy.TantalumIngot
+                'R', Ores.INGOT_TANTALUM
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.Inductor, 3),
@@ -195,13 +195,15 @@ public class RecipeManager {
                 "X",
                 "A",
                 "X",
-                'A', CommonProxy.SteelIngot,
-                'X', CommonProxy.Silicon
+                'A', Ores.INGOT_STEEL,
+                'X', Ores.Silicon
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.CopperWiring, 10),
+                "A  ",
+                "A A",
                 "AAA",
-                'A', CommonProxy.CopperIngot
+                'A', Ores.INGOT_COPPER
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.Plastic, 3),
@@ -215,11 +217,11 @@ public class RecipeManager {
                 "AXX",
                 " XE",
                 'A', CommonProxy.SteelPlate,
-                'X', "ingotSteel",
+                'X', Ores.INGOT_STEEL,
                 'E', CommonProxy.Electronics
                 );
 
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.SteelDust, 4),
+        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Ores.SteelDust, 4),
                 " X ",
                 "XAX",
                 " X ",
@@ -228,8 +230,9 @@ public class RecipeManager {
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.AluminumPlate, 6),
-                "XX",
-                'X', CommonProxy.AluminumIngot
+                "   ",
+                "XXX",
+                'X', Ores.INGOT_ALUMINIUM
                 );
     }
 }

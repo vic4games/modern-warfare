@@ -10,6 +10,7 @@ import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.SPAS12;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -47,7 +48,7 @@ public class SPAS12Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withCreativeTab(ModernWarfareMod.ShotgunsTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Combat shotgun", "Damage per Pellet: 5", "Pellets per Shot: 10", 
 		"Ammo: 12 Gauge Shotgun Shell", "Fire Rate: Semi"))

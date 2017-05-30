@@ -10,6 +10,7 @@ import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.Holo2;
@@ -53,7 +54,7 @@ public class MP7Factory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
 		.withInformationProvider(stack -> Arrays.asList("Type: Personal defense weapon", "Damage: 6.6", 
 		"Caliber: 4.6x30mm", "Magazines:", "20rnd 4.6x30mm Magazine",
 		"Fire Rate: Auto"))

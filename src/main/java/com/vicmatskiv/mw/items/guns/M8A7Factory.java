@@ -11,6 +11,7 @@ import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
@@ -61,7 +62,7 @@ public class M8A7Factory implements GunFactory {
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
         .withInformationProvider(stack -> Arrays.asList("Type: Assault Rifle", "Damage: 7.9", 
         "Caliber: .300 AAC Blackout", "Magazines:", "32rnd .300 AAC Blackout Magazine",
         "Fire Rate: Auto"))

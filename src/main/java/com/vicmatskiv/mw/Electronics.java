@@ -86,7 +86,7 @@ public class Electronics {
                                 "XXX",
                                 "XGX",
                                 "XEX",
-                                'X', CommonProxy.SteelIngot,
+                                'X', Ores.INGOT_STEEL,
                                 'E', CommonProxy.Electronics,
                                 'G', CompatibleBlocks.GLASS_PANE
                                 )

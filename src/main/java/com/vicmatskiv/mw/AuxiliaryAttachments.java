@@ -118,7 +118,7 @@ public class AuxiliaryAttachments {
                 .withCraftingRecipe(
                         " AA",
                         "F F",
-                        'A', CommonProxy.SteelIngot,
+                        'A', Ores.INGOT_STEEL,
                         'F', CommonProxy.SteelPlate
 
                         )

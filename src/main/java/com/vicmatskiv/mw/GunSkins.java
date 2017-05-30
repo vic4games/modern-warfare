@@ -57,7 +57,7 @@ public class GunSkins {
                 .withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withCraftingRecipe("A",
-                        'A', CommonProxy.Ruby
+                        'A', Ores.Ruby
                         )
                 .withName("Fade").build(ModernWarfareMod.MOD_CONTEXT, ItemSkin.class);
 

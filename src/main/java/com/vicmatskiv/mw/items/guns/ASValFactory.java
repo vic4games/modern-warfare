@@ -11,6 +11,7 @@ import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
@@ -60,7 +61,7 @@ public class ASValFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
         .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 12", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine",

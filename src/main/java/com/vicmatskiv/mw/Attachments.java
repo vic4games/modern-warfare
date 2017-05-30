@@ -111,7 +111,7 @@ public class Attachments {
                         "AXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -170,7 +170,7 @@ public class Attachments {
                         "AXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE,
                         'F', CommonProxy.CopperWiring
@@ -225,7 +225,7 @@ public class Attachments {
                         "AXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -279,7 +279,7 @@ public class Attachments {
                         "AXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -332,7 +332,7 @@ public class Attachments {
                         "ARX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -391,7 +391,7 @@ public class Attachments {
                         "AXA",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE,
                         'F', CommonProxy.CopperWiring
@@ -495,7 +495,7 @@ public class Attachments {
                         "XXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -551,7 +551,7 @@ public class Attachments {
                         "XXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -619,7 +619,7 @@ public class Attachments {
                         "  X",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE
                         )
@@ -674,7 +674,7 @@ public class Attachments {
                         "AXX",
                         'R', CommonProxy.Electronics,
                         'A', CommonProxy.MiniSteelPlate,
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass
                         )
                 .withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -714,7 +714,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer556x45").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -754,7 +754,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer762x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -793,7 +793,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("Silencer9mm").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -831,7 +831,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("Silencer45ACP").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -869,7 +869,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer762x54").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -908,7 +908,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer762x51").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -947,7 +947,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer50BMG").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -987,7 +987,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer556x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -1032,7 +1032,7 @@ public class Attachments {
                 })
                 .withCraftingRecipe(
                         "AAA",
-                        'A', CommonProxy.SteelIngot
+                        'A', Ores.INGOT_STEEL
 
                         )
                 .withName("AKMIron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -1072,7 +1072,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("SilencerMP7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -1110,7 +1110,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("Silencer357").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -1148,7 +1148,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("Silencer57x38").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -1187,7 +1187,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate).withName("Silencer12Gauge").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -1226,7 +1226,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer300AACBlackout").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -1265,7 +1265,7 @@ public class Attachments {
                     }
                 })
                 .withCrafting(CraftingComplexity.MEDIUM,
-                        CommonProxy.SteelIngot,
+                        Ores.INGOT_STEEL,
                         CommonProxy.SteelPlate)
                 .withName("Silencer65x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -1316,7 +1316,7 @@ public class Attachments {
                 .withCraftingRecipe(" X ",
                         "ARE",
                         "AXX",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate,
                         'R', CommonProxy.LaserPointer,
                         'E', CommonProxy.Electronics
@@ -1363,7 +1363,7 @@ public class Attachments {
                 .withCraftingRecipe("AXA",
                         "XRE",
                         "AXX",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate,
                         'R', CommonProxy.LaserPointer,
                         'E', CommonProxy.Electronics
@@ -1408,7 +1408,7 @@ public class Attachments {
                 .withCraftingRecipe("AXX",
                         " X ",
                         " X ",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate
                         )
                 .withName("Grip2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -1452,7 +1452,7 @@ public class Attachments {
                 })
                 .withCraftingRecipe("X A",
                         " XX",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate
                         )
                 .withName("AngledGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -1506,7 +1506,7 @@ public class Attachments {
                 })
                 .withCraftingRecipe("AXA",
                         " X ",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate
                         )
                 .withName("StubbyGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -1549,7 +1549,7 @@ public class Attachments {
                 .withCraftingRecipe("XAX",
                         " X ",
                         " X ",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate
                         )
                 .withName("VGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
@@ -1592,7 +1592,7 @@ public class Attachments {
                 .withCraftingRecipe(" X ",
                         "A A",
                         "X X",
-                        'X', CommonProxy.SteelIngot,
+                        'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate
                         )
                 .withName("Bipod").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")

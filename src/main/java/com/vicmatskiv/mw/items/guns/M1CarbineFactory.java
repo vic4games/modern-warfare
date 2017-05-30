@@ -10,6 +10,7 @@ import com.vicmatskiv.mw.Attachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
@@ -60,7 +61,7 @@ public class M1CarbineFactory implements GunFactory {
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot,
+                Ores.INGOT_STEEL,
                 CompatibleBlocks.PLANK)
 		.withInformationProvider(stack -> Arrays.asList("Type: Semi-automatic carbine", "Damage: 7", 
 		"Caliber: .30 Carbine", "Magazines:", "15rnd .30 Carbine Magazine",
