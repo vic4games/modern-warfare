@@ -1,5 +1,8 @@
 package com.vicmatskiv.mw.items.grenade;
 
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -7,11 +10,14 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M18;
 import com.vicmatskiv.mw.models.M67Frag;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
@@ -39,6 +45,15 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
+                .withCraftingRecipe(
+                                " XG",
+                                "XFX",
+                                "EF ",
+                                'X', CommonProxy.SteelPlate,
+                                'E', compatibility.createItemStack(CompatibleItems.DYE, 15, 15),
+                                'F', CompatibleItems.COAL,
+                                'G', Ores.INGOT_STEEL
+                                )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

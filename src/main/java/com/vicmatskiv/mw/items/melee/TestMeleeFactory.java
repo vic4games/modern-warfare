@@ -1,5 +1,6 @@
 package com.vicmatskiv.mw.items.melee;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -7,6 +8,7 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.MeleeSkins;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.melee.ItemMelee;
@@ -35,6 +37,12 @@ public class TestMeleeFactory implements MeleeFactory {
                 .withCompatibleSkin(MeleeSkins.GodWillsIt, "TacKnifeGodWillsIt")
                 .withCompatibleSkin(MeleeSkins.Murasaki, "TacKnifeMurasaki")
                 .withCompatibleSkin(MeleeSkins.Evangelion, "TacKnifeEvangelion")
+                .withCraftingRecipe(
+                                " X ",
+                                " X ",
+                                " F ",
+                                'X', CommonProxy.SteelPlate,
+                                'F', Items.stick)
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)

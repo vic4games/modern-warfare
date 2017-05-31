@@ -47,6 +47,7 @@ public class HecateIIFactory implements GunFactory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
+        .withShellCasingEjectEnabled(false)
         .withCrafting(CraftingComplexity.HIGH,
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
