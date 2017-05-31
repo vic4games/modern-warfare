@@ -1,9 +1,6 @@
 package com.vicmatskiv.mw.items.grenade;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
@@ -12,11 +9,9 @@ import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M18;
-import com.vicmatskiv.mw.models.M67Frag;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
