@@ -56,6 +56,7 @@ public class XWPFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withShellCasingEjectEnabled(false)
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)

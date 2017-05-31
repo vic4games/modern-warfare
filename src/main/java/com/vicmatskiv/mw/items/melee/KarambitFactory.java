@@ -1,5 +1,6 @@
 package com.vicmatskiv.mw.items.melee;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -35,6 +36,12 @@ public class KarambitFactory implements MeleeFactory {
                 .withCompatibleSkin(MeleeSkins.GodWillsIt, "TacKnifeGodWillsIt")
                 .withCompatibleSkin(MeleeSkins.Murasaki, "TacKnifeMurasaki")
                 .withCompatibleSkin(MeleeSkins.Evangelion, "TacKnifeEvangelion")
+                .withCraftingRecipe(
+                                "X  ",
+                                " X ",
+                                " F ",
+                                'X', CommonProxy.SteelPlate,
+                                'F', Items.stick)
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)

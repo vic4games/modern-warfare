@@ -59,6 +59,7 @@ public class SV98Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)
+		.withShellCasingEjectEnabled(false)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
 		.withCreativeTab(ModernWarfareMod.SnipersTab)

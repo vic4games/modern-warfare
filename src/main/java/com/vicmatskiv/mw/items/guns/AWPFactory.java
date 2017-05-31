@@ -55,6 +55,7 @@ public class AWPFactory implements GunFactory {
 		.withReloadingTime(40)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
+		.withShellCasingEjectEnabled(false)
 		.withCrosshairZoomed("Sight")
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)

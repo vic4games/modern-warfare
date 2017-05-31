@@ -68,6 +68,7 @@ public class KSG12Factory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.15f)
+		.withShellCasingEjectEnabled(false)
 		.withCreativeTab(ModernWarfareMod.ShotgunsTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
