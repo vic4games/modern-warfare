@@ -8,6 +8,7 @@ import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.electronics.ItemTablet;
 import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
 import com.vicmatskiv.weaponlib.model.CameraModel;
@@ -82,7 +83,7 @@ public class Electronics {
                         .withName("tablet")
                         .withModId(ModernWarfareMod.MODID)
                         .withTextureName("Dummy.png")
-                        .withCraftingRecipe(" R ",
+                        .withCraftingRecipe(
                                 "XXX",
                                 "XGX",
                                 "XEX",
@@ -97,6 +98,9 @@ public class Electronics {
         .withName("wcam")
         .withCreativeTab(ModernWarfareMod.GadgetsTab)
         .withModel(new CameraModel(), "AK12")
+        .withCrafting(CraftingComplexity.LOW,
+                CommonProxy.SteelPlate,
+                CommonProxy.Electronics)
         .withFirstPersonPositioning((player, itemStack) -> {
             // GL11.glTranslatef(0.5F, -1.5F, -0.7F);
             GL11.glRotatef(55F, 0f, 1f, 0f);
@@ -145,7 +149,9 @@ public class Electronics {
                     // GL11.glRotatef(0F, 0f, 1f, 0f);
                     // GL11.glRotatef(-10F, 0f, 0f, 1f);
                     // GL11.glTranslatef(-0.15F, -0.4F, 0.4F);
-                })
+                }
+                )
+                
                 .build(ModernWarfareMod.MOD_CONTEXT);
     }
 }

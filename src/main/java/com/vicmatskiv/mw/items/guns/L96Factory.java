@@ -60,6 +60,7 @@ public class L96Factory implements GunFactory {
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
+		.withShellCasingEjectEnabled(false)
 		.withCreativeTab(ModernWarfareMod.SnipersTab)
 		.withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,

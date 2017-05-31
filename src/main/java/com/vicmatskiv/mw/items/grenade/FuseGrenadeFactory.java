@@ -1,5 +1,6 @@
 package com.vicmatskiv.mw.items.grenade;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
@@ -7,10 +8,12 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M67Frag;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
@@ -39,6 +42,15 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
+                .withCraftingRecipe(
+                                " XG",
+                                "XFX",
+                                " E ",
+                                'X', CommonProxy.SteelPlate,
+                                'E', Items.flint_and_steel,
+                                'F', Items.gunpowder,
+                                'G', Ores.INGOT_STEEL
+                                )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

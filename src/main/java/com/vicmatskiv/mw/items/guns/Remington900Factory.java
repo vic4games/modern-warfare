@@ -43,6 +43,7 @@ public class Remington900Factory implements GunFactory {
 		.withReloadingTime(15)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")	
+		.withShellCasingEjectEnabled(false)
 		.withCrosshairZoomed("Sight")
 		.withInaccuracy(10)
 		.withPellets(10)
