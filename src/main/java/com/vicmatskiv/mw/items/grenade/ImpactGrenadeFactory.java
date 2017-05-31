@@ -4,16 +4,13 @@ import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.ImpactGrenade;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
-
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 
 public class ImpactGrenadeFactory implements GrenadeFactory {
 
@@ -40,8 +37,8 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                                 "XFX",
                                 " E ",
                                 'X', CommonProxy.SteelPlate,
-                                'E', Items.flint_and_steel,
-                                'F', Items.gunpowder
+                                'E', CompatibleItems.FLINT_AND_STEEL,
+                                'F', CompatibleItems.GUNPOWDER
                                 )
                 .withRenderer(new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

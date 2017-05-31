@@ -1,8 +1,5 @@
 package com.vicmatskiv.mw.items.melee;
 
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
@@ -10,9 +7,12 @@ import com.vicmatskiv.mw.MeleeSkins;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.melee.ItemMelee;
 import com.vicmatskiv.weaponlib.melee.MeleeRenderer;
 import com.vicmatskiv.weaponlib.melee.RenderableState;
+
+import net.minecraft.item.Item;
 
 public class KarambitFactory implements MeleeFactory {
 
@@ -41,7 +41,7 @@ public class KarambitFactory implements MeleeFactory {
                                 " X ",
                                 " F ",
                                 'X', CommonProxy.SteelPlate,
-                                'F', Items.stick)
+                                'F', CompatibleItems.STICK)
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)
@@ -58,7 +58,7 @@ public class KarambitFactory implements MeleeFactory {
                                         GL11.glTranslatef(-1F, -0.4F, 1.1F);
                                         GL11.glRotatef(-225F, 0f, 1f, 0f);
                                         GL11.glRotatef(-260F, 1f, 0f, 0f);
-                                })     
+                                })
                                 .withFirstPersonPositioning(context -> {
                                     GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                                     GL11.glRotatef(0.000000f, 1f, 0f, 0f);
@@ -85,7 +85,7 @@ public class KarambitFactory implements MeleeFactory {
                                             GL11.glTranslatef(0.200000f, -0.300000f, 0.100000f);
                                         })
 
-                                .withFirstPersonPositioningAttacking(       
+                                .withFirstPersonPositioningAttacking(
                                         new Transition<RenderContext<RenderableState>>(renderContext -> {
                                             GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                                             GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
@@ -104,7 +104,7 @@ public class KarambitFactory implements MeleeFactory {
                                             GL11.glTranslatef(0.100000f, -0.950000f, 0.425000f);
                                             }, 70, 0))
 
-                                .withFirstPersonRightHandPositioningAttacking(          
+                                .withFirstPersonRightHandPositioningAttacking(
                                         new Transition<RenderContext<RenderableState>>(renderContext -> {
                                             GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                                             GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
