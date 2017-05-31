@@ -5,9 +5,9 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class AR2Tab extends CreativeTabs
+public class GrenadesTab extends CreativeTabs
 {
-	public AR2Tab(int par1, String par2Str)
+	public GrenadesTab(int par1, String par2Str)
 	{
 		super(par1, par2Str);
 	}
@@ -16,7 +16,7 @@ public class AR2Tab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem()
 	{
-		return CommonProxy.AK47;
+		return Grenades.FuseGrenade;
 	}
 
 }

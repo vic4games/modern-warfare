@@ -159,8 +159,8 @@ item.mw_ImpactGrenade.name=Impact Grenade
 item.mw_M18White.name=M18 Smoke Grenade (White)
 
 item.mw_Magazine762x39.name=30rnd 7.62x39mm Magazine
-item.mw_AK12Mag.name=31rnd 5.56x39mm Magazine
-item.mw_AK74MMag.name=30rnd 5.56x39mm Magazine
+item.mw_AK12Mag.name=31rnd 5.45x39mm Magazine
+item.mw_AK74MMag.name=30rnd 5.45x39mm Magazine
 item.mw_RPK74MMag.name=40rnd 7.62x39mm Magazine
 item.mw_AKS74UMag.name=30rnd 5.45x39mm Magazine (Type 2)
 item.mw_NATOMag1.name=30rnd 5.56x45mm NATO Magazine 
@@ -170,7 +170,7 @@ item.mw_NATOG36Mag.name=30rnd 5.56x45mm NATO Magazine (Type 3)
 item.mw_DragunovMag.name=10rnd 7.62x54mm Magazine
 item.mw_FALMag.name=20rnd 7.62x51mm NATO Magazine
 item.mw_M110Mag.name=10rnd 7.62x51mm NATO Magazine (Type 2)
-item.mw_M14DMRMag.name=20rnd 7.62x51mm NATO Magazine
+item.mw_M14DMRMag.name=21rnd 7.62x51mm NATO Magazine
 item.mw_Glock21Mag.name=13rnd .45 ACP Magazine
 item.mw_Glock18Mag.name=17rnd 9mm Magazine
 item.mw_M9BerettaMag.name=15rnd 9mm Magazine
@@ -240,6 +240,7 @@ item.mw_AngledGrip.name=Angled Grip
 item.mw_Laser.name=UTG Tactical Laser
 item.mw_Laser2.name=LD19206-IR Tactical Laser
 item.mw_HPScope.name=JPU HP 3-9x40 Scope
+item.mw_Leupold.name=Leupold Scope
 item.mw_Holographic.name=EOTech 512 A65 Holographic 
 item.mw_Grip2.name=Grip
 item.mw_Bipod.name=Bipod
@@ -279,6 +280,12 @@ item.mw_Forest.name=Forest Skin
 item.mw_Amber.name=Amber Skin
 item.mw_Arctic.name=Arctic Skin
 item.mw_Amethyst.name=Amethyst Skin
+
+item.mw_Murasaki.name=Murasaki Knife Skin
+item.mw_Evangelion.name=Evangelion Knife Skin
+item.mw_GodWillsIt.name=God Wills It Knife Skin
+item.mw_Chrome.name=Chrome Knife Skin
+item.mw_CrimsonBlood.name=Crimson Garnet Knife Skin
 
 item.mw_LaserPointer.name=Laser Cell
 item.mw_Electronics.name=Electronic Circuit
@@ -342,11 +349,9 @@ item.mw_AR15Iron.name=AR Carry Handle
 item.mw_wcam.name=Wireless Camera
 item.mw_tablet.name=Tablet
 
-itemGroup.guns_tab=Modern Warfare
+itemGroup.guns_tab=Vic's Modern Warfare Resources
 
-itemGroup.AssaultRifles_tab=VMW Automatic Rifles Section 1
-
-itemGroup.AR2Tab=VMW Automatic Rifles Section 2
+itemGroup.AssaultRifles_tab=VMW Assault Rifles/Carbines
 
 itemGroup.ShotgunsTab=VMW Shotguns/Heavy/LMGs
 
@@ -355,6 +360,16 @@ itemGroup.SnipersTab=VMW Snipers/Marksmen Rifles
 itemGroup.Pistols_tab=VMW Pistols/Machine Pistols
 
 itemGroup.SMG_tab=VMW SMGs/PDWs
+
+itemGroup.AmmoTab=VMW Ammunition
+
+itemGroup.AttachmentsTab=VMW Attachments
+
+itemGroup.ArmorTab=VMW Armor
+
+itemGroup.GrenadesTab=VMW Grenades
+
+itemGroup.GadgetsTab=VMW Gadgets 
 
 key.categories.weaponlib=Modern Warfare
 

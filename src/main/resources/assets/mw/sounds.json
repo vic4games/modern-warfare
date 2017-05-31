@@ -62,6 +62,15 @@
       }
     ]
   },
+  "m14reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m14reload",
+       "stream": false
+      }
+    ]
+  },
   "ak47": {
     "category": "master",
     "sounds": [

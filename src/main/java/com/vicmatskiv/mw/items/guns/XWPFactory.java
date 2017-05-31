@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -52,6 +56,7 @@ public class XWPFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
+		.withShellCasingEjectEnabled(false)
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
@@ -63,38 +68,38 @@ public class XWPFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.SnipersTab)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 34.3", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 3)", "Fire Rate: Bolt Action"))
-		.withCompatibleAttachment(CommonProxy.L115Mag, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.L115Bolt1, true, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.L115Bolt2, true, (model) -> {})
-		.withCompatibleAttachment(CommonProxy.ElectricSkin, 
+		.withCompatibleAttachment(Magazines.L115Mag, (model) -> {})
+		.withCompatibleAttachment(AuxiliaryAttachments.L115Bolt1, true, (model) -> {})
+		.withCompatibleAttachment(AuxiliaryAttachments.L115Bolt2, true, (model) -> {})
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.LightningStrike, 
+        .withCompatibleAttachment(GunSkins.LightningStrike, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.LightningStrike.getTextureVariantIndex("AWPLightningStrike"));
+                    i.setActiveTextureIndex(GunSkins.LightningStrike.getTextureVariantIndex("AWPLightningStrike"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
 	    		GL11.glTranslatef(0.17F, -1.42F, 0.43F);
 				GL11.glScaled(0F, 0F, 0F);
@@ -136,7 +141,7 @@ public class XWPFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.AKMIron, true, (model) -> {
+		.withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
 	    	if(model instanceof M4Iron1) {
 	    		GL11.glTranslatef(0.17F, -1.42F, 0.43F);
 				GL11.glScaled(0.25F, 0.25F, 0.25F);
@@ -178,7 +183,7 @@ public class XWPFactory implements GunFactory {
 				GL11.glScaled(0F, 0F, 0F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.HP, (player, stack) -> {
+		.withCompatibleAttachment(Attachments.HP, (player, stack) -> {
 	    	
 			GL11.glTranslatef(0.055F, -1.45F, 0.1F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -188,7 +193,7 @@ public class XWPFactory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Scope, (player, stack) -> {
+		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 	    	
 	    	GL11.glTranslatef(0.055F, -1.45F, 0.3F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
@@ -198,7 +203,7 @@ public class XWPFactory implements GunFactory {
 				GL11.glScaled(0.05F, 0.05F, 0.05F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.ACOG, (player, stack) -> {
+		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
 			GL11.glTranslatef(0.055F, -1.45F, 0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		},(model) -> {
@@ -207,11 +212,11 @@ public class XWPFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
-		.withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
+		.withCompatibleAttachment(Attachments.Bipod, (model) -> {
 			GL11.glTranslatef(.135F, -0.6F, -2.33F);
 			GL11.glScaled(0.9F, 0.9F, 0.9F);
 		})
-		.withCompatibleAttachment(CommonProxy.Silencer50BMG, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer50BMG, (model) -> {
 			GL11.glTranslatef(0.107F, -1.45F, -6.95F);
 			GL11.glScaled(1.1F, 1.1F, 1.3F);
 		})
@@ -246,7 +251,7 @@ public class XWPFactory implements GunFactory {
 				GL11.glTranslatef(-0.4F, -0.8F, 1.2F);
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.L115Mag, (renderContext) -> {
+			.withFirstPersonCustomPositioning(Magazines.L115Mag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -272,19 +277,19 @@ public class XWPFactory implements GunFactory {
 				GL11.glRotatef(-1F, 1f, 0f, 0f);
 				
 				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.16f, 0.15f);
 				} 
 				
 				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(0F, 0.16f, 0.2f);
 				} 
 				
 				// HP Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Scope");
 					GL11.glTranslatef(1.38F, -1.19f, 2.9f);
 				} 
@@ -308,9 +313,9 @@ public class XWPFactory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.L115Bolt1.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.L115Bolt1.getRenderablePart(), (renderContext) -> {
                 })
-            .withFirstPersonCustomPositioning(CommonProxy.L115Bolt2.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(AuxiliaryAttachments.L115Bolt2.getRenderablePart(), (renderContext) -> {
                 })
                 
             .withFirstPersonPositioningEjectSpentRound(
@@ -345,7 +350,7 @@ public class XWPFactory implements GunFactory {
                     
                     )
                     
-            .withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.L115Bolt1.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.L115Bolt1.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
 //                      GL11.glTranslatef(0F, 0F, 0.6F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -377,7 +382,7 @@ public class XWPFactory implements GunFactory {
                     
                     )
                     
-            .withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.L115Bolt2.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.L115Bolt2.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glTranslatef(-0.7F, -0.4F, 0F);
                         GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -409,7 +414,7 @@ public class XWPFactory implements GunFactory {
                     }, 250, 50)     
                     )
                     
-            .withFirstPersonCustomPositioningEjectSpentRound(CommonProxy.L115Mag.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(Magazines.L115Mag.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
 //                      GL11.glTranslatef(0F, 0F, 0.6F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -517,7 +522,7 @@ public class XWPFactory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.L115Mag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.L115Mag,
                 new Transition((renderContext) -> {
                     GL11.glTranslatef(0.2F, 0.5F, -0.2F);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -534,7 +539,7 @@ public class XWPFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(CommonProxy.L115Mag,
+            .withFirstPersonCustomPositioningReloading(Magazines.L115Mag,
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0.05F, 1F, 0F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -579,7 +584,7 @@ public class XWPFactory implements GunFactory {
                 }, 250, 1000)
                     )
             
-            .withFirstPersonCustomPositioningReloading(CommonProxy.L115Bolt1.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.L115Bolt1.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position  
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position  
@@ -621,7 +626,7 @@ public class XWPFactory implements GunFactory {
                 }, 250, 50)
                 )
                 
-            .withFirstPersonCustomPositioningReloading(CommonProxy.L115Bolt2.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.L115Bolt2.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position  
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position  
@@ -663,7 +668,7 @@ public class XWPFactory implements GunFactory {
                 }, 250, 50)
                 )
                 
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.L115Bolt1.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.L115Bolt1.getRenderablePart(),
                     new Transition((renderContext) -> {
 //                      GL11.glTranslatef(0F, 0F, 0.5F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -678,7 +683,7 @@ public class XWPFactory implements GunFactory {
                     }, 250, 1000)
                         )
                         
-            .withFirstPersonCustomPositioningUnloading(CommonProxy.L115Bolt2.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.L115Bolt2.getRenderablePart(),
                     new Transition((renderContext) -> {
 //                      GL11.glTranslatef(0F, 0F, 0.5F);
 //                      GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -703,19 +708,19 @@ public class XWPFactory implements GunFactory {
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.HP)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.15f);
                 } 
                 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Scope)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(0F, 0.16f, 0.2f);
                 } 
                 
                 // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.ACOG)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Scope");
                     GL11.glTranslatef(1.38F, -1.19f, 2.9f);
                 } 
