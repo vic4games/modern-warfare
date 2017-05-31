@@ -16,7 +16,7 @@ public class FunGunsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(CommonProxy.M41A);
+		return new ItemStack(Guns.M41A);
 	}
 
 }

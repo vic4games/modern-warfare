@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
@@ -55,52 +59,52 @@ public class KN44Factory implements GunFactory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.12f)
         .withFlashOffsetY(() -> 0.12f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.FunGunsTab)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
-                CommonProxy.SteelIngot)
+                Ores.INGOT_STEEL)
         .withInformationProvider(stack -> Arrays.asList("Type: Assault Rifle", "Damage: 7.7", 
         "Caliber: 5.56x39mm", "Magazines:", "30rnd 5.56x39mm Magazine (Type 2)", "45rnd 5.56x39mm Magazine",
         "Fire Rate: Auto"))
-        .withCompatibleAttachment(CommonProxy.ElectricSkin, 
+        .withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.ElectricSkin.getTextureVariantIndex("Electric"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Fade, 
+        .withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Diamond, 
+         .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Desert, 
+        .withCompatibleAttachment(GunSkins.Desert, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Desert.getTextureVariantIndex("Desert"));
+                    i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Forest, 
+         .withCompatibleAttachment(GunSkins.Forest, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Forest.getTextureVariantIndex("Forest"));
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
                 }, 
                 (a, i) -> {
                 }
@@ -115,7 +119,7 @@ public class KN44Factory implements GunFactory {
 //            GL11.glScaled(0.9F, 0.9F, 0.9F);
 //            GL11.glRotatef(-5F, 1f, 0f, 0f);
 //        })
-      .withCompatibleAttachment(CommonProxy.Extra, true, (model) -> {
+      .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof G36CIron1) {
                 GL11.glTranslatef(-0.17F, -1.155F, -0.1F);
                 GL11.glScaled(0F, 0F, 0F);
@@ -157,27 +161,27 @@ public class KN44Factory implements GunFactory {
                 GL11.glScaled(0F, 0F, 0F);
             }
         })
-      .withCompatibleAttachment(CommonProxy.Grip2, (model) -> {
+      .withCompatibleAttachment(Attachments.Grip2, (model) -> {
           GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
           GL11.glScaled(0.8F, 0.8F, 0.8F);
       })
-      .withCompatibleAttachment(CommonProxy.VGrip, (model) -> {
+      .withCompatibleAttachment(Attachments.VGrip, (model) -> {
           GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
           GL11.glScaled(0.8F, 0.8F, 0.8F);
       })
-       .withCompatibleAttachment(CommonProxy.Bipod, (model) -> {
+       .withCompatibleAttachment(Attachments.Bipod, (model) -> {
            GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
            GL11.glScaled(0.8F, 0.8F, 0.8F);
       })
-      .withCompatibleAttachment(CommonProxy.StubbyGrip, (model) -> {
+      .withCompatibleAttachment(Attachments.StubbyGrip, (model) -> {
           GL11.glTranslatef(-0.17F, -0.4F, -2.4F);
           GL11.glScaled(0.8F, 0.8F, 0.8F);
       })
-        .withCompatibleAttachment(CommonProxy.Silencer556x39, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer556x39, (model) -> {
             GL11.glTranslatef(-0.2F, -1.08F, -5.4F);
             GL11.glScaled(1F, 1F, 1F);
         })
-        .withCompatibleAttachment(CommonProxy.PSO1, (player, stack) -> {
+        .withCompatibleAttachment(Attachments.PSO1, (player, stack) -> {
             
             GL11.glTranslatef(0.08F, -1F, -0.75F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -240,7 +244,7 @@ public class KN44Factory implements GunFactory {
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                 GL11.glRotatef(-0.5F, 1f, 0f, 0f);
                 
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     GL11.glTranslatef(1.333F, -1.25f, 2.15f);
                 } 
                 
@@ -459,7 +463,7 @@ public class KN44Factory implements GunFactory {
                 GL11.glTranslatef(0.315F, -1.17f, 1.9f);
                 GL11.glScaled(0.55F, 0.55F, 0.55F);
                 
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.PSO1)) {
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     GL11.glTranslatef(1.333F, -1.25f, 2.15f);
                 } 
                 

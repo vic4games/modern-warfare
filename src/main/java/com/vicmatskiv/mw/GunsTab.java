@@ -11,19 +11,13 @@ public class GunsTab extends CreativeTabs
 	{
 		super(par1, par2Str);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
-	public ItemStack getTabIconItem() {
-		return new ItemStack(CommonProxy.M16A4);
+	public ItemStack getTabIconItem()
+	{
+		return new ItemStack(Ores.CopperIngot);
 	}
-
-//
-//	@Override
-//	@SideOnly(Side.CLIENT)
-//	public Item getTabIconItem()
-//	{
-//		return CommonProxy.M16A4;
-//	}
+	
 
 }

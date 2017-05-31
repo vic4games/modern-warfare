@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.MakarovPM;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -46,29 +50,29 @@ public class MakarovPMMFactory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5", 
 		"Caliber: 9mm", "Magazines:", "10rnd 9mm Magazine",
 		"Fire Rate: Semi"))
-		 .withCompatibleAttachment(CommonProxy.Diamond, 
+		 .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Amethyst, 
+        .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Amethyst.getTextureVariantIndex("Amethyst"));
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.MakarovTop, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.MakarovTop, true, (model) -> {
 //			GL11.glTranslatef(0.1F, -0.5F, -1F);
 //			GL11.glRotatef(45F, 0f, 1f, 0f);
 //			GL11.glScaled(0.55F, 0.55F, 0.55F);
 		})
-		.withCompatibleAttachment(CommonProxy.Magazine9mm, (model) -> {
+		.withCompatibleAttachment(Magazines.Magazine9mm, (model) -> {
 			GL11.glTranslatef(0F, 0F, 0.1F);
 			})
-		.withCompatibleAttachment(CommonProxy.Silencer9mm, (model) -> {
+		.withCompatibleAttachment(Attachments.Silencer9mm, (model) -> {
 			GL11.glTranslatef(-0.25F, -1.14F, -4.23F);
 			GL11.glScaled(1.5F, 1.5F, 1.5F);
 		})
@@ -111,22 +115,22 @@ public class MakarovPMMFactory implements GunFactory {
 				GL11.glTranslatef(-1.1F, -0.76F, 1.5F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.MakarovTop.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.MakarovTop.getRenderablePart(), (renderContext) -> {
 				GL11.glTranslatef(0F, 0F, 0.5F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
 				
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.MakarovTop.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.MakarovTop.getRenderablePart(), (renderContext) -> {
 				GL11.glTranslatef(0F, 0F, 0.5F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.Magazine9mm, (renderContext) -> {})
+			.withFirstPersonPositioningCustomRecoiled(Magazines.Magazine9mm, (renderContext) -> {})
 			
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.Magazine9mm, (renderContext) -> {})
+			.withFirstPersonPositioningCustomZoomingRecoiled(Magazines.Magazine9mm, (renderContext) -> {})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
 				GL11.glTranslatef(-0.3F, -0.4F, -0.5F);
@@ -145,13 +149,13 @@ public class MakarovPMMFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.115f, 3.2f);
 				} 
@@ -166,9 +170,9 @@ public class MakarovPMMFactory implements GunFactory {
 				
 			//.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.Magazine9mm, (renderContext) -> {})
+			.withFirstPersonCustomPositioning(Magazines.Magazine9mm, (renderContext) -> {})
 			
-			.withFirstPersonCustomPositioning(CommonProxy.MakarovTop.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.MakarovTop.getRenderablePart(), (renderContext) -> {
 				if(renderContext.getWeaponInstance().getAmmo() == 0) {
 					GL11.glTranslatef(0F, 0F, 0.5F);
 				}
@@ -228,7 +232,7 @@ public class MakarovPMMFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.Magazine9mm,
+			.withFirstPersonCustomPositioningUnloading(Magazines.Magazine9mm,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //					GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -243,7 +247,7 @@ public class MakarovPMMFactory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.Magazine9mm,
+			.withFirstPersonCustomPositioningReloading(Magazines.Magazine9mm,
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0.05F, 1.3F, 0.4F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -265,7 +269,7 @@ public class MakarovPMMFactory implements GunFactory {
 					)
 					
 					
-			.withFirstPersonCustomPositioningUnloading(CommonProxy.MakarovTop.getRenderablePart(),
+			.withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.MakarovTop.getRenderablePart(),
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0F, 0F, 0.5F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -280,7 +284,7 @@ public class MakarovPMMFactory implements GunFactory {
 				}, 250, 1000)
 					)
 					
-			.withFirstPersonCustomPositioningReloading(CommonProxy.MakarovTop.getRenderablePart(),
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.MakarovTop.getRenderablePart(),
 				new Transition((renderContext) -> {
 					GL11.glTranslatef(0F, 0F, 0.5F);
 //					GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -317,13 +321,13 @@ public class MakarovPMMFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.5f, 0.7f);
 				} 
 
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.38F, -1.17f, 3.3f);
 				} 

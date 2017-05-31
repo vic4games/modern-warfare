@@ -6,8 +6,12 @@ import net.minecraft.item.Item;
 
 import org.lwjgl.opengl.GL11;
 
+import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
+import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.Python;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -44,30 +48,30 @@ public class PythonFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Revolver", "Damage: 6", 
 		"Ammo: .357 Bullet", "Fire Rate: Semi"))
-		 .withCompatibleAttachment(CommonProxy.Diamond, 
+		 .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(CommonProxy.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Gold.getTextureVariantIndex("Gold"));
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(CommonProxy.Arctic, 
+         .withCompatibleAttachment(GunSkins.Arctic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(CommonProxy.Arctic.getTextureVariantIndex("Arctic"));
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(CommonProxy.PythonCase, true, (model) -> {
+		.withCompatibleAttachment(AuxiliaryAttachments.PythonCase, true, (model) -> {
 		})
-		.withCompatibleBullet(CommonProxy.Bullet357, (model) -> {})
+		.withCompatibleBullet(Bullets.Bullet357, (model) -> {})
 		.withTextureNames("Python", "MagnumGold")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
@@ -107,14 +111,14 @@ public class PythonFactory implements GunFactory {
 				GL11.glRotatef(-10F, 1f, 0f, 0f);
 				})
 				
-			.withFirstPersonPositioningCustomRecoiled(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.PythonCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 				})
 				
 				
-			.withFirstPersonPositioningCustomZoomingRecoiled(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.PythonCase.getRenderablePart(), (renderContext) -> {
 //				GL11.glTranslatef(0F, 0F, 0F);
 //				GL11.glRotatef(45F, 0f, 1f, 0f);
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
@@ -137,13 +141,13 @@ public class PythonFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}
@@ -156,7 +160,7 @@ public class PythonFactory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(CommonProxy.PythonCase.getRenderablePart(), (renderContext) -> {
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.PythonCase.getRenderablePart(), (renderContext) -> {
 				})
 				
 			.withFirstPersonPositioningReloading(
@@ -182,7 +186,7 @@ public class PythonFactory implements GunFactory {
 				}, 250, 100)
 			) 
 			
-			.withFirstPersonCustomPositioningReloading(CommonProxy.PythonCase.getRenderablePart(),
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.PythonCase.getRenderablePart(),
 				new Transition((renderContext) -> { // Reload position
 					GL11.glTranslatef(-0.6F, 0.8F, -1.3F);
 //					GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -217,13 +221,13 @@ public class PythonFactory implements GunFactory {
 				} */
 				
 				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Reflex)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(-0.01F, 0.44f, 0.6f);
 				} 
 				
 				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), CommonProxy.Holo2)) {
+				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
 					GL11.glTranslatef(1.37F, -1.226f, 3.2f);
 				}

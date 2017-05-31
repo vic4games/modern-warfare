@@ -1,16 +1,18 @@
 package com.vicmatskiv.mw.items.grenade;
 
-import net.minecraft.item.Item;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.CommonProxy;
+import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M18;
-import com.vicmatskiv.mw.models.M67Frag;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
@@ -18,11 +20,11 @@ import com.vicmatskiv.weaponlib.grenade.RenderableState;
 public class SmokeGrenadeFactory implements GrenadeFactory {
 
     @Override
-    public Item createGrenade(CommonProxy commonProxy) {
+    public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
                 .withName("M18White")
-                .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M18White")
                 .withExplosionStrength(0.4f)
                 .withSmokeOnly()
@@ -33,11 +35,20 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                 .withBounceHardSound("grenade-hard-bounce")
                 .withThrowSound("grenadethrow")
                 .withSafetyPinOffSound("safetypinoff")
-                .withCompatibleAttachment(CommonProxy.GrenadeSafetyPin, (p, s) -> {})
+                .withCompatibleAttachment(Grenades.GrenadeSafetyPin, (p, s) -> {})
                 .withVelocity(() -> 0.8f)
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
+                .withCraftingRecipe(
+                                " XG",
+                                "XFX",
+                                "EF ",
+                                'X', CommonProxy.SteelPlate,
+                                'E', compatibility.createItemStack(CompatibleItems.DYE, 15, 15),
+                                'F', CompatibleItems.COAL,
+                                'G', Ores.INGOT_STEEL
+                                )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)
@@ -70,7 +81,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                             GL11.glTranslatef(-3f, -0.6f, -2.2f);
                         })
 
-                        .withFirstPersonCustomPositioning(CommonProxy.GrenadeSafetyPin.getRenderablePart(), null,
+                        .withFirstPersonCustomPositioning(Grenades.GrenadeSafetyPin.getRenderablePart(), null,
                                 context -> {
 //                                    //context.attachTo(Part.MAIN_ITEM);
 //                                    GL11.glScalef(1f, 1f, 1f);
@@ -150,7 +161,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                                 }, 70, 0)
                                 )
 
-                        .withFirstPersonCustomPositioningSafetyPinOff(CommonProxy.GrenadeSafetyPin.getRenderablePart(),
+                        .withFirstPersonCustomPositioningSafetyPinOff(Grenades.GrenadeSafetyPin.getRenderablePart(),
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
                                     GL11.glScalef(0.200000f, 0.200000f, 0.200000f);
                                     GL11.glRotatef(80.000000f, 1f, 0f, 0f);
@@ -250,7 +261,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                                     //                                    GL11.glTranslatef(0.275000f, -0.400000f, 0.200000f);
                                 }, 70, 0))
 
-                        .withFirstPersonCustomPositioningThrowing(CommonProxy.GrenadeSafetyPin.getRenderablePart(),
+                        .withFirstPersonCustomPositioningThrowing(Grenades.GrenadeSafetyPin.getRenderablePart(),
                                 new Transition<RenderContext<RenderableState>>(renderContext -> {
                                     GL11.glScalef(0.200000f, 0.200000f, 0.200000f);
                                     GL11.glRotatef(80.000000f, 1f, 0f, 0f);
@@ -281,7 +292,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                             GL11.glTranslatef(-1.5f, -2.15f, -2.3f);
                         })
 
-                        .withFirstPersonCustomPositioningStrikerLeverOff(CommonProxy.GrenadeSafetyPin.getRenderablePart(),
+                        .withFirstPersonCustomPositioningStrikerLeverOff(Grenades.GrenadeSafetyPin.getRenderablePart(),
                                 Part.LEFT_HAND,
                                 renderContext -> {
                                     GL11.glScalef(0.200000f, 0.200000f, 0.200000f);
@@ -291,7 +302,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                                     GL11.glTranslatef(-3.899998f, 1.400002f, -2.400000f);
                                 })
 
-                        .withFirstPersonCustomPositioningThrown(CommonProxy.GrenadeSafetyPin.getRenderablePart(),
+                        .withFirstPersonCustomPositioningThrown(Grenades.GrenadeSafetyPin.getRenderablePart(),
                                 Part.MAIN_ITEM,
                                 renderContext -> {
                                     GL11.glScalef(0.500000f, 0.500000f, 0.500000f);
