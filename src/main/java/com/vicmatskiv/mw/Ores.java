@@ -126,6 +126,7 @@ public class Ores {
 
 
         OreDictionary.registerOre(INGOT_TITANIUM, TitaniumIngot);
+        OreDictionary.registerOre(INGOT_TANTALUM, TantalumIngot);
         OreDictionary.registerOre(INGOT_LEAD, LeadIngot);
         OreDictionary.registerOre(INGOT_COPPER, CopperIngot);
         OreDictionary.registerOre(INGOT_TIN, TinIngot);
