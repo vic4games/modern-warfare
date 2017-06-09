@@ -8,10 +8,11 @@ import com.vicmatskiv.mw.Ores;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 
 public class BlockRubyOre extends Block {
-	
+
 	public BlockRubyOre()
 	{
 		super(Material.ROCK);
@@ -23,9 +24,9 @@ public class BlockRubyOre extends Block {
 		setHarvestLevel("pickaxe", 2);
 		setCreativeTab(ModernWarfareMod.gunsTab);
 	}
-	public Item getItemDropped(int meta, Random rand, int fortune)
-		{
-			return Ores.Ruby;
-		}
-		
+
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+	    return Ores.Ruby;
 	}
+}
