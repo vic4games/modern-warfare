@@ -32,7 +32,7 @@ import net.minecraft.item.Item;
 
 public class CommonProxy {
 
-    public static Item Electronics;
+    public static Item ElectronicCircuitBoard;
     public static Item CGrip;
     public static Item OpticGlass;
     public static Item Cloth;
@@ -76,7 +76,7 @@ public class CommonProxy {
 
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
 
-        Electronics = new ItemElectronics();
+        ElectronicCircuitBoard = new ItemElectronics();
         OpticGlass = new ItemOpticGlass();
         Cloth = new ItemCloth();
         TanCloth = new ItemTanCloth();
@@ -96,7 +96,7 @@ public class CommonProxy {
         MiniSteelPlate = new ItemMiniSteelPlate();
         MetalComponents = new ItemMetalComponents();
 
-        compatibility.registerItem(ModernWarfareMod.MODID, Electronics, "Electronics");
+        compatibility.registerItem(ModernWarfareMod.MODID, ElectronicCircuitBoard, "Electronics");
         compatibility.registerItem(ModernWarfareMod.MODID, OpticGlass, "OpticGlass");
         compatibility.registerItem(ModernWarfareMod.MODID, Cloth, "Cloth");
         compatibility.registerItem(ModernWarfareMod.MODID, TanCloth, "TanCloth");

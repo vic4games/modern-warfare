@@ -88,7 +88,7 @@ public class RecipeManager {
                 'A', CommonProxy.Cloth
                 );
 
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.Electronics),
+        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.ElectronicCircuitBoard),
                 "TAI",
                 "ACA",
                 "RAD",
@@ -218,7 +218,7 @@ public class RecipeManager {
                 " XE",
                 'A', CommonProxy.SteelPlate,
                 'X', Ores.INGOT_STEEL,
-                'E', CommonProxy.Electronics
+                'E', CommonProxy.ElectronicCircuitBoard
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Ores.SteelDust, 4),
