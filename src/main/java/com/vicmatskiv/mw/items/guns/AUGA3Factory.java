@@ -191,6 +191,15 @@ public class AUGA3Factory implements GunFactory {
                 GL11.glScaled(0.06F, 0.06F, 0.06F);
             }
         })
+        .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+            GL11.glTranslatef(-0.2F, -1.01F, -0.2F);
+            GL11.glScaled(0.5F, 0.5F, 0.5F);
+        },(model) -> {
+             if(model instanceof Acog2) {
+                GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
         .withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
             GL11.glTranslatef(-0.36F, -1.37F, -0.3F);
             GL11.glScaled(1F, 1F, 1F);
@@ -329,6 +338,12 @@ public class AUGA3Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.005F, 0.278f, 0.64f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.005F, 0.26f, 0f);
                 } 
                 
                 // Scope Zoom
@@ -573,6 +588,12 @@ public class AUGA3Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(-0.005F, 0.278f, 0.8f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.005F, 0.26f, 0.1f);
                 } 
                 
                 // Scope Zoom

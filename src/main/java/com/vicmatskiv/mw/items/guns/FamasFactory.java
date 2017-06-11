@@ -56,7 +56,7 @@ public class FamasFactory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
-		.withShootSound("Famas2")
+		.withShootSound("Famas")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")
@@ -182,6 +182,15 @@ public class FamasFactory implements GunFactory {
               GL11.glScaled(0.06F, 0.06F, 0.06F);
           }
       })
+      .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+          GL11.glTranslatef(-0.2F, -1.33F, -0.8F);
+          GL11.glScaled(0.55F, 0.55F, 0.55F);
+      },(model) -> {
+           if(model instanceof Acog2) {
+               GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+               GL11.glScaled(0.1F, 0.1F, 0.1F);
+          }
+      })
       .withCompatibleAttachment(Attachments.Reflex, (model) -> {
           if(model instanceof Reflex) {
               GL11.glTranslatef(-0.062F, -1.543F, -0.8F);
@@ -268,6 +277,12 @@ public class FamasFactory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0.005F, 0.27f, 0.75f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.28f, 0.5f);
                 } 
                 
                 // Scope Zoom
@@ -541,6 +556,12 @@ public class FamasFactory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0.005F, 0.27f, 0.75f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.28f, 0.5f);
                 } 
                 
                 // Scope Zoom

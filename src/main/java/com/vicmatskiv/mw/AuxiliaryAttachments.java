@@ -38,6 +38,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> KSGPump;
     public static ItemAttachment<Weapon> L115Bolt1;
     public static ItemAttachment<Weapon> L115Bolt2;
+    public static ItemAttachment<Weapon> SV98Action;
     public static ItemAttachment<Weapon> RevolverCase;
     public static ItemAttachment<Weapon> PythonCase;
     public static ItemAttachment<Weapon> R870Pump;
@@ -59,6 +60,8 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> AKIron;
     public static ItemAttachment<Weapon> AKpart;
     public static ItemAttachment<Weapon> AKaction;
+    public static ItemAttachment<Weapon> AN94action;
+    public static ItemAttachment<Weapon> VSSVintorezAction;
     public static ItemAttachment<Weapon> AK12action;
     public static ItemAttachment<Weapon> AKS74UIron;
     public static ItemAttachment<Weapon> AKRail;
@@ -209,7 +212,14 @@ public class AuxiliaryAttachments {
         L115Bolt1 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.L115Bolt1(), "AK12.png").withName("LP115Bolt")
+                .withModel(new com.vicmatskiv.mw.models.L96Action(), "L96Action.png").withName("L96Action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        SV98Action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.SV98Action(), "SV98Action.png").withName("SV98Action")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -467,6 +477,20 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.AKaction(), "AK12.png")
                 .withName("AKaction").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AN94action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.AN94action(), "AK12.png")
+                .withName("AN94action").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        VSSVintorezAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.VSSVintorezAction(), "AK12.png")
+                .withName("VSSVintorezAction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
