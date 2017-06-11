@@ -175,6 +175,15 @@ public class ScarFactory implements GunFactory {
                 GL11.glScaled(0.06F, 0.06F, 0.06F);
             }
         })
+        .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+            GL11.glTranslatef(-0.2F, -1.45F, -0.7F);
+            GL11.glScaled(0.5F, 0.5F, 0.5F);
+        },(model) -> {
+             if(model instanceof Acog2) {
+                 GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+                 GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
         .withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
             GL11.glTranslatef(-0.386F, -1.79F, -0.6F);
             GL11.glScaled(1.11F, 1.11F, 1.11F);
@@ -286,25 +295,21 @@ public class ScarFactory implements GunFactory {
                 
              .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-                GL11.glTranslatef(-0.150000f, 0.275000f, 0.250000f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.375000f, 1.399999f, -0.725000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-                GL11.glTranslatef(-0.150000f, 0.275000f, 0.6f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.375000f, 1.399999f, -0.5f);
                 GL11.glRotatef(-2F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                GL11.glTranslatef(0.436F, -0.51F, 0F);
-
-                // Zoom
-                GL11.glTranslatef(0.135F, -0.95f, 1.5f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.350000f, 1.349999f, -0.5f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f);
                 
                 // Standard Iron Sight Zoom
@@ -316,19 +321,25 @@ public class ScarFactory implements GunFactory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.005F, 0.11f, 0.55f);
+                    GL11.glTranslatef(-0.005F, 0.115f, 0.85f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(-0F, 0.06f, 0.4f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.003F, 0.18f, 0.1f);
+                    GL11.glTranslatef(-0.003F, 0.19f, 0.3f);
                 } 
 
                 // HP Zoomw
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.18f, -0.2f);
+                    GL11.glTranslatef(0F, 0.19f, -0f);
                 } 
                 
                 // Reflex Zoom
@@ -352,12 +363,11 @@ public class ScarFactory implements GunFactory {
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(1.373F, -1.29f, 2.2f);
+                    GL11.glTranslatef(0F, 0.045f, -0.21f);
                 } 
                 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
                 }
                 
             
@@ -772,12 +782,8 @@ public class ScarFactory implements GunFactory {
             
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                GL11.glTranslatef(0.436F, -0.51F, 0F);
-
-                // Zoom
-                GL11.glTranslatef(0.135F, -0.95f, 1.4f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.350000f, 1.349999f, -0.600000f);
                 
                 // Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
@@ -788,19 +794,25 @@ public class ScarFactory implements GunFactory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.005F, 0.11f, 0.55f);
+                    GL11.glTranslatef(-0.005F, 0.115f, 0.85f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(-0F, 0.06f, 0.4f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.003F, 0.18f, 0.1f);
+                    GL11.glTranslatef(-0.003F, 0.19f, 0.3f);
                 } 
 
                 // HP Zoomw
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.18f, -0.2f);
+                    GL11.glTranslatef(0F, 0.19f, -0f);
                 } 
                 
                 // Reflex Zoom
@@ -824,12 +836,11 @@ public class ScarFactory implements GunFactory {
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(1.373F, -1.29f, 2.2f);
+                    GL11.glTranslatef(0F, 0.045f, -0.21f);
                 } 
                 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
                 }
                 
             
@@ -837,19 +848,19 @@ public class ScarFactory implements GunFactory {
                 
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-                GL11.glRotatef(10.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.275000f, 0.625000f, -0.525000f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glRotatef(5.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.375000f, 1.574999f, -0.725000f);
                 
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
-                 GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-                 GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
-                 GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-                 GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-0.725000f, 0.350000f, 0.000000f);
+                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                 GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                 GL11.glRotatef(-20.000000f, 0f, 1f, 0f);
+                 GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-1.075000f, 0.925000f, 0.150000f);
              })
              
              .withFirstPersonHandPositioning(

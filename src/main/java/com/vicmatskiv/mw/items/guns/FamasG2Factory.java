@@ -52,7 +52,7 @@ public class FamasG2Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 3, 1)
 		//.withMaxShots(5)
-		.withShootSound("Famas2")
+		.withShootSound("Famas")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("StandardReload")
 		.withUnloadSound("Unload")

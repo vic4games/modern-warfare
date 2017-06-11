@@ -50,7 +50,7 @@ public class AK101Factory implements GunFactory {
 		.withShootSound("AK74M")
 		.withSilencedShootSound("AKsilenced")
 		.withReloadSound("AKReload")
-		.withUnloadSound("Unload")
+		.withUnloadSound("akunload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
@@ -138,10 +138,10 @@ public class AK101Factory implements GunFactory {
                  GL11.glScaled(0.8F, 0.8F, 0.8F);
              }
         })
-//      .withCompatibleAttachment(CommonProxy.Silencer556x39, (model) -> {
-//          GL11.glTranslatef(0.107F, -1.25F, -4.9F);
-//          GL11.glScaled(1F, 1F, 1F);
-//      })
+      .withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
+          GL11.glTranslatef(-0.2F, -1.06F, -7.55F);
+          GL11.glScaled(1F, 1F, 1F);
+        })
          .withCompatibleAttachment(AuxiliaryAttachments.AKIron, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.06F, -5.96F);
             GL11.glScaled(0.6F, 0.55F, 0.5F);
@@ -239,37 +239,35 @@ public class AK101Factory implements GunFactory {
             
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(-0.100000f, -0.175000f, 0.825000f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.52f, 1f, -0.35f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
-                GL11.glTranslatef(-0.100000f, -0.175000f, 1.3f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.52f, 1f, 0f);
+                GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-                GL11.glTranslatef(-0.06F, -0.31F, 0F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                // Zoom
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.350000f, 0.8f, -0f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
 
-                GL11.glTranslatef(0.65F, -1.2f, 1.6f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                GL11.glRotatef(-0.7F, 1f, 0f, 0f);
-
-                // Scope Zoom
+                
+                // PSO1 Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(1.355F, -1.19f, 2.3f);
-                }   
-
+                    //System.out.println("Position me for PSO1");
+                    GL11.glTranslatef(-0.01F, 0.15f, -0.2f);
+                } 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-                }   
-
-            })
+                }
+                
+            
+                })
                 
             .withFirstPersonCustomPositioning(Magazines.AK101Mag, (renderContext) -> {
 //              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -313,7 +311,7 @@ public class AK101Factory implements GunFactory {
             .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKpart.getRenderablePart(), (renderContext) -> {
                 })
             
-            .withFirstPersonPositioningReloading(
+           .withFirstPersonPositioningReloading(
                     
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -344,14 +342,14 @@ public class AK101Factory implements GunFactory {
                     GL11.glRotatef(25.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(30.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.275000f, -0.100000f, 0.900000f);
-                }, 60, 100),
+                }, 120, 100),
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                     GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(30.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.275000f, -0.100000f, 0.900000f);
-                }, 60, 150)
+                }, 130, 150)
             )
             
             .withFirstPersonPositioningUnloading(
@@ -385,7 +383,7 @@ public class AK101Factory implements GunFactory {
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
-                    GL11.glTranslatef(0F, 0F, 1F);
+                    GL11.glTranslatef(0F, 0F, 1.5F);
                 }, 250, 1000),
                 new Transition((renderContext) -> {
                 }, 250, 1000)
@@ -480,42 +478,37 @@ public class AK101Factory implements GunFactory {
                     )
            
             .withFirstPersonPositioningZooming((renderContext) -> {
-                GL11.glTranslatef(-0.06F, -0.31F, 0F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-                // Zoom
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.350000f, 0.8f, -0.1f);
 
-                GL11.glTranslatef(0.65F, -1.2f, 1.5f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-                // Scope Zoom
+                
+                // PSO1 Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(1.355F, -1.19f, 2.3f);
-                }   
-
+                    //System.out.println("Position me for PSO1");
+                    GL11.glTranslatef(-0.01F, 0.15f, -0.2f);
+                } 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-                }   
-
-
-            })
+                }
+                
+            
+                })
             
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(10.000000f, 1f, 0f, 0f);
                 GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(0.050000f, 0.000000f, -0.100000f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.350000f, 1.025000f, -0.400000f);
              })
-            
+             
              .withFirstPersonPositioningModifying((renderContext) -> {
-                 GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                  GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-                 GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-0.525000f, -0.100000f, 0.425000f);
+                 GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-1.149999f, 0.450000f, 0.525000f);
              })
              
              .withFirstPersonHandPositioning(
@@ -625,24 +618,24 @@ public class AK101Factory implements GunFactory {
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(3.5f, 3.5f, 4f);
                         GL11.glRotatef(-115.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.025000f, -0.000000f, 0.150000f);
-                    }, 250, 0),
+                        GL11.glTranslatef(0.000000f, -0.075000f, 0.075000f);
+                    }, 260, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(3.5f, 3.5f, 4f);
                         GL11.glRotatef(-115.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.050000f, -0.150000f, 0.125000f);
-                    }, 250, 0),
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.025000f, -0.425000f, 0.150000f);
+                    }, 250, 100),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(3.5f, 3.5f, 4f);
                         GL11.glRotatef(-115.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.050000f, -0.150000f, 0.125000f);
-                    }, 250, 0))
+                        GL11.glTranslatef(0.000000f, -0.075000f, 0.075000f);
+                    }, 280, 0))
              
             .withFirstPersonLeftHandPositioningUnloading(
                     new Transition((renderContext) -> { // Reload position

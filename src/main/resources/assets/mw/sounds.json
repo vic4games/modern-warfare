@@ -62,11 +62,92 @@
       }
     ]
   },
+  "ppbizonreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppbizonreload",
+       "stream": false
+      }
+    ]
+  },
+  "ppbizonunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppbizonunload",
+       "stream": false
+      }
+    ]
+  },
+   "akunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:akunload",
+       "stream": false
+      }
+    ]
+  },
+  "an94": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:an94",
+       "stream": false
+      }
+    ]
+  },
+  "vssvintorezreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:vssvintorezreload",
+       "stream": false
+      }
+    ]
+  },
+  "l96unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:l96unload",
+       "stream": false
+      }
+    ]
+  },
+  "sv98": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:sv98",
+       "stream": false
+      }
+    ]
+  },
   "m14reload": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:m14reload",
+       "stream": false
+      }
+    ]
+  },
+  "m4unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4unload",
+       "stream": false
+      }
+    ]
+  },
+  "m4reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4reload",
        "stream": false
       }
     ]
@@ -305,6 +386,7 @@
       }
     ]
   },
+<<<<<<< HEAD
   "sv98": {
     "category": "master",
     "sounds": [
@@ -314,6 +396,8 @@
       }
     ]
   },
+=======
+>>>>>>> 308966f9bccf85c8de8d20b1b928b118180c1c79
   "mosinnagant": {
     "category": "master",
     "sounds": [
