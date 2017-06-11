@@ -88,7 +88,7 @@ public class Electronics {
                                 "XGX",
                                 "XEX",
                                 'X', Ores.INGOT_STEEL,
-                                'E', CommonProxy.Electronics,
+                                'E', CommonProxy.ElectronicCircuitBoard,
                                 'G', CompatibleBlocks.GLASS_PANE
                                 )
                                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -100,7 +100,7 @@ public class Electronics {
         .withModel(new CameraModel(), "AK12")
         .withCrafting(CraftingComplexity.LOW,
                 CommonProxy.SteelPlate,
-                CommonProxy.Electronics)
+                CommonProxy.ElectronicCircuitBoard)
         .withFirstPersonPositioning((player, itemStack) -> {
             // GL11.glTranslatef(0.5F, -1.5F, -0.7F);
             GL11.glRotatef(55F, 0f, 1f, 0f);

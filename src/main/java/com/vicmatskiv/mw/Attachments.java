@@ -110,7 +110,7 @@ public class Attachments {
                 .withCraftingRecipe("A  ",
                         "ORX",
                         "AXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -169,7 +169,7 @@ public class Attachments {
                 .withCraftingRecipe("FXA",
                         "ORG",
                         "AXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -230,7 +230,7 @@ public class Attachments {
                         "FXA",
                         "ORG",
                         "XAX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -285,7 +285,7 @@ public class Attachments {
                 .withCraftingRecipe("  A",
                         "XRO",
                         "AXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -339,7 +339,7 @@ public class Attachments {
                 .withCraftingRecipe("  A",
                         "XRO",
                         "AXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -392,7 +392,7 @@ public class Attachments {
                 .withCraftingRecipe("X  ",
                         "OGX",
                         "ARX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -546,7 +546,7 @@ public class Attachments {
                 .withCraftingRecipe("A R",
                         "OGO",
                         "XXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -602,7 +602,7 @@ public class Attachments {
                 .withCraftingRecipe("ARR",
                         "OGO",
                         "XXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -670,7 +670,7 @@ public class Attachments {
                         "XXX",
                         "OGO",
                         "  X",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
@@ -725,7 +725,7 @@ public class Attachments {
                 .withCraftingRecipe("ARX",
                         "ORO",
                         "AXX",
-                        'R', CommonProxy.Electronics,
+                        'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass
@@ -1372,7 +1372,7 @@ public class Attachments {
                         'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate,
                         'R', CommonProxy.LaserPointer,
-                        'E', CommonProxy.Electronics
+                        'E', CommonProxy.ElectronicCircuitBoard
                         )
                 .withName("Laser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -1419,7 +1419,7 @@ public class Attachments {
                         'X', Ores.INGOT_STEEL,
                         'A', CommonProxy.MiniSteelPlate,
                         'R', CommonProxy.LaserPointer,
-                        'E', CommonProxy.Electronics
+                        'E', CommonProxy.ElectronicCircuitBoard
                         )
                 .withName("Laser2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
