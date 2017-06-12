@@ -116,15 +116,6 @@
       }
     ]
   },
-  "sv98": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:sv98",
-       "stream": false
-      }
-    ]
-  },
   "m14reload": {
     "category": "master",
     "sounds": [
