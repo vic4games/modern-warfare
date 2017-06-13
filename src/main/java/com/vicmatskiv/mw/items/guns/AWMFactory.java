@@ -379,7 +379,7 @@ public class AWMFactory implements GunFactory {
                     }, 250, 50)     
                     )
                     
-            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.AUGRail.getRenderablePart(),
+            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.AKRail.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
 //                        GL11.glTranslatef(-0.7F, -0.4F, 0F);
 //                        GL11.glRotatef(0F, 0f, 1f, 0f);
@@ -580,14 +580,14 @@ public class AWMFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AUGRail.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKRail.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 500, 1000),
                 new Transition((renderContext) -> {
                 }, 500, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AUGRail.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKRail.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {

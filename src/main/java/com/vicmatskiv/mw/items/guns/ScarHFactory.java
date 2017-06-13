@@ -248,7 +248,7 @@ public class ScarHFactory implements GunFactory {
             GL11.glTranslatef(0F, -1.25F, -4F);
             GL11.glScaled(1F, 1F, 1F);
         })
-        .withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer300AACBlackout, (model) -> {
             GL11.glTranslatef(-0.2F, -1.32F, -7.2F);
             GL11.glScaled(1F, 1F, 1F);
         })
