@@ -18,19 +18,19 @@ import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade.Type;
 
-public class SmokeGrenadeFactory implements GrenadeFactory {
+public class GasGrenadeFactory implements GrenadeFactory {
 
     @Override
     public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
                 .withModId(ModernWarfareMod.MODID)
-                .withName("M18White")
+                .withName("GasGrenade")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M18White")
                 .withExplosionStrength(0.4f)
-                .withType(Type.SMOKE)
+                .withType(Type.GAS)
                 .withExplosionTimeout(1000)
-                .withActiveDuration(20000)
+                .withActiveDuration(3000)
                 //.withExplosionSound("grenadeexplosion")
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
