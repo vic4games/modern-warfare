@@ -16,6 +16,7 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.RenderableState;
+import com.vicmatskiv.weaponlib.grenade.ItemGrenade.Type;
 
 public class SmokeGrenadeFactory implements GrenadeFactory {
 
@@ -27,7 +28,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M18White")
                 .withExplosionStrength(0.4f)
-                .withSmokeOnly()
+                .withType(Type.SMOKE)
                 .withExplosionTimeout(1000)
                 .withActiveDuration(20000)
                 //.withExplosionSound("grenadeexplosion")

@@ -59,11 +59,38 @@ public class Magazines {
     public static ItemMagazine Deagle50Mag;
     public static ItemMagazine VSSVintorezMag;
     public static ItemMagazine ASValMag;
+    public static ItemMagazine PythonClip;
     //    public static ItemMagazine KN44Mag;
     //    public static ItemMagazine KN44Mag45;
     public static ItemMagazine M8A7Mag;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+        
+        Magazines.PythonClip = new ItemMagazine.Builder().withAmmo(6).withCompatibleBullet(Bullets.Bullet357)
+                .withName("PythonClip").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withModel(new com.vicmatskiv.mw.models.revolverclip(), "RevolverClip.png")
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.7F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-1F, -0.7F, 0.8F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, 0.5F, -1.4F);
+                    GL11.glRotatef(-120F, 0f, 1f, 0f);
+                    GL11.glRotatef(-10F, 1f, 0f, 0f);
+                    GL11.glRotatef(-30F, 0f, 0f, 1f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe(
+                "X",
+                'X', Ores.INGOT_STEEL
+
+        )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
         Magazines.Magazine762x39 = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullets.Bullet762x39)
                 .withName("Magazine762x39").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
@@ -1100,7 +1127,7 @@ public class Magazines {
         )
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
-        Magazines.AS50Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullets.BMG50).withName("AS50Mag")
+        Magazines.AS50Mag = new ItemMagazine.Builder().withAmmo(5).withCompatibleBullet(Bullets.BMG50).withName("AS50Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.AS50Mag(), "NATOMag1.png")
 

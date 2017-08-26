@@ -42,10 +42,10 @@ public class VSSVintorezFactory implements GunFactory {
         .withName("VSSVintorez")
         //.withAmmo(CommonProxy.AK47Mag)
 //      .withAmmoCapacity(30)
-        .withFireRate(0.8f)
+        .withFireRate(0.4f)
         .withRecoil(2.5f)
         .withZoom(0.9f)
-        .withMaxShots(1)
+        .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("VSSVintorez")
         .withReloadSound("vssvintorezreload")
@@ -64,7 +64,7 @@ public class VSSVintorezFactory implements GunFactory {
                 CommonProxy.MetalComponents,
                 Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.SnipersTab)
-        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Sniper Rifle","Damage: 12", 
+        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Sniper Rifle","Damage: 7.5", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine", "20rnd 9x39mm Magazine",
         "Fire Rate: Semi"))
         .withCompatibleAttachment(GunSkins.Fade, 
@@ -632,7 +632,7 @@ public class VSSVintorezFactory implements GunFactory {
                     }, 250, 50))
              
             .build())
-        .withSpawnEntityDamage(12f)
+        .withSpawnEntityDamage(7.5f)
         .withSpawnEntityGravityVelocity(0.0118f)
        
         .build(ModernWarfareMod.MOD_CONTEXT);

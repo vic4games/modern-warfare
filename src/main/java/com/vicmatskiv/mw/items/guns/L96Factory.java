@@ -38,7 +38,7 @@ public class L96Factory implements GunFactory {
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("L96")
+		.withName("L96A1")
 //		.withAmmo(CommonProxy.XWPMag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.16f)
@@ -238,10 +238,10 @@ public class L96Factory implements GunFactory {
                 })
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
+			    GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.450000f, 0.875000f, 0.200000f);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.450000f, 0.875000f, 0.3f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

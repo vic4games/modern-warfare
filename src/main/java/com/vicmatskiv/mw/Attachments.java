@@ -182,7 +182,7 @@ public class Attachments {
         Specter = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(2.7f, 2.8f, 2.7f);
-                    GL11.glTranslatef(-0.06f, 0.275f, 0.56f);
+                    GL11.glTranslatef(-0.06f, 0.28f, 0.56f);
                 })
 
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.SpecterSight(), "SpecterSight.png")
@@ -678,7 +678,10 @@ public class Attachments {
                         )
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
-        HP = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.02f)
+        HP = new ItemScope.Builder()
+                .withNightVision()
+                .withOpticalZoom()
+                .withZoomRange(0.22f, 0.02f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.65f, 1.65f, 1.65f);
                     GL11.glTranslatef(0.0285f, 0.492f, 0.7f);

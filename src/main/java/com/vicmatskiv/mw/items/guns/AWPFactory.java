@@ -42,33 +42,33 @@ public class AWPFactory implements GunFactory {
 //		.withAmmo(CommonProxy.XWPMag)
 //		.withAmmoCapacity(10)
 		.withFireRate(0.16f)
-        .withEjectRoundRequired()
-        .withEjectSpentRoundSound("L96BoltAction")
-        .withRecoil(4f)
-        .withZoom(0.8f)
-        .withMaxShots(1)
-        .withShootSound("L96")
-        .withPumpTimeout(1000)
-        .withSilencedShootSound("RifleSilencer")
-        .withReloadSound("BoltActionReload")
-        .withUnloadSound("l96unload")
-        .withReloadingTime(40)
-        .withCrosshair("gun")
-        .withCrosshairRunning("Running")
-        .withCrosshairZoomed("Sight")
-        .withFlashIntensity(1f)
-        .withFlashScale(() -> 0.8f)
-        .withFlashOffsetX(() -> 0.07f)
-        .withFlashOffsetY(() -> 0.06f)
-        .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.SnipersTab)
-        .withCrafting(CraftingComplexity.HIGH, 
+		.withEjectRoundRequired()
+		.withEjectSpentRoundSound("L96BoltAction")
+		.withRecoil(4f)
+		.withZoom(0.8f)
+		.withMaxShots(1)
+		.withShootSound("L96")
+		.withPumpTimeout(1000)
+		.withSilencedShootSound("RifleSilencer")
+		.withReloadSound("BoltActionReload")
+		.withUnloadSound("l96unload")
+		.withReloadingTime(40)
+		.withCrosshair("gun")
+		.withCrosshairRunning("Running")
+		.withCrosshairZoomed("Sight")
+		.withFlashIntensity(1f)
+		.withFlashScale(() -> 0.8f)
+		.withFlashOffsetX(() -> 0.07f)
+		.withFlashOffsetY(() -> 0.06f)
+		.withShellCasingEjectEnabled(false)
+		.withCreativeTab(ModernWarfareMod.SnipersTab)
+		.withCrafting(CraftingComplexity.HIGH, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.BigSteelPlate)
-        .withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 27", 
-        "Caliber: 7.62x51mm", "Magazines:", "8rnd 7.62x51mm Magazine", "Fire Rate: Bolt Action"))
-        .withCompatibleAttachment(GunSkins.ElectricSkin, 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 27", 
+		"Caliber: 7.62x51mm", "Magazines:", "8rnd 7.62x51mm Magazine", "Fire Rate: Bolt Action"))
+		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
@@ -96,92 +96,92 @@ public class AWPFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(Magazines.L115Mag, (model) -> {
-            GL11.glScaled(1.6F, 1.6F, 1.6F);
-            GL11.glTranslatef(-0.27F, 0.6F, -0.97F);
-        })
-        .withCompatibleAttachment(AuxiliaryAttachments.L115Bolt1, true, (model) -> {
-        })
-        .withCompatibleAttachment(AuxiliaryAttachments.L115Bolt2, true, (model) -> {
-            GL11.glTranslatef(-0.35F, 0.35F, -1.56F);
-            GL11.glScaled(1.2F, 1.2F, 1.2F);
-        })
-        .withCompatibleAttachment(AuxiliaryAttachments.AKRail, true, (model) -> {
+		.withCompatibleAttachment(Magazines.L115Mag, (model) -> {
+		    GL11.glScaled(1.6F, 1.6F, 1.6F);
+		    GL11.glTranslatef(-0.27F, 0.6F, -0.97F);
+		})
+		.withCompatibleAttachment(AuxiliaryAttachments.L115Bolt1, true, (model) -> {
+		})
+		.withCompatibleAttachment(AuxiliaryAttachments.L115Bolt2, true, (model) -> {
+		    GL11.glTranslatef(-0.35F, 0.35F, -1.56F);
+		    GL11.glScaled(1.2F, 1.2F, 1.2F);
+		})
+		.withCompatibleAttachment(AuxiliaryAttachments.AKRail, true, (model) -> {
             GL11.glTranslatef(-0.22F, -1.36F, -3.15F);
             GL11.glScaled(0.7F, 0.8F, 0.9F);
         })
-        .withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
-            if(model instanceof M4Iron1) {
-                GL11.glTranslatef(-0.165F, -1.5F, -1.15F);
-                GL11.glScaled(0.35F, 0.35F, 0.35F);
-            } else if(model instanceof M4Iron2) {
-                GL11.glTranslatef(0.262F, -0.8F, -2.25F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof P90iron) {
-                GL11.glTranslatef(0.26F, -1.55F, -2.35F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof AKMiron1) {
-                GL11.glTranslatef(0.125F, -1.8F, -0.5F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof AKMiron2) {
-                GL11.glTranslatef(0.13F, -1.55F, -3.05F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof AK47iron) {
-                GL11.glTranslatef(-0.22F, -1.75F, -3.07F);
-                GL11.glScaled(0.6F, 0.7F, 0.1F);
-            } else if(model instanceof G36CIron1) {
-                GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof G36CIron2) {
-                GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof ScarIron1) {
-                GL11.glTranslatef(0.165F, -1.65F, 1F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof ScarIron2) {
-                GL11.glTranslatef(0.25F, -1.55F, -2F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof FALIron) {
-                GL11.glTranslatef(-0.17F, -1.545F, -3.1F);
-                GL11.glScaled(0.4F, 0.4F, 0.4F);
-            } else if(model instanceof M14Iron) {
-                GL11.glTranslatef(0.129F, -1.63F, -2.08F);
-                GL11.glScaled(0F, 0F, 0F);
-            } else if(model instanceof MP5Iron) {
-                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
-                GL11.glScaled(0F, 0F, 0F);
-            }
-        })
-        .withCompatibleAttachment(Attachments.HP, (player, stack) -> {
-            
-            GL11.glTranslatef(-0.36F, -1.43F, -1.5F);
+		.withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
+	    	if(model instanceof M4Iron1) {
+	    		GL11.glTranslatef(-0.165F, -1.5F, -1.15F);
+				GL11.glScaled(0.35F, 0.35F, 0.35F);
+			} else if(model instanceof M4Iron2) {
+				GL11.glTranslatef(0.262F, -0.8F, -2.25F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof P90iron) {
+				GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AKMiron1) {
+				GL11.glTranslatef(0.125F, -1.8F, -0.5F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AKMiron2) {
+				GL11.glTranslatef(0.13F, -1.55F, -3.05F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof AK47iron) {
+				GL11.glTranslatef(-0.22F, -1.75F, -3.07F);
+				GL11.glScaled(0.6F, 0.7F, 0.1F);
+			} else if(model instanceof G36CIron1) {
+				GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof G36CIron2) {
+				GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof ScarIron1) {
+				GL11.glTranslatef(0.165F, -1.65F, 1F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof ScarIron2) {
+				GL11.glTranslatef(0.25F, -1.55F, -2F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof FALIron) {
+				GL11.glTranslatef(-0.17F, -1.545F, -3.1F);
+				GL11.glScaled(0.4F, 0.4F, 0.4F);
+			} else if(model instanceof M14Iron) {
+				GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+				GL11.glScaled(0F, 0F, 0F);
+			} else if(model instanceof MP5Iron) {
+				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+				GL11.glScaled(0F, 0F, 0F);
+			}
+		})
+		.withCompatibleAttachment(Attachments.HP, (player, stack) -> {
+	    	
+			GL11.glTranslatef(-0.36F, -1.43F, -1.5F);
+			GL11.glScaled(1F, 1F, 1F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
+				GL11.glScaled(0.1F, 0.1F, 0.1F);
+			}
+		})
+		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
+	    	
+		    GL11.glTranslatef(-0.36F, -1.43F, -1F);
             GL11.glScaled(1F, 1F, 1F);
-        },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-                GL11.glScaled(0.1F, 0.1F, 0.1F);
-            }
-        })
-        .withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
-            
-            GL11.glTranslatef(-0.36F, -1.43F, -1F);
-            GL11.glScaled(1F, 1F, 1F);
-        },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.272F, 0.67F);
-                GL11.glScaled(0.05F, 0.05F, 0.05F);
-            }
-        })
-        .withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
-            GL11.glTranslatef(-0.335F, -1.45F, -1.3F);
+		},(model) -> {
+			 if(model instanceof LPscope) {
+				GL11.glTranslatef(0.237F, -0.272F, 0.67F);
+				GL11.glScaled(0.05F, 0.05F, 0.05F);
+			}
+		})
+		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
+		    GL11.glTranslatef(-0.335F, -1.45F, -1.3F);
             GL11.glScaled(0.9F, 0.9F, 0.9F);
-        },(model) -> {
-             if(model instanceof Acog2) {
-                GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-                GL11.glScaled(0.06F, 0.06F, 0.06F);
-            }
-        })
-        .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+		},(model) -> {
+			 if(model instanceof Acog2) {
+				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
+				GL11.glScaled(0.06F, 0.06F, 0.06F);
+			}
+		})
+		.withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
             GL11.glTranslatef(-0.19F, -1.15F, -1.5F);
             GL11.glScaled(0.45F, 0.45F, 0.45F);
         },(model) -> {
@@ -190,22 +190,22 @@ public class AWPFactory implements GunFactory {
                  GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
-        .withCompatibleAttachment(Attachments.Bipod, (model) -> {
-            GL11.glTranslatef(-0.2F, -0.3F, -5.85F);
-            GL11.glScaled(1F, 1F, 1F);
-        })
-//      .withCompatibleAttachment(Attachments.Silencer50BMG, (model) -> {
-//          GL11.glTranslatef(0.107F, -1.45F, -6.95F);
-//          GL11.glScaled(1.1F, 1.1F, 1.3F);
-//      })
-        .withTextureNames("awp")
-        .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
-            .withModel(new L96())
-            //.withTextureName("AWP")
-            //.withWeaponProximity(0.99F)
-            //.withYOffsetZoom(5F)
-            .withEntityPositioning(itemStack -> {
+		.withCompatibleAttachment(Attachments.Bipod, (model) -> {
+			GL11.glTranslatef(-0.2F, -0.3F, -5.85F);
+			GL11.glScaled(1F, 1F, 1F);
+		})
+//		.withCompatibleAttachment(Attachments.Silencer50BMG, (model) -> {
+//			GL11.glTranslatef(0.107F, -1.45F, -6.95F);
+//			GL11.glScaled(1.1F, 1.1F, 1.3F);
+//		})
+		.withTextureNames("AWP")
+		.withRenderer(new WeaponRenderer.Builder()
+			.withModId(ModernWarfareMod.MODID)
+			.withModel(new L96())
+			//.withTextureName("AWP")
+			//.withWeaponProximity(0.99F)
+			//.withYOffsetZoom(5F)
+			.withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);
                 GL11.glRotatef(-90F, 0f, 0f, 4f);
             })
@@ -220,28 +220,28 @@ public class AWPFactory implements GunFactory {
                 GL11.glRotatef(-45F, 0f, 1f, 0f);
                 GL11.glRotatef(70F, 1f, 0f, 0f);
                 })
-                
-            .withFirstPersonPositioning((renderContext) -> {
+				
+			.withFirstPersonPositioning((renderContext) -> {
+				GL11.glRotatef(45F, 0f, 1f, 0f);
+				GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+				GL11.glTranslatef(-0.450000f, 0.875000f, -0.100000f);
+				})
+				
+			.withFirstPersonCustomPositioning(Magazines.L115Mag, (renderContext) -> {
+//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//				GL11.glRotatef(45F, 0f, 1f, 0f);
+//				GL11.glScaled(0.55F, 0.55F, 0.55F);
+//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+				})
+			
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.AKRail.getRenderablePart(), (renderContext) -> {
+                })
+				
+			.withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.450000f, 0.875000f, -0.100000f);
-                })
-                
-            .withFirstPersonCustomPositioning(Magazines.L115Mag, (renderContext) -> {
-//              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-//              GL11.glRotatef(45F, 0f, 1f, 0f);
-//              GL11.glScaled(0.55F, 0.55F, 0.55F);
-//              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-                })
-            
-            .withFirstPersonCustomPositioning(AuxiliaryAttachments.AKRail.getRenderablePart(), (renderContext) -> {
-                })
-                
-            .withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.450000f, 0.875000f, 0.200000f);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.450000f, 0.875000f, 0.3f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -1014,12 +1014,12 @@ new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(-35.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.44f, -0.5f, 0.08f);
                     }, 250, 50))
-                    
-            .build())
-        .withSpawnEntityDamage(27f)
-        .withSpawnEntityGravityVelocity(0f)
-        
-         
-        .build(ModernWarfareMod.MOD_CONTEXT);
-    }
+					
+			.build())
+		.withSpawnEntityDamage(27f)
+		.withSpawnEntityGravityVelocity(0f)
+		
+		 
+		.build(ModernWarfareMod.MOD_CONTEXT);
+	}
 }

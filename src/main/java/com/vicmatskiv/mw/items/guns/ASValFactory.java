@@ -58,14 +58,14 @@ public class ASValFactory implements GunFactory {
         .withFlashScale(() -> 0f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)
-        .withInaccuracy(2f)
+        .withInaccuracy(1f)
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 Ores.INGOT_STEEL)
-        .withCreativeTab(ModernWarfareMod.SnipersTab)
-        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 10", 
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withInformationProvider(stack -> Arrays.asList("Type: Suppressed Assault Rifle","Damage: 7.5", 
         "Caliber: 9x39mm", "Magazines:", "10rnd 9x39mm Magazine", "20rnd 9x39mm Magazine",
         "Fire Rate: Auto"))
         .withCompatibleAttachment(GunSkins.Fade, 
@@ -633,7 +633,7 @@ public class ASValFactory implements GunFactory {
                     }, 250, 50))
              
             .build())
-        .withSpawnEntityDamage(10f)
+        .withSpawnEntityDamage(7.5f)
         .withSpawnEntityGravityVelocity(0.0118f)
        
         .build(ModernWarfareMod.MOD_CONTEXT);

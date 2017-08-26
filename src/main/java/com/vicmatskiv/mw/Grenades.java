@@ -1,6 +1,7 @@
 package com.vicmatskiv.mw;
 
 import com.vicmatskiv.mw.items.grenade.FuseGrenadeFactory;
+import com.vicmatskiv.mw.items.grenade.GasGrenadeFactory;
 import com.vicmatskiv.mw.items.grenade.ImpactGrenadeFactory;
 import com.vicmatskiv.mw.items.grenade.SmokeGrenadeFactory;
 import com.vicmatskiv.weaponlib.AttachmentBuilder;
@@ -15,6 +16,7 @@ public class Grenades {
     public static ItemGrenade FuseGrenade;
     public static ItemGrenade ImpactGrenade;
     public static ItemGrenade SmokeGrenade;
+    public static ItemGrenade GasGrenade;
     
     public static ItemAttachment<ItemGrenade> GrenadeSafetyPin;
 
@@ -32,6 +34,8 @@ public class Grenades {
         ImpactGrenade = new ImpactGrenadeFactory().createGrenade(commonProxy);
 
         SmokeGrenade = new SmokeGrenadeFactory().createGrenade(commonProxy);
+        
+        GasGrenade = new GasGrenadeFactory().createGrenade(commonProxy);
     }
 
 }

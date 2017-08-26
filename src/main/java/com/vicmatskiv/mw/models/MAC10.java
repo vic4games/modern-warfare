@@ -67,7 +67,6 @@ public class MAC10 extends ModelWithAttachments
     ModelRenderer gun47;
     ModelRenderer gun48;
     ModelRenderer gun49;
-    ModelRenderer gun50;
     ModelRenderer gun51;
     ModelRenderer gun52;
     ModelRenderer gun53;
@@ -383,12 +382,6 @@ public class MAC10 extends ModelWithAttachments
       gun49.setTextureSize(64, 32);
       gun49.mirror = true;
       setRotation(gun49, 0F, 0F, 0F);
-      gun50 = new ModelRenderer(this, 0, 0);
-      gun50.addBox(0F, 0F, 0F, 1, 2, 1);
-      gun50.setRotationPoint(-2F, -14.6F, -17F);
-      gun50.setTextureSize(64, 32);
-      gun50.mirror = true;
-      setRotation(gun50, 0F, 0F, 0F);
       gun51 = new ModelRenderer(this, 0, 0);
       gun51.addBox(0F, 0F, 0F, 4, 3, 1);
       gun51.setRotationPoint(-3.5F, -8.5F, 15.5F);
@@ -569,7 +562,6 @@ public class MAC10 extends ModelWithAttachments
     gun47.render(f5);
     gun48.render(f5);
     gun49.render(f5);
-    gun50.render(f5);
     gun51.render(f5);
     gun52.render(f5);
     gun53.render(f5);
