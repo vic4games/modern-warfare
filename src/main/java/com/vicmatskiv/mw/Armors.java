@@ -78,8 +78,10 @@ public class Armors {
 
         Builder tacticalArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Tactical)
                 .withUnlocalizedName("Tactical").withTextureName("Tactical")
-                .withModelClass("com.vicmatskiv.mw.models.Tactical").withHudTextureName("Tactical")
+                .withModelClass("com.vicmatskiv.mw.models.Tactical").withHudTextureName("Marine")
+                .withNightVision(true)
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
+        
 
         Armors.Tacticalhelmet = tacticalArmorBuilder.buildHelmet(modContext);
         Armors.Tacticalchest = tacticalArmorBuilder.buildChest(modContext.isClient());
