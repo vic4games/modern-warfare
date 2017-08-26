@@ -16,7 +16,7 @@ import net.minecraft.entity.Entity;
 
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
 
-public class SPAS12 extends ModelWithAttachments
+public class Spas12 extends ModelWithAttachments
 {
   //fields
     ModelRenderer gun1;
@@ -288,7 +288,7 @@ public class SPAS12 extends ModelWithAttachments
     ModelRenderer gun663;
     ModelRenderer gun664;
   
-  public SPAS12()
+  public Spas12()
   {
     textureWidth = 512;
     textureHeight = 256;

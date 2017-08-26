@@ -65,7 +65,7 @@ public class Entities {
             .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
             .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
             .withAiTask(6, e -> new EntityAILookIdle(e))
-            .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false, new Class[0]))
+            .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
             .withAiTargetTask(2, e -> compatibility.createAINearestAttackableTarget(e, EntityPlayer.class, true))
             .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIronGolem.class, true))
             .register(ModernWarfareMod.MOD_CONTEXT);

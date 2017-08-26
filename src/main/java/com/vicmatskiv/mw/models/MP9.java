@@ -34,7 +34,6 @@ public class MP9 extends ModelWithAttachments
     ModelRenderer gun18;
     ModelRenderer gun22;
     ModelRenderer gun23;
-    ModelRenderer gun50;
     ModelRenderer gun72;
     ModelRenderer gun73;
     ModelRenderer gun74;
@@ -243,12 +242,6 @@ public class MP9 extends ModelWithAttachments
       gun23.setTextureSize(64, 32);
       gun23.mirror = true;
       setRotation(gun23, 0F, 0F, 0F);
-      gun50 = new ModelRenderer(this, 0, 0);
-      gun50.addBox(0F, 0F, 0F, 1, 2, 1);
-      gun50.setRotationPoint(-2F, -14.6F, -23F);
-      gun50.setTextureSize(64, 32);
-      gun50.mirror = true;
-      setRotation(gun50, 0F, 0F, 0F);
       gun72 = new ModelRenderer(this, 0, 0);
       gun72.addBox(0F, 0F, 0F, 3, 6, 2);
       gun72.setRotationPoint(-3F, -1.5F, -5.5F);
@@ -942,7 +935,6 @@ public class MP9 extends ModelWithAttachments
     gun18.render(f5);
     gun22.render(f5);
     gun23.render(f5);
-    gun50.render(f5);
     gun72.render(f5);
     gun73.render(f5);
     gun74.render(f5);
