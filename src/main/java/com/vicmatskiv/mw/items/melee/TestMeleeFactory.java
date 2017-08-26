@@ -41,7 +41,7 @@ public class TestMeleeFactory implements MeleeFactory {
                                 " X ",
                                 " F ",
                                 'X', CommonProxy.SteelPlate,
-                                'F', CompatibleItems.FLINT_AND_STEEL)
+                                'F', CompatibleItems.STICK)
                 .withRenderer(
                         new MeleeRenderer.Builder()
                                 .withModId(ModernWarfareMod.MODID)

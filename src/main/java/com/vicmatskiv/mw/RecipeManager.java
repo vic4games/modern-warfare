@@ -123,7 +123,7 @@ public class RecipeManager {
                 'X', Ores.INGOT_STEEL
                 );
 
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.SteelPlate, 2),
+        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.SteelPlate, 1),
                 "XXX",
                 "XXX",
                 'X', Ores.INGOT_STEEL
@@ -140,12 +140,6 @@ public class RecipeManager {
                 "AX",
                 'X', CommonProxy.SteelPlate,
                 'A', Ores.INGOT_STEEL
-                );
-
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Guns.M9SD),
-                "AX",
-                'X', Guns.M9,
-                'A', Attachments.Silencer9mm
                 );
 
         modContext.getRecipeManager().registerShapedRecipe(new ItemStack(CommonProxy.LaserPointer),
@@ -221,7 +215,7 @@ public class RecipeManager {
                 'E', CommonProxy.ElectronicCircuitBoard
                 );
 
-        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Ores.SteelDust, 4),
+        modContext.getRecipeManager().registerShapedRecipe(new ItemStack(Ores.SteelDust, 1),
                 " X ",
                 "XAX",
                 " X ",

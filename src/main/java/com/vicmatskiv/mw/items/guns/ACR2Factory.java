@@ -65,7 +65,7 @@ public class ACR2Factory implements GunFactory {
 		.withShootSound("acr")
 		.withSilencedShootSound("AR15Silenced")
 		.withReloadSound("NoBoltReload")
-		.withUnloadSound("Unload")
+		.withUnloadSound("m4unload")
 		.withReloadingTime(30)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
@@ -194,6 +194,16 @@ public class ACR2Factory implements GunFactory {
              if(model instanceof Acog2) {
                 GL11.glTranslatef(0.237F, -0.26F, 0.46F);
                 GL11.glScaled(0.06F, 0.06F, 0.06F);
+            }
+        })
+        
+        .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+            GL11.glTranslatef(-0.182F, -1.32F, -0.6F);
+            GL11.glScaled(0.4F, 0.4F, 0.4F);
+        },(model) -> {
+             if(model instanceof Acog2) {
+                GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
 
@@ -352,6 +362,12 @@ public class ACR2Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.08f, 0.5f);
+                }
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.01f, 0.25f);
                 }
 
                 // Scope Zoom
@@ -745,6 +761,12 @@ public class ACR2Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.08f, 0.6f);
+                }
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.01f, 0.4f);
                 }
 
                 // Scope Zoom

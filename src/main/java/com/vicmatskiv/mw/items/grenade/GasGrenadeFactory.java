@@ -9,6 +9,7 @@ import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M18;
+import com.vicmatskiv.mw.models.gasgrenade;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -26,7 +27,7 @@ public class GasGrenadeFactory implements GrenadeFactory {
                 .withModId(ModernWarfareMod.MODID)
                 .withName("GasGrenade")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
-                .withTextureNames("M18White")
+                .withTextureNames("gasgrenade")
                 .withExplosionStrength(0.4f)
                 .withType(Type.GAS)
                 .withExplosionTimeout(1000)
@@ -46,14 +47,14 @@ public class GasGrenadeFactory implements GrenadeFactory {
                                 "XFX",
                                 "EF ",
                                 'X', CommonProxy.SteelPlate,
-                                'E', compatibility.createItemStack(CompatibleItems.DYE, 15, 15),
                                 'F', CompatibleItems.COAL,
+                                'E', CompatibleItems.GUNPOWDER,
                                 'G', Ores.INGOT_STEEL
                                 )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)
-                        .withModel(new M18())
+                        .withModel(new gasgrenade())
                         .withAnimationDuration(500)
 
                         .withThrownEntityPositioning(() -> {

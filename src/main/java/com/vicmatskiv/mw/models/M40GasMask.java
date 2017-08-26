@@ -137,7 +137,7 @@ public class M40GasMask extends WrappableModel {
         GasMask1.setTextureSize(64, 32);
         GasMask1.mirror = true;
         setRotation(GasMask1, 0F, 0F, 0F);
-        GasMask5 = new ModelRenderer(this, 0, 0);
+        GasMask5 = new ModelRenderer(this, 100, 0);
         GasMask5.addBox(0F, 0F, 0F, 1, 3, 2);
         GasMask5.setRotationPoint(0.5F, -13F, -10F);
         GasMask5.setTextureSize(64, 32);
@@ -173,7 +173,7 @@ public class M40GasMask extends WrappableModel {
         GasMask10.setTextureSize(64, 32);
         GasMask10.mirror = true;
         setRotation(GasMask10, 0F, 0F, 0F);
-        GasMask11 = new ModelRenderer(this, 0, 0);
+        GasMask11 = new ModelRenderer(this, 100, 0);
         GasMask11.addBox(0F, 0F, 0F, 1, 2, 3);
         GasMask11.setRotationPoint(0.2F, -10F, -10F);
         GasMask11.setTextureSize(64, 32);
@@ -353,7 +353,7 @@ public class M40GasMask extends WrappableModel {
         GasMask54.setTextureSize(64, 32);
         GasMask54.mirror = true;
         setRotation(GasMask54, 0F, 0F, 2.094395F);
-        GasMask56 = new ModelRenderer(this, 0, 0);
+        GasMask56 = new ModelRenderer(this, 100, 0);
         GasMask56.addBox(0F, 0F, 0F, 1, 4, 3);
         GasMask56.setRotationPoint(0.95F, -8.2F, -10F);
         GasMask56.setTextureSize(64, 32);
@@ -371,7 +371,7 @@ public class M40GasMask extends WrappableModel {
         GasMask58.setTextureSize(64, 32);
         GasMask58.mirror = true;
         setRotation(GasMask58, 0F, 0F, 1.375609F);
-        GasMask59 = new ModelRenderer(this, 0, 0);
+        GasMask59 = new ModelRenderer(this, 100, 0);
         GasMask59.addBox(0F, 0F, 0F, 1, 1, 2);
         GasMask59.setRotationPoint(0.5F, -13F, -10F);
         GasMask59.setTextureSize(64, 32);
@@ -389,7 +389,7 @@ public class M40GasMask extends WrappableModel {
         GasMask61.setTextureSize(64, 32);
         GasMask61.mirror = true;
         setRotation(GasMask61, 0F, 0F, -2.67686F);
-        GasMask62 = new ModelRenderer(this, 0, 0);
+        GasMask62 = new ModelRenderer(this, 100, 0);
         GasMask62.addBox(0F, 0F, 0F, 1, 1, 2);
         GasMask62.setRotationPoint(0.7F, -13.2F, -10F);
         GasMask62.setTextureSize(64, 32);

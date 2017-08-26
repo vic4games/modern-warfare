@@ -49,7 +49,7 @@ public class DragonuvFactory implements GunFactory {
 		.withShootSound("Dragonuv")
 		.withSilencedShootSound("RifleSilencer")
 		.withReloadSound("AKReload")
-		.withUnloadSound("Unload")
+		.withUnloadSound("akunload")
 		.withReloadingTime(45)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
@@ -64,8 +64,8 @@ public class DragonuvFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 15", 
-		"Caliber: 7.62x54mm", "Magazines:", "10rnd 7.62x54mm Magazine",
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 18", 
+		"Caliber: 7.62x54mm", "Magazines:", "11rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
 				(a, i) -> {
@@ -281,7 +281,7 @@ public class DragonuvFactory implements GunFactory {
 				    GL11.glRotatef(60.000000f, 0f, 1f, 0f);
 				    GL11.glRotatef(70.000000f, 0f, 0f, 1f);
 				    GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
-				}, 350, 500),
+				}, 300, 60),
 				
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -289,7 +289,7 @@ public class DragonuvFactory implements GunFactory {
                     GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
-				}, 300, 150),
+				}, 300, 200),
 				
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -297,7 +297,7 @@ public class DragonuvFactory implements GunFactory {
                     GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
-				}, 200, 100),
+				}, 400, 100),
 				
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -305,7 +305,7 @@ public class DragonuvFactory implements GunFactory {
                     GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
-                }, 70, 80),
+				}, 120, 100),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
@@ -313,7 +313,7 @@ public class DragonuvFactory implements GunFactory {
                     GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
-                }, 300, 100)
+                }, 130, 150)
 			)
 			
 			.withFirstPersonPositioningUnloading(
@@ -678,7 +678,7 @@ public class DragonuvFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(15f)
+		.withSpawnEntityDamage(18f)
 				
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);

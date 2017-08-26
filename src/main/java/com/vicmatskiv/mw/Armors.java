@@ -60,7 +60,6 @@ public class Armors {
         Builder swatArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withUnlocalizedName("Swat").withTextureName("Swat").withModelClass("com.vicmatskiv.mw.models.Swat")
                 .withHudTextureName("Marine")
-                .withNightVision(true)
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
         Armors.Swathelmet = swatArmorBuilder.buildHelmet(modContext);
