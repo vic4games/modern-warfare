@@ -189,6 +189,15 @@ public class G36CFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+            GL11.glTranslatef(-0.21F, -1.64F, -1.4F);
+            GL11.glScaled(0.55F, 0.55F, 0.55F);
+        },(model) -> {
+             if(model instanceof Acog2) {
+                 GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+                 GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 		    GL11.glTranslatef(-0.325F, -2F, -1F);
             GL11.glScaled(0.85F, 0.85F, 0.85F);
@@ -299,31 +308,27 @@ public class G36CFactory implements GunFactory {
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-			    GL11.glTranslatef(0.14F, -0.2F, -0.2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-                // Zoom
-                GL11.glTranslatef(0.135F, -1.08f, 1.7f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
+			    GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.350000f, 1.374999f, 0.1f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f);
                 
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.005F, 0.265f, 0.685f);
+                    GL11.glTranslatef(-0.002F, 0.275f, 0.6f);
+                } 
+                
+                // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.009F, 0.283f, 0.4f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.28f, 0.5f);
-                } 
-                
-                // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.148f, 5f);
+                    GL11.glTranslatef(-0F, 0.29f, 0.5f);
                 } 
                 
                 // Reflex Zoom
@@ -346,16 +351,16 @@ public class G36CFactory implements GunFactory {
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(1.373F, -1.105f, 2.5f);
+                    GL11.glTranslatef(0F, 0.24f, 0.1f);
                 } 
                 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
                 }
                 
             
                 })
+                
              .withFirstPersonCustomPositioning(AuxiliaryAttachments.G36Action.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0F);
@@ -601,30 +606,26 @@ public class G36CFactory implements GunFactory {
 					)
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
-				GL11.glTranslatef(0.14F, -0.2F, -0.2F);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-				// Zoom
-				GL11.glTranslatef(0.135F, -1.08f, 1.6f);
-				GL11.glScaled(0.55F, 0.55F, 0.55F);
+				GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+				GL11.glTranslatef(0.350000f, 1.374999f, 0.025000f);
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(-0.005F, 0.265f, 0.8f);
+					GL11.glTranslatef(-0.002F, 0.275f, 0.6f);
 				} 
+				
+				// ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.009F, 0.283f, 0.4f);
+                } 
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
 					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.28f, 0.65f);
-				} 
-				
-				// Scope Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
+				    GL11.glTranslatef(-0F, 0.29f, 0.5f);
 				} 
 				
 				// Reflex Zoom
@@ -647,16 +648,16 @@ public class G36CFactory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(1.373F, -1.105f, 2.5f);
+				    GL11.glTranslatef(0F, 0.24f, 0.1f);
 				} 
 				
 				// Everything else
 				else {
-					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
 				}
 				
 			
 				})
+				
 			.withFirstPersonPositioningRunning((renderContext) -> {
 				GL11.glScaled(1.5F, 1.5F, 1.5F);
 				GL11.glRotatef(10.000000f, 1f, 0f, 0f);

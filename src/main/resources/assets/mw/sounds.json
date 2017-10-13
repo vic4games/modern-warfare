@@ -1,4 +1,23 @@
 {
+  "hurt": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:hurt",
+       "stream": false
+      }
+    ]
+  },
+
+  "remington870": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:remington870",
+       "stream": false
+      }
+    ]
+  },
   "grenadeexplosion": {
     "category": "master",
     "sounds": [
@@ -22,6 +41,78 @@
     "sounds": [
       {
        "name": "mw:safetypinoff",
+       "stream": false
+      }
+    ]
+  },
+  "loadshell": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:loadshell",
+       "stream": false
+      }
+    ]
+  },
+  "pump": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:pump",
+       "stream": false
+      }
+    ]
+  },
+  "mp5reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp5reload",
+       "stream": false
+      }
+    ]
+  },
+  "mp5unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp5unload",
+       "stream": false
+      }
+    ]
+  },
+  "mosinreloadstage1": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mosinreloadstage1",
+       "stream": false
+      }
+    ]
+  },
+  "mosinreloadstage3": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mosinreloadstage3",
+       "stream": false
+      }
+    ]
+  },
+  "loadbullet": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:loadbullet",
+       "stream": false
+      }
+    ]
+  },
+  "drawweapon": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:drawweapon",
        "stream": false
       }
     ]
@@ -62,11 +153,128 @@
       }
     ]
   },
+  "pistolunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:pistolunload",
+       "stream": false
+      }
+    ]
+  },
+  "ppbizonreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppbizonreload",
+       "stream": false
+      }
+    ]
+  },
+  "mp40reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp40reload",
+       "stream": false
+      }
+    ]
+  },
+  "ppbizonunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppbizonunload",
+       "stream": false
+      }
+    ]
+  },
+  "m107reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m107reload",
+       "stream": false
+      }
+    ]
+  },
+  "mp7reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp7reload",
+       "stream": false
+      }
+    ]
+  },
+  "mp7unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp7unload",
+       "stream": false
+      }
+    ]
+  },
+   "akunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:akunload",
+       "stream": false
+      }
+    ]
+  },
+  "an94": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:an94",
+       "stream": false
+      }
+    ]
+  },
+  "vssvintorezreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:vssvintorezreload",
+       "stream": false
+      }
+    ]
+  },
+  "l96unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:l96unload",
+       "stream": false
+      }
+    ]
+  },
   "m14reload": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:m14reload",
+       "stream": false
+      }
+    ]
+  },
+  "m4unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4unload",
+       "stream": false
+      }
+    ]
+  },
+  "m4reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4reload",
        "stream": false
       }
     ]
@@ -521,6 +729,42 @@
       }
     ]
   },
+  "revolverreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:revolverreload",
+       "stream": false
+      }
+    ]
+  },
+  "revolverunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:revolverunload",
+       "stream": false
+      }
+    ]
+  },
+  "mac10reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mac10reload",
+       "stream": false
+      }
+    ]
+  },
+  "glock21": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:glock21",
+       "stream": false
+      }
+    ]
+  },
   "glock32": {
     "category": "master",
     "sounds": [
@@ -584,11 +828,11 @@
       }
     ]
   },
-  "glock18": {
+  "glock": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:glock18",
+       "name": "mw:glock",
        "stream": false
       }
     ]

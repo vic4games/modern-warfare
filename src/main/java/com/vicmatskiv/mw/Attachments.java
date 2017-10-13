@@ -34,6 +34,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> Holographic2;
     public static ItemAttachment<Weapon> Kobra;
     public static ItemAttachment<Weapon> ACOG;
+    public static ItemAttachment<Weapon> Specter;
     public static ItemAttachment<Weapon> G36Scope;
     public static ItemAttachment<Weapon> AUGScope;
     public static ItemAttachment<Weapon> Scope;
@@ -112,9 +113,8 @@ public class Attachments {
                         'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
-                        'O', CommonProxy.OpticGlass,
-                        'G', CompatibleBlocks.GLASS_PANE
-                        )
+                        'O', CommonProxy.OpticGlass
+                 )
                 .withName("Reflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -173,9 +173,69 @@ public class Attachments {
                         'X', Ores.INGOT_STEEL,
                         'O', CommonProxy.OpticGlass,
                         'G', CompatibleBlocks.GLASS_PANE,
+                        'F', CommonProxy.CopperWiring)
+                .withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Specter = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
+                .withViewfinderPositioning((p, s) -> {
+                    GL11.glScalef(2.7f, 2.8f, 2.7f);
+                    GL11.glTranslatef(-0.06f, 0.28f, 0.56f);
+                })
+
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.SpecterSight(), "SpecterSight.png")
+                .withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
+
+                .withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.35F, 0.35F, 0.35F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Acog2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.25F, 0.25F, 0.25F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Acog2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withInventoryModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
+                        GL11.glTranslatef(-0.6F, 0F, 0.85F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Acog2) {
+                        GL11.glScaled(0F, 0F, 0F);
+
+                    }
+                }).withEntityModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Acog2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withCraftingRecipe(
+                        "FXA",
+                        "ORG",
+                        "XAX",
+                        'R', CommonProxy.ElectronicCircuitBoard,
+                        'A', CommonProxy.MiniSteelPlate,
+                        'X', Ores.INGOT_STEEL,
+                        'O', CommonProxy.OpticGlass,
+                        'G', CompatibleBlocks.GLASS_PANE,
                         'F', CommonProxy.CopperWiring
                         )
-                .withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Specter").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Holo2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -226,9 +286,7 @@ public class Attachments {
                         'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
-                        'O', CommonProxy.OpticGlass,
-                        'G', CompatibleBlocks.GLASS_PANE
-                        )
+                        'O', CommonProxy.OpticGlass                        )
                 .withName("Holographic").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -280,9 +338,7 @@ public class Attachments {
                         'R', CommonProxy.ElectronicCircuitBoard,
                         'A', CommonProxy.MiniSteelPlate,
                         'X', Ores.INGOT_STEEL,
-                        'O', CommonProxy.OpticGlass,
-                        'G', CompatibleBlocks.GLASS_PANE
-                        )
+                        'O', CommonProxy.OpticGlass)
                 .withName("Holographic2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -385,16 +441,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withCraftingRecipe("FXA",
-                        "XAX",
-                        "OOG",
-                        "AXA",
-                        'R', CommonProxy.ElectronicCircuitBoard,
-                        'A', CommonProxy.MiniSteelPlate,
-                        'X', Ores.INGOT_STEEL,
-                        'O', CommonProxy.OpticGlass,
-                        'G', CompatibleBlocks.GLASS_PANE,
-                        'F', CommonProxy.CopperWiring
+                .withCraftingRecipe(
                         )
                 .withName("G36Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
@@ -449,7 +496,7 @@ public class Attachments {
         Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.1f, 1.1f, 1.1f);
-                    GL11.glTranslatef(0.1f, 0.4f, 0.6f);
+                    GL11.glTranslatef(0.1f, 0.395f, 0.6f);
                 }).withCategory(AttachmentCategory.SCOPE).withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("LP")
                 .withModel(new com.vicmatskiv.mw.models.LP(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
@@ -625,7 +672,10 @@ public class Attachments {
                         )
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
-        HP = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.02f)
+        HP = new ItemScope.Builder()
+                .withNightVision()
+                .withOpticalZoom()
+                .withZoomRange(0.22f, 0.02f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.65f, 1.65f, 1.65f);
                     GL11.glTranslatef(0.0285f, 0.492f, 0.7f);

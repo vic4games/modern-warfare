@@ -8,8 +8,8 @@ import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
-import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraft.world.gen.IChunkGenerator;
 
 public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
 
@@ -95,7 +95,4 @@ public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
             generate(block, maxVeinSize, target, world, random, posX, posY, posZ);
         }
     }
-
-
-
 }

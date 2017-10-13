@@ -33,7 +33,7 @@ import net.minecraft.item.Item;
 public class CommonProxy {
 
     public static Item ElectronicCircuitBoard;
-    public static Item CGrip;
+//    public static Item CGrip;
     public static Item OpticGlass;
     public static Item Cloth;
     public static Item TanCloth;
@@ -75,6 +75,10 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dryfire");
 
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
+        
+//        ModernWarfareMod.MOD_CONTEXT.setNightVisionOnSound("OpticZoom");
+//        
+//        ModernWarfareMod.MOD_CONTEXT.setNightVisionOffSound("OpticZoom");
 
         ElectronicCircuitBoard = new ItemElectronics();
         OpticGlass = new ItemOpticGlass();
@@ -117,7 +121,7 @@ public class CommonProxy {
         compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
 
         Ores.init(mod, configurationManager, event);
-        Armors.init(mod, configurationManager, event, isClient());
+        Armors.init(mod, configurationManager, event, ModernWarfareMod.MOD_CONTEXT);
         Attachments.init(mod, configurationManager, event);
         AuxiliaryAttachments.init(mod, configurationManager, event);
         GunSkins.init(mod, configurationManager, event);
@@ -131,6 +135,8 @@ public class CommonProxy {
         new TestMeleeFactory().createMelee(this);
 
         new KarambitFactory().createMelee(this);
+        
+        Entities.init(this);
 
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
     }

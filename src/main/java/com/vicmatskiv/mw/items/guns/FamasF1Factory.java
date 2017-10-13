@@ -190,6 +190,15 @@ public class FamasF1Factory implements GunFactory {
               GL11.glScaled(0.06F, 0.06F, 0.06F);
           }
       })
+      .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+          GL11.glTranslatef(-0.195F, -1.65F, -0.7F);
+          GL11.glScaled(0.5F, 0.5F, 0.5F);
+      },(model) -> {
+           if(model instanceof Acog2) {
+               GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+               GL11.glScaled(0.1F, 0.1F, 0.1F);
+          }
+      })
       .withCompatibleAttachment(Attachments.Reflex, (model) -> {
           if(model instanceof Reflex) {
               GL11.glTranslatef(-0.07F, -1.825F, -1.1F);
@@ -276,6 +285,12 @@ public class FamasF1Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0.005F, 0.275f, 1f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.005F, 0.25f, 0.4f);
                 } 
                 
                 // Scope Zoom
@@ -580,6 +595,12 @@ public class FamasF1Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0.005F, 0.275f, 1f);
+                } 
+                
+                // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0.005F, 0.25f, 0.5f);
                 } 
                 
                 // Scope Zoom
