@@ -26,6 +26,7 @@ import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 public class AuxiliaryAttachments {
 
+    public static ItemAttachment<Weapon> M1CarbineAction;
     public static ItemAttachment<Weapon> FNP90Sight;
     public static ItemAttachment<Weapon> AR15Iron;
     public static ItemAttachment<Weapon> Extra;
@@ -90,6 +91,12 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M107action;
     public static ItemAttachment<Weapon> MP40action;
     public static ItemAttachment<Weapon> Bullet;
+    public static ItemAttachment<Weapon> PPSHRearSight;
+    public static ItemAttachment<Weapon> M1A1rearsight;
+    public static ItemAttachment<Weapon> PPSH41action;
+    public static ItemAttachment<Weapon> Type100action;
+    public static ItemAttachment<Weapon> M1A1action;
+    public static ItemAttachment<Weapon> MP18action;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
 
@@ -148,6 +155,22 @@ public class AuxiliaryAttachments {
                 .withModel(new MP5Iron(), "AK12.png").withName("Extra").withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
+        PPSHRearSight = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA7)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.PPSHRearSight(), "PPSH41.png")
+                .withName("PPSHRearSight")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M1A1rearsight = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA7)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M1A1rearsight(), "GunmetalTexture.png")
+                .withName("M1A1rearsight")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
         Bullet = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA6)
                 .withModel(new BulletBig(), "Bullet.png")
@@ -175,6 +198,41 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.GlockTop(), "GlockTop.png").withName("GlockTop")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M1A1action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M1A1action(), "M1A1Thompson.png").withName("M1A1action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MP18action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.MP18action(), "MP18.png").withName("MP18action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        PPSH41action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.PPSH41action(), "PPSH41.png").withName("PPSH41action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Type100action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.Type100action(), "PPSH41.png").withName("Type100action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M1CarbineAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M1CarbineAction(), "M1Carbine.png").withName("M1CarbineAction")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -444,7 +502,7 @@ public class AuxiliaryAttachments {
 
 
         MP5KGrip = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
+                .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.Grip2(), "GunmetalTexture.png").withName("MP5KGrip")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")

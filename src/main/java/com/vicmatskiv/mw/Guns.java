@@ -16,6 +16,9 @@ public class Guns {
     public static Item M4A1;
     public static Item M4A4;
     public static Item M27;
+    
+    public static Item M416;
+    
     public static Item AR15;
 //    public static Item M16A3;
     public static Item M16A4;
@@ -63,7 +66,6 @@ public class Guns {
     public static Item AUGA3;
     public static Item MX;
     public static Item L96;
-    public static Item AWP;
     public static Item SV98;
     public static Item MosinNagant;
     public static Item M21;
@@ -89,6 +91,10 @@ public class Guns {
     public static Item MP9;
     public static Item M8A7;
     public static Item M1Garand;
+    public static Item PPSh41;
+    public static Item Type100;
+    public static Item M1A1Thompson;
+    public static Item MP18;
 //    public static Item Duplet;
 
     public static Item SMAW;
@@ -107,6 +113,8 @@ public class Guns {
         AK74M = new AK74MFactory().createGun(proxy);
         AR15 = new AR15Factory().createGun(proxy);
         M4A1 = new M4A1Factory().createGun(proxy);
+        ACR = new ACRFactory().createGun(proxy);
+        M416 = new M416Factory().createGun(proxy);
         M16A4 = new M16A4Factory().createGun(proxy);
 //        HK416C = new HK416CFactory().createGun(proxy);
         ScarH = new ScarHFactory().createGun(proxy);
@@ -145,9 +153,12 @@ public class Guns {
         KrissVector = new KrissVectorFactory().createGun(proxy);
         MAC10 = new MAC10Factory().createGun(proxy);
         MP40 = new MP40Factory().createGun(proxy);
+        PPSh41 = new PPSh41Factory().createGun(proxy);
+        Type100 = new Type100Factory().createGun(proxy);
+        MP18 = new MP18Factory().createGun(proxy);
+        M1A1Thompson = new M1A1ThompsonFactory().createGun(proxy);
         AS50 = new AS50Factory().createGun(proxy);
         L96 = new L96Factory().createGun(proxy);
-        AWP = new AWPFactory().createGun(proxy);
         SV98 = new SV98Factory().createGun(proxy);
         HecateII = new HecateIIFactory().createGun(proxy);
         MosinNagant = new MosinNagantFactory().createGun(proxy);
@@ -159,8 +170,6 @@ public class Guns {
         M107 = new M107Factory().createGun(proxy);
 //        M240 = new M240Factory().createGun(proxy);
         M249 = new M249Factory().createGun(proxy);
-//        Minimi = new MinimiFactory().createGun(proxy);
-//        MG36 = new MG36Factory().createGun(proxy);
         RPK74M = new RPK74MFactory().createGun(proxy);
         ASVal = new ASValFactory().createGun(proxy);
         UMP45 = new UMP45Factory().createGun(proxy);

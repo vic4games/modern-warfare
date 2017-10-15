@@ -7,6 +7,7 @@ import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.Attachments;
+import com.vicmatskiv.mw.AuxiliaryAttachments;
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
@@ -55,7 +56,7 @@ public class M1CarbineFactory implements GunFactory {
 		.withFlashIntensity(1f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
-		.withFlashOffsetY(() -> 0.1f)
+		.withFlashOffsetY(() -> 0.07f)
 		.withInaccuracy(1)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
@@ -80,6 +81,11 @@ public class M1CarbineFactory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(AuxiliaryAttachments.M1CarbineAction, true, (model) -> {
+          GL11.glTranslatef(0F, 0F, 0F);
+//          GL11.glRotatef(45F, 0f, 1f, 0f);
+//          GL11.glScaled(0.55F, 0.55F, 0.55F);
+        })
 		.withCompatibleAttachment(Magazines.M1CarbineMag, (model) -> {
 			GL11.glTranslatef(-0.3F, 0.5F, -1.3F);
 			GL11.glScaled(1F, 1F, 1F);
@@ -150,72 +156,54 @@ public class M1CarbineFactory implements GunFactory {
                 })
                 
 		    .withFirstPersonPositioning((renderContext) -> {
-                GL11.glTranslatef(0.5F, -0.2F, -0.2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.7F, 0.7F, 0.7F);
-                GL11.glTranslatef(-0.5F, -0.7F, 1.3F);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
+                GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                GL11.glTranslatef(-0.475000f, 1.025000f, -0.250000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glTranslatef(0.5F, -0.2F, -0.2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.7F, 0.7F, 0.7F);
-                GL11.glTranslatef(-0.5F, -0.7F, 1.6F);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
+                GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                GL11.glTranslatef(-0.475000f, 1.025000f, -0f);
+                GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 })
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-			    GL11.glTranslatef(0F, -0.35F, -0.2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-                // Zoom
-                GL11.glTranslatef(0.315F, -1.21f, 1.8f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-				
-				// ACOG Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
-					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0.005F, 0.18f, 0.3f);
-				} 
-				
-				// Scope Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
-				} 
-				
-				// Scope Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
-					//System.out.println("Position me for Scope");
-					GL11.glTranslatef(0F, 0.148f, 5f);
-				} 
-				
-				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
-					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.23f, 0.2f);
-				} 
-				
-				// Holo Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
-					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.15f, 0.2f);
-				} 
-				// Reflex Zoom
-				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
-					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(1.373F, -1.23f, 2.9f);
-				} 
-				
-				// Everything else
-				else {
-					GL11.glTranslatef(1.373F, -1.34f, 2.4f);
-				}
-				
-			
-				})
+			    GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(4F, 4F, 4F);
+                GL11.glTranslatef(0.295f, 0.800000f, -0.1f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
+                
+                // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
+                    //System.out.println("Position me for Acog");
+                } 
+                
+                // Everything else
+                else {
+                }
+                
+            
+                })
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.M1CarbineAction.getRenderablePart(), (renderContext) -> {
+                GL11.glTranslatef(0F, 0F, 0.7F);
+//              GL11.glRotatef(45F, 0f, 1f, 0f);
+//              GL11.glScaled(0.55F, 0.55F, 0.55F);
+                })
+                
+                
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.M1CarbineAction.getRenderablePart(), (renderContext) -> {
+                GL11.glTranslatef(0F, 0F, 0.7F);
+//              GL11.glRotatef(45F, 0f, 1f, 0f);
+//              GL11.glScaled(0.55F, 0.55F, 0.55F);
+                })
+                
+            .withFirstPersonPositioningCustomRecoiled(Magazines.M1CarbineMag, (renderContext) -> {})
+            
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.M1CarbineMag, (renderContext) -> {})
+                
 				
 			.withFirstPersonCustomPositioning(Magazines.M1CarbineMag, (renderContext) -> {
 //				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
@@ -223,6 +211,13 @@ public class M1CarbineFactory implements GunFactory {
 //				GL11.glScaled(0.55F, 0.55F, 0.55F);
 //				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
 				})
+				
+			.withFirstPersonCustomPositioning(AuxiliaryAttachments.M1CarbineAction.getRenderablePart(), (renderContext) -> {
+//              GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//              GL11.glRotatef(45F, 0f, 1f, 0f);
+//              GL11.glScaled(0.55F, 0.55F, 0.55F);
+//              GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+                })
 				
 			.withFirstPersonPositioningReloading(
 					
@@ -275,6 +270,29 @@ public class M1CarbineFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
+			.withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M1CarbineAction.getRenderablePart(),
+                    
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 200),
+                    
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.000000f, 0.000000f, 0.000000f);
+                    }, 350, 150),
+                
+                new Transition((renderContext) -> { // Reload position
+                }, 400, 80),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0f, 0f, 0.7f);
+                    }, 100, 200)
+            )
+            
+            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.M1CarbineAction.getRenderablePart(),
+                    new Transition((renderContext) -> {
+                }, 150, 50),
+                new Transition((renderContext) -> {
+                }, 150, 50)
+            )
+			
 			.withFirstPersonCustomPositioningUnloading(Magazines.M1CarbineMag,
 				new Transition((renderContext) -> {
 //					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
@@ -322,47 +340,17 @@ public class M1CarbineFactory implements GunFactory {
 					)
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
-                GL11.glTranslatef(0F, -0.35F, -0.2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-                // Zoom
-                GL11.glTranslatef(0.315F, -1.21f, 1.7f);
-                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                GL11.glScaled(4F, 4F, 4F);
+                GL11.glTranslatef(0.295f, 0.800000f, -0.325000f);
                 
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.285f, 0.53f);
                 } 
-                
-                // Reflex Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
-                    //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.236f, 0.7f);
-                } 
-                
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.236f, 0.7f);
-                } 
-                
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.235f, 0.7f);
-                } 
-                
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(1.373F, -1.15f, 3.2f);
-                }
                 
                 // Everything else
                 else {
-                    GL11.glTranslatef(1.373F, -1.34f, 2.4f);
                 }
                 
             
@@ -370,18 +358,19 @@ public class M1CarbineFactory implements GunFactory {
                 
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
-			    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+			    GL11.glScalef(4f, 4f, 4f);
 			    GL11.glRotatef(0.000000f, 1f, 0f, 0f);
 			    GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-			    GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-			    GL11.glTranslatef(0.000000f, 0.000000f, 0.000000f);
+			    GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+			    GL11.glTranslatef(-0.325000f, 1.149999f, 0.700000f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
-			     GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-			     GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
-			     GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-			     GL11.glRotatef(-25.000000f, 0f, 0f, 1f);
-			     GL11.glTranslatef(0.000000f, 0.000000f, 0.000000f);
+			     GL11.glScalef(4f, 4f, 4f);
+			     GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+			     GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
+			     GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+			     GL11.glTranslatef(-0.725000f, 0.650000f, 0.600000f);
+			     
 			 })
 			 .withFirstPersonHandPositioning(
                      (renderContext) -> {

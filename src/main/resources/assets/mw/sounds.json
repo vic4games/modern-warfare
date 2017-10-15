@@ -8,7 +8,78 @@
       }
     ]
   },
-
+"m416": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m416",
+       "stream": false
+      }
+    ]
+  },
+  "ppsh41": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppsh41",
+       "stream": false
+      }
+    ]
+  },
+  "ppsh41reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppsh41reload",
+       "stream": false
+      }
+    ]
+  },
+  "type100": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100",
+       "stream": false
+      }
+    ]
+  },
+  "m1a1thompson": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1a1thompson",
+       "stream": false
+      }
+    ]
+  },
+  "m1a1reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1a1reload",
+       "stream": false
+      }
+    ]
+  },
+  "type100unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100unload",
+       "stream": false
+      }
+    ]
+  },
+  "type100reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100reload",
+       "stream": false
+      }
+    ]
+  },
   "remington870": {
     "category": "master",
     "sounds": [
@@ -32,6 +103,24 @@
     "sounds": [
       {
        "name": "mw:grenadethrow",
+       "stream": false
+      }
+    ]
+  },
+  "nvon": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:nvon",
+       "stream": false
+      }
+    ]
+  },
+  "nvoff": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:nvoff",
        "stream": false
       }
     ]

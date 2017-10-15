@@ -1472,11 +1472,14 @@ public class Attachments {
 
         Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "AK12.png").withApply((a, weapon, player) -> {
-                    weapon.changeRecoil(player, 1.5F);
-                }).withRemove((attachment, weapon, player) -> {
-                    weapon.changeRecoil(player, 1);
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "AK12.png")
+                .withApply((a, i) -> {
+                    i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
+                })
+                .withApply((a, i) -> {
+                    i.setRecoil(i.getWeapon().getRecoil());
+                })
+                .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AngledGrip) {
                         GL11.glTranslatef(0.7F, -1.1F, 0.5F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);

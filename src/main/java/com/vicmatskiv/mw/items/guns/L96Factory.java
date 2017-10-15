@@ -67,7 +67,7 @@ public class L96Factory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.BigSteelPlate)
 		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 27", 
-		"Caliber: 7.62x51mm", "Magazines:", "8rnd 7.62x51mm Magazine", "Fire Rate: Bolt Action"))
+		"Caliber: .308 Winchester", "Magazines:", "10rnd .308 Winchester Magazine", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));

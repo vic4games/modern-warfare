@@ -184,7 +184,7 @@ public class M107Factory implements GunFactory {
 			GL11.glScaled(1F, 1F, 1F);
 		})
 		.withCompatibleAttachment(Attachments.Silencer50BMG, (model) -> {
-			GL11.glTranslatef(0.107F, -1.48F, -7.9F);
+			GL11.glTranslatef(-0.22F, -1.35F, -12.5F);
 			GL11.glScaled(1.3F, 1.3F, 1.6F);
 		})
 		.withCompatibleAttachment(AuxiliaryAttachments.AUGRail, true, (model) -> {
@@ -223,8 +223,8 @@ public class M107Factory implements GunFactory {
 				GL11.glRotatef(-120F, -0.5f, 7f, 3f);
 			})
 			.withThirdPersonPositioning((renderContext) -> {
-			    GL11.glScaled(0.55F, 0.55F, 0.55F);
-                GL11.glTranslatef(-1.8F, -1F, 2F);
+			    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                GL11.glTranslatef(-1.8F, -1.1F, 2F);
                 GL11.glRotatef(-45F, 0f, 1f, 0f);
                 GL11.glRotatef(70F, 1f, 0f, 0f);
 				})

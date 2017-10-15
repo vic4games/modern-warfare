@@ -1,5 +1,11 @@
 item.m40gasmask_helmet.name=M40 Gas Mask
 
+entity.mw.bandit1.name=Bandit
+entity.mw.gassy.name=Gassy
+
+item.mw_gas-detector.name=Gas Detector
+item.mw_GasGrenade.name=Gas Grenade
+
 item.Marine_helmet.name=Marine Helmet
 item.Marine_chest.name=Marine Chestplate
 item.Marine_boots.name=Marine Boots
@@ -24,6 +30,7 @@ item.AK47.name=AK-47
 item.Glock-17.name=Glock-17
 item.M9.name=M9-Beretta
 item.M4A1.name=M4A1
+item.M416.name=M416
 item.AR15.name=ArmaLite AR-15
 item.357DesertEagle.name=.357 IMI Desert Eagle
 item.L115.name=L115
@@ -63,7 +70,7 @@ item.MG36.name=HK MG36
 item.AK74M.name=AK-74M
 item.ACRTac.name=Bushmaster ACR
 item.HK416C.name=HK 416-C
-item.M1Carbine.name=M1 Carbine
+item.M1Carbine.name=M1A1 Carbine
 item.MP40.name=MP40
 item.AN94.name=AN-94
 item.M110.name=M110
@@ -154,6 +161,10 @@ item.M8A7.name=M8A7
 item.M1Garand.name=M1 Garand
 item.FamasF1.name=Famas-F1
 item.Deagle357.name=.357 Desert Eagle
+item.PPSh41.name=PPSh-41
+item.Type100.name=Type-100
+item.M1A1Thompson.name=M1A1 Thompson
+item.MP18.name=MP-18
 
 item.TacKnifeStandard.name=U.S. Marine Tactical Knife
 item.Karambit.name=Karambit Knife
@@ -215,6 +226,10 @@ item.mw_KN44Mag.name=30rnd 5.56x39mm Magazine (Type 2)
 item.mw_M8A7Mag.name=32rnd .300 AAC Blackout Magazine
 item.mw_Mag75rnd762x39.name=75rnd 7.62x39mm Drum Magazine
 item.mw_SV98Mag.name=10rnd 7.62x54mm Magazine
+item.mw_PPSH41Mag.name=71rnd 7.52x25mm Tokarev Drum Magazine
+item.mw_Type100Mag.name=30rnd 8x22mm Nambu Magazine
+item.mw_M1A1mag.name=30rnd .45 ACP Box Magazine
+item.mw_MP18mag.name=32rnd 7.62x25mm Drum Magazine
 
 item.mw_ShotgunShell.name=12 Gauge Shotgun Shell
 item.mw_Magnum44Ammo.name=.44 Bullet
@@ -238,6 +253,8 @@ item.mw_SMAWRocket.name=Mk153 SMAW Rocket
 item.mw_Bullet50AE.name=.50 Action Express Bullet
 item.mw_Bullet9x39mm.name=9x39mm Bullet
 item.mw_BulletSpringfield3006.name=.30-06 Springfield Bullet
+item.mw_Bullet752x25.name=7.52x25mm Tokarev Bullet
+item.mw_Bullet8mm.name=8x22mm Nambu Bullet
 
 item.mw_Acog.name=Trigicon ACOG 
 item.mw_Specter.name=Elcan Specter SFOV4-A1 

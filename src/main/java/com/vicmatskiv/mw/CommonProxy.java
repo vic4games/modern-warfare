@@ -69,6 +69,10 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
+        
+        ModernWarfareMod.MOD_CONTEXT.setNightVisionOnSound("nvon");
+        
+        ModernWarfareMod.MOD_CONTEXT.setNightVisionOffSound("nvoff");
 
         ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("GunFireModeSwitch");
 
