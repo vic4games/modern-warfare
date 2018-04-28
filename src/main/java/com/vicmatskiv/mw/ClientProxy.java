@@ -107,6 +107,10 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(Armors.Tacticalchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_chest", "inventory"));
 		renderItem.getItemModelMesher().register(Armors.Tacticalhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_helmet", "inventory"));
 	
+        renderItem.getItemModelMesher().register(Armors.spartanboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spartan_boots", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.spartanchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spartan_chest", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.spartanhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "spartan_helmet", "inventory"));
+        
 	    renderItem.getItemModelMesher().register(Armors.GasMaskM40, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "m40gasmask_helmet", "inventory"));
 
 	}

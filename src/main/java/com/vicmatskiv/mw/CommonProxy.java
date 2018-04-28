@@ -33,7 +33,6 @@ import net.minecraft.item.Item;
 public class CommonProxy {
 
     public static Item ElectronicCircuitBoard;
-//    public static Item CGrip;
     public static Item OpticGlass;
     public static Item Cloth;
     public static Item TanCloth;
@@ -69,12 +68,17 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
+        
+        ModernWarfareMod.MOD_CONTEXT.setNightVisionOnSound("nvon");
+        
+        ModernWarfareMod.MOD_CONTEXT.setNightVisionOffSound("nvoff");
 
         ModernWarfareMod.MOD_CONTEXT.setChangeFireModeSound("GunFireModeSwitch");
 
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dryfire");
 
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
+        
         
 //        ModernWarfareMod.MOD_CONTEXT.setNightVisionOnSound("OpticZoom");
 //        
@@ -139,6 +143,8 @@ public class CommonProxy {
         Entities.init(this);
 
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
+        
+        PlayerAnimations.init(mod, configurationManager, event);
     }
 
 }

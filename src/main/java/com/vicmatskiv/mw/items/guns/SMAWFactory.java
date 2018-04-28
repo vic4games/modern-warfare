@@ -13,12 +13,15 @@ import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
+import com.vicmatskiv.mw.models.AcogReticle;
+import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.SMAW;
@@ -37,7 +40,7 @@ public class SMAWFactory implements GunFactory {
                 .withName("SMAW")
                 .withAmmoCapacity(1)
                 .withFireRate(0.5f)
-                .withRecoil(2f)
+                .withRecoil(8f)
                 .withZoom(0.9f)
                 .withMaxShots(1)
                 .withShootSound("SMAW")
@@ -93,15 +96,22 @@ public class SMAWFactory implements GunFactory {
                     } else if (model instanceof MP5Iron) {
                         GL11.glTranslatef(0.215F, -1.54F, 1.2F);
                         GL11.glScaled(0F, 0F, 0F);
+                    } else if(model instanceof MBUSiron) {
+                        GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                        GL11.glScaled(0F, 0F, 0F);
                     }
                 })
                 .withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
                     GL11.glTranslatef(0.4F, -2F, 1.2F);
                     GL11.glScaled(0.6F, 0.6F, 0.6F);
                 },(model) -> {
-                    if(model instanceof Acog2) {
-                        GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-                        GL11.glScaled(0.06F, 0.06F, 0.06F);
+                    if(model instanceof AcogScope2) {
+                        GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    }
+                    else if(model instanceof AcogReticle) {
+                        GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+                        GL11.glScaled(0.03F, 0.03F, 0.03F);
                     }
                 })
                 .withCompatibleAttachment(Bullets.SMAWRocket, (model) -> {
@@ -159,16 +169,19 @@ public class SMAWFactory implements GunFactory {
                         .withFirstPersonPositioning((renderContext) -> {
                             GL11.glTranslatef(0.1F, -0.2F, -0.3F);
                             GL11.glRotatef(45F, 0f, 1f, 0f);
-                            GL11.glScaled(0.55F, 0.55F, 0.55F);
-                            GL11.glTranslatef(-0.4F, -1F, 0.9F);
+                            GL11.glRotatef(-2F, 0f, 0f, 1f);
+                            GL11.glScaled(5F, 5F, 5F);
+                            GL11.glTranslatef(-0.950000f, 1.324999f, -1.574999f);
+                        	
+                        
                         })
 
                         .withFirstPersonPositioningRecoiled((renderContext) -> {
-                            GL11.glTranslatef(0.1F, -0.2F, -0.3F);
+                        	GL11.glTranslatef(0.1F, -0.2F, -0.3F);
                             GL11.glRotatef(45F, 0f, 1f, 0f);
-                            GL11.glScaled(0.55F, 0.55F, 0.55F);
-                            GL11.glTranslatef(-0.4F, -1F, 1.3F);
-                            GL11.glRotatef(-4F, 1f, 0f, 0f);
+                            GL11.glRotatef(-2F, 0f, 0f, 1f);
+                            GL11.glScaled(5F, 5F, 5F);
+                            GL11.glTranslatef(-0.950000f, 1.324999f, -1.2f);
                         })
 
                         .withFirstPersonPositioningReloading(
@@ -183,18 +196,14 @@ public class SMAWFactory implements GunFactory {
                                 }, 600, 4000))
 
                         .withFirstPersonPositioningZooming((renderContext) -> {
-                            GL11.glTranslatef(0F, -0.58F, -0.2F);
-                            GL11.glRotatef(45F, 0f, 1f, 0f);
-                            GL11.glScaled(0.55F, 0.55F, 0.55F);
-
-                            // Zoom
-                                GL11.glTranslatef(0.753F, -1f, 2.5f);
-                                GL11.glScaled(0.55F, 0.55F, 0.55F);
+                             GL11.glRotatef(45F, 0f, 1f, 0f);
+                             GL11.glScaled(5F, 5F, 5F);
+                             GL11.glTranslatef(-0.31f, 1.86f, -1.6f);
                                 
                              // ACOG Zoom
                                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                                     //System.out.println("Position me for Acog");
-                                    GL11.glTranslatef(-0.09F, -0.03F, -0.13F);
+                                	GL11.glTranslatef(-0.1f, -0.035f, 0.1f);
                                 } 
 
                             })
@@ -217,15 +226,19 @@ public class SMAWFactory implements GunFactory {
                             })
 
                         .withFirstPersonPositioningRunning((renderContext) -> {
-                            GL11.glScaled(0.7F, 0.7F, 0.7F);
-                            GL11.glRotatef(-20F, -4f, 1f, -2f);
-                            GL11.glTranslatef(1F, -0.5F, -0.8F);
+                        	 GL11.glScaled(5F, 5F, 5F);
+                             GL11.glRotatef(25.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(20.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(-0.875000f, 1.924999f, -1.749999f);
                         })
 
                         .withFirstPersonPositioningModifying((renderContext) -> {
-                            GL11.glScaled(0.55F, 0.55F, 0.55F);
-                            GL11.glRotatef(-35F, 2f, 1f, 1f);
-                            GL11.glTranslatef(1F, -0.8F, -1.5F);
+                        	GL11.glScaled(5F, 5F, 5F);
+                        	GL11.glRotatef(0.000000f, 1f, 0f, 0f);
+                        	GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        	GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+                        	GL11.glTranslatef(-0.975000f, 1.424999f, -1.424999f);
                         })
 
                         .withFirstPersonHandPositioning((renderContext) -> {

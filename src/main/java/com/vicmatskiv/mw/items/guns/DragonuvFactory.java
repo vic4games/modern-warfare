@@ -26,6 +26,7 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.PSO12;
+import com.vicmatskiv.mw.models.PSO1reticle;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -54,7 +55,7 @@ public class DragonuvFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.6f)
 		.withFlashOffsetX(() -> 0.07f)
 		.withFlashOffsetY(() -> 0.08f)
@@ -64,7 +65,7 @@ public class DragonuvFactory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 18", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle/Designated marksmen rifle", "Damage: 15", 
 		"Caliber: 7.62x54mm", "Magazines:", "11rnd 7.62x54mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
@@ -121,9 +122,9 @@ public class DragonuvFactory implements GunFactory {
             GL11.glTranslatef(0.14F, -0.95F, -1.2F);
             GL11.glScaled(1.2F, 1.2F, 1.2F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(-0.209F, -0.485F, 1.27F);
-                GL11.glScaled(0.07F, 0.07F, 0.07F);
+            if(model instanceof PSO1reticle) {
+                GL11.glTranslatef(-0.212F, -0.486F, 1.27F);
+                GL11.glScaled(0.017F, 0.017F, 0.017F);
             }
              else if(model instanceof PSO12) {
                  GL11.glTranslatef(-0.27F, -0.6F, 1.21F);
@@ -210,15 +211,17 @@ public class DragonuvFactory implements GunFactory {
             
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.275000f, 0.650000f, 0.150000f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.45f, 1f, -0.4f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.275000f, 0.650000f, 0.8f);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.350000f, 0.975000f, -0.3f);
+                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
                 })
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -229,7 +232,7 @@ public class DragonuvFactory implements GunFactory {
 	                // Scope Zoom
 	                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
 	                    //System.out.println("Position me for Scope");
-	                    GL11.glTranslatef(-0.01F, 0.222f, 0.25f);
+	                    GL11.glTranslatef(-0.007F, 0.222f, 0.4f);
 	                }   
 
 	                // Everything else
@@ -286,15 +289,15 @@ public class DragonuvFactory implements GunFactory {
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                     GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
-                    GL11.glRotatef(60.000000f, 0f, 1f, 0f);
-                    GL11.glRotatef(70.000000f, 0f, 0f, 1f);
+                    GL11.glRotatef(62.000000f, 0f, 1f, 0f);
+                    GL11.glRotatef(65.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
 				}, 300, 200),
 				
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                     GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
-                    GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                    GL11.glRotatef(62.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
 				}, 400, 100),
@@ -302,9 +305,9 @@ public class DragonuvFactory implements GunFactory {
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
                     GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
-                    GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                    GL11.glRotatef(58.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(70.000000f, 0f, 0f, 1f);
-                    GL11.glTranslatef(0.125000f, -0.425000f, 0.600000f);
+                    GL11.glTranslatef(0.125000f, -0.425000f, 0.7f);
 				}, 120, 100),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -489,7 +492,7 @@ public class DragonuvFactory implements GunFactory {
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.PSO1)) {
                     //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(-0.01F, 0.222f, 0.25f);
+                    GL11.glTranslatef(-0.007F, 0.222f, 0.4f);
                 }   
 
                 // Everything else
@@ -501,19 +504,19 @@ public class DragonuvFactory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+			    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(10.000000f, 1f, 0f, 0f);
                 GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(0.050000f, 0.000000f, -0.100000f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.350000f, 1.025000f, -0.400000f);
              })
             
              .withFirstPersonPositioningModifying((renderContext) -> {
-                 GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                  GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-                 GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-0.525000f, -0.100000f, 0.425000f);
+                 GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-1.149999f, 0.450000f, 0.525000f);
              })
 			 
 			 .withFirstPersonHandPositioning(
@@ -678,7 +681,7 @@ public class DragonuvFactory implements GunFactory {
 					}, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(18f)
+		.withSpawnEntityDamage(15f)
 				
 		 
 		.build(ModernWarfareMod.MOD_CONTEXT);

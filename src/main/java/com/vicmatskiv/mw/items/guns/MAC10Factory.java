@@ -39,10 +39,10 @@ public class MAC10Factory implements GunFactory {
 		.withName("MAC-10")
 //		.withAmmo(CommonProxy.M9Mag)
 //		.withAmmoCapacity(10)
-		.withFireRate(0.7f)
+		.withFireRate(0.9f)
 		.withRecoil(2.7f)
 		.withZoom(0.9f)
-		//.withMaxShots(1)
+		.withMaxShots(Integer.MAX_VALUE, 1)
 		.withShootSound("MAC10")
 		.withSilencedShootSound("MP5Silenced")
 		.withReloadSound("mac10reload")
@@ -51,7 +51,7 @@ public class MAC10Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.7f)
 		.withFlashOffsetX(() -> 0.22f)
 		.withFlashOffsetY(() -> 0.1f)
@@ -187,23 +187,21 @@ public class MAC10Factory implements GunFactory {
                 
                 
             .withFirstPersonPositioning((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(4F, 4F, 4F);
-                GL11.glTranslatef(-0.850000f, 0.875000f, -3f);
-                GL11.glRotatef(5F, 0f, 0f, 1f);
-                
 //                GL11.glRotatef(45F, 0f, 1f, 0f);
 //                GL11.glScaled(4F, 4F, 4F);
-//                GL11.glTranslatef(-0.850000f, 0.875000f, -2.5f);
-//                GL11.glRotatef(20F, 0f, 0f, 1f);
-//                GL11.glRotatef(-10F, 1f, 0f, 0f);
-//                GL11.glRotatef(-10F, 0f, 1f, 0f);
+//                GL11.glTranslatef(-0.850000f, 0.875000f, -3f);
+//                GL11.glRotatef(5F, 0f, 0f, 1f);
+                
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScaled(4F, 4F, 4F);
+                GL11.glTranslatef(-0.850000f, 0.875000f, -3.5f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(4F, 4F, 4F);
-                GL11.glTranslatef(-0.850000f, 0.875000f, -2.6f);
+                GL11.glTranslatef(-0.850000f, 0.875000f, -3.2f);
                 GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glRotatef(-4F, 1f, 0f, 0f);
                 })
@@ -345,20 +343,18 @@ public class MAC10Factory implements GunFactory {
 			 })
 			  .withFirstPersonHandPositioning(
                      (renderContext) -> {
-//                         GL11.glScalef(0f, 0f, 0f);
-//                         GL11.glScalef(4f, 4f, 4f);
-                         GL11.glScalef(4f, 4f, 4f);
-                         GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                         GL11.glScalef(4.5f, 4.5f, 4.5f);
+                         GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
                          GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.200000f, -0.325000f, 0.675000f);
+                         GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(-0.550000f, -0.475000f, 0.400000f);
                      }, 
                      (renderContext) -> {
-                         GL11.glScalef(4f, 4f, 4f);
-                            GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(-40.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(0.4f, -0.525000f, 0.12f);
+                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
+                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.370000f, -0.490000f, 0.150000f);
                      })
 					 
 			.withFirstPersonHandPositioningModifying(
@@ -370,11 +366,11 @@ public class MAC10Factory implements GunFactory {
                          GL11.glTranslatef(0.200000f, -0.325000f, 0.675000f);
 					 }, 
 					 (renderContext) -> {
-					     GL11.glScalef(4f, 4f, 4f);
+					     GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
                          GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(-40.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.4f, -0.525000f, 0.12f);
+                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.370000f, -0.490000f, 0.150000f);
 					 })
 			.withFirstPersonLeftHandPositioningReloading(
 					new Transition((renderContext) -> { // Reload position
@@ -489,18 +485,18 @@ public class MAC10Factory implements GunFactory {
 					
 			.withFirstPersonHandPositioningZooming(
 					(renderContext) -> {
-					    GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.200000f, -0.325000f, 0.675000f);
+					    GL11.glScalef(4.5f, 4.5f, 4.5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-30.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.100000f, -0.675000f, 0.175000f);
 					 }, 
 					 (renderContext) -> {
-					     GL11.glScalef(4f, 4f, 4f);
+					     GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
                          GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.4f, -0.525000f, 0.12f);
+                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.370000f, -0.490000f, 0.150000f);
 					 })
 			.build())
 		.withSpawnEntityDamage(5.5f)

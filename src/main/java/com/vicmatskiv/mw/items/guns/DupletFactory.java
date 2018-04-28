@@ -62,7 +62,7 @@ public class DupletFactory implements GunFactory {
         .withCrosshairZoomed("Sight")
         .withInaccuracy(10)
         .withPellets(10)
-        .withFlashIntensity(1f)
+        .withFlashIntensity(0.4f)
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.15f)

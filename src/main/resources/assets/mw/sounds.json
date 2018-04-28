@@ -8,7 +8,627 @@
       }
     ]
   },
-
+"m416": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m416",
+       "stream": false
+      }
+    ]
+  },
+  "ppsh41": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppsh41",
+       "stream": false
+      }
+    ]
+  },
+  "lugerreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:lugerreload",
+       "stream": false
+      }
+    ]
+  },
+  "mpx": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mpx",
+       "stream": false
+      }
+    ]
+  },
+  "mp43ereload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp43ereload",
+       "stream": false
+      }
+    ]
+  },
+  "mp43ereloadfin": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp43ereloadfin",
+       "stream": false
+      }
+    ]
+  },
+  "m16a4": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m16a4",
+       "stream": false
+      }
+    ]
+  },
+  "s686": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:s686",
+       "stream": false
+      }
+    ]
+  },
+  "mp43e": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp43e",
+       "stream": false
+      }
+    ]
+  },
+  "m4a1_2": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4a1_2",
+       "stream": false
+      }
+    ]
+  },
+  "m4a1_reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m4a1_reload",
+       "stream": false
+      }
+    ]
+  },
+  "ma37": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ma37",
+       "stream": false
+      }
+    ]
+  },
+  "ma37reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ma37reload",
+       "stream": false
+      }
+    ]
+  },
+  "srs99s5": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:srs99s5",
+       "stream": false
+      }
+    ]
+  },
+  "srs99s5reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:srs99s5reload",
+       "stream": false
+      }
+    ]
+  },
+  "m395b": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m395b",
+       "stream": false
+      }
+    ]
+  },
+  "m395breload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m395breload",
+       "stream": false
+      }
+    ]
+  },
+  "m6g": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m6g",
+       "stream": false
+      }
+    ]
+  },
+  "m6greload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m6greload",
+       "stream": false
+      }
+    ]
+  },
+  "br55": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:br55",
+       "stream": false
+      }
+    ]
+  },
+  "br55reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:br55reload",
+       "stream": false
+      }
+    ]
+  },
+  "maxim9": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:maxim9",
+       "stream": false
+      }
+    ]
+  },
+  "ghost350": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ghost350",
+       "stream": false
+      }
+    ]
+  },
+  "ghost350reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ghost350reload",
+       "stream": false
+      }
+    ]
+  },
+  "ma5d": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ma5d",
+       "stream": false
+      }
+    ]
+  },
+  "plr16reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:plr16reload",
+       "stream": false
+      }
+    ]
+  },
+  "tec9": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:tec9",
+       "stream": false
+      }
+    ]
+  },
+  "luger": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:luger",
+       "stream": false
+      }
+    ]
+  },
+  "m3a1": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m3a1",
+       "stream": false
+      }
+    ]
+  },
+  "stg44": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:stg44",
+       "stream": false
+      }
+    ]
+  },
+  "stg44reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:stg44reload",
+       "stream": false
+      }
+    ]
+  },
+  "kar98k": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:kar98k",
+       "stream": false
+      }
+    ]
+  },
+  "gewehr98": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:gewehr98",
+       "stream": false
+      }
+    ]
+  },
+  "leeenfieldsmlereload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:leeenfieldsmlereload",
+       "stream": false
+      }
+    ]
+  },
+  "leeenfieldboltaction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:leeenfieldboltaction",
+       "stream": false
+      }
+    ]
+  },
+  "leeenfield": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:leeenfield",
+       "stream": false
+      }
+    ]
+  },
+  "leeenfieldreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:leeenfieldreload",
+       "stream": false
+      }
+    ]
+  },
+  "gewehr98reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:gewehr98reload",
+       "stream": false
+      }
+    ]
+  },
+  "ak15": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ak15",
+       "stream": false
+      }
+    ]
+  },
+  "m1garandping": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1garandping",
+       "stream": false
+      }
+    ]
+  },
+  "m3a1reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m3a1reload",
+       "stream": false
+      }
+    ]
+  },
+  "webley": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:webley",
+       "stream": false
+      }
+    ]
+  },
+  "webleyopen": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:webleyopen",
+       "stream": false
+      }
+    ]
+  },
+  "webleyclose": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:webleyclose",
+       "stream": false
+      }
+    ]
+  },
+  "revolverload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:revolverload",
+       "stream": false
+      }
+    ]
+  },
+  "sks": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:sks",
+       "stream": false
+      }
+    ]
+  },
+  "springfieldboltforward": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:springfieldboltforward",
+       "stream": false
+      }
+    ]
+  },
+  "springfieldboltback": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:springfieldboltback",
+       "stream": false
+      }
+    ]
+  },
+  "springfieldboltaction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:springfieldboltaction",
+       "stream": false
+      }
+    ]
+  },
+  "springfield": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:springfield",
+       "stream": false
+      }
+    ]
+  },
+  "sksreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:sksreload",
+       "stream": false
+      }
+    ]
+  },
+  "m1garandreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1garandreload",
+       "stream": false
+      }
+    ]
+  },
+  "acrreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:acrreload",
+       "stream": false
+      }
+    ]
+  },
+   "svt40": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:svt40",
+       "stream": false
+      }
+    ]
+  },
+  "svt40reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:svt40reload",
+       "stream": false
+      }
+    ]
+  },
+  "svt40unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:svt40unload",
+       "stream": false
+      }
+    ]
+  },
+  "saiga12": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:saiga12",
+       "stream": false
+      }
+    ]
+  },
+  "vectorreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:vectorreload",
+       "stream": false
+      }
+    ]
+  },
+  "udp9": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:udp9",
+       "stream": false
+      }
+    ]
+  },
+  "udp9reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:udp9reload",
+       "stream": false
+      }
+    ]
+  },
+  "remington700": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:remington700",
+       "stream": false
+      }
+    ]
+  },
+  "m16reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m16reload",
+       "stream": false
+      }
+    ]
+  },
+  "pofusa": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:pofusa",
+       "stream": false
+      }
+    ]
+  },
+  "ppsh41reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ppsh41reload",
+       "stream": false
+      }
+    ]
+  },
+  "type100": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100",
+       "stream": false
+      }
+    ]
+  },
+  "m1a1thompson": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1a1thompson",
+       "stream": false
+      }
+    ]
+  },
+  "m1a1reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1a1reload",
+       "stream": false
+      }
+    ]
+  },
+  "type100unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100unload",
+       "stream": false
+      }
+    ]
+  },
+  "type100reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:type100reload",
+       "stream": false
+      }
+    ]
+  },
   "remington870": {
     "category": "master",
     "sounds": [
@@ -32,6 +652,24 @@
     "sounds": [
       {
        "name": "mw:grenadethrow",
+       "stream": false
+      }
+    ]
+  },
+  "nvon": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:nvon",
+       "stream": false
+      }
+    ]
+  },
+  "nvoff": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:nvoff",
        "stream": false
       }
     ]
@@ -351,15 +989,6 @@
       }
     ]
   },
-   "ak74": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:ak74",
-       "stream": false
-      }
-    ]
-  },
   "tar21": {
     "category": "master",
     "sounds": [
@@ -383,6 +1012,24 @@
     "sounds": [
       {
        "name": "mw:acr",
+       "stream": false
+      }
+    ]
+  },
+  "groza": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:groza",
+       "stream": false
+      }
+    ]
+  },
+  "vepr12": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:vepr12",
        "stream": false
       }
     ]
@@ -1080,6 +1727,60 @@
       }
     ]
   },
+  "makarovsilenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:makarovsilenced",
+       "stream": false
+      }
+    ]
+  },
+  "m9silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m9silenced",
+       "stream": false
+      }
+    ]
+  },
+  "m1911silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1911silenced",
+       "stream": false
+      }
+    ]
+  },
+  "r700action": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:r700action",
+       "stream": false
+      }
+    ]
+  },
+  "r700boltback": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:r700boltback",
+       "stream": false
+      }
+    ]
+  },
+  "r700boltforward": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:r700boltforward",
+       "stream": false
+      }
+    ]
+  },
   "ksg12": {
     "category": "master",
     "sounds": [
@@ -1112,6 +1813,24 @@
     "sounds": [
       {
        "name": "mw:m249reload",
+       "stream": false
+      }
+    ]
+  },
+  "m249unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m249unload",
+       "stream": false
+      }
+    ]
+  },
+   "realisticm4": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:realisticm4",
        "stream": false
       }
     ]

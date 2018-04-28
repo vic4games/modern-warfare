@@ -33,14 +33,11 @@ public class Electronics {
                 .withModel(new TabletModel(), "IPad.png")
                 //.withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    //                    GL11.glTranslatef(0.5F, -1.5F, -0.7F);
-
-                    GL11.glRotatef(45F, 0f, 1f, 0f);
-                    GL11.glRotatef(2F, 1f, 0f, 0f);
-                    //                    GL11.glRotatef(125F, 0f, 1f, 0f);
-                    //                    GL11.glScaled(0.8F, 0.8F, 0.8F);
-                    GL11.glTranslatef(0.68F, -1.35F, 0.7F);
-                    GL11.glScaled(1F, 1F, 1F);
+                    GL11.glRotatef(25.000000f, 1f, 0f, 0f);
+                    GL11.glRotatef(50.000000f, 0f, 1f, 0f);
+                    GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
+                    GL11.glTranslatef(1.000000f, 0.100000f, -4.399998f);
+                    GL11.glScaled(5F, 5F, 5F);
                 })
                 .withThirdPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof TabletModel) {

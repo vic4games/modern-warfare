@@ -59,9 +59,6 @@ public class MakarovTop extends ModelBase
     ModelRenderer gun179;
     ModelRenderer gun180;
     ModelRenderer gun181;
-    ModelRenderer gun182;
-    ModelRenderer gun183;
-    ModelRenderer gun184;
     ModelRenderer gun185;
     ModelRenderer gun186;
     ModelRenderer gun187;
@@ -346,24 +343,7 @@ public class MakarovTop extends ModelBase
       gun181.setTextureSize(64, 32);
       gun181.mirror = true;
       setRotation(gun181, 0F, 0F, 0F);
-      gun182 = new ModelRenderer(this, 0, 0);
-      gun182.addBox(0F, 0F, 0F, 1, 1, 2);
-      gun182.setRotationPoint(-2F, -13.4F, -22.5F);
-      gun182.setTextureSize(64, 32);
-      gun182.mirror = true;
-      setRotation(gun182, 0.0743572F, 0F, 0F);
-      gun183 = new ModelRenderer(this, 0, 0);
-      gun183.addBox(0F, 0F, 0F, 1, 2, 1);
-      gun183.setRotationPoint(-3F, -13.4F, -1F);
-      gun183.setTextureSize(64, 32);
-      gun183.mirror = true;
-      setRotation(gun183, 0F, 0F, 0F);
-      gun184 = new ModelRenderer(this, 0, 0);
-      gun184.addBox(0F, 0F, 0F, 1, 2, 1);
-      gun184.setRotationPoint(-1F, -13.4F, -1F);
-      gun184.setTextureSize(64, 32);
-      gun184.mirror = true;
-      setRotation(gun184, 0F, 0F, 0F);
+      
       gun185 = new ModelRenderer(this, 0, 0);
       gun185.addBox(0F, 0F, 0F, 1, 1, 3);
       gun185.setRotationPoint(0.2F, -11.4F, -2.8F);
@@ -603,9 +583,6 @@ public class MakarovTop extends ModelBase
     gun179.render(f5);
     gun180.render(f5);
     gun181.render(f5);
-    gun182.render(f5);
-    gun183.render(f5);
-    gun184.render(f5);
     gun185.render(f5);
     gun186.render(f5);
     gun187.render(f5);

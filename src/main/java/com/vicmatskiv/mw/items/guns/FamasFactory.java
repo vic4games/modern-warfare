@@ -17,6 +17,8 @@ import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
+import com.vicmatskiv.mw.models.AcogReticle;
+import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.Famas2;
 import com.vicmatskiv.mw.models.FamasG2;
@@ -64,11 +66,11 @@ public class FamasFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.8f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.12f)
-		 .withShellCasingForwardOffset(-0.1f)
+		.withShellCasingForwardOffset(-0.1f)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
@@ -177,9 +179,13 @@ public class FamasFactory implements GunFactory {
           GL11.glTranslatef(-0.286F, -1.72F, -0.4F);
           GL11.glScaled(0.7F, 0.7F, 0.7F);
       },(model) -> {
-           if(model instanceof Acog2) {
-              GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-              GL11.glScaled(0.06F, 0.06F, 0.06F);
+          if(model instanceof AcogScope2) {
+              GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+              GL11.glScaled(0.5F, 0.5F, 0.5F);
+          }
+          else if(model instanceof AcogReticle) {
+              GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+              GL11.glScaled(0.03F, 0.03F, 0.03F);
           }
       })
       .withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
@@ -243,8 +249,8 @@ public class FamasFactory implements GunFactory {
                 GL11.glRotatef(-90F, 0f, 0f, 4f);
             })
             .withInventoryPositioning(itemStack -> {
-                GL11.glScaled(0.35F, 0.35F, 0.35F);
-                GL11.glTranslatef(1, 0.8f, 0);
+                GL11.glScaled(0.3F, 0.3F, 0.3F);
+                GL11.glTranslatef(0f, 0.8f, 0f);
                 GL11.glRotatef(-120F, -0.5f, 7f, 3f);
             })
             .withThirdPersonPositioning((renderContext) -> {
@@ -257,14 +263,16 @@ public class FamasFactory implements GunFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(2F, 2F, 2F);
-                GL11.glTranslatef(-0.300000f, 0.700000f, -0.8f);
+                GL11.glTranslatef(-0.5f, 0.85f, -1.65f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(2F, 2F, 2F);
-                GL11.glTranslatef(-0.300000f, 0.700000f, -0.4f);
-                GL11.glRotatef(-3F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.5f, 0.85f, -1.5f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
+                GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -555,7 +563,7 @@ public class FamasFactory implements GunFactory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.005F, 0.27f, 0.75f);
+                    GL11.glTranslatef(0.005F, 0.27f, 0.8f);
                 } 
                 
              // ACOG Zoom
