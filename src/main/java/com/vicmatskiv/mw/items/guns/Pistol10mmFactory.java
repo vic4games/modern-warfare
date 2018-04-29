@@ -37,7 +37,7 @@ public class Pistol10mmFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.5f)
 		.withFlashOffsetX(() -> 0.2f)
 		.withFlashOffsetY(() -> 0.1f)

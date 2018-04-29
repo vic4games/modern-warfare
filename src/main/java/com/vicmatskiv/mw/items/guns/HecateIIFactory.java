@@ -42,7 +42,7 @@ public class HecateIIFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(1f)
+        .withFlashIntensity(0.4f)
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)

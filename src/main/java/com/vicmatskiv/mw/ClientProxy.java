@@ -59,7 +59,7 @@ public class ClientProxy extends CommonProxy {
 		renderItem.getItemModelMesher().register(Ores.AluminumIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "aluminumingot", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.AluminumPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "aluminumplate", "inventory"));
 	    renderItem.getItemModelMesher().register(CommonProxy.BigSteelPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "bigsteelplate", "inventory"));
-//		renderItem.getItemModelMesher().register(CommonProxy.CGrip, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "cgrip", "inventory"));
+		
 		renderItem.getItemModelMesher().register(CommonProxy.Capacitor, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "capacitor", "inventory"));
 		renderItem.getItemModelMesher().register(CommonProxy.Cloth, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "cloth", "inventory"));
 		renderItem.getItemModelMesher().register(Ores.CopperIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "copperingot", "inventory"));

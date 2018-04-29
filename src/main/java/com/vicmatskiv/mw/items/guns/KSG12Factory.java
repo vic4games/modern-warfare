@@ -17,6 +17,8 @@ import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
+import com.vicmatskiv.mw.models.AcogReticle;
+import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -28,7 +30,9 @@ import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
+import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -66,7 +70,7 @@ public class KSG12Factory implements GunFactory {
 		.withCrosshairZoomed("Sight")
 		.withInaccuracy(10)
 		.withPellets(10)
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.15f)
@@ -171,17 +175,24 @@ public class KSG12Factory implements GunFactory {
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
+			} else if(model instanceof MBUSiron) {
+                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                GL11.glScaled(0F, 0F, 0F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
 			GL11.glTranslatef(0.055F, -1.55F, -0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		},(model) -> {
-			 if(model instanceof Acog2) {
-				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
+		    if(model instanceof AcogScope2) {
+                GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+                GL11.glScaled(0.5F, 0.5F, 0.5F);
+            }
+            else if(model instanceof AcogReticle) {
+                GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
             GL11.glTranslatef(0.15F, -1.3F, -0.2F);
             GL11.glScaled(0.3F, 0.3F, 0.3F);
@@ -227,6 +238,15 @@ public class KSG12Factory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
+		.withCompatibleAttachment(Attachments.MicroT1, (model) -> {
+            if(model instanceof MicroT1) {
+                GL11.glTranslatef(0.155F, -1.53F, -0.2F);
+                GL11.glScaled(0.3F, 0.3F, 0.3F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(0.2F, -1.63f, -0.3F);
+                GL11.glScaled(0.07F, 0.07F, 0.07F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
 			GL11.glTranslatef(0.107F, -1.32F, -4F);
 			GL11.glScaled(1.3F, 1.3F, 1.3F);
@@ -321,6 +341,12 @@ public class KSG12Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.05f, 0f);
+                } 
+                
+             // Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, 0.07f, 0f);
                 } 
                 
                 // Everything else
@@ -513,6 +539,12 @@ public class KSG12Factory implements GunFactory {
 					//System.out.println("Position me for Reflex");
 					GL11.glTranslatef(0F, 0.05f, 0f);
 				} 
+				
+				// Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, 0.07f, 0f);
+                } 
 				
 				// Everything else
 				else {

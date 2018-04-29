@@ -53,7 +53,7 @@ public class RPK74MFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
@@ -194,16 +194,29 @@ public class RPK74MFactory implements GunFactory {
                 })
             
             .withFirstPersonPositioning((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+//                GL11.glTranslatef(-0.350000f, 0.975000f, -0.200000f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.52f, 1f, -0.35f);
+                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.45f, 1.05f, -0.6f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glRotatef(6.000000f, 0f, 0f, 1f);
+//                GL11.glTranslatef(-0.350000f, 1f, 0.1f);
+//                GL11.glRotatef(-2.5F, 1f, 0f, 0f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.52f, 1f, 0f);
-                GL11.glRotatef(-1.5F, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.45f, 1.05f, -0.5f);
+                GL11.glRotatef(-1.5F, 1f, 0f, 0f); 
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

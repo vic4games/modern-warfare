@@ -14,6 +14,8 @@ import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
+import com.vicmatskiv.mw.models.AcogReticle;
+import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -25,6 +27,7 @@ import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MX;
 import com.vicmatskiv.mw.models.P90iron;
@@ -58,7 +61,7 @@ public class MXFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
@@ -112,17 +115,24 @@ public class MXFactory implements GunFactory {
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
+			} else if(model instanceof MBUSiron) {
+                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                GL11.glScaled(0F, 0F, 0F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
 			GL11.glTranslatef(0.055F, -1.58F, 0.2F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		},(model) -> {
-			 if(model instanceof Acog2) {
-				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
+		    if(model instanceof AcogScope2) {
+                GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+                GL11.glScaled(0.5F, 0.5F, 0.5F);
+            }
+            else if(model instanceof AcogReticle) {
+                GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 	    	
 	    	GL11.glTranslatef(0.055F, -1.56F, 0.4F);

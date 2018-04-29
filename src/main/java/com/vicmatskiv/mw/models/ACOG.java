@@ -112,14 +112,6 @@ public class ACOG extends ModelBase
     ModelRenderer gun97;
     ModelRenderer gun98;
     ModelRenderer gun110;
-    ModelRenderer gun111;
-    ModelRenderer gun112;
-    ModelRenderer gun113;
-    ModelRenderer gun114;
-    ModelRenderer gun115;
-    ModelRenderer gun118;
-    ModelRenderer gun121;
-    ModelRenderer gun122;
   
   public ACOG()
   {
@@ -690,54 +682,7 @@ public class ACOG extends ModelBase
       gun110.setTextureSize(64, 32);
       gun110.mirror = true;
       setRotation(gun110, -0.0743572F, 0F, 0F);
-      gun111 = new ModelRenderer(this, 0, 0);
-      gun111.addBox(0F, 0F, 0F, 3, 5, 1);
-      gun111.setRotationPoint(1.5F, -1.3F, 1.9F);
-      gun111.setTextureSize(64, 32);
-      gun111.mirror = true;
-      setRotation(gun111, 1.673038F, 0F, 0F);
-      gun112 = new ModelRenderer(this, 0, 0);
-      gun112.addBox(0F, 0F, 0F, 3, 1, 5);
-      gun112.setRotationPoint(1.5F, -6.3F, 1.9F);
-      gun112.setTextureSize(64, 32);
-      gun112.mirror = true;
-      setRotation(gun112, -0.0743572F, 0F, 0F);
-      gun113 = new ModelRenderer(this, 0, 0);
-      gun113.addBox(0F, 0F, 0F, 5, 3, 1);
-      gun113.setRotationPoint(5.5F, -5.3F, 1.9F);
-      gun113.setTextureSize(64, 32);
-      gun113.mirror = true;
-      setRotation(gun113, 0F, -1.635859F, 0F);
-      gun114 = new ModelRenderer(this, 0, 0);
-      gun114.addBox(0F, 0F, 0F, 1, 3, 5);
-      gun114.setRotationPoint(0.5F, -5.3F, 1.9F);
-      gun114.setTextureSize(64, 32);
-      gun114.mirror = true;
-      setRotation(gun114, 0F, 0.0523599F, 0F);
-      gun115 = new ModelRenderer(this, 0, 0);
-      gun115.addBox(0F, 0F, 0F, 1, 1, 5);
-      gun115.setRotationPoint(4.35F, -4.4F, 1.8F);
-      gun115.setTextureSize(64, 32);
-      gun115.mirror = true;
-      setRotation(gun115, 0F, 0F, -2.379431F);
-      gun118 = new ModelRenderer(this, 0, 0);
-      gun118.addBox(0F, 0F, 0F, 1, 1, 5);
-      gun118.setRotationPoint(1.7F, -4.4F, 1.8F);
-      gun118.setTextureSize(64, 32);
-      gun118.mirror = true;
-      setRotation(gun118, 0F, 0F, -2.342252F);
-      gun121 = new ModelRenderer(this, 0, 0);
-      gun121.addBox(0F, 0F, 0F, 1, 1, 5);
-      gun121.setRotationPoint(1.7F, -3.3F, 1.8F);
-      gun121.setTextureSize(64, 32);
-      gun121.mirror = true;
-      setRotation(gun121, 0F, 0F, 0.7807508F);
-      gun122 = new ModelRenderer(this, 0, 0);
-      gun122.addBox(0F, 0F, 0F, 1, 1, 5);
-      gun122.setRotationPoint(4.25F, -3.3F, 1.8F);
-      gun122.setTextureSize(64, 32);
-      gun122.mirror = true;
-      setRotation(gun122, 0F, 0F, 0.7435722F);
+      
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -838,14 +783,6 @@ public class ACOG extends ModelBase
     gun97.render(f5);
     gun98.render(f5);
     gun110.render(f5);
-    gun111.render(f5);
-    gun112.render(f5);
-    gun113.render(f5);
-    gun114.render(f5);
-    gun115.render(f5);
-    gun118.render(f5);
-    gun121.render(f5);
-    gun122.render(f5);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

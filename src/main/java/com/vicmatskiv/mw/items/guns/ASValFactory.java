@@ -27,6 +27,7 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.PSO12;
+import com.vicmatskiv.mw.models.PSO1reticle;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.VSSVintorez;
@@ -54,7 +55,7 @@ public class ASValFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(1f)
+        .withFlashIntensity(0f)
         .withFlashScale(() -> 0f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)
@@ -103,9 +104,9 @@ public class ASValFactory implements GunFactory {
             GL11.glTranslatef(0.14F, -0.9F, -1.2F);
             GL11.glScaled(1.2F, 1.2F, 1.2F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(-0.209F, -0.485F, 1.27F);
-                GL11.glScaled(0.07F, 0.07F, 0.07F);
+            if(model instanceof PSO1reticle) {
+                GL11.glTranslatef(-0.212F, -0.486F, 1.27F);
+                GL11.glScaled(0.017F, 0.017F, 0.017F);
             }
              else if(model instanceof PSO12) {
                  GL11.glTranslatef(-0.27F, -0.6F, 1.21F);
@@ -190,14 +191,16 @@ public class ASValFactory implements GunFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(-0.475000f, 0.875000f, -0.225000f);
+                GL11.glTranslatef(-0.5f, 0.9f, -0.6f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(-0.475000f, 0.875000f, 0.1f);
-                GL11.glRotatef(-2f, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.5f, 0.9f, -0.5f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
+                GL11.glRotatef(-1.5f, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

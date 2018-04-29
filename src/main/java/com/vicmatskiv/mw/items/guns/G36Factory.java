@@ -62,7 +62,7 @@ public class G36Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.05f)
@@ -213,14 +213,16 @@ public class G36Factory implements GunFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(1.5F, 1.5F, 1.5F);
-                GL11.glTranslatef(-0.225000f, 0.725000f, 0.000000f);
+                GL11.glTranslatef(-0.3f, 0.8f, -0.3f);
+                GL11.glRotatef(3F, 0f, 0f, 1f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(1.5F, 1.5F, 1.5F);
-                GL11.glTranslatef(-0.225000f, 0.725000f, 0.4f);
-                GL11.glRotatef(-3F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.3f, 0.8f, -0.2f);
+                GL11.glRotatef(3F, 0f, 0f, 1f);
+                GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

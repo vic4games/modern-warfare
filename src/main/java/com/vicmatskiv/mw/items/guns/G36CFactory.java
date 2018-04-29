@@ -30,6 +30,7 @@ import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
+import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
@@ -61,7 +62,7 @@ public class G36CFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.13f)
 		.withFlashOffsetY(() -> 0.1f)
@@ -243,6 +244,15 @@ public class G36CFactory implements GunFactory {
 				GL11.glScaled(0.06F, 0.06F, 0.06F);
 			}
 		})
+		.withCompatibleAttachment(Attachments.MicroT1, (model) -> {
+            if(model instanceof MicroT1) {
+                GL11.glTranslatef(-0.17F, -2F, -1F);
+                GL11.glScaled(0.3F, 0.3F, 0.3F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(-0.125F, -2.1F, -1F);
+                GL11.glScaled(0.07F, 0.07F, 0.07F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Grip2, (model) -> {
 			GL11.glTranslatef(-0.2F, -0.35F, -4F);
 			GL11.glScaled(1F, 1F, 1F);
@@ -297,14 +307,16 @@ public class G36CFactory implements GunFactory {
 			.withFirstPersonPositioning((renderContext) -> {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glScaled(1.5F, 1.5F, 1.5F);
-				GL11.glTranslatef(-0.225000f, 0.725000f, 0.000000f);
+				GL11.glTranslatef(-0.3f, 0.8f, -0.3f);
+				GL11.glRotatef(3F, 0f, 0f, 1f);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
 			    GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(1.5F, 1.5F, 1.5F);
-                GL11.glTranslatef(-0.225000f, 0.725000f, 0.4f);
-				GL11.glRotatef(-3F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.3f, 0.8f, -0.2f);
+                GL11.glRotatef(3F, 0f, 0f, 1f);
+				GL11.glRotatef(-1.5F, 1f, 0f, 0f);
 				})
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -352,6 +364,12 @@ public class G36CFactory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.24f, 0.1f);
+                } 
+                
+             // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.19f, 0.1f);
                 } 
                 
                 // Everything else
@@ -650,6 +668,12 @@ public class G36CFactory implements GunFactory {
 					//System.out.println("Position me for Holo");
 				    GL11.glTranslatef(0F, 0.24f, 0.1f);
 				} 
+				
+				// Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.19f, 0.1f);
+                } 
 				
 				// Everything else
 				else {

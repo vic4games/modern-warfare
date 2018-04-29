@@ -17,6 +17,8 @@ import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.AS50;
 import com.vicmatskiv.mw.models.Acog2;
+import com.vicmatskiv.mw.models.AcogReticle;
+import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -53,7 +55,7 @@ public class AS50Factory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.1f)
 		.withFlashOffsetY(() -> 0.1f)
@@ -161,11 +163,15 @@ public class AS50Factory implements GunFactory {
 			GL11.glTranslatef(0.055F, -1.8F, 0F);
 			GL11.glScaled(0.6F, 0.6F, 0.6F);
 		},(model) -> {
-			 if(model instanceof Acog2) {
-				GL11.glTranslatef(0.237F, -0.26F, 0.46F);
-				GL11.glScaled(0.06F, 0.06F, 0.06F);
-			}
-		})
+		    if(model instanceof AcogScope2) {
+                GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+                GL11.glScaled(0.5F, 0.5F, 0.5F);
+            }
+            else if(model instanceof AcogReticle) {
+                GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
+        })
 		 .withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 	    	
 	    	GL11.glTranslatef(0.055F, -1.76F, 0.2F);

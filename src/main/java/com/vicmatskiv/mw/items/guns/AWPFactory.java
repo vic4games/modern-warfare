@@ -24,6 +24,7 @@ import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -56,7 +57,7 @@ public class AWPFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(1f)
+		.withFlashIntensity(0.4f)
 		.withFlashScale(() -> 0.8f)
 		.withFlashOffsetX(() -> 0.07f)
 		.withFlashOffsetY(() -> 0.06f)
@@ -150,8 +151,11 @@ public class AWPFactory implements GunFactory {
 			} else if(model instanceof MP5Iron) {
 				GL11.glTranslatef(0.215F, -1.54F, 1.2F);
 				GL11.glScaled(0F, 0F, 0F);
-			}
-		})
+			} else if(model instanceof MBUSiron) {
+                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                GL11.glScaled(0F, 0F, 0F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.HP, (player, stack) -> {
 	    	
 			GL11.glTranslatef(-0.36F, -1.43F, -1.5F);
