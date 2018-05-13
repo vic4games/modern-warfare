@@ -5,7 +5,7 @@ import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compa
 import com.vicmatskiv.weaponlib.CustomArmor;
 import com.vicmatskiv.weaponlib.CustomArmor.Builder;
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.item.Item;
@@ -43,7 +43,7 @@ public class Armors {
     static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 40, new int[] { 15, 17, 16, 15 }, 15, null, 0); // TODO: last
     static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event, 
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, 
             ModContext modContext) {
         
         Builder marineArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)

@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.resources.ItemSteelPlate;
 import com.vicmatskiv.mw.resources.ItemTanCloth;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.client.model.ModelBiped;
@@ -63,9 +64,9 @@ public class CommonProxy {
         return false;
     }
 
-    public void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public void preInit(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
-        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
+        ModernWarfareMod.MOD_CONTEXT.preInit(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
         
@@ -139,12 +140,13 @@ public class CommonProxy {
         new TestMeleeFactory().createMelee(this);
 
         new KarambitFactory().createMelee(this);
+    }
+
+    public void init(ModernWarfareMod mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID);
         
         Entities.init(this);
-
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
-        
-        PlayerAnimations.init(mod, configurationManager, event);
     }
 
 }

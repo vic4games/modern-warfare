@@ -7,7 +7,7 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.models.GasDetector;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.electronics.ItemHandheld;
@@ -21,7 +21,7 @@ public class Electronics {
 
     public static ItemAttachment<Object> Tablet;
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         Tablet = new ItemTablet.Builder<>()
                 .withViewfinderPositioning((p, s) -> {
                     float scale = 5.9f;
@@ -44,7 +44,7 @@ public class Electronics {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-45F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
+                        GL11.glScaled(1F, 1F, 1F);
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HP) {
@@ -67,18 +67,18 @@ public class Electronics {
                 })
                 .withFirstPersonHandPositioning(
                         c -> {
-                            GL11.glRotatef(190F, 1f, 0f, 0f);
-                            GL11.glRotatef(10F, 0f, 1f, 0f);
-                            GL11.glRotatef(30F, 0f, 0f, 1f);
-                            GL11.glTranslatef(0.05F, -1.7F, 0.05F);
-                            GL11.glScaled(1.1F, 1.1F, 1.1F);
+                            GL11.glScaled(2F, 2F, 2F);
+                            GL11.glRotatef(-145.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(-0.025000f, -1.149999f, -0.100000f);
                         },
                         c -> {
-                            GL11.glRotatef(190F, 1f, 0f, 0f);
-                            GL11.glRotatef(0F, 0f, 1f, 0f);
-                            GL11.glRotatef(-10F, 0f, 0f, 1f);
-                            GL11.glTranslatef(-0.1F, -0.45F, 0.4F);
-                            GL11.glScaled(1.1F, 1.1F, 1.1F);
+                            GL11.glScaled(2F, 2F, 2F);
+                            GL11.glRotatef(-135.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(40.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(-35.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.040000f, -0.575000f, 0.125000f);
                         })
                 .withName("tablet")
                 .withModId(ModernWarfareMod.MODID)

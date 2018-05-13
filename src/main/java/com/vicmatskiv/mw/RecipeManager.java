@@ -22,6 +22,12 @@ public class RecipeManager {
         compatibility.addSmelting(Ores.SulfurDust, compatibility.createItemStack(CompatibleItems.GUNPOWDER, 1, 0), 5f);
         compatibility.addSmelting(Ores.SteelDust, new ItemStack(Ores.SteelIngot), 5f);
 
+        modContext.getRecipeManager().registerShapedRecipe(Armors.Tacticalhelmet,
+                "AXA",
+                "A A",
+                'A', CommonProxy.SteelPlate,
+                'X', CommonProxy.ElectronicCircuitBoard);
+        
         modContext.getRecipeManager().registerShapedRecipe(Armors.Marinehelmet,
                 "AAA",
                 "A A",

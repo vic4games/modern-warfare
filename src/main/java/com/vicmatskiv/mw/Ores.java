@@ -22,7 +22,8 @@ import com.vicmatskiv.mw.resources.ItemSulfurDust;
 import com.vicmatskiv.mw.resources.ItemTantalumIngot;
 import com.vicmatskiv.mw.resources.ItemTinIngot;
 import com.vicmatskiv.mw.resources.ItemTitaniumIngot;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.block.Block;
@@ -61,7 +62,7 @@ public class Ores {
     public static Item SteelIngot;
     public static Item Silicon;
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
         TitaniumOre = new BlockTitaniumOre();
         TitaniumIngot = new ItemTitaniumIngot();

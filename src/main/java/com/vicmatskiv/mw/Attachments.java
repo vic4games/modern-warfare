@@ -29,7 +29,7 @@ import com.vicmatskiv.weaponlib.ItemScope;
 import com.vicmatskiv.weaponlib.LaserBeamRenderer;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -84,7 +84,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> BR55scope;
     public static ItemAttachment<Weapon> Maxim9Cover;
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         Reflex = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()

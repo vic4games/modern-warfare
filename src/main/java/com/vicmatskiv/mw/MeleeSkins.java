@@ -2,7 +2,7 @@ package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.melee.MeleeSkin;
@@ -15,7 +15,7 @@ public class MeleeSkins {
     public static MeleeSkin Murasaki;
     public static MeleeSkin Evangelion;
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         CrimsonBlood = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeCrimsonBlood")
         .withModId(ModernWarfareMod.MODID)
