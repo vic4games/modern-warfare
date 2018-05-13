@@ -40,6 +40,7 @@ public class Armors {
     public static Item Tacticalhelmet;
 
     static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, new int[] { 3, 5, 4, 3 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Spetsnaz = compatibility.addArmorMaterial("Spetsnaz", "Spetsnaz", 40, new int[] { 6, 8, 7, 6 }, 15, null, 0); // TODO: last
     static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 40, new int[] { 15, 17, 16, 15 }, 15, null, 0); // TODO: last
     static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
 
@@ -56,7 +57,7 @@ public class Armors {
         Armors.Marineboots = marineArmorBuilder.buildBoots(modContext.isClient());
         
         Builder spartanArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
-                .withUnlocalizedName("spartan").withTextureName("mkvimjolnir")
+                .withUnlocalizedName("mkvi").withTextureName("mkvimjolnir")
                 .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
                 .withShieldCapacity(200.0)
                 .withShieldRegenerationRate(80.0)
@@ -71,7 +72,7 @@ public class Armors {
         Armors.spartanboots = spartanArmorBuilder.buildBoots(modContext.isClient());
         
 
-        Builder spetznazArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+        Builder spetznazArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spetsnaz)
                 .withCreativeTab(ModernWarfareMod.ArmorTab)
                 .withUnlocalizedName("Spetznaz").withTextureName("Spetsnaz")
                 .withModelClass("com.vicmatskiv.mw.models.Spetsnaz").withHudTextureName("Marine")

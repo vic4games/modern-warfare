@@ -51,7 +51,7 @@ public class AK74MFactory implements GunFactory {
 		.withName("AK74M")
 		//.withAmmo(CommonProxy.AK47Mag)
 //		.withAmmoCapacity(30)
-		.withFireRate(0.55f)
+		.withFireRate(0.6f)
 		.withRecoil(3f)
 		.withZoom(0.9f)
 		.withMaxShots(Integer.MAX_VALUE, 1)
@@ -241,15 +241,15 @@ public class AK74MFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1f, -0.7f);
+                GL11.glTranslatef(-0.5f, 0.92f, -0.5f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1f, -0.6f);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+                GL11.glRotatef(6.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.45f, 0.96f, -0.3f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -530,10 +530,10 @@ public class AK74MFactory implements GunFactory {
             
             .withFirstPersonPositioningRunning((renderContext) -> {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(10.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1.3f, -0.400000f);
+                GL11.glTranslatef(-0.5f, 1.2f, -0.5f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {

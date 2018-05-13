@@ -70,7 +70,7 @@ public class SRS99S5Factory implements GunFactory {
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.12f)
         .withFlashOffsetY(() -> 0.08f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.SnipersTab)
 //        .withCrafting(CraftingComplexity.MEDIUM, 
 //                CommonProxy.SteelPlate,
 //                CommonProxy.MiniSteelPlate,

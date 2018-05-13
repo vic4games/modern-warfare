@@ -109,7 +109,7 @@ public class OTs14GrozaFactory {
             GL11.glScaled(1.1F, 1.3F, 1F);
         })
         .withCompatibleAttachment(Attachments.Silencer762x39, (model) -> {
-          GL11.glTranslatef(-0.22F, -1.06F, -6.5F);
+          GL11.glTranslatef(-0.22F, -1.1F, -6.6F);
           GL11.glScaled(1.2F, 1.2F, 1.2F);
         })
         .withCompatibleAttachment(Magazines.PMAG762x39, (model) -> {
@@ -191,8 +191,8 @@ public class OTs14GrozaFactory {
                 GL11.glRotatef(-120F, -0.5f, 7f, 3f);
             })
             .withThirdPersonPositioning((renderContext) -> {
-                GL11.glScaled(0.5F, 0.5F, 0.5F);
-                GL11.glTranslatef(-1.8F, -1.1F, 2F);
+                GL11.glScaled(0.45F, 0.45F, 0.45F);
+                GL11.glTranslatef(-2.7F, -4F, 2.9F);
                 GL11.glRotatef(-45F, 0f, 1f, 0f);
                 GL11.glRotatef(70F, 1f, 0f, 0f);
                 })
@@ -200,16 +200,16 @@ public class OTs14GrozaFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.525000f, 1.249999f, 0.125000f);
+                GL11.glRotatef(4.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.5f, 1.174999f, 1.6f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.525000f, 1.2f, 0.4f);
-                GL11.glRotatef(-1.7F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.5f, 1.2f, 1.8f);
+                GL11.glRotatef(-0.8F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -289,7 +289,7 @@ public class OTs14GrozaFactory {
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(35F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                        GL11.glTranslatef(-0.55f, 1.1f, 0.5f);
                         GL11.glRotatef(-4F, 0f, 0f, 1f);
                         GL11.glRotatef(-8F, 1f, 0f, 0f);
                     }, 350, 0),
@@ -297,7 +297,7 @@ public class OTs14GrozaFactory {
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(35F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                        GL11.glTranslatef(-0.55f, 1.1f, 0.5f);
                         GL11.glRotatef(-4F, 0f, 0f, 1f);
                         GL11.glRotatef(-10F, 1f, 0f, 0f);
                     }, 300, 100),
@@ -305,7 +305,7 @@ public class OTs14GrozaFactory {
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                    GL11.glTranslatef(-0.55f, 1.1f, 0.5f);
                     GL11.glRotatef(-2F, 0f, 0f, 1f);
                     GL11.glRotatef(-15F, 1f, 0f, 0f);
                 }, 100, 130),
@@ -313,14 +313,14 @@ public class OTs14GrozaFactory {
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1f, -0.3f);
+                    GL11.glTranslatef(-0.55f, 1f, 0.5f);
                     GL11.glRotatef(-10F, 0f, 0f, 1f);
                 }, 400, 100),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1f, -0.15f);
+                    GL11.glTranslatef(-0.55f, 1f, 0.55f);
                     GL11.glRotatef(-5F, 0f, 0f, 1f);
                     GL11.glRotatef(-5F, 1f, 0f, 0f);
                 }, 200, 70),
@@ -328,7 +328,7 @@ public class OTs14GrozaFactory {
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.4f, 1f, -0.3f);
+                    GL11.glTranslatef(-0.5f, 1f, 0.5f);
                     GL11.glRotatef(-8F, 0f, 0f, 1f);
                     GL11.glRotatef(-3F, 1f, 0f, 0f);
                 }, 180, 0)
@@ -338,21 +338,21 @@ public class OTs14GrozaFactory {
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                    GL11.glTranslatef(-0.55f, 1.1f, 0.8f);
                     GL11.glRotatef(-2F, 0f, 0f, 1f);
                     GL11.glRotatef(-15F, 1f, 0f, 0f);
                 }, 200, 0),
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                    GL11.glTranslatef(-0.55f, 1.1f, 0.8f);
                     GL11.glRotatef(-4F, 0f, 0f, 1f);
                     GL11.glRotatef(-10F, 1f, 0f, 0f);
                 }, 100, 0),
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                    GL11.glTranslatef(-0.45f, 1.1f, -0.3f);
+                    GL11.glTranslatef(-0.55f, 1.1f, 0.8f);
                     GL11.glRotatef(-4F, 0f, 0f, 1f);
                     GL11.glRotatef(-8F, 1f, 0f, 0f);
                 }, 100, 50)
@@ -582,11 +582,11 @@ public class OTs14GrozaFactory {
                 })
             
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(10.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(15.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.825000f, 1.424999f, 1.149999f);
+                GL11.glTranslatef(0f, 0f, 2.3f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {
@@ -594,32 +594,32 @@ public class OTs14GrozaFactory {
                  GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
                  GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-1.025000f, 0.925000f, 0.775000f);
+                 GL11.glTranslatef(-1.2f, 0.8f, 1.8f);
              })
              
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
                          GL11.glScalef(4f, 4f, 4f);
-                         GL11.glRotatef(-110.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-20.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.400000f, -0.175000f, 0.550000f);
+                         GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                         GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.425000f, 0.225000f, 0.250000f);
                      }, 
                      (renderContext) -> {
                          GL11.glScalef(4f, 4f, 4f);
-                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(-70.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(-0.175000f, 0.075000f, 0.000000f);
+                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(-60.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(-0.100000f, 0.175000f, 0.275000f);
                      })
                      
             .withFirstPersonHandPositioningZooming(
                     (renderContext) -> {
                         GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-110.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-20.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.400000f, -0.175000f, 0.550000f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, 0.225000f, 0.250000f);
                     }, 
                     (renderContext) -> {
                         GL11.glScalef(4f, 4f, 4f);
@@ -671,27 +671,27 @@ public class OTs14GrozaFactory {
                     }, 250, 0),
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(3f, 3f, 5f);
-                        GL11.glTranslatef(0.5f, 0.15f, -0.1f);
-                        GL11.glRotatef(115f, 0, 0f, 1f);
-                        GL11.glRotatef(-70f, 1f, 0f, 0f);
-                        GL11.glRotatef(30f, 1f, 1f, 0f);
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, 0.225000f, 0.250000f);
                     }, 250, 0),
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(3f, 3f, 5f);
-                        GL11.glTranslatef(0.5f, 0.15f, -0.1f);
-                        GL11.glRotatef(115f, 0, 0f, 1f);
-                        GL11.glRotatef(-70f, 1f, 0f, 0f);
-                        GL11.glRotatef(30f, 1f, 1f, 0f);
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, 0.225000f, 0.250000f);
                     }, 250, 0),
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(3f, 3f, 5f);
-                        GL11.glTranslatef(0.5f, 0.15f, -0.1f);
-                        GL11.glRotatef(115f, 0, 0f, 1f);
-                        GL11.glRotatef(-70f, 1f, 0f, 0f);
-                        GL11.glRotatef(30f, 1f, 1f, 0f);
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, 0.225000f, 0.250000f);
                     }, 250, 0))
                     
             .withFirstPersonRightHandPositioningReloading(

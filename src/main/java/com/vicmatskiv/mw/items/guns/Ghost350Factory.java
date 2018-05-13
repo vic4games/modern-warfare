@@ -93,8 +93,8 @@ public class Ghost350Factory implements GunFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-        .withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 25", "Cartridge:", 
-        ".303 British Bullet" ,"Fire Rate: Bolt Action"))
+        .withInformationProvider(stack -> Arrays.asList("Type: Crossbow", "Damage: 25", "Cartridge:", 
+        "Ghost-350 Crossbow Bolt"))
         .withCompatibleAttachment(AuxiliaryAttachments.CrossbowString1, true, (model) -> {
             if(model instanceof Ghost350string1) {
 //                GL11.glRotatef(-68F, 0f, 1f, 0f);

@@ -62,15 +62,6 @@
       }
     ]
   },
-  "m16a4": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:m16a4",
-       "stream": false
-      }
-    ]
-  },
   "s686": {
     "category": "master",
     "sounds": [
@@ -85,24 +76,6 @@
     "sounds": [
       {
        "name": "mw:mp43e",
-       "stream": false
-      }
-    ]
-  },
-  "m4a1_2": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:m4a1_2",
-       "stream": false
-      }
-    ]
-  },
-  "m4a1_reload": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:m4a1_reload",
        "stream": false
       }
     ]
@@ -481,6 +454,15 @@
     "sounds": [
       {
        "name": "mw:acrreload",
+       "stream": false
+      }
+    ]
+  },
+  "acrunload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:acrunload",
        "stream": false
       }
     ]
@@ -935,6 +917,15 @@
       }
     ]
   },
+  "augreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:augreload",
+       "stream": false
+      }
+    ]
+  },
   "m16": {
     "category": "master",
     "sounds": [
@@ -1066,15 +1057,6 @@
     "sounds": [
       {
        "name": "mw:ump45",
-       "stream": false
-      }
-    ]
-  },
-   "akm": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:akm",
        "stream": false
       }
     ]
@@ -1223,11 +1205,11 @@
       }
     ]
   },
-   "m93r": {
+  "usg57": {
     "category": "master",
     "sounds": [
       {
-       "name": "mw:m93r",
+       "name": "mw:usg57",
        "stream": false
       }
     ]
@@ -1273,6 +1255,15 @@
     "sounds": [
       {
        "name": "mw:g36c",
+       "stream": false
+      }
+    ]
+  },
+  "g36reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:g36reload",
        "stream": false
       }
     ]
@@ -1484,15 +1475,6 @@
       }
     ]
   },
-   "m4a4": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:m4a4",
-       "stream": false
-      }
-    ]
-  },
   "vector": {
     "category": "master",
     "sounds": [
@@ -1646,15 +1628,6 @@
       }
     ]
   },
-   "riflesilencer": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:riflesilencer",
-       "stream": false
-      }
-    ]
-  },
   "m110": {
     "category": "master",
     "sounds": [
@@ -1687,15 +1660,6 @@
     "sounds": [
       {
        "name": "mw:noboltreload",
-       "stream": false
-      }
-    ]
-  },
-  "g36": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:g36",
        "stream": false
       }
     ]
@@ -1880,20 +1844,20 @@
       }
     ]
   },
-  "scar": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:scar",
-       "stream": false
-      }
-    ]
-  },
   "scarh": {
     "category": "master",
     "sounds": [
       {
        "name": "mw:scarh",
+       "stream": false
+      }
+    ]
+  },
+  "scarreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:scarreload",
        "stream": false
       }
     ]
@@ -2006,15 +1970,6 @@
       }
     ]
   },
-  "standardreload": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:standardreload",
-       "stream": false
-      }
-    ]
-  },
   "akreload": {
     "category": "master",
     "sounds": [
@@ -2074,6 +2029,15 @@
     "sounds": [
       {
        "name": "mw:fnfal",
+       "stream": false
+      }
+    ]
+  },
+  "fnfalreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:fnfalreload",
        "stream": false
       }
     ]

@@ -37,7 +37,7 @@ public class USG57Factory implements GunFactory {
         .withRecoil(5f)
         .withZoom(0.9f)
         .withMaxShots(1)
-        .withShootSound("M9")
+        .withShootSound("usg57")
         .withSilencedShootSound("maxim9")
         .withReloadSound("PistolReload")
         .withUnloadSound("pistolUnload")
@@ -54,8 +54,8 @@ public class USG57Factory implements GunFactory {
         .withCrafting(CraftingComplexity.MEDIUM, 
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
-        .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5", 
-        "Caliber: 9mm", "Magazines:", "15rnd 9mm Magazine",
+        .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 7", 
+        "Caliber: 5.7x28mm", "Magazines:", "20rnd 5.7x28mm Magazine",
         "Fire Rate: Semi"))
         .withCompatibleAttachment(GunSkins.Emerald, 
                 (a, i) -> {
@@ -94,7 +94,7 @@ public class USG57Factory implements GunFactory {
             GL11.glTranslatef(0F, -0.42F, 0.46F);
             GL11.glRotatef(-3F, 1f, 0f, 0f);
             })
-        .withCompatibleAttachment(Attachments.Silencer9mm, (model) -> {
+        .withCompatibleAttachment(Attachments.Silencer57x38, (model) -> {
             GL11.glTranslatef(-0.205F, -1.52F, -3.75F);
             GL11.glScaled(1.1F, 1.1F, 1.3F);
         })
@@ -497,7 +497,7 @@ public class USG57Factory implements GunFactory {
                         GL11.glTranslatef(0.435000f, -0.570000f, 0.065000f);
                     })
             .build())
-        .withSpawnEntityDamage(5f)
+        .withSpawnEntityDamage(7f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

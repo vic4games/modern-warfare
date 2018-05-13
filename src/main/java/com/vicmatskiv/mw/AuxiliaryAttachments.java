@@ -159,6 +159,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> CrossbowBolt;
     public static ItemAttachment<Weapon> Emp1911Slide;
     public static ItemAttachment<Weapon> USG57Slide;
+    public static ItemAttachment<Weapon> M93RSlide;
  
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
 
@@ -744,6 +745,14 @@ public class AuxiliaryAttachments {
                 .withModel(new com.vicmatskiv.mw.models.M9rearsight(), "m9rearsight.png")
                 .withModel(new com.vicmatskiv.mw.models.m9frontsight(), "m9frontsight.png")
                 .withName("M9Top").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M93RSlide = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M93RSlide(), "M9Top.png")
+                .withModel(new com.vicmatskiv.mw.models.M9rearsight(), "m9rearsight.png")
+                .withModel(new com.vicmatskiv.mw.models.m9frontsight(), "m9frontsight.png")
+                .withName("M93RSlide").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         AK12IronSight = new AttachmentBuilder<Weapon>()

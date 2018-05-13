@@ -520,7 +520,7 @@ public class Magazines {
 //                          Ores.INGOT_STEEL)
                 .build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
-        Magazines.BR55mag = new ItemMagazine.Builder().withAmmo(36).withCompatibleBullet(Bullets.Bullet762x51).withName("BR55mag")
+        Magazines.BR55mag = new ItemMagazine.Builder().withAmmo(36).withCompatibleBullet(Bullets.Bullet95x40).withName("BR55mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.BR55mag(), "BR55.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
@@ -533,7 +533,7 @@ public class Magazines {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.4F, -1.5F, 2F);
+                    GL11.glTranslatef(-0.4F, -1.8F, 2.8F);
                     GL11.glRotatef(-130F, 0f, 1f, 0f);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
@@ -558,7 +558,7 @@ public class Magazines {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.4F, -1.5F, 2F);
+                    GL11.glTranslatef(-0.4F, -1.7F, 2.6F);
                     GL11.glRotatef(-130F, 0f, 1f, 0f);
                     GL11.glRotatef(-20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
@@ -1221,11 +1221,11 @@ public class Magazines {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.6F, -0.5F, 0.6F);
+                    GL11.glTranslatef(-0.6F, -0.8F, -0.5F);
                     GL11.glRotatef(-130F, 0f, 1f, 0f);
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
-                    GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    GL11.glScaled(0.6F, 0.6F, 0.6f);
                 })
                 .withMaxStackSize(6)
                 .withCrafting(CraftingComplexity.LOW,
@@ -1311,7 +1311,7 @@ public class Magazines {
                           Ores.INGOT_STEEL)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
-        Magazines.USG57Mag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullets.Bullet57).withName("USG57Mag")
+        Magazines.USG57Mag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullets.Bullet57x28).withName("USG57Mag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.M9Mag(), "M9Mag.png")
 
@@ -1402,7 +1402,7 @@ public class Magazines {
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.7F, 0.7F, 0.7F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.5F, 0.4F);
+                    GL11.glTranslatef(-0.7F, -1.1F, 0.7F);
                     GL11.glRotatef(-130F, 0f, 1f, 0f);
                     GL11.glRotatef(20F, 1f, 0f, 0f);
                     GL11.glRotatef(-30F, 0f, 0f, 1f);
@@ -2014,7 +2014,7 @@ public class Magazines {
 //                          Ores.INGOT_STEEL)
 //                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
 
-        Magazines.ScarHMag = new ItemMagazine.Builder().withAmmo(30).withCompatibleBullet(Bullets.Bullet300Blackout).withName("ScarHMag")
+        Magazines.ScarHMag = new ItemMagazine.Builder().withAmmo(20).withCompatibleBullet(Bullets.Bullet300Blackout).withName("ScarHMag")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarHMag(), "GunmetalTexture.png")
 

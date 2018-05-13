@@ -28,6 +28,7 @@ public class Guns {
     public static Item G18;
     public static Item G21;
     public static Item M9;
+    public static Item M93R;
 //    public static Item B92A1;
     public static Item USP45;
     public static Item P2000;
@@ -68,7 +69,6 @@ public class Guns {
     public static Item MosinNagant;
     public static Item MosinPU;
     public static Item M21;
-    public static Item M93R;
     public static Item Python;
     public static Item MakarovPM;
     public static Item KrissVector;
@@ -166,7 +166,7 @@ public class Guns {
         G21 = new G21Factory().createGun(proxy);
         Glock32 = new Glock32Factory().createGun(proxy);
         M9 = new M9Factory().createGun(proxy);
-//        M93R = new M93RFactory().createGun(proxy);
+        M93R = new M93RFactory().createGun(proxy);
         USP45 = new USP45Factory().createGun(proxy);
         P99 = new P99Factory().createGun(proxy);
         Deagle44 = new Deagle44Factory().createGun(proxy);

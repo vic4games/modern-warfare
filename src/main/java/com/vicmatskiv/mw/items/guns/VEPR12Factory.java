@@ -82,7 +82,7 @@ public class VEPR12Factory {
                 CommonProxy.MetalComponents,
                 Ores.INGOT_STEEL)
         .withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 7", "Pellets per Shot: 11",  
-        "Cartridge: 12 Gauge Shotgun Shell", "Magazines:", "5rnd 12 Gauge Shell Magazine",
+        "Cartridge: 12 Gauge Shotgun Shell", "Magazines:", "8rnd 12 Gauge Shell Magazine",
         "Fire Rate: Semi"))
         .withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {

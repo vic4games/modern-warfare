@@ -679,11 +679,11 @@ public class AK12Factory implements GunFactory {
 			 })
 			 .withFirstPersonHandPositioning(
 					 (renderContext) -> {
-					     GL11.glScalef(3f, 3f, 5f);
-                         GL11.glTranslatef(0.47f, 0.07f, -0f);
-                         GL11.glRotatef(115f, 0, 0f, 1f);
-                         GL11.glRotatef(-70f, 1f, 0f, 0f);
-                         GL11.glRotatef(30f, 1f, 1f, 0f);
+					     GL11.glScalef(4f, 4f, 5f);
+					     GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+					     GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
+					     GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+					     GL11.glTranslatef(0.175000f, -0.325000f, 0.225000f);
 					 }, 
 					 (renderContext) -> {
 						 GL11.glScalef(2.5f, 2.5f, 3f);

@@ -58,7 +58,7 @@ public class AK47Factory implements GunFactory {
 		.withFlashIntensity(0.4f)
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.14f)
-        .withFlashOffsetY(() -> 0.12f)
+        .withFlashOffsetY(() -> 0.09f)
 		.withInaccuracy(1f)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withCrafting(CraftingComplexity.MEDIUM, 
@@ -205,22 +205,22 @@ public class AK47Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1f, -0.7f);
+                GL11.glTranslatef(-0.5f, 0.97f, -0.5f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1f, -0.6f);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+                GL11.glRotatef(6.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.45f, 1f, -0.3f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.350000f, 0.8f, -0f);
-                GL11.glRotatef(-1F, 1f, 0f, 0f);
+                GL11.glTranslatef(0.350000f, 0.8f, 0f);
+                GL11.glRotatef(-0.6F, 1f, 0f, 0f);
 
                 
                 // ACOG Zoom
@@ -605,10 +605,10 @@ public class AK47Factory implements GunFactory {
 			
 			.withFirstPersonPositioningRunning((renderContext) -> {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(10.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1.3f, -0.400000f);
+                GL11.glTranslatef(-0.5f, 1.2f, -0.5f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {

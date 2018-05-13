@@ -52,13 +52,13 @@ public class FNFALFactory implements GunFactory {
 //		.withAmmo(CommonProxy.FNFALMag)
 //		.withAmmoCapacity(20)
 		.withFireRate(0.5f)
-		.withRecoil(2f)
+		.withRecoil(6f)
 		.withZoom(0.9f)
 		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("FNFAL")
 		.withSilencedShootSound("RifleSilencer")
-		.withReloadSound("StandardReload")
-		.withUnloadSound("Unload")
+		.withReloadSound("fnfalreload")
+		.withUnloadSound("m4unload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
@@ -315,24 +315,18 @@ public class FNFALFactory implements GunFactory {
 				GL11.glRotatef(70F, 1f, 0f, 0f);
 				})
 				
-				
 			.withFirstPersonPositioning((renderContext) -> {
-//				GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-//				GL11.glRotatef(45F, 0f, 1f, 0f);
-//				GL11.glRotatef(-3.000000f, 0f, 0f, 1f);
-//				GL11.glTranslatef(-0.500000f, 1.299999f, -1.799999f);
-				
 				GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
 				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(-3.000000f, 0f, 0f, 1f);
-				GL11.glTranslatef(-0.500000f, 1.299999f, -1.799999f);
+				GL11.glRotatef(1.000000f, 0f, 0f, 1f);
+				GL11.glTranslatef(-0.6f, 1.35f, -1.8f);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
-				GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glRotatef(0.000000f, 0f, 0f, 1f);
-				GL11.glTranslatef(-0.500000f, 1.299999f, -1.7f);
+			    GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glRotatef(3.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.57f, 1.37f, -1.65f);
 				GL11.glRotatef(-1F, 1f, 0f, 0f);
 				})
 				
@@ -588,10 +582,10 @@ public class FNFALFactory implements GunFactory {
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
 				GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-				GL11.glRotatef(0.000000f, 1f, 0f, 0f);
-				GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+				GL11.glRotatef(10.000000f, 1f, 0f, 0f);
+				GL11.glRotatef(10.000000f, 0f, 1f, 0f);
 				GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-				GL11.glTranslatef(-0.575000f, 1.524999f, -1.349999f);
+				GL11.glTranslatef(-0.5f, 1.524999f, -2f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
 				 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);

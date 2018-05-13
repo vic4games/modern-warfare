@@ -67,7 +67,7 @@ public class M4A1Factory implements GunFactory {
 		//.withMaxShots(5)
 		.withShootSound("m4a1")
 		.withSilencedShootSound("ar15silenced")
-		.withReloadSound("m4a1_reload")
+		.withReloadSound("m4reload")
 		.withUnloadSound("m4unload")
 		.withReloadingTime(50)
 		.withCrosshair("gun")
@@ -267,8 +267,8 @@ public class M4A1Factory implements GunFactory {
             }
         })
 		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
-            GL11.glTranslatef(-0.31F, -1.41F, -0.7F);
-            GL11.glScaled(0.8F, 0.8F, 0.8F);
+            GL11.glTranslatef(-0.285F, -1.41F, -0.9F);
+            GL11.glScaled(0.7F, 0.7F, 0.7F);
 		},(model) -> {
 		    if(model instanceof AcogScope2) {
                 GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
@@ -432,22 +432,15 @@ public class M4A1Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(3F, 0f, 0f, 1f);
                 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.35f, 1.125f, -0.8f);
-                
-//                GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-//                GL11.glRotatef(-45.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-1.174999f, 1.100000f, 0.100000f);
+                GL11.glTranslatef(-0.28f, 1.06f, -0.7f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(3F, 0f, 0f, 1f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.35f, 1.125000f, -0.65f);
-                GL11.glRotatef(-0.3F, 1f, 0f, 0f); 
+                GL11.glTranslatef(-0.26f, 1.09f, -0.55f);
+                GL11.glRotatef(-1.3F, 1f, 0f, 0f); 
                 })
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
@@ -465,7 +458,7 @@ public class M4A1Factory implements GunFactory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.01F, 0.05f, 0.8f);
+                    GL11.glTranslatef(-0.01F, 0.03f, 1.15f);
                 } 
                 
              // ACOG Zoom
@@ -612,29 +605,29 @@ public class M4A1Factory implements GunFactory {
 				
 			.withFirstPersonPositioningReloading(
 					
-					new Transition((renderContext) -> { // Reload position
-					    GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-					    GL11.glRotatef(-45.000000f, 1f, 0f, 0f);
-					    GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-					    GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
-					    GL11.glTranslatef(-1.174999f, 1.100000f, 0.100000f);
-					}, 350, 0),
-					
-					new Transition((renderContext) -> { // Reload position
-					    GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-					    GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
-					    GL11.glRotatef(12.000000f, 0f, 1f, 0f);
-					    GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
-					    GL11.glTranslatef(-1.174999f, 1.100000f, 0.100000f);
-					}, 300, 100),
-				
-				new Transition((renderContext) -> { // Reload position
-				    GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-				    GL11.glRotatef(-50.000000f, 1f, 0f, 0f);
-				    GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-				    GL11.glRotatef(-12.000000f, 0f, 0f, 1f);
-				    GL11.glTranslatef(-1.174999f, 1.100000f, 0.100000f);
-				}, 100, 130),
+			        new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.650000f, 0.950000f, -0.275000f);
+                    }, 350, 0),
+                    
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glRotatef(-30.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.650000f, 0.950000f, -0.275000f);
+                    }, 300, 100),
+                
+                new Transition((renderContext) -> { // Reload position
+                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                    GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+                    GL11.glRotatef(32.000000f, 0f, 1f, 0f);
+                    GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+                    GL11.glTranslatef(-0.650000f, 0.92f, -0.275000f);
+                }, 100, 130),
 				new Transition((renderContext) -> { // Reload position
 				    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
 	                GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
@@ -985,7 +978,7 @@ public class M4A1Factory implements GunFactory {
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(-0.01F, 0.05f, 0.9f);
+					GL11.glTranslatef(-0.01F, 0.03f, 1.25f);
 				} 
 				
 				// ACOG Zoom
@@ -1052,10 +1045,10 @@ public class M4A1Factory implements GunFactory {
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
 			    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-			    GL11.glRotatef(5.000000f, 1f, 0f, 0f);
-			    GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-			    GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-			    GL11.glTranslatef(-0.5f, 1.6f, -0.100000f);
+			    GL11.glRotatef(10.000000f, 1f, 0f, 0f);
+			    GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+			    GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+			    GL11.glTranslatef(-0.150000f, 1.199999f, -0.500000f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
 			     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);

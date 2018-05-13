@@ -50,7 +50,7 @@ public class Tec9Factory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
         .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 5.5", 
-        "Caliber: .45 ACP", "Magazines:", "10rnd .45 ACP Magazine",
+        "Caliber: 9mm", "Magazines:", "20rnd Tec-9 9mm Magazine",
         "Fire Rate: Semi"))
          .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
@@ -130,7 +130,7 @@ public class Tec9Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(-0.850000f, 1.1f, -2.8f);
+                GL11.glTranslatef(-0.850000f, 1.1f, -3f);
                 GL11.glRotatef(-2F, 1f, 0f, 0f);
                 })
                 

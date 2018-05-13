@@ -71,7 +71,7 @@ public class M395BFactory implements GunFactory {
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.14f)
         .withFlashOffsetY(() -> 0.12f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.SnipersTab)
 //        .withCrafting(CraftingComplexity.MEDIUM, 
 //                CommonProxy.SteelPlate,
 //                CommonProxy.MiniSteelPlate,

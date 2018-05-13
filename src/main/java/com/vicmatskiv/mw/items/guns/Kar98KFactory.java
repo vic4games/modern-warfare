@@ -77,7 +77,7 @@ public class Kar98KFactory {
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.MetalComponents,
                 CompatibleBlocks.PLANK)
-        .withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 30", "Cartridge:", 
+        .withInformationProvider(stack -> Arrays.asList("Type: Bolt-action rifle", "Damage: 27", "Cartridge:", 
         "7.92x57mm Mauser Bullet" ,"Fire Rate: Bolt Action"))
         .withCompatibleAttachment(AuxiliaryAttachments.Kar98Kaction, true, (model) -> {
             if(model instanceof Kar98Kaction) {
@@ -875,7 +875,7 @@ public class Kar98KFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(30f)
+        .withSpawnEntityDamage(27f)
         .withSpawnEntityGravityVelocity(0f)
         
          

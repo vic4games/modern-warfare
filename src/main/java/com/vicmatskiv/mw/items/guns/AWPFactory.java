@@ -67,7 +67,7 @@ public class AWPFactory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.BigSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 27", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 35", 
 		"Caliber: 7.62x51mm", "Magazines:", "8rnd 7.62x51mm Magazine", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
@@ -1020,7 +1020,7 @@ new Transition((renderContext) -> { // Reload position
                     }, 250, 50))
 					
 			.build())
-		.withSpawnEntityDamage(27f)
+		.withSpawnEntityDamage(35f)
 		.withSpawnEntityGravityVelocity(0f)
 		
 		 
