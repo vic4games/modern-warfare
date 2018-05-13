@@ -7,7 +7,7 @@ import com.vicmatskiv.mw.items.grenade.SmokeGrenadeFactory;
 import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 
@@ -22,7 +22,7 @@ public class Grenades {
 
 
     public static void init(Object mod, ConfigurationManager configurationManager,
-            CompatibleFmlInitializationEvent event, CommonProxy commonProxy) {
+            CompatibleFmlPreInitializationEvent event, CommonProxy commonProxy) {
 
         GrenadeSafetyPin = new AttachmentBuilder<ItemGrenade>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.vicmatskiv.mw.models.Pin(), "AK12.png").withName("GrenadeSafetyPin")

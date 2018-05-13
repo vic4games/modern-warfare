@@ -1,7 +1,7 @@
 package com.vicmatskiv.mw;
 
 import com.vicmatskiv.mw.items.guns.*;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 import net.minecraft.item.Item;
@@ -139,7 +139,7 @@ public class Guns {
     public static Item M6G;
     public static Item BR55;
     
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event, CommonProxy proxy) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, CommonProxy proxy) {
      // Try not to change the order of the guns to ensure stable recipes
 
         AK47 = new AK47Factory().createGun(proxy);

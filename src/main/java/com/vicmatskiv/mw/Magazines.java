@@ -5,7 +5,7 @@ import org.lwjgl.opengl.GL11;
 import com.vicmatskiv.mw.models.PPSHDrumMag;
 import com.vicmatskiv.mw.models.SVT40;
 import com.vicmatskiv.weaponlib.ItemMagazine;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -92,7 +92,7 @@ public class Magazines {
     public static ItemMagazine MA5Dmag;
     public static ItemMagazine USG57Mag;
 
-    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
+    public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         
         Magazines.PythonClip = new ItemMagazine.Builder().withAmmo(6).withCompatibleBullet(Bullets.Bullet357)
                 .withName("PythonClip").withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
