@@ -48,7 +48,7 @@ public class DragonuvFactory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("Dragonuv")
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("snipersilencer")
 		.withReloadSound("AKReload")
 		.withUnloadSound("akunload")
 		.withReloadingTime(45)

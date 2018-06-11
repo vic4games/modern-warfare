@@ -26,6 +26,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -34,6 +35,7 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -219,10 +221,10 @@ public class AK12Factory implements GunFactory {
 			 GL11.glTranslatef(-0.31F, -1.3F, -1.5F);
 				GL11.glScaled(0.8F, 0.8F, 0.8F);
 		},(model) -> {
-			 if(model instanceof LPscope) {
-				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
+		    if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
 		})
 		
 		.withCompatibleAttachment(Attachments.Reflex, (model) -> {
@@ -261,6 +263,15 @@ public class AK12Factory implements GunFactory {
 				GL11.glScaled(0.1F, 0.1F, 0.1F);
 			}
 		})
+		.withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(-0.17F, -1.35F, -1F);
+            GL11.glScaled(0.28F, 0.28F, 0.28F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(-0.13F, -1.35F, -1.3F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Grip2, (model) -> {
 			GL11.glTranslatef(-0.2F, -0.23F, -2.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -326,65 +337,69 @@ public class AK12Factory implements GunFactory {
                 })
 				
 			.withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-			    GL11.glTranslatef(0.4F, 2.3F, -1F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(3F, 3F, 3F);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
-                GL11.glRotatef(1.5F, 0f, 0f, 1f);
+			    GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.352f, 0.75f, -0.25f);
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.185f, 0.85f);
+                    GL11.glTranslatef(0F, 0.185f, 1.05f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.185f, 0.85f);
+                    GL11.glTranslatef(0F, 0.185f, 1.1f);
                 } 
                 
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.133f, 1.1f);
-                } 
-                
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.12f, 1f);
+                    GL11.glTranslatef(0F, 0.145f, 1.25f);
                 } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.14f, 0f);
+                    GL11.glTranslatef(0F, 0.14f, 1.5f);
                 } 
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.132f, 0f);
+                    GL11.glTranslatef(0F, 0.12f, 1.4f);
                 } 
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.132f, 0f);
+                    GL11.glTranslatef(0F, 0.12f, 1.4f);
                 } 
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.132f, 0f);
+                    GL11.glTranslatef(0F, 0.132f, 1.5f);
+                }
+                
+                // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.07f, 0.5f);
                 }
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.1f, 0f);
+                    GL11.glTranslatef(0F, 0.1f, 1.5f);
                 }
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.13f, 1.25f);
+                } 
                 
                 // Everything else
                 else {
@@ -598,62 +613,68 @@ public class AK12Factory implements GunFactory {
                     )
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
-				GL11.glTranslatef(0F, 2.3F, -1.5F);
-				GL11.glRotatef(45F, 0f, 1f, 0f);
-				GL11.glScaled(3F, 3F, 3F);
+			    GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(0.352f, 0.75f, -0.35f);
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.185f, 0.95f);
+					GL11.glTranslatef(0F, 0.185f, 1.1f);
 				} 
 				
 				// Scope Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
 					//System.out.println("Position me for Acog");
-				    GL11.glTranslatef(0F, 0.185f, 0.95f);
+				    GL11.glTranslatef(0F, 0.185f, 1.15f);
 				} 
 				
 				// ACOG Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
 					//System.out.println("Position me for Acog");
-					GL11.glTranslatef(0F, 0.133f, 1.25f);
+					GL11.glTranslatef(0F, 0.145f, 1.3f);
 				} 
 				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.14f, 0f);
+					GL11.glTranslatef(0F, 0.14f, 1.5f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
-				    GL11.glTranslatef(0F, 0.132f, 0f);
+				    GL11.glTranslatef(0F, 0.12f, 1.4f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.132f, 0f);
+					GL11.glTranslatef(0F, 0.12f, 1.4f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
 					//System.out.println("Position me for Holo");
-				    GL11.glTranslatef(0F, 0.132f, 0f);
+				    GL11.glTranslatef(0F, 0.132f, 1.5f);
 				}
+				
+				// Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.07f, 0.5f);
+                }
 				
 				// Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.1f, 0f);
+                    GL11.glTranslatef(0F, 0.1f, 1.5f);
                 }
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.12f, 1.1f);
+                    GL11.glTranslatef(0F, 0.13f, 1.3f);
                 } 
 				
 				// Everything else
@@ -666,8 +687,8 @@ public class AK12Factory implements GunFactory {
 			.withFirstPersonPositioningRunning((renderContext) -> {
 			    GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
 			    GL11.glRotatef(12.000000f, 1f, 0f, 0f);
-			    GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
-			    GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+			    GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+			    GL11.glRotatef(25.000000f, 0f, 0f, 1f);
 			    GL11.glTranslatef(-0.025000f, 0.600000f, -0.050000f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {

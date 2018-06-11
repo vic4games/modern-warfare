@@ -43,6 +43,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Glock32Slide;
     public static ItemAttachment<Weapon> G18Top;
     public static ItemAttachment<Weapon> M9Top;
+    public static ItemAttachment<Weapon> P38Slide;
     public static ItemAttachment<Weapon> P2000Top;
     public static ItemAttachment<Weapon> DeagleTop;
     public static ItemAttachment<Weapon> Deagle44Top;
@@ -160,6 +161,8 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Emp1911Slide;
     public static ItemAttachment<Weapon> USG57Slide;
     public static ItemAttachment<Weapon> M93RSlide;
+    public static ItemAttachment<Weapon> BARaction;
+    public static ItemAttachment<Weapon> InterventionAction;
  
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
@@ -747,6 +750,14 @@ public class AuxiliaryAttachments {
                 .withName("M9Top").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
+        P38Slide = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.P38Slide(), "P38.png")
+                .withModel(new com.vicmatskiv.mw.models.M9rearsight(), "p38rearsight.png")
+                .withModel(new com.vicmatskiv.mw.models.m9frontsight(), "p38frontsight.png")
+                .withName("P38Slide").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
         M93RSlide = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.M93RSlide(), "M9Top.png")
@@ -812,6 +823,13 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.SV98Action(), "SV98Action.png").withName("SV98Action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        InterventionAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.InterventionBoltAction(), "Intervention.png").withName("InterventionAction")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -1170,6 +1188,13 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA4)
                 .withModel(new com.vicmatskiv.mw.models.AKaction(), "AK12.png")
                 .withName("AKaction").withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        BARaction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                .withModel(new com.vicmatskiv.mw.models.M1918BARaction(), "M1918BAR.png")
+                .withName("BARaction").withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         

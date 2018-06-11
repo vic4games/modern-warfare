@@ -34,6 +34,7 @@ import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -245,6 +246,15 @@ public class KSG12Factory implements GunFactory {
             } else if(model instanceof Reflex2) {
                 GL11.glTranslatef(0.2F, -1.63f, -0.3F);
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
+            }
+        })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(0.155F, -1.55F, 0F);
+            GL11.glScaled(0.28F, 0.28F, 0.28F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(0.195F, -1.55F, -0.8F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
 		.withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
@@ -524,25 +534,25 @@ public class KSG12Factory implements GunFactory {
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
 					//System.out.println("Position me for Holo");
-					GL11.glTranslatef(0F, 0.07f, 0f);
+					GL11.glTranslatef(-0.005F, 0.065f, 0.8f);
 				} 
 				
 				// Holo Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
 					//System.out.println("Position me for Holo");
-				    GL11.glTranslatef(0F, 0.07f, 0f);
+				    GL11.glTranslatef(-0.005F, 0.065f, 0.8f);
 				} 
 				
 				// Reflex Zoom
 				if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
 					//System.out.println("Position me for Reflex");
-					GL11.glTranslatef(0F, 0.05f, 0f);
+					GL11.glTranslatef(0F, 0.05f, 1f);
 				} 
 				
 				// Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.07f, 0f);
+                    GL11.glTranslatef(0F, 0.07f, 1.2f);
                 } 
 				
 				// Everything else

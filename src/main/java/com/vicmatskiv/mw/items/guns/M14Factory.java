@@ -52,7 +52,7 @@ public class M14Factory implements GunFactory {
 		.withZoom(0.9f)
 		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("M14")
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("snipersilencer")
 		.withReloadSound("m14reload")
 		.withUnloadSound("Unload")
 		.withReloadingTime(45)

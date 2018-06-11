@@ -159,11 +159,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M6Gscope) {
-                        GL11.glTranslatef(-0.6F, -0.1F, 1.15F);
+                        GL11.glTranslatef(-0.6F, 0.6F, -1.3F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1F, 1F, 1f);
+                        GL11.glScaled(1.2F, 1.2F, 1.2f);
 
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
@@ -204,7 +204,7 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MA5Dcover) {
-                        GL11.glTranslatef(-0.6F, -0.1F, 1.15F);
+                        GL11.glTranslatef(-0.6F, 1.5F, -2.2F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -230,7 +230,6 @@ public class Attachments {
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Maxim9Cover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.Maxim9cover(), "Maxim9.png")
                 .withFirstPersonModelPositioning((model, itemStack) -> {
@@ -249,11 +248,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Maxim9cover) {
-                        GL11.glTranslatef(-0.6F, -0.1F, 1.15F);
+                        GL11.glTranslatef(-0.6F, 2.5F, -2.8F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1F, 1F, 1f);
+                        GL11.glScaled(2.3F, 2.3F, 2.3f);
 
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
@@ -383,7 +382,7 @@ public class Attachments {
 
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glTranslatef(0.1F, -0.8F, 1.2F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
                     } else if (model instanceof com.vicmatskiv.mw.models.AcogReticle) {
@@ -391,7 +390,6 @@ public class Attachments {
                     } else if (model instanceof com.vicmatskiv.mw.models.AcogScope2) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
-                    
 
                 }).withThirdPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
@@ -406,16 +404,20 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
-                        GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+                        GL11.glTranslatef(-0.6F, -0.7F, 0.9F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                        GL11.glScaled(1F, 1F, 1f);
                     } else if (model instanceof com.vicmatskiv.mw.models.AcogReticle) {
                         GL11.glScaled(0F, 0F, 0F);
 
                     } else if (model instanceof com.vicmatskiv.mw.models.AcogScope2) {
-                        GL11.glScaled(0F, 0F, 0F);
+                        GL11.glScaled(0.55F, 0.55F, 0.55F);
+                        GL11.glTranslatef(1F, 0.2F, -1.5F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
@@ -472,11 +474,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+                        GL11.glTranslatef(-0.6F, -0.7F, 0.4F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                        GL11.glScaled(1F, 1F, 1f);
                     } else if (model instanceof com.vicmatskiv.mw.models.DMRscopeReticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -533,11 +535,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.BR55scope) {
-                        GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+                        GL11.glTranslatef(-0.6F, -0.5F, 0.05F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                        GL11.glScaled(0.65F, 0.65F, 0.65f);
                     } else if (model instanceof com.vicmatskiv.mw.models.BR55scopereticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -757,11 +759,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MicroT1) {
-                        GL11.glTranslatef(-0.6F, -0.1F, 0.3F);
+                        GL11.glTranslatef(-0.6F, -0.5F, 0.5F);
                         // GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1F, 1F, 1f);
+                        GL11.glScaled(0.85F, 0.85F, 0.85f);
                     } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
                         GL11.glScaled(0F, 0F, 0F);
 
@@ -810,7 +812,7 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.RMRsight) {
-                        GL11.glTranslatef(-0.6F, -0.1F, 0.3F);
+                        GL11.glTranslatef(-0.6F, -0.9F, 0.6F);
                         // GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -1272,11 +1274,11 @@ public class Attachments {
 
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.PriscopicScope) {
-                        GL11.glTranslatef(-0.6F, -0.2F, 1.7F);
+                        GL11.glTranslatef(-0.6F, -0.5F, 1.7F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.45F, 0.45F, 0.45f);
+                        GL11.glScaled(0.22F, 0.22F, 0.22f);
                     } else if (model instanceof com.vicmatskiv.mw.models.UnertlReticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
@@ -1311,13 +1313,13 @@ public class Attachments {
                     GL11.glTranslatef(0.0285f, 0.492f, 0.7f);
                 }).withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
                 .withModel(new com.vicmatskiv.mw.models.HP(), "AK12.png")
-                .withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
+                .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HP) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                    } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
 
@@ -1327,7 +1329,7 @@ public class Attachments {
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
                         GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                    } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
@@ -1337,7 +1339,7 @@ public class Attachments {
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
                         GL11.glScaled(0.65F, 0.65F, 0.65f);
-                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                    } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
@@ -1345,7 +1347,7 @@ public class Attachments {
                         GL11.glTranslatef(0.1F, 0.2F, 0.4F);
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.LPscope) {
+                    } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })

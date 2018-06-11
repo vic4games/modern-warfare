@@ -26,6 +26,87 @@
       }
     ]
   },
+  "amd65": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:amd65",
+       "stream": false
+      }
+    ]
+  },
+  "amd65silenced": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:amd65silenced",
+       "stream": false
+      }
+    ]
+  },
+  "bar": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:bar",
+       "stream": false
+      }
+    ]
+  },
+  "barreload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:barreload",
+       "stream": false
+      }
+    ]
+  },
+  "intervention": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:intervention",
+       "stream": false
+      }
+    ]
+  },
+  "interventionboltaction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:interventionboltaction",
+       "stream": false
+      }
+    ]
+  },
+  "snipersilencer": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:snipersilencer",
+       "stream": false
+      }
+    ]
+  },
+  "p99": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:p99",
+       "stream": false
+      }
+    ]
+  },
+  "m93r": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m93r",
+       "stream": false
+      }
+    ]
+  },
   "lugerreload": {
     "category": "master",
     "sounds": [

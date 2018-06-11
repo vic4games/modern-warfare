@@ -72,9 +72,9 @@ public class MXFactory implements GunFactory {
                 CommonProxy.MetalComponents)
 		.withInformationProvider(stack -> Arrays.asList("Type: Assault rifle", "Damage: 8", 
 		"Caliber: 6.5x39mm NATO", "Magazines:", "30rnd 6.5x39mm NATO Magazine"))
-		.withCompatibleAttachment(Magazines.MXMag, (model) -> {
-			GL11.glTranslatef(0F, 0F, 0.07F);
-		})
+//		.withCompatibleAttachment(Magazines.MXMag, (model) -> {
+//			GL11.glTranslatef(0F, 0F, 0.07F);
+//		})
 		.withCompatibleAttachment(Attachments.AKMIron, true, (model) -> {
 			if(model instanceof ScarIron1) {
 				GL11.glTranslatef(0.17F, -1.61F, 1.3F);
@@ -320,12 +320,12 @@ public class MXFactory implements GunFactory {
 			
 				})
 				
-			.withFirstPersonCustomPositioning(Magazines.MXMag, (renderContext) -> {
-//				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-//				GL11.glRotatef(45F, 0f, 1f, 0f);
-//				GL11.glScaled(0.55F, 0.55F, 0.55F);
-//				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				})
+//			.withFirstPersonCustomPositioning(Magazines.MXMag, (renderContext) -> {
+////				GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+////				GL11.glRotatef(45F, 0f, 1f, 0f);
+////				GL11.glScaled(0.55F, 0.55F, 0.55F);
+////				GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+//				})
 				
 			.withFirstPersonPositioningReloading(
 					
@@ -374,43 +374,43 @@ public class MXFactory implements GunFactory {
 				}, 150, 50)
 			)
 			
-			.withFirstPersonCustomPositioningUnloading(Magazines.MXMag,
-				new Transition((renderContext) -> {
-					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
-					GL11.glRotatef(-20F, 1f, 0f, 0f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((renderContext) -> {
-					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
-					GL11.glRotatef(10F, 1f, 0f, 0f);
-					GL11.glRotatef(10F, 0f, 1f, 0f);
-					GL11.glRotatef(-90F, 0f, 0f, 1f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000)
-					)
+//			.withFirstPersonCustomPositioningUnloading(Magazines.MXMag,
+//				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.2F, 0.5F, -0.2F);
+//					GL11.glRotatef(-20F, 1f, 0f, 0f);
+////					GL11.glScaled(0.55F, 0.55F, 0.55F);
+////					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+//				}, 250, 1000),
+//				new Transition((renderContext) -> {
+//					GL11.glTranslatef(1.3F, 0.5F, -0.8F);
+//					GL11.glRotatef(10F, 1f, 0f, 0f);
+//					GL11.glRotatef(10F, 0f, 1f, 0f);
+//					GL11.glRotatef(-90F, 0f, 0f, 1f);
+////					GL11.glScaled(0.55F, 0.55F, 0.55F);
+////					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+//				}, 250, 1000)
+//					)
 					
-			.withFirstPersonCustomPositioningReloading(Magazines.MXMag,
-				new Transition((renderContext) -> {
-					GL11.glTranslatef(0.05F, 1F, 0F);
-//					GL11.glRotatef(0F, 0f, 1f, 0f);
+//			.withFirstPersonCustomPositioningReloading(Magazines.MXMag,
+//				new Transition((renderContext) -> {
+//					GL11.glTranslatef(0.05F, 1F, 0F);
+////					GL11.glRotatef(0F, 0f, 1f, 0f);
+////					GL11.glScaled(0.55F, 0.55F, 0.55F);
+//					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+//				}, 250, 1000),
+//				new Transition((renderContext) -> {
+////					GL11.glTranslatef(0.5F, 0F, -0.2F);
+////					GL11.glRotatef(0F, 0f, 1f, 0f);
+////					GL11.glScaled(0.55F, 0.55F, 0.55F);
+////					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
+//				}, 250, 1000),
+//				new Transition((renderContext) -> {
+//					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
+//					GL11.glRotatef(45F, 0f, 1f, 0f);
 //					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					//GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((renderContext) -> {
-//					GL11.glTranslatef(0.5F, 0F, -0.2F);
-//					GL11.glRotatef(0F, 0f, 1f, 0f);
-//					GL11.glScaled(0.55F, 0.55F, 0.55F);
-//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-				}, 250, 1000),
-				new Transition((renderContext) -> {
-					/*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-					GL11.glRotatef(45F, 0f, 1f, 0f);
-					GL11.glScaled(0.55F, 0.55F, 0.55F);
-					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-				}, 250, 1000)
-					)
+//					GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
+//				}, 250, 1000)
+//					)
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
 				GL11.glTranslatef(-0.047F, -0.315F, -0.25F);

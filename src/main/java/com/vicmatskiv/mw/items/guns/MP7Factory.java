@@ -21,6 +21,7 @@ import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.MP7;
 import com.vicmatskiv.mw.models.MicroT1;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.Weapon;
@@ -158,6 +159,15 @@ public class MP7Factory implements GunFactory {
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
             }
         })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(0.15F, -1.7F, 0.5F);
+            GL11.glScaled(0.32F, 0.32F, 0.32F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(0.195F, -1.7F, 0.2F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Laser2, (p, s) -> {
 			GL11.glTranslatef(.3F, -1.2F, -0.6F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -254,6 +264,12 @@ public class MP7Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.22f, 0.8f);
+                }
+                
+             // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.12f, 0.4f);
                 }
                 
                 // Everything else
@@ -406,6 +422,12 @@ public class MP7Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.22f, 0.8f);
+                }
+                
+             // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, 0.12f, 0.4f);
                 }
 				
 				// Everything else

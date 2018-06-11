@@ -21,6 +21,7 @@ import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.L96;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -52,7 +53,7 @@ public class L96Factory implements GunFactory {
 		.withMaxShots(1)
 		.withShootSound("l96")
 		.withPumpTimeout(1000)
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("snipersilencer")
 		.withReloadSound("BoltActionReload")
 		.withUnloadSound("l96unload")
 		.withReloadingTime(40)
@@ -69,7 +70,7 @@ public class L96Factory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate,
                 CommonProxy.BigSteelPlate)
-		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 23", 
+		.withInformationProvider(stack -> Arrays.asList("Type: Sniper rifle", "Damage: 35", 
 		"Caliber: .308 Winchester", "Magazines:", "10rnd .308 Winchester Magazine", "Fire Rate: Bolt Action"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
@@ -163,10 +164,10 @@ public class L96Factory implements GunFactory {
 			GL11.glTranslatef(-0.36F, -1.43F, -1.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		},(model) -> {
-			 if(model instanceof LPscope) {
-				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
+		    if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
 		})
 		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 	    	
@@ -874,7 +875,7 @@ new Transition((renderContext) -> { // Reload position
                     }, 250, 50))
                     
             .build())
-		.withSpawnEntityDamage(23f)
+		.withSpawnEntityDamage(35f)
 		.withSpawnEntityGravityVelocity(0f)
 		
 		 

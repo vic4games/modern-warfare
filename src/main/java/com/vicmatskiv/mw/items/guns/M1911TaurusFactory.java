@@ -101,7 +101,7 @@ public class M1911TaurusFactory implements GunFactory {
             GL11.glScaled(1.1F, 1.1F, 1.1F);
             GL11.glRotatef(-90F, 0f, 0f, -4f);
         })
-        .withCompatibleAttachment(Magazines.ColtM1911Mag, (model) -> {
+        .withCompatibleAttachment(Magazines.M1911_7rnd, (model) -> {
             GL11.glTranslatef(0F, 0.2F, 0.12F);
             })
         .withCompatibleAttachment(Attachments.Silencer45ACP, (model) -> {
@@ -166,9 +166,9 @@ public class M1911TaurusFactory implements GunFactory {
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(Magazines.ColtM1911Mag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomRecoiled(Magazines.M1911_7rnd, (renderContext) -> {})
             
-            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.ColtM1911Mag, (renderContext) -> {})
+            .withFirstPersonPositioningCustomZoomingRecoiled(Magazines.M1911_7rnd, (renderContext) -> {})
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -189,7 +189,7 @@ public class M1911TaurusFactory implements GunFactory {
                 
             //.withFirstPersonCustomRecoiled(CommonProxy.Glock21Mag, (p, itemStack) -> {})
                 
-            .withFirstPersonCustomPositioning(Magazines.ColtM1911Mag, (renderContext) -> {})
+            .withFirstPersonCustomPositioning(Magazines.M1911_7rnd, (renderContext) -> {})
             
             .withFirstPersonCustomPositioning(AuxiliaryAttachments.Taurus1911Slide.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
@@ -252,7 +252,7 @@ public class M1911TaurusFactory implements GunFactory {
                 }, 150, 50)
             )
             
-            .withFirstPersonCustomPositioningUnloading(Magazines.ColtM1911Mag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.M1911_7rnd,
                 new Transition((renderContext) -> {
 //                  GL11.glTranslatef(0.2F, 0.5F, -0.2F);
 //                  GL11.glRotatef(-20F, 1f, 0f, 0f);
@@ -261,7 +261,7 @@ public class M1911TaurusFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(Magazines.ColtM1911Mag,
+            .withFirstPersonCustomPositioningReloading(Magazines.M1911_7rnd,
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0.05F, 1.8F, 0.4F);
 //                    GL11.glRotatef(0F, 0f, 1f, 0f);

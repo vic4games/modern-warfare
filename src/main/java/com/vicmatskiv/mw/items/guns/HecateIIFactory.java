@@ -13,6 +13,7 @@ import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.HecateII;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -35,7 +36,7 @@ public class HecateIIFactory implements GunFactory {
         .withMaxShots(1)
         .withShootSound("HecateII")
         .withPumpTimeout(1000)
-        .withSilencedShootSound("RifleSilenced")
+        .withSilencedShootSound("snipersilencer")
         .withReloadSound("BoltActionReload")
         .withUnloadSound("Unload")
         .withReloadingTime(30)
@@ -104,9 +105,9 @@ public class HecateIIFactory implements GunFactory {
             GL11.glTranslatef(0.06F, -1.37F, 0.3F);
             GL11.glScaled(0.6F, 0.6F, 0.6F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
             }
         })
         .withCompatibleAttachment(Attachments.Bipod, true, (model) -> {

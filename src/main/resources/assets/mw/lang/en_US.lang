@@ -175,7 +175,7 @@ item.Type100.name=Type-100
 item.M1A1Thompson.name=M1A1 Thompson
 item.MP18.name=MP-18
 item.M16A1.name=M16A1
-item.POF308.name=POF .308
+item.POF308.name=POF USA .308
 item.HK417.name=HK 417
 item.M1928Thompson.name=M1928 Thompson
 item.EnfieldNo2.name=Enfield No.2 Mk I
@@ -204,7 +204,11 @@ item.MP43E.name=MP-43E
 item.S686.name=S686
 item.Ghost350.name=Ghost-350 Crossbow
 item.VEPR12.name=VEPR-12
-
+item.Intervention.name=CheyTac Intervention M200
+item.AMD65.name=AMD-65
+item.AMD65M.name=AMD-65M
+item.BAR.name=M1918 BAR
+item.mw_BARmag.name=20rnd .30-06 Springfield Magazine
 item.Mk48MOD1.name=Mk48 MOD 1
 item.mw_Mk48Mag.name=100rnd 7.62x51mm Magazine
 item.AK15.name=AK-15
@@ -214,6 +218,7 @@ item.mw_Tec9Mag.name=20rnd Tec-9 9mm Magazine
 item.M1911Taurus.name=1911 Taurus
 item.MPX.name=SIG MPX
 item.mw_MPXmag.name=30rnd 9mm Magazine
+item.P38.name=Walther P38
 
 item.TacKnifeStandard.name=U.S. Marine Tactical Knife
 item.Karambit.name=Karambit Knife
@@ -245,6 +250,7 @@ item.mw_M14DMRMag.name=21rnd 7.62x51mm NATO Magazine
 item.mw_Glock21Mag.name=13rnd .45 ACP Magazine
 item.mw_Glock18Mag.name=17rnd 9mm Magazine
 item.mw_M9BerettaMag.name=15rnd 9mm Magazine
+item.mw_P38Mag.name=8rnd 9mm Magazine
 item.mw_NATODrum100.name=100rnd 5.56x45mm NATO Beta-C Magazine
 item.mw_MP40Mag.name=32rnd 9mm Magazine
 item.mw_MP5KMag.name=25rnd 9mm Magazine
@@ -299,6 +305,9 @@ item.mw_SRS99S5mag.name=4rnd 14.5x114mm Magazine
 item.mw_USG57Mag.name=20rnd 5.7x28mm Magazine
 item.mw_M6Gmag.name=8rnd 12.7x40mm Magazine
 item.mw_Ghost350Bolt.name=Ghost-350 Crossbow Bolt
+item.mw_M1911_7rnd.name=7rnd .45 ACP Magazine
+item.mw_InterventionMag.name=7rnd .408 Cheyenne Magazine
+item.mw_P38Mag.name=8rnd 9mm Magazine
 
 item.mw_MA5Dcover.name=MA5D Dust Cover
 
@@ -339,6 +348,7 @@ item.mw_Bullet762x25.name=7.62x25mm Bullet
 item.mw_Bullet145x114.name=14.5x114mm Bullet
 item.mw_Bullet95x40.name=9.5x40 Bullet
 item.mw_Bullet127x40.name=12.7x40mm Bullet
+item.mw_Cheyenne408.name=.408 Cheyenne Bullet
 
 item.mw_Acog.name=Trigicon ACOG 
 item.mw_Specter.name=Elcan Specter SFOV4-A1 

@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -37,6 +38,7 @@ import com.vicmatskiv.mw.models.OKP7reticle;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.PSO12;
 import com.vicmatskiv.mw.models.PSO1reticle;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.Saiga12;
@@ -157,9 +159,9 @@ public class VEPR12Factory {
              GL11.glTranslatef(-0.285F, -1.35F, -1.25F);
                 GL11.glScaled(0.7F, 0.7F, 0.7F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
             }
         })
         
@@ -196,6 +198,15 @@ public class VEPR12Factory {
                 GL11.glScaled(0.54F, 0.54F, 0.54F);
             } else if(model instanceof Reflex2) {
                 GL11.glTranslatef(-0.125F, -1.47F, -1.85F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(-0.163F, -1.64F, -0.5F);
+            GL11.glScaled(0.28F, 0.28F, 0.28F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(-0.123F, -1.64F, -0.8F);
                 GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })

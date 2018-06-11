@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.L96;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -50,7 +51,7 @@ public class AWPFactory implements GunFactory {
 		.withMaxShots(1)
 		.withShootSound("L96")
 		.withPumpTimeout(1000)
-		.withSilencedShootSound("RifleSilencer")
+		.withSilencedShootSound("snipersilencer")
 		.withReloadSound("BoltActionReload")
 		.withUnloadSound("l96unload")
 		.withReloadingTime(40)
@@ -161,10 +162,10 @@ public class AWPFactory implements GunFactory {
 			GL11.glTranslatef(-0.36F, -1.43F, -1.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		},(model) -> {
-			 if(model instanceof LPscope) {
-				GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-				GL11.glScaled(0.1F, 0.1F, 0.1F);
-			}
+		    if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
+            }
 		})
 		.withCompatibleAttachment(Attachments.Scope, (player, stack) -> {
 	    	

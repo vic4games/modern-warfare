@@ -102,23 +102,28 @@ public class Deagle44Factory implements GunFactory {
                 })
                 
            .withFirstPersonPositioning((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glRotatef(4F, 0f, 0f, 1f);
+//                GL11.glScaled(2F, 2F, 2F);
+//                GL11.glTranslatef(-0.7f, 0.65f, -3.2f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScaled(2F, 2F, 2F);
-                GL11.glTranslatef(-0.7f, 0.65f, -3.2f);
-               
-//                GL11.glScaled(2F, 2F, 2F);
-//                GL11.glRotatef(-45.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(25.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-1.4f, 0.625000f, -2f);
+                GL11.glTranslatef(-0.72f, 0.62f, -2.7f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glRotatef(4F, 0f, 0f, 1f);
+//                GL11.glScaled(2F, 2F, 2F);
+//                GL11.glTranslatef(-0.7f, 0.65f, -2.9f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(4F, 0f, 0f, 1f);
+                GL11.glRotatef(9F, 0f, 0f, 1f);
                 GL11.glScaled(2F, 2F, 2F);
-                GL11.glTranslatef(-0.7f, 0.65f, -2.9f);
+                GL11.glTranslatef(-0.7f, 0.62f, -2.5f);
+                
                 GL11.glRotatef(-8F, 1f, 0f, 0f);
                 })
                 
@@ -142,7 +147,7 @@ public class Deagle44Factory implements GunFactory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.350000f, 0.6f, -2.4f);
+                GL11.glTranslatef(0.350000f, 0.6f, -2.1f);
                 GL11.glRotatef(-7F, 1f, 0f, 0f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
@@ -294,7 +299,7 @@ public class Deagle44Factory implements GunFactory {
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.350000f, 0.6f, -2.799999f);
+                GL11.glTranslatef(0.350000f, 0.6f, -2.5f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
@@ -348,9 +353,9 @@ public class Deagle44Factory implements GunFactory {
                          (renderContext) -> {
                              GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
                              GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                             GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-                             GL11.glRotatef(-35.000000f, 0f, 0f, 1f);
-                             GL11.glTranslatef(0.345f, -0.56f, 0.138f);
+                             GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.370000f, -0.490000f, 0.150000f);
                          })
             .withFirstPersonLeftHandPositioningReloading(
                     new Transition((renderContext) -> { // Reload position

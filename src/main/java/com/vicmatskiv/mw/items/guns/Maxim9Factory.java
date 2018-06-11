@@ -56,7 +56,7 @@ public class Maxim9Factory implements GunFactory {
                 CommonProxy.SteelPlate,
                 CommonProxy.MiniSteelPlate)
         .withInformationProvider(stack -> Arrays.asList("Type: Pistol", "Damage: 4.5", 
-        "Caliber: 9mm", "Magazines:", "10rnd .45 ACP Magazine",
+        "Caliber: 9mm", "Magazines:", "20rnd 9mm magazine",
         "Fire Rate: Semi"))
         .withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {

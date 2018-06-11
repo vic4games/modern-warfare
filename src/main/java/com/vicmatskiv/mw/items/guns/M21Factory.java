@@ -53,7 +53,7 @@ public class M21Factory implements GunFactory {
         .withZoom(0.9f)
         .withMaxShots(1)
         .withShootSound("M21")
-        .withSilencedShootSound("RifleSilencer")
+        .withSilencedShootSound("snipersilencer")
         .withReloadSound("m14reload")
         .withUnloadSound("Unload")
         .withReloadingTime(45)

@@ -26,6 +26,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -36,6 +37,7 @@ import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -260,9 +262,9 @@ public class UDP9Factory {
             GL11.glTranslatef(-0.3F, -1.38F, -0.5F);
             GL11.glScaled(0.75F, 0.75F, 0.75F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
             }
         })
         .withCompatibleAttachment(Attachments.Reflex, (model) -> {
@@ -310,6 +312,15 @@ public class UDP9Factory {
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
             }
         })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+                GL11.glTranslatef(-0.163F, -1.42F, -0.5F);
+                GL11.glScaled(0.28F, 0.28F, 0.28F);
+                } else if(model instanceof Reflex2) {
+                    GL11.glTranslatef(-0.123F, -1.42F, -0.8F);
+                    GL11.glScaled(0.1F, 0.1F, 0.1F);
+                }
+            })
         .withCompatibleAttachment(Attachments.Silencer9mm, (model) -> {
             GL11.glTranslatef(-0.18F, -1.2F, -4.2F);
             GL11.glScaled(0.7F, 0.7F, 1F);
@@ -359,13 +370,13 @@ public class UDP9Factory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.001F, 0.095f, 0.75f);
+                    GL11.glTranslatef(0.001F, 0.095f, 0.7f);
                 } 
                 
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.003F, 0.03f, 0.55f);
+                    GL11.glTranslatef(-0.003F, 0.03f, 0.6f);
                 } 
                 
                 // Scope Zoom
@@ -383,31 +394,37 @@ public class UDP9Factory {
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.1f, 0.1f);
+                    GL11.glTranslatef(0F, 0.1f, 0.8f);
                 } 
 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.3f);
                 } 
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.3f);
                 } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.7f);
                 } 
                 
              // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 1f);
+                } 
+                
+             // Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, 0f, 0.2f);
                 } 
                 
                 // Everything else
@@ -622,49 +639,55 @@ public class UDP9Factory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.003F, 0.03f, 0.55f);
+                    GL11.glTranslatef(-0.003F, 0.03f, 0.65f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.001F, 0.12f, 0.5f);
+                    GL11.glTranslatef(0.001F, 0.12f, 0.55f);
                 } 
 
                 // HP Zoomw
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.001F, 0.12f, 0.25f);
+                    GL11.glTranslatef(0.001F, 0.12f, 0.3f);
                 } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.1f, 0.1f);
+                    GL11.glTranslatef(0F, 0.1f, 0.8f);
                 } 
 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.3f);
                 } 
                 
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic2)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.3f);
                 } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 0.7f);
                 } 
                 
              // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
-                    GL11.glTranslatef(0F, 0.09f, 0.1f);
+                    GL11.glTranslatef(0F, 0.09f, 1f);
+                } 
+                
+             // Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, 0f, 0.2f);
                 } 
                 
                 // Everything else
@@ -677,10 +700,10 @@ public class UDP9Factory {
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(5.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(-15.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.5f, 1.6f, -0.100000f);
+                GL11.glRotatef(10.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.150000f, 1.199999f, -0.500000f);
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
                  GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -869,23 +892,26 @@ public class UDP9Factory {
                     
             .withFirstPersonRightHandPositioningUnloading(
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(2.5f, 2.5f, 3f);
-                        GL11.glTranslatef(-0.15f, 0.3f, 0.5f);
-                        GL11.glRotatef(90f, 0, 0f, 1f);
-                        GL11.glRotatef(-100f, 1f, 0f, 0f);
+                        GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
                     }, 250, 1000),
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(2.5f, 2.5f, 3f);
-                        GL11.glTranslatef(-0.15f, 0.3f, 0.5f);
-                        GL11.glRotatef(90f, 0, 0f, 1f);
-                        GL11.glRotatef(-100f, 1f, 0f, 0f);
+                        GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(2.5f, 2.5f, 3f);
-                        GL11.glTranslatef(-0.15f, 0.3f, 0.5f);
-                        GL11.glRotatef(90f, 0, 0f, 1f);
-                        GL11.glRotatef(-100f, 1f, 0f, 0f);
+                        GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
                     }, 250, 50))
                     
             .build())

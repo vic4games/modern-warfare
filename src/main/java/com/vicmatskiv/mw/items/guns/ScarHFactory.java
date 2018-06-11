@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
 import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
@@ -34,6 +35,7 @@ import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.Scar;
@@ -190,9 +192,9 @@ public class ScarHFactory implements GunFactory {
             GL11.glTranslatef(-0.386F, -1.79F, -1F);
             GL11.glScaled(1.11F, 1.11F, 1.11F);
         },(model) -> {
-             if(model instanceof LPscope) {
-                GL11.glTranslatef(0.237F, -0.235F, 1.16F);
-                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            if(model instanceof JPUreticle) {
+                GL11.glTranslatef(0.237F, -0.215F, 1.155001F);
+                GL11.glScaled(0.03F, 0.03F, 0.03F);
             }
         })
         .withCompatibleAttachment(Attachments.Reflex, (model) -> {
@@ -238,6 +240,15 @@ public class ScarHFactory implements GunFactory {
             } else if(model instanceof Reflex2) {
                 GL11.glTranslatef(-0.12F, -1.97F, -0.7F);
                 GL11.glScaled(0.07F, 0.07F, 0.07F);
+            }
+        })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(-0.175F, -1.81F, -0.5F);
+            GL11.glScaled(0.35F, 0.35F, 0.35F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(-0.123F, -1.83F, -0.8F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
         .withCompatibleAttachment(Attachments.Grip2, (model) -> {
@@ -313,8 +324,7 @@ public class ScarHFactory implements GunFactory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.350000f, 1.349999f, -1f);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+                GL11.glTranslatef(0.350000f, 1.349999f, -0.9f);
                 
              // Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
@@ -325,25 +335,25 @@ public class ScarHFactory implements GunFactory {
                 // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.005F, 0.115f, 1.45f);
+                    GL11.glTranslatef(-0.005F, 0.115f, 1.4f);
                 } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0F, 0.06f, 1.1f);
+                    GL11.glTranslatef(-0F, 0.06f, 1.05f);
                 } 
                 
                 // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Scope)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0.003F, 0.19f, 1f);
+                    GL11.glTranslatef(-0.003F, 0.19f, 0.95f);
                 } 
 
                 // HP Zoomw
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.19f, 0.8f);
+                    GL11.glTranslatef(0F, 0.19f, 0.75f);
                 } 
                 
                 // Reflex Zoom
@@ -374,6 +384,12 @@ public class ScarHFactory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.08f, 1f);
+                } 
+                
+             // Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, -0.03f, 0.3f);
                 } 
                 
                 // Everything else
@@ -616,6 +632,12 @@ public class ScarHFactory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Reflex");
                     GL11.glTranslatef(0F, 0.08f, 1f);
+                } 
+                
+             // Reflex Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Reflex");
+                    GL11.glTranslatef(0F, -0.03f, 0.3f);
                 } 
                 
                 // Everything else

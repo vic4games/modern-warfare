@@ -35,7 +35,7 @@ public class M93RFactory implements GunFactory {
         .withRecoil(5f)
         .withZoom(0.9f)
         .withMaxShots(3, 1)
-        .withShootSound("M9")
+        .withShootSound("m93r")
         .withSilencedShootSound("m9silenced")
         .withReloadSound("PistolReload")
         .withUnloadSound("pistolUnload")
@@ -149,7 +149,7 @@ public class M93RFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
                 GL11.glTranslatef(0.350000f, 0.6f, -2.4f);
-                GL11.glRotatef(-5F, 1f, 0f, 0f);
+                GL11.glRotatef(-2.5F, 1f, 0f, 0f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holo2)) {
                     //System.out.println("Position me for Holo");

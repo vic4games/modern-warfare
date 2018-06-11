@@ -36,7 +36,7 @@ public class P99Factory {
         .withRecoil(6f)
         .withZoom(0.9f)
         .withMaxShots(1)
-        .withShootSound("P2000")
+        .withShootSound("p99")
         .withSilencedShootSound("m1911silenced")
         .withReloadSound("PistolReload")
         .withUnloadSound("pistolUnload")

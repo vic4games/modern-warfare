@@ -25,7 +25,9 @@ import com.vicmatskiv.mw.models.G36CIron2;
 import com.vicmatskiv.mw.models.Holo2;
 import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
+import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
+import com.vicmatskiv.mw.models.LPscope;
 import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M249;
 import com.vicmatskiv.mw.models.M249Cover;
@@ -35,6 +37,7 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
+import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -236,6 +239,15 @@ public class M249Factory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
+        .withCompatibleAttachment(Attachments.RMR, (model) -> {
+            if(model instanceof RMRsight) {
+            GL11.glTranslatef(0.155F, -1.75F, 0.5F);
+            GL11.glScaled(0.28F, 0.28F, 0.28F);
+            } else if(model instanceof Reflex2) {
+                GL11.glTranslatef(0.195F, -1.75F, 0.3F);
+                GL11.glScaled(0.1F, 0.1F, 0.1F);
+            }
+        })
 		.withCompatibleAttachment(Attachments.Grip2, (model) -> {
 			GL11.glTranslatef(.135F, -0.54F, -0.7F);
 			GL11.glScaled(0.8F, 0.8F, 0.8F);
@@ -294,12 +306,6 @@ public class M249Factory implements GunFactory {
 				GL11.glRotatef(45.000000f, 0f, 1f, 0f);
 				GL11.glRotatef(-1.000000f, 0f, 0f, 1f);
 				GL11.glTranslatef(-0.8f, 1.5f, -2.1f);
-				
-//				GL11.glScaled(5.5F, 5.5F, 5.5F);
-//                GL11.glRotatef(-6.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(45.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(12.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-0.7f, 1.7f, -2.1f);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
@@ -355,6 +361,12 @@ public class M249Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.15f, 0.6f);
+                } 
+                
+             // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(-0.01F, 0.1f, 0.6f);
                 } 
                 
                 // Everything else
@@ -416,6 +428,11 @@ public class M249Factory implements GunFactory {
                 })
                 
             .withFirstPersonCustomPositioning(Attachments.MicroT1.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0F, -1.7F, -1.95F);
+//                GL11.glRotatef(80F, 1f, 0f, 0f);
+                })
+                
+            .withFirstPersonCustomPositioning(Attachments.RMR.getRenderablePart(), (renderContext) -> {
 //                GL11.glTranslatef(0F, -1.7F, -1.95F);
 //                GL11.glRotatef(80F, 1f, 0f, 0f);
                 })
@@ -971,7 +988,79 @@ public class M249Factory implements GunFactory {
                 }, 250, 1000)
                     )
                     
+            .withFirstPersonCustomPositioningReloading(Attachments.RMR.getRenderablePart(),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000)
+                    )
+                    
             .withFirstPersonCustomPositioningUnloading(Attachments.Reflex.getRenderablePart(),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0F, -1.6F, 1.3F);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                    }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                    GL11.glTranslatef(0F, -1.6F, 1.3F);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                }, 250, 1000),
+                new Transition((renderContext) -> {
+                }, 250, 1000)
+                    )
+                    
+            .withFirstPersonCustomPositioningUnloading(Attachments.RMR.getRenderablePart(),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -1326,6 +1415,12 @@ public class M249Factory implements GunFactory {
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, 0.15f, 0.6f);
+                } 
+                
+             // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(-0.01F, 0.1f, 0.6f);
                 } 
 				
 				// Everything else
