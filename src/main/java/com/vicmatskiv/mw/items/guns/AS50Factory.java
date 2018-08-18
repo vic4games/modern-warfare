@@ -68,27 +68,48 @@ public class AS50Factory implements GunFactory {
 		.withInformationProvider(stack -> Arrays.asList("Type: Anti-materiel sniper rifle", "Damage: 30.5", 
 		"Caliber: .50 BMG", "Magazines:", "10rnd .50 BMG Magazine (Type 1)", "Fire Rate: Semi"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
-				(a, i) -> {
-					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
-				}, 
-				(a, i) -> {
-				}
-		)
-		.withCompatibleAttachment(GunSkins.Fade, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(GunSkins.Diamond, 
+        .withCompatibleAttachment(GunSkins.Voltaic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Voltaic.getTextureVariantIndex("Voltaic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Cosmos, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Cosmos.getTextureVariantIndex("Cosmos"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Volcanic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Volcanic.getTextureVariantIndex("Volcanic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(GunSkins.Gold, 
+        .withCompatibleAttachment(GunSkins.Gold, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
                 }, 
@@ -98,6 +119,13 @@ public class AS50Factory implements GunFactory {
         .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
                 }, 
                 (a, i) -> {
                 }
@@ -112,6 +140,76 @@ public class AS50Factory implements GunFactory {
         .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Ruby, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Ruby.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(GunSkins.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Asiimov, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Asiimov.getTextureVariantIndex("Asiimov"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Vulcan, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Vulcan.getTextureVariantIndex("Vulcan"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.CrystalCrimson, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.CrystalCrimson.getTextureVariantIndex("CrystalCrimson"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.PinkIsTheNewBlack, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.PinkIsTheNewBlack.getTextureVariantIndex("PinkIsTheNewBlack"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.DynamicBundle, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.DynamicBundle.getTextureVariantIndex("DynamicBundle"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Woodland_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Woodland_Digital.getTextureVariantIndex("Woodland_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert_Digital.getTextureVariantIndex("Desert_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Foliage, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Foliage.getTextureVariantIndex("Foliage"));
                 }, 
                 (a, i) -> {
                 }

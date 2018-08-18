@@ -38,11 +38,20 @@ public class Armors {
     public static Item Tacticalchest;
     public static Item Tacticalboots;
     public static Item Tacticalhelmet;
+    
+    public static Item Umbrellachest;
+    public static Item Umbrellaboots;
+    public static Item Umbrellahelmet;
+    
+    public static Item KCPDchest;
+    public static Item KCPDboots;
 
     static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, new int[] { 4, 6, 5, 4 }, 15, null, 0); // TODO: last
     static ArmorMaterial Spetsnaz = compatibility.addArmorMaterial("Spetsnaz", "Spetsnaz", 40, new int[] { 7, 9, 8, 7 }, 15, null, 0); // TODO: last
     static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 40, new int[] { 8, 10, 9, 8 }, 15, null, 0); // TODO: last
     static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
+    static ArmorMaterial Umbrella = compatibility.addArmorMaterial("Umbrella", "Umbrella", 40, new int[] { 5, 7, 6, 5 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Clothing = compatibility.addArmorMaterial("Clothing", "Clothing", 40, new int[] { 0, 0, 0, 0 }, 15, null, 0); // TODO: last
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, 
             ModContext modContext) {
@@ -112,6 +121,25 @@ public class Armors {
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
         Armors.GasMaskM40 = gasSuitArmorBuilder.buildHelmet(modContext);
+            
+            Builder umbrellaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Umbrella)
+                    .withUnlocalizedName("Umbrella").withTextureName("UmbrellaCorp")
+                    .withExposureReductionFactor(0.8f)
+                    .withNightVision(true)
+                    .withModelClass("com.vicmatskiv.mw.models.UmbrellaCorp").withHudTextureName("umbrella_overlay")
+                    .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Umbrellahelmet = umbrellaArmorBuilder.buildHelmet(modContext);
+        Armors.Umbrellachest = umbrellaArmorBuilder.buildChest(modContext.isClient());
+        Armors.Umbrellaboots = umbrellaArmorBuilder.buildBoots(modContext.isClient());
+            
+        Builder kcpdArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Clothing)
+                .withUnlocalizedName("KCPD").withTextureName("KCPD")
+                .withModelClass("com.vicmatskiv.mw.models.KCPD").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.KCPDchest = kcpdArmorBuilder.buildChest(modContext.isClient());
+        Armors.KCPDboots = kcpdArmorBuilder.buildBoots(modContext.isClient());     
     }
     
 

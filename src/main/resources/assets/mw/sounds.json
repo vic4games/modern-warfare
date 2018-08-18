@@ -26,6 +26,141 @@
       }
     ]
   },
+  "aa12reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:aa12reload",
+       "stream": false
+      }
+    ]
+  },
+  "aa12": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:aa12",
+       "stream": false
+      }
+    ]
+  },
+  "m1897": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1897",
+       "stream": false
+      }
+    ]
+  },
+  "m1897pump": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1897pump",
+       "stream": false
+      }
+    ]
+  },
+  "supershorty": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:supershorty",
+       "stream": false
+      }
+    ]
+  },
+  "supershortyaction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:supershortyaction",
+       "stream": false
+      }
+    ]
+  },
+  "m1873": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1873",
+       "stream": false
+      }
+    ]
+  },
+  "m1873action": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:m1873action",
+       "stream": false
+      }
+    ]
+  },
+  "aa12inspect": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:aa12inspect",
+       "stream": false
+      }
+    ]
+  },
+  "fmg9": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:fmg9",
+       "stream": false
+      }
+    ]
+  },
+   "fmg9reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:fmg9reload",
+       "stream": false
+      }
+    ]
+  },
+  "hk33reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:hk33reload",
+       "stream": false
+      }
+    ]
+  },
+  "gunwerkshamr": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:gunwerkshamr",
+       "stream": false
+      }
+    ]
+  },
+  "gl06reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:gl06reload",
+       "stream": false
+      }
+    ]
+  },
+  "gl06": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:gl06",
+       "stream": false
+      }
+    ]
+  },
   "amd65": {
     "category": "master",
     "sounds": [
@@ -1142,6 +1277,24 @@
       }
     ]
   },
+  "ump45reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ump45reload",
+       "stream": false
+      }
+    ]
+  },
+  "ump45unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ump45unload",
+       "stream": false
+      }
+    ]
+  },
    "hecateii": {
     "category": "master",
     "sounds": [
@@ -2074,15 +2227,6 @@
     "sounds": [
       {
        "name": "mw:mp7",
-       "stream": false
-      }
-    ]
-  },
-  "magnum": {
-    "category": "master",
-    "sounds": [
-      {
-       "name": "mw:magnum",
        "stream": false
       }
     ]

@@ -54,22 +54,29 @@ public class FNP90Factory implements GunFactory {
 		"Caliber: 5.7x28mm", "Magazines:", "50rnd 5.7x28mm Magazine",
 		"Fire Rate: Auto"))
 		.withCompatibleAttachment(GunSkins.ElectricSkin, 
-				(a, i) -> {
-					i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
-				}, 
-				(a, i) -> {
-				}
-		)
-		.withCompatibleAttachment(GunSkins.Amber, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-		.withCompatibleAttachment(GunSkins.Fade, 
+        .withCompatibleAttachment(GunSkins.Voltaic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Voltaic.getTextureVariantIndex("Voltaic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Cosmos, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Cosmos.getTextureVariantIndex("Cosmos"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Volcanic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Volcanic.getTextureVariantIndex("Volcanic"));
                 }, 
                 (a, i) -> {
                 }
@@ -102,9 +109,93 @@ public class FNP90Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(GunSkins.Amethyst, 
+        .withCompatibleAttachment(GunSkins.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Amethyst, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Ruby, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Ruby.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(GunSkins.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Asiimov, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Asiimov.getTextureVariantIndex("Asiimov"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Vulcan, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Vulcan.getTextureVariantIndex("Vulcan"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.CrystalCrimson, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.CrystalCrimson.getTextureVariantIndex("CrystalCrimson"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.PinkIsTheNewBlack, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.PinkIsTheNewBlack.getTextureVariantIndex("PinkIsTheNewBlack"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.DynamicBundle, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.DynamicBundle.getTextureVariantIndex("DynamicBundle"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Woodland_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Woodland_Digital.getTextureVariantIndex("Woodland_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert_Digital.getTextureVariantIndex("Desert_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Foliage, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Foliage.getTextureVariantIndex("Foliage"));
                 }, 
                 (a, i) -> {
                 }
@@ -160,12 +251,6 @@ public class FNP90Factory implements GunFactory {
 				GL11.glRotatef(45F, 0f, 1f, 0f);
 				GL11.glRotatef(4F, 0f, 0f, 1f);
 				GL11.glTranslatef(-0.850000f, 1.374999f, -3.725005f);
-				
-//				GL11.glScaled(4F, 4F, 4F);
-//                GL11.glRotatef(40F, 0f, 1f, 0f);
-//                GL11.glRotatef(4F, 0f, 0f, 1f);
-//                GL11.glRotatef(4F, 1f, 0f, 0f);
-//                GL11.glTranslatef(-0.850000f, 1.374999f, -3.725005f);
 				})
 				
 			.withFirstPersonPositioningRecoiled((renderContext) -> {
@@ -277,6 +362,23 @@ public class FNP90Factory implements GunFactory {
 				new Transition((renderContext) -> {
                 }, 250, 1000)
 					)
+					
+            .withFirstPersonPositioningInspecting(
+                    new Transition((renderContext) -> {
+                        GL11.glScaled(4F, 4F, 4F);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.975000f, 1.025000f, -2.400000f);
+                    }, 300, 600),
+                  new Transition((renderContext) -> {
+                      GL11.glScaled(4F, 4F, 4F);
+                      GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
+                      GL11.glRotatef(15.000000f, 0f, 1f, 0f);
+                      GL11.glRotatef(90.000000f, 0f, 0f, 1f);
+                      GL11.glTranslatef(0.225000f, 1.524999f, -2.325000f);
+                  }, 350, 600)
+                    )
 				
 			.withFirstPersonPositioningZooming((renderContext) -> {
 			    GL11.glScaled(4F, 4F, 4F);
@@ -440,6 +542,38 @@ public class FNP90Factory implements GunFactory {
                         GL11.glRotatef(-60.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.700000f, -0.725000f, -0.000000f);
 					}, 250, 50))
+					
+		    .withFirstPersonLeftHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3f, 3f, 3.5f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.350000f, -0.800000f, -0.075000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3f, 3f, 3.5f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.350000f, -0.800000f, -0.075000f);
+                    }, 250, 50))
+                    
+            .withFirstPersonRightHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3f, 3f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.725000f, -0.000000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(3f, 3f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.725000f, -0.000000f);
+                    }, 250, 50))
 					
 			.build())
 		.withSpawnEntityDamage(6.5f)

@@ -118,6 +118,13 @@ public class ClientProxy extends CommonProxy {
         renderItem.getItemModelMesher().register(Armors.spartanboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "mkvi_boots", "inventory"));
         renderItem.getItemModelMesher().register(Armors.spartanchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "mkvi_chest", "inventory"));
         renderItem.getItemModelMesher().register(Armors.spartanhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "mkvi_helmet", "inventory"));
+        
+        renderItem.getItemModelMesher().register(Armors.Umbrellaboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "umbrella_boots", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.Umbrellachest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "umbrella_chest", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.Umbrellahelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "umbrella_helmet", "inventory"));
+        
+        renderItem.getItemModelMesher().register(Armors.KCPDboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "kcpd_boots", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.KCPDchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "kcpd_chest", "inventory"));
     
         renderItem.getItemModelMesher().register(Armors.GasMaskM40, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "m40gasmask_helmet", "inventory"));
 

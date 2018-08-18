@@ -78,59 +78,97 @@ public class DupletFactory implements GunFactory {
         .withCompatibleAttachment(AuxiliaryAttachments.DupletBarrels, true, (model) -> {
         })
         .withCompatibleBullet(Bullets.ShotgunShell, (model) -> {})
-//        .withCompatibleAttachment(GunSkins.ElectricSkin, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Amber, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Amber.getTextureVariantIndex("Amber"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Fade, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Emerald, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Diamond, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Gold, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(GunSkins.Sapphire, 
-//                (a, i) -> {
-//                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
-//                }, 
-//                (a, i) -> {
-//                }
-//        )
-//        .withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
-//            GL11.glTranslatef(0.107F, -1.32F, -4F);
-//            GL11.glScaled(1.3F, 1.3F, 1.3F);
-//        })
+.withCompatibleAttachment(GunSkins.ElectricSkin, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Voltaic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Voltaic.getTextureVariantIndex("Voltaic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Cosmos, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Cosmos.getTextureVariantIndex("Cosmos"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Volcanic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Volcanic.getTextureVariantIndex("Volcanic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Gold, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Gold.getTextureVariantIndex("Gold"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Ruby, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Ruby.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(GunSkins.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withTextureNames("Duplet")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)

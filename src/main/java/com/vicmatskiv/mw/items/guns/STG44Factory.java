@@ -63,16 +63,44 @@ public class STG44Factory {
         .withInformationProvider(stack -> Arrays.asList("Type: Assault Rifle", "Damage: 8.5", 
         "Caliber: 7.92x33mm Kurz", "Magazines:", "30rnd 7.92x33mm Kurz Magazine",
         "Fire Rate: Auto"))
-        .withCompatibleAttachment(GunSkins.Diamond, 
+        .withCompatibleAttachment(GunSkins.ElectricSkin, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
+                    i.setActiveTextureIndex(GunSkins.ElectricSkin.getTextureVariantIndex("Electric"));
                 }, 
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(GunSkins.Forest, 
+        .withCompatibleAttachment(GunSkins.Voltaic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
+                    i.setActiveTextureIndex(GunSkins.Voltaic.getTextureVariantIndex("Voltaic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Cosmos, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Cosmos.getTextureVariantIndex("Cosmos"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Volcanic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Volcanic.getTextureVariantIndex("Volcanic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Diamond, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
                 (a, i) -> {
                 }
@@ -87,6 +115,97 @@ public class STG44Factory {
         .withCompatibleAttachment(GunSkins.Sapphire, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Forest, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Ruby, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Ruby.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(GunSkins.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Asiimov, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Asiimov.getTextureVariantIndex("Asiimov"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Vulcan, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Vulcan.getTextureVariantIndex("Vulcan"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.CrystalCrimson, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.CrystalCrimson.getTextureVariantIndex("CrystalCrimson"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.PinkIsTheNewBlack, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.PinkIsTheNewBlack.getTextureVariantIndex("PinkIsTheNewBlack"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.DynamicBundle, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.DynamicBundle.getTextureVariantIndex("DynamicBundle"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Woodland_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Woodland_Digital.getTextureVariantIndex("Woodland_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Desert_Digital, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Desert_Digital.getTextureVariantIndex("Desert_Digital"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Foliage, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Foliage.getTextureVariantIndex("Foliage"));
                 }, 
                 (a, i) -> {
                 }
@@ -404,6 +523,23 @@ public class STG44Factory {
 //                  GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
                 }, 250, 1000)
                     )
+                    
+            .withFirstPersonPositioningInspecting(
+                    new Transition((renderContext) -> {
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-1f, 1.2f, -1f);
+                    }, 300, 600),
+                  new Transition((renderContext) -> {
+                      GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                      GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                      GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                      GL11.glRotatef(70.000000f, 0f, 0f, 1f);
+                      GL11.glTranslatef(0.4f, 1.2f, -1.5f);
+                  }, 350, 600)
+                    )
                 
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -614,7 +750,37 @@ public class STG44Factory {
                         GL11.glTranslatef(0.425000f, -0.53f, 0.11f);
                     }, 250, 50))
                     
+            .withFirstPersonLeftHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4.5f, 4.5f, 5.5f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.125000f, 0.025000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4.5f, 4.5f, 5.5f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.125000f, 0.025000f);
+                    }, 250, 50))
                     
+            .withFirstPersonRightHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4.5f, 4.5f, 4.5f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, -0.550000f, 0.150000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4.5f, 4.5f, 4.5f);
+                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.425000f, -0.550000f, 0.150000f);
+                    }, 250, 50))
                 
             .build())
         .withSpawnEntityDamage(8.5f)

@@ -51,6 +51,8 @@ public class Bullets {
     public static ItemBullet Bullet303British;
     public static ItemBullet Ghost350Bolt;
     public static ItemBullet Cheyenne408;
+    public static ItemBullet Grenade40mm;
+    public static ItemBullet Winchester4440;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         
@@ -183,6 +185,31 @@ public class Bullets {
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
                     GL11.glScaled(0.6F, 0.6F, 0.6f);
+                }).withTextureName("Dummy.png")
+                .withCraftingRecipe("AXX",
+                'X', CommonProxy.SteelPlate,
+                'A', CompatibleBlocks.TNT
+        )
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+        
+        Grenade40mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Grenade40mm").withMaxStackSize(1)
+                .withModel(new com.vicmatskiv.mw.models.GL06Grenade(), "GL06.png")
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -1.2F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0F, 0F, 0F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.9F, -0.29F, 0.8F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0F, 0F, 0F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, 1F, 2.1F);
+                    GL11.glRotatef(10F, 0f, 1f, 0f);
+                    GL11.glRotatef(2F, 1f, 0f, 0f);
+                    GL11.glRotatef(0F, 0f, 0f, 1f);
+                    GL11.glScaled(2F, 2F, 2f);
                 }).withTextureName("Dummy.png")
                 .withCraftingRecipe("AXX",
                 'X', CommonProxy.SteelPlate,
@@ -444,6 +471,27 @@ public class Bullets {
 
         Bullet9mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet9mm")
+                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
+                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(80F, 1f, 0f, 0f);
+                    GL11.glScaled(0.3F, 0.3F, 0.3F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glRotatef(10F, 0f, 1f, 0f);
+                    GL11.glRotatef(2F, 1f, 0f, 0f);
+                    GL11.glRotatef(0F, 0f, 0f, 1f);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+        
+        Winchester4440 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Winchester4440")
                 .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
                 .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {

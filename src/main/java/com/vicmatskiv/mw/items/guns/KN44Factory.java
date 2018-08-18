@@ -49,7 +49,7 @@ public class KN44Factory implements GunFactory {
         //.withMaxShots(5)
         .withShootSound("KN44")
         .withSilencedShootSound("MP5Silenced")
-        .withReloadSound("StandardReload")
+        .withReloadSound("fnfalreload")
         .withUnloadSound("Unload")
         .withReloadingTime(43)
         .withCrosshair("gun")
@@ -74,14 +74,35 @@ public class KN44Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
-        .withCompatibleAttachment(GunSkins.Fade, 
+        .withCompatibleAttachment(GunSkins.Voltaic, 
                 (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Fade.getTextureVariantIndex("Ruby"));
+                    i.setActiveTextureIndex(GunSkins.Voltaic.getTextureVariantIndex("Voltaic"));
                 }, 
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(GunSkins.Diamond, 
+        .withCompatibleAttachment(GunSkins.Cosmos, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Cosmos.getTextureVariantIndex("Cosmos"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Volcanic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Volcanic.getTextureVariantIndex("Volcanic"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Emerald, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Emerald.getTextureVariantIndex("Emerald"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Diamond, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Diamond.getTextureVariantIndex("Diamond"));
                 }, 
@@ -95,6 +116,13 @@ public class KN44Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
+        .withCompatibleAttachment(GunSkins.Sapphire, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Sapphire.getTextureVariantIndex("Sapphire"));
+                }, 
+                (a, i) -> {
+                }
+        )
         .withCompatibleAttachment(GunSkins.Desert, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Desert.getTextureVariantIndex("Desert"));
@@ -102,9 +130,30 @@ public class KN44Factory implements GunFactory {
                 (a, i) -> {
                 }
         )
-         .withCompatibleAttachment(GunSkins.Forest, 
+        .withCompatibleAttachment(GunSkins.Forest, 
                 (a, i) -> {
                     i.setActiveTextureIndex(GunSkins.Forest.getTextureVariantIndex("Forest"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Amethyst, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
+                }, 
+                (a, i) -> {
+                }
+        )
+        .withCompatibleAttachment(GunSkins.Ruby, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Ruby.getTextureVariantIndex("Ruby"));
+                }, 
+                (a, i) -> {
+                }
+        )
+         .withCompatibleAttachment(GunSkins.Arctic, 
+                (a, i) -> {
+                    i.setActiveTextureIndex(GunSkins.Arctic.getTextureVariantIndex("Arctic"));
                 }, 
                 (a, i) -> {
                 }

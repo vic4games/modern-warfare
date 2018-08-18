@@ -83,6 +83,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> MA5Dcover;
     public static ItemAttachment<Weapon> BR55scope;
     public static ItemAttachment<Weapon> Maxim9Cover;
+    public static ItemAttachment<Weapon> Malcolm3x;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         Reflex = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -441,6 +442,64 @@ public class Attachments {
                         'F', CommonProxy.CopperWiring
                         )
                 .withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Malcolm3x = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
+                .withViewfinderPositioning((p, s) -> {
+                    GL11.glScalef(2f, 2f, 2f);
+                    GL11.glTranslatef(-0.02f, 0.62f, 2.78f);
+                })
+                .withRenderablePart()
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Malcolm3x(), "Malcolm3x.png")
+                .withModel(new com.vicmatskiv.mw.models.UnertlReticle(), "black.png")
+
+                .withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Malcolm3x) {
+                        GL11.glTranslatef(0.1F, -0.8F, 1.2F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.UnertlReticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Malcolm3x) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.UnertlReticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withInventoryModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Malcolm3x) {
+                        GL11.glTranslatef(-0.6F, -0.7F, 0.9F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4f);
+                    } else if (model instanceof com.vicmatskiv.mw.models.UnertlReticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withEntityModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Malcolm3x) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.UnertlReticle) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withCraftingRecipe(
+                        "XRX",
+                        "XRG",
+                        " RX",
+                        'R', CompatibleItems.GOLD_INGOT,
+                        'X', Ores.INGOT_STEEL,
+                        'G', CommonProxy.OpticGlass
+                        )
+                .withName("Malcolm3x").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DMRscope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
@@ -995,7 +1054,9 @@ public class Attachments {
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.1f, 1.1f, 1.1f);
                     GL11.glTranslatef(0.1f, 0.395f, 0.6f);
-                }).withCategory(AttachmentCategory.SCOPE).withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("LP")
+                })
+                .withRenderablePart()
+                .withCategory(AttachmentCategory.SCOPE).withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("LP")
                 .withModel(new com.vicmatskiv.mw.models.LP(), "AK12.png")
                 .withModel(new com.vicmatskiv.mw.models.LPscope(), "HP2.png")
                 .withFirstPersonModelPositioning((model, itemStack) -> {
@@ -2083,7 +2144,7 @@ public class Attachments {
                 .withName("Silencer65x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
+        Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Laser(), "AK12.png")
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.4F, 1.8F);
@@ -2097,7 +2158,7 @@ public class Attachments {
                     }
 
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.AR15Iron) {
+                    if (model instanceof com.vicmatskiv.mw.models.Laser) {
 
                     } else {
                         GL11.glScaled(0F, 0F, 0F);
@@ -2137,7 +2198,7 @@ public class Attachments {
                 .withName("Laser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
+        Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Laser2(), "AK12.png")
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.3F, 1.8F);

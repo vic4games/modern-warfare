@@ -37,6 +37,9 @@ public class RemingtonPump extends ModelBase
     ModelRenderer pump14;
     ModelRenderer pump15;
     ModelRenderer pump16;
+    ModelRenderer gun27;
+    ModelRenderer gun28;
+    ModelRenderer gun32;
   
   public RemingtonPump()
   {
@@ -140,6 +143,24 @@ public class RemingtonPump extends ModelBase
       pump16.setTextureSize(64, 32);
       pump16.mirror = true;
       setRotation(pump16, 0F, 0F, 2.67686F);
+      gun27 = new ModelRenderer(this, 0, 100);
+      gun27.addBox(0F, 0F, 0F, 1, 1, 8);
+      gun27.setRotationPoint(-2.4F, -5.4F, -17F);
+      gun27.setTextureSize(64, 32);
+      gun27.mirror = true;
+      setRotation(gun27, 0F, 0F, 0F);
+      gun28 = new ModelRenderer(this, 0, 100);
+      gun28.addBox(0F, 0F, 0F, 1, 1, 8);
+      gun28.setRotationPoint(-2.4F, -5.4F, -17F);
+      gun28.setTextureSize(64, 32);
+      gun28.mirror = true;
+      setRotation(gun28, 0F, 0F, -0.7853982F);
+      gun32 = new ModelRenderer(this, 0, 100);
+      gun32.addBox(0F, 0F, 0F, 1, 1, 8);
+      gun32.setRotationPoint(-2.4F, -4.4F, -17F);
+      gun32.setTextureSize(64, 32);
+      gun32.mirror = true;
+      setRotation(gun32, 0F, 0F, -0.5995051F);
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -163,6 +184,9 @@ public class RemingtonPump extends ModelBase
     pump14.render(f5);
     pump15.render(f5);
     pump16.render(f5);
+    gun27.render(f5);
+    gun28.render(f5);
+    gun32.render(f5);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

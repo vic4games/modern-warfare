@@ -8,8 +8,10 @@ import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.AR15CarryHandle;
 import com.vicmatskiv.mw.models.BulletBig;
 import com.vicmatskiv.mw.models.FALIron;
+import com.vicmatskiv.mw.models.FMGcarryhandle;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
+import com.vicmatskiv.mw.models.GL06Grenade;
 import com.vicmatskiv.mw.models.Ghost350bolt;
 import com.vicmatskiv.mw.models.Ghost350string1;
 import com.vicmatskiv.mw.models.Ghost350string2;
@@ -36,6 +38,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M1CarbineAction;
     public static ItemAttachment<Weapon> FNP90Sight;
     public static ItemAttachment<Weapon> AR15Iron;
+    public static ItemAttachment<Weapon> FMG9carryhandle;
     public static ItemAttachment<Weapon> Extra;
     public static ItemAttachment<Weapon> ExtraAR;
     public static ItemAttachment<Weapon> GlockTop;
@@ -52,7 +55,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> L115Bolt2;
     public static ItemAttachment<Weapon> SV98Action;
     public static ItemAttachment<Weapon> RevolverCase;
-    public static ItemAttachment<Weapon> PythonCase;
+    public static ItemAttachment<Weapon> PythonChamber;
     public static ItemAttachment<Weapon> R870Pump;
     public static ItemAttachment<Weapon> R870PumpTac;
     public static ItemAttachment<Weapon> M1911Top;
@@ -163,7 +166,14 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M93RSlide;
     public static ItemAttachment<Weapon> BARaction;
     public static ItemAttachment<Weapon> InterventionAction;
- 
+    public static ItemAttachment<Weapon> GunwerksHAMRaction;
+    public static ItemAttachment<Weapon> GLgrenade;
+    public static ItemAttachment<Weapon> GL06Cartridge;
+    public static ItemAttachment<Weapon> AA12action;
+    public static ItemAttachment<Weapon> M1873action;
+    public static ItemAttachment<Weapon> M1897pump;
+    public static ItemAttachment<Weapon> SuperShortyAction;
+    
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
         AR15Iron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -207,6 +217,50 @@ public class AuxiliaryAttachments {
 
                         )
                 .withName("AR15Iron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        FMG9carryhandle = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new FALIron(), "AK12.png")
+                 .withModel(new AK47iron(), "GunmetalTexture.png")
+                .withModel(new FMGcarryhandle(), "FMG9.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMGcarryhandle) {
+                        GL11.glTranslatef(-0.6F, 0F, 0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.6F, 0.7F, 0.75f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMGcarryhandle) {
+                        GL11.glTranslatef(0.1F, 0F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.5F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMGcarryhandle) {
+                        GL11.glTranslatef(-1.6F, -0.5F, 1.2F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.3F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withCraftingRecipe(
+                        "AAA",
+                        " FF",
+                        'A', Ores.INGOT_STEEL,
+                        'F', CommonProxy.SteelPlate
+
+                        )
+                .withName("FMGcarryhandle").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A1CarryHandle = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA7)
@@ -270,6 +324,20 @@ public class AuxiliaryAttachments {
                 .withModel(new M3A1rearsight(), "M3A1greasegun.png")
                 .withModel(new M3A1frontsight(), "M3A1greasegun.png")
                 .withName("M3A1sight").withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        GLgrenade = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA6)
+                .withModel(new GL06Grenade(), "GL06.png")
+                .withRenderablePart()
+                .withName("GLgrenade").withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        GL06Cartridge = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                .withModel(new com.vicmatskiv.mw.models.GL06Cartridge(), "GL06.png")
+                .withRenderablePart()
+                .withName("GL06Cartridge").withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         CrossbowString1 = new AttachmentBuilder<Weapon>()
@@ -832,6 +900,13 @@ public class AuxiliaryAttachments {
                 .withModel(new com.vicmatskiv.mw.models.InterventionBoltAction(), "Intervention.png").withName("InterventionAction")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        GunwerksHAMRaction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.GunwerksHAMRboltaction(), "GunwerksHAMR.png").withName("GunwerksHAMRaction")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
 
         L115Bolt2 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
@@ -861,10 +936,10 @@ public class AuxiliaryAttachments {
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        PythonCase = new AttachmentBuilder<Weapon>()
+        PythonChamber = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.MagnumCase(), "PythonCase.png").withName("PythonCase")
+                .withModel(new com.vicmatskiv.mw.models.PythonChamber(), "Python.png").withName("PythonChamber")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -872,6 +947,27 @@ public class AuxiliaryAttachments {
                 .withCategory(AttachmentCategory.EXTRA)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.RemingtonPump(), "Remington870.png").withName("R870Pump")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M1873action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M1873action(), "M1873.png").withName("M1873action")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        M1897pump = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.M1897action(), "Remington870.png").withName("M1897pump")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        SuperShortyAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.SuperShortyaction(), "AK12.png").withName("SuperShortyAction")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1095,6 +1191,11 @@ public class AuxiliaryAttachments {
         AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.AR15Action(), "AK12.png")
                 .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AA12action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.AA12action(), "AA12.png")
+                .withName("AA12action").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         PLR16action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
