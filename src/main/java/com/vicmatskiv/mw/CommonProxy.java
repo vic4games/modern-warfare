@@ -126,6 +126,8 @@ public class CommonProxy {
         compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
 
         Ores.init(mod, configurationManager, event);
+        Backpacks.preInit(mod, configurationManager, event);
+        Vests.preInit(mod, configurationManager, event);
         Armors.init(mod, configurationManager, event, ModernWarfareMod.MOD_CONTEXT);
         Attachments.init(mod, configurationManager, event);
         AuxiliaryAttachments.init(mod, configurationManager, event);
@@ -146,6 +148,7 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID);
         
         Entities.init(this);
+        TileEntities.init(this);
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
     }
 

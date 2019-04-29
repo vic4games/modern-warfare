@@ -3,10 +3,15 @@ package com.vicmatskiv.mw;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.inventory.BackpackInventoryTab;
+import com.vicmatskiv.weaponlib.inventory.CustomPlayerInventoryTab;
+import com.vicmatskiv.weaponlib.inventory.InventoryTabs;
+import com.vicmatskiv.weaponlib.inventory.StandardPlayerInventoryTab;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
 public class ClientProxy extends CommonProxy {
@@ -19,6 +24,14 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 		super.preInit(mod, configurationManager, event);
+		
+        InventoryTabs inventoryTabs = InventoryTabs.getInstance();
+
+        inventoryTabs.registerTab(new StandardPlayerInventoryTab());
+
+        inventoryTabs.registerTab(new CustomPlayerInventoryTab(ModernWarfareMod.MOD_CONTEXT, Items.DIAMOND_CHESTPLATE));
+
+        inventoryTabs.registerTab(new BackpackInventoryTab(ModernWarfareMod.MOD_CONTEXT));
 	}
 	
 	@Override
