@@ -41,15 +41,6 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
-                .withCraftingRecipe(
-                                " XG",
-                                "XFX",
-                                "EF ",
-                                'X', CommonProxy.SteelPlate,
-                                'E', compatibility.createItemStack(CompatibleItems.DYE, 15, 15),
-                                'F', CompatibleItems.COAL,
-                                'G', Ores.INGOT_STEEL
-                                )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

@@ -17,10 +17,6 @@ public class Armors {
     public static Item Marineboots;
     public static Item Marinehelmet;
     
-    public static Item spartanchest;
-    public static Item spartanboots;
-    public static Item spartanhelmet;
-    
     public static CustomArmor GasMaskM40;
     
     public static Item Spetznazchest;
@@ -31,20 +27,195 @@ public class Armors {
     public static Item Swatboots;
     public static Item Swathelmet;
     
-//    public static Item GasSwatchest;
-//    public static Item GasSwatboots;
-//    public static Item GasSwathelmet;
-    
-    public static Item Tacticalchest;
-    public static Item Tacticalboots;
     public static Item Tacticalhelmet;
+    
+    public static Item SpecOpschest;
+    public static Item SpecOpsboots;
+    public static Item SpecOpshelmet;
+    
+    public static Item Mercchest;
+    public static Item Mercboots;
+    public static Item Merchelmet;
+    
+    public static Item STARSchest;
+    public static Item STARSboots;
+    
+    public static Item HECUhelmet;
+    public static Item HECUchest;
+    public static Item HECUboots;
+    
+    public static Item Scarchest;
+    public static Item Scarboots;
+    public static Item Scarhelmet;
+    
+    public static Item Juggernautchest;
+    public static Item Juggernautboots;
+    public static Item Juggernauthelmet;
+    
+    public static Item Umbrellachest;
+    public static Item Umbrellaboots;
+    public static Item Umbrellahelmet;
+    
+    public static Item KCPDchest;
+    public static Item KCPDboots;
+    
+    public static Item NCRchest;
+    public static Item NCRboots;
+    public static Item NCRhelmet;
+    
+    public static Item T60chest;
+    public static Item T60boots;
+    public static Item T60helmet;
+    
+    public static Item NaziSantachest;
+    public static Item NaziSantaboots;
+    public static Item NaziSantahelmet;
+    
+    public static Item Santachest;
+    public static Item Santaboots;
+    public static Item Santahelmet;
+    
+    // HALO 
+    
+    // Mjolnir MkVI
+    
+    public static Item MKVIMainchest;
+    public static Item MKVIMainboots;
+    public static Item MKVIMainhelmet;
+    
+    public static Item MKVIDefaultchest;
+    public static Item MKVIDefaultboots;
+    public static Item MKVIDefaulthelmet;
+    
+    public static Item MKVIBluechest;
+    public static Item MKVIBlueboots;
+    public static Item MKVIBluehelmet;
+    
+    public static Item MKVIRedchest;
+    public static Item MKVIRedboots;
+    public static Item MKVIRedhelmet;
+    
+    // Mjolnir MkV
+    
+    public static Item MKVDefaultchest;
+    public static Item MKVDefaultboots;
+    public static Item MKVDefaulthelmet;
+    
+    public static Item MKVGreenchest;
+    public static Item MKVGreenboots;
+    public static Item MKVGreenhelmet;
+    
+    public static Item MKVBluechest;
+    public static Item MKVBlueboots;
+    public static Item MKVBluehelmet;
+    
+    public static Item MKVRedchest;
+    public static Item MKVRedboots;
+    public static Item MKVRedhelmet;
+    
+    // Mjolnir MkV ODST
+    
+    public static Item MKVDefaultODSTchest;
+    public static Item MKVDefaultODSTboots;
+    public static Item MKVDefaultODSThelmet;
+    
+    public static Item MKVGreenODSTchest;
+    public static Item MKVGreenODSTboots;
+    public static Item MKVGreenODSThelmet;
+    
+    public static Item MKVBlueODSTchest;
+    public static Item MKVBlueODSTboots;
+    public static Item MKVBlueODSThelmet;
+    
+    public static Item MKVRedODSTchest;
+    public static Item MKVRedODSTboots;
+    public static Item MKVRedODSThelmet;
 
-    static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 40, new int[] { 3, 5, 4, 3 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 40, new int[] { 15, 17, 16, 15 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 40, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
+    static ArmorMaterial Santa = compatibility.addArmorMaterial("Santa", "Santa", 200, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO: last
+    static ArmorMaterial NCR = compatibility.addArmorMaterial("NCR", "NCR", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
+//    static ArmorMaterial HammerDown = compatibility.addArmorMaterial("HammerDown", "HammerDown", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
+    static ArmorMaterial ScarSuit = compatibility.addArmorMaterial("ScarSuit", "ScarSuit", 200, new int[] { 5, 6, 5, 4 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Juggernaut = compatibility.addArmorMaterial("Juggernaut", "Juggernaut", 20, new int[] { 6, 7, 6, 5 }, 20, null, 0); // TODO: last
+    static ArmorMaterial PowerArmor = compatibility.addArmorMaterial("PowerArmor", "PowerArmor", 20, new int[] { 7, 8, 7, 6 }, 20, null, 0); // TODO: last
+    static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 200, new int[] { 7, 9, 8, 7 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 200, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
+    static ArmorMaterial Umbrella = compatibility.addArmorMaterial("Umbrella", "Umbrella", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
+    static ArmorMaterial Clothing = compatibility.addArmorMaterial("Clothing", "Clothing", 200, new int[] { 0, 0, 0, 0 }, 15, null, 0); // TODO: last
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, 
             ModContext modContext) {
+        
+        Builder santaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Santa)
+                .withUnlocalizedName("Santa").withTextureName("santasuit_normal")
+                .withModelClass("com.vicmatskiv.mw.models.SantasuitNormal").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Santahelmet = santaArmorBuilder.buildHelmet(modContext);
+        Armors.Santachest = santaArmorBuilder.buildChest(modContext.isClient());
+        Armors.Santaboots = santaArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder nazisantaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Santa)
+                .withUnlocalizedName("Nazisanta").withTextureName("santasuit_nazi")
+                .withModelClass("com.vicmatskiv.mw.models.SantaSuit").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.NaziSantahelmet = nazisantaArmorBuilder.buildHelmet(modContext);
+        Armors.NaziSantachest = nazisantaArmorBuilder.buildChest(modContext.isClient());
+        Armors.NaziSantaboots = nazisantaArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder specopsArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("Spec_Ops").withTextureName("specops")
+                .withModelClass("com.vicmatskiv.mw.models.SpecOps").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.SpecOpshelmet = specopsArmorBuilder.buildHelmet(modContext);
+        Armors.SpecOpschest = specopsArmorBuilder.buildChest(modContext.isClient());
+        Armors.SpecOpsboots = specopsArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder hecuArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("HECU").withTextureName("HECU")
+                .withModelClass("com.vicmatskiv.mw.models.HECU").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.HECUhelmet = hecuArmorBuilder.buildHelmet(modContext);
+        Armors.HECUchest = hecuArmorBuilder.buildChest(modContext.isClient());
+        Armors.HECUboots = hecuArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder juggernautsuitArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Juggernaut)
+                .withUnlocalizedName("Juggernaut").withTextureName("JuggernautSuit")
+                .withModelClass("com.vicmatskiv.mw.models.JuggernautSuit").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Juggernauthelmet = juggernautsuitArmorBuilder.buildHelmet(modContext);
+        Armors.Juggernautchest = juggernautsuitArmorBuilder.buildChest(modContext.isClient());
+        Armors.Juggernautboots = juggernautsuitArmorBuilder.buildBoots(modContext.isClient());
+        
+//        Builder hammerdownArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.HammerDown)
+//                .withUnlocalizedName("HammerDown").withTextureName("HammerDown")
+//                .withModelClass("com.vicmatskiv.mw.models.HammerDownSuit").withHudTextureName("Marine")
+//                .withCreativeTab(ModernWarfareMod.ArmorTab);
+//
+//        Armors.HammerDownhelmet = hammerdownArmorBuilder.buildHelmet(modContext);
+//        Armors.HammerDownchest = hammerdownArmorBuilder.buildChest(modContext.isClient());
+//        Armors.HammerDownboots = hammerdownArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder mercArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("merc").withTextureName("Merc")
+                .withModelClass("com.vicmatskiv.mw.models.Merc").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Merchelmet = mercArmorBuilder.buildHelmet(modContext);
+        Armors.Mercchest = mercArmorBuilder.buildChest(modContext.isClient());
+        Armors.Mercboots = mercArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder starsArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("stars").withTextureName("STARSuniform")
+                .withModelClass("com.vicmatskiv.mw.models.STARSuniform").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.STARSchest = starsArmorBuilder.buildChest(modContext.isClient());
+        Armors.STARSboots = starsArmorBuilder.buildBoots(modContext.isClient());
         
         Builder marineArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withUnlocalizedName("Marine").withTextureName("Marine")
@@ -55,21 +226,27 @@ public class Armors {
         Armors.Marinechest = marineArmorBuilder.buildChest(modContext.isClient());
         Armors.Marineboots = marineArmorBuilder.buildBoots(modContext.isClient());
         
-        Builder spartanArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
-                .withUnlocalizedName("spartan").withTextureName("mkvimjolnir")
-                .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
-                .withShieldCapacity(200.0)
-                .withShieldRegenerationRate(80.0)
-                .withShieldRegenerationTimeout(5000)
-                .withShieldIndicatorPosition(248, 20, 148, 14)
-                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
-                .withNightVision(true, false)
+        Builder ncrArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.NCR)
+                .withUnlocalizedName("NCR").withTextureName("NCR")
+                .withNightVision(true)
+                .withExposureReductionFactor(0.99f)
+                .withModelClass("com.vicmatskiv.mw.models.NCR").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
-        Armors.spartanhelmet = spartanArmorBuilder.buildHelmet(modContext);
-        Armors.spartanchest = spartanArmorBuilder.buildChest(modContext.isClient());
-        Armors.spartanboots = spartanArmorBuilder.buildBoots(modContext.isClient());
+        Armors.NCRhelmet = ncrArmorBuilder.buildHelmet(modContext);
+        Armors.NCRchest = ncrArmorBuilder.buildChest(modContext.isClient());
+        Armors.NCRboots = ncrArmorBuilder.buildBoots(modContext.isClient());
         
+        Builder t60ArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.PowerArmor)
+                .withUnlocalizedName("t60").withTextureName("powerarmort60")
+//                .withNightVision(true)
+                .withExposureReductionFactor(0.99f)
+                .withModelClass("com.vicmatskiv.mw.models.PowerArmorT60").withHudTextureName("marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.T60helmet = t60ArmorBuilder.buildHelmet(modContext);
+        Armors.T60chest = t60ArmorBuilder.buildChest(modContext.isClient());
+        Armors.T60boots = t60ArmorBuilder.buildBoots(modContext.isClient());
 
         Builder spetznazArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withCreativeTab(ModernWarfareMod.ArmorTab)
@@ -100,8 +277,6 @@ public class Armors {
         
 
         Armors.Tacticalhelmet = tacticalArmorBuilder.buildHelmet(modContext);
-        Armors.Tacticalchest = tacticalArmorBuilder.buildChest(modContext.isClient());
-        Armors.Tacticalboots = tacticalArmorBuilder.buildBoots(modContext.isClient());
         
         
         Builder gasSuitArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
@@ -111,6 +286,252 @@ public class Armors {
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
         Armors.GasMaskM40 = gasSuitArmorBuilder.buildHelmet(modContext);
+            
+        Builder umbrellaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Umbrella)
+                    .withUnlocalizedName("Umbrella").withTextureName("UmbrellaCorp")
+                    .withExposureReductionFactor(0.8f)
+                    .withNightVision(true)
+                    .withModelClass("com.vicmatskiv.mw.models.UmbrellaCorp").withHudTextureName("umbrella_overlay")
+                    .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Umbrellahelmet = umbrellaArmorBuilder.buildHelmet(modContext);
+        Armors.Umbrellachest = umbrellaArmorBuilder.buildChest(modContext.isClient());
+        Armors.Umbrellaboots = umbrellaArmorBuilder.buildBoots(modContext.isClient());
+        
+        Builder scarArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.ScarSuit)
+                .withUnlocalizedName("scar").withTextureName("scarsuit")
+                .withExposureReductionFactor(0.8f)
+                .withNightVision(true)
+                .withModelClass("com.vicmatskiv.mw.models.SCARSuit").withHudTextureName("scar_hud")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Scarhelmet = scarArmorBuilder.buildHelmet(modContext);
+        Armors.Scarchest = scarArmorBuilder.buildChest(modContext.isClient());
+        Armors.Scarboots = scarArmorBuilder.buildBoots(modContext.isClient());
+            
+        Builder kcpdArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Clothing)
+                .withUnlocalizedName("KCPD").withTextureName("KCPD")
+                .withModelClass("com.vicmatskiv.mw.models.KCPD").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.KCPDchest = kcpdArmorBuilder.buildChest(modContext.isClient());
+        Armors.KCPDboots = kcpdArmorBuilder.buildBoots(modContext.isClient());     
+        
+// ===========================================================
+        
+// HALO
+        
+// ===========================================================
+        
+        
+// MKVI main (master chief)
+        
+        Builder spartanArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkvi_main").withTextureName("mkvimjolnir")
+                .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVIMainhelmet = spartanArmorBuilder.buildHelmet(modContext);
+        Armors.MKVIMainchest = spartanArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVIMainboots = spartanArmorBuilder.buildBoots(modContext.isClient());
+        
+// MKVI default
+        
+        Builder mkvidefaultArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkvidefault").withTextureName("mkvidefault")
+                .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVIDefaulthelmet = mkvidefaultArmorBuilder.buildHelmet(modContext);
+        Armors.MKVIDefaultchest = mkvidefaultArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVIDefaultboots = mkvidefaultArmorBuilder.buildBoots(modContext.isClient());
+        
+        
+// MKVI blue
+        
+        Builder mkviblueArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkviblue").withTextureName("mkviblue")
+                .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVIBluehelmet = mkviblueArmorBuilder.buildHelmet(modContext);
+        Armors.MKVIBluechest = mkviblueArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVIBlueboots = mkviblueArmorBuilder.buildBoots(modContext.isClient());
+        
+        
+// MKVI red
+        
+        Builder mkviredArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkvired").withTextureName("mkvired")
+                .withModelClass("com.vicmatskiv.mw.models.MkVIMjolnir").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVIRedhelmet = mkviredArmorBuilder.buildHelmet(modContext);
+        Armors.MKVIRedchest = mkviredArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVIRedboots = mkviredArmorBuilder.buildBoots(modContext.isClient());
+        
+// ===========================================================
+        
+// MkV default (Halo 1)
+        
+        Builder mkvdefaultArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_default").withTextureName("mjolnirmkv_default")
+                .withModelClass("com.vicmatskiv.mw.models.MjolnirMkV").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVDefaulthelmet = mkvdefaultArmorBuilder.buildHelmet(modContext);
+        Armors.MKVDefaultchest = mkvdefaultArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVDefaultboots = mkvdefaultArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV green (Halo 1)
+        
+        Builder mkvgreenArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_green").withTextureName("mjolnirmkv_green")
+                .withModelClass("com.vicmatskiv.mw.models.MjolnirMkV").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVGreenhelmet = mkvgreenArmorBuilder.buildHelmet(modContext);
+        Armors.MKVGreenchest = mkvgreenArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVGreenboots = mkvgreenArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV blue (Halo 1)
+        
+        Builder mkvblueArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_blue").withTextureName("mjolnirmkv_blue")
+                .withModelClass("com.vicmatskiv.mw.models.MjolnirMkV").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVBluehelmet = mkvblueArmorBuilder.buildHelmet(modContext);
+        Armors.MKVBluechest = mkvblueArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVBlueboots = mkvblueArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV red (Halo 1)
+        
+        Builder mkvredArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_red").withTextureName("mjolnirmkv_red")
+                .withModelClass("com.vicmatskiv.mw.models.MjolnirMkV").withHudTextureName("spartan")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVRedhelmet = mkvredArmorBuilder.buildHelmet(modContext);
+        Armors.MKVRedchest = mkvredArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVRedboots = mkvredArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV default (ODST)
+        
+        Builder odstdefaultArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_default_odst").withTextureName("odst")
+                .withModelClass("com.vicmatskiv.mw.models.ODST").withHudTextureName("odst")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar_odst")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVDefaultODSThelmet = odstdefaultArmorBuilder.buildHelmet(modContext);
+        Armors.MKVDefaultODSTchest = odstdefaultArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVDefaultODSTboots = odstdefaultArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV green (ODST)
+        
+        Builder odstgreenArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_green_odst").withTextureName("odstgreen")
+                .withModelClass("com.vicmatskiv.mw.models.ODST").withHudTextureName("odst")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar_odst")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVGreenODSThelmet = odstgreenArmorBuilder.buildHelmet(modContext);
+        Armors.MKVGreenODSTchest = odstgreenArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVGreenODSTboots = odstgreenArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV blue (ODST)
+        
+        Builder odstblueArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_blue_odst").withTextureName("odstblue")
+                .withModelClass("com.vicmatskiv.mw.models.ODST").withHudTextureName("odst")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar_odst")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVBlueODSThelmet = odstblueArmorBuilder.buildHelmet(modContext);
+        Armors.MKVBlueODSTchest = odstblueArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVBlueODSTboots = odstblueArmorBuilder.buildBoots(modContext.isClient());
+        
+// MkV red (ODST)
+        
+        Builder odstredArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Spartan)
+                .withUnlocalizedName("mkv_red_odst").withTextureName("odstred")
+                .withModelClass("com.vicmatskiv.mw.models.ODST").withHudTextureName("odst")
+                .withShieldCapacity(40.0)
+                .withShieldRegenerationRate(80.0)
+                .withShieldRegenerationTimeout(5000)
+                .withShieldIndicatorPosition(248, 19.5, 148, 14)
+                .withShieldIndicatorTexture("mkvi_mask", "mkvi_bar_odst")
+                .withNightVision(true, false)
+                .withCreativeTab(ModernWarfareMod.SpartanTab);
+
+        Armors.MKVRedODSThelmet = odstredArmorBuilder.buildHelmet(modContext);
+        Armors.MKVRedODSTchest = odstredArmorBuilder.buildChest(modContext.isClient());
+        Armors.MKVRedODSTboots = odstredArmorBuilder.buildBoots(modContext.isClient());
+        
     }
     
 

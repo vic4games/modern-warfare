@@ -16,7 +16,7 @@ public class AmmoTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(Magazines.NATOMag1);
+		return new ItemStack(Bullets.Bullet556x45);
 	}
 
 }

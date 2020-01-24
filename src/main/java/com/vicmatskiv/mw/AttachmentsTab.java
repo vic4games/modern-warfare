@@ -16,7 +16,7 @@ public class AttachmentsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(Attachments.Leupold);
+		return new ItemStack(Attachments.ACOG);
 	}
 
 }

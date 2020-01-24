@@ -40,10 +40,6 @@ public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
 
     private void generateSurface(World world, Random random, int x, int z) {
 
-        addOreSpawn(Ores.TitaniumOre, CompatibleBlocks.STONE, world,
-                configurationManager.getOre("TitaniumOre").getSpawnsPerChunk(),
-                random, x, z, 8, 8, 3 + random.nextInt(4), 2, 60);
-
         addOreSpawn(Ores.CopperOre, CompatibleBlocks.STONE, world,
                 configurationManager.getOre("CopperOre").getSpawnsPerChunk(),
                 random, x, z, 9, 9, 6 + random.nextInt(4), 2, 110);
@@ -56,25 +52,10 @@ public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
                 configurationManager.getOre("LeadOre").getSpawnsPerChunk(),
                 random, x, z, 10, 10, 4 + random.nextInt(5), 5, 90);
 
-        addOreSpawn(Ores.TantalumOre, CompatibleBlocks.STONE, world,
-                configurationManager.getOre("TantalumOre").getSpawnsPerChunk(),
-                random, x, z, 8, 8, 3 + random.nextInt(4), 2, 60);
-
-        addOreSpawn(Ores.BauxiteOre, CompatibleBlocks.STONE, world,
-                configurationManager.getOre("BauxiteOre").getSpawnsPerChunk(),
-                random, x, z, 8, 8, 3 + random.nextInt(4), 2, 60);
-
+        
         addOreSpawn(Ores.TinOre, CompatibleBlocks.STONE, world,
                 configurationManager.getOre("TinOre").getSpawnsPerChunk(),
                 random, x, z, 8, 8, 3 + random.nextInt(4), 2, 60);
-
-        addOreSpawn(Ores.SiliconOre, CompatibleBlocks.STONE, world,
-                configurationManager.getOre("SiliconOre").getSpawnsPerChunk(),
-                random, x, z, 7, 7, 4 + random.nextInt(2), 2, 90);
-
-        addOreSpawn(Ores.RubyOre, CompatibleBlocks.STONE, world,
-                configurationManager.getOre("RubyOre").getSpawnsPerChunk(),
-                random, x, z, 6, 6, 2 + random.nextInt(2), 2, 15);
 
     }
 

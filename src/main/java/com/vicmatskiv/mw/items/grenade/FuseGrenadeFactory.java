@@ -24,30 +24,22 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withName("M67Frag")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M67Frag")
-                .withExplosionStrength(1f)
+                .withExplosionStrength(3f)
                 .withExplosionTimeout(5000)
                 .withExplosionSound("grenadeexplosion")
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
                 .withThrowSound("grenadethrow")
                 .withSafetyPinOffSound("safetypinoff")
-                .withEffectiveRadius(15f)
-                .withFragmentCount(1500)
-                .withFragmentDamage(30f)
+                .withEffectiveRadius(20f)
+                .withFragmentCount(3000)
+                .withFragmentDamage(500f)
                 .withCompatibleAttachment(Grenades.GrenadeSafetyPin, (p, s) -> {})
                 .withVelocity(() -> 0.8f)
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
-                .withCraftingRecipe(
-                                " XG",
-                                "XFX",
-                                " E ",
-                                'X', CommonProxy.SteelPlate,
-                                'E', CompatibleItems.FLINT_AND_STEEL,
-                                'F', CompatibleItems.GUNPOWDER,
-                                'G', Ores.INGOT_STEEL
-                                )
+                .withDestroyingBlocks(false)
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

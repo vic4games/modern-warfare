@@ -22,7 +22,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("ImpactGrenade")
                 .withExplosionSound("grenadeexplosion")
-                .withExplosionStrength(1f)
+                .withExplosionStrength(3f)
                 .withBounceSoftSound("grenade-soft-bounce")
                 .withBounceHardSound("grenade-hard-bounce")
                 .withEffectiveRadius(15f)
@@ -32,14 +32,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
                 .withExplosionOnImpact()
-                .withCraftingRecipe(
-                                " X ",
-                                "XFX",
-                                " E ",
-                                'X', CommonProxy.SteelPlate,
-                                'E', CompatibleItems.FLINT_AND_STEEL,
-                                'F', CompatibleItems.GUNPOWDER
-                                )
+                .withDestroyingBlocks(false)
                 .withRenderer(new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)
                         .withModel(new ImpactGrenade())

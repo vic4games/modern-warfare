@@ -14,7 +14,6 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.MP43E;
-import com.vicmatskiv.mw.models.Remington;
 import com.vicmatskiv.mw.models.Remington870;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -30,7 +29,7 @@ public class MP43EFactory implements GunFactory {
         .withAmmoCapacity(2)
         .withMaxBulletsPerReload(4)
         .withIteratedLoad()
-        .withFireRate(0.1f)
+        .withFireRate(0.3f)
         .withRecoil(9f)
         .withZoom(0.9f)
         .withMaxShots(1)
@@ -38,7 +37,8 @@ public class MP43EFactory implements GunFactory {
         .withShootSound("mp43e")
         .withSilencedShootSound("ShotgunSilenced")
         .withReloadSound("mp43ereload")
-        .withReloadIterationSound("loadshell")
+        .withReloadIterationSound("load_shell")
+        .withDrawSound("noaction_draw")
         .withAllReloadIterationsCompletedSound("mp43ereloadfin")
         .withReloadingTime(15)
         .withCrosshair("gun")
@@ -51,28 +51,25 @@ public class MP43EFactory implements GunFactory {
         .withFlashScale(() -> 0.5f)
         .withFlashOffsetX(() -> 0.11f)
         .withFlashOffsetY(() -> 0.06f)
-        .withCreativeTab(ModernWarfareMod.ShotgunsTab)
-        .withCrafting(CraftingComplexity.MEDIUM, 
-                CommonProxy.SteelPlate,
-                CommonProxy.MiniSteelPlate,
-                Ores.INGOT_STEEL)
-        .withInformationProvider(stack -> Arrays.asList("Type: Shotgun", "Damage per Pellet: 5", "Pellets per Shot: 8", 
-        "Cartridge: 12 Gauge Shotgun Shell", "Fire Rate: Pump-Action"))
-        .withCompatibleAttachment(GunSkins.Amethyst, 
-                (a, i) -> {
-                    i.setActiveTextureIndex(GunSkins.Amethyst.getTextureVariantIndex("Amethyst"));
-                }, 
-                (a, i) -> {
-                }
-        )
+         .withCrafting(CraftingComplexity.HIGH,
+                Ores.PlasticPlate,
+                Ores.GunmetalPlate)
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withInformationProvider(stack -> Arrays.asList(
+        "Type: Shotgun",
+        "Damage per Pellet: 12",
+        "Pellets per Shot: 10", 
+        "Cartridge: 12 Gauge Shotgun Shell",
+        "Fire Rate: SEMI ACTION",
+        "Rate of Fire: 30/100"))
         .withCompatibleAttachment(AuxiliaryAttachments.MP43Edoublebarrel, true, (model) -> {
             GL11.glScalef(1f, 1f, 1f);
         })
-        .withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
-            GL11.glTranslatef(-0.19F, -0.6F, -8F);
-            GL11.glScaled(1.4F, 1.4F, 1.4F);
-        })
-        .withCompatibleBullet(Bullets.ShotgunShell, (model) -> {})
+//        .withCompatibleAttachment(Attachments.Silencer12Gauge, (model) -> {
+//            GL11.glTranslatef(-0.19F, -0.6F, -8F);
+//            GL11.glScaled(1.4F, 1.4F, 1.4F);
+//        })
+        .withCompatibleBullet(Bullets.Shotgun12Guage, (model) -> {})
         .withTextureNames("MP43E")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
@@ -101,21 +98,21 @@ public class MP43EFactory implements GunFactory {
                 GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glRotatef(3F, 1f, 0f, 0f);
                 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.5f, 0.4f, -1.5f);
+                GL11.glTranslatef(-0.5f, 0.6f, -1.5f);
                 })
                 
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(2F, 0f, 0f, 1f);
-                GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.5f, 0.5f, -1.5f);
+                GL11.glRotatef(-3F, 0f, 0f, 1f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.275000f, 0.350000f, -1.349999f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(5F, 0f, 0f, 1f);
-                GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.47f, 0.5f, -1.3f);
+                GL11.glRotatef(-3F, 0f, 0f, 1f);
+                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                GL11.glTranslatef(-0.275000f, 0.350000f, -1.1f);
                 GL11.glRotatef(-3F, 1f, 0f, 0f);
                 })
                 
@@ -220,27 +217,27 @@ public class MP43EFactory implements GunFactory {
             .withFirstPersonPositioningReloading(
                     
                 new Transition((renderContext) -> { // Reload position
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glRotatef(9F, 0f, 0f, 1f);
                     GL11.glRotatef(-5F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.45f, 0.5f, -1.5f);
+                    GL11.glTranslatef(-0.45f, 0.8f, -1.5f);
                 }, 300, 0),
                 
                 new Transition((renderContext) -> { // Reload position
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glRotatef(35F, 0f, 1f, 0f);
                     GL11.glRotatef(8F, 0f, 0f, 1f);
                     GL11.glRotatef(8F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.45f, 0.35f, -1.5f);
+                    GL11.glTranslatef(-0.45f, 0.65f, -1.5f);
                 }, 120, 0),
                 
                 new Transition((renderContext) -> { // Reload position
-                    GL11.glRotatef(35F, 0f, 1f, 0f);
+                    GL11.glRotatef(44F, 0f, 1f, 0f);
                     GL11.glRotatef(5F, 0f, 0f, 1f);
                     GL11.glRotatef(3F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.5f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.5f, 0.65f, -1.5f);
                 }, 260, 0)
             )
             
@@ -251,7 +248,7 @@ public class MP43EFactory implements GunFactory {
                         GL11.glRotatef(8F, 0f, 0f, 1f);
                         GL11.glRotatef(8F, 1f, 0f, 0f);
                         GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                        GL11.glTranslatef(-0.45f, 0.35f, -1.5f);
+                        GL11.glTranslatef(-0.4f, 0.55f, -1.5f);
                     }, 180, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -259,7 +256,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(8F, 0f, 0f, 1f);
                     GL11.glRotatef(8F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.45f, 0.35f, -1.5f);
+                    GL11.glTranslatef(-0.4f, 0.55f, -1.5f);
                 }, 150, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -267,7 +264,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(9F, 0f, 0f, 1f);
                     GL11.glRotatef(-5F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.45f, 0.5f, -1.5f);
+                    GL11.glTranslatef(-0.4f, 0.67f, -1.5f);
                 }, 190, 0)
             )
             
@@ -277,7 +274,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(5F, 0f, 0f, 1f);
                     GL11.glRotatef(3F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.5f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.5f, 0.6f, -1.5f);
                 }, 200, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -285,7 +282,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(6F, 0f, 0f, 1f);
                     GL11.glRotatef(5F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.48f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.48f, 0.6f, -1.5f);
                 }, 220, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -293,7 +290,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(7F, 0f, 0f, 1f);
                     GL11.glRotatef(4F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.47f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.47f, 0.6f, -1.5f);
                 }, 190, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -301,7 +298,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(6F, 0f, 0f, 1f);
                     GL11.glRotatef(4F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.48f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.48f, 0.6f, -1.5f);
                 }, 200, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -309,7 +306,7 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(5F, 0f, 0f, 1f);
                     GL11.glRotatef(3F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.5f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.5f, 0.6f, -1.5f);
                 }, 220, 0),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -317,9 +314,57 @@ public class MP43EFactory implements GunFactory {
                     GL11.glRotatef(5F, 0f, 0f, 1f);
                     GL11.glRotatef(3F, 1f, 0f, 0f);
                     GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                    GL11.glTranslatef(-0.5f, 0.4f, -1.5f);
+                    GL11.glTranslatef(-0.5f, 0.6f, -1.5f);
                 }, 190, 0)
             )
+            
+            .withFirstPersonPositioningInspecting(
+                    new Transition((renderContext) -> {
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.475000f, 0.150000f, -0.950000f);
+                    }, 300, 600),
+                  new Transition((renderContext) -> {
+                      GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                      GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+                      GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                      GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                      GL11.glTranslatef(-0.375000f, 0.700000f, -0.825000f);
+                  }, 350, 600)
+                    )
+                    
+            .withFirstPersonPositioningDrawing(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(15F, 0f, 1f, 0f);
+                        GL11.glRotatef(13F, 0f, 0f, 1f);
+                        GL11.glRotatef(9F, 1f, 0f, 0f);
+                        GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                        GL11.glTranslatef(-0.2f, 0.7f, -1.4f);
+                    }, 160, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(25F, 0f, 1f, 0f);
+                        GL11.glRotatef(9F, 0f, 0f, 1f);
+                        GL11.glRotatef(6F, 1f, 0f, 0f);
+                        GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                        GL11.glTranslatef(-0.2f, 0.5f, -1.4f);
+                    }, 210, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(35F, 0f, 1f, 0f);
+                        GL11.glRotatef(8F, 0f, 0f, 1f);
+                        GL11.glRotatef(4F, 1f, 0f, 0f);
+                        GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                        GL11.glTranslatef(-0.2f, 0.4f, -1.4f);
+                    }, 270, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glRotatef(8F, 0f, 0f, 1f);
+                        GL11.glRotatef(-2F, 1f, 0f, 0f);
+                        GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                        GL11.glTranslatef(-0.2f, 0.45f, -1.4f);
+                    }, 240, 0)
+                    )
                 
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -342,23 +387,17 @@ public class MP43EFactory implements GunFactory {
                 GL11.glRotatef(10.000000f, 1f, 0f, 0f);
                 GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.350000f, 0.200000f, -0.6f);
+                GL11.glTranslatef(-0.350000f, 0.6f, -0.6f);
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
                  GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
                  GL11.glRotatef(5.000000f, 1f, 0f, 0f);
                  GL11.glRotatef(15.000000f, 0f, 1f, 0f);
                  GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-0.725000f, -0.050000f, -1.324999f);
+                 GL11.glTranslatef(-0.725000f, 0.1f, -1.324999f);
              }) 
             .withFirstPersonHandPositioning(
                      (renderContext) -> {
-//                         GL11.glScalef(4f, 4f, 4f);
-//                         GL11.glRotatef(-110.000000f, 1f, 0f, 0f);
-//                         GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
-//                         GL11.glRotatef(30.000000f, 0f, 0f, 1f);
-//                         GL11.glTranslatef(0.050000f, -0.650000f, 0.275000f);
-                         
                          GL11.glScalef(4f, 4f, 4f);
                          GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
                          GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
@@ -640,8 +679,103 @@ public class MP43EFactory implements GunFactory {
                         GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
                     }, 250, 50)
                     )
+                    
+            .withFirstPersonLeftHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 250, 50))
+                    
+            .withFirstPersonRightHandPositioningInspecting(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 250, 50))
+                    
+            .withFirstPersonLeftHandPositioningDrawing(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 150, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 130, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 200, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-80.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.100000f, -0.675000f, 0.125000f);
+                    }, 200, 0)
+                    )
+                    
+            .withFirstPersonRightHandPositioningDrawing(
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 150, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 130, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 250, 100),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2f, 2f, 2f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -0.925000f, 0.030000f);
+                    }, 250, 100)
+                    )
+                    
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(12f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

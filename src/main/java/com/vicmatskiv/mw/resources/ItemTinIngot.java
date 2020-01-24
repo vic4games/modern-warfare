@@ -11,7 +11,7 @@ public class ItemTinIngot extends Item
 		setMaxStackSize(64);
 		setUnlocalizedName(ModernWarfareMod.MODID + "_" + "TinIngot"); 
 		//setTextureName(ModernWarfareMod.MODID + ":" + "TinIngot");
-		setCreativeTab(ModernWarfareMod.gunsTab);
+		setCreativeTab(ModernWarfareMod.BlocksTab);
 	}
 	
 }

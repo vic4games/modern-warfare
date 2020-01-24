@@ -42,15 +42,15 @@ public class GasGrenadeFactory implements GrenadeFactory {
                 .withFarVelocity(() -> 1.3f)
                 .withGravityVelocity(() -> 0.06f)
                 .withRotationSlowdownFactor(() -> 0.99f)
-                .withCraftingRecipe(
-                                " XG",
-                                "XFX",
-                                "EF ",
-                                'X', CommonProxy.SteelPlate,
-                                'F', CompatibleItems.COAL,
-                                'E', CompatibleItems.GUNPOWDER,
-                                'G', Ores.INGOT_STEEL
-                                )
+//                .withCraftingRecipe(
+//                                " XG",
+//                                "XFX",
+//                                "EF ",
+//                                'X', CommonProxy.SteelPlate,
+//                                'F', CompatibleItems.COAL,
+//                                'E', CompatibleItems.GUNPOWDER,
+//                                'G', Ores.INGOT_STEEL
+//                                )
                 .withRenderer(
                         new GrenadeRenderer.Builder()
                         .withModId(ModernWarfareMod.MODID)

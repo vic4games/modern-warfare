@@ -25,7 +25,7 @@ public class Grenades {
             CompatibleFmlPreInitializationEvent event, CommonProxy commonProxy) {
 
         GrenadeSafetyPin = new AttachmentBuilder<ItemGrenade>().withCategory(AttachmentCategory.EXTRA)
-                .withModel(new com.vicmatskiv.mw.models.Pin(), "AK12.png").withName("GrenadeSafetyPin")
+                .withModel(new com.vicmatskiv.mw.models.Pin(), "gun.png").withName("GrenadeSafetyPin")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 

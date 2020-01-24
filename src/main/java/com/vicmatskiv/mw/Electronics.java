@@ -83,24 +83,13 @@ public class Electronics {
                 .withName("tablet")
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png")
-                .withCraftingRecipe(
-                        "XXX",
-                        "XGX",
-                        "XEX",
-                        'X', Ores.INGOT_STEEL,
-                        'E', CommonProxy.ElectronicCircuitBoard,
-                        'G', CompatibleBlocks.GLASS_PANE
-                        )
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         new ItemWirelessCamera.Builder()
         .withModId(ModernWarfareMod.MODID)
         .withName("wcam")
         .withCreativeTab(ModernWarfareMod.GadgetsTab)
-        .withModel(new CameraModel(), "AK12")
-        .withCrafting(CraftingComplexity.LOW,
-                CommonProxy.SteelPlate,
-                CommonProxy.ElectronicCircuitBoard)
+        .withModel(new CameraModel(), "gun")
         .withFirstPersonPositioning((player, itemStack) -> {
             // GL11.glTranslatef(0.5F, -1.5F, -0.7F);
             GL11.glRotatef(55F, 0f, 1f, 0f);
@@ -222,10 +211,6 @@ public class Electronics {
         .withName("gas-detector")
         .withModId(ModernWarfareMod.MODID)
         .withTextureName("Dummy.png")
-        .withCrafting(CraftingComplexity.LOW,
-                CommonProxy.SteelPlate,
-                CompatibleBlocks.GLASS_PANE,
-                CommonProxy.ElectronicCircuitBoard)
         .build(ModernWarfareMod.MOD_CONTEXT);
     }
 }
