@@ -366,7 +366,7 @@ public class Mk14EBRFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
                 GL11.glRotatef(9.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.100000f, 0.9f, 1.1f);
+                GL11.glTranslatef(-0.100000f, 0.9f, 1.2f);
                 GL11.glRotatef(0.7F, 1f, 0f, 0f);
                 })
                 

@@ -402,7 +402,7 @@ public class M38Factory implements GunFactory {
         }
         })
         .withCompatibleAttachment(Attachments.Holographic, (player, stack) -> {
-                GL11.glTranslatef(-0.041F, -1.28F, -1.2F);
+                GL11.glTranslatef(-0.041F, -1.28F, -0.8F);
                 GL11.glScaled(0.65F, 0.65F, 0.65F);
             },(model) -> {
                 if(model instanceof Holo2) {
@@ -411,7 +411,7 @@ public class M38Factory implements GunFactory {
                 }
             })
         .withCompatibleAttachment(Attachments.HolographicAlt, (player, stack) -> {
-            GL11.glTranslatef(-0.041F, -1.28F, -1.2F);
+            GL11.glTranslatef(-0.041F, -1.28F, -0.8F);
             GL11.glScaled(0.65F, 0.65F, 0.65F);
         },(model) -> {
             if(model instanceof Holo2) {
@@ -555,7 +555,7 @@ public class M38Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.12f, 1.2f, -0.35f);
+                GL11.glTranslatef(-0.12f, 1.2f, -0.25f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 
@@ -1097,13 +1097,13 @@ public class M38Factory implements GunFactory {
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+                    GL11.glTranslatef(0F, 0.06f, 0.1f);
                 } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+                    GL11.glTranslatef(0F, 0.06f, 0.1f);
                 } 
                 
              // Holo Zoom
@@ -1188,13 +1188,13 @@ public class M38Factory implements GunFactory {
                 // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+                    GL11.glTranslatef(0F, 0.06f, 0.1f);
                 } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
                     //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+                    GL11.glTranslatef(0F, 0.06f, 0.1f);
                 } 
                 
              // Holo Zoom
@@ -1230,11 +1230,11 @@ public class M38Factory implements GunFactory {
                 
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glRotatef(15.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.050000f, 1.299999f, -0.800000f);
+                GL11.glRotatef(35F, 0f, 1f, 0f);
+                GL11.glRotatef(20F, 0f, 0f, 1f);
+                GL11.glRotatef(10F, 1f, 0f, 0f);
+                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                GL11.glTranslatef(-0f, 1.35f, -0.55f);
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
                  GL11.glScalef(3.000000f, 3.000000f, 3.000000f);

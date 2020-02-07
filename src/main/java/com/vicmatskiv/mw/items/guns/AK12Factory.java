@@ -388,20 +388,20 @@ public class AK12Factory {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glScalef(2.5f, 2.5f, 2.5f);
                     GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                    GL11.glTranslatef(-0.200000f, 1.225000f, 0.025000f);
+                    GL11.glTranslatef(-0.200000f, 1.225000f, 0.125000f);
                     GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 } else if(activeAttachment == Attachments.Specter || activeAttachment == Attachments.ACOG ||
                         activeAttachment == Attachments.EotechHybrid2) {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glScalef(2.5f, 2.5f, 2.5f);
                     GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                    GL11.glTranslatef(-0.200000f, 1.125000f, 0.025000f);
+                    GL11.glTranslatef(-0.200000f, 1.125000f, 0.125000f);
                     GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 } else {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glScalef(2.5f, 2.5f, 2.5f);
                     GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                    GL11.glTranslatef(-0.200000f, 1.025000f, 0.025000f);
+                    GL11.glTranslatef(-0.200000f, 1.025000f, 0.125000f);
                     GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 }
                 })
@@ -1021,8 +1021,7 @@ public class AK12Factory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.350000f, 0.78f, 0f);
-                GL11.glRotatef(-0.5F, 1f, 0f, 0f);
+                GL11.glTranslatef(0.350000f, 0.75f, 0f);
 
                 
              // ACOG Zoom

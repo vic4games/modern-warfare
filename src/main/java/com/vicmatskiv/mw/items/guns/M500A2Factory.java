@@ -170,7 +170,7 @@ public class M500A2Factory implements GunFactory {
 			    GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.15f, 0.45f, -0.9f);
+                GL11.glTranslatef(-0.15f, 0.45f, -0.8f);
 				GL11.glRotatef(-1.5F, 1f, 0f, 0f);
 				})
 				

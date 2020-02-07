@@ -16,7 +16,7 @@ public class BlockCopperOre extends Block {
         setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CopperOre");
 //        setBlockTextureName(ModernWarfareMod.MODID + ":" + "copperore");
         setHardness(6F);
-        setResistance(600000F);
+        setResistance(15F);
         setSoundType(SoundType.STONE); 
         setHarvestLevel("pickaxe", 2);
         setCreativeTab(ModernWarfareMod.BlocksTab);

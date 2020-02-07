@@ -226,7 +226,7 @@ public class M1014Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(7F, 0f, 0f, 1f);
                 GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                GL11.glTranslatef(-0.2f, 0.48f, -1.3f);
+                GL11.glTranslatef(-0.2f, 0.48f, -1.2f);
                 GL11.glRotatef(-1.5F, 1f, 0f, 0f);
                 })
                 

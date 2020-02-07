@@ -188,7 +188,7 @@ public class BrenMkIIFactory {
             	GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
                 GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.675000f, 0.075000f, -2.400001f);
+                GL11.glTranslatef(-0.675000f, 0.075000f, -2.200001f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 

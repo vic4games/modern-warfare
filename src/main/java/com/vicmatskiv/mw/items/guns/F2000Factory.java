@@ -419,7 +419,7 @@ public class F2000Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(4.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.225000f, 0.08f, -1.55f);
+                GL11.glTranslatef(-0.225000f, 0.08f, -1.35f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 

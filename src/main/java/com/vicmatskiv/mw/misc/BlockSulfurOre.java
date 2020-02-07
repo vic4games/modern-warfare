@@ -17,7 +17,7 @@ public class BlockSulfurOre extends Block {
         setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SulfurOre");
 //        setBlockTextureName(ModernWarfareMod.MODID + ":" + "sulfurore");
         setHardness(6F);
-        setResistance(600000F);
+        setResistance(15F);
         setSoundType(SoundType.STONE); 
         setHarvestLevel("pickaxe", 2);
         setCreativeTab(ModernWarfareMod.BlocksTab);

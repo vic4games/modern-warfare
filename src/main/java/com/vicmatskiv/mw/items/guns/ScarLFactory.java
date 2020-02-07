@@ -411,7 +411,7 @@ public class ScarLFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(2.00000f, 2.00000f, 2.00000f);
-                GL11.glTranslatef(-0.200000f, 1.274999f, -0.65f);
+                GL11.glTranslatef(-0.200000f, 1.274999f, -0.45f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 

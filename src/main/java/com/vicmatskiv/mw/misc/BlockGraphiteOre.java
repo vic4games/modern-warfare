@@ -17,7 +17,7 @@ public class BlockGraphiteOre extends Block {
         setUnlocalizedName(ModernWarfareMod.MODID + "_" + "GraphiteOre");
 //        setBlockTextureName(ModernWarfareMod.MODID + ":" + "graphiteore");
         setHardness(6F);
-        setResistance(600000F);
+        setResistance(15F);
         setSoundType(SoundType.STONE); 
         setHarvestLevel("pickaxe", 2);
         setCreativeTab(ModernWarfareMod.BlocksTab);

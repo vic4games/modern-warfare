@@ -16,7 +16,7 @@ public class BlockTinOre extends Block {
 //        setBlockName(ModernWarfareMod.MODID + "_" + "TinOre");
         setUnlocalizedName(ModernWarfareMod.MODID + ":" + "tinore");
         setHardness(6F);
-        setResistance(600000F);
+        setResistance(15F);
         setSoundType(SoundType.STONE); 
         setHarvestLevel("pickaxe", 2);
         setCreativeTab(ModernWarfareMod.BlocksTab);

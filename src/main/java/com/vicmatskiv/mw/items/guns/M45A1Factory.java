@@ -149,7 +149,7 @@ public class M45A1Factory implements GunFactory {
                 GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(8F, 0f, 0f, 1f);
-                GL11.glTranslatef(0.000000f, 0.700000f, -1.9f);
+                GL11.glTranslatef(0.000000f, 0.700000f, -1.8f);
                 GL11.glRotatef(-4F, 1f, 0f, 0f);
                 })
                 

@@ -188,7 +188,7 @@ public class KedrFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
                 GL11.glRotatef(0.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.23f, 0.75f, -0.75f);
+                GL11.glTranslatef(-0.23f, 0.75f, -0.55f);
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
                 

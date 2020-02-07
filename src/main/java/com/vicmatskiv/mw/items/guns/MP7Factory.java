@@ -344,14 +344,14 @@ public class MP7Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.800000f, 0.900000f, -4.350005f);
+                GL11.glTranslatef(-0.800000f, 1.100000f, -4.550005f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.800000f, 0.900000f, -4.150005f);
+                GL11.glTranslatef(-0.800000f, 1.100000f, -4.050005f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 
@@ -793,8 +793,8 @@ public class MP7Factory {
                 GL11.glRotatef(40F, 0f, 1f, 0f);
                 GL11.glRotatef(8F, 1f, 0f, 0f);
                 GL11.glRotatef(15F, 0f, 0f, 1f);
-                GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.800000f, 1.300000f, -4.350005f);
+                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                GL11.glTranslatef(-0.300000f, 0.5f, -3.250005f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {

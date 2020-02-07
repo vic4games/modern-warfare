@@ -5372,7 +5372,8 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "gun.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, M4CarbineHandGuard, 
-                        LVOAVHandGuard, M38HandGuard, GripPlaceholder, Mk18HandGuard, M60E4HandGuard, AUGA3extGuard)
+                        LVOAVHandGuard, M38HandGuard, GripPlaceholder, UTGTriRailHandGuard, Mk18HandGuard, 
+                        M60E4HandGuard, AUGA3extGuard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })

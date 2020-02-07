@@ -845,23 +845,23 @@ public class TileEntities {
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
         
-//        new LootBoxConfiguration()
-//        .withMaterial(CompatibleMaterial.WOOD)
-//        .withName("blank")
-//        .withModelClassName("com.vicmatskiv.mw.models.Black")
-//        .withTextureName("textures/models/bodybag.png")
-////        .withEquipementDispenseSound(sound)
-//        .withCreativeTab(ModernWarfareMod.PropsTab)
-//        .withPositioning(tileEntity -> {
-//            GL11.glScalef(0.9f, 0.9f, 0.9f);
-//            GL11.glTranslatef(0.5f, -0.9f, 0.55f);
-//            GL11.glRotatef(-90F, 0f, 1f, 0f);
-//        })
-////        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
-////        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
-////        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
-//        .withEquipmentDispenseTimeout(10)
-//        .build(ModernWarfareMod.MOD_CONTEXT);
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.WOOD)
+        .withName("blank")
+        .withModelClassName("com.vicmatskiv.mw.models.Black")
+        .withTextureName("textures/models/bodybag.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(0.9f, 0.9f, 0.9f);
+            GL11.glTranslatef(0.5f, -0.9f, 0.55f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
         
         new LootBoxConfiguration()
         .withMaterial(CompatibleMaterial.IRON)

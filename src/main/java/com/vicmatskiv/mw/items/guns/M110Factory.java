@@ -429,7 +429,7 @@ public class M110Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.175000f, 1.25f, -0.1f);
+                GL11.glTranslatef(-0.175000f, 1.25f, -0f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
         

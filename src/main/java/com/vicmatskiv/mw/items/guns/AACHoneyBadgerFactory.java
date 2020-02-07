@@ -408,7 +408,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.225000f, 1.18f, -0.6f);
+                GL11.glTranslatef(-0.225000f, 1.18f, -0.4f);
                 GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 })
                 

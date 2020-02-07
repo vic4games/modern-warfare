@@ -388,25 +388,24 @@ public class AK15Factory {
                 GL11.glRotatef(70F, 1f, 0f, 0f);
                 })
             
-             .withFirstPersonPositioning((renderContext) -> {
+            .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.14f, 0.82f, 0.02f);
+                GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.3f, 0.9f, -0.15f);
                 
-//                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-//                GL11.glRotatef(13.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-0.100000f, 1.249999f, 0.15f);
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glScalef(2f, 2f, 2f);
+//                GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+//                GL11.glTranslatef(-0.12f, 0.8f, -0.12f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.14f, 0.82f, 0.14f);
-                GL11.glRotatef(-0.7F, 1f, 0f, 0f);
+                GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.3f, 0.9f, 0.25f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {

@@ -183,7 +183,7 @@ public class MG34Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
                 GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.500000f, 1.100000f, -0.8f);
+                GL11.glTranslatef(-0.500000f, 1.100000f, -0.6f);
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
                 

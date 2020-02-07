@@ -894,32 +894,32 @@ public class M249Factory {
                      new Transition((renderContext) -> {
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
@@ -936,32 +936,32 @@ public class M249Factory {
                      new Transition((renderContext) -> {
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -1F);
+                         GL11.glTranslatef(0F, -1.4F, -3F);
                          GL11.glRotatef(70F, 1f, 0f, 0f);
                      }, 250, 1000),
                      new Transition((renderContext) -> {

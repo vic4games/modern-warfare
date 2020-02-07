@@ -183,7 +183,7 @@ public class MP40Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(6.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.300000f, 0.850000f, -0.455000f);
+                GL11.glTranslatef(-0.300000f, 0.850000f, -0.25f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 

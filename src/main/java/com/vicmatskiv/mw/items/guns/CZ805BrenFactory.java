@@ -27,6 +27,7 @@ import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
 import com.vicmatskiv.mw.models.CZ805Bren;
+import com.vicmatskiv.mw.models.EotechScopeRing;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -52,7 +53,10 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -268,6 +272,19 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
+        .withCompatibleAttachment(Attachments.EotechHybrid2, (player, stack) -> {
+            GL11.glTranslatef(0.07F, -0.7F, -0.6F);
+            GL11.glScaled(0.65F, 0.65F, 0.65F);
+        },(model) -> {
+            if(model instanceof EotechScopeRing) {
+                GL11.glTranslatef(-0.2F, -0.41F, 1.8F);
+                GL11.glScaled(0.5F, 0.5F, 0.5F);
+            }
+            if(model instanceof Holo2) {
+                GL11.glTranslatef(-0.118F, -0.535F, 1.9F);
+                GL11.glScaled(0.05F, 0.05F, 0.05F);
+            }
+        })
         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
                 GL11.glTranslatef(-0.165F, -0.9F, -0.6F);
                 GL11.glScaled(0.4F, 0.4F, 0.5F);
@@ -314,6 +331,10 @@ public class CZ805BrenFactory implements GunFactory {
         })
         .withCompatibleAttachment(Attachments.VGrip, (model) -> {
             GL11.glTranslatef(-0.09F, 0.32F, -2F);
+            GL11.glScaled(1F, 1F, 1F);
+        })
+        .withCompatibleAttachment(Attachments.AngledGrip, (model) -> {
+            GL11.glTranslatef(-0.09F, 0.42F, -2.2F);
             GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(Attachments.Bipod, (model) -> {
@@ -378,7 +399,7 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(6F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.55f, -1.299999f);
+                GL11.glTranslatef(-0.35f, 0.65f, -1.299999f);
                 
 //                GL11.glRotatef(-15F, 1f, 0f, 0f);
 //                GL11.glRotatef(44F, 0f, 1f, 0f);
@@ -391,7 +412,7 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(6F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.55f, -1.15f);
+                GL11.glTranslatef(-0.35f, 0.65f, -1.05f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 
@@ -881,6 +902,12 @@ public class CZ805BrenFactory implements GunFactory {
                 } 
                 
              // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, -0.083f, 0.3f);
+                } 
+                
+             // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, -0.083f, 0.3f);
@@ -972,6 +999,12 @@ public class CZ805BrenFactory implements GunFactory {
                 } 
                 
              // Holo Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Holo");
+                    GL11.glTranslatef(0F, -0.083f, 0.2f);
+                } 
+                
+             // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
                     //System.out.println("Position me for Holo");
                     GL11.glTranslatef(0F, -0.083f, 0.3f);
@@ -1020,15 +1053,32 @@ public class CZ805BrenFactory implements GunFactory {
              
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
+                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                 AttachmentCategory.GRIP, rc.getWeaponInstance());
+                         if(activeAttachment == Attachments.Grip2 ||
+                                activeAttachment == Attachments.StubbyGrip || 
+                                activeAttachment == Attachments.VGrip) {
+                             GL11.glScalef(3f, 3f, 3f);
+                             GL11.glRotatef(-75.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(-30.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(40.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.300000f, -0.275000f, 0.225000f);
+                         } else if(activeAttachment == Attachments.AngledGrip) {
+                             GL11.glScalef(3f, 3f, 3f);
+                             GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(-50.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.550000f, -0.325000f, 0.375000f);
+                         } else {
                          GL11.glScalef(3f, 3f, 3f);
-                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.225000f, -0.525000f, 0.300000f);
-                         
-//                         GL11.glScalef(3f, 3f, 3f);
-                     }, 
-                     (renderContext) -> {
+                         GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+                         GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.300000f, -0.350000f, 0.275000f);
+                         }
+                         }, 
+                         (renderContext) -> {
                          GL11.glScalef(4f, 4f, 4f);
                          GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                          GL11.glRotatef(10.000000f, 0f, 1f, 0f);

@@ -254,7 +254,7 @@ public class M40A6Factory implements GunFactory {
                 GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(8f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.52f, 1.749999f, -0.9f);
+                GL11.glTranslatef(-0.52f, 1.749999f, -0.7f);
                 GL11.glRotatef(-1.5f, 1f, 0f, 0f);
                 })
                 
@@ -829,7 +829,7 @@ public class M40A6Factory implements GunFactory {
                 GL11.glRotatef(10.000000f, 1f, 0f, 0f);
                 GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(30.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.300000f, 0.275000f, -1.174999f);
+                GL11.glTranslatef(-0.300000f, 0.875000f, -1.074999f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {

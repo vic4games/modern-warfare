@@ -27,6 +27,7 @@ import com.vicmatskiv.mw.models.AKRail5;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
+import com.vicmatskiv.mw.models.EotechScopeRing;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -52,6 +53,7 @@ import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.UTGTriRailHandGuard;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
@@ -285,6 +287,19 @@ public class MP5A5Factory {
                 GL11.glScaled(0.1F, 0.1F, 0.1F);
             }
         })
+        .withCompatibleAttachment(Attachments.EotechHybrid2, (player, stack) -> {
+            GL11.glTranslatef(-0.04F, -1.32F, -1.5F);
+            GL11.glScaled(0.65F, 0.65F, 0.65F);
+        },(model) -> {
+            if(model instanceof EotechScopeRing) {
+                GL11.glTranslatef(-0.2F, -0.41F, 1.8F);
+                GL11.glScaled(0.5F, 0.5F, 0.5F);
+            }
+            if(model instanceof Holo2) {
+                GL11.glTranslatef(-0.118F, -0.535F, 1.9F);
+                GL11.glScaled(0.05F, 0.05F, 0.05F);
+            }
+        })
         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
                 GL11.glTranslatef(-0.272F, -1.5F, -1.5F);
                 GL11.glScaled(0.38F, 0.38F, 0.48F);
@@ -313,6 +328,10 @@ public class MP5A5Factory {
         })
         .withCompatibleAttachment(Attachments.VGrip, (model) -> {
             GL11.glTranslatef(-0.2F, -0.15F, -2.6F);
+            GL11.glScaled(1F, 1F, 1F);
+        })
+        .withCompatibleAttachment(Attachments.AngledGrip, (model) -> {
+            GL11.glTranslatef(-0.2F, -0.05F, -2.8F);
             GL11.glScaled(1F, 1F, 1F);
         })
         .withCompatibleAttachment(Attachments.Bipod, (model) -> {
@@ -370,7 +389,7 @@ public class MP5A5Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.200000f, 0.88f, -0.5f);
+                GL11.glTranslatef(-0.200000f, 0.88f, -0.3f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 
@@ -825,6 +844,12 @@ public class MP5A5Factory {
                 } 
                 
              // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.275f, 1.3f);
+                } 
+                
+             // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.255f, 1f);
@@ -905,6 +930,12 @@ public class MP5A5Factory {
                 } 
                 
              // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.275f, 1.2f);
+                } 
+                
+             // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.255f, 1f);
@@ -966,6 +997,12 @@ public class MP5A5Factory {
                              GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
                              GL11.glRotatef(35.000000f, 0f, 0f, 1f);
                              GL11.glTranslatef(0.175000f, -0.200000f, 0.125000f);
+                         } else if(activeAttachment == Attachments.AngledGrip) {
+                             GL11.glScalef(4f, 4f, 4f);
+                             GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(-50.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.400000f, -0.275000f, 0.325000f);
                          } else {
                              GL11.glScalef(4f, 4f, 4f);
                              GL11.glRotatef(-95.000000f, 1f, 0f, 0f);

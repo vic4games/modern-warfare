@@ -310,17 +310,17 @@ public class G11Factory {
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                     RenderContext<?> rc = (RenderContext<?>) renderContext;
                     ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                            AttachmentCategory.FRONTSIGHT, rc.getWeaponInstance());
-                    if(activeAttachment == Attachments.P90Terminator) {
+                            AttachmentCategory.SCOPE, rc.getWeaponInstance());
+                    if(activeAttachment == Attachments.Specter) {
                         GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                         GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.700000f, 1.800000f, -1.875000f);
+                        GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.500000f, 1.9f, -1.1f);
                     } else {
                         GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glRotatef(5.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.500000f, 1.7f, -1.8f);
+                        GL11.glTranslatef(-0.500000f, 1.7f, -1.6f);
                     }
                 })
                 

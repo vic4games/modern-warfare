@@ -297,7 +297,7 @@ public class SR3Factory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.1f, 0.75f, -0.33f);
+                GL11.glTranslatef(-0.1f, 0.75f, -0.03f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 

@@ -183,7 +183,7 @@ public class M1A1ThompsonFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.200000f, 0.475000f, -1.7f);
+                GL11.glTranslatef(-0.200000f, 0.475000f, -1.4f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 

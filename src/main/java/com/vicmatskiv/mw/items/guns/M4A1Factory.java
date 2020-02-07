@@ -644,7 +644,7 @@ public class M4A1Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.12f, 1.2f, -0.45f);
+                GL11.glTranslatef(-0.12f, 1.2f, -0.35f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 

@@ -609,9 +609,14 @@ public class AS50Factory implements GunFactory {
                     )
               
             .withFirstPersonPositioningZooming((renderContext) -> {
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glTranslatef(0.07f, 2.3f, -0.5f);
+                
+                GL11.glScalef(2.5f, 2.5f, 2.5f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(0.07f, 2.3f, -0.5f);
+                GL11.glRotatef(5f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.500000f, 2.500000f, -0.725000f);
                 
                 // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
@@ -687,10 +692,16 @@ public class AS50Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glTranslatef(-0.2f, 2.3f, -0.45f);
+//                GL11.glRotatef(5F, 0f, 0f, 1f);
+                
+                GL11.glScalef(2.5f, 2.5f, 2.5f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(-0.2f, 2.3f, -0.45f);
-                GL11.glRotatef(5F, 0f, 0f, 1f);
+                GL11.glRotatef(5f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.500000f, 2.500000f, -0.4f);
+                GL11.glRotatef(-1f, 1f, 0f, 0f);
                 
                 // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {

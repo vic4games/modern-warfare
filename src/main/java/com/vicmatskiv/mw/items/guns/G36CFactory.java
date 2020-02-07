@@ -352,13 +352,13 @@ public class G36CFactory implements GunFactory {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glRotatef(4F, 0f, 0f, 1f);
                     GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                    GL11.glTranslatef(-0.3f, 1.95f, -0.15000f);
+                    GL11.glTranslatef(-0.3f, 1.95f, 0.05000f);
                     GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 } else {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glRotatef(4F, 0f, 0f, 1f);
                     GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                    GL11.glTranslatef(-0.3f, 1.75f, -0.30000f);
+                    GL11.glTranslatef(-0.3f, 1.75f, -0.15000f);
                     GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 }
                 })
@@ -770,9 +770,14 @@ public class G36CFactory implements GunFactory {
                     )
             
             .withFirstPersonPositioningZooming((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glTranslatef(0.350000f, 1.374999f, 0.025000f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.350000f, 1.374999f, 0.025000f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
+                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                GL11.glTranslatef(-0.3f, 1.75f, -0.450000f);
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
@@ -848,9 +853,15 @@ public class G36CFactory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+//                GL11.glTranslatef(0.350000f, 1.374999f, 0.125000f);
+                
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.350000f, 1.374999f, 0.125000f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
+                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                GL11.glTranslatef(-0.3f, 1.75f, -0.15000f);
+                GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
