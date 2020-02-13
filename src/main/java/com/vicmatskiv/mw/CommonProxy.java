@@ -164,13 +164,14 @@ public class CommonProxy {
         new NightStickFactory().createMelee(this);
         
         new GasCanFactory().createMelee(this);
+        TileEntities.init(this);
     }
 
     public void init(ModernWarfareMod mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID);
         
         Entities.init(this);
-        TileEntities.init(this);
+        
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
     }
 
