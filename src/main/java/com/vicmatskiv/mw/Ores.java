@@ -97,19 +97,19 @@ public class Ores {
         SyntheticPlastic = new ItemSyntheticPlastic();
         PlasticPlate = new ItemPlasticPlate();
         
-        compatibility.registerBlock(ModernWarfareMod.MODID, LeadOre, "LeadOre");
+        compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, LeadOre, "LeadOre");
         compatibility.registerItem(ModernWarfareMod.MODID, LeadIngot, "leadingot");
 
-        compatibility.registerBlock(ModernWarfareMod.MODID, CopperOre, "CopperOre");
+        compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, CopperOre, "CopperOre");
         compatibility.registerItem(ModernWarfareMod.MODID, CopperIngot, "CopperIngot");
         
-        compatibility.registerBlock(ModernWarfareMod.MODID, GraphiteOre, "GraphiteOre");
+        compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, GraphiteOre, "GraphiteOre");
         compatibility.registerItem(ModernWarfareMod.MODID, GraphiteChunk, "GraphiteChunk");
 
-        compatibility.registerBlock(ModernWarfareMod.MODID, TinOre, "TinOre");
+        compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, TinOre, "TinOre");
         compatibility.registerItem(ModernWarfareMod.MODID, TinIngot, "TinIngot");
 
-        compatibility.registerBlock(ModernWarfareMod.MODID, SulfurOre, "SulfurOre");
+        compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, SulfurOre, "SulfurOre");
         compatibility.registerItem(ModernWarfareMod.MODID, SulfurDust, "SulfureDust");
 
         compatibility.registerItem(ModernWarfareMod.MODID, SteelDust, "SteelDust");
