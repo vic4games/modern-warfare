@@ -162,6 +162,9 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M1GarandMag;
     public static ItemAttachment<Weapon> G11Action;
     public static ItemAttachment<Weapon> AUGAction;
+    public static ItemAttachment<Weapon> StonerHATCH;
+    public static ItemAttachment<Weapon> StonerBELT;
+    public static ItemAttachment<Weapon> JohnsonACTION;
     
     //Magazines
     public static ItemAttachment<Weapon> NV4Mag;
@@ -739,6 +742,34 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.M60Belt(), "m60.png")
                 .withName("M60Belt")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        StonerHATCH = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.StonerA1HATCH(), "gun.png")
+                .withModel(new M27rearsight(), "gun.png")
+                .withName("StonerHATCH")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        StonerBELT = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.StonerA1BELT(), "m249.png")
+                .withName("StonerBELT")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        JohnsonACTION = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.JohnsonLMGACTION(), "gun.png")
+                .withName("JohnsonLMGACTION")
                 .withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
@@ -1381,6 +1412,7 @@ public class AuxiliaryAttachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new M4Iron1(), "gun.png")
                 .withModel(new M4Iron2(), "AK12.png").withModel(new FALIron(), "gun.png")
                 .withModel(new AR15CarryHandle(), "gun.png")
+                .withRequiredAttachments(Attachments.M4Receiver, Attachments.VLTORReceiver)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AR15CarryHandle) {
                         GL11.glTranslatef(-0.6F, -0.1F, 0.1F);

@@ -66,10 +66,10 @@ public class BrowningAuto5Factory implements GunFactory {
         .withCrosshairZoomed("Sight")
         .withInaccuracy(20)
         .withPellets(10)
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1f)
-        .withFlashOffsetX(() -> 0.05f)
-        .withFlashOffsetY(() -> 0.15f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.1f)
+        .withFlashOffsetY(() -> 0.1f)
         .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)

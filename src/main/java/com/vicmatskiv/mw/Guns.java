@@ -85,9 +85,11 @@ public class Guns {
     public static Item M1897;
     public static Item Mk14EBR;
     public static Item BrenMkII;
+    public static Item M1941Johnson;
     public static Item MG34;
     public static Item MG42;
     public static Item M60E4;
+    public static Item StonerA1;
     public static Item L96A1;
     public static Item AS50;
     public static Item M82;
@@ -211,9 +213,11 @@ public class Guns {
         M1897 = new M1897Factory().createGun(proxy);
         Mk14EBR = new Mk14EBRFactory().createGun(proxy);
         BrenMkII = new BrenMkIIFactory().createGun(proxy);
+        M1941Johnson = new M1941JohnsonFactory().createGun(proxy);
         MG34 = new MG34Factory().createGun(proxy);
         MG42 = new MG42Factory().createGun(proxy);
         M60E4 = new M60E4Factory().createGun(proxy);
+        StonerA1 = new StonerA1Factory().createGun(proxy);
         L96A1 = new L96A1Factory().createGun(proxy);
         AS50 = new AS50Factory().createGun(proxy);
         M82 = new M82Factory().createGun(proxy);

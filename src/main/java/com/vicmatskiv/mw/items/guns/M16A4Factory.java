@@ -41,6 +41,7 @@ import com.vicmatskiv.mw.models.M27rearsight;
 import com.vicmatskiv.mw.models.M4A1;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
+import com.vicmatskiv.mw.models.M4Receiver;
 import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
@@ -50,6 +51,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.mw.models.VLTORReceiver;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
@@ -80,10 +82,10 @@ public class M16A4Factory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.8f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.17f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.12f)
+        .withFlashOffsetY(() -> 0.15f)
         .withShellCasingForwardOffset(0.05f)
         .withShellCasingVerticalOffset(-0.03f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
@@ -252,10 +254,18 @@ public class M16A4Factory implements GunFactory {
           }
         })
         .withCompatibleAttachment(Attachments.M4Receiver, true, (model) -> {
-//            GL11.glTranslatef(0f, 0f, 1f);
+            if(model instanceof M4Receiver) {
+          } else if(model instanceof AKRail) {
+              GL11.glTranslatef(-0.2F, -1.32F, -1.82f);
+              GL11.glScaled(0.6F, 0.8F, 0.78F);
+          }
         })
         .withCompatibleAttachment(Attachments.VLTORReceiver, (model) -> {
-//            GL11.glTranslatef(0f, 0f, 1f);
+            if(model instanceof VLTORReceiver) {
+            } else if(model instanceof AKRail) {
+                GL11.glTranslatef(-0.2F, -1.32F, -1.82f);
+                GL11.glScaled(0.6F, 0.8F, 0.78F);
+            }
         })
         .withCompatibleAttachment(Attachments.M4Grip, true, (model) -> {
 //            GL11.glTranslatef(0f, 0f, 1f);
@@ -508,27 +518,6 @@ public class M16A4Factory implements GunFactory {
         .withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
             GL11.glTranslatef(-0.2F, -1.235F, -7F);
             GL11.glScaled(1F, 1F, 1F);
-        })
-        .withCompatibleAttachment(AuxiliaryAttachments.M4Rail, true, (model) -> {
-            if(model instanceof AKRail) {
-                GL11.glTranslatef(0.13F, -1.17F, -3.5F);
-                GL11.glScaled(0F, 0F, 0F);
-                GL11.glRotatef(90F, 0f, 0f, 1f);
-            } else if(model instanceof AKRail2) {
-                GL11.glTranslatef(-0.37F, -1.005F, -3.5F);
-                GL11.glScaled(0F, 0F, 0F);
-                GL11.glRotatef(-90F, 0f, 0f, 1f);
-            } else if(model instanceof AKRail3) {
-                GL11.glTranslatef(-0.03F, -0.84F, -3.64F);
-                GL11.glScaled(0F, 0F, 0F);
-                GL11.glRotatef(180F, 0f, 0f, 1f);
-            } else if(model instanceof AKRail4) {
-                GL11.glTranslatef(-0.2F, -1.32F, -1.82f);
-                GL11.glScaled(0.6F, 0.8F, 0.78F);
-            } else if(model instanceof AKRail5) {
-                GL11.glTranslatef(-0.2F, -1.32F, -3.65f);
-                GL11.glScaled(0F, 0F, 0F);
-            }
         })
         .withTextureNames("gun")
         .withRenderer(new WeaponRenderer.Builder()

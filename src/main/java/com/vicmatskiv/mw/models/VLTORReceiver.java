@@ -51,6 +51,11 @@ public class VLTORReceiver extends ModelBase
     ModelRenderer receiver36;
     ModelRenderer receiver37;
     ModelRenderer receiver38;
+    ModelRenderer gun104;
+    ModelRenderer gun111;
+    ModelRenderer gun368;
+    ModelRenderer gun125;
+    ModelRenderer gun319;
   
   public VLTORReceiver()
   {
@@ -256,6 +261,36 @@ public class VLTORReceiver extends ModelBase
       receiver38.setTextureSize(64, 32);
       receiver38.mirror = true;
       setRotation(receiver38, 0F, 0F, -2.616445F);
+      gun104 = new ModelRenderer(this, 0, 0);
+      gun104.addBox(0F, 0F, 0F, 2, 1, 21);
+      gun104.setRotationPoint(-2.5F, -16.1F, -22F);
+      gun104.setTextureSize(64, 32);
+      gun104.mirror = true;
+      setRotation(gun104, 0F, 0F, 0F);
+      gun111 = new ModelRenderer(this, 0, 0);
+      gun111.addBox(0F, 0F, 0F, 2, 1, 1);
+      gun111.setRotationPoint(-2.5F, -16.1F, -22.7F);
+      gun111.setTextureSize(64, 32);
+      gun111.mirror = true;
+      setRotation(gun111, 0F, 0F, 0F);
+      gun368 = new ModelRenderer(this, 0, 0);
+      gun368.addBox(0F, 0F, 0F, 2, 1, 1);
+      gun368.setRotationPoint(-2.5F, -16.2F, -2F);
+      gun368.setTextureSize(64, 32);
+      gun368.mirror = true;
+      setRotation(gun368, 0F, 0F, 0F);
+      gun125 = new ModelRenderer(this, 0, 0);
+      gun125.addBox(0F, 0F, 0F, 2, 1, 2);
+      gun125.setRotationPoint(-2.5F, -16.1F, -1F);
+      gun125.setTextureSize(64, 32);
+      gun125.mirror = true;
+      setRotation(gun125, -0.6320364F, 0F, 0F);
+      gun319 = new ModelRenderer(this, 0, 0);
+      gun319.addBox(0F, 0F, 0F, 1, 1, 2);
+      gun319.setRotationPoint(-2F, -16.3F, -1F);
+      gun319.setTextureSize(64, 32);
+      gun319.mirror = true;
+      setRotation(gun319, 0F, 0F, 0F);
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -295,6 +330,11 @@ public class VLTORReceiver extends ModelBase
     receiver36.render(f5);
     receiver37.render(f5);
     receiver38.render(f5);
+    gun104.render(f5);
+    gun111.render(f5);
+    gun368.render(f5);
+    gun125.render(f5);
+    gun319.render(f5);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

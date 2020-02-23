@@ -86,10 +86,10 @@ public class BrenMkIIFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.9f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashOffsetY(() -> 0.1f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Light Machine Gun",

@@ -86,7 +86,6 @@ public class M249Factory {
         .withFlashScale(() -> 0.9f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.22f)
-        .withInaccuracy(1f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: General-Purpose Machine Gun",

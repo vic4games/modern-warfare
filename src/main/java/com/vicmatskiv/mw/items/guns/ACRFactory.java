@@ -79,10 +79,10 @@ public class ACRFactory implements GunFactory {
 		.withCrosshair("gun")
 		.withCrosshairRunning("Running")
 		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.6f)
+		.withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.7f)
         .withFlashOffsetX(() -> 0.14f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashOffsetY(() -> 0.16f)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/Carbine", 

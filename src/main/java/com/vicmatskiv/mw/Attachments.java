@@ -126,6 +126,8 @@ public class Attachments {
     public static ItemAttachment<Weapon> AUGA2handguard;
     public static ItemAttachment<Weapon> AUGA3handguard;
     public static ItemAttachment<Weapon> AUGA3extGuard;
+    public static ItemAttachment<Weapon> StonerHANDGUARD;
+    public static ItemAttachment<Weapon> AR57Handguard;
     
     public static ItemAttachment<Weapon> AK47Stock;
     public static ItemAttachment<Weapon> AK101Stock;
@@ -162,6 +164,7 @@ public class Attachments {
     
     public static ItemAttachment<Weapon> M4Receiver;
     public static ItemAttachment<Weapon> VLTORReceiver;
+    public static ItemAttachment<Weapon> AR57Receiver;
     
     public static ItemAttachment<Weapon> MIMP5TRRail;
     public static ItemAttachment<Weapon> MIMP5MRail;
@@ -514,6 +517,43 @@ public class Attachments {
                     }
                 })
                 .withName("M249HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        StonerHANDGUARD = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.StonerHANDGUARD(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail2(), "gun.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.StonerHANDGUARD) {
+                        GL11.glTranslatef(-0.6F, -0.6F, 1.8F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.StonerHANDGUARD) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.StonerHANDGUARD) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("StonerHANDGUARD").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGA1handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1595,6 +1635,7 @@ public class Attachments {
         M4Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Receiver(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "gun.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Receiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -1630,6 +1671,7 @@ public class Attachments {
         VLTORReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VLTORReceiver(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "gun.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VLTORReceiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -1660,6 +1702,42 @@ public class Attachments {
                     }
                 })
                 .withName("VLTORReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AR57Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AR57Receiver(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "gun.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Receiver) {
+                        GL11.glTranslatef(-0.6F, 0.3F, 0F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Receiver) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Receiver) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AR57Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Placeholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -1805,6 +1883,45 @@ public class Attachments {
                     }
                 })
                 .withName("M4HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AR57Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AR57Handguard(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail2(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail3(), "gun.png")
+                .withRequiredAttachments(AR57Receiver)
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AR57Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AR57Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2954,7 +3071,8 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Iron2(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.FALIron(), "gun.png")
-                .withRequiredAttachments(M4HandGuard, M4CarbineHandGuard, M4MagpulHandGuard, M4MagpulHandGuardTan, M16HandGuard)
+                .withRequiredAttachments(M4HandGuard, M4CarbineHandGuard, M4MagpulHandGuard, 
+                        M4MagpulHandGuardTan, M16HandGuard)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Iron2) {
                         GL11.glTranslatef(-0.6F, -0.5F, 0.5F);
@@ -3027,7 +3145,8 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.FALIron(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKMiron2(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AK47iron(), "gun.png")
-                .withRequiredAttachments(M38HandGuard, LVOAVHandGuard, Mk18HandGuard)
+                .withRequiredAttachments(M38HandGuard, LVOAVHandGuard, Mk18HandGuard, 
+                        StonerHANDGUARD, AR57Handguard)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK47iron) {
                         GL11.glTranslatef(-0.6F, -1.5F, 1F);
@@ -3168,7 +3287,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Reflex(), "Reflex.png")
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
+                        M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Reflex) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3217,7 +3338,8 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "green.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, FABDefenseMount, 
-                        Placeholder, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        Placeholder, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.BijiaReflex) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3270,7 +3392,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AcogScope2(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AcogReticle(), "acogreticle.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
+                        AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
                         GL11.glTranslatef(0.1F, -0.8F, 1.2F);
@@ -3333,7 +3457,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.SpecterSight(), "SpecterSight.png")
                 .withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail, 
-                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
+                        AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -3381,7 +3507,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Holographic2(), "Holographic2.png")
                 .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Holographic2) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3429,7 +3557,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Holographic(), "Holographic.png")
                 .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
-                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
+                        AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Holographic) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3485,7 +3615,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.EotechScopeRing(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.EotechHybrid2) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3540,7 +3672,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Vortex_sight(), "gun2.png")
                 .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Vortex_sight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3588,7 +3722,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.MicroT1(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MicroT1) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3636,7 +3772,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AimpointCompM5(), "aimpointcompm5.png")
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AimpointCompM5) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3685,7 +3823,8 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(FABDefenseMount, VeprDustCover, AK15DustCover,
                         Placeholder, MIMP5TRRail, MIMP5MRail, ShotgunRail, Placeholder, Kar98Krail, 
-                        P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.RMRsight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -3731,7 +3870,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Kobra(), "gunmetaltexture.png")
                 .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withRenderablePart()
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Kobra) {
@@ -3785,7 +3926,8 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
                 .withModel(new com.vicmatskiv.mw.models.HP(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
-                .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, Kar98Krail)
+                .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, Kar98Krail, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HP) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -3839,7 +3981,8 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.NightRaiderScope(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
-                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.NightRaiderScope) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -4785,7 +4928,8 @@ public class Attachments {
                 .withModel(new M27rearsight(), "gun.png")
                 .withModel(new MBUSiron(), "gun.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
-                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard)
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, M4Receiver, VLTORReceiver, AR57Receiver)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Iron1) {
                         GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
@@ -5109,7 +5253,8 @@ public class Attachments {
         Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRequiredAttachments(M4CarbineHandGuard, M38HandGuard, UTGTriRailHandGuard, PistolPlaceholder,
-                        FABDefenseMount, LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard)
+                        FABDefenseMount, LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, 
+                        P90Swordfish, AUGA3extGuard, StonerHANDGUARD, AR57Handguard)
                 .withModel(new com.vicmatskiv.mw.models.Laser(), "gun.png")
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.4F, 1.8F);
@@ -5161,7 +5306,8 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Laser2(), "laser2.png")
                 .withRequiredAttachments(M4CarbineHandGuard, M38HandGuard, UTGTriRailHandGuard, PistolPlaceholder,
-                        LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard)
+                        LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, 
+                        AUGA3extGuard, StonerHANDGUARD, AR57Handguard)
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.3F, 1.8F);
                     // GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -5254,7 +5400,7 @@ public class Attachments {
                 .withRequiredAttachments(MLOKExtendedHandguard, MLOKHandguard,
                         AK15HandleGuard, M4CarbineHandGuard, LVOAVHandGuard, 
                         M38HandGuard, UTGTriRailHandGuard, GripPlaceholder,
-                        Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard)
+                        Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -5293,7 +5439,8 @@ public class Attachments {
         JunoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.JunoGrip(), "gun.png")
-                .withRequiredAttachments(MLOKExtendedHandguard, M4CarbineHandGuard, LVOAVHandGuard, M38HandGuard, Mk18HandGuard)
+                .withRequiredAttachments(MLOKExtendedHandguard, M4CarbineHandGuard, LVOAVHandGuard,
+                        M38HandGuard, Mk18HandGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -5373,7 +5520,7 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "gun.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, M4CarbineHandGuard, 
                         LVOAVHandGuard, M38HandGuard, GripPlaceholder, UTGTriRailHandGuard, Mk18HandGuard, 
-                        M60E4HandGuard, AUGA3extGuard)
+                        M60E4HandGuard, AUGA3extGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -5418,7 +5565,7 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.StubbyGrip(), "gun.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, MLOKHandguard, AK15HandleGuard, 
                         M4CarbineHandGuard, LVOAVHandGuard, M38HandGuard, UTGTriRailHandGuard,
-                        GripPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard)
+                        GripPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -5466,7 +5613,8 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.VGrip(), "gun.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, MLOKHandguard, AK15HandleGuard, 
                         M4CarbineHandGuard, LVOAVHandGuard, M38HandGuard, UTGTriRailHandGuard, 
-                        GripPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, AUGA3extGuard)
+                        GripPlaceholder, Mk18HandGuard,
+                        M60E4HandGuard, P90Swordfish, AUGA3extGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -5508,7 +5656,7 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Bipod(), "gun.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, MLOKHandguard, AK15HandleGuard, 
                         M4CarbineHandGuard, LVOAVHandGuard, M38HandGuard, UTGTriRailHandGuard, GripPlaceholder, 
-                        Mk18HandGuard, AUGA3extGuard)
+                        Mk18HandGuard, AUGA3extGuard, AR57Handguard)
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.4f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {

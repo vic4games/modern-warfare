@@ -85,10 +85,10 @@ public class AUGFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.8f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.17f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.12f)
+        .withFlashOffsetY(() -> 0.16f)
         .withShellCasingForwardOffset(0.05f)
         .withShellCasingVerticalOffset(-0.03f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
@@ -539,7 +539,7 @@ public class AUGFactory implements GunFactory {
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
         .withCompatibleAttachment(Attachments.Silencer556x45, (model) -> {
-            GL11.glTranslatef(-0.2F, -1.235F, -6.5F);
+            GL11.glTranslatef(-0.2F, -1F, -5.7F);
             GL11.glScaled(1F, 1F, 1F);
         })
         .withTextureNames("aug")

@@ -81,13 +81,14 @@ public class AK103BPFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.9f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.12f)
+        .withFlashOffsetY(() -> 0.14f)
         .withInaccuracy(1f)
 //        .withSpawnEntityModel(ammoModel)
 //        .withSpawnEntityModelTexture(ammoModelTextureName)
+        .withShellCasingVerticalOffset(-0.05f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault rifle",

@@ -60,7 +60,6 @@ public class ClientProxy extends CommonProxy {
         .register(Item.getItemFromBlock(Ores.GraphiteOre), 0,
                 new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "graphiteore", "inventory"));
 
-
         RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
                 
         renderItem.getItemModelMesher().register(Ores.CopperIngot, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "copperingot", "inventory"));
