@@ -40,6 +40,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.Springfield;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -89,6 +90,12 @@ public class Kar98KFactory implements GunFactory {
         "Cartridge: 7.92x57mm", 
         "Fire Rate: Bolt Action",
         "Rate of Fire: 16/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                3f, // x 
+                2f, // y
+                6f) // z
+        
         .withCompatibleBullet(Bullets.Bullet792x57, (model) -> {})
         .withCompatibleAttachment(Attachments.Kar98Krail, (model) -> {
             if(model instanceof AKRail) {

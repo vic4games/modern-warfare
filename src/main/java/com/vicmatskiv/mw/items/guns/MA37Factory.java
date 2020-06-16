@@ -53,6 +53,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -95,6 +96,12 @@ public class MA37Factory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2f, // x 
+                 1f, // y
+                 4f) // z
+         
         .withCompatibleBullet(Bullets.Bullet762x51, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.MA37Action, true, (model) -> {
 //            GL11.glTranslatef(-0.55F, 0.5F, 0.1F);

@@ -27,7 +27,7 @@ import com.vicmatskiv.mw.models.M45;
 import com.vicmatskiv.mw.models.M500A2;
 import com.vicmatskiv.mw.models.RailAlt;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.Remington870;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -77,6 +77,12 @@ public class M45Factory implements GunFactory {
         "Cartridge: 8 Gauge Shotgun Shell",
         "Fire Rate: PUMP ACTION",
         "Rate of Fire: 50/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                14f) // z
+        
          .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
@@ -224,7 +230,7 @@ public class M45Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(-3F, 0f, 0f, 1f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(-0.475000f, 1.35f, 0.65f);
+                GL11.glTranslatef(-0.475000f, 1.35f, 1.15f);
                 GL11.glRotatef(-3F, 1f, 0f, 0f);
                 })
                 
@@ -334,23 +340,23 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(-0.55f, 1.5f, 0.1f);
                         GL11.glRotatef(-7F, 1f, 0f, 0f);
-                    }, 150, 0),
+                    }, 80, 0),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glRotatef(-10F, 0f, 0f, 1f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glTranslatef(-0.55f, 1.65f, 0.5f);
+                        GL11.glTranslatef(-0.55f, 1.65f, 0.8f);
                         GL11.glRotatef(-10F, 1f, 0f, 0f);
-                    }, 140, 100),
+                    }, 120, 100),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glRotatef(-7F, 0f, 0f, 1f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glTranslatef(-0.55f, 1.5f, 0.35f);
+                        GL11.glTranslatef(-0.55f, 1.5f, 0.55f);
                         GL11.glRotatef(-8F, 1f, 0f, 0f);
-                    }, 150, 0)
+                    }, 90, 0)
                     
                     )
             
@@ -361,15 +367,15 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(0.25f, 1.2f, 1.3f);
                         GL11.glRotatef(-2F, 1f, 0f, 0f);
-                    }, 150, 0),
+                    }, 80, 0),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glRotatef(-10F, 0f, 0f, 1f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glTranslatef(0.25f, 1.35f, 1.8f);
+                        GL11.glTranslatef(0.25f, 1.35f, 2.2f);
                         GL11.glRotatef(-5F, 1f, 0f, 0f);
-                    }, 140, 100),
+                    }, 120, 100),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -377,7 +383,7 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(0.25f, 1.2f, 1.55f);
                         GL11.glRotatef(-3F, 1f, 0f, 0f);
-                    }, 150, 0)
+                    }, 90, 0)
                     
                     )
                     
@@ -467,41 +473,6 @@ public class M45Factory implements GunFactory {
             )
             
             .withFirstPersonCustomPositioningLoadIteration(AuxiliaryAttachments.M45pump.getRenderablePart(),  
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50)
-            )
-            
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.R870part.getRenderablePart(),
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50)
-                )
-                
-            .withFirstPersonCustomPositioningAllLoadIterationsCompleted(AuxiliaryAttachments.R870part.getRenderablePart(),
-                new Transition((renderContext) -> { // Reload position\
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50),
-                
-                new Transition((renderContext) -> { // Reload position
-                }, 250, 50)
-            )
-            
-            .withFirstPersonCustomPositioningLoadIteration(AuxiliaryAttachments.R870part.getRenderablePart(),  
                 new Transition((renderContext) -> { // Reload position
                 }, 250, 50),
                 
@@ -689,7 +660,7 @@ public class M45Factory implements GunFactory {
                     GL11.glRotatef(-15F, 0f, 0f, 1f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.2f, -0f);
-                }, 300, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
@@ -697,7 +668,7 @@ public class M45Factory implements GunFactory {
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0.2f);
                     GL11.glRotatef(1F, 1f, 0f, 0f);
-                }, 280, 0)
+                }, 180, 0)
             )
             
             .withFirstPersonPositioningAllLoadIterationsCompleted(
@@ -708,7 +679,7 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(-0.55f, 1.5f, 0.1f);
                         GL11.glRotatef(-7F, 1f, 0f, 0f);
-                    }, 150, 0),
+                    }, 100, 0),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -716,7 +687,7 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(-0.55f, 1.65f, 0.5f);
                         GL11.glRotatef(-10F, 1f, 0f, 0f);
-                    }, 140, 100),
+                    }, 90, 100),
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
@@ -724,7 +695,7 @@ public class M45Factory implements GunFactory {
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(-0.55f, 1.5f, 0.35f);
                         GL11.glRotatef(-8F, 1f, 0f, 0f);
-                    }, 150, 0)
+                    }, 100, 0)
                     
                     )
             
@@ -734,14 +705,14 @@ public class M45Factory implements GunFactory {
                     GL11.glRotatef(-25F, 0f, 0f, 1f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0.2f);
-                }, 170, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
                     GL11.glRotatef(-23F, 0f, 0f, 1f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0.2f);
-                }, 190, 0),
+                }, 120, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
@@ -749,7 +720,7 @@ public class M45Factory implements GunFactory {
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0.2f);
                     GL11.glRotatef(3F, 1f, 0f, 0f);
-                }, 160, 0),
+                }, 90, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
@@ -757,14 +728,14 @@ public class M45Factory implements GunFactory {
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
-                }, 170, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glRotatef(40F, 0f, 1f, 0f);
                     GL11.glRotatef(-25F, 0f, 0f, 1f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.7f, 1.1f, -0.15f);
-                }, 160, 0)
+                }, 90, 0)
             )
             
             .withFirstPersonPositioningInspecting(

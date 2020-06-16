@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.ESA23Slide;
 import com.vicmatskiv.mw.models.P2000rearsight;
 import com.vicmatskiv.mw.models.Reflex2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -68,6 +69,12 @@ public class ESA23Factory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 4f, // x 
+                 0.1f, // y
+                 2.5f) // z
+         
         .withCompatibleBullet(Bullets.EnergyCase, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.ESA23Slide, true, (model) -> {
             if(model instanceof ESA23Slide) {

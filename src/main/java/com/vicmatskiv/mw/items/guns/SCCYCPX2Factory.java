@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.SCCYCPX2Slide;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SCCYCPX2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -70,6 +71,12 @@ public class SCCYCPX2Factory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2.5f, // x 
+                 0.1f, // y
+                 0.5f) // z
+         
         .withCompatibleAttachment(AuxiliaryAttachments.SCCYCPX2Slide, true, (model) -> {
             if(model instanceof SCCYCPX2Slide) {
                 GL11.glScaled(1F, 1F, 1F);

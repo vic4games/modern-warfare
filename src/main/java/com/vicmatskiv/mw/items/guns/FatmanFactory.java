@@ -48,6 +48,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -83,6 +84,12 @@ public class FatmanFactory implements GunFactory {
                 Ores.GunmetalPlate,
                 Ores.GunmetalIngot)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                8f) // z
+        
         .withInformationProvider(stack -> Arrays.asList("Type: Rocket Launcher", "Damage: 70", 
         "Cartridge: Mini-Nuke", "Fire Rate: Semi"))
         .withCompatibleAttachment(Bullets.MiniNuke, (model) -> {})

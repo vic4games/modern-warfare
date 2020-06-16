@@ -182,7 +182,7 @@ public class VP70 extends ModelWithAttachments
       setRotation(gun6, -0.5235988F, 0F, 0F);
       gun7 = new ModelRenderer(this, 0, 0);
       gun7.addBox(0F, 0F, 0F, 1, 2, 13);
-      gun7.setRotationPoint(-1.7F, -2.8F, -5.7F);
+      gun7.setRotationPoint(-1.7F, -2.8F, -5.71F);
       gun7.setTextureSize(64, 32);
       gun7.mirror = true;
       setRotation(gun7, 0F, 0F, 0F);
@@ -715,7 +715,7 @@ public class VP70 extends ModelWithAttachments
       slide88.mirror = true;
       setRotation(slide88, 0F, 0F, 0F);
       slide89 = new ModelRenderer(this, 0, 40);
-      slide89.addBox(0F, 0F, 0F, 1, 1, 2);
+      slide89.addBox(0F, 0F, 0F, 1, 1, 1);
       slide89.setRotationPoint(-1.6F, -4F, 7.3F);
       slide89.setTextureSize(64, 32);
       slide89.mirror = true;
@@ -733,7 +733,7 @@ public class VP70 extends ModelWithAttachments
       slide91.mirror = true;
       setRotation(slide91, -1.524323F, 0F, 0F);
       slide92 = new ModelRenderer(this, 0, 40);
-      slide92.addBox(0F, 0F, 0F, 1, 1, 2);
+      slide92.addBox(0F, 0F, 0F, 1, 1, 1);
       slide92.setRotationPoint(0.6F, -4F, 7.3F);
       slide92.setTextureSize(64, 32);
       slide92.mirror = true;

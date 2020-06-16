@@ -27,6 +27,7 @@ import com.vicmatskiv.mw.models.P10mmSlide;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.makarovfrontsight;
 import com.vicmatskiv.mw.models.makarovrearsight;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -68,6 +69,12 @@ public class P10mmFactory implements GunFactory {
          .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 4f, // x 
+                 1f, // y
+                 3f) // z
+         
         .withCompatibleBullet(Bullets.Bullet10mm, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.P10Slide, true, (model) -> {
             if(model instanceof P10mmSlide) {

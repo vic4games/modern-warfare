@@ -51,7 +51,12 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
@@ -65,7 +70,7 @@ public class M1928ThompsonFactory {
         .withName("m1928_thompson")
 //        .withAmmoCapacity(50)
         .withFireRate(0.75f)
-        .withRecoil(1.5f)
+        .withRecoil(1.8f)
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
@@ -79,10 +84,10 @@ public class M1928ThompsonFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.4f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashIntensity(0.6f)
+        .withFlashScale(() -> 0.5f)
+        .withFlashOffsetX(() -> 0.11f)
+        .withFlashOffsetY(() -> 0.12f)
         .withInaccuracy(2f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
@@ -92,12 +97,20 @@ public class M1928ThompsonFactory {
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100",
         "Magazines:",
-        "50rnd .45 ACP Magazine"))
+        "30rnd .45 ACP Magazine (M1A1)",
+        "50rnd .45 ACP Magazine (M1928)"))
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2f, // x 
+                 0.1f, // y
+                 3f) // z
+         
+        .withUnremovableAttachmentCategories(AttachmentCategory.GRIP)
         .withCompatibleAttachment(AuxiliaryAttachments.M1928ThompsonAction, true, (model) -> {
-            GL11.glTranslatef(0F, 0F, 1F);
+            GL11.glTranslatef(0F, 0F, 1.1F);
         })
         .withCompatibleAttachment(AuxiliaryAttachments.M1928Sight, true, (model) -> {
             GL11.glTranslatef(-0.16F, -0.846F, 1.9F);
@@ -105,6 +118,16 @@ public class M1928ThompsonFactory {
         })
         .withCompatibleAttachment(Magazines.M1928Mag, (model) -> {
 //            GL11.glTranslatef(0.45F, 1.9F, 0F);
+        })
+        .withCompatibleAttachment(Magazines.M1A1Mag, (model) -> {
+          GL11.glTranslatef(0.03F, 0F, 0F);
+          GL11.glScaled(1.3F, 1F, 1F);
+      })
+        .withCompatibleAttachment(Attachments.M1928Grip, (model) -> {
+//          GL11.glTranslatef(0.45F, 1.9F, 0F);
+        })
+        .withCompatibleAttachment(Attachments.M1A1Grip, true, (model) -> {
+//          GL11.glTranslatef(0.45F, 1.9F, 0F);
         })
         .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
@@ -174,76 +197,103 @@ public class M1928ThompsonFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.200000f, 0.475000f, -1.799999f);
-                
-//                GL11.glRotatef(37F, 0f, 1f, 0f);
-//                GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-//                GL11.glRotatef(18.000000f, 0f, 0f, 1f);
-//                GL11.glRotatef(-4.000000f, 1f, 0f, 0f);
-//                GL11.glTranslatef(-0.200000f, 0.555000f, -1.699999f);
+                GL11.glTranslatef(-0.200000f, 0.450000f, -2.174999f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                 GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.200000f, 0.475000f, -1.4f);
+                GL11.glTranslatef(-0.200000f, 0.450000f, -1.794999f);
                 GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.25f, 0.7f, -0.7f);
+                GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.25f, 0.6f, -1.7f);
                 })
-                
+            
             .withFirstPersonPositioningProningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.25f, 0.7f, -0.6f);
+                GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.25f, 0.6f, -1.1f);
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonCustomPositioning(AuxiliaryAttachments.M1928ThompsonAction.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
-                    GL11.glTranslatef(0F, 0F, -1F);
+                    GL11.glTranslatef(0F, 0F, -1.1F);
                 }
             })
             
             .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.M1928ThompsonAction.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, -1f);
+                GL11.glTranslatef(0f, 0f, -1.1f);
                 })
                 
             .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.M1928ThompsonAction.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 0f, -1f);
+                GL11.glTranslatef(0f, 0f, -1.1f);
                 })
             
             .withFirstPersonPositioningReloading(
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glRotatef(42F, 0f, 1f, 0f);
-                        GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                        GL11.glRotatef(-4.000000f, 1f, 0f, 0f);
-                        GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glRotatef(43F, 0f, 1f, 0f);
+                            GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                            GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                            GL11.glRotatef(-2.000000f, 1f, 0f, 0f);
+                            GL11.glTranslatef(-0.200000f, 0.500000f, -1.774999f);
+                        } else {
+                            GL11.glRotatef(42F, 0f, 1f, 0f);
+                            GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                            GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                            GL11.glRotatef(-4.000000f, 1f, 0f, 0f);
+                            GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                        }
                     }, 400, 0),
                     
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glRotatef(42F, 0f, 1f, 0f);
-                        GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                        GL11.glRotatef(-2.000000f, 1f, 0f, 0f);
-                        GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glRotatef(43F, 0f, 1f, 0f);
+                            GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                            GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                            GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+                            GL11.glTranslatef(-0.200000f, 0.5f, -1.774999f);
+                        } else {
+                            GL11.glRotatef(42F, 0f, 1f, 0f);
+                            GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                            GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                            GL11.glRotatef(-2.000000f, 1f, 0f, 0f);
+                            GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                        }
                     }, 300, 50),
                 
-                new Transition((renderContext) -> { // Reload position
-                    GL11.glRotatef(43F, 0f, 1f, 0f);
-                    GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                    GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                    GL11.glRotatef(-3.000000f, 1f, 0f, 0f);
-                    GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                    new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glRotatef(43F, 0f, 1f, 0f);
+                            GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                            GL11.glRotatef(-1.000000f, 0f, 0f, 1f);
+                            GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+                            GL11.glTranslatef(-0.200000f, 0.450000f, -1.774999f);
+                        } else {
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-3.000000f, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.200000f, 0.475000f, -1.699999f);
+                        }
                 }, 100, 150),
                 
                 new Transition((renderContext) -> { // Reload position
@@ -319,16 +369,16 @@ public class M1928ThompsonFactory {
                     
             .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M1928ThompsonAction.getRenderablePart(),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
@@ -338,16 +388,16 @@ public class M1928ThompsonFactory {
                         
              .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.M1928ThompsonAction.getRenderablePart(),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, -1f);
+                        GL11.glTranslatef(0f, 0f, -1.1f);
                     }, 250, 1000)
                         )
                     
@@ -381,6 +431,39 @@ public class M1928ThompsonFactory {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0.45F, 1.9F, 0F);
+                  }, 250, 1000)
+                    )
+            
+            .withFirstPersonCustomPositioningReloading(Magazines.M1A1Mag,
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0.2F, 1.5F, 0F);
+                        GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0F, 0.5F, 0F);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000)
+                    )
+                    
+            .withFirstPersonCustomPositioningUnloading(Magazines.M1A1Mag,
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0F, 0.5F, 0F);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0.2F, 1.5F, 0F);
+                        GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                        GL11.glTranslatef(0F, 1.9F, 0F);
                   }, 250, 1000)
                     )
                     
@@ -612,7 +695,7 @@ public class M1928ThompsonFactory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                GL11.glTranslatef(0.314f, 0.29f, -2.05f);
+                GL11.glTranslatef(0.314f, 0.29f, -1.9f);
                 GL11.glRotatef(-0.1F, 1f, 0f, 0f);
 
                 
@@ -677,18 +760,27 @@ public class M1928ThompsonFactory {
                  GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
                  GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-1.3f, 0.675000f, -1.3f);
+                 GL11.glTranslatef(-1.3f, 0.475000f, -2f);
              })
              
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         GL11.glScalef(4f, 4f, 4f);
-                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.175000f, -0.375000f, 0.225000f);
-                         
-//                         GL11.glScalef(4f, 4f, 4f);
+                         RenderContext<?> rc = (RenderContext<?>) renderContext;
+                         ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                 AttachmentCategory.GRIP, rc.getWeaponInstance());
+                         if(activeAttachment == Attachments.M1928Grip) {
+                             GL11.glScalef(4f, 4f, 4f);
+                             GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.175000f, -0.375000f, 0.225000f);
+                         } else {
+                             GL11.glScalef(4f, 4f, 4f);
+                             GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                             GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
+                             GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                             GL11.glTranslatef(0.175000f, -0.450000f, 0.300000f);
+                         }
                      }, 
                      (renderContext) -> {
                          GL11.glScalef(4f, 4f, 5f);
@@ -699,20 +791,31 @@ public class M1928ThompsonFactory {
                      })
                      
             .withFirstPersonHandPositioningProning(
-                     (renderContext) -> {
-                         GL11.glScalef(4f, 4f, 4f);
-                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.175000f, -0.375000f, 0.225000f);
-                     }, 
-                     (renderContext) -> {
-                         GL11.glScalef(4f, 4f, 5f);
-                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.450000f, -0.650000f, 0.200000f);
-                     })
+                    (renderContext) -> {
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.GRIP, rc.getWeaponInstance());
+                        if(activeAttachment == Attachments.M1928Grip) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.175000f, -0.375000f, 0.225000f);
+                        } else {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.175000f, -0.450000f, 0.300000f);
+                        }
+                    }, 
+                    (renderContext) -> {
+                        GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.450000f, -0.650000f, 0.200000f);
+                    })
                      
             .withFirstPersonHandPositioningZooming(
                      (renderContext) -> {
@@ -736,7 +839,7 @@ public class M1928ThompsonFactory {
                          GL11.glRotatef(0.000000f, 1f, 0f, 0f);
                          GL11.glRotatef(30.000000f, 0f, 1f, 0f);
                          GL11.glRotatef(30.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.175000f, -0.050000f, 0.500000f);
+                         GL11.glTranslatef(0.175000f, 0.150000f, 1.500000f);
                      }, 
                      (renderContext) -> {
                          GL11.glScalef(4f, 4f, 5f);
@@ -749,27 +852,61 @@ public class M1928ThompsonFactory {
             .withFirstPersonLeftHandPositioningReloading(
                     
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.300000f, -0.575000f, 0.125000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.600000f, -0.725000f, -0.025000f);
+                        }
                     }, 50, 200),
                     
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-65.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.150000f, -0.725000f, 0.125000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-30.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.050000f, -0.725000f, 0.125000f);
+                        }
                     }, 50, 200),
                     
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.125000f, -0.725000f, 0.225000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.050000f, -0.725000f, 0.125000f);
+                        }
                     }, 250, 0),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -845,34 +982,78 @@ public class M1928ThompsonFactory {
                     
             .withFirstPersonLeftHandPositioningUnloading(
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.125000f, -0.725000f, 0.225000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.050000f, -0.725000f, 0.125000f);
+                        }
                     }, 50, 200),
                     
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-65.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.150000f, -0.725000f, 0.125000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-30.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.050000f, -0.725000f, 0.125000f);
+                        }
                     }, 50, 200),
                     
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.300000f, -0.575000f, 0.125000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.600000f, -0.725000f, -0.025000f);
+                        }
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
+                        RenderContext<?> rc = (RenderContext<?>) renderContext;
+                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                                AttachmentCategory.MAGAZINE, rc.getWeaponInstance());
+                        if(activeAttachment == Magazines.M1A1Mag) {
+                            GL11.glScalef(4f, 4f, 4f);
+                            GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                            GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                            GL11.glRotatef(30.000000f, 0f, 0f, 1f);
+                            GL11.glTranslatef(0.300000f, -0.575000f, 0.125000f);
+                        } else {
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(20.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.600000f, -0.725000f, -0.025000f);
+                        }
                     }, 50, 200))
                     
             .withFirstPersonRightHandPositioningUnloading(

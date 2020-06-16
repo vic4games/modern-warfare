@@ -18,6 +18,7 @@ import com.vicmatskiv.mw.models.Python;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SW500Magnum;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -61,6 +62,12 @@ public class SW500MagnumFactory implements GunFactory {
                 "Cartridge: .500 Magnum Bullet", 
                 "Fire Rate: Semi",
                 "Rate of Fire: 20/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                8f, // x 
+                2f, // y
+                8f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
         .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
@@ -191,7 +198,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 320, 0),
+                }, 220, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -207,7 +214,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(30.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.7f, 2.7f, -1.83f);
-                }, 300, 0),
+                }, 200, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -215,7 +222,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.8f, 2.799999f, -1.949999f);
-            }, 250, 0)
+            }, 150, 0)
             ) 
             
             .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.MagnumChamber.getRenderablePart(),
@@ -294,7 +301,7 @@ public class SW500MagnumFactory implements GunFactory {
                         GL11.glRotatef(38.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                    }, 230, 0),
+                    }, 130, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -312,7 +319,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 150, 0),
+                }, 120, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -320,7 +327,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 170, 0),
+                }, 130, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -328,7 +335,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(28.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 220, 50),
+                }, 180, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -336,7 +343,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(30.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.9f);
-                }, 180, 0),
+                }, 130, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -344,7 +351,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(37.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(27.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.9f);
-                }, 140, 0),
+                }, 110, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -352,7 +359,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 150, 0),
+                }, 120, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -360,7 +367,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 140, 0),
+                }, 110, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                     GL11.glScaled(3F, 3F, 3F);
@@ -368,7 +375,7 @@ public class SW500MagnumFactory implements GunFactory {
                     GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(26.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.900000f, 2.799999f, -1.949999f);
-                }, 140, 0)
+                }, 110, 0)
             )
             
             .withFirstPersonPositioningInspecting(

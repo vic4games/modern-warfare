@@ -51,6 +51,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -97,6 +98,12 @@ public class M56Factory implements GunFactory {
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
         .withCompatibleBullet(Bullets.Bullet556x45, (model) -> {})
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                3f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.M56Mag, true, (model) -> {
 //            GL11.glTranslatef(-0.35F, 0.5F, -1.25F);
 //            GL11.glScaled(1.15F, 1.2F, 1.15F);

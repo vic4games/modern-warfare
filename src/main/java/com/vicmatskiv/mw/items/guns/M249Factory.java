@@ -54,6 +54,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -82,10 +83,10 @@ public class M249Factory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.9f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.22f)
+        .withFlashOffsetY(() -> 0.15f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: General-Purpose Machine Gun",
@@ -98,6 +99,12 @@ public class M249Factory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2.5f, // x 
+                 1f, // y
+                 3f) // z
+         
          .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
          .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
          .withCompatibleAttachment(Attachments.M249HandGuard, true, (model) -> {

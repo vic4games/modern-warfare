@@ -56,6 +56,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -98,6 +99,14 @@ public class BR55Factory {
                 Ores.GunmetalIngot,
                 Ores.GunmetalPlate)
         .withCompatibleBullet(Bullets.Bullet762x51, (model) -> {})
+        
+//        .withScreenShaking(RenderableState.SHOOTING, 12f)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                4f, // x 
+                1f, // y
+                1f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.BR55Action, true, (model) -> {
 //            GL11.glTranslatef(-0.55F, 0.5F, 0.1F);
 //            GL11.glRotatef(-70F, 0f, 1f, 0f);
@@ -187,7 +196,7 @@ public class BR55Factory {
              .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-2.000000f, 0f, 0f, 1f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.700000f, 1.474999f, -0.400000f);
                 
 //                GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -198,8 +207,8 @@ public class BR55Factory {
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-2.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.700000f, 1.5f, -0.1f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.700000f, 1.5f, 0.3f);
 //                GL11.glRotatef(-0.3F, 1f, 0f, 0f);
                 })
                 

@@ -25,9 +25,9 @@ import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Remington870;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -73,6 +73,12 @@ public class M1897Factory implements GunFactory {
 		 .withCrafting(CraftingComplexity.HIGH,
 	                Ores.PlasticPlate,
 	                Ores.GunmetalPlate)
+		 
+		 .withScreenShaking(RenderableState.SHOOTING, 
+	                5f, // x 
+	                1f, // y
+	                10f) // z
+		 
 	        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 	        .withInformationProvider(stack -> Arrays.asList(
 	        "Type: Shotgun",

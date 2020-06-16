@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.M9A1;
 import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.M6CSlide;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -38,7 +39,7 @@ public class M6CFactory implements GunFactory {
         .withName("m6c")
         .withFireRate(0.5f)
         .withAmmoCapacity(12)
-        .withRecoil(2f)
+        .withRecoil(3f)
         .withZoom(0.9f)
         .withMaxShots(1)
         .withShootSound("m6c")
@@ -63,6 +64,12 @@ public class M6CFactory implements GunFactory {
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                7f, // x 
+                0.1f, // y
+                3f) // z
+        
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalIngot)
@@ -119,21 +126,16 @@ public class M6CFactory implements GunFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.425000f, 0.85f, -2.5f);
-                
-//                GL11.glScaled(2F, 2F, 2F);
-//                GL11.glRotatef(-60.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(25.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-0.425000f, 2.199999f, -1.274999f);
-
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(-0.425000f, 0.85f, -2.3f);
-                GL11.glRotatef(-5F, 1f, 0f, 0f);
+                GL11.glRotatef(5F, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.425000f, 0.85f, -2f);
+                GL11.glRotatef(-7F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
@@ -530,8 +532,8 @@ public class M6CFactory implements GunFactory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.350000f, 0.8f, -2.1f);
-                GL11.glRotatef(-3F, 1f, 0f, 0f);
+                GL11.glTranslatef(0.350000f, 0.8f, -1.8f);
+                GL11.glRotatef(-5F, 1f, 0f, 0f);
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
                     //System.out.println("Position me for Holo");

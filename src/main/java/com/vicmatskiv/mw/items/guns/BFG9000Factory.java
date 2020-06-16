@@ -47,6 +47,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -82,6 +83,12 @@ public class BFG9000Factory implements GunFactory {
 //                Ores.PlasticPlate,
 //                Ores.GunmetalPlate,
 //                Ores.GunmetalIngot)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                8f) // z
+        
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList("Type: BIG F*****G GUN", 
         "Cartridge: Argent Plasma Capsule", "Fire Rate: Semi"))

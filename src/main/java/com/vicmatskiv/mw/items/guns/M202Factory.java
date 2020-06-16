@@ -50,6 +50,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -85,6 +86,12 @@ public class M202Factory implements GunFactory {
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                8f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.SCOPE)
         .withInformationProvider(stack -> Arrays.asList("Type: Rocket Launcher", 
                 "Cartridge: M202 Rocket", "Fire Rate: Semi"))

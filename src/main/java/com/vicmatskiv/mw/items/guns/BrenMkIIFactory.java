@@ -59,6 +59,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.VeprDustCover;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -98,10 +99,16 @@ public class BrenMkIIFactory {
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 50/100",
         "Magazines:",
-        "30rnd 7.62x39mm Magazine"))
+        "30rnd 7.62x51mm Bren Magazine"))
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.GunmetalIngot,
                 Ores.PlasticPlate)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2f, // x 
+                2f, // y
+                5f) // z
+        
 //        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
 ////            GL11.glTranslatef(0f, 0f, 1f);
 //        })

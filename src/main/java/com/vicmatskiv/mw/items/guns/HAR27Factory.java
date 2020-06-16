@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -94,6 +95,12 @@ public class HAR27Factory implements GunFactory {
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                3f, // x 
+                2f, // y
+                6f) // z
+        
         .withCompatibleBullet(Bullets.Bullet556x45, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.HAR27Mag, true, (model) -> {
 //            GL11.glTranslatef(0.35F, -0.15F, 0F);

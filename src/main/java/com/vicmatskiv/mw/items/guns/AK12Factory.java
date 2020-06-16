@@ -57,6 +57,7 @@ import com.vicmatskiv.mw.models.VeprDustCover;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -70,12 +71,12 @@ public class AK12Factory {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
         .withName("izhmash_ak12")
-        .withFireRate(0.75f)
+        .withFireRate(0.85f)
         .withRecoil(3.5f)
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
-        .withShootSound("ak15")
+        .withShootSound("ak12")
         .withSilencedShootSound("ak15_silenced")
         .withReloadSound("ak15_reload")
         .withUnloadSound("ak_unload")
@@ -101,6 +102,12 @@ public class AK12Factory {
         "Rate of Fire: 75/100",
         "Magazines:",
         "31rnd 5.45x39mm Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2.5f, // x 
+                1.5f, // y
+                2.7f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RECEIVER)

@@ -49,6 +49,7 @@ import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -92,6 +93,12 @@ public class M82Factory implements GunFactory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.GunmetalIngot)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 6f, // x 
+                 -5f, // y
+                 12f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
         .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {

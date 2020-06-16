@@ -48,6 +48,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -62,7 +63,7 @@ public class RPG7Factory implements GunFactory {
 //      .withAmmo(CommonProxy.AR15Mag)
         .withAmmoCapacity(1)
         .withFireRate(0.7f)
-        .withRecoil(20f)
+        .withRecoil(10f)
         .withZoom(0.9f)
         .withMaxShots(1)
         //.withMaxShots(5)
@@ -83,6 +84,12 @@ public class RPG7Factory implements GunFactory {
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                8f) // z
+        
         .withInformationProvider(stack -> Arrays.asList("Type: Rocket Launcher", 
         "Cartridge: RPG-7 Rocket", "Fire Rate: Semi"))
         .withCompatibleAttachment(Bullets.RPGRocket, (model) -> {})

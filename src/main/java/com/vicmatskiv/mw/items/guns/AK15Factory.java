@@ -14,6 +14,7 @@ import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.models.AK101DustCover;
 import com.vicmatskiv.mw.models.AK15;
 import com.vicmatskiv.mw.models.AK15DustCover;
 import com.vicmatskiv.mw.models.AK15HandleGuard;
@@ -47,6 +48,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
+import com.vicmatskiv.mw.models.RPK16handguard;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
@@ -55,6 +57,7 @@ import com.vicmatskiv.mw.models.VeprDustCover;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -83,10 +86,10 @@ public class AK15Factory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.9f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashIntensity(0.6f)
+        .withFlashScale(() -> 0.5f)
+        .withFlashOffsetX(() -> 0.12f)
+        .withFlashOffsetY(() -> 0.14f)
         .withInaccuracy(1f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
@@ -102,6 +105,12 @@ public class AK15Factory {
         "50rnd 7.62x39mm Drum Magazine",
         "75rnd 7.62x39mm Drum Magazine",
         "100rnd 7.62x39mm Drum Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1.5f, // x 
+                1.5f, // y
+                4f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
         .withCrafting(CraftingComplexity.MEDIUM,
@@ -157,7 +166,19 @@ public class AK15Factory {
 //                GL11.glScaled(1F, 0.98F, 1);
             } else if(model instanceof AKRail) {
                 GL11.glTranslatef(-0.22F, -1.3F, -4.3f);
-                GL11.glScaled(0.7F, 0.8F, 0.4F);
+                GL11.glScaled(0.7F, 0.8F, 0.6F);
+            } else if(model instanceof AKRail2) {   
+                GL11.glTranslatef(-0.02F, -0.5F, -4.3f);
+                GL11.glScaled(0F, 0F, 0F);
+                GL11.glRotatef(180.000000f, 0f, 0f, 1f);
+            }
+        })
+        .withCompatibleAttachment(Attachments.RPK16Handguard, (model) -> {
+            if(model instanceof RPK16handguard) {
+//                GL11.glScaled(1F, 0.98F, 1);
+            } else if(model instanceof AKRail) {
+                GL11.glTranslatef(-0.22F, -1.3F, -4.3f);
+                GL11.glScaled(0.7F, 0.8F, 0.6F);
             } else if(model instanceof AKRail2) {   
                 GL11.glTranslatef(-0.02F, -0.5F, -4.3f);
                 GL11.glScaled(0F, 0F, 0F);
@@ -177,6 +198,14 @@ public class AK15Factory {
         })
         .withCompatibleAttachment(Attachments.AK15DustCover, true, (model) -> {
             if(model instanceof AK15DustCover) {
+//                GL11.glScaled(1F, 0.98F, 1);
+            } else if(model instanceof AKRail) {
+                GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
+                GL11.glScaled(0.6F, 0.8F, 1.12F);
+            }
+        })
+        .withCompatibleAttachment(Attachments.RPKDustCover, (model) -> {
+            if(model instanceof AK101DustCover) {
 //                GL11.glScaled(1F, 0.98F, 1);
             } else if(model instanceof AKRail) {
                 GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
@@ -356,13 +385,55 @@ public class AK15Factory {
             GL11.glTranslatef(-0.185F, -0.23F, -3.5F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
+        .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
+            if(model instanceof AKMiron1) {
+                GL11.glTranslatef(0.125F, -1.8F, -0.5F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof AKMiron2) {
+                GL11.glTranslatef(-0.183F, -1.32F, -5F);
+                GL11.glScaled(0.55F, 0.55F, 0.68F);
+            } else if(model instanceof AK47iron) {
+                GL11.glTranslatef(-0.25F, -1.65F, -3.05F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof M4Iron1) {
+                GL11.glTranslatef(0.155F, -1.74F, 1F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof M4Iron2) {
+                GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof P90iron) {
+                GL11.glTranslatef(0.26F, -1.55F, -2.35F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof G36CIron1) {
+                GL11.glTranslatef(-0.22F, -1.94F, 0.13F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof G36CIron2) {
+                GL11.glTranslatef(-0.205F, -1.9F, -3.15F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof ScarIron1) {
+                    GL11.glTranslatef(0.165F, -1.65F, 1F);
+                    GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof ScarIron2) {
+                    GL11.glTranslatef(0.25F, -1.55F, -2F);
+                    GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof FALIron) {
+                GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof M14Iron) {
+                GL11.glTranslatef(0.129F, -1.63F, -2.08F);
+                GL11.glScaled(0F, 0F, 0F);
+            } else if(model instanceof MP5Iron) {
+                GL11.glTranslatef(0.215F, -1.54F, 1.2F);
+                GL11.glScaled(0F, 0F, 0F);
+            }
+        })
         .withCompatibleAttachment(Attachments.AK15ironsight, true, (model) -> {
             if(model instanceof AK15ironsight) {
                 GL11.glTranslatef(-0.152F, -1.42F, -0.3F);
                 GL11.glScaled(0.42F, 0.42F, 0.42F);
             } else if(model instanceof AKMiron2) {
                 GL11.glTranslatef(-0.183F, -1.32F, -5F);
-                GL11.glScaled(0.55F, 0.55F, 0.68F);
+                GL11.glScaled(0F, 0F, 0F);
             }
         })
         .withTextureNames("gun")
@@ -1076,6 +1147,12 @@ public class AK15Factory {
                 } 
                 
              // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.25f, 0.9f);
+                } 
+                
+             // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.27f, 0.9f);
@@ -1095,11 +1172,11 @@ public class AK15Factory {
                 })
             
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
-                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
-                GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-                GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(0.075000f, 0.025000f, 0.775000f);
+                GL11.glRotatef(35F, 0f, 1f, 0f);
+                GL11.glRotatef(10F, 1f, 0f, 0f);
+                GL11.glScalef(2f, 2f, 2f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.1f, 1.1f, -0.15f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {

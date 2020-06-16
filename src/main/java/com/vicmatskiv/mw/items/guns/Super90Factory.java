@@ -42,6 +42,7 @@ import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.Super90;
 import com.vicmatskiv.mw.models.Supernova;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -92,8 +93,14 @@ public class Super90Factory implements GunFactory {
         "Damage per Pellet: 15",
         "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
-        "Fire Rate: SEMI",
+        "Fire Rate: PUMP ACTION",
         "Rate of Fire: 30/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                10f) // z
+        
         .withCompatibleAttachment(Attachments.M1014Stock, true, (model) -> {
 //            GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1F, 1F, 1F);

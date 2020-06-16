@@ -1655,6 +1655,24 @@ public class TileEntities {
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
         
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.IRON)
+        .withName("swat_truck")
+        .withModelClassName("com.vicmatskiv.mw.models.SwatTruck")
+        .withTextureName("textures/models/swattruck.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1.5f, 1.5f, 1.5f);
+            GL11.glTranslatef(0.3f, -0.45f, -1f);
+//            GL11.glRotatef(-45F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
         }
     
     

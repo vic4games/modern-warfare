@@ -25,9 +25,9 @@ import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.Remington870;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -75,6 +75,12 @@ public class M1873Factory implements GunFactory {
         "Cartridge: 44-40 Winchester",
         "Fire Rate: LEVER ACTION",
         "Rate of Fire: 50/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                3f, // x 
+                0.1f, // y
+                3f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.Extra, true, (model) -> {
             if(model instanceof AKMiron1) {
                 GL11.glTranslatef(0.125F, -1.8F, -0.5F);

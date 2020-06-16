@@ -45,6 +45,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -80,6 +81,12 @@ public class M79Factory implements GunFactory {
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                4f, // x 
+                3f, // y
+                2f) // z
+        
         .withInformationProvider(stack -> Arrays.asList("Type: Grenade Launcher", "Damage: 70", 
         "Cartridge: 40mm Grenade", "Fire Rate: Semi"))
         .withCompatibleAttachment(Bullets.Grenade40mm, (model) -> {})

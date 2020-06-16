@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.SV98;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -98,6 +99,12 @@ public class L96A1Factory implements GunFactory {
         "Rate of Fire: 16/100",
         "Magazines:",
         "10rnd 7.62x54mm LAPUA Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                3f, // x 
+                2f, // y
+                7f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
         .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {

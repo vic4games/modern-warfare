@@ -14,6 +14,7 @@ import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.models.AK101DustCover;
 import com.vicmatskiv.mw.models.AK15;
 import com.vicmatskiv.mw.models.AK15DustCover;
 import com.vicmatskiv.mw.models.AK15HandleGuard;
@@ -27,6 +28,7 @@ import com.vicmatskiv.mw.models.AKRail2;
 import com.vicmatskiv.mw.models.AKRail3;
 import com.vicmatskiv.mw.models.AKRail4;
 import com.vicmatskiv.mw.models.AKRail5;
+import com.vicmatskiv.mw.models.AKiron3;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
@@ -60,6 +62,7 @@ import com.vicmatskiv.mw.models.VeprDustCover;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -89,10 +92,10 @@ public class AK101Factory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.5f)
-        .withFlashScale(() -> 0.6f)
+        .withFlashIntensity(0.6f)
+        .withFlashScale(() -> 0.5f)
         .withFlashOffsetX(() -> 0.12f)
-        .withFlashOffsetY(() -> 0.14f)
+        .withFlashOffsetY(() -> 0.16f)
         .withInaccuracy(1f)
 //        .withSpawnEntityModel(ammoModel)
 //        .withSpawnEntityModelTexture(ammoModelTextureName)
@@ -107,6 +110,12 @@ public class AK101Factory {
         "Magazines:",
         "30rnd 5.56x45mm Magazine",
         "60rnd 5.56x45mm Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1.5f, // x 
+                1.5f, // y
+                3.5f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
         .withCrafting(CraftingComplexity.MEDIUM,
@@ -189,6 +198,14 @@ public class AK101Factory {
                 GL11.glScaled(0.6F, 0.8F, 1.12F);
             }
         })
+        .withCompatibleAttachment(Attachments.RPKDustCover, (model) -> {
+            if(model instanceof AK101DustCover) {
+//                GL11.glScaled(1F, 0.98F, 1);
+            } else if(model instanceof AKRail) {
+                GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
+                GL11.glScaled(0.6F, 0.8F, 1.12F);
+            }
+        })
         .withCompatibleAttachment(Attachments.CollapsableMOEStock, (model) -> {
             GL11.glTranslatef(0.02f, 0.2f, -0.2f);
             GL11.glScaled(1.2F, 1.2F, 1.2F);
@@ -223,9 +240,14 @@ public class AK101Factory {
             GL11.glTranslatef(-0.19F, -1.01F, -6.92F);
             GL11.glScaled(0.8F, 0.8F, 0.6F);
         })
-        .withCompatibleAttachment(AuxiliaryAttachments.AKIron, true, (model) -> {
-            GL11.glTranslatef(-0.195F, -1.06F, -5.96F);
-            GL11.glScaled(0.9F, 0.55F, 0.5F);
+        .withCompatibleAttachment(Attachments.AKIron, true, (model) -> {
+            if(model instanceof AKiron3) {
+                GL11.glTranslatef(-0.195F, -1.06F, -5.96F);
+                GL11.glScaled(0.9F, 0.55F, 0.5F);
+            } else if(model instanceof AKMiron2) {
+                GL11.glTranslatef(-0.185F, -1.32F, -5.95F);
+                GL11.glScaled(0.55F, 0.55F, 0.68F);
+            }
         })
         .withCompatibleAttachment(Magazines.AK101Mag, (model) -> {
 //          GL11.glTranslatef(-0.35F, 0.5F, -1.25F);
@@ -245,7 +267,7 @@ public class AK101Factory {
                 GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof AKMiron2) {
                 GL11.glTranslatef(-0.185F, -1.32F, -5.95F);
-                GL11.glScaled(0.55F, 0.55F, 0.68F);
+                GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof AK47iron) {
                 GL11.glTranslatef(-0.25F, -1.65F, -3.05F);
                 GL11.glScaled(0.8F, 0.7F, 0.6F);

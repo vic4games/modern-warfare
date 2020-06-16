@@ -96,13 +96,13 @@ public class M4Grip extends ModelBase
       grip10.setTextureSize(256, 128);
       grip10.mirror = true;
       setRotation(grip10, 0.2230717F, 0F, 0F);
-      grip11 = new ModelRenderer(this, 0, 0);
+      grip11 = new ModelRenderer(this, 0, 15);
       grip11.addBox(0F, 0.5F, 1F, 1, 9, 4);
       grip11.setRotationPoint(-0.4F, -2F, -5.5F);
       grip11.setTextureSize(256, 128);
       grip11.mirror = true;
       setRotation(grip11, 0.3717861F, 0F, 0F);
-      grip12 = new ModelRenderer(this, 0, 0);
+      grip12 = new ModelRenderer(this, 0, 15);
       grip12.addBox(0F, 0.5F, 1F, 1, 9, 4);
       grip12.setRotationPoint(-3.6F, -2F, -5.5F);
       grip12.setTextureSize(256, 128);

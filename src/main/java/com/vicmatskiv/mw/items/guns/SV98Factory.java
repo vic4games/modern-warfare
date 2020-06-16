@@ -48,6 +48,7 @@ import com.vicmatskiv.mw.models.SV98;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -94,6 +95,12 @@ public class SV98Factory implements GunFactory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.GunmetalIngot)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 3f, // x 
+                 2f, // y
+                 6f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
         .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {

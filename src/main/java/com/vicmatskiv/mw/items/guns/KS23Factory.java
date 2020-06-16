@@ -33,6 +33,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -84,6 +85,12 @@ public class KS23Factory implements GunFactory {
         "Cartridge: 4 Gauge Shotgun Shell",
         "Fire Rate: PUMP ACTION",
         "Rate of Fire: 10/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                12f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.KS23pump, true, (model) -> {
         })
         .withCompatibleAttachment(AuxiliaryAttachments.Shotgun4Gauge, true, (model) -> {

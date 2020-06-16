@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.M1911rearsight;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.makarovrearsight;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -57,15 +58,21 @@ public class BrowningHiPowerFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Single Action Semi-Automatic Pistol", 
-        "Damage: 7", 
-        "Cartridge: 7.65x21mm",
+        "Damage: 6", 
+        "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 65/100",
         "Magazines:",
-        "8rnd 7.65x21mm Magazine"))
+        "13rnd 9x19mm Magazine"))
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 4f, // x 
+                 0.1f, // y
+                 1.5f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withCompatibleAttachment(Attachments.PistolPlaceholder, true, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
@@ -131,8 +138,8 @@ public class BrowningHiPowerFactory implements GunFactory {
                 GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(10F, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.200000f, 0.700000f, -1.8f);
-                GL11.glRotatef(-5F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.200000f, 0.700000f, -1.6f);
+                GL11.glRotatef(-7F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
@@ -1010,7 +1017,7 @@ public class BrowningHiPowerFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(7f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

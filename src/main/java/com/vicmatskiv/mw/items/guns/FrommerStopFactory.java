@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.M1911rearsight;
 import com.vicmatskiv.mw.models.M9A1;
 import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -62,10 +63,16 @@ public class FrommerStopFactory implements GunFactory {
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100",
         "Magazines:",
-        "30rnd 5.56x45mm NATO STANAG Magazine"))
+        "8rnd .380 ACP Magazine"))
          .withCrafting(CraftingComplexity.LOW,
                 Ores.GunmetalIngot,
                 Ores.PlasticPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 3f, // x 
+                 0.1f, // y
+                 1f) // z
+         
         .withCompatibleAttachment(AuxiliaryAttachments.FrommerStopaction, true, (model) -> {
             if(model instanceof FrommerStopAction) {
                 GL11.glScaled(1F, 1F, 1F);

@@ -38,10 +38,10 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RailAlt;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.Remington870;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -86,6 +86,12 @@ public class HESCSFactory implements GunFactory {
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                10f) // z
+        
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Combat Shotgun",

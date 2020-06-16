@@ -57,6 +57,7 @@ import com.vicmatskiv.mw.models.SRS99;
 import com.vicmatskiv.mw.models.SRS99Reticle;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -71,7 +72,7 @@ public class SRS99Factory {
         .withName("srs99")
         .withAmmoCapacity(4)
         .withFireRate(0.1f)
-        .withRecoil(3.5f)
+        .withRecoil(10f)
         .withZoom(0.9f)
         .withMaxShots(1)
         //.withMaxShots(5)
@@ -99,7 +100,16 @@ public class SRS99Factory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.GunmetalIngot)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 6f, // x 
+                 -5f, // y
+                 15f) // z
+         
         .withCompatibleBullet(Bullets.Bullet762x51, (model) -> {})
+        
+        .withScreenShaking(RenderableState.SHOOTING, 25f)
+        
         .withCompatibleAttachment(AuxiliaryAttachments.SRS99Action, true, (model) -> {
 //            GL11.glTranslatef(-0.55F, 0.5F, 0.1F);
 //            GL11.glRotatef(-70F, 0f, 1f, 0f);
@@ -143,16 +153,16 @@ public class SRS99Factory {
              .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-4.000000f, 0f, 0f, 1f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.275000f, 0.850000f, -0.175000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-4.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.275000f, 0.850000f, 0.2f);
-                GL11.glRotatef(-1F, 1f, 0f, 0f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.275000f, 0.850000f, 0.6f);
+                GL11.glRotatef(-2F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {

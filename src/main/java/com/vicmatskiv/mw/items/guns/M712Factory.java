@@ -33,6 +33,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -76,6 +77,12 @@ public class M712Factory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 1.5f, // x 
+                 1.5f, // y
+                 3f) // z
+         
         .withCompatibleAttachment(AuxiliaryAttachments.M712action, true, (model) -> {
             if(model instanceof M712action) {
                 GL11.glScaled(1F, 1F, 1F);

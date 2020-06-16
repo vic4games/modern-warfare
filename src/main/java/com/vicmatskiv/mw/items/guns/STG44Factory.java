@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.STG44;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -96,6 +97,12 @@ public class STG44Factory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2.5f, // x 
+                 1.5f, // y
+                 5f) // z
+         
         .withCompatibleAttachment(AuxiliaryAttachments.STG44action, true, (model) -> {
         })
         .withCompatibleAttachment(Magazines.STG44Mag, (model) -> {

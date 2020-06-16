@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.MP443;
 import com.vicmatskiv.mw.models.MP443Slide;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -63,6 +64,12 @@ public class MP443Factory implements GunFactory {
         "Rate of Fire: 50/100",
         "Magazines:",
         "18rnd 9x19mm 443 Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2.5f, // x 
+                0.1f, // y
+                0.5f) // z
+        
          .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)

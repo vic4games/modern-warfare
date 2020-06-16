@@ -19,6 +19,7 @@ import com.vicmatskiv.mw.models.AKRail3;
 import com.vicmatskiv.mw.models.AKRail4;
 import com.vicmatskiv.mw.models.AKRail5;
 import com.vicmatskiv.mw.models.M500A2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -71,6 +72,12 @@ public class M500A2Factory implements GunFactory {
 		"Cartridge: 12 Gauge Shotgun Shell",
 		"Fire Rate: PUMP ACTION",
 		"Rate of Fire: 50/100"))
+		
+		.withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                10f) // z
+		
 		.withCompatibleAttachment(AuxiliaryAttachments.M500A2pump, true, (model) -> {
 		})
 		.withCompatibleAttachment(AuxiliaryAttachments.M4Rail, true, (model) -> {

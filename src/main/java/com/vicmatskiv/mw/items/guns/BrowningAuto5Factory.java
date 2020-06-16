@@ -34,6 +34,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -46,7 +47,7 @@ public class BrowningAuto5Factory implements GunFactory {
         .withModId(ModernWarfareMod.MODID)
         .withName("browning_auto_5")
 //      .withAmmo(CommonProxy.Remington870Mag)
-        .withAmmoCapacity(5)
+        .withAmmoCapacity(4)
         .withMaxBulletsPerReload(4)
         .withFireRate(0.2f)
         .withIteratedLoad()
@@ -81,6 +82,12 @@ public class BrowningAuto5Factory implements GunFactory {
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI",
         "Rate of Fire: 20/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                10f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.ShotgunShell, true, (model) -> {
             GL11.glTranslatef(-0F, -0.1F, -0.5F);
             GL11.glRotatef(90F, 1f, 0f, 0f);
@@ -135,8 +142,8 @@ public class BrowningAuto5Factory implements GunFactory {
             	GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.575000f, 0.350000f, -2.200001f);
-                GL11.glRotatef(-2F, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.575000f, 0.350000f, -1.800001f);
+                GL11.glRotatef(-4F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
@@ -241,7 +248,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(25.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(40.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(-0.125000f, 0.525000f, -1.874999f);
-                }, 200, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                 	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -249,7 +256,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(80.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.525000f, -1.874999f);
-                }, 230, 0)
+                }, 130, 0)
             )
             
             .withFirstPersonPositioningAllLoadIterationsCompleted(
@@ -260,7 +267,7 @@ public class BrowningAuto5Factory implements GunFactory {
                         GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(80.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.125000f, 0.525000f, -1.874999f);
-                    }, 150, 0)
+                    }, 130, 0)
             )
             
             .withFirstPersonPositioningLoadIteration(   
@@ -270,7 +277,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(80.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.525000f, -1.874999f);
-                }, 150, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                 	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -278,7 +285,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(81.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.545000f, -1.874999f);
-                }, 170, 0),
+                }, 120, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                 	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -286,7 +293,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(83.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.565000f, -1.774999f);
-                }, 140, 0),
+                }, 90, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                 	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -294,7 +301,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(82.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.545000f, -1.774999f);
-                }, 150, 0),
+                }, 100, 0),
                 
                 new Transition((renderContext) -> { // Reload position
                 	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
@@ -302,7 +309,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     GL11.glRotatef(5.000000f, 0f, 1f, 0f);
                     GL11.glRotatef(80.000000f, 0f, 0f, 1f);
                     GL11.glTranslatef(0.125000f, 0.525000f, -1.874999f);
-                }, 140, 0)
+                }, 90, 0)
             )
             
             .withFirstPersonPositioningInspecting(

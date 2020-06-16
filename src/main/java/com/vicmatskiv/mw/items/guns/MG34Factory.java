@@ -49,6 +49,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -88,12 +89,18 @@ public class MG34Factory {
         "Damage: 13", 
         "Cartridge: 7.92x57mm",
         "Fire Rate: SEMI, AUTO",
-        "Rate of Fire: 95/100",
+        "Rate of Fire: 75/100",
         "Magazines:",
         "50rnd 7.92x57mm MG Magazine"))
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 3f, // x 
+                 2f, // y
+                 6f) // z
+         
         .withCompatibleAttachment(AuxiliaryAttachments.MG42action, true, (model) -> {
 //            GL11.glTranslatef(0F, 0F, 1F); 
         })

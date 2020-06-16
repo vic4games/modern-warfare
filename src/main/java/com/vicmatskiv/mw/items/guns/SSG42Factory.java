@@ -14,8 +14,8 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.models.MP43E;
-import com.vicmatskiv.mw.models.Remington870;
 import com.vicmatskiv.mw.models.SSG42;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -63,6 +63,12 @@ public class SSG42Factory implements GunFactory {
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI",
         "Rate of Fire: 30/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                7f, // x 
+                1f, // y
+                13f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.SSG42Barrels, true, (model) -> {
             GL11.glScalef(1f, 1f, 1f);
         })

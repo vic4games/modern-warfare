@@ -55,6 +55,7 @@ import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -68,7 +69,7 @@ public class CZ805BrenFactory implements GunFactory {
         .withModId(ModernWarfareMod.MODID)
         .withName("cz805_bren")
         .withFireRate(0.8f)
-        .withRecoil(2f)
+        .withRecoil(3f)
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         .withShootSound("cz805_bren")
@@ -82,10 +83,10 @@ public class CZ805BrenFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1.2f)
-        .withFlashOffsetX(() -> 0.1f)
-        .withFlashOffsetY(() -> 0.2f)
+        .withFlashIntensity(0.6f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.14f)
+        .withFlashOffsetY(() -> 0.18f)
         .withShellCasingForwardOffset(0.05f)
         .withShellCasingVerticalOffset(-0.03f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
@@ -101,6 +102,12 @@ public class CZ805BrenFactory implements GunFactory {
         "50rnd 5.56x45mm NATO STANAG Drum Magazine",
         "60rnd 5.56x45mm NATO STANAG Drum Magazine",
         "100rnd 5.56x45mm NATO STANAG Drum Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1f, // x 
+                1f, // y
+                3f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RECEIVER)
@@ -397,9 +404,9 @@ public class CZ805BrenFactory implements GunFactory {
                 
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(6F, 0f, 0f, 1f);
+                GL11.glRotatef(8F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.65f, -1.299999f);
+                GL11.glTranslatef(-0.35f, 0.6f, -1.299999f);
                 
 //                GL11.glRotatef(-15F, 1f, 0f, 0f);
 //                GL11.glRotatef(44F, 0f, 1f, 0f);
@@ -410,9 +417,9 @@ public class CZ805BrenFactory implements GunFactory {
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(6F, 0f, 0f, 1f);
+                GL11.glRotatef(8F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.65f, -1.05f);
+                GL11.glTranslatef(-0.35f, 0.6f, -0.85f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 

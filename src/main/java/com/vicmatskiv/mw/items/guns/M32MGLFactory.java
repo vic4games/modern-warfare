@@ -55,6 +55,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.Suppressor;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -96,6 +97,12 @@ public class M32MGLFactory implements GunFactory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                4f, // x 
+                3f, // y
+                2f) // z
+        
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList("Type: Multiple Grenade Launcher", 
         "Cartridge: 40mm Grenade", "Fire Rate: Semi"))

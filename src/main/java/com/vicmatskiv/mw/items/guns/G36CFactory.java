@@ -55,6 +55,7 @@ import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -82,8 +83,8 @@ public class G36CFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1.2f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.2f)
         .withShellCasingForwardOffset(0.05f)
@@ -100,6 +101,12 @@ public class G36CFactory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.GunmetalIngot,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 0.5f, // x 
+                 0f, // y
+                 3.5f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RECEIVER)
@@ -358,7 +365,7 @@ public class G36CFactory implements GunFactory {
                     GL11.glRotatef(45F, 0f, 1f, 0f);
                     GL11.glRotatef(4F, 0f, 0f, 1f);
                     GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                    GL11.glTranslatef(-0.3f, 1.75f, -0.15000f);
+                    GL11.glTranslatef(-0.3f, 1.75f, -0.05000f);
                     GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 }
                 })

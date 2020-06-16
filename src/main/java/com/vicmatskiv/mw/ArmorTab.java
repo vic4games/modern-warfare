@@ -16,7 +16,7 @@ public class ArmorTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(Armors.Marinechest);
+		return new ItemStack(Armors.SpecOpshelmet);
 	}
 
 }

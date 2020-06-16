@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -95,6 +96,12 @@ public class KBP9A91Factory {
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalIngot)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2f, // x 
+                0.1f, // y
+                3f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
             GL11.glTranslatef(0F, 0F, 0.33F);
         })

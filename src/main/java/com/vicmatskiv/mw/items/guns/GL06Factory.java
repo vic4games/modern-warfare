@@ -44,6 +44,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -78,6 +79,12 @@ public class GL06Factory implements GunFactory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.SteelIngot)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                4f, // x 
+                3f, // y
+                2f) // z
+        
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList("Type: Grenade Launcher", "Damage: 70", 
         "Cartridge: 40mm Grenade", "Fire Rate: Semi"))
@@ -218,8 +225,8 @@ public class GL06Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(7F, 0f, 0f, 1f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glTranslatef(-0.275000f, 0.775000f, -0.85f);
-                GL11.glRotatef(-3F, 1f, 0f, 0f); 
+                GL11.glTranslatef(-0.275000f, 0.775000f, -0.65f);
+                GL11.glRotatef(-6F, 1f, 0f, 0f); 
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {

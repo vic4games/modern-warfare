@@ -60,6 +60,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.VeprDustCover;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -77,7 +78,7 @@ public class M1941JohnsonFactory {
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
-        .withShootSound("bren")
+        .withShootSound("m1941")
         .withSilencedShootSound("ak15_silenced")
         .withReloadSound("ak15_reload")
         .withUnloadSound("ak_unload")
@@ -105,6 +106,12 @@ public class M1941JohnsonFactory {
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.GunmetalIngot,
                 Ores.PlasticPlate)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                3f, // x 
+                2f, // y
+                6f) // z
+        
 //        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
 ////            GL11.glTranslatef(0f, 0f, 1f);
 //        })
@@ -213,11 +220,11 @@ public class M1941JohnsonFactory {
                 GL11.glTranslatef(-0.775000f, -0.025000f, -2.600001f);
                 })
             
-            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.JohnsonACTION.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.JohnsonACTION.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
             

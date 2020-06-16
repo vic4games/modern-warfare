@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -96,6 +97,12 @@ public class M41AFactory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 1.5f, // x 
+                 1f, // y
+                 3f) // z
+         
         .withCompatibleBullet(Bullets.Bullet10mm, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.M41AMag, true, (model) -> {
 //            GL11.glTranslatef(0F, 1.2F, 0F);

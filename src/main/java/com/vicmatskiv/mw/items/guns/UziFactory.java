@@ -38,6 +38,7 @@ import com.vicmatskiv.mw.models.UziAction;
 import com.vicmatskiv.mw.models.Uzi;
 import com.vicmatskiv.mw.models.UziFrontSight;
 import com.vicmatskiv.mw.models.UziRearSight;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -81,6 +82,12 @@ public class UziFactory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2f, // x 
+                 0.1f, // y
+                 3f) // z
+         
         .withCompatibleAttachment(Magazines.UziMag, (model) -> {
 //            GL11.glTranslatef(0.5F, 2F, -0.2F);
 //            GL11.glRotatef(15.000000f, 1f, 0f, 0f);

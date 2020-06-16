@@ -48,6 +48,7 @@ import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -60,7 +61,7 @@ public class AS50Factory implements GunFactory {
         .withModId(ModernWarfareMod.MODID)
         .withName("as50")
         .withFireRate(0.1f)
-        .withRecoil(9f)
+        .withRecoil(14f)
         .withZoom(0.8f)
         .withMaxShots(1)
         .withShootSound("as50")
@@ -87,6 +88,12 @@ public class AS50Factory implements GunFactory {
         "Rate of Fire: 10/100",
         "Magazines:",
         "10rnd .50 BMG Magazine (AS50)"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                6f, // x 
+                -5f, // y
+                12f) // z
+        
         .withCrafting(CraftingComplexity.HIGH,
                 Ores.GunmetalIngot,
                 Ores.GunmetalPlate,
@@ -262,19 +269,14 @@ public class AS50Factory implements GunFactory {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(5f, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.500000f, 2.500000f, -0.725000f);
-                
-//                GL11.glScalef(2.5f, 2.5f, 2.5f);
-//                GL11.glRotatef(45F, 0f, 1f, 0f);
-//                GL11.glRotatef(5f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-1.00000f, 2.500000f, -0.725000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glScalef(2.5f, 2.5f, 2.5f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(5f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.500000f, 2.500000f, -0.4f);
-                GL11.glRotatef(-1f, 1f, 0f, 0f);
+                GL11.glTranslatef(-0.500000f, 2.500000f, -0.1f);
+                GL11.glRotatef(-3f, 1f, 0f, 0f);
                 })
                 
              .withFirstPersonPositioningProning((renderContext) -> {
@@ -615,8 +617,7 @@ public class AS50Factory implements GunFactory {
                 
                 GL11.glScalef(2.5f, 2.5f, 2.5f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(5f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.500000f, 2.500000f, -0.725000f);
+                GL11.glTranslatef(0.12f, 2.175f, -0.525000f);
                 
                 // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HP)) {
@@ -699,8 +700,7 @@ public class AS50Factory implements GunFactory {
                 
                 GL11.glScalef(2.5f, 2.5f, 2.5f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(5f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.500000f, 2.500000f, -0.4f);
+                GL11.glTranslatef(0.12f, 2.175f, -0.325000f);
                 GL11.glRotatef(-1f, 1f, 0f, 0f);
                 
                 // HP Zoom

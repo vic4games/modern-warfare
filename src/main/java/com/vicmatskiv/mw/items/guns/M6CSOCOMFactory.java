@@ -26,6 +26,7 @@ import com.vicmatskiv.mw.models.M9A1;
 import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.M6CSOCOMSlide;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -68,6 +69,12 @@ public class M6CSOCOMFactory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalIngot)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 7f, // x 
+                 0.1f, // y
+                 3f) // z
+         
         .withCompatibleBullet(Bullets.Bullet9x19mm, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.M6CSOCOMSlide, true, (model) -> {
             if(model instanceof M6CSOCOMSlide) {

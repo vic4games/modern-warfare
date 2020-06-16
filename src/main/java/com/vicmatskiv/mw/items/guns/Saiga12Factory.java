@@ -54,6 +54,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.makarovfrontsight;
 import com.vicmatskiv.mw.models.makarovrearsight;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -93,13 +94,19 @@ public class Saiga12Factory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 5f, // x 
+                 1f, // y
+                 10f) // z
+         
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Carbine/Shotgun",
         "Damage per Pellet: 6",
         "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
-        "Fire Rate: PUMP ACTION",
+        "Fire Rate: SEMI",
         "Rate of Fire: 40/100",
         "Magazines:",
         "5rnd 12G Magazine"))

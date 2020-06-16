@@ -24,7 +24,12 @@ import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.VP70slide;
 import com.vicmatskiv.mw.models.VP70;
+import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -35,7 +40,7 @@ public class VP70Factory implements GunFactory {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
         .withName("vp70")
-        .withFireRate(0.5f)
+        .withFireRate(0.9f)
         .withRecoil(2f)
         .withZoom(0.9f)
         .withMaxShots(1)
@@ -49,10 +54,10 @@ public class VP70Factory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1f)
-        .withFlashOffsetX(() -> 0.17f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.14f)
+        .withFlashOffsetY(() -> 0.14f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
@@ -64,6 +69,12 @@ public class VP70Factory implements GunFactory {
         "Rate of Fire: 50/100",
         "Magazines:",
         "18rnd 9x19mm Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2.5f, // x 
+                0.1f, // y
+                2.5f) // z
+        
          .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
@@ -82,6 +93,8 @@ public class VP70Factory implements GunFactory {
             }
         })
         .withCompatibleAttachment(Magazines.VP70Mag, (model) -> {
+        })
+        .withCompatibleAttachment(Attachments.VP70Stock, (model) -> {
         })
         .withTextureNames("vp70")
         .withRenderer(new WeaponRenderer.Builder()
@@ -107,24 +120,39 @@ public class VP70Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioning((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 0.8f);
-                GL11.glTranslatef(-0.0000f, -0.075000f, -1.8f);
-                
-//                GL11.glScaled(2F, 2F, 2F);
-//                GL11.glRotatef(32F, 0f, 1f, 0f);
-//                GL11.glRotatef(40F, 0f, 0f, 1f);
-//                GL11.glRotatef(-2F, 1f, 0f, 0f);
-//                GL11.glTranslatef(0.3f, 1f, -1.8f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.STOCK, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.VP70Stock) {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(4F, 0f, 0f, 0.8f);
+                    GL11.glTranslatef(-0.2000f, -0.135000f, -1.8f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(8F, 0f, 0f, 0.8f);
+                    GL11.glTranslatef(-0.2000f, -0.075000f, -1.8f);
+                }
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 0.8f);
-                GL11.glTranslatef(-0.0000f, -0.075000f, -1.7f);
-                GL11.glRotatef(-5F, 1f, 0f, 0f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.STOCK, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.VP70Stock) {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(4F, 0f, 0f, 0.8f);
+                    GL11.glTranslatef(-0.2000f, -0.135000f, -1.6f);
+                    GL11.glRotatef(-1F, 1f, 0f, 0f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(8F, 0f, 0f, 0.8f);
+                    GL11.glTranslatef(-0.2000f, -0.075000f, -1.4f);
+                    GL11.glRotatef(-5F, 1f, 0f, 0f);
+                }
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
@@ -213,10 +241,10 @@ public class VP70Factory implements GunFactory {
                     
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(-24.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(30.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(37.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.925000f, 0.1f, -1.5f);
+                        GL11.glTranslatef(-0.425000f, 0.1f, -1.5f);
                     }, 200, 0),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -464,10 +492,19 @@ public class VP70Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScaled(3F, 3F, 3F);
-                GL11.glTranslatef(0.245f, -0.11f, -1.9f);
-                GL11.glRotatef(-3F, 1f, 0f, 0f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.STOCK, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.VP70Stock) {
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glScaled(3F, 3F, 3F);
+                    GL11.glTranslatef(0.245f, -0.11f, -1.8f);
+                } else {
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glScaled(3F, 3F, 3F);
+                    GL11.glTranslatef(0.245f, -0.11f, -1.7f);
+                    GL11.glRotatef(-3F, 1f, 0f, 0f);
+                }
                 
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.RMR)) {
                     //System.out.println("Position me for Holo");
@@ -481,11 +518,22 @@ public class VP70Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(40F, 0f, 1f, 0f);
-                GL11.glRotatef(13F, 0f, 0f, 0.8f);
-                GL11.glRotatef(6F, 1f, 0f, 0f);
-                GL11.glTranslatef(0.2000f, -0.075000f, -1.8f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.STOCK, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.VP70Stock) {
+                    GL11.glScaled(1F, 1F, 1F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(5F, 0f, 0f, 1f);
+                    GL11.glRotatef(-30F, 1f, 0f, 0f);
+                    GL11.glTranslatef(-0.200000f, -0.80000f, -1.1f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(40F, 0f, 1f, 0f);
+                    GL11.glRotatef(13F, 0f, 0f, 0.8f);
+                    GL11.glRotatef(6F, 1f, 0f, 0f);
+                    GL11.glTranslatef(0.2000f, -0.075000f, -1.8f);
+                }
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
                  GL11.glScaled(3F, 3F, 3F);
@@ -493,6 +541,13 @@ public class VP70Factory implements GunFactory {
                  GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
                  GL11.glTranslatef(-1.374999f, 0.3f, -1.449999f);
+             })
+             .withFirstPersonPositioningModifyingAlt((renderContext) -> {
+                 GL11.glScaled(3F, 3F, 3F);
+                 GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                 GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                 GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-1.374999f, -0.1f, -1.649999f);
              })
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
@@ -505,13 +560,17 @@ public class VP70Factory implements GunFactory {
 //                       GL11.glScalef(4f, 4f, 4f);
                    }, 
                    (renderContext) -> {
-                       GL11.glScalef(4f, 4f, 4f);
-                       GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+//                       GL11.glScalef(4f, 4f, 4f);
+//                       GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+//                       GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+//                       GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+//                       GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
+                       
+                       GL11.glScalef(3.7f, 3.7f, 3.7f);
+                       GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                       GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
-                       
-//                       GL11.glScalef(000f, 00f, 0000f);
+                       GL11.glTranslatef(0.465000f, -0.600000f, 0.275000f);
                    })
             .withFirstPersonHandPositioningProning(
                     (renderContext) -> {
@@ -522,11 +581,11 @@ public class VP70Factory implements GunFactory {
                         GL11.glTranslatef(-0.050000f, -1.000000f, 0.125000f);
                     }, 
                     (renderContext) -> {
-                        GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glScalef(3.7f, 3.7f, 3.7f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
+                        GL11.glTranslatef(0.465000f, -0.600000f, 0.275000f);
                         
 //                        GL11.glScalef(000f, 00f, 0000f);
                     })
@@ -539,11 +598,11 @@ public class VP70Factory implements GunFactory {
                         GL11.glTranslatef(-0.050000f, -1.000000f, 0.125000f);
                     }, 
                     (renderContext) -> {
-                        GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glScalef(3.7f, 3.7f, 3.7f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
+                        GL11.glTranslatef(0.465000f, -0.600000f, 0.275000f);
                         
 //                        GL11.glScalef(000f, 00f, 0000f);
                     })
@@ -562,6 +621,21 @@ public class VP70Factory implements GunFactory {
                          GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
                          GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
                      })
+            .withFirstPersonHandPositioningModifyingAlt(
+                    (renderContext) -> {
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-70.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(90.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.025000f, -0.875000f, 0.075000f);
+                    }, 
+                    (renderContext) -> {
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(20.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.325000f, -0.675000f, 0.225000f);
+                    })
             .withFirstPersonLeftHandPositioningReloading(
                     
                     new Transition((renderContext) -> { // Reload position
@@ -705,11 +779,11 @@ public class VP70Factory implements GunFactory {
                         GL11.glTranslatef(-0.050000f, -1.000000f, 0.125000f);
                     }, 
                     (renderContext) -> {
-                        GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glScalef(3.7f, 3.7f, 3.7f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.43f, -0.600000f, 0.275000f);
+                        GL11.glTranslatef(0.465000f, -0.600000f, 0.275000f);
                         
 //                        GL11.glScalef(000f, 00f, 0000f);
                     })

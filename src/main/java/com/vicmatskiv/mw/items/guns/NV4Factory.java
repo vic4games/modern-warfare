@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -94,6 +95,12 @@ public class NV4Factory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 1f, // x 
+                 1f, // y
+                 3f) // z
+         
         .withCompatibleBullet(Bullets.Bullet556x45, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.NV4Mag, true, (model) -> {
             GL11.glTranslatef(-0.3F, 0.5F, -1.25F);

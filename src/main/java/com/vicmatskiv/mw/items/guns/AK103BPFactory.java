@@ -14,6 +14,7 @@ import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.models.AK101DustCover;
 import com.vicmatskiv.mw.models.AK103Bullpup;
 import com.vicmatskiv.mw.models.AK15;
 import com.vicmatskiv.mw.models.AK15DustCover;
@@ -26,6 +27,7 @@ import com.vicmatskiv.mw.models.AKRail2;
 import com.vicmatskiv.mw.models.AKRail3;
 import com.vicmatskiv.mw.models.AKRail4;
 import com.vicmatskiv.mw.models.AKRail5;
+import com.vicmatskiv.mw.models.AKiron3;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
@@ -54,6 +56,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.VeprDustCover;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -106,6 +109,12 @@ public class AK103BPFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.GunmetalIngot,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 3f, // x 
+                 1.5f, // y
+                 3.5f) // z
+         
         .withCompatibleAttachment(Attachments.AKMDustCover, true, (model) -> {
 //            GL11.glTranslatef(0f, 0f, 1f);
         })
@@ -128,11 +137,24 @@ public class AK103BPFactory {
                 GL11.glScaled(0.6F, 0.8F, 1.12F);
             }
         })
+        .withCompatibleAttachment(Attachments.RPKDustCover, (model) -> {
+            if(model instanceof AK101DustCover) {
+//                GL11.glScaled(1F, 0.98F, 1);
+            } else if(model instanceof AKRail) {
+                GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
+                GL11.glScaled(0.6F, 0.8F, 1.12F);
+            }
+        })
         .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
         })
-        .withCompatibleAttachment(AuxiliaryAttachments.AKIron, true, (model) -> {
-            GL11.glTranslatef(-0.195F, -1.06F, -5.96F);
-            GL11.glScaled(0.9F, 0.55F, 0.5F);
+        .withCompatibleAttachment(Attachments.AKIron, true, (model) -> {
+            if(model instanceof AKiron3) {
+                GL11.glTranslatef(-0.195F, -1.06F, -5.96F);
+                GL11.glScaled(0.9F, 0.55F, 0.5F);
+            } else if(model instanceof AKMiron2) {
+                GL11.glTranslatef(-0.185F, -1.32F, -5.95F);
+                GL11.glScaled(0.55F, 0.55F, 0.68F);
+            }
         })
        .withCompatibleAttachment(Magazines.AK15Mag, (model) -> {
 //          GL11.glTranslatef(-0.35F, 0.5F, -1.25F);
@@ -167,7 +189,7 @@ public class AK103BPFactory {
                 GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof AKMiron2) {
                 GL11.glTranslatef(-0.185F, -1.32F, -5.95F);
-                GL11.glScaled(0.55F, 0.55F, 0.68F);
+                GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof AK47iron) {
                 GL11.glTranslatef(-0.25F, -1.65F, -3.05F);
                 GL11.glScaled(0.8F, 0.7F, 0.6F);

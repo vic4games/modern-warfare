@@ -57,6 +57,7 @@ import com.vicmatskiv.mw.models.Type2;
 import com.vicmatskiv.mw.models.Type2RearSight;
 import com.vicmatskiv.mw.models.Type51;
 import com.vicmatskiv.mw.models.Volk;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -99,6 +100,12 @@ public class Type51Factory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 0.1f, // x 
+                 0.1f, // y
+                 2.5f) // z
+         
         .withCompatibleBullet(Bullets.EnergyCase, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.Type51Mag, true, (model) -> {
         })

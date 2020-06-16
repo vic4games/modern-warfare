@@ -15,6 +15,7 @@ import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.DesertEagle;
+import com.vicmatskiv.mw.models.DesertEagleGun;
 import com.vicmatskiv.mw.models.Emp1911;
 import com.vicmatskiv.mw.models.Emp1911Slide;
 import com.vicmatskiv.mw.models.M1911frontsight;
@@ -28,7 +29,11 @@ import com.vicmatskiv.mw.models.P226frontsight;
 import com.vicmatskiv.mw.models.P226rearsight;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -53,16 +58,16 @@ public class DesertEagleFactory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1f)
-        .withFlashOffsetX(() -> 0.17f)
-        .withFlashOffsetY(() -> 0.18f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.7f)
+        .withFlashOffsetX(() -> 0.13f)
+        .withFlashOffsetY(() -> 0.14f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
-        "Type: Double-Single Action Pistol", 
-        "Damage: 23", 
+        "Type: Semi-Automatic Pistol", 
+        "Damage: 15", 
         "Cartridge: .50 AE",
         "Fire Rate: SEMI",
         "Rate of Fire: 20/100",
@@ -71,21 +76,35 @@ public class DesertEagleFactory implements GunFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 8f, // x 
+                 0.1f, // y
+                 4f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
+        .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
+        .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withCompatibleAttachment(Attachments.PistolPlaceholder, true, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(0F, 0F, 0F);
         })
-        .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {
-            GL11.glTranslatef(0.01f, -0.19f, -0.4f);
-            GL11.glScaled(0F, 0F, 0F);
+//        .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {
+//            GL11.glTranslatef(0.01f, -0.19f, -0.4f);
+//            GL11.glScaled(0F, 0F, 0F);
+//        })
+        .withCompatibleAttachment(Attachments.DesertEagleBody, true, (model) -> {
+//          GL11.glTranslatef(0.01f, -0.19f, -0.4f);
+//          GL11.glScaled(0F, 0F, 0F);
         })
-        .withCompatibleAttachment(AuxiliaryAttachments.DesertEagleSlide, true, (model) -> {
-            if(model instanceof P225Top) {
-                GL11.glScaled(1F, 1F, 1F);
-//                GL11.glTranslatef(0F, 0F, 0.5F);
-            }
+        .withCompatibleAttachment(Attachments.DesertEagleSlide, true, (model) -> {
+//          GL11.glTranslatef(0.01f, -0.19f, -0.4f);
+//          GL11.glScaled(0F, 0F, 0F);
+        })
+        .withCompatibleAttachment(Attachments.DesertEagleLongBody, (model) -> {
+//          GL11.glTranslatef(0.01f, -0.19f, -0.4f);
+//          GL11.glScaled(0F, 0F, 0F);
         })
         .withCompatibleAttachment(Magazines.DesertEagleMag, (model) -> {
         })
@@ -119,7 +138,7 @@ public class DesertEagleFactory implements GunFactory {
         .withTextureNames("deserteagle")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
-            .withModel(new DesertEagle())
+            .withModel(new DesertEagleGun())
             //.withTextureName("M9")
             //.withWeaponProximity(0.99F)
             //.withYOffsetZoom(5F)
@@ -138,20 +157,41 @@ public class DesertEagleFactory implements GunFactory {
                 GL11.glRotatef(-45F, 0f, 1f, 0f);
                 GL11.glRotatef(70F, 1f, 0f, 0f);
                 })
-                
+            
             .withFirstPersonPositioning((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.1f, 0.7f, -2.1f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.BACKGRIP, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.DesertEagleLongBody) {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(4F, 0f, 0f, 1f);
+                    GL11.glTranslatef(-0.2f, 0.5f, -2.1f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(8F, 0f, 0f, 1f);
+                    GL11.glTranslatef(-0.1f, 0.6f, -1.9f);
+                }
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.1f, 0.6f, -1.4f);
-                GL11.glRotatef(-11F, 1f, 0f, 0f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.BACKGRIP, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.DesertEagleLongBody) {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(4F, 0f, 0f, 1f);
+                    GL11.glTranslatef(-0.2f, 0.5f, -1.4f);
+                    GL11.glRotatef(-11F, 1f, 0f, 0f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(8F, 0f, 0f, 1f);
+                    GL11.glTranslatef(-0.1f, 0.5f, -1.2f);
+                    GL11.glRotatef(-11F, 1f, 0f, 0f);
+                }
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {
@@ -175,19 +215,19 @@ public class DesertEagleFactory implements GunFactory {
                 GL11.glRotatef(-3F, 1f, 0f, 0f);    
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(Attachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.6F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(Attachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0F, 0F, 0.6F);
 //              GL11.glRotatef(45F, 0f, 1f, 0f);
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonCustomPositioning(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonCustomPositioning(Attachments.DesertEagleSlide.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0.6F);
                 }
@@ -389,7 +429,7 @@ public class DesertEagleFactory implements GunFactory {
                     }, 250, 1000)
                         )
                     
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(Attachments.DesertEagleSlide.getRenderablePart(),
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0F, 0F, 0.6F);
                     }, 250, 1000),
@@ -407,7 +447,7 @@ public class DesertEagleFactory implements GunFactory {
                     }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(),
+            .withFirstPersonCustomPositioningUnloading(Attachments.DesertEagleSlide.getRenderablePart(),
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0F, 0F, 0.6F);
                     }, 250, 1000),
@@ -496,7 +536,7 @@ public class DesertEagleFactory implements GunFactory {
                 )
                     
                     
-            .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(),
+            .withThirdPersonCustomPositioningReloading(Attachments.DesertEagleSlide.getRenderablePart(),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -525,47 +565,50 @@ public class DesertEagleFactory implements GunFactory {
             .withFirstPersonPositioningDrawing(
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glRotatef(8F, 0f, 0f, 1f);
-                        GL11.glRotatef(4F, 1f, 0f, 0f);
-                        GL11.glTranslatef(-0.2f, 1.3f, -1.8f);
+                        GL11.glRotatef(15.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, 0.625000f, -1.424999f);
                     }, 100, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glRotatef(15F, 0f, 0f, 1f);
-                        GL11.glRotatef(-2F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.1f, 1.2f, -1.8f);
+                        GL11.glRotatef(5.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.525000f, 0.625000f, -1.424999f);
                     }, 90, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(32F, 0f, 1f, 0f);
-                        GL11.glRotatef(40F, 0f, 0f, 1f);
-                        GL11.glRotatef(-2F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.3f, 1f, -1.8f);
+                        GL11.glRotatef(-4.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(34.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.625000f, 0.625000f, -1.424999f);
                     }, 180, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(33F, 0f, 1f, 0f);
-                        GL11.glRotatef(45F, 0f, 0f, 1f);
-                        GL11.glRotatef(-9F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.3f, 1.1f, -1.75f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(28.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.925000f, 0.625000f, -1.424999f);
                     }, 130, 100),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScaled(2F, 2F, 2F);
-                        GL11.glRotatef(35F, 0f, 1f, 0f);
-                        GL11.glRotatef(45F, 0f, 0f, 1f);
-                        GL11.glRotatef(-2F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.3f, 1f, -1.8f);
+                        GL11.glRotatef(-17.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-1.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.925000f, 0.625000f, -1.424999f);
                     }, 120, 0)
                     )
                     
-            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.DesertEagleSlide.getRenderablePart(),
+            .withFirstPersonCustomPositioningDrawing(Attachments.DesertEagleSlide.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0F, 0F, 0.6F);
                     }, 150, 0),
                     new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0F, 0F, 0.6F);
                     }, 130, 0),
                     new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0F, 0F, 0.6F);
                     }, 200, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glTranslatef(0F, 0F, 0.6F);
@@ -620,11 +663,22 @@ public class DesertEagleFactory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
-                GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(40F, 0f, 1f, 0f);
-                GL11.glRotatef(15F, 0f, 0f, 1f);
-                GL11.glRotatef(7F, 1f, 0f, 0f);
-                GL11.glTranslatef(0.200000f, 0.800000f, -2.1f);
+                RenderContext<?> rc = (RenderContext<?>) renderContext;
+                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+                        AttachmentCategory.BACKGRIP, rc.getWeaponInstance());
+                if(activeAttachment == Attachments.DesertEagleLongBody) {
+                    GL11.glScaled(1F, 1F, 1F);
+                    GL11.glRotatef(45F, 0f, 1f, 0f);
+                    GL11.glRotatef(8F, 0f, 0f, 1f);
+                    GL11.glRotatef(-55F, 1f, 0f, 0f);
+                    GL11.glTranslatef(-0.600000f, 0.40000f, -0.9f);
+                } else {
+                    GL11.glScaled(2F, 2F, 2F);
+                    GL11.glRotatef(40F, 0f, 1f, 0f);
+                    GL11.glRotatef(15F, 0f, 0f, 1f);
+                    GL11.glRotatef(7F, 1f, 0f, 0f);
+                    GL11.glTranslatef(0.200000f, 0.800000f, -2.1f);
+                }
              })
              .withFirstPersonPositioningModifying((renderContext) -> {
                  GL11.glScaled(3F, 3F, 3F);
@@ -1044,38 +1098,38 @@ public class DesertEagleFactory implements GunFactory {
             .withFirstPersonLeftHandPositioningDrawing(
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
-                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.125000f, -0.800000f, 0.075000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.050000f, -0.025000f, 0.475000f);
                     }, 150, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
-                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.125000f, -0.800000f, 0.075000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.050000f, -0.025000f, 0.475000f);
                     }, 130, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
-                        GL11.glRotatef(-160.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(70.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.500000f, -0.675000f, 0.150000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.050000f, -0.025000f, 0.475000f);
                     }, 200, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
-                        GL11.glRotatef(-160.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(70.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.500000f, -0.725000f, 0.025000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.050000f, -0.025000f, 0.475000f);
                     }, 130, 60),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4.500000f, 4.500000f, 4.500000f);
-                        GL11.glRotatef(-160.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(70.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.500000f, -0.675000f, 0.150000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.050000f, -0.025000f, 0.475000f);
                     }, 110, 0)
                     )
                     
@@ -1118,7 +1172,7 @@ public class DesertEagleFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(23f)
+        .withSpawnEntityDamage(15f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

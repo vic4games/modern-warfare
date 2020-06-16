@@ -52,6 +52,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -78,10 +79,10 @@ public class M134Factory implements GunFactory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 1f)
+        .withFlashIntensity(0.6f)
+        .withFlashScale(() -> 0.7f)
         .withFlashOffsetX(() -> 0.18f)
-        .withFlashOffsetY(() -> 0.25f)
+        .withFlashOffsetY(() -> 0.2f)
         .withShellCasingForwardOffset(-0.02f)
         .withShellCasingVerticalOffset(-0.05f)
         .withBleedingCoefficient(7f)
@@ -97,6 +98,12 @@ public class M134Factory implements GunFactory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 1f, // x 
+                 1f, // y
+                 2f) // z
+         
         .withCompatibleAttachment(Magazines.M134Mag, (model) -> {
 //          GL11.glTranslatef(-0.35F, 0.5F, -1.25F);
 //            GL11.glScaled(1.15F, 1.2F, 1.15F);

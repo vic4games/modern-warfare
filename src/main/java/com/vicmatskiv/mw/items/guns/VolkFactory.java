@@ -55,6 +55,7 @@ import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.TracerProjectile;
 import com.vicmatskiv.mw.models.Volk;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -101,6 +102,12 @@ public class VolkFactory {
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2f, // x 
+                 1f, // y
+                 3f) // z
+         
         .withCompatibleBullet(Bullets.EnergyCase, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.Volkaction, true, (model) -> {
 //            GL11.glTranslatef(0f, 0f, 1f);

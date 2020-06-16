@@ -25,6 +25,7 @@ import com.vicmatskiv.mw.models.M9A1frontsight;
 import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.APSslide;
 import com.vicmatskiv.mw.models.makarovfrontsight;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -65,6 +66,12 @@ public class APSFactory implements GunFactory {
         "Rate of Fire: 75/100",
         "Magazines:",
         "20rnd 9x19mm Magazine (APS)"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2.5f, // x 
+                0.1f, // y
+                1f) // z
+        
         .withCrafting(CraftingComplexity.LOW,
                 Ores.GunmetalPlate,
                 Ores.PlasticPlate)

@@ -43,6 +43,7 @@ import com.vicmatskiv.mw.models.Spas12;
 import com.vicmatskiv.mw.models.Super90;
 import com.vicmatskiv.mw.models.Supernova;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -92,6 +93,12 @@ public class Spas12Factory implements GunFactory {
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI",
         "Rate of Fire: 30/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                10f) // z
+        
         .withCompatibleAttachment(Attachments.Spas12Stock, true, (model) -> {
 //          GL11.glTranslatef(0.01f, -0.19f, -0.4f);
           GL11.glScaled(1F, 1F, 1F);

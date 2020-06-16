@@ -34,6 +34,7 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -85,6 +86,12 @@ public class CSA16Factory implements GunFactory {
         "Cartridge: 4 Gauge Shotgun Shell",
         "Fire Rate: PUMP ACTION",
         "Rate of Fire: 10/100"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                5f, // x 
+                1f, // y
+                11f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.CSA16pump, true, (model) -> {
 //            GL11.glTranslatef(0F, 0F, 0.5F);
 //            GL11.glTranslatef(0F, 0F, 0.5F);

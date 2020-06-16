@@ -58,6 +58,7 @@ import com.vicmatskiv.mw.models.UTGTriRailHandGuard;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -86,25 +87,31 @@ public class P90Factory {
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
         .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.4f)
-        .withFlashScale(() -> 0.8f)
-        .withFlashOffsetX(() -> 0.14f)
-        .withFlashOffsetY(() -> 0.3f)
+        .withFlashIntensity(0.5f)
+        .withFlashScale(() -> 0.6f)
+        .withFlashOffsetX(() -> 0.2f)
+        .withFlashOffsetY(() -> 0.27f)
         .withShellCasingEjectEnabled(false)
         .withInaccuracy(2f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
-        "Type: Sub Machine Gun",
+        "Type: Personal Defense Weapon",
         "Damage: 5", 
-        "Cartridge: 9x19mm",
+        "Cartridge: 5.7x28mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
         "Magazines:",
-        "25rnd 9x19mm HK Magazine",
-        "50rnd 9x19mm HK Drum Magazine"))
+        "50rnd 5.7x28mm Magazine",
+        "65rnd 5.7x28mm Terminator Magazine (w/ Terminator conversion kit)"))
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
+         
+         .withScreenShaking(RenderableState.SHOOTING, 
+                 2f, // x 
+                 0.1f, // y
+                 3f) // z
+         
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.STOCK)
         .withCompatibleAttachment(Magazines.P90Mag, (model) -> {

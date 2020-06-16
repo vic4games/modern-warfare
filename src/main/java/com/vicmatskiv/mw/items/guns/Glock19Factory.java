@@ -23,6 +23,7 @@ import com.vicmatskiv.mw.models.M1911frontsight;
 import com.vicmatskiv.mw.models.M1911rearsight;
 import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -68,6 +69,12 @@ public class Glock19Factory implements GunFactory {
         .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.SteelIngot)
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2.5f, // x 
+                0.1f, // y
+                2.5f) // z
+        
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withCompatibleAttachment(Attachments.PistolPlaceholder, true, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);

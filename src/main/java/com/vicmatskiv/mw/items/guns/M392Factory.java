@@ -55,6 +55,7 @@ import com.vicmatskiv.mw.models.Reflex2;
 import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
@@ -97,6 +98,12 @@ public class M392Factory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
         .withCompatibleBullet(Bullets.Bullet762x51, (model) -> {})
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                1.5f, // x 
+                1.5f, // y
+                4f) // z
+        
         .withCompatibleAttachment(AuxiliaryAttachments.M392Action, true, (model) -> {
 //            GL11.glTranslatef(-0.55F, 0.5F, 0.1F);
 //            GL11.glRotatef(-70F, 0f, 1f, 0f);
@@ -172,7 +179,7 @@ public class M392Factory {
              .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-4.000000f, 0f, 0f, 1f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.425000f, 1.3f, -1.100000f);
                 
 //                GL11.glScalef(4f, 4f, 4f);
@@ -185,9 +192,9 @@ public class M392Factory {
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                GL11.glRotatef(-4.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.425000f, 1.3f, -0.9f);
-                GL11.glRotatef(-0.3F, 1f, 0f, 0f);
+                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.425000f, 1.3f, -0.3f);
+                GL11.glRotatef(-1F, 1f, 0f, 0f);
                 })
                 
             .withFirstPersonPositioningProning((renderContext) -> {

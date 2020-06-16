@@ -54,6 +54,7 @@ import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.RenderContext;
+import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -96,6 +97,12 @@ public class M110Factory implements GunFactory {
         "Rate of Fire: 65/100",
         "Magazines:",
         "10rnd 7.62x51mm NATO Magazine"))
+        
+        .withScreenShaking(RenderableState.SHOOTING, 
+                2f, // x 
+                2f, // y
+                5f) // z
+        
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)

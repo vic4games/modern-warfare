@@ -434,6 +434,26 @@ public class Vests {
         .build(ModernWarfareMod.MOD_CONTEXT);
         
         new ItemVest.Builder()
+        .withName("wfi_task_force_vest")
+        .withDamageReduceAmount(25) // use numbers from 1 to 8
+        .withDurability(100) // works the same way as shield's max capacity
+        .withTab(CreativeTabs.MISC)
+        .withModel(new com.vicmatskiv.mw.models.WFITaskForceVest())
+        .withModelTextureName("wfitaskforcevest.png")
+        .withCustomEquippedPositioning((player, stack) -> {
+            GL11.glScalef(0.8f, 0.8f, 0.8f);
+            GL11.glTranslatef(0f, 0f, 0f);
+            GL11.glRotatef(0F, 0f, 0f, 1f);
+        })
+        .withInventoryPositioning(stack -> {
+            GL11.glScalef(1.3f, 1.3f, 1.3f);
+            GL11.glTranslatef(0f, -0.55f, 0f);
+            GL11.glRotatef(-200F, 0f, 1f, 0f);
+            GL11.glRotatef(-15F, 1f, 0f, 0f);
+        })
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new ItemVest.Builder()
         .withName("scar_vest")
         .withDamageReduceAmount(25) // use numbers from 1 to 8
         .withDurability(100) // works the same way as shield's max capacity

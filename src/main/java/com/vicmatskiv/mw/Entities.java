@@ -2,7 +2,8 @@ package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
-import com.vicmatskiv.weaponlib.ai.EntityAIAttackRangedWeapon;
+import com.vicmatskiv.mw.entities.BanditEntityFactory;
+import com.vicmatskiv.mw.entities.SampleMissionGiverEntityFactory;
 import com.vicmatskiv.weaponlib.ai.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import com.vicmatskiv.weaponlib.ai.InfectionAttack;
@@ -15,47 +16,16 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.EnumDifficulty;
 
 public class Entities {
 
     public static void init(CommonProxy commonProxy) {
 
-        new EntityConfiguration.Builder()
-            .withName("bandit1")
-            .withBaseClass(EntityCustomMob.class)
-            .withMaxHealth(20)
-            .withEntityIdSupplier(() -> 10000)
-            .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag)
-            .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
-            .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
-            .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(1, 1, 7, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
-            .withSpawnEgg(0xA0A000, 0xA0A010)
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit1.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit3.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit4.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit5.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit6.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit7.png")
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit8.png")
-            .withHurtSound("hurt")
-            .withAmbientSound("drawweapon")
-//            .withStepSound("step")
-            .withAiTask(1, e -> new EntityAISwimming(e))
-            .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
-            .withAiTask(4, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 10, 30.0F))
-            .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
-            .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
-            .withAiTask(6, e -> new EntityAILookIdle(e))
-            .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
-            .withAiTargetTask(2, e -> compatibility.createAINearestAttackableTarget(e, EntityPlayer.class, true))
-            .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIronGolem.class, true))
-            .register(ModernWarfareMod.MOD_CONTEXT);
+        new BanditEntityFactory().createEntity(ModernWarfareMod.MOD_CONTEXT);
+        
+        new SampleMissionGiverEntityFactory().createEntity(ModernWarfareMod.MOD_CONTEXT);
         
         new EntityConfiguration.Builder()
             .withName("zombieBlistered")
@@ -76,7 +46,7 @@ public class Entities {
             .withAmbientSound("zombie_ambient")
             .withStepSound("zombie_step")
             .withDeathSound("zombie_death")
-            .withMaxSpeed(0.45F) // 0.1-0.3 is normal speed
+            .withMaxSpeed(0.25F) // 0.1-0.3 is normal speed
             .withCollisionAttackDamage(15.0)
             .withAiTask(1, e -> new EntityAISwimming(e))
 //          .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
@@ -173,7 +143,7 @@ public class Entities {
     //       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
     //      .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
             .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(1, 1, 1, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+            .withSpawn(0, 0, 0, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
             .withSpawnEgg(0xA0A000, 0xA0A010)
             .withTexturedModelVariant("com.vicmatskiv.mw.models.Necromorph", "necromorph.png")
             .withHurtSound("necromorph_hurt")
@@ -208,7 +178,7 @@ public class Entities {
     //       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
     //      .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
             .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(1, 1, 1, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+            .withSpawn(0, 0, 0, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
             .withSpawnEgg(0xA0A000, 0xA0A010)
             .withTexturedModelVariant("com.vicmatskiv.mw.models.Licker", "licker.png")
             .withHurtSound("hurt")
@@ -316,7 +286,7 @@ public class Entities {
     //       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
     //      .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
             .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(1, 1, 1, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+            .withSpawn(0, 0, 0, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
             .withSpawnEgg(0xA0A000, 0xA0A010)
             .withTexturedModelVariant("com.vicmatskiv.mw.models.DefiledZombie", "defiledzombie.png")
             .withHurtSound("zombie_hurt")
@@ -350,7 +320,7 @@ public class Entities {
     //       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
     //      .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
             .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(1, 1, 1, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+            .withSpawn(0, 0, 0, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
             .withSpawnEgg(0xA0A000, 0xA0A010)
             .withTexturedModelVariant("com.vicmatskiv.mw.models.Deathclaw", "deathclaw.png")
             .withHurtSound("deathclaw_hurt")
@@ -373,6 +343,41 @@ public class Entities {
     //       .withCollisionAttack(new InfectionAttack(0.1f, 20000, 1.2f, 1.0f, 1.8f))
     //      .withDelayedAttack(new ExplosionAttack(2f, true, 30))
             .register(ModernWarfareMod.MOD_CONTEXT);
+        
+        new EntityConfiguration.Builder()
+        .withName("molded")
+        .withBaseClass(EntityCustomMob.class)
+        .withMaxHealth(100)
+        .withEntityIdSupplier(() -> 10010)
+//      .withEquipmentOption(Guns.MakarovPM, EnumDifficulty.EASY, 4f, Magazines.Magazine9mm)
+//      .withEquipmentOption(Guns.MakarovPM, EnumDifficulty.EASY, 3.8f, Magazines.Magazine9mm, Attachments.Silencer9mm)
+//       .withEquipmentOption(Guns.AK74U, EnumDifficulty.EASY, 0.1f, Magazines.AKS74UMag) //, Attachments.Silencer9mm)
+//       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag)
+//    .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
+//   .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
+        .withPrimaryEquipmentDropChance(1f)
+//        .withSpawn(1, 1, 1, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+        .withSpawnEgg(0xA0A000, 0xA0A010)
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.Molded", "molded.png")
+        .withHurtSound("molded_hurt")
+        .withAmbientSound("molded_ambient")
+        .withDeathSound("molded_death")
+//    .withStepSound("step")
+        .withMaxSpeed(0.2F) // 0.1-0.3 is normal speed
+        .withCollisionAttackDamage(10.0)
+        .withAiTask(1, e -> new EntityAISwimming(e))
+//      .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
+//       .withAiTask(4, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 10, 30.0F))
+        .withAiTask(3, e -> new CompatibleEntityAIAttackOnCollide((EntityCustomMob)e, EntityPlayer.class, 1.0D, false))
+        .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
+        .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
+        .withAiTask(6, e -> new EntityAILookIdle(e))
+        .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
+        .withAiTargetTask(2, e -> compatibility.createAINearestAttackableTarget(e, EntityPlayer.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
+//   .withCollisionAttack(new InfectionAttack(0.1f, 20000, 1.2f, 1.0f, 1.8f))
+//      .withDelayedAttack(new ExplosionAttack(2f, true, 30))
+        .register(ModernWarfareMod.MOD_CONTEXT);
         }
 
 }

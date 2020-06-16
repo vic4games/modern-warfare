@@ -50,12 +50,15 @@ public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
 
         addOreSpawn(Ores.LeadOre, CompatibleBlocks.STONE, world,
                 configurationManager.getOre("LeadOre").getSpawnsPerChunk(),
-                random, x, z, 10, 10, 4 + random.nextInt(5), 5, 90);
-
+                random, x, z, 9, 9, 6 + random.nextInt(4), 2, 80);
         
         addOreSpawn(Ores.TinOre, CompatibleBlocks.STONE, world,
                 configurationManager.getOre("TinOre").getSpawnsPerChunk(),
-                random, x, z, 8, 8, 3 + random.nextInt(4), 2, 60);
+                random, x, z, 9, 9, 6 + random.nextInt(4), 2, 80);
+        
+        addOreSpawn(Ores.GraphiteOre, CompatibleBlocks.STONE, world,
+                configurationManager.getOre("GraphiteOre").getSpawnsPerChunk(),
+                random, x, z, 9, 9, 6 + random.nextInt(4), 2, 80);
 
     }
 

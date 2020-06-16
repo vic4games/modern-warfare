@@ -1866,15 +1866,16 @@ public class StonerA1HATCH extends ModelWithAttachments
     Hatch26.render(f5);
     Hatch27.render(f5);
     Hatch28.render(f5);
-    MainNEW13PLANK.render(f5);
-    MainNEW14PLANK.render(f5);
-    MainNEW15.render(f5);
-    MainNEW16.render(f5);
-    MainNEW17.render(f5);
-    MainNEW18.render(f5);
-    MainNEW19.render(f5);
-    MainNEW20.render(f5);
-    MainNEW21.render(f5);
+    
+//    MainNEW13PLANK.render(f5);
+//    MainNEW14PLANK.render(f5);
+//    MainNEW15.render(f5);
+//    MainNEW16.render(f5);
+//    MainNEW17.render(f5);
+//    MainNEW18.render(f5);
+//    MainNEW19.render(f5);
+//    MainNEW20.render(f5);
+//    MainNEW21.render(f5);
   }
   
 }
