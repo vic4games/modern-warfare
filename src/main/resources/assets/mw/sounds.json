@@ -2617,5 +2617,131 @@
        "stream": false
       }
     ]
+  },
+  "mp443_grach_unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp443_grach_unload",
+       "stream": false
+      }
+    ]
+  },
+  "mp443_grach_reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mp443_grach_reload",
+       "stream": false
+      }
+    ]
+  },
+  "ak12_unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ak12_unload",
+       "stream": false
+      }
+    ]
+  },
+  "ak12_reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ak12_reload",
+       "stream": false
+      }
+    ]
+  },
+  "ak12_draw": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ak12_draw",
+       "stream": false
+      }
+    ]
+  },
+  "tokyo90_draw": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:tokyo90_draw",
+       "stream": false
+      }
+    ]
+  },
+  "tokyo90_pump": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:tokyo90_pump",
+       "stream": false
+      }
+    ]
+  },
+  "tokyo90_load_shell": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:tokyo90_load_shell",
+       "stream": false
+      }
+    ]
+  },
+  "tokyo90_reload_final": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:tokyo90_reload_final",
+       "stream": false
+      }
+    ]
+  },
+  "c8_sfw_reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:c8_sfw_reload",
+       "stream": false
+      }
+    ]
+  },
+  "ax50_boltaction": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ax50_boltaction",
+       "stream": false
+      }
+    ]
+  },
+  "ax50_reload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ax50_reload",
+       "stream": false
+      }
+    ]
+  },
+  "ax50_unload": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ax50_unload",
+       "stream": false
+      }
+    ]
+  },
+  "ax50": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:ax50",
+       "stream": false
+      }
+    ]
   }
 }

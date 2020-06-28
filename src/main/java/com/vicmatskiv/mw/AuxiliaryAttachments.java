@@ -50,6 +50,8 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M6Cslide;
     public static ItemAttachment<Weapon> Albert01Rslide;
     public static ItemAttachment<Weapon> M40A6BoltAction;
+    public static ItemAttachment<Weapon> AX50BoltAction1;
+    public static ItemAttachment<Weapon> AX50BoltAction2;
     public static ItemAttachment<Weapon> M500A2pump;
     public static ItemAttachment<Weapon> KS23pump;
     public static ItemAttachment<Weapon> AKaction;
@@ -1329,6 +1331,22 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.GunwerksHAMRboltaction(), "M40A6")
                 .withName("M40A6BoltAction")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AX50BoltAction1 = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.AX50BoltAction(), "ax50")
+                .withName("AX50BoltAction1")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AX50BoltAction2 = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.AX50BoltAction2(), "ax50")
+                .withName("AX50BoltAction2")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         

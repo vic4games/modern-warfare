@@ -59,6 +59,7 @@ public class Magazines {
     public static ItemMagazine M1928Mag;
     public static ItemMagazine M1A1Mag;
     public static ItemMagazine M40A6Mag;
+    public static ItemMagazine AX50Mag;
     public static ItemMagazine M712Mag;
     public static ItemMagazine DP28Mag;
     public static ItemMagazine MG42Mag;
@@ -1599,6 +1600,32 @@ public class Magazines {
                     GL11.glRotatef(0F, 1f, 0f, 0f);
                     GL11.glRotatef(-5F, 0f, 0f, 1f);
                     GL11.glScaled(1.1F, 1.1F, 1.1f);
+                })
+                .withMaxStackSize(6)
+                .withCrafting(CraftingComplexity.MEDIUM,
+                          Ores.INGOT_STEEL,
+                          Ores.GunmetalIngot)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
+        Magazines.AX50Mag = new ItemMagazine.Builder().withAmmo(5).withCompatibleBullet(Bullets.Bullet50BMG).withName("AX50Mag")
+                .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withModel(new com.vicmatskiv.mw.models.AX50Mag(), "ax50.png")
+
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(10F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(0.3F, 1.3f, -3.4F);
+                    GL11.glRotatef(-150F, 0f, 1f, 0f);
+                    GL11.glRotatef(0F, 1f, 0f, 0f);
+                    GL11.glRotatef(-5F, 0f, 0f, 1f);
+                    GL11.glScaled(0.8F, 0.8F, 0.8f);
                 })
                 .withMaxStackSize(6)
                 .withCrafting(CraftingComplexity.MEDIUM,

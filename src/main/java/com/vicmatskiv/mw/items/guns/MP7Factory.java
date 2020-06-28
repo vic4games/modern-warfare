@@ -93,7 +93,7 @@ public class MP7Factory {
         .withInaccuracy(2f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
-        "Type: Sub Machine Gun",
+        "Type: Sub Machine Gun/ Personal Defense Weapon/ Machine Pistol",
         "Damage: 5", 
         "Cartridge: 4.6x30mm",
         "Fire Rate: SEMI, AUTO",

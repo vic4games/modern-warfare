@@ -95,16 +95,13 @@ public class MP7A1Factory {
         .withInaccuracy(2f)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
-        "Type: Sub Machine Gun",
+        "Type: Sub Machine Gun/ Personal Defense Weapon/ Machine Pistol",
         "Damage: 4", 
         "Cartridge: 4.6x30mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
         "Magazines:",
         "40rnd 4.6x30mm HK Magazine"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2.5f, // x 

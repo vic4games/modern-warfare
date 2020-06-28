@@ -37,7 +37,7 @@ public class L131A1Factory implements GunFactory {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
         .withName("l131a1")
-        .withFireRate(0.5f)
+        .withFireRate(0.7f)
         .withRecoil(3f)
         .withZoom(0.9f)
         .withMaxShots(1)
@@ -60,7 +60,7 @@ public class L131A1Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Service Pistol", 
-        "Damage: 4", 
+        "Damage: 5", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100",
@@ -990,7 +990,7 @@ public class L131A1Factory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(4f)
+        .withSpawnEntityDamage(5f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

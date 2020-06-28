@@ -45,9 +45,11 @@ public class Attachments {
     public static ItemAttachment<Weapon> EotechHybrid2;
     public static ItemAttachment<Weapon> Vortex;
     public static ItemAttachment<Weapon> Kobra;
+    public static ItemAttachment<Weapon> KobraGen3;
     public static ItemAttachment<Weapon> ACOG;
     public static ItemAttachment<Weapon> Specter; 
     public static ItemAttachment<Weapon> HP;
+    public static ItemAttachment<Weapon> AX50Scope;
     public static ItemAttachment<Weapon> NightRaider;
     public static ItemAttachment<Weapon> M2A1sight;
     public static ItemAttachment<Weapon> F2000Scope;
@@ -88,6 +90,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> AimpointCompM5;
     public static ItemAttachment<Weapon> RMR; 
     public static ItemAttachment<Weapon> AK15ironsight;
+    public static ItemAttachment<Weapon> AK12ironsight;
     public static ItemAttachment<Weapon> M202scope;
     public static ItemAttachment<Weapon> AUGscope;
     public static ItemAttachment<Weapon> M1928Grip;
@@ -5526,6 +5529,58 @@ public class Attachments {
                 })
                 .withName("Kobra").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        KobraGen3 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.KobraGen3(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
+                        MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
+                        P90Placeholder, AUGA2handguard, AUGA3handguard, 
+                        M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
+                        RPKDustCover, Attachments.EF88Handguard, VectorHandguard,
+                        Vector556Handguard, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip)
+                .withRenderablePart()
+                .withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KobraGen3) {
+                        GL11.glTranslatef(0.4F, -0.8F, 0.5F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KobraGen3) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withInventoryModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KobraGen3) {
+                        GL11.glTranslatef(-0.6F, -0.1F, 0.3F);
+                        // GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-180F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(1F, 1F, 1f);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+
+                    }
+                }).withEntityModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KobraGen3) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("KobraGen3").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
 
         HP = new ItemScope.Builder()
 //                .withNightVision()
@@ -5579,6 +5634,57 @@ public class Attachments {
                 })
                 .withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AX50Scope = new ItemScope.Builder()
+//              .withNightVision()
+              .withOpticalZoom()
+              .withZoomRange(0.22f, 0.02f)
+              .withViewfinderPositioning((p, s) -> {
+                  GL11.glScalef(1.85f, 1.85f, 1.85f);
+                  GL11.glTranslatef(-0.0765f, 0.565f, 0.7f);
+              })
+              .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
+              .withModel(new com.vicmatskiv.mw.models.AX50Scope(), "gun.png")
+              .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
+              .withFirstPersonModelPositioning((model, itemStack) -> {
+                  if (model instanceof com.vicmatskiv.mw.models.HP) {
+                      GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                      GL11.glRotatef(30F, 0f, 1f, 0f);
+                      GL11.glScaled(0.7F, 0.7F, 0.7F);
+                  } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
+                      GL11.glScaled(0F, 0F, 0F);
+                  }
+
+              }).withThirdPersonModelPositioning((model, itemStack) -> {
+                  if (model instanceof com.vicmatskiv.mw.models.HP) {
+                      GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                      GL11.glRotatef(-50F, 0f, 1f, 0f);
+                      GL11.glRotatef(80F, 1f, 0f, 0f);
+                      GL11.glScaled(0.5F, 0.5F, 0.5F);
+                  } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
+                      GL11.glScaled(0F, 0F, 0F);
+                  }
+              }).withInventoryModelPositioning((model, itemStack) -> {
+                  if (model instanceof com.vicmatskiv.mw.models.HP) {
+                      GL11.glTranslatef(-0.6F, -0.6F, 0.6F);
+                      GL11.glRotatef(10F, 1f, 0f, 0f);
+                      GL11.glRotatef(-190F, 0f, 1f, 0f);
+                      GL11.glRotatef(0F, 0f, 0f, 1f);
+                      GL11.glScaled(0.65F, 0.65F, 0.65f);
+                  } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
+                      GL11.glScaled(0F, 0F, 0F);
+                  }
+              }).withEntityModelPositioning((model, itemStack) -> {
+                  if (model instanceof com.vicmatskiv.mw.models.HP) {
+                      GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                      GL11.glRotatef(90F, 0f, 0f, 1f);
+                      GL11.glScaled(0.4F, 0.4F, 0.4F);
+                  } else if (model instanceof com.vicmatskiv.mw.models.JPUreticle) {
+                      GL11.glScaled(0F, 0F, 0F);
+                  }
+              })
+              .withName("AX50Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+              .build(ModernWarfareMod.MOD_CONTEXT);
         
         NightRaider = new ItemScope.Builder()
                 .withNightVision()
@@ -7230,6 +7336,45 @@ public class Attachments {
                 .withName("AK15ironsight")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        AK12ironsight = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.FRONTSIGHT)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.KA_AK12_Ironsight(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AKMiron2(), "gun.png")
+                .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, RPKDustCover)
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KA_AK12_Ironsight) {
+                        GL11.glTranslatef(-0.6F, -1F, 0.7F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KA_AK12_Ironsight) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.KA_AK12_Ironsight) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AK12ironsight")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
 
         SilencerMP7 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
@@ -7499,7 +7644,7 @@ public class Attachments {
 
         Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.Laser2(), "laser2.png")
+                .withModel(new com.vicmatskiv.mw.models.Laser3(), "laser2.png")
                 .withRequiredAttachments(M4CarbineHandGuard, M38HandGuard, UTGTriRailHandGuard, PistolPlaceholder,
                         LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, 
                         AUGA3extGuard, StonerHANDGUARD, AR57Handguard)
@@ -7508,21 +7653,21 @@ public class Attachments {
                     // GL11.glRotatef(30F, 0f, 1f, 0f);
                     // GL11.glScaled(0.6F, 0.6F, 0.6F);
                 })).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.Laser2) {
+                    if (model instanceof com.vicmatskiv.mw.models.Laser3) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
 
                 }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.Laser2) {
+                    if (model instanceof com.vicmatskiv.mw.models.Laser3) {
                         GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
                         GL11.glScaled(0.5F, 0.5F, 0.5F);
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.Laser2) {
+                    if (model instanceof com.vicmatskiv.mw.models.Laser3) {
                         GL11.glTranslatef(0.6F, -0.3F, 0.65F);
                         // GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
@@ -7531,7 +7676,7 @@ public class Attachments {
 
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.Laser2) {
+                    if (model instanceof com.vicmatskiv.mw.models.Laser3) {
                         GL11.glTranslatef(0.1F, 0.2F, 0.4F);
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);

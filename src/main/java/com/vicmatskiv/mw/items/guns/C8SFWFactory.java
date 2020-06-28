@@ -81,7 +81,7 @@ public class C8SFWFactory implements GunFactory {
         .withMaxShots(Integer.MAX_VALUE, 1)
         .withShootSound("g95")
         .withSilencedShootSound("m4a1_silenced")
-        .withReloadSound("g95_reload")
+        .withReloadSound("c8_sfw_reload")
         .withUnloadSound("g95_unload")
         .withEndOfShootSound("gun_click")
         .withInspectSound("m4a1_inspection")
@@ -277,7 +277,7 @@ public class C8SFWFactory implements GunFactory {
                         GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.775000f, 0.900000f, -0.475000f);
-                    }, 120, 40),
+                    }, 120, 0),
                 
                     new Transition((renderContext) -> {
                         GL11.glScalef(3.00000f, 3.00000f, 3.00000f);

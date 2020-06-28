@@ -121,7 +121,7 @@ public class Guns {
     public static Item HK_G95;
     public static Item HK_P12;
     
-    //SAS Support
+    //SAS Light Support
     public static Item SA80;
     public static Item L131A1;
     
@@ -129,9 +129,16 @@ public class Guns {
     public static Item MP7A1;
     public static Item P2022;
     
-    // JTF2 CQB
+    // JTF2 Heavy CQB
     public static Item C8SFW;
     public static Item Tokyo90;
+    
+    // RAF Assault
+    public static Item Kalashnikov_AK12;
+    public static Item MP443_Grach;
+    
+    // SAS Heavy Long Range
+    public static Item AX50;
     
     
     // Video Games
@@ -209,6 +216,11 @@ public class Guns {
         
         C8SFW = new C8SFWFactory().createGun(proxy);
         Tokyo90 = new Tokyo90Factory().createGun(proxy);
+        
+        Kalashnikov_AK12 = new Kalashnikov_AK12Factory().createGun(proxy);
+        MP443_Grach = new MP443_GrachFactory().createGun(proxy);
+        
+        AX50 = new AX50Factory().createGun(proxy);
         
         VP70 = new VP70Factory().createGun(proxy);
         Glock19 = new Glock19Factory().createGun(proxy);

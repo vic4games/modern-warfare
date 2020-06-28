@@ -58,7 +58,7 @@ public class M17Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Service Pistol", 
-        "Damage: 5.5", 
+        "Damage: 6", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100",
@@ -996,7 +996,7 @@ public class M17Factory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(5.5f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

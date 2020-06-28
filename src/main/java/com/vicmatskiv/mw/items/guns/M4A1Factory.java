@@ -790,7 +790,7 @@ public class M4A1Factory implements GunFactory {
             GL11.glScaled(1F, 1F, 1F);
 		})
 		.withCompatibleAttachment(Attachments.Laser2, (p, s) -> {
-		    GL11.glTranslatef(0.05F, -1.18F, -3.7F);
+		    GL11.glTranslatef(-0F, -1.18F, -3.7F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
 		})
 		.withCompatibleAttachment(Attachments.Laser, (p, s) -> {
