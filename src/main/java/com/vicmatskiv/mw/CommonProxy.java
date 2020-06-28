@@ -52,7 +52,8 @@ public class CommonProxy {
 
     public void preInit(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
-        ModernWarfareMod.MOD_CONTEXT.preInit(mod, ModernWarfareMod.MODID, configurationManager, new CompatibleChannel(ModernWarfareMod.CHANNEL));
+        ModernWarfareMod.MOD_CONTEXT.preInit(mod, ModernWarfareMod.MODID, 
+                configurationManager, event, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
         
@@ -65,6 +66,8 @@ public class CommonProxy {
         ModernWarfareMod.MOD_CONTEXT.setNoAmmoSound("dry_fire");
 
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
+        
+        ModernWarfareMod.MOD_CONTEXT.setFlashExplosionSound("grenadeexplosion");
         
 //        ModernWarfareMod.MOD_CONTEXT.setMaterialsImpactSound("bullet_1_rock", 1f, CompatibleMaterial.WOOD);
         
