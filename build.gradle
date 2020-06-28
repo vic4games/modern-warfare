@@ -5,8 +5,8 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        flatDir dirs: '/Users/victor-jr/Development/proguard5.2.1/lib'
-        flatDir dirs: '/Users/victor-jr/Development/weaponlib-1.12.2/build/libs'
+        flatDir dirs: '/Users/victor/Development/proguard5.2.1/lib'
+        flatDir dirs: '/Users/victor/Development/weaponlib-1.12.2/build/libs'
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
@@ -49,7 +49,7 @@ dependencies {
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
 
-    compile files('/Users/victor-jr/Development/weaponlib-1.12.2/build/libs/weaponlib-1.0.jar')
+    compile files('/Users/victor/Development/weaponlib-1.12.2/build/libs/weaponlib-1.0.jar')
 
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
