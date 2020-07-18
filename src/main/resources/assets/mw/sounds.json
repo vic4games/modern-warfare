@@ -1,4 +1,40 @@
 {
+  "vehicle-driving": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "mw:vehicle-driving",
+        "stream": false
+      }
+    ]
+  },
+  "vehicle-enter": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "mw:vehicle-enter",
+        "stream": false
+      }
+    ]
+  },
+  "vehicle-exit": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "mw:vehicle-exit",
+        "stream": false
+      }
+    ]
+  },
+  "vehicle-idle": {
+    "category": "master",
+    "sounds": [
+      {
+        "name": "mw:vehicle-idle",
+        "stream": false
+      }
+    ]
+  },
   "hurt": {
     "category": "master",
     "sounds": [

@@ -7,11 +7,14 @@ import com.vicmatskiv.mw.items.melee.BaseballBatNailsFactory;
 import com.vicmatskiv.mw.items.melee.GasCanFactory;
 import com.vicmatskiv.mw.items.melee.NightStickFactory;
 import com.vicmatskiv.mw.items.melee.TacticalTomahawkFactory;
+import com.vicmatskiv.mw.vehicle.SampleVehicleFactory;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
+import com.vicmatskiv.weaponlib.vehicle.ItemVehicle;
 
 import net.minecraft.client.model.ModelBiped;
 
@@ -168,12 +171,22 @@ public class CommonProxy {
         
         new GasCanFactory().createMelee(this);
         TileEntities.init(this);
+        
+        
+        
+//        ItemVehicle itemVehicle = new ItemVehicle(EntityVehicle.Type.OAK);
+//        compatibility.registerItem(ModernWarfareMod.MODID, itemVehicle, "Vehicle");
+
+        
+//        compatibility.registerEgg(ModernWarfareMod.MOD_CONTEXT, EntityVehicle.class, "EntityVehicle" + 20010, 0xA0A010, 0xA0A010);
+
     }
 
     public void init(ModernWarfareMod mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {
         ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID);
         
         Entities.init(this);
+        new SampleVehicleFactory().createVehicle(ModernWarfareMod.MOD_CONTEXT);
         
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
     }
