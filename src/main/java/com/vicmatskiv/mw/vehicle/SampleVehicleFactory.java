@@ -35,7 +35,7 @@ public class SampleVehicleFactory implements VehicleFactory {
                 .withPartPosition(VehiclePart.MAIN, c -> {
 //                    GL11.glTranslatef(0.000000f, -1.449999f, 0f);
                     Positioners.position(
-                            0.000000f, -1.400000f, -1.600000f,
+                            0.000000f, -1.500000f, -1.600000f,
                             0.000000f, 0.000000f, 0.000000f,
                             0.000000f, 0.000000f, 0.000000f,
                             1.200000f, 1.200000f, 1.200000f
