@@ -98,7 +98,7 @@ public class HK_G95Factory implements GunFactory {
         
         // .withInaccuracy(1)
         
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine/ Squad-Automatic Weapon", 
         "Damage: 6", 

@@ -75,7 +75,7 @@ public class AX50Factory implements GunFactory {
         .withReloadSound("ax50_reload")
         .withUnloadSound("ax50_unload")
         .withInspectSound("inspection")
-        .withDrawSound("noaction_draw")
+        .withDrawSound("ax50_draw")
         .withReloadingTime(40)
         .withCrosshair("gun")
         .withCrosshairRunning("Running")
@@ -85,7 +85,7 @@ public class AX50Factory implements GunFactory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.14f)
         .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Anti-Materiel Sniper Rifle",
         "Damage: 20", 
@@ -276,46 +276,46 @@ public class AX50Factory implements GunFactory {
             			GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(2F, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.335f, 1.35f, 0.5f);
+                        GL11.glTranslatef(0.335f, 1.65f, 0.1f);
                     }, 180, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(3F, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.335f, 1.35f, 0.5f);
+                        GL11.glTranslatef(0.335f, 1.65f, 0.1f);
                     }, 130, 70),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(6F, 0f, 0f, 1f);
                         GL11.glRotatef(-1F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.305f, 1.35f, 0.6f);
+                        GL11.glTranslatef(0.305f, 1.65f, 0.2f);
                     }, 100, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(8F, 0f, 0f, 1f);
                         GL11.glRotatef(-2F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.305f, 1.35f, 0.55f);
+                        GL11.glTranslatef(0.305f, 1.65f, 0.15f);
                     }, 40, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(7F, 0f, 0f, 1f);
                         GL11.glRotatef(-2F, 1f, 0f, 0f);
-                        GL11.glTranslatef(0.305f, 1.35f, 0.53f);
+                        GL11.glTranslatef(0.305f, 1.65f, 0.13f);
                     }, 90, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(2F, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.335f, 1.35f, 0.5f);
+                        GL11.glTranslatef(0.335f, 1.65f, 0.1f);
                     }, 120, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(1F, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.335f, 1.35f, 0.5f);
+                        GL11.glTranslatef(0.335f, 1.65f, 0.1f);
                     }, 100, 0)
                     
                     )
@@ -942,7 +942,7 @@ public class AX50Factory implements GunFactory {
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(0.345f, 1.35f, 0.6f);
+                GL11.glTranslatef(0.345f, 1.35f, 0.5f);
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
@@ -960,7 +960,7 @@ public class AX50Factory implements GunFactory {
             .withFirstPersonPositioningZoomingRecoiled((renderContext) -> {
             	GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glTranslatef(0.345f, 1.35f, 0.7f);
+                GL11.glTranslatef(0.345f, 1.35f, 0.6f);
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {

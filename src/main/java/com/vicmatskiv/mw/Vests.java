@@ -214,6 +214,26 @@ public class Vests {
         .build(ModernWarfareMod.MOD_CONTEXT);
         
         new ItemVest.Builder()
+        .withName("usmc_vest")
+        .withDamageReduceAmount(25) // use numbers from 1 to 8
+        .withDurability(100) // works the same way as shield's max capacity
+        .withTab(CreativeTabs.MISC)
+        .withModel(new com.vicmatskiv.mw.models.USMCVest())
+        .withModelTextureName("usmc.png")
+        .withCustomEquippedPositioning((player, stack) -> {
+            GL11.glScalef(0.8f, 0.8f, 0.8f);
+            GL11.glTranslatef(0f, 0f, 0f);
+            GL11.glRotatef(0F, 0f, 0f, 1f);
+        })
+        .withInventoryPositioning(stack -> {
+            GL11.glScalef(1.3f, 1.3f, 1.3f);
+            GL11.glTranslatef(0f, -0.55f, 0f);
+            GL11.glRotatef(-200F, 0f, 1f, 0f);
+            GL11.glRotatef(-15F, 1f, 0f, 0f);
+        })
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new ItemVest.Builder()
         .withName("umbrella_corp_vest")
         .withDamageReduceAmount(25) // use numbers from 1 to 8
         .withDurability(100) // works the same way as shield's max capacity
@@ -432,6 +452,26 @@ public class Vests {
             GL11.glRotatef(-15F, 1f, 0f, 0f);
         })
         .build(ModernWarfareMod.MOD_CONTEXT);
+        
+//        new ItemVest.Builder()
+//        .withName("scpguard_vest")
+//        .withDamageReduceAmount(25) // use numbers from 1 to 8
+//        .withDurability(100) // works the same way as shield's max capacity
+//        .withTab(CreativeTabs.MISC)
+//        .withModel(new com.vicmatskiv.mw.models.SCPGuardVest())
+//        .withModelTextureName("scpguard.png")
+//        .withCustomEquippedPositioning((player, stack) -> {
+//            GL11.glScalef(0.8f, 0.8f, 0.8f);
+//            GL11.glTranslatef(0f, 0f, 0f);
+//            GL11.glRotatef(0F, 0f, 0f, 1f);
+//        })
+//        .withInventoryPositioning(stack -> {
+//            GL11.glScalef(1.3f, 1.3f, 1.3f);
+//            GL11.glTranslatef(0f, -0.55f, 0f);
+//            GL11.glRotatef(-200F, 0f, 1f, 0f);
+//            GL11.glRotatef(-15F, 1f, 0f, 0f);
+//        })
+//        .build(ModernWarfareMod.MOD_CONTEXT);
         
         new ItemVest.Builder()
         .withName("wfi_task_force_vest")

@@ -38,7 +38,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
                 .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
                 .withPrimaryEquipmentDropChance(1f)
 //                .withSpawn(1, 1, 7, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
-                .withSpawnEgg(0xA0A000, 0xA0A010)
+//                .withSpawnEgg(0xA0A000, 0xA0A010) 
                 .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit1.png")
                 .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit3.png")
                 .withTexturedModelVariant("com.vicmatskiv.mw.models.Biped", "bandit4.png")

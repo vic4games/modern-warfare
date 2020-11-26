@@ -57,13 +57,13 @@ public class L131A1Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.18f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Service Pistol", 
         "Damage: 5", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
-        "Rate of Fire: 50/100",
+        "Rate of Fire: 70/100",
         "Magazines:",
         "17rnd 9x19mm L131A1 Magazine"))
         

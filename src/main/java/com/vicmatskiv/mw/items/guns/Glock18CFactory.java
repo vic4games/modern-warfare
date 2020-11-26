@@ -71,7 +71,7 @@ public class Glock18CFactory implements GunFactory {
         "50rnd 9x19mm Drum Magazine"))
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
-                Ores.SteelIngot)
+                Ores.INGOT_STEEL)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 2.5f, // x 

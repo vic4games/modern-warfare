@@ -64,7 +64,7 @@ public class Tokyo90Factory implements GunFactory {
         .withZoom(0.9f)
         .withMaxShots(1)
         .withPumpTimeout(610)
-        .withShootSound("r870")
+        .withShootSound("tokyo90")
         .withSilencedShootSound("ShotgunSilenced")
         .withReloadSound("drawweapon")
         .withReloadIterationSound("tokyo90_load_shell")
@@ -91,10 +91,10 @@ public class Tokyo90Factory implements GunFactory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",
-        "Damage per Pellet: 2",
+        "Damage per Pellet: 4",
         "Pellets per Shot: 12", 
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: PUMP ACTION",
@@ -1187,7 +1187,7 @@ public class Tokyo90Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(2f)
+        .withSpawnEntityDamage(4f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

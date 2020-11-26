@@ -327,14 +327,14 @@ public class AK12Factory {
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
         .withCompatibleAttachment(Attachments.Bipod, (model) -> {
-            GL11.glTranslatef(-0.185F, -0.23F, -3.3F);
+            GL11.glTranslatef(-0.185F, -0.2F, -3.3F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
         .withCompatibleAttachment(Attachments.VGrip, (model) -> {
             GL11.glTranslatef(-0.185F, -0.23F, -3F);
             GL11.glScaled(0.8F, 0.8F, 0.8F);
         })
-        .withCompatibleAttachment(Attachments.AK15ironsight, true, (model) -> {
+        .withCompatibleAttachment(Attachments.AK12ironsight, true, (model) -> {
             if(model instanceof AK15ironsight) {
                 GL11.glTranslatef(-0.16F, -1.39F, -0.25F);
                 GL11.glScaled(0.5F, 0.5F, 0.5F);

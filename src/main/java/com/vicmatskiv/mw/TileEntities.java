@@ -3,15 +3,18 @@ package com.vicmatskiv.mw;
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
+import com.vicmatskiv.weaponlib.tile.CustomTileEntity;
+import com.vicmatskiv.weaponlib.tile.CustomTileEntityBlock;
 import com.vicmatskiv.weaponlib.tile.LootBoxConfiguration;
 
-import net.minecraft.init.Items;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.EnumDifficulty;
 
 public class TileEntities {
 
     public static void init(CommonProxy commonProxy) {
-        
+    	
         new LootBoxConfiguration()
         .withMaterial(CompatibleMaterial.ROCK)
         .withName("weapons_case")
@@ -19,23 +22,34 @@ public class TileEntities {
         .withTextureName("textures/models/gun_case.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(
+        		blockState -> {
+        			AxisAlignedBB boundingBox = null;
+        			EnumFacing facing = blockState.getValue(CustomTileEntityBlock.FACING);
+        			switch(facing) {
+        			case WEST:
+        				boundingBox = new AxisAlignedBB(0.82, 0, -0.65, 0.18, 0.3, 1.6);
+        				break;
+        			case EAST:
+        				boundingBox = new AxisAlignedBB(0.81, 0, -0.6, 0.18, 0.3, 1.65);
+        				break;
+        			case NORTH:
+        				boundingBox = new AxisAlignedBB(-0.58, 0, 0.2, 1.63, 0.3, 0.8);
+        				break;
+        			case SOUTH:
+        				boundingBox = new AxisAlignedBB(-0.65, 0, 0.2, 1.6, 0.3, 0.8);
+        				break;
+        			default:
+        			}
+        			return boundingBox;
+        		}
+        )
         .withPositioning(tileEntity -> {
             GL11.glScalef(0.6f, 0.6f, 0.6f);
             GL11.glTranslatef(0.7f, 1.1f, 0.5f);
         })
-        .withEquipmentOption(Guns.M4A1, EnumDifficulty.EASY, 1f)
-//        .withEquipmentOption(Guns.M38, EnumDifficulty.EASY, 1f)
-        .withEquipmentOption(Guns.M16A4, EnumDifficulty.EASY, 0.9f)
-        .withEquipmentOption(Guns.M110, EnumDifficulty.EASY, 0.7f)
-        .withEquipmentOption(Guns.M500A2, EnumDifficulty.EASY, 0.7f)
-        .withEquipmentOption(Guns.M40A6, EnumDifficulty.EASY, 0.05f)
-        .withEquipmentOption(Bullets.Bullet308Winchester, EnumDifficulty.EASY, 2f, 2)
-        .withEquipmentOption(Bullets.Bullet762x51, EnumDifficulty.EASY, 3f, 2)
-        .withEquipmentOption(Bullets.Bullet556x45, EnumDifficulty.EASY, 5f, 5)
-        .withEquipmentOption(Bullets.Shotgun12Guage, EnumDifficulty.EASY, 2f, 1)
-        .withEquipmentOption(Bullets.Bullet9x19mm, EnumDifficulty.EASY, 7f, 1)
-        .withEquipmentOption(Bullets.Bullet45ACP, EnumDifficulty.EASY, 6f, 1)
-        .withEquipmentOption(null, EnumDifficulty.EASY, 25f, 1)
+//        .withEquipmentOption(Guns.M4A1, EnumDifficulty.EASY, 1f)
+//        .withEquipmentOption(null, EnumDifficulty.EASY, 25f, 1)
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -43,18 +57,38 @@ public class TileEntities {
         .withMaterial(CompatibleMaterial.ROCK)
         .withName("weapons_case_small")
         .withModelClassName("com.vicmatskiv.mw.models.GunCaseSmall")
-        .withTextureName("textures/models/gun_case.png")
+        .withTextureName("textures/models/gun_case_small.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(
+        		blockState -> {
+        			AxisAlignedBB boundingBox = null;
+        			EnumFacing facing = blockState.getValue(CustomTileEntityBlock.FACING);
+        			switch(facing) {
+        			case WEST:
+        				boundingBox = new AxisAlignedBB(0.09, 0, 0.09, 0.77, 0.33, 0.93);
+        				break;
+        			case EAST:
+        				boundingBox = new AxisAlignedBB(0.22, 0, 0.05, 0.92, 0.33, 0.9);
+        				break;
+        			case NORTH:
+        				boundingBox = new AxisAlignedBB(0.05, 0, 0.1, 0.9, 0.33, 0.77);
+        				break;
+        			case SOUTH:
+        				boundingBox = new AxisAlignedBB(0.1, 0, 0.23, 0.95, 0.33, 0.92);
+        				break;
+        			default:
+        			}
+        			return boundingBox;
+        		}
+        )
         .withPositioning(tileEntity -> {
             GL11.glScalef(0.6f, 0.6f, 0.6f);
             GL11.glTranslatef(0.8f, 1.1f, 0.8f);
         })
-        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
-        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
-        .withEquipmentOption(Bullets.Bullet9x19mm, EnumDifficulty.EASY, 70f, 1)
-        .withEquipmentOption(Bullets.Bullet45ACP, EnumDifficulty.EASY, 30f, 1)
-        .withEquipmentOption(null, EnumDifficulty.EASY, 40f, 1)
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Bullets.Bullet9x19mm, EnumDifficulty.EASY, 70f, 1)
+//        .withEquipmentOption(null, EnumDifficulty.EASY, 40f, 1)
 //        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
@@ -66,25 +100,35 @@ public class TileEntities {
         .withTextureName("textures/models/militarycrate.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(
+        		blockState -> {
+        			AxisAlignedBB boundingBox = null;
+        			EnumFacing facing = blockState.getValue(CustomTileEntityBlock.FACING);
+        			switch(facing) {
+        			case WEST:
+        				boundingBox = new AxisAlignedBB(0.03, 0, -0.43, 0.97, 0.54, 1.47);
+        				break;
+        			case EAST:
+        				boundingBox = new AxisAlignedBB(0.03, 0, -0.43, 0.97, 0.54, 1.47);
+        				break;
+        			case NORTH:
+        				boundingBox = new AxisAlignedBB(-0.47, 0, 0.03, 1.44, 0.54, 0.98);
+        				break;
+        			case SOUTH:
+        				boundingBox = new AxisAlignedBB(-0.43, 0, 0.03, 1.46, 0.54, 0.98);
+        				break;
+        			default:
+        			}
+        			return boundingBox;
+        		}
+        )
         .withPositioning(tileEntity -> {
             GL11.glScalef(0.6f, 0.6f, 0.6f);
-            GL11.glTranslatef(0.8f, 1.15f, 0.8f);
+            GL11.glTranslatef(0.8f, 1.15f, 0.75f);
         })
-        .withEquipmentOption(Guns.MP443, EnumDifficulty.EASY, 4f)
-        .withEquipmentOption(Guns.AK15, EnumDifficulty.EASY, 1f)
-//        .withEquipmentOption(Guns.AK101, EnumDifficulty.EASY, 1f)
-        .withEquipmentOption(Guns.KBP9A91, EnumDifficulty.EASY, 1.3f)
-        .withEquipmentOption(Guns.SR3, EnumDifficulty.EASY, 0.8f)
-        .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.8f)
-        .withEquipmentOption(Guns.KS23, EnumDifficulty.EASY, 0.6f)
-         .withEquipmentOption(Guns.SV98, EnumDifficulty.EASY, 0.4f)
-        .withEquipmentOption(Bullets.Bullet762x54, EnumDifficulty.EASY, 2f, 1)
-        .withEquipmentOption(Bullets.Bullet762x51, EnumDifficulty.EASY, 2f, 2)
-        .withEquipmentOption(Bullets.Bullet762x39, EnumDifficulty.EASY, 3f, 5)
-        .withEquipmentOption(Bullets.Shotgun4G, EnumDifficulty.EASY, 2f, 1)
-        .withEquipmentOption(Bullets.Bullet9x19mm, EnumDifficulty.EASY, 5, 1)
-        .withEquipmentOption(Bullets.Bullet9x39mm, EnumDifficulty.EASY, 4f, 4)
-        .withEquipmentOption(null, EnumDifficulty.EASY, 20f, 1)
+//        .withEquipmentOption(Guns.MP443, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.AK15, EnumDifficulty.EASY, 1f)
+//        .withEquipmentOption(null, EnumDifficulty.EASY, 20f, 1)
 //        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
@@ -96,21 +140,33 @@ public class TileEntities {
         .withTextureName("textures/models/ammobox.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(
+        		blockState -> {
+        			AxisAlignedBB boundingBox = null;
+        			EnumFacing facing = blockState.getValue(CustomTileEntityBlock.FACING);
+        			switch(facing) {
+        			case WEST:
+        				boundingBox = new AxisAlignedBB(0.35, 0, 0.15, 0.7, 0.5, 0.85);
+        				break;
+        			case EAST:
+        				boundingBox = new AxisAlignedBB(0.35, 0, 0.15, 0.7, 0.5, 0.85);
+        				break;
+        			case NORTH:
+        				boundingBox = new AxisAlignedBB(0.15, 0, 0.35, 0.83, 0.5, 0.7);
+        				break;
+        			case SOUTH:
+        				boundingBox = new AxisAlignedBB(0.15, 0, 0.35, 0.83, 0.5, 0.7);
+        				break;
+        			default:
+        			}
+        			return boundingBox;
+        		}
+        )
         .withPositioning(tileEntity -> {
             GL11.glScalef(0.4f, 0.4f, 0.4f);
             GL11.glTranslatef(1.2f, 2.5f, 1.1f);
         })
-        .withEquipmentOption(Bullets.Bullet762x54, EnumDifficulty.EASY, 20f, 1)
-        .withEquipmentOption(Bullets.Bullet762x51, EnumDifficulty.EASY, 25f, 2)
-        .withEquipmentOption(Bullets.Bullet762x39, EnumDifficulty.EASY, 30f, 3)
-        .withEquipmentOption(Bullets.Shotgun4G, EnumDifficulty.EASY, 15f, 1)
-        .withEquipmentOption(Bullets.Bullet9x19mm, EnumDifficulty.EASY, 130f, 1)
-        .withEquipmentOption(Bullets.Bullet45ACP, EnumDifficulty.EASY, 110f, 1)
-        .withEquipmentOption(Bullets.Bullet9x39mm, EnumDifficulty.EASY, 80f, 3)
-        .withEquipmentOption(Bullets.Bullet308Winchester, EnumDifficulty.EASY, 20f, 2)
-        .withEquipmentOption(Bullets.Bullet556x45, EnumDifficulty.EASY, 30f, 3)
-        .withEquipmentOption(Bullets.Shotgun12Guage, EnumDifficulty.EASY, 15f, 1)
-        .withEquipmentOption(null, EnumDifficulty.EASY, 200f, 1)
+//        .withEquipmentOption(Bullets.Bullet762x54, EnumDifficulty.EASY, 20f, 1)
 //        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
@@ -127,18 +183,8 @@ public class TileEntities {
             GL11.glTranslatef(0.4f, 1.15f, 0.6f);
         })
         //temporary
-        .withEquipmentOption(Guns.M4A1, EnumDifficulty.EASY, 1f)
-//        .withEquipmentOption(Guns.M38, EnumDifficulty.EASY, 1f)
-        .withEquipmentOption(Guns.M16A4, EnumDifficulty.EASY, 0.9f)
-        .withEquipmentOption(Guns.M110, EnumDifficulty.EASY, 0.7f)
-        .withEquipmentOption(Guns.M500A2, EnumDifficulty.EASY, 0.7f)
-        .withEquipmentOption(Guns.M40A6, EnumDifficulty.EASY, 0.05f)
-        .withEquipmentOption(Bullets.Bullet308Winchester, EnumDifficulty.EASY, 2f, 2)
-        .withEquipmentOption(Bullets.Bullet762x51, EnumDifficulty.EASY, 3f, 2)
-        .withEquipmentOption(Bullets.Bullet556x45, EnumDifficulty.EASY, 5f, 5)
-        .withEquipmentOption(Bullets.Shotgun12Guage, EnumDifficulty.EASY, 2f, 1)
-        .withEquipmentOption(Bullets.Bullet45ACP, EnumDifficulty.EASY, 6f, 1)
-        .withEquipmentOption(null, EnumDifficulty.EASY, 23f, 1)
+//        .withEquipmentOption(Guns.M4A1, EnumDifficulty.EASY, 1f)
+//        .withEquipmentOption(null, EnumDifficulty.EASY, 23f, 1)
 //        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
@@ -277,8 +323,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(1.4f, 1.15f, 1.4f);
-            GL11.glTranslatef(0.35f, -0.18f, 0.35f);
+        	GL11.glScalef(0.9f, 0.8f, 0.9f);
+            GL11.glTranslatef(0.55f, 0.4f, 0.55f);
 //            GL11.glRotatef(90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -295,8 +341,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(1.4f, 1.15f, 1.4f);
-            GL11.glTranslatef(0.35f, -0.18f, 0.35f);
+        	GL11.glScalef(0.9f, 0.8f, 0.9f);
+            GL11.glTranslatef(0.55f, 0.4f, 0.55f);
 //            GL11.glRotatef(90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -763,9 +809,9 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.9f, 0.9f, 0.9f);
-            GL11.glTranslatef(0.5f, 0.2f, 0.55f);
-            GL11.glRotatef(-90F, 0f, 1f, 0f);
+            GL11.glScalef(1.1f, 1.2f, 1f);
+            GL11.glTranslatef(0.42f, -0.25f, 0.5f);
+//            GL11.glRotatef(-90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
 //        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
@@ -781,8 +827,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.9f, 0.9f, 0.9f);
-            GL11.glTranslatef(0.5f, 0.2f, 0.55f);
+        	GL11.glScalef(1.1f, 1.2f, 1.1f);
+            GL11.glTranslatef(0.42f, -0.25f, 0.5f);
             GL11.glRotatef(-45F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -889,8 +935,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(1f, 1f, 1f);
-            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glScalef(1f, 0.95f, 1f);
+            GL11.glTranslatef(0.5f, 0.085f, 0.5f);
             GL11.glRotatef(-90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -903,7 +949,7 @@ public class TileEntities {
         .withMaterial(CompatibleMaterial.WOOD)
         .withName("wooden_crate_opened")
         .withModelClassName("com.vicmatskiv.mw.models.WoodenCrateOpened")
-        .withTextureName("textures/models/woodencrate.png")
+        .withTextureName("textures/models/woodencrateopened.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
@@ -961,8 +1007,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(1f, 1f, 1f);
-            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glScalef(1.5f, 1.5f, 1.5f);
+            GL11.glTranslatef(0.5f, -0.5f, 0.5f);
             GL11.glRotatef(-45F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -1267,8 +1313,8 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.8f, 0.8f, 0.8f);
-            GL11.glTranslatef(0.49f, 1.6f, 0.6f);
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0.8f, 0.5f);
             GL11.glRotatef(-90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -1281,12 +1327,12 @@ public class TileEntities {
         .withMaterial(CompatibleMaterial.IRON)
         .withName("electric_box_opened")
         .withModelClassName("com.vicmatskiv.mw.models.ElectricBoxOpened")
-        .withTextureName("textures/models/electricbox.png")
+        .withTextureName("textures/models/electricboxopened.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.8f, 0.8f, 0.8f);
-            GL11.glTranslatef(0.49f, 1.6f, 0.6f);
+        	GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0.8f, 0.5f);
             GL11.glRotatef(-90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
@@ -1377,7 +1423,7 @@ public class TileEntities {
         .withPositioning(tileEntity -> {
             GL11.glScalef(0.8f, 0.8f, 0.8f);
             GL11.glTranslatef(0.55f, 0.4f, 0.62f);
-            GL11.glRotatef(-90F, 0f, 1f, 0f);
+            GL11.glRotatef(180F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
 //        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
@@ -1573,9 +1619,9 @@ public class TileEntities {
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.6f, 0.6f, 0.6f);
-            GL11.glTranslatef(0.8f, 1f, 0.8f);
-            GL11.glRotatef(-45F, 0f, 1f, 0f);
+            GL11.glScalef(0.8f, 0.8f, 0.8f);
+            GL11.glTranslatef(0.6f, 0.35f, 0.6f);
+//            GL11.glRotatef(-45F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
 //        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
@@ -1586,14 +1632,14 @@ public class TileEntities {
         new LootBoxConfiguration()
         .withMaterial(CompatibleMaterial.IRON)
         .withName("FloodLight")
-        .withModelClassName("com.vicmatskiv.mw.models.FloodLight")
-        .withTextureName("textures/models/duelfloodlight.png")
+        .withModelClassName("com.vicmatskiv.mw.models.Floodlight")
+        .withTextureName("textures/models/floodlight.png")
 //        .withEquipementDispenseSound(sound)
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
-            GL11.glScalef(0.8f, 0.8f, 0.8f);
-            GL11.glTranslatef(0.6f, 0.37f, 0.6f);
-            GL11.glRotatef(-45F, 0f, 1f, 0f);
+            GL11.glScalef(0.9f, 0.9f, 0.9f);
+            GL11.glTranslatef(0.6f, 0.175f, 0.6f);
+//            GL11.glRotatef(-45F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
 //        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
@@ -1646,8 +1692,261 @@ public class TileEntities {
         .withCreativeTab(ModernWarfareMod.PropsTab)
         .withPositioning(tileEntity -> {
             GL11.glScalef(1f, 1f, 1f);
-            GL11.glTranslatef(0.5f, 0.05f, 0.5f);
-            GL11.glRotatef(-45F, 0f, 1f, 0f);
+            GL11.glTranslatef(0.5f, 0.05f, 0.6f);
+            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.IRON)
+        .withName("propanetank")
+        .withModelClassName("com.vicmatskiv.mw.models.PropaneTank")
+        .withTextureName("textures/models/propanetank.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(0.6f, 0.6f, 0.6f);
+            GL11.glTranslatef(0.85f, 1f, 0.85f);
+            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.IRON)
+        .withName("towablefloodlight")
+        .withModelClassName("com.vicmatskiv.mw.models.TowableFloodLight")
+        .withTextureName("textures/models/towablefloodlight.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.3f, 0f, 0.5f);
+            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.SAND)
+        .withName("hescobastion")
+        .withModelClassName("com.vicmatskiv.mw.models.HescoBastion")
+        .withTextureName("textures/models/hescobastion.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+//            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.SAND)
+        .withName("sandbag")
+        .withModelClassName("com.vicmatskiv.mw.models.Sandbag")
+        .withTextureName("textures/models/sandbag.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.SAND)
+        .withName("sandbagwall")
+        .withModelClassName("com.vicmatskiv.mw.models.SandbagWall")
+        .withTextureName("textures/models/sandbag.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("crossgravestone")
+        .withModelClassName("com.vicmatskiv.mw.models.CrossGravestone")
+        .withTextureName("textures/models/crossgravestone.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("crossgravestone2")
+        .withModelClassName("com.vicmatskiv.mw.models.CrossGravestone2")
+        .withTextureName("textures/models/crossgravestone2.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("crossgravestone3")
+        .withModelClassName("com.vicmatskiv.mw.models.CrossGravestone3")
+        .withTextureName("textures/models/crossgravestone3.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("gravestoneskull")
+        .withModelClassName("com.vicmatskiv.mw.models.GravestoneSkull")
+        .withTextureName("textures/models/gravestoneskull.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("gravestone")
+        .withModelClassName("com.vicmatskiv.mw.models.Gravestone")
+        .withTextureName("textures/models/gravestone.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.WOOD)
+        .withName("scarecrow")
+        .withModelClassName("com.vicmatskiv.mw.models.Scarecrow")
+        .withTextureName("textures/models/scarecrow.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(0.3, 0, 0.3, 0.7, 3.5, 0.7)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 0f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.CLOTH)
+        .withName("spookyghost")
+        .withModelClassName("com.vicmatskiv.mw.models.SpookyGhost")
+        .withTextureName("textures/models/spookyghost.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 1.05f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.CLOTH)
+        .withName("spookyghost2")
+        .withModelClassName("com.vicmatskiv.mw.models.SpookyGhost")
+        .withTextureName("textures/models/spookyghost2.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 1.05f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.CLOTH)
+        .withName("spookyghost3")
+        .withModelClassName("com.vicmatskiv.mw.models.SpookyGhost")
+        .withTextureName("textures/models/spookyghost3.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(1f, 1f, 1f);
+            GL11.glTranslatef(0.5f, 1.05f, 0.5f);
+            GL11.glRotatef(-90F, 0f, 1f, 0f);
         })
 //        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
 //        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)

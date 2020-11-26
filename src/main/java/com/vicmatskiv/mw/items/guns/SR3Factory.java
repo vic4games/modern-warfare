@@ -243,7 +243,7 @@ public class SR3Factory {
                 GL11.glScaled(0.15F, 0.15F, 0.15F);
             }
         })
-        .withCompatibleAttachment(Attachments.AK15ironsight, true, (model) -> {
+        .withCompatibleAttachment(Attachments.AK12ironsight, true, (model) -> {
             if(model instanceof AK15ironsight) {
                 GL11.glTranslatef(-0.16F, -1.42F, -1.8F);
                 GL11.glScaled(0.5F, 0.5F, 0.5F);

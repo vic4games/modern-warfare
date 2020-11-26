@@ -11,14 +11,15 @@ public class Guns {
     public static Item M249;
     public static Item M40A6;
     public static Item M110;
+    public static Item AR10SuperSASS;
     public static Item M1014;
     public static Item Super90;
     public static Item Supernova;
     public static Item M500A2;
     public static Item M38;
+    public static Item M16A1;
     public static Item M16A4;
     public static Item M4A1;
-    public static Item M45A1;
     public static Item P226;
     public static Item M9A1;
     
@@ -34,9 +35,9 @@ public class Guns {
     public static Item MP5A5;
     public static Item MP7;
     public static Item P90;
+    public static Item MAC10;
     public static Item ScarL;
     public static Item ScarH;
-    
     public static Item VP70;
     public static Item Glock19;
     public static Item SCCYCPX2;
@@ -60,6 +61,7 @@ public class Guns {
     public static Item F2000;
     public static Item G36C;
     public static Item AUG;
+    public static Item K2C1;
     public static Item SL8;
     public static Item G11;
     public static Item STG44;
@@ -90,6 +92,7 @@ public class Guns {
     public static Item ChiappaTripleCrown;
     public static Item QuadBarrelShotgun;
     public static Item M1897;
+    public static Item FNFAL;
     public static Item Mk14EBR;
     public static Item BrenMkII;
     public static Item M1941Johnson;
@@ -99,7 +102,9 @@ public class Guns {
     public static Item MG42;
     public static Item M60E4;
     public static Item StonerA1;
+    public static Item SSG08;
     public static Item L96A1;
+    public static Item PGMHecateII;
     public static Item AS50;
     public static Item M82;
     public static Item NTW20;
@@ -117,28 +122,54 @@ public class Guns {
     public static Item SOCOM_M4A1;
     public static Item M17;
     
-    // GSG9 Assault
+    public static Item AsiimovM4A1;
+    
+    // German Assault
     public static Item HK_G95;
     public static Item HK_P12;
     
-    //SAS Light Support
+    public static Item HK_416;
+    
+    // UK Light Support
     public static Item SA80;
     public static Item L131A1;
     
-    // GIGN Light
+    // French Light
     public static Item MP7A1;
     public static Item P2022;
     
-    // JTF2 Heavy CQB
+    public static Item MP7BlackIce;
+    
+    // Canada Heavy CQB
     public static Item C8SFW;
     public static Item Tokyo90;
     
-    // RAF Assault
+    // Russian Assault
     public static Item Kalashnikov_AK12;
     public static Item MP443_Grach;
     
-    // SAS Heavy Long Range
+    // UK Heavy Long Range
     public static Item AX50;
+    // and an L131A1
+    
+    // French Assault 
+    public static Item G36K;
+    // and a P2022
+    
+    // Soviet Assault
+    public static Item AK74;
+    public static Item MakarovPM;
+    
+    public static Item AKMVulcan;
+    
+    // Czech Assault
+    public static Item CZ805BrenS1;
+    
+    // CZ-805 Bren A1
+    public static Item CZ805BrenA1;
+    
+    // Remington-700
+    public static Item Remington700;
     
     
     // Video Games
@@ -165,6 +196,7 @@ public class Guns {
     public static Item Type2;
     public static Item Volk;
     public static Item M8A7;
+    public static Item OSIPR;
     public static Item Fatman;
     public static Item BFG9000;
     
@@ -176,14 +208,15 @@ public class Guns {
         M249 = new M249Factory().createGun(proxy);
         M40A6 = new M40A6Factory().createGun(proxy);
         M110 = new M110Factory().createGun(proxy);
+        AR10SuperSASS = new AR10SuperSASSFactory().createGun(proxy);
         M1014 = new M1014Factory().createGun(proxy);
         Super90 = new Super90Factory().createGun(proxy);
         Supernova = new SupernovaFactory().createGun(proxy);
         M500A2 = new M500A2Factory().createGun(proxy);
         M38 = new M38Factory().createGun(proxy);
+        M16A1 = new M16A1Factory().createGun(proxy);
         M16A4 = new M16A4Factory().createGun(proxy);
         M4A1 = new M4A1Factory().createGun(proxy);
-        M45A1 = new M45A1Factory().createGun(proxy);
         P226 = new P226Factory().createGun(proxy);
         M9A1 = new M9A1Factory().createGun(proxy);
         
@@ -199,20 +232,27 @@ public class Guns {
         MP5A5 = new MP5A5Factory().createGun(proxy);
         MP7 = new MP7Factory().createGun(proxy);
         P90 = new P90Factory().createGun(proxy);
+        MAC10 = new MAC10Factory().createGun(proxy);
         ScarL = new ScarLFactory().createGun(proxy);
         ScarH = new ScarHFactory().createGun(proxy);
         
         SOCOM_M4A1 = new SOCOM_M4A1Factory().createGun(proxy);
         M17 = new M17Factory().createGun(proxy);
         
+        AsiimovM4A1 = new AsiimovM4A1Factory().createGun(proxy);
+        
         HK_G95 = new HK_G95Factory().createGun(proxy);
         HK_P12 = new HK_P12Factory().createGun(proxy);
+        
+        HK_416 = new HK_416Factory().createGun(proxy);
         
         SA80 = new SA80Factory().createGun(proxy);
         L131A1 = new L131A1Factory().createGun(proxy);
         
         MP7A1 = new MP7A1Factory().createGun(proxy);
         P2022 = new P2022Factory().createGun(proxy);
+        
+        MP7BlackIce = new MP7BlackIceFactory().createGun(proxy);
         
         C8SFW = new C8SFWFactory().createGun(proxy);
         Tokyo90 = new Tokyo90Factory().createGun(proxy);
@@ -221,6 +261,19 @@ public class Guns {
         MP443_Grach = new MP443_GrachFactory().createGun(proxy);
         
         AX50 = new AX50Factory().createGun(proxy);
+        
+        G36K = new G36KFactory().createGun(proxy);
+        
+        AK74 = new AK74Factory().createGun(proxy);
+        MakarovPM = new MakarovPMFactory().createGun(proxy);
+        
+        AKMVulcan = new AKMVulcanFactory().createGun(proxy);
+        
+        CZ805BrenS1 = new CZ805BrenS1Factory().createGun(proxy);
+        
+        CZ805BrenA1 = new CZ805BrenA1Factory().createGun(proxy);
+        
+        Remington700 = new Remington700Factory().createGun(proxy);
         
         VP70 = new VP70Factory().createGun(proxy);
         Glock19 = new Glock19Factory().createGun(proxy);
@@ -245,6 +298,7 @@ public class Guns {
         F2000 = new F2000Factory().createGun(proxy);
         G36C = new G36CFactory().createGun(proxy);
         AUG = new AUGFactory().createGun(proxy);
+        K2C1 = new K2C1Factory().createGun(proxy);
         SL8 = new SL8Factory().createGun(proxy);
         G11 = new G11Factory().createGun(proxy);
         STG44 = new STG44Factory().createGun(proxy);
@@ -278,6 +332,7 @@ public class Guns {
         ChiappaTripleCrown = new ChiappaTripleCrownFactory().createGun(proxy);
         QuadBarrelShotgun = new QuadBarrelShotgunFactory().createGun(proxy);
         M1897 = new M1897Factory().createGun(proxy);
+        FNFAL = new FNFALFactory().createGun(proxy);
         Mk14EBR = new Mk14EBRFactory().createGun(proxy);
         BrenMkII = new BrenMkIIFactory().createGun(proxy);
         M1941Johnson = new M1941JohnsonFactory().createGun(proxy);
@@ -287,7 +342,9 @@ public class Guns {
         MG42 = new MG42Factory().createGun(proxy);
         M60E4 = new M60E4Factory().createGun(proxy);
         StonerA1 = new StonerA1Factory().createGun(proxy);
+        SSG08 = new SSG08Factory().createGun(proxy);
         L96A1 = new L96A1Factory().createGun(proxy);
+        PGMHecateII = new PGMHecateIIFactory().createGun(proxy);
         AS50 = new AS50Factory().createGun(proxy);
         M82 = new M82Factory().createGun(proxy);
         NTW20 = new NTW20Factory().createGun(proxy);
@@ -313,6 +370,7 @@ public class Guns {
         Type51 = new Type51Factory().createGun(proxy);
         M41A = new M41AFactory().createGun(proxy);
         M56 = new M56Factory().createGun(proxy);
+        OSIPR = new OSIPRFactory().createGun(proxy);
         ESA23 = new ESA23Factory().createGun(proxy);
         Fatman = new FatmanFactory().createGun(proxy);
         BFG9000 = new BFG9000Factory().createGun(proxy);

@@ -96,7 +96,7 @@ public class M32MGLFactory implements GunFactory {
         .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
-                Ores.SteelIngot)
+                Ores.INGOT_STEEL)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 4f, // x 

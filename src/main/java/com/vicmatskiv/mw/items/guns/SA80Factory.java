@@ -99,7 +99,7 @@ public class SA80Factory implements GunFactory {
         
         // .withInaccuracy(1)
         
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine/ Squad-Automatic Weapon", 
         "Damage: 5.5", 
@@ -107,7 +107,7 @@ public class SA80Factory implements GunFactory {
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
         "Magazines:",
-        "30rnd 5.56x45mm NATO STANAG Magazine"))
+        "60rnd 5.56x45mm NATO STANAG Magazine"))
          
          .withScreenShaking(RenderableState.SHOOTING, 
                     3.5f, // x 

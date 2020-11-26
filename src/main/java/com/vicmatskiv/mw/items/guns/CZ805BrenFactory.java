@@ -196,11 +196,11 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glTranslatef(-0.16F, -1.5F, -0.3F);
                 GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof M27rearsight) {
-                GL11.glTranslatef(-0.16F, -1.5F, -0.3F);
-                GL11.glScaled(0F, 0F, 0F);
+            	GL11.glTranslatef(-0.045F, -0.92F, 0.3F);
+                GL11.glScaled(0.35F, 0.35F, 0.35F);
             } else if(model instanceof MBUSiron) {
                 GL11.glTranslatef(-0.068F, -1F, 0.3F);
-                GL11.glScaled(0.55F, 0.5F, 0.55F);
+                GL11.glScaled(0F, 0F, 0F);
             }
         })
         .withCompatibleAttachment(Attachments.NightRaider, (player, stack) -> {
@@ -363,15 +363,15 @@ public class CZ805BrenFactory implements GunFactory {
         .withCompatibleAttachment(AuxiliaryAttachments.M4Rail, true, (model) -> {
             if(model instanceof AKRail) {
                 GL11.glTranslatef(0.2F, -0.44F, -2.6F);
-                GL11.glScaled(0.6F, 0.55F, 0.4F);
+                GL11.glScaled(0F, 0F, 0F);
                 GL11.glRotatef(90F, 0f, 0f, 1f);
             } else if(model instanceof AKRail2) {
                 GL11.glTranslatef(-0.2F, -0.3F, -2.6F);
-                GL11.glScaled(0.6F, 0.55F, 0.4F);
+                GL11.glScaled(0F, 0F, 0F);
                 GL11.glRotatef(-90F, 0f, 0f, 1f);
             } else if(model instanceof AKRail3) {
                 GL11.glTranslatef(0.07F, -0.09F, -2.55F);
-                GL11.glScaled(0.6F, 0.6F, 0.6F);
+                GL11.glScaled(0F, 0F, 0F);
                 GL11.glRotatef(180F, 0f, 0f, 1f);
             } else if(model instanceof AKRail4) {
                 GL11.glTranslatef(-0.087F, -0.76F, -0.95f);
@@ -381,7 +381,7 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glScaled(0.6F, 0.6F, 0.68F);
             }
         })
-        .withTextureNames("gun")
+        .withTextureNames("cz805bren")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
             .withModel(new CZ805Bren())
@@ -404,9 +404,9 @@ public class CZ805BrenFactory implements GunFactory {
                 
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 1f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.6f, -1.299999f);
+                GL11.glTranslatef(-0.3f, 0.6f, -1.299999f);
                 
 //                GL11.glRotatef(-15F, 1f, 0f, 0f);
 //                GL11.glRotatef(44F, 0f, 1f, 0f);
@@ -417,9 +417,9 @@ public class CZ805BrenFactory implements GunFactory {
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(8F, 0f, 0f, 1f);
+                GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.35f, 0.6f, -0.85f);
+                GL11.glTranslatef(-0.3f, 0.6f, -0.95f);
                 GL11.glRotatef(-1F, 1f, 0f, 0f); 
                 })
                 
@@ -863,7 +863,7 @@ public class CZ805BrenFactory implements GunFactory {
                 // Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, -0.1f, 0f);
+                    GL11.glTranslatef(0F, -0.14f, 0f);
                 } 
                 
                 // ACOG Zoom
@@ -960,7 +960,7 @@ public class CZ805BrenFactory implements GunFactory {
              // Standard Iron Sight Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AKMIron)) {
                     //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, -0.1f, 0f);
+                	 GL11.glTranslatef(0F, -0.14f, 0f);
                 } 
                 
                 // ACOG Zoom

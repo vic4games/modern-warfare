@@ -35,11 +35,11 @@ public class MP443_GrachFactory implements GunFactory {
         return new Weapon.Builder()
         .withModId(ModernWarfareMod.MODID)
         .withName("mp443_grach")
-        .withFireRate(0.5f)
+        .withFireRate(0.7f)
         .withRecoil(2f)
         .withZoom(0.9f)
         .withMaxShots(1)
-        .withShootSound("mp443")
+        .withShootSound("mp443_grach")
         .withSilencedShootSound("m9a1_silenced")
         .withReloadSound("mp443_grach_reload")
         .withUnloadSound("mp443_grach_unload")
@@ -55,13 +55,13 @@ public class MP443_GrachFactory implements GunFactory {
         .withFlashOffsetY(() -> 0.18f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Military Service Pistol", 
-        "Damage: 5.5", 
+        "Damage: 5", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
-        "Rate of Fire: 50/100",
+        "Rate of Fire: 70/100",
         "Magazines:",
         "18rnd 9x19mm 443 Magazine"))
         
@@ -70,9 +70,6 @@ public class MP443_GrachFactory implements GunFactory {
                 0.1f, // y
                 0.5f) // z
         
-         .withCrafting(CraftingComplexity.LOW,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCompatibleAttachment(AuxiliaryAttachments.MP443Slide, true, (model) -> {
             if(model instanceof MP443Slide) {
                 GL11.glScaled(1F, 1F, 1F);
@@ -938,7 +935,7 @@ public class MP443_GrachFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(5.5f)
+        .withSpawnEntityDamage(5f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

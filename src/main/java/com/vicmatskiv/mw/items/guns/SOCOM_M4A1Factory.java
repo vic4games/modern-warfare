@@ -96,10 +96,10 @@ public class SOCOM_M4A1Factory implements GunFactory {
         
         // .withInaccuracy(1)
         
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine", 
-        "Damage: 7.5", 
+        "Damage: 6", 
         "Cartridge: 5.56x45mm NATO",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
@@ -130,7 +130,7 @@ public class SOCOM_M4A1Factory implements GunFactory {
                 GL11.glTranslatef(-0.055F, -1.35F, -4.6F);
                 GL11.glScaled(0.8F, 0.68F, 1F);
           } else if(model instanceof FALIron) {
-                  GL11.glTranslatef(-0.185F, -1.53F, -4.6F);
+                  GL11.glTranslatef(-0.185F, -1.55F, -4.6F);
                   GL11.glScaled(0.55F, 0.5F, 1F);
               }
         })
@@ -221,7 +221,7 @@ public class SOCOM_M4A1Factory implements GunFactory {
                 GL11.glTranslatef(0.25F, -1.55F, -2F);
                 GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof FALIron) {
-                GL11.glTranslatef(0.127F, -1.77F, -2.22F);
+                GL11.glTranslatef(0.127F, -1.82F, -2.22F);
                 GL11.glScaled(0F, 0F, 0F);
             } else if(model instanceof M14Iron) {
                 GL11.glTranslatef(0.129F, -1.63F, -2.08F);
@@ -246,10 +246,10 @@ public class SOCOM_M4A1Factory implements GunFactory {
             GL11.glTranslatef(-0.2F, -1.235F, -6.5F);
             GL11.glScaled(1F, 1F, 1F);
         })
-        .withTextureNames("gun")
+        .withTextureNames("m4a1")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
-            .withModel(new C8SFW())
+            .withModel(new M4A1())
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.5F, 0.5F, 0.5F);
                 GL11.glTranslatef(0, 0f, 3f);
@@ -1187,7 +1187,7 @@ public class SOCOM_M4A1Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(7.5f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
          

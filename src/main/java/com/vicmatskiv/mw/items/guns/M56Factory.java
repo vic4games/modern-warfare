@@ -96,7 +96,7 @@ public class M56Factory implements GunFactory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
-                Ores.SteelIngot)
+                Ores.INGOT_STEEL)
         .withCompatibleBullet(Bullets.Bullet556x45, (model) -> {})
         
         .withScreenShaking(RenderableState.SHOOTING, 

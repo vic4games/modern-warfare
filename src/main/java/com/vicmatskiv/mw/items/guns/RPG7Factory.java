@@ -82,7 +82,7 @@ public class RPG7Factory implements GunFactory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
-                Ores.SteelIngot)
+                Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 

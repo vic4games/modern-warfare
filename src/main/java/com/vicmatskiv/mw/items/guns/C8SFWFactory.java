@@ -79,7 +79,7 @@ public class C8SFWFactory implements GunFactory {
         .withRecoil(3f)
         .withZoom(0.9f)
         .withMaxShots(Integer.MAX_VALUE, 1)
-        .withShootSound("g95")
+        .withShootSound("c8_sfw")
         .withSilencedShootSound("m4a1_silenced")
         .withReloadSound("c8_sfw_reload")
         .withUnloadSound("g95_unload")
@@ -99,7 +99,7 @@ public class C8SFWFactory implements GunFactory {
         
         // .withInaccuracy(1)
         
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine/ Squad-Automatic Weapon", 
         "Damage: 5", 

@@ -66,6 +66,10 @@ public class CommonProxy {
 
         ModernWarfareMod.MOD_CONTEXT.setExplosionSound("grenadeexplosion");
         
+        ModernWarfareMod.MOD_CONTEXT.setFlashExplosionSound("flashbang");
+        
+        
+        
 //        ModernWarfareMod.MOD_CONTEXT.setMaterialsImpactSound("bullet_1_rock", 1f, CompatibleMaterial.WOOD);
         
 //        ModernWarfareMod.MOD_CONTEXT.setMaterialImpactSound("bullet_2_rock", 1f, CompatibleMaterial.ROCK);

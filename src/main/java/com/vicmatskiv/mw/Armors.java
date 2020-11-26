@@ -12,6 +12,25 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 
 public class Armors {
+	
+	// realistic armors
+	
+	public static Item JPNVG18helmet;
+	
+	public static Item USMCchest;
+    public static Item USMCboots;
+    public static Item USMChelmet;
+    
+    // scp armors
+    
+    public static Item Dclasschest;
+    public static Item Dclassboots;
+    
+    public static Item SCPGuardchest;
+    public static Item SCPGuardboots;
+    public static Item SCPGuardhelmet;
+	
+	// arcade armors
 
     public static Item Marinechest;
     public static Item Marineboots;
@@ -147,24 +166,34 @@ public class Armors {
     public static Item MKVRedODSTboots;
     public static Item MKVRedODSThelmet;
 
-    static ArmorMaterial Santa = compatibility.addArmorMaterial("Santa", "Santa", 200, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO: last
-    static ArmorMaterial NCR = compatibility.addArmorMaterial("NCR", "NCR", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
-//    static ArmorMaterial HammerDown = compatibility.addArmorMaterial("HammerDown", "HammerDown", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
-    static ArmorMaterial ScarSuit = compatibility.addArmorMaterial("ScarSuit", "ScarSuit", 200, new int[] { 5, 6, 5, 4 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Juggernaut = compatibility.addArmorMaterial("Juggernaut", "Juggernaut", 20, new int[] { 6, 7, 6, 5 }, 20, null, 0); // TODO: last
-    static ArmorMaterial PowerArmor = compatibility.addArmorMaterial("PowerArmor", "PowerArmor", 20, new int[] { 7, 8, 7, 6 }, 20, null, 0); // TODO: last
-//    static ArmorMaterial DoomArmor = compatibility.addArmorMaterial("DoomArmor", "DoomArmor", 20, new int[] { 7, 8, 7, 6 }, 20, null, 0); // TODO: last
-    static ArmorMaterial Marine = compatibility.addArmorMaterial("Marine", "Marine", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Spartan = compatibility.addArmorMaterial("Spartan", "Spartan", 200, new int[] { 7, 9, 8, 7 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Tactical = compatibility.addArmorMaterial("Tactical", "Tactical", 200, new int[] { 2, 4, 3, 2 }, 15, null, 0); // TODO:
-    static ArmorMaterial Umbrella = compatibility.addArmorMaterial("Umbrella", "Umbrella", 200, new int[] { 4, 5, 4, 3 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Clothing = compatibility.addArmorMaterial("Clothing", "Clothing", 200, new int[] { 0, 0, 0, 0 }, 15, null, 0); // TODO: last
-    static ArmorMaterial Astronaut = compatibility.addArmorMaterial("Astronaut", "Astronaut", 200, new int[] { 1, 2, 2, 1 }, 15, null, 0); // TODO:
+    static ArmorMaterial NCR = compatibility.addArmorMaterial(
+    		"NCR", "NCR", 200, new int[] { 2, 3, 2, 1 }, 15, null, 0); // TODO: last
+    
+    static ArmorMaterial ScarSuit = compatibility.addArmorMaterial(
+    		"ScarSuit", "ScarSuit", 200, new int[] { 2, 3, 2, 2 }, 15, null, 0); // TODO: last
+    
+    static ArmorMaterial Juggernaut = compatibility.addArmorMaterial(
+    		"Juggernaut", "Juggernaut", 20, new int[] { 5, 6, 2, 5 }, 20, null, 0); // TODO: last
+    
+    static ArmorMaterial PowerArmor = compatibility.addArmorMaterial(
+    		"PowerArmor", "PowerArmor", 20, new int[] { 7, 8, 7, 6 }, 20, null, 0); // TODO: last
+    
+    static ArmorMaterial Marine = compatibility.addArmorMaterial(
+    		"Marine", "Marine", 200, new int[] { 2, 3, 1, 2 }, 15, null, 0); // TODO: last
+    
+    static ArmorMaterial Spartan = compatibility.addArmorMaterial(
+    		"Spartan", "Spartan", 200, new int[] { 3, 4, 3, 2 }, 15, null, 0); // TODO: last
+    
+    static ArmorMaterial Clothing = compatibility.addArmorMaterial(
+    		"Clothing", "Clothing", 200, new int[] { 0, 0, 0, 0 }, 15, null, 0); // TODO: last
+    
+    static ArmorMaterial Astronaut = compatibility.addArmorMaterial(
+    		"Astronaut", "Astronaut", 200, new int[] { 1, 2, 2, 1 }, 15, null, 0); // TODO:
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, 
             ModContext modContext) {
         
-        Builder santaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Santa)
+        Builder santaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withUnlocalizedName("Santa").withTextureName("santasuit_normal")
                 .withModelClass("com.vicmatskiv.mw.models.SantasuitNormal").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
@@ -173,7 +202,7 @@ public class Armors {
         Armors.Santachest = santaArmorBuilder.buildChest(modContext.isClient());
         Armors.Santaboots = santaArmorBuilder.buildBoots(modContext.isClient());
         
-        Builder nazisantaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Santa)
+        Builder nazisantaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withUnlocalizedName("Nazisanta").withTextureName("santasuit_nazi")
                 .withModelClass("com.vicmatskiv.mw.models.SantaSuit").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
@@ -244,6 +273,15 @@ public class Armors {
         Armors.Marinechest = marineArmorBuilder.buildChest(modContext.isClient());
         Armors.Marineboots = marineArmorBuilder.buildBoots(modContext.isClient());
         
+        Builder usmcArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("USMC").withTextureName("USMC")
+                .withModelClass("com.vicmatskiv.mw.models.USMC").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.USMChelmet = usmcArmorBuilder.buildHelmet(modContext);
+        Armors.USMCchest = usmcArmorBuilder.buildChest(modContext.isClient());
+        Armors.USMCboots = usmcArmorBuilder.buildBoots(modContext.isClient());
+        
         Builder ncrArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.NCR)
                 .withUnlocalizedName("NCR").withTextureName("NCR")
                 .withNightVision(true)
@@ -307,7 +345,7 @@ public class Armors {
         Armors.WFIboots = wfiArmorBuilder.buildBoots(modContext.isClient());
         
 
-        Builder tacticalArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Tactical)
+        Builder tacticalArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                 .withUnlocalizedName("Tactical").withTextureName("Tactical")
                 .withModelClass("com.vicmatskiv.mw.models.Tactical").withHudTextureName("Marine")
                 .withNightVision(true)
@@ -315,6 +353,15 @@ public class Armors {
         
 
         Armors.Tacticalhelmet = tacticalArmorBuilder.buildHelmet(modContext);
+        
+        Builder jpnvg18ArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("JPNVG18").withTextureName("jpnvg18")
+                .withModelClass("com.vicmatskiv.mw.models.JPNVG18").withHudTextureName("Marine")
+                .withNightVision(true)
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+        
+
+        Armors.JPNVG18helmet = jpnvg18ArmorBuilder.buildHelmet(modContext);
         
         
         Builder gasSuitArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
@@ -336,7 +383,7 @@ public class Armors {
         Armors.HXSoldierchest = hxsoldierArmorBuilder.buildChest(modContext.isClient());
         Armors.HXSoldierboots = hxsoldierArmorBuilder.buildBoots(modContext.isClient());
             
-        Builder umbrellaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Umbrella)
+        Builder umbrellaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                     .withUnlocalizedName("Umbrella").withTextureName("UmbrellaCorp")
                     .withExposureReductionFactor(0.8f)
                     .withNightVision(true)
@@ -348,7 +395,7 @@ public class Armors {
         Armors.Umbrellaboots = umbrellaArmorBuilder.buildBoots(modContext.isClient());
         
         Builder astronautArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Astronaut)
-                .withUnlocalizedName("Astronaut").withTextureName("Astronaut")
+                .withUnlocalizedName("Astronaut").withTextureName("Astronaut2")
                 .withExposureReductionFactor(1f)
                 .withModelClass("com.vicmatskiv.mw.models.Astronaut").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
@@ -374,7 +421,24 @@ public class Armors {
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
         Armors.KCPDchest = kcpdArmorBuilder.buildChest(modContext.isClient());
-        Armors.KCPDboots = kcpdArmorBuilder.buildBoots(modContext.isClient());     
+        Armors.KCPDboots = kcpdArmorBuilder.buildBoots(modContext.isClient());   
+        
+        Builder dclassArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Clothing)
+                .withUnlocalizedName("Dclass").withTextureName("dclass")
+                .withModelClass("com.vicmatskiv.mw.models.Dclass").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.Dclasschest = dclassArmorBuilder.buildChest(modContext.isClient());
+        Armors.Dclassboots = dclassArmorBuilder.buildBoots(modContext.isClient()); 
+        
+        Builder SCPGuardArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+                .withUnlocalizedName("SCPGuard").withTextureName("scpguard")
+                .withModelClass("com.vicmatskiv.mw.models.SCPGuard").withHudTextureName("Marine")
+                .withCreativeTab(ModernWarfareMod.ArmorTab);
+
+        Armors.SCPGuardhelmet = SCPGuardArmorBuilder.buildHelmet(modContext); 
+        Armors.SCPGuardchest = SCPGuardArmorBuilder.buildChest(modContext.isClient());
+        Armors.SCPGuardboots = SCPGuardArmorBuilder.buildBoots(modContext.isClient()); 
         
 // ===========================================================
         

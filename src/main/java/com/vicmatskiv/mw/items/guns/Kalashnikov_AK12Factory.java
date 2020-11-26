@@ -78,7 +78,7 @@ public class Kalashnikov_AK12Factory {
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
-        .withShootSound("ak12")
+        .withShootSound("ka_ak12")
         .withSilencedShootSound("ak15_silenced")
         .withReloadSound("ak12_reload")
         .withUnloadSound("ak12_unload")
@@ -95,15 +95,15 @@ public class Kalashnikov_AK12Factory {
         .withShellCasingVerticalOffset(-0.05f)
 //        .withShellCasingForwardOffset(-0.2f)
         .withInaccuracy(1f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault rifle/ Carbine",
-        "Damage: 8", 
+        "Damage: 7", 
         "Cartridge: 5.45x39mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
         "Magazines:",
-        "30rnd 5.45x39mm Kalashnikov AK-12 Magazine"))
+        "30rnd 7.62x39mm PMAG Magazine"))
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 2.5f, // x 
@@ -1139,7 +1139,7 @@ public class Kalashnikov_AK12Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(7f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

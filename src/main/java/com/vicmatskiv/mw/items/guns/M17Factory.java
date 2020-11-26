@@ -55,10 +55,10 @@ public class M17Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.18f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Service Pistol", 
-        "Damage: 6", 
+        "Damage: 4", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100",
@@ -996,7 +996,7 @@ public class M17Factory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(6f)
+        .withSpawnEntityDamage(4f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

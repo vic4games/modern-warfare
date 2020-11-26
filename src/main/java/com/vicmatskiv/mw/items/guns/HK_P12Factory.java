@@ -59,7 +59,7 @@ public class HK_P12Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.17f)
 //      .withShellCasingForwardOffset(0.001f)
         .withInaccuracy(3)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Service Pistol", 
         "Damage: 6", 

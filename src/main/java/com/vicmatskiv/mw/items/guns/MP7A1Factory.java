@@ -93,7 +93,7 @@ public class MP7A1Factory {
         .withFlashOffsetX(() -> 0.16f)
         .withFlashOffsetY(() -> 0.2f)
         .withInaccuracy(2f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Sub Machine Gun/ Personal Defense Weapon/ Machine Pistol",
         "Damage: 4", 

@@ -90,8 +90,8 @@ public class VolkFactory {
         .withFlashTexture("flashes_laser")
         .withShellCasingEjectEnabled(false)
         .withInaccuracy(1f)
-        .withSpawnEntityModel(new TracerProjectile())
-        .withSpawnEntityModelTexture("Laser")
+//        .withSpawnEntityModel(new TracerProjectile())
+//        .withSpawnEntityModelTexture("Laser")
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Energy Assault rifle",

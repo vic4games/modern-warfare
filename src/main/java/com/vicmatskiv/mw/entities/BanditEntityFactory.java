@@ -34,6 +34,8 @@ public class BanditEntityFactory implements EntityFactory {
         .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag)
         .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
         .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
+//        .withEquipmentOption(Guns.PGMHecateII, EnumDifficulty.EASY, 0.07f)
+//        .withEquipmentOption(Guns.CZ805BrenA1, EnumDifficulty.EASY, 0.1f, Magazines.M4A1Mag)
         .withPrimaryEquipmentDropChance(1f)
         .withSpawn(1, 1, 7, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
         .withSpawnEgg(0xA0A000, 0xA0A010)
