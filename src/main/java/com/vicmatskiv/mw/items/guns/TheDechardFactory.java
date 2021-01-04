@@ -60,7 +60,7 @@ public class TheDechardFactory implements GunFactory {
                 4.5f) // z
         
         .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab) 
+        .withCreativeTab(ModernWarfareMod.CombatServerTab) 
         .withCrafting(CraftingComplexity.LOW,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)

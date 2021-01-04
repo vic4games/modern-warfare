@@ -90,11 +90,11 @@ public class OSIPRFactory {
         .withFlashOffsetY(() -> 0.16f)
         .withFlashTexture("pulserifle_flashes")
         .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle",
         "Damage: 8", 
-        "Cartridge: 7.62x51mm",
+        "Cartridge: 7.62x51mm (WIP, will change)",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100"))
          .withCrafting(CraftingComplexity.MEDIUM,

@@ -85,7 +85,7 @@ public class HAR27Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.2f)
         .withShellCasingForwardOffset(0.05f)
         .withShellCasingVerticalOffset(-0.03f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/Carbine", 
         "Damage: 11", 
@@ -590,11 +590,11 @@ public class HAR27Factory implements GunFactory {
                     GL11.glTranslatef(0F, -0.083f, 0.3f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, -0.083f, 0.3f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, -0.083f, 0.3f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -663,11 +663,11 @@ public class HAR27Factory implements GunFactory {
                     GL11.glTranslatef(0F, -0.083f, 0.3f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, -0.083f, 0.3f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, -0.083f, 0.3f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

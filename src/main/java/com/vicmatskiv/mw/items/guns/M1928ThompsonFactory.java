@@ -673,11 +673,11 @@ public class M1928ThompsonFactory {
                     GL11.glTranslatef(0F, 0.22f, 0.2f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.215f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.215f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -728,11 +728,11 @@ public class M1928ThompsonFactory {
                     GL11.glTranslatef(0F, 0.22f, 0.2f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.215f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.215f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

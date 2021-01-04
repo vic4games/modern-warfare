@@ -59,7 +59,7 @@ public class ESA23Factory implements GunFactory {
         .withInaccuracy(1)
         .withFlashTexture("flashes_redlaser")
         .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Carbon Energy Pistol", 
         "Damage: 11", 

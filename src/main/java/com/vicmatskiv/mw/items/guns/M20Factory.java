@@ -87,7 +87,7 @@ public class M20Factory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.24f)
         .withInaccuracy(7f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Sub Machine Gun/Personal Defense Weapon",
         "Damage: 7", 

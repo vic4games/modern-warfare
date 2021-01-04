@@ -201,15 +201,15 @@ public class Spas12Factory implements GunFactory {
                  GL11.glScaled(0.1F, 0.1F, 0.1F);
              }
          })
-         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                 GL11.glTranslatef(-0.2F, -0.72F, -0.9F);
-                 GL11.glScaled(0.3F, 0.3F, 0.4F);
-             },(model) -> {
-                 if(model instanceof Holo2) {
-                     GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                     GL11.glScaled(0.15F, 0.15F, 0.15F);
-                 }
-             })
+//         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                 GL11.glTranslatef(-0.2F, -0.72F, -0.9F);
+//                 GL11.glScaled(0.3F, 0.3F, 0.4F);
+//             },(model) -> {
+//                 if(model instanceof Holo2) {
+//                     GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                     GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                 }
+//             })
          .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
                  GL11.glTranslatef(-0.025F, -0.58F, -0.4F);
                  GL11.glScaled(0.45F, 0.45F, 0.45F);
@@ -644,11 +644,11 @@ public class Spas12Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.2f, 0f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0f, 0.15f, 0f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0f, 0.15f, 0f);
+//                } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -705,11 +705,11 @@ public class Spas12Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.2f, 0f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0f, 0.15f, 0f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0f, 0.15f, 0f);
+//                } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

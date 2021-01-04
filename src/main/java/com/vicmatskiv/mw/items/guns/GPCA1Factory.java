@@ -87,7 +87,7 @@ public class GPCA1Factory {
         .withFlashOffsetY(() -> 0.18f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Gauss Precision Cannon",
         "Damage: 400",

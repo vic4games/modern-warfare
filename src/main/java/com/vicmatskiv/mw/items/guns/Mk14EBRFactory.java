@@ -96,7 +96,7 @@ public class Mk14EBRFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Battle Rifle/Designated Marksmen Rifle",
-        "Damage: 15", 
+        "Damage: 8", 
         "Cartridge: 7.62x51mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100",
@@ -1977,7 +1977,7 @@ public class Mk14EBRFactory {
                     }, 280, 0))
              
             .build())
-        .withSpawnEntityDamage(8.5f)
+        .withSpawnEntityDamage(8f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

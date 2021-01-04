@@ -652,11 +652,11 @@ public class NTW20Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.09f, 0.9f);
                 } 
                 
-             // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0f, 0.13f, 0.9f);
-                } 
+//             // HP Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0f, 0.13f, 0.9f);
+//                } 
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -737,11 +737,11 @@ public class NTW20Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.09f, 0.9f);
                 } 
                 
-             // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0f, 0.13f, 0.9f);
-                } 
+//             // HP Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0f, 0.13f, 0.9f);
+//                } 
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

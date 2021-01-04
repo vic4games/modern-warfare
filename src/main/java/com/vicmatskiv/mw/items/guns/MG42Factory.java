@@ -935,11 +935,11 @@ public class MG42Factory {
                     GL11.glTranslatef(0F, 0.25f, 0.9f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.27f, 0.9f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.27f, 0.9f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -998,11 +998,11 @@ public class MG42Factory {
                     GL11.glTranslatef(0F, 0.25f, 0.9f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.27f, 0.9f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.27f, 0.9f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

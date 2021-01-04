@@ -139,15 +139,15 @@ public class HS12Factory implements GunFactory {
             GL11.glScaled(0.1F, 0.1F, 0.1F);
         }
     })
-    .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-            GL11.glTranslatef(-0.2F, -0.86F, -0.7F);
-            GL11.glScaled(0.3F, 0.3F, 0.4F);
-        },(model) -> {
-            if(model instanceof Holo2) {
-                GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                GL11.glScaled(0.15F, 0.15F, 0.15F);
-            }
-        })
+//    .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//            GL11.glTranslatef(-0.2F, -0.86F, -0.7F);
+//            GL11.glScaled(0.3F, 0.3F, 0.4F);
+//        },(model) -> {
+//            if(model instanceof Holo2) {
+//                GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                GL11.glScaled(0.15F, 0.15F, 0.15F);
+//            }
+//        })
     .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
             GL11.glTranslatef(-0.025F, -0.71F, -0.3F);
             GL11.glScaled(0.45F, 0.45F, 0.45F);
@@ -548,81 +548,81 @@ public class HS12Factory implements GunFactory {
                     }, 250, 50)
                 )
             
-            .withFirstPersonCustomPositioningLoadIterationCompleted(Attachments.Vortex.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0f, 1.15f, -0.9f);
-                GL11.glRotatef(35F, 1f, 0f, 0f);
-                GL11.glScalef(1f, 1f, 1f);
-                })
+//            .withFirstPersonCustomPositioningLoadIterationCompleted(Attachments.Vortex.getRenderablePart(), (renderContext) -> {
+//                GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                GL11.glRotatef(35F, 1f, 0f, 0f);
+//                GL11.glScalef(1f, 1f, 1f);
+//                })
             
-            .withFirstPersonCustomPositioningReloading(Attachments.Vortex.getRenderablePart(),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 250, 50),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 320, 50)
-                    )
+//            .withFirstPersonCustomPositioningReloading(Attachments.Vortex.getRenderablePart(),
+//                    new Transition((renderContext) -> { // Reload position
+//                    }, 250, 50),
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 320, 50)
+//                    )
             
-            .withFirstPersonCustomPositioningAllLoadIterationsCompleted(Attachments.Vortex.getRenderablePart(),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                    }, 250, 50)
-                )
+//            .withFirstPersonCustomPositioningAllLoadIterationsCompleted(Attachments.Vortex.getRenderablePart(),
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                    }, 250, 50)
+//                )
             
-            .withFirstPersonCustomPositioningLoadIteration(Attachments.Vortex.getRenderablePart(),  
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50),
-                    
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0f, 1.15f, -0.9f);
-                        GL11.glRotatef(35F, 1f, 0f, 0f);
-                        GL11.glScalef(1f, 1f, 1f);
-                    }, 250, 50)
-                )
+//            .withFirstPersonCustomPositioningLoadIteration(Attachments.Vortex.getRenderablePart(),  
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50),
+//                    
+//                    new Transition((renderContext) -> { // Reload position
+//                        GL11.glTranslatef(0f, 1.15f, -0.9f);
+//                        GL11.glRotatef(35F, 1f, 0f, 0f);
+//                        GL11.glScalef(1f, 1f, 1f);
+//                    }, 250, 50)
+//                )
             
             .withFirstPersonCustomPositioningLoadIterationCompleted(Attachments.Kobra.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0.5f, -0.9f);
@@ -1179,11 +1179,11 @@ public class HS12Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.255f, 0.5f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0f, 0.235f, 0.7f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0f, 0.235f, 0.7f);
+//                } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -1247,11 +1247,11 @@ public class HS12Factory implements GunFactory {
                     GL11.glTranslatef(0f, 0.255f, 0.5f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0f, 0.235f, 0.7f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0f, 0.235f, 0.7f);
+//                } 
                 
              // Holo Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

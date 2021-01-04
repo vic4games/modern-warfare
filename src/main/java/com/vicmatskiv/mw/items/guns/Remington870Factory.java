@@ -318,7 +318,8 @@ public class Remington870Factory implements GunFactory {
                   GL11.glTranslatef(-0.19F, -0.6F, -7.8F);
                   GL11.glScaled(1.4F, 1.4F, 1.4F);
               }
-          }, false, false).withCompatibleAttachment(Attachments.Grip2, (model) -> {
+          }, false, false)
+      .withCompatibleAttachment(Attachments.Grip2, (model) -> {
               GL11.glTranslatef(-0.155F, 0.45F, -2.5F);
               GL11.glScaled(0.9F, 0.9F, 0.9F);
               
@@ -361,7 +362,7 @@ public class Remington870Factory implements GunFactory {
                 GL11.glRotatef(-6.000000f, 1f, 0f, 0f);
                 GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                 GL11.glRotatef(-44.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.575000f, 0.125000f, -1.349999f);
+                GL11.glTranslatef(-0.675000f, 0.175000f, -1.349999f);
                 })
                 
             .withFirstPersonPositioning((renderContext) -> {
@@ -1011,7 +1012,7 @@ public class Remington870Factory implements GunFactory {
               
               .withFirstPersonCustomPositioningLoadIteration(AuxiliaryAttachments.ShotgunShell.getRenderablePart(),  
               		new Transition((renderContext) -> { // Reload position
-              			GL11.glTranslatef(0.07F, 2F, 0.1F);
+              			GL11.glTranslatef(0.07F, 2F, 0.4F);
                           GL11.glRotatef(-70F, 1f, 0f, 0f);
                       }, 250, 50),
                       
@@ -1052,7 +1053,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.349999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.349999f);
                   }, 250, 0)
               )
               
@@ -1105,7 +1106,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-7.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.349999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.349999f);
                   }, 160, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1113,7 +1114,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-8.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-43.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.349999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.349999f);
                   }, 140, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1121,7 +1122,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-44.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.359999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.359999f);
                   }, 140, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1129,7 +1130,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-14.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-47.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.389999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.389999f);
                   }, 70, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1137,7 +1138,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-12.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-43.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.379999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.379999f);
                   }, 70, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1145,7 +1146,7 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-12.500000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.379999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.379999f);
                   }, 100, 0),
                   
                   new Transition((renderContext) -> { // Reload position
@@ -1153,26 +1154,26 @@ public class Remington870Factory implements GunFactory {
                       GL11.glRotatef(-7.000000f, 1f, 0f, 0f);
                       GL11.glRotatef(40.000000f, 0f, 1f, 0f);
                       GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(-0.575000f, 0.125000f, -1.349999f);
+                      GL11.glTranslatef(-0.675000f, 0.175000f, -1.349999f);
                   }, 180, 0)
               )
             
-            .withFirstPersonPositioningInspecting(
+              .withFirstPersonPositioningInspecting(
+                      new Transition((renderContext) -> {
+                          GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
+                          GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
+                          GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                          GL11.glRotatef(-25.000000f, 0f, 0f, 1f);
+                          GL11.glTranslatef(-0.6f, 0.000000f, -1.2f);
+                      }, 300, 600),
                     new Transition((renderContext) -> {
-                        GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                        GL11.glRotatef(5.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(15.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-25.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.8f, -0.000000f, -1.5f);
-                    }, 300, 600),
-                  new Transition((renderContext) -> {
-                      GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                      GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
-                      GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                      GL11.glRotatef(80.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(0.425000f, 0.950000f, -0.875000f);
-                  }, 350, 600)
-                    )
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(70.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, 0.4f, -1.2f);
+                    }, 350, 600)
+                      )
                     
             .withThirdPersonPositioningReloading(
                     new Transition((renderContext) -> { // Reload position
@@ -1635,6 +1636,8 @@ public class Remington870Factory implements GunFactory {
                         GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.000000f, -1.199999f, 0.175000f);
+                        
+                        GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1643,6 +1646,8 @@ public class Remington870Factory implements GunFactory {
                     	GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(55.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(-0.075000f, -0.975000f, 0.200000f);
+                    	
+                    	GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1651,6 +1656,8 @@ public class Remington870Factory implements GunFactory {
                     	GL11.glRotatef(-65.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(55.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(0.000000f, -0.825000f, 0.125000f);
+                    	
+                    	GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1659,6 +1666,8 @@ public class Remington870Factory implements GunFactory {
                     	GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(50.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(0.025000f, -0.775000f, 0.175000f);
+                    	
+                    	GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1667,6 +1676,8 @@ public class Remington870Factory implements GunFactory {
                     	GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(50.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(0.025000f, -0.775000f, 0.175000f);
+                    	
+                    	GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1675,6 +1686,8 @@ public class Remington870Factory implements GunFactory {
                     	GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(50.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(0.025000f, -0.775000f, 0.175000f);
+                    	
+                    	GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50),
                     
                     new Transition((renderContext) -> { // Reload position
@@ -1683,6 +1696,8 @@ public class Remington870Factory implements GunFactory {
                         GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.000000f, -1.199999f, 0.175000f);
+                        
+                        GL11.glTranslatef(0.07f, 0.1f, -0f);
                     }, 250, 50)
                     )
                     
@@ -2210,18 +2225,18 @@ public class Remington870Factory implements GunFactory {
                     
             .withFirstPersonLeftHandPositioningInspecting(
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-120.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-85.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.075000f, -0.750000f, 0.050000f);
+                    	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, -0.650000f, 0.125000f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4f, 4f, 4f);
-                        GL11.glRotatef(-120.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-85.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.075000f, -0.8f, -0.03f);
+                    	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                    	GL11.glRotatef(-55.000000f, 1f, 0f, 0f);
+                    	GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                    	GL11.glRotatef(65.000000f, 0f, 0f, 1f);
+                    	GL11.glTranslatef(0.150000f, -0.525000f, 0.075000f);
                     }, 250, 50))
                     
             .withFirstPersonRightHandPositioningInspecting(

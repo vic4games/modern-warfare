@@ -292,15 +292,15 @@ public class CZ805BrenFactory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                GL11.glTranslatef(-0.165F, -0.9F, -0.6F);
-                GL11.glScaled(0.4F, 0.4F, 0.5F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                GL11.glTranslatef(-0.165F, -0.9F, -0.6F);
+//                GL11.glScaled(0.4F, 0.4F, 0.5F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
             GL11.glTranslatef(0.08F, -0.73F, -0.2F);
                 GL11.glScaled(0.65F, 0.65F, 0.65F);
@@ -914,11 +914,11 @@ public class CZ805BrenFactory implements GunFactory {
                     GL11.glTranslatef(0F, -0.083f, 0.3f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, -0.083f, 0.3f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, -0.083f, 0.3f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -1011,11 +1011,11 @@ public class CZ805BrenFactory implements GunFactory {
                     GL11.glTranslatef(0F, -0.083f, 0.2f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, -0.083f, 0.3f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, -0.083f, 0.3f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

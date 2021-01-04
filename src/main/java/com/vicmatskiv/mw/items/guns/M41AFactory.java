@@ -86,7 +86,7 @@ public class M41AFactory implements GunFactory {
         .withFlashOffsetY(() -> 0.24f)
         .withShellCasingForwardOffset(-0.05f)
         .withShellCasingVerticalOffset(-0.1f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Multipurpose Pulse Rifle", 
         "Damage: 6.5", 
@@ -503,10 +503,10 @@ public class M41AFactory implements GunFactory {
                 } 
                 
                 // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -570,11 +570,11 @@ public class M41AFactory implements GunFactory {
                     GL11.glTranslatef(0F, 0.06f, 0.6f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

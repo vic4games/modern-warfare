@@ -87,7 +87,7 @@ public class MA5DFactory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.24f)
         .withInaccuracy(1f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle",
         "Damage: 9", 
@@ -670,11 +670,11 @@ public class MA5DFactory {
                     GL11.glTranslatef(0F, 0.22f, 0.2f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.211f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.211f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -739,11 +739,11 @@ public class MA5DFactory {
                     GL11.glTranslatef(0F, 0.22f, 0.2f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.211f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.211f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

@@ -88,7 +88,7 @@ public class BR55Factory {
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.12f)
         .withFlashOffsetY(() -> 0.2f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Battle Rifle",
         "Damage: 13", 
@@ -152,15 +152,15 @@ public class BR55Factory {
                     GL11.glScaled(0.1F, 0.1F, 0.1F);
                 }
             })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-            GL11.glTranslatef(-0.28F, -2.45F, -3.05F);
-            GL11.glScaled(0.48F, 0.48F, 0.58F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//            GL11.glTranslatef(-0.28F, -2.45F, -3.05F);
+//            GL11.glScaled(0.48F, 0.48F, 0.58F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
             GL11.glTranslatef(0.01F, -2.18F, -2.3F);
             GL11.glScaled(0.75F, 0.75F, 0.75F);
@@ -625,11 +625,11 @@ public class BR55Factory {
                     GL11.glTranslatef(0F, 0.29f, 0.6f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.01F, 0.32f, 0.8f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0.01F, 0.32f, 0.8f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -680,11 +680,11 @@ public class BR55Factory {
                     GL11.glTranslatef(0F, 0.29f, 0.6f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0.01F, 0.32f, 0.8f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0.01F, 0.32f, 0.8f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

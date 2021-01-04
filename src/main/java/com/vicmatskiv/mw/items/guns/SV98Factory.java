@@ -233,15 +233,15 @@ public class SV98Factory implements GunFactory {
                     GL11.glScaled(0.1F, 0.1F, 0.1F);
                 }
             })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-            GL11.glTranslatef(-0.3F, -1.52F, -2.3F);
-                GL11.glScaled(0.45F, 0.45F, 0.55F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//            GL11.glTranslatef(-0.3F, -1.52F, -2.3F);
+//                GL11.glScaled(0.45F, 0.45F, 0.55F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
             GL11.glTranslatef(-0.035F, -1.3F, -1.7F);
             GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -803,11 +803,11 @@ public class SV98Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.285f, 1.1f);
                 } 
                 
-             // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.3f, 1.4f);
-                } 
+//             // HP Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0F, 0.3f, 1.4f);
+//                } 
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -882,11 +882,11 @@ public class SV98Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.285f, 1.1f);
                 } 
                 
-             // HP Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.3f, 1.4f);
-                } 
+//             // HP Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0F, 0.3f, 1.4f);
+//                } 
                 
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

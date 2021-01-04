@@ -436,25 +436,25 @@ public class AUGFactory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         }, false, false)
-        .withCompatibleAttachment(Attachments.Vortex, renderContext -> {
-            PlayerWeaponInstance instance = renderContext.getWeaponInstance();
-            if(instance != null) {
-                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                        AttachmentCategory.GUARD, instance);
-                if(activeAttachment == Attachments.AUGA2handguard) {
-                    GL11.glTranslatef(-0.28F, -1.75F, -0.5F);
-                    GL11.glScaled(0.4F, 0.4F, 0.5F);
-                } else {
-                    GL11.glTranslatef(-0.28F, -1.43F, -0.5F);
-                    GL11.glScaled(0.4F, 0.4F, 0.5F);
-                }
-            }
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            }, false, false)
+//        .withCompatibleAttachment(Attachments.Vortex, renderContext -> {
+//            PlayerWeaponInstance instance = renderContext.getWeaponInstance();
+//            if(instance != null) {
+//                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+//                        AttachmentCategory.GUARD, instance);
+//                if(activeAttachment == Attachments.AUGA2handguard) {
+//                    GL11.glTranslatef(-0.28F, -1.75F, -0.5F);
+//                    GL11.glScaled(0.4F, 0.4F, 0.5F);
+//                } else {
+//                    GL11.glTranslatef(-0.28F, -1.43F, -0.5F);
+//                    GL11.glScaled(0.4F, 0.4F, 0.5F);
+//                }
+//            }
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            }, false, false)
         .withCompatibleAttachment(Attachments.Kobra, renderContext -> {
             PlayerWeaponInstance instance = renderContext.getWeaponInstance();
             if(instance != null) {
@@ -1344,18 +1344,18 @@ public class AUGFactory implements GunFactory {
                     }
                 } 
                 
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
-                    ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                            AttachmentCategory.GUARD, rc.getWeaponInstance());
-                    if(activeAttachment == Attachments.AUGA2handguard) {
-                        GL11.glTranslatef(0F, 0.32f, 1.2f);
-                    } else {
-                        GL11.glTranslatef(0F, 0f, 1.2f);
-                    }
-                } 
+//                // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+//                    ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+//                            AttachmentCategory.GUARD, rc.getWeaponInstance());
+//                    if(activeAttachment == Attachments.AUGA2handguard) {
+//                        GL11.glTranslatef(0F, 0.32f, 1.2f);
+//                    } else {
+//                        GL11.glTranslatef(0F, 0f, 1.2f);
+//                    }
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -1544,18 +1544,18 @@ public class AUGFactory implements GunFactory {
                     }
                 } 
                 
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    RenderContext<?> rc = (RenderContext<?>) renderContext;
-                    ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                            AttachmentCategory.GUARD, rc.getWeaponInstance());
-                    if(activeAttachment == Attachments.AUGA2handguard) {
-                        GL11.glTranslatef(0F, 0.32f, 1.2f);
-                    } else {
-                        GL11.glTranslatef(0F, 0f, 1.2f);
-                    }
-                } 
+//                // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    RenderContext<?> rc = (RenderContext<?>) renderContext;
+//                    ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
+//                            AttachmentCategory.GUARD, rc.getWeaponInstance());
+//                    if(activeAttachment == Attachments.AUGA2handguard) {
+//                        GL11.glTranslatef(0F, 0.32f, 1.2f);
+//                    } else {
+//                        GL11.glTranslatef(0F, 0f, 1.2f);
+//                    }
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

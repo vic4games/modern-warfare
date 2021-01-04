@@ -80,13 +80,13 @@ public class AR10SuperSASSFactory implements GunFactory {
 		.withName("ar10_super_sass")
 		//.withAmmoCapacity(30)
 		.withFireRate(0.8f)
-		.withRecoil(4f)
+		.withRecoil(5f)
 		.withZoom(0.9f)
 		.withMaxShots(1, Integer.MAX_VALUE)
-		.withShootSound("m16a4")
-		.withSilencedShootSound("m4a1_silenced")
+		.withShootSound("m110")
+		.withSilencedShootSound("m110_silenced")
 		.withReloadSound("m4a1_reload")
-		.withUnloadSound("m4a1_unload")
+		.withUnloadSound("scar_unload")
 		.withEndOfShootSound("gun_click")
 		.withInspectSound("m4a1_inspection")
 		.withDrawSound("m4_draw")
@@ -104,7 +104,7 @@ public class AR10SuperSASSFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: Semi-Automatic Sniper System", 
-		"Damage: 15", 
+		"Damage: 10", 
 		"Cartridge: 7.62x51mm",
 		"Fire Rate: SEMI, AUTO",
 		"Rate of Fire: 80/100",
@@ -115,8 +115,8 @@ public class AR10SuperSASSFactory implements GunFactory {
                 Ores.GunmetalPlate)
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
-	                1f, // x 
-	                2f, // y
+	                2f, // x 
+	                3f, // y
 	                4f) // z
 		 
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
@@ -653,10 +653,6 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glScaled(0.8F, 0.8F, 0.8F);
             GL11.glRotatef(-90F, 0f, 0f, 1f);
 		})
-		.withCompatibleAttachment(Attachments.Laser, (p, s) -> {
-			GL11.glTranslatef(0.05F, -1.18F, -3.6F);
-			GL11.glScaled(0.8F, 0.8F, 0.8F);
-		})
 		.withCompatibleAttachment(Attachments.Silencer762x51, (model) -> {
 			GL11.glTranslatef(-0.2F, -1.235F, -7.5F);
 			GL11.glScaled(1F, 1F, 1F);
@@ -689,13 +685,17 @@ public class AR10SuperSASSFactory implements GunFactory {
                 GL11.glTranslatef(-0.16f, 1.2f, -0.65f);
                 
 //                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+//                GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+//                GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+//                GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+//                GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4F, 0f, 0f, 1f);
                 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0.16f, 1.2f, -0.25f);
+                GL11.glTranslatef(-0.16f, 1.2f, -0.2f);
                 GL11.glRotatef(-0.5F, 1f, 0f, 0f); 
                 })
                 
@@ -867,13 +867,55 @@ public class AR10SuperSASSFactory implements GunFactory {
 			        
 			.withFirstPersonPositioningUnloading(
 			        
+					// gun turns over (views ejection port)
+            		
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-14.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(59.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
+                    }, 240, 0),
+            		
+            		// jiggle
+            		
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-15.200000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(63.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
+                    }, 60, 0),
+            		
+            		// jiggle 
+            		
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-15.100000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(59.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
+                    }, 80, 0),
+            		
+            		// jiggle 
+            		
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(61.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
+                    }, 90, 0),
+            		
+            		//unload
+					
 			        new Transition((renderContext) -> {
 			        	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
                     	GL11.glRotatef(-2.000000f, 1f, 0f, 0f);
                     	GL11.glRotatef(45.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(-0.300000f, 1.115000f, -0.750000f);
-                    }, 140, 0),
+                    }, 250, 0),
 			        new Transition((renderContext) -> {
 			        	 GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
                      	GL11.glRotatef(-4.000000f, 1f, 0f, 0f);
@@ -931,6 +973,15 @@ public class AR10SuperSASSFactory implements GunFactory {
                     )
                     
             .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AR15Action.getRenderablePart(),
+            		// gun turns over (views ejection port)
+            		new Transition((renderContext) -> { // Reload position
+                    }, 240, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 60, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 80, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 90, 0),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -980,6 +1031,15 @@ public class AR10SuperSASSFactory implements GunFactory {
                     )
                     
             .withFirstPersonCustomPositioningUnloading(Magazines.M110Mag,
+            		// gun turns over (views ejection port)
+            		new Transition((renderContext) -> { // Reload position
+                    }, 240, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 60, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 80, 0),
+            		new Transition((renderContext) -> { // Reload position
+                    }, 90, 0),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -1544,7 +1604,7 @@ public class AR10SuperSASSFactory implements GunFactory {
                          GL11.glTranslatef(0.31000f, -0.550000f, 0.100000f);
                      })
 					 
-.withFirstPersonLeftHandPositioningReloading(
+            .withFirstPersonLeftHandPositioningReloading(
 			        
 			        new Transition((renderContext) -> {
     					    GL11.glScalef(4f, 4f, 4f);
@@ -1761,6 +1821,35 @@ public class AR10SuperSASSFactory implements GunFactory {
                     }, 250, 0))
                     
             .withFirstPersonLeftHandPositioningUnloading(
+            		// gun turns over (views ejection port)
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.150000f, 0.090000f);
+                    }, 240, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.150000f, 0.090000f);
+                    }, 60, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.150000f, 0.090000f);
+                    }, 80, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.150000f, 0.090000f);
+                    }, 90, 0),
                     new Transition((renderContext) -> {
                             GL11.glScalef(3f, 3f, 3f);
                             GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
@@ -1791,6 +1880,35 @@ public class AR10SuperSASSFactory implements GunFactory {
                     }, 50, 200))
                     
             .withFirstPersonRightHandPositioningUnloading(
+            		// gun turns over (views ejection port)
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+                    }, 240, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+                    }, 60, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+                    }, 80, 0),
+            		new Transition((renderContext) -> { // Reload position
+            			GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+                    }, 90, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 5f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
@@ -2117,7 +2235,7 @@ public class AR10SuperSASSFactory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(10f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

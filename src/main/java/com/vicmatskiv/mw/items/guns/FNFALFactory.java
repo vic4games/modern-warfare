@@ -105,12 +105,12 @@ public class FNFALFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Battle rifle",
-        "Damage: 15", 
+        "Damage: 10", 
         "Cartridge: 7.62x51mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
         "Magazines:",
-        "30rnd 7.62x39mm Magazine"))
+        "20rnd 7.62x51mm Magazine"))
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 2f, // x 
@@ -2252,7 +2252,7 @@ public class FNFALFactory {
                     )
              
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(10f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

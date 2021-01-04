@@ -85,7 +85,7 @@ public class NV4Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.2f)
         .withShellCasingForwardOffset(0.05f)
         .withShellCasingVerticalOffset(-0.03f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/Carbine", 
         "Damage: 9", 
@@ -261,15 +261,15 @@ public class NV4Factory implements GunFactory {
                     GL11.glScaled(0.1F, 0.1F, 0.1F);
                 }
             })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                GL11.glTranslatef(-0.28F, -1.48F, -1.3F);
-                GL11.glScaled(0.4F, 0.4F, 0.5F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                GL11.glTranslatef(-0.28F, -1.48F, -1.3F);
+//                GL11.glScaled(0.4F, 0.4F, 0.5F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
                 GL11.glTranslatef(-0.041F, -1.28F, -0.8F);
                 GL11.glScaled(0.65F, 0.65F, 0.65F);
@@ -785,11 +785,11 @@ public class NV4Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.06f, 0.6f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -858,11 +858,11 @@ public class NV4Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.06f, 0.6f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

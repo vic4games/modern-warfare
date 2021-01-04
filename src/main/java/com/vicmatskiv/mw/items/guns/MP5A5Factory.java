@@ -98,7 +98,7 @@ public class MP5A5Factory {
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
         "Magazines:",
-        "25rnd 9x19mm HK Magazine",
+        "30rnd 9x19mm HK Magazine",
         "50rnd 9x19mm HK Drum Magazine"))
          .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
@@ -278,8 +278,8 @@ public class MP5A5Factory {
                 }
             })
         .withCompatibleAttachment(Attachments.BijiaReflex, (player, stack) -> {
-            GL11.glTranslatef(-0.052F, -1.28F, -3.9F);
-            GL11.glScaled(0.56F, 0.56F, 0.56F);
+        	GL11.glTranslatef(-0.065F, -1.25F, -1.5F);
+            GL11.glScaled(0.45F, 0.45F, 0.45F);
         },(model) -> {
         if(model instanceof Reflex2) {
             GL11.glTranslatef(-0.125F, -0.68F, -0.4F);
@@ -1078,6 +1078,12 @@ public class MP5A5Factory {
                 } 
                 
              // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.2f, 1f);
+                } 
+                
+             // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroReflex)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.263f, 1f);
@@ -1171,6 +1177,12 @@ public class MP5A5Factory {
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
+                    //System.out.println("Position me for Acog");
+                    GL11.glTranslatef(0F, 0.2f, 1f);
+                } 
+                
+             // ACOG Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
                     //System.out.println("Position me for Acog");
                     GL11.glTranslatef(0F, 0.2f, 1f);
                 } 

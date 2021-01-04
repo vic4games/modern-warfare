@@ -91,7 +91,7 @@ public class Type2Factory {
         .withFlashTexture("flashes_laser")
         .withShellCasingEjectEnabled(false)
         .withInaccuracy(1f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Energy Multipurpose Firearm",
         "Damage: 8", 
@@ -166,15 +166,15 @@ public class Type2Factory {
                     GL11.glScaled(0.1F, 0.1F, 0.1F);
                 }
             })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                GL11.glTranslatef(-0.325F, -1.6F, -1F);
-                GL11.glScaled(0.5F, 0.5F, 0.6F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                GL11.glTranslatef(-0.325F, -1.6F, -1F);
+//                GL11.glScaled(0.5F, 0.5F, 0.6F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
                 GL11.glTranslatef(-0.0325F, -1.32F, -0.2F);
                 GL11.glScaled(0.75F, 0.75F, 0.75F);
@@ -664,11 +664,11 @@ public class Type2Factory {
                     GL11.glTranslatef(-0F, 0.3f, 0.8f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0F, 0.35f, 0.8f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(-0F, 0.35f, 0.8f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -720,11 +720,11 @@ public class Type2Factory {
                     GL11.glTranslatef(-0F, 0.3f, 0.8f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(-0F, 0.35f, 0.8f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(-0F, 0.35f, 0.8f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

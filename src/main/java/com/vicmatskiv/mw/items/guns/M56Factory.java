@@ -85,7 +85,7 @@ public class M56Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.11f)
         .withShellCasingForwardOffset(-0.05f)
         .withShellCasingVerticalOffset(-0.1f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Smart Gun", 
         "Damage: 12", 
@@ -505,11 +505,11 @@ public class M56Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.06f, 0.6f);
                 } 
                 
-                // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//                // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -573,11 +573,11 @@ public class M56Factory implements GunFactory {
                     GL11.glTranslatef(0F, 0.06f, 0.6f);
                 } 
                 
-             // Holo Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Holo");
-                    GL11.glTranslatef(0F, 0.06f, 0.6f);
-                } 
+//             // Holo Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Holo");
+//                    GL11.glTranslatef(0F, 0.06f, 0.6f);
+//                } 
                 
                 // Reflex Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

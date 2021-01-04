@@ -16,10 +16,6 @@ public class Armors {
 	// realistic armors
 	
 	public static Item JPNVG18helmet;
-	
-	public static Item USMCchest;
-    public static Item USMCboots;
-    public static Item USMChelmet;
     
     // scp armors
     
@@ -46,9 +42,9 @@ public class Armors {
     public static Item Swatboots;
     public static Item Swathelmet;
     
-    public static Item WFIchest;
-    public static Item WFIboots;
-    public static Item WFIhelmet;
+//    public static Item WFIchest;
+//    public static Item WFIboots;
+//    public static Item WFIhelmet;
     
     public static Item Tacticalhelmet;
     
@@ -60,9 +56,9 @@ public class Armors {
     public static Item Mercboots;
     public static Item Merchelmet;
     
-    public static Item HXSoldierchest;
-    public static Item HXSoldierboots;
-    public static Item HXSoldierhelmet;
+//    public static Item HXSoldierchest;
+//    public static Item HXSoldierboots;
+//    public static Item HXSoldierhelmet;
     
     public static Item STARSchest;
     public static Item STARSboots;
@@ -265,22 +261,13 @@ public class Armors {
         Armors.STARSboots = starsArmorBuilder.buildBoots(modContext.isClient());
         
         Builder marineArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
-                .withUnlocalizedName("Marine").withTextureName("Marine")
-                .withModelClass("com.vicmatskiv.mw.models.Marine").withHudTextureName("Marine")
+                .withUnlocalizedName("Marine").withTextureName("USMC")
+                .withModelClass("com.vicmatskiv.mw.models.USMC").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);
 
         Armors.Marinehelmet = marineArmorBuilder.buildHelmet(modContext);
         Armors.Marinechest = marineArmorBuilder.buildChest(modContext.isClient());
         Armors.Marineboots = marineArmorBuilder.buildBoots(modContext.isClient());
-        
-        Builder usmcArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
-                .withUnlocalizedName("USMC").withTextureName("USMC")
-                .withModelClass("com.vicmatskiv.mw.models.USMC").withHudTextureName("Marine")
-                .withCreativeTab(ModernWarfareMod.ArmorTab);
-
-        Armors.USMChelmet = usmcArmorBuilder.buildHelmet(modContext);
-        Armors.USMCchest = usmcArmorBuilder.buildChest(modContext.isClient());
-        Armors.USMCboots = usmcArmorBuilder.buildBoots(modContext.isClient());
         
         Builder ncrArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.NCR)
                 .withUnlocalizedName("NCR").withTextureName("NCR")
@@ -335,14 +322,14 @@ public class Armors {
         Armors.Swatchest = swatArmorBuilder.buildChest(modContext.isClient());
         Armors.Swatboots = swatArmorBuilder.buildBoots(modContext.isClient());
         
-        Builder wfiArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
-                .withUnlocalizedName("WFI").withTextureName("WFItaskforce").withModelClass("com.vicmatskiv.mw.models.WFITaskForce")
-                .withHudTextureName("Marine")
-                .withCreativeTab(ModernWarfareMod.ArmorTab);
-
-        Armors.WFIhelmet = wfiArmorBuilder.buildHelmet(modContext);
-        Armors.WFIchest = wfiArmorBuilder.buildChest(modContext.isClient());
-        Armors.WFIboots = wfiArmorBuilder.buildBoots(modContext.isClient());
+//        Builder wfiArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
+//                .withUnlocalizedName("WFI").withTextureName("WFItaskforce").withModelClass("com.vicmatskiv.mw.models.WFITaskForce")
+//                .withHudTextureName("Marine")
+//                .withCreativeTab(ModernWarfareMod.ArmorTab);
+//
+//        Armors.WFIhelmet = wfiArmorBuilder.buildHelmet(modContext);
+//        Armors.WFIchest = wfiArmorBuilder.buildChest(modContext.isClient());
+//        Armors.WFIboots = wfiArmorBuilder.buildBoots(modContext.isClient());
         
 
         Builder tacticalArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
@@ -372,16 +359,16 @@ public class Armors {
 
         Armors.GasMaskM40 = gasSuitArmorBuilder.buildHelmet(modContext);
         
-        Builder hxsoldierArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.ScarSuit)
-                .withUnlocalizedName("hxsoldier").withTextureName("hxsoldier")
-                .withExposureReductionFactor(99999f)
-                .withNightVision(true)
-                .withModelClass("com.vicmatskiv.mw.models.HXSoldier").withHudTextureName("Marine")
-                .withCreativeTab(ModernWarfareMod.ArmorTab);
-
-        Armors.HXSoldierhelmet = hxsoldierArmorBuilder.buildHelmet(modContext);
-        Armors.HXSoldierchest = hxsoldierArmorBuilder.buildChest(modContext.isClient());
-        Armors.HXSoldierboots = hxsoldierArmorBuilder.buildBoots(modContext.isClient());
+//        Builder hxsoldierArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.ScarSuit)
+//                .withUnlocalizedName("hxsoldier").withTextureName("hxsoldier")
+//                .withExposureReductionFactor(99999f)
+//                .withNightVision(true)
+//                .withModelClass("com.vicmatskiv.mw.models.HXSoldier").withHudTextureName("Marine")
+//                .withCreativeTab(ModernWarfareMod.ArmorTab);
+//
+//        Armors.HXSoldierhelmet = hxsoldierArmorBuilder.buildHelmet(modContext);
+//        Armors.HXSoldierchest = hxsoldierArmorBuilder.buildChest(modContext.isClient());
+//        Armors.HXSoldierboots = hxsoldierArmorBuilder.buildBoots(modContext.isClient());
             
         Builder umbrellaArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Marine)
                     .withUnlocalizedName("Umbrella").withTextureName("UmbrellaCorp")
@@ -395,7 +382,7 @@ public class Armors {
         Armors.Umbrellaboots = umbrellaArmorBuilder.buildBoots(modContext.isClient());
         
         Builder astronautArmorBuilder = new CustomArmor.Builder().withModId(ModernWarfareMod.MODID).withMaterial(Armors.Astronaut)
-                .withUnlocalizedName("Astronaut").withTextureName("Astronaut2")
+                .withUnlocalizedName("Astronaut").withTextureName("Astronaut")
                 .withExposureReductionFactor(1f)
                 .withModelClass("com.vicmatskiv.mw.models.Astronaut").withHudTextureName("Marine")
                 .withCreativeTab(ModernWarfareMod.ArmorTab);

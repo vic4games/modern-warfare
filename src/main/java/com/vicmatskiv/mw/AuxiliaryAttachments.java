@@ -71,6 +71,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> Volkaction;
     public static ItemAttachment<Weapon> SV98BoltAction;
     public static ItemAttachment<Weapon> L96A1BoltAction;
+    public static ItemAttachment<Weapon> InterventionBoltAction;
     public static ItemAttachment<Weapon> SV98barrelpiece;
     public static ItemAttachment<Weapon> VSSVintorezAction;
     public static ItemAttachment<Weapon> MP443Slide;
@@ -93,8 +94,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> G43GewehrAction;
     public static ItemAttachment<Weapon> Mk14EBRaction;
     public static ItemAttachment<Weapon> Mk14EBRsight;
-    public static ItemAttachment<Weapon> Glock18Cslide;
-    public static ItemAttachment<Weapon> Glock19slide;
+//    public static ItemAttachment<Weapon> Glock18Cslide;
     public static ItemAttachment<Weapon> L131A1slide;
     public static ItemAttachment<Weapon> APSslide;
     public static ItemAttachment<Weapon> KragAction1;
@@ -164,7 +164,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> MagnumChamber;
     public static ItemAttachment<Weapon> RhinoChamber;
     public static ItemAttachment<Weapon> TheDechardChamber;
-    public static ItemAttachment<Weapon> P226Slide;
+//    public static ItemAttachment<Weapon> P226Slide;
     public static ItemAttachment<Weapon> M1897Pump;
     public static ItemAttachment<Weapon> Super90Pump;
     public static ItemAttachment<Weapon> M32Main1B;
@@ -204,6 +204,9 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> OSIPRCellFinger;
     public static ItemAttachment<Weapon> OSIPRHeatEscaper;
     public static ItemAttachment<Weapon> K2C1Action;
+    public static ItemAttachment<Weapon> ScorpionAction;
+    public static ItemAttachment<Weapon> APC9Action;
+    public static ItemAttachment<Weapon> ARX160Action;
     
     //Magazines
     public static ItemAttachment<Weapon> NV4Mag;
@@ -230,6 +233,7 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> ShotgunShellDouble;
     public static ItemAttachment<Weapon> Shotgun4Gauge;
     public static ItemAttachment<Weapon> Bullet;
+    public static ItemAttachment<Weapon> BulletSmall;
     public static ItemAttachment<Weapon> LaserProjectile;
     public static ItemAttachment<Weapon> RPG7rocket;
     public static ItemAttachment<Weapon> M202rockets;
@@ -467,15 +471,15 @@ public class AuxiliaryAttachments {
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        P226Slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.P225Top(), "P226Top.png")
-                .withModel(new com.vicmatskiv.mw.models.P226rearsight(), "p226rearsight.png")
-                .withModel(new com.vicmatskiv.mw.models.P226frontsight(), "p226frontsight.png")
-                .withName("P226Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
+//        P226Slide = new AttachmentBuilder<Weapon>()
+//                .withCategory(AttachmentCategory.EXTRA)
+//                // .withCreativeTab(ModernWarfareMod.gunsTab)
+//                .withModel(new com.vicmatskiv.mw.models.P226Slide(), "P226.png")
+//                .withModel(new com.vicmatskiv.mw.models.P226rearsight(), "p226rearsight.png")
+//                .withModel(new com.vicmatskiv.mw.models.P226frontsight(), "p226frontsight.png")
+//                .withName("P226Slide")
+//                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+//                .build(ModernWarfareMod.MOD_CONTEXT);
         
         PythonChamber = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
@@ -771,6 +775,15 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.G36Action(), "gun.png")
                 .withName("G36CAction")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        ARX160Action = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.ARX160Action(), "gun.png")
+                .withName("ARX160Action")
                 .withRenderablePart()
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
@@ -1136,16 +1149,6 @@ public class AuxiliaryAttachments {
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
-        Glock18Cslide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.Glock18Cslide(), "glock18c.png")
-                .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
-                .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
-                .withName("Glock18Cslide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
         ESA23Slide = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1189,16 +1192,6 @@ public class AuxiliaryAttachments {
                 .withModel(new com.vicmatskiv.mw.models.makarovfrontsight(), "gun")
                 .withModel(new com.vicmatskiv.mw.models.APSrearsight(), "gun")
                 .withName("APSslide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        Glock19slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.vicmatskiv.mw.models.Glock19slide(), "glock19.png")
-                .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
-                .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
-                .withName("Glock19slide")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1551,6 +1544,14 @@ public class AuxiliaryAttachments {
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        InterventionBoltAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.InterventionBoltAction(), "intervention.png")
+                .withName("InterventionBoltAction")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         L115Mag = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
@@ -1644,7 +1645,19 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet")
                 .withName("Bullet")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        BulletSmall = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet")
+                .withName("BulletSmall")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         LaserProjectile = new AttachmentBuilder<Weapon>()
@@ -1728,6 +1741,16 @@ public class AuxiliaryAttachments {
         K2C1Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.K2C1Action(), "k2c1.png")
                 .withName("K2C1Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        ScorpionAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.ScorpionEVO3A1Action(), "ScorpionEVO3A1.png")
+                .withName("ScorpionAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        APC9Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.APC9Action(), "gun.png")
+                .withName("APC9Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SA80Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)

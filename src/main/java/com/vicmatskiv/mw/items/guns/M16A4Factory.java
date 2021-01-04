@@ -822,7 +822,7 @@ public class M16A4Factory implements GunFactory {
 //           	 GL11.glRotatef(10F, 1f, 1f, 0f);
                })
 				
-.withFirstPersonPositioningReloading(
+            .withFirstPersonPositioningReloading(
 			        
 					// mag is at bottom
 					
@@ -1866,7 +1866,7 @@ public class M16A4Factory implements GunFactory {
                          GL11.glTranslatef(0.31000f, -0.550000f, 0.100000f);
                      })
 					 
-.withFirstPersonLeftHandPositioningReloading(
+            .withFirstPersonLeftHandPositioningReloading(
 			        
 			        new Transition((renderContext) -> {
     					    GL11.glScalef(4f, 4f, 4f);

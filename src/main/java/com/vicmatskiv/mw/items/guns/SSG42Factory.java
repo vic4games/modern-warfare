@@ -55,7 +55,7 @@ public class SSG42Factory implements GunFactory {
          .withCrafting(CraftingComplexity.HIGH,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Super Shotgun (MkII Demon Slayer)",
         "Damage per Pellet: 18",

@@ -89,7 +89,7 @@ public class BFG9000Factory implements GunFactory {
                 1f, // y
                 8f) // z
         
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList("Type: BIG F*****G GUN", 
         "Cartridge: Argent Plasma Capsule", "Fire Rate: Semi"))
         .withCompatibleAttachment(Bullets.BFGammo, (model) -> {})

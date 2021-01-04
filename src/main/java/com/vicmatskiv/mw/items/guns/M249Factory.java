@@ -288,15 +288,15 @@ public class M249Factory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-            GL11.glTranslatef(-0.12F, -1.1F, 4.3F);
-            GL11.glScaled(0.4F, 0.4F, 0.5F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//            GL11.glTranslatef(-0.12F, -1.1F, 4.3F);
+//            GL11.glScaled(0.4F, 0.4F, 0.5F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
             GL11.glTranslatef(0.125F, -0.85F, 4.8F);
             GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -1064,47 +1064,47 @@ public class M249Factory {
                      }, 250, 1000)
                          )
              
-             .withFirstPersonCustomPositioningReloading(Attachments.Vortex.getRenderablePart(),
-                     new Transition((renderContext) -> {
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                         GL11.glTranslatef(0F, -1.4F, -3.2F);
-                         GL11.glRotatef(90F, 1f, 0f, 0f);
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                     }, 250, 1000),
-                     new Transition((renderContext) -> {
-                     }, 250, 1000)
-                         )
+//             .withFirstPersonCustomPositioningReloading(Attachments.Vortex.getRenderablePart(),
+//                     new Transition((renderContext) -> {
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                         GL11.glTranslatef(0F, -1.4F, -3.2F);
+//                         GL11.glRotatef(90F, 1f, 0f, 0f);
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                     }, 250, 1000),
+//                     new Transition((renderContext) -> {
+//                     }, 250, 1000)
+//                         )
              
              .withFirstPersonCustomPositioningReloading(Attachments.MicroT1.getRenderablePart(),
                      new Transition((renderContext) -> {
@@ -1477,11 +1477,11 @@ public class M249Factory {
                     GL11.glTranslatef(0F, 0.33f, 0.5f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.315f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.315f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -1562,11 +1562,11 @@ public class M249Factory {
                     GL11.glTranslatef(0F, 0.33f, 0.5f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.315f, 0.6f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.315f, 0.6f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

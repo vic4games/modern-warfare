@@ -83,7 +83,7 @@ public class FatmanFactory implements GunFactory {
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate,
                 Ores.GunmetalIngot)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
+        .withCreativeTab(ModernWarfareMod.CombatServerTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 1f, // x 

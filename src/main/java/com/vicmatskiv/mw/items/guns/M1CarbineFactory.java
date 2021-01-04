@@ -269,15 +269,15 @@ public class M1CarbineFactory {
                  GL11.glScaled(0.05F, 0.05F, 0.05F);
              }
          })
-         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                 GL11.glTranslatef(-0.28F, -1.3F, -3F);
-                 GL11.glScaled(0.4F, 0.4F, 0.5F);
-             },(model) -> {
-                 if(model instanceof Holo2) {
-                     GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                     GL11.glScaled(0.15F, 0.15F, 0.15F);
-                 }
-             })
+//         .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                 GL11.glTranslatef(-0.28F, -1.3F, -3F);
+//                 GL11.glScaled(0.4F, 0.4F, 0.5F);
+//             },(model) -> {
+//                 if(model instanceof Holo2) {
+//                     GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                     GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                 }
+//             })
          .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
                  GL11.glTranslatef(-0.041F, -1.08F, -2.8F);
                  GL11.glScaled(0.65F, 0.65F, 0.65F);
@@ -716,11 +716,11 @@ public class M1CarbineFactory {
                     GL11.glTranslatef(0F, 0.295f, 1f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.3f, 1f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.3f, 1f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -808,11 +808,11 @@ public class M1CarbineFactory {
                     GL11.glTranslatef(0F, 0.295f, 1f);
                 } 
                 
-             // ACOG Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Acog");
-                    GL11.glTranslatef(0F, 0.3f, 1f);
-                } 
+//             // ACOG Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Acog");
+//                    GL11.glTranslatef(0F, 0.3f, 1f);
+//                } 
                 
              // ACOG Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {

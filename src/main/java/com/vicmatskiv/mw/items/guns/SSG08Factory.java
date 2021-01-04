@@ -2375,7 +2375,7 @@ public class SSG08Factory implements GunFactory {
                     }, 50, 200))
                     
             .build())
-        .withSpawnEntityDamage(20f)
+        .withSpawnEntityDamage(27f)
         .withSpawnEntityGravityVelocity(0f)
         
          

@@ -4,7 +4,6 @@ import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compa
 
 import com.vicmatskiv.mw.items.melee.BaseballBatFactory;
 import com.vicmatskiv.mw.items.melee.BaseballBatNailsFactory;
-import com.vicmatskiv.mw.items.melee.GasCanFactory;
 import com.vicmatskiv.mw.items.melee.NightStickFactory;
 import com.vicmatskiv.mw.items.melee.TacticalTomahawkFactory;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
@@ -167,7 +166,6 @@ public class CommonProxy {
         
         new NightStickFactory().createMelee(this);
         
-        new GasCanFactory().createMelee(this);
         TileEntities.init(this);
     }
 

@@ -80,7 +80,13 @@ public class ClientProxy extends CommonProxy {
         renderItem.getItemModelMesher().register(Ores.PlasticPlate, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "plasticplate", "inventory"));
         
         //      renderItem.getItemModelMesher().register(CommonProxy.AKMIron, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "akmiron", "inventory"));
-
+        
+        renderItem.getItemModelMesher().register(Armors.Dclassboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "dclass_boots", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.Dclasschest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "dclass_chest", "inventory"));
+        
+        renderItem.getItemModelMesher().register(Armors.SCPGuardboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "swat_boots", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.SCPGuardchest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "scpguard_chest", "inventory"));
+        renderItem.getItemModelMesher().register(Armors.SCPGuardhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "scpguard_helmet", "inventory"));
 
         renderItem.getItemModelMesher().register(Armors.Marineboots, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "marine_boots", "inventory"));
         renderItem.getItemModelMesher().register(Armors.Marinechest, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "marine_chest", "inventory"));
@@ -194,6 +200,7 @@ public class ClientProxy extends CommonProxy {
 
         renderItem.getItemModelMesher().register(Armors.Tacticalhelmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "tactical_helmet", "inventory"));
         
+        renderItem.getItemModelMesher().register(Armors.JPNVG18helmet, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "jpnvg18_helmet", "inventory"));
             
         renderItem.getItemModelMesher().register(Armors.GasMaskM40, 0, new ModelResourceLocation(ModernWarfareMod.MODID + ":" + "m40gasmask_helmet", "inventory"));
 

@@ -211,15 +211,15 @@ public class Kar98KFactory implements GunFactory {
                 GL11.glScaled(0.05F, 0.05F, 0.05F);
             }
         })
-        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
-                GL11.glTranslatef(-0.28F, -1.58F, -2.5F);
-                GL11.glScaled(0.3F, 0.3F, 0.4F);
-            },(model) -> {
-                if(model instanceof Holo2) {
-                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
-                    GL11.glScaled(0.15F, 0.15F, 0.15F);
-                }
-            })
+//        .withCompatibleAttachment(Attachments.Vortex, (player, stack) -> {
+//                GL11.glTranslatef(-0.28F, -1.58F, -2.5F);
+//                GL11.glScaled(0.3F, 0.3F, 0.4F);
+//            },(model) -> {
+//                if(model instanceof Holo2) {
+//                    GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+//                    GL11.glScaled(0.15F, 0.15F, 0.15F);
+//                }
+//            })
         .withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
                 GL11.glTranslatef(-0.1F, -1.43F, -2F);
                 GL11.glScaled(0.45F, 0.45F, 0.45F);
@@ -1022,11 +1022,11 @@ public class Kar98KFactory implements GunFactory {
                     GL11.glTranslatef(0f, 0.25f, 1.3f);
                 }   
                 
-             // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0f, 0.255f, 0.2f);
-                }   
+//             // Scope Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0f, 0.255f, 0.2f);
+//                }   
                 
              // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
@@ -1118,11 +1118,11 @@ public class Kar98KFactory implements GunFactory {
                     GL11.glTranslatef(0f, 0.25f, 1.3f);
                 }  
                 
-             // Scope Zoom
-                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
-                    //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0f, 0.255f, 0.2f);
-                }  
+//             // Scope Zoom
+//                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Vortex)) {
+//                    //System.out.println("Position me for Scope");
+//                    GL11.glTranslatef(0f, 0.255f, 0.2f);
+//                }  
                 
              // Scope Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
