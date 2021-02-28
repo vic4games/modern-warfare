@@ -174,6 +174,8 @@ public class CommonProxy {
         
         Entities.init(this);
         
+        Vehicles.init(this);
+        
         compatibility.registerWorldGenerator(new WorldGeneratorEventHandler(configurationManager), 0);
     }
 

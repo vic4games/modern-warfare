@@ -34,6 +34,9 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> AR15Iron;
     public static ItemAttachment<Weapon> Extra;
     public static ItemAttachment<Weapon> AR15Action;
+    public static ItemAttachment<Weapon> BeowulfAction;
+    public static ItemAttachment<Weapon> S710TricunActionPully;
+    public static ItemAttachment<Weapon> S710TricunActionEjector;
     public static ItemAttachment<Weapon> SA80Action;
     public static ItemAttachment<Weapon> P90Action;
     public static ItemAttachment<Weapon> NV4Action;
@@ -207,6 +210,21 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> ScorpionAction;
     public static ItemAttachment<Weapon> APC9Action;
     public static ItemAttachment<Weapon> ARX160Action;
+    public static ItemAttachment<Weapon> MAS21Slide;
+    public static ItemAttachment<Weapon> MAS21Part;
+    public static ItemAttachment<Weapon> MAS21Barrel;
+    public static ItemAttachment<Weapon> PanelUpper;
+    public static ItemAttachment<Weapon> PanelLower;
+    public static ItemAttachment<Weapon> RegulatorUpper;
+    public static ItemAttachment<Weapon> RegulatorLower;
+    public static ItemAttachment<Weapon> RegulatorRotator;
+    public static ItemAttachment<Weapon> RegulatorActionUpper;
+    public static ItemAttachment<Weapon> RegulatorActionLower;
+    public static ItemAttachment<Weapon> RegulatorAction;
+    public static ItemAttachment<Weapon> CyclerFront;
+    public static ItemAttachment<Weapon> CyclerBackLeft;
+    public static ItemAttachment<Weapon> CyclerBackRight;
+    public static ItemAttachment<Weapon> Cycler;
     
     //Magazines
     public static ItemAttachment<Weapon> NV4Mag;
@@ -244,6 +262,102 @@ public class AuxiliaryAttachments {
     
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         
+    	
+    	PanelUpper = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinPanelUpper(), "ninthsin.png")
+                .withName("PanelUpper")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	PanelLower = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinPanelLower(), "ninthsin.png")
+                .withName("PanelLower")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorUpper = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorUpper(), "ninthsin.png")
+                .withName("RegulatorUpper")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorLower = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA4)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorLower(), "ninthsin.png")
+                .withName("RegulatorLower")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorRotator = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA5)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorRotator(), "ninthsin.png")
+                .withName("RegulatorRotator")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorActionUpper = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA6)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorActionUpper(), "ninthsin.png")
+                .withName("RegulatorActionUpper")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorActionLower = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA7)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorActionLower(), "ninthsin.png")
+                .withName("RegulatorActionLower")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	RegulatorAction = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA8)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinRegulatorAction(), "ninthsin.png")
+                .withName("RegulatorAction")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	CyclerFront = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA9)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinCycleFront(), "ninthsin.png")
+                .withName("CyclerFront")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	CyclerBackLeft = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA10)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinCycleBackLeft(), "ninthsin.png")
+                .withName("CyclerBackLeft")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	CyclerBackRight = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA11)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinCycleBackRight(), "ninthsin.png")
+                .withName("CyclerBackRight")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	Cycler = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA12)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinCycle(), "ninthsin.png")
+                .withName("Cycler")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	OSIPRAutoSpanker = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA)
@@ -415,6 +529,38 @@ public class AuxiliaryAttachments {
                 .withModel(new com.vicmatskiv.mw.models.AUGaction(), "gun.png")
                 .withName("AUGAction")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MAS21Slide = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.MAS21Slide(), "MAS21.png")
+                .withModel(new com.vicmatskiv.mw.models.P226rearsight(), "p226rearsight.png")
+                .withModel(new com.vicmatskiv.mw.models.P226frontsight(), "p226frontsight.png")
+                .withName("MAS21Slide")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MAS21Barrel = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA2)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.MAS21Barrel(), "MAS21.png")
+                .withName("MAS21Barrel")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MAS21Part = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.EXTRA3)
+                // .withCreativeTab(ModernWarfareMod.gunsTab)
+                .withModel(new com.vicmatskiv.mw.models.MAS21Part(), "MAS21.png")
+                .withName("MAS21Part")
+                .withRenderablePart()
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M32Main1B = new AttachmentBuilder<Weapon>()
@@ -1736,6 +1882,21 @@ public class AuxiliaryAttachments {
         AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.vicmatskiv.mw.models.AR15Action(), "gun.png")
                 .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        BeowulfAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
+                .withModel(new com.vicmatskiv.mw.models.Beowulf50CalAction(), "beowulf50cal.png")
+                .withName("BeowulfAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        S710TricunActionPully = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
+                .withModel(new com.vicmatskiv.mw.models.S710TricunActionPully(), "s710tricun.png")
+                .withName("S710TricunActionPully").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+        
+        S710TricunActionEjector = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
+                .withModel(new com.vicmatskiv.mw.models.S710TricunActionEjector(), "s710tricun.png")
+                .withName("S710TricunActionEjector").withRenderablePart().withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         K2C1Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)

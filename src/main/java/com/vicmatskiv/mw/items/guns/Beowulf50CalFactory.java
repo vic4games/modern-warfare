@@ -28,6 +28,8 @@ import com.vicmatskiv.mw.models.ARCarryHandle;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
+import com.vicmatskiv.mw.models.Beowulf50Cal;
+import com.vicmatskiv.mw.models.Beowulf50CalReceiver;
 import com.vicmatskiv.mw.models.EotechScopeRing;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
@@ -72,15 +74,15 @@ import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
-public class AR10SuperSASSFactory implements GunFactory {
+public class Beowulf50CalFactory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
 		.withModId(ModernWarfareMod.MODID)
-		.withName("ar10_super_sass")
+		.withName("beowulf_50_cal")
 		//.withAmmoCapacity(30)
-		.withFireRate(0.8f)
-		.withRecoil(5f)
+		.withFireRate(0.3f)
+		.withRecoil(7f)
 		.withZoom(0.9f)
 		.withMaxShots(1)
 		.withShootSound("m110")
@@ -103,21 +105,21 @@ public class AR10SuperSASSFactory implements GunFactory {
 //		.withShellCasingEjectEnabled(false)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
-		"Type: Semi-Automatic Sniper System", 
+		"Type: .50 Beowulf Rifle", 
 		"Damage: 10", 
-		"Cartridge: 7.62x51mm",
+		"Cartridge: .50 Beowulf",
 		"Fire Rate: SEMI",
-		"Rate of Fire: 80/100",
+		"Rate of Fire: 30/100",
 		"Magazines:",
-        "10rnd 7.62x51mm NATO Magazine"))
+        "10rnd .50 Beowulf Magazine"))
 		 .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.PlasticPlate,
                 Ores.GunmetalPlate)
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
-	                2f, // x 
-	                3f, // y
-	                4f) // z
+	                3f, // x 
+	                4f, // y
+	                6f) // z
 		 
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
@@ -138,7 +140,7 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glTranslatef(0.01f, -0.1f, -0.2f);
             GL11.glScaled(1.1F, 1.2F, 1F);
         })
-        .withCompatibleAttachment(Attachments.MilSpecStock, (model) -> {
+        .withCompatibleAttachment(Attachments.MilSpecStock, true, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
         })
@@ -166,35 +168,10 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glTranslatef(0f, -0.28f, -0.55f);
             GL11.glScaled(1F, 1F, 0.85F);
         })
-        .withCompatibleAttachment(Attachments.PRSPrecisionStock, true, (model) -> {
+        .withCompatibleAttachment(Attachments.PRSPrecisionStock, (model) -> {
 //            GL11.glTranslatef(0f, -0.28f, -0.55f);
             GL11.glScaled(1F, 1F, 0.85F);
         })
-        .withCompatibleAttachment(Attachments.M4FrontSight, renderContext -> {
-            PlayerWeaponInstance instance = renderContext.getWeaponInstance();
-            if(instance != null) {
-                ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                        AttachmentCategory.GUARD, instance);
-                if(activeAttachment == Attachments.Mk18HandGuard) {
-                    GL11.glTranslatef(0F, 0F, -0.6F);
-                    GL11.glScaled(1F, 1F, 1F);
-                } else if(activeAttachment == Attachments.M16A4HandGuard) {
-                    GL11.glTranslatef(0F, 0F, -1.2F);
-                    GL11.glScaled(1F, 1F, 1F);
-                } else {
-                    GL11.glTranslatef(0F, 0F, -1.1F);
-                    GL11.glScaled(1F, 1F, 1F);
-                }
-            }
-        },(model) -> {
-            if(model instanceof M4Iron2) {
-                GL11.glTranslatef(-0.055F, -1.35F, -4.05F);
-                GL11.glScaled(0.8F, 0.68F, 1F);
-          } else if(model instanceof FALIron) {
-                  GL11.glTranslatef(-0.185F, -1.55F, -4.05F);
-                  GL11.glScaled(0.55F, 0.5F, 1F);
-              }
-        }, true, false)
         
         .withCompatibleAttachment(Attachments.HK416FrontSight, renderContext -> {
             PlayerWeaponInstance instance = renderContext.getWeaponInstance();
@@ -208,7 +185,7 @@ public class AR10SuperSASSFactory implements GunFactory {
                     GL11.glTranslatef(0F, 0F, -0.8F);
                     GL11.glScaled(1F, 1F, 1F);
                 } else {
-                    GL11.glTranslatef(0F, 0F, 0F);
+                    GL11.glTranslatef(0F, 0F, 0.2F);
                     GL11.glScaled(1F, 1F, 1F);
                 }
             }
@@ -217,7 +194,7 @@ public class AR10SuperSASSFactory implements GunFactory {
             	GL11.glTranslatef(-0.155F, -1.55F, -3.5F);
                 GL11.glScaled(0.32F, 0.32F, 0.32F);
               }
-        }, false, false)
+        }, true, false)
         
         .withCompatibleAttachment(Attachments.MBUSFrontSight, renderContext -> {
             PlayerWeaponInstance instance = renderContext.getWeaponInstance();
@@ -271,7 +248,7 @@ public class AR10SuperSASSFactory implements GunFactory {
               GL11.glScaled(0.75F, 0.95F, 0.3F);
           }
         }, false, false)
-        .withCompatibleAttachment(Attachments.AR10SuperSASSHandguard, true, (model) -> {
+        .withCompatibleAttachment(Attachments.AR10SuperSASSHandguard, (model) -> {
             if(model instanceof AKRail) {
               GL11.glTranslatef(0.11F, -1.17F, -4.45F);
               GL11.glScaled(0.6F, 0.6F, 1F);
@@ -289,7 +266,7 @@ public class AR10SuperSASSFactory implements GunFactory {
               GL11.glScaled(0.6F, 0.8F, 1.15F);
           }
         })
-        .withCompatibleAttachment(Attachments.M16A4HandGuard, (model) -> {
+        .withCompatibleAttachment(Attachments.M16A4HandGuard, true, (model) -> {
             if(model instanceof AKRail) {
               GL11.glTranslatef(0.13F, -1.17F, -4.45F);
               GL11.glScaled(0.6F, 0.6F, 1F);
@@ -342,8 +319,34 @@ public class AR10SuperSASSFactory implements GunFactory {
               GL11.glRotatef(180F, 0f, 0f, 1f);
           }
         })
-        .withCompatibleAttachment(Attachments.M4Receiver, true, (model) -> {
-            if(model instanceof M4Receiver) {
+        .withCompatibleAttachment(Attachments.M4HandGuard, (model) -> {
+        })
+        .withCompatibleAttachment(Attachments.M16HandGuard, (model) -> {
+        })
+        .withCompatibleAttachment(Attachments.M4MagpulHandGuard, (model) -> {
+        })
+        .withCompatibleAttachment(Attachments.M4MagpulHandGuardTan, (model) -> {
+        })
+        .withCompatibleAttachment(Attachments.M4CarbineHandGuard, (model) -> {
+            if(model instanceof AKRail) {
+              GL11.glTranslatef(0.13F, -1.17F, -3.5F);
+              GL11.glScaled(0.6F, 0.6F, 0.6F);
+              GL11.glRotatef(90F, 0f, 0f, 1f);
+          } else if(model instanceof AKRail2) {
+              GL11.glTranslatef(-0.37F, -1.005F, -3.5F);
+              GL11.glScaled(0.6F, 0.6F, 0.6F);
+              GL11.glRotatef(-90F, 0f, 0f, 1f);
+          } else if(model instanceof AKRail3) {
+              GL11.glTranslatef(-0.03F, -0.84F, -3.64F);
+              GL11.glScaled(0.6F, 0.6F, 0.65F);
+              GL11.glRotatef(180F, 0f, 0f, 1f);
+          } else if(model instanceof AKRail5) {
+              GL11.glTranslatef(-0.2F, -1.32F, -3.65f);
+              GL11.glScaled(0.6F, 0.8F, 0.68F);
+          }
+        })
+        .withCompatibleAttachment(Attachments.Beowulf50CalReceiver, true, (model) -> {
+            if(model instanceof Beowulf50CalReceiver) {
           } else if(model instanceof AKRail) {
               GL11.glTranslatef(-0.2F, -1.319F, -1.82f);
               GL11.glScaled(0.6F, 0.8F, 0.78F);
@@ -362,13 +365,18 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glTranslatef(0F, -0.05F, 0F);
             GL11.glScaled(1F, 0.95F, 1F);
         })
-        .withCompatibleAttachment(Magazines.M110Mag, (model) -> {
-            GL11.glTranslatef(-0.33F, 0.5F, -1.3F);
-            GL11.glScaled(1.05F, 1.2F, 1F);
+        .withCompatibleAttachment(Magazines.BeowulfMag, (model) -> {
+//            GL11.glTranslatef(0F, 0.4F, -0F);
+//            GL11.glRotatef(15F, 0f, 0f, 0f);
+//            GL11.glScaled(1.05F, 1.2F, 1F);
         })
 		.withCompatibleAttachment(AuxiliaryAttachments.AR15Action, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.28F, -0.67F);
             GL11.glScaled(0.7F, 0.4F, 0.7F);
+        })
+		.withCompatibleAttachment(AuxiliaryAttachments.BeowulfAction, true, (model) -> {
+//            GL11.glTranslatef(-0.175F, -1.28F, -0.67F);
+//            GL11.glScaled(0.7F, 0.4F, 0.7F);
         })
 	   .withCompatibleAttachment(AuxiliaryAttachments.AR15Iron, (model) -> {
             if(model instanceof M4Iron1) {
@@ -657,10 +665,10 @@ public class AR10SuperSASSFactory implements GunFactory {
 			GL11.glTranslatef(-0.2F, -1.235F, -7.5F);
 			GL11.glScaled(1F, 1F, 1F);
 		})
-		.withTextureNames("m16a4")
+		.withTextureNames("beowulf50cal")
 		.withRenderer(new WeaponRenderer.Builder()
 			.withModId(ModernWarfareMod.MODID)
-			.withModel(new M16A4())
+			.withModel(new Beowulf50Cal())
 			.withEntityPositioning(itemStack -> {
 				GL11.glScaled(0.5F, 0.5F, 0.5F);
 				GL11.glTranslatef(0, 0f, 3f);
@@ -685,10 +693,10 @@ public class AR10SuperSASSFactory implements GunFactory {
                 GL11.glTranslatef(-0.16f, 1.2f, -0.65f);
                 
 //                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-//                GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
+//                GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
 //                GL11.glRotatef(35.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(60.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(0.300000f, 1.549999f, -0.550000f);
+//                GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+//                GL11.glTranslatef(-0.500000f, 1.36f, -0.525000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
@@ -723,10 +731,13 @@ public class AR10SuperSASSFactory implements GunFactory {
 //            	 GL11.glRotatef(-20F, 0f, 0f, 1f);
                 })
             
-            .withFirstPersonCustomPositioning(Magazines.P90Mag, (renderContext) -> {
-//           	 GL11.glTranslatef(0.45f, -0.35f, 0f);
-//           	 GL11.glRotatef(10F, 1f, 1f, 0f);
-               })
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.BeowulfAction.getRenderablePart(), (renderContext) -> {
+                GL11.glTranslatef(0f, 0f, 1f);
+                })
+                
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.BeowulfAction.getRenderablePart(), (renderContext) -> {
+                GL11.glTranslatef(0f, 0f, 1f);
+                })
 				
             .withFirstPersonPositioningReloading(
 			        
@@ -739,6 +750,46 @@ public class AR10SuperSASSFactory implements GunFactory {
                             GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
                             GL11.glTranslatef(-0.500000f, 1.36f, -0.525000f);
                     }, 300, 0),
+			        
+			        // mag shows itself
+			        
+			        new Transition((renderContext) -> {
+                    	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.300000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-14.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.500000f, 1.31f, -0.525000f);
+			        }, 230, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+                    	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-12.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.500000f, 1.3f, -0.525000f);
+			        }, 80, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+                    	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-13.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.500000f, 1.3f, -0.525000f);
+			        }, 100, 0),
+			        
+			        // mag goes down
+			        
+			        new Transition((renderContext) -> {
+                    	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.500000f, 1.34f, -0.525000f);
+			        }, 200, 0),
 			        
 			        //mag touches gun
 			        
@@ -942,6 +993,14 @@ public class AR10SuperSASSFactory implements GunFactory {
             .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AR15Action.getRenderablePart(),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
+		        new Transition((renderContext) -> {
+		        }, 230, 0),
+		        new Transition((renderContext) -> {
+		        }, 60, 0),
+		        new Transition((renderContext) -> {
+		        }, 90, 0),
+		        new Transition((renderContext) -> {
+		        }, 200, 0),
                 new Transition((renderContext) -> {
                 }, 250, 1000),
                 new Transition((renderContext) -> {
@@ -992,10 +1051,30 @@ public class AR10SuperSASSFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-			.withFirstPersonCustomPositioningReloading(Magazines.M110Mag,
+			.withFirstPersonCustomPositioningReloading(Magazines.BeowulfMag,
 					new Transition((renderContext) -> {
                         GL11.glTranslatef(0F, 1.5F, 0F);
                     }, 250, 1000),
+					// mag shows itself
+			        new Transition((renderContext) -> {
+			        	GL11.glTranslatef(0.35F, 0.2F, -0F);
+			            GL11.glRotatef(15F, 0f, 0f, 1f);
+			        }, 230, 0),
+			        // jiggle
+			        new Transition((renderContext) -> {
+			        	GL11.glTranslatef(0.35F, 0.2F, -0F);
+			            GL11.glRotatef(15.5F, 0f, 0f, 1f);
+			        }, 60, 0),
+			        // jiggle
+			        new Transition((renderContext) -> {
+			        	GL11.glTranslatef(0.35F, 0.2F, -0F);
+			            GL11.glRotatef(14F, 0f, 0f, 1f);
+			        }, 90, 0),
+			        // mag goes down
+			        new Transition((renderContext) -> {
+			        	GL11.glTranslatef(0F, 0.4F, -0F);
+			            GL11.glRotatef(15F, 0f, 0f, 0f);
+			        }, 200, 0),
                 new Transition((renderContext) -> {
                 	GL11.glTranslatef(0.1f, 0.35f, 0f);
                	 GL11.glRotatef(-20F, 0f, 0f, 1f);
@@ -1030,7 +1109,7 @@ public class AR10SuperSASSFactory implements GunFactory {
                 }, 250, 1000)
                     )
                     
-            .withFirstPersonCustomPositioningUnloading(Magazines.M110Mag,
+            .withFirstPersonCustomPositioningUnloading(Magazines.BeowulfMag,
             		// gun turns over (views ejection port)
             		new Transition((renderContext) -> { // Reload position
                     }, 240, 0),
@@ -1504,7 +1583,7 @@ public class AR10SuperSASSFactory implements GunFactory {
                              GL11.glRotatef(30.000000f, 0f, 0f, 1f);
                              GL11.glTranslatef(0.150000f, -0.075000f, 0.200000f);
                          } else {
-                             GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        	 GL11.glScalef(3.5f, 3.5f, 3.5f);
                              GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                              GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
                              GL11.glRotatef(45.000000f, 0f, 0f, 1f);
@@ -1613,6 +1692,46 @@ public class AR10SuperSASSFactory implements GunFactory {
     					    GL11.glRotatef(55.000000f, 0f, 0f, 1f);
     					    GL11.glTranslatef(0.4f, -0.5f, 0.125000f);
 					}, 50, 200),
+			        // mag shows itself
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-65.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, -0.575000f, 0.025000f);
+			        }, 230, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-65.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, -0.575000f, 0.025000f);
+			        }, 60, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-65.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, -0.575000f, 0.025000f);
+			        }, 90, 0),
+			        
+			        // mag goes down
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(3.5f, 3.5f, 3.5f);
+                        GL11.glRotatef(-45.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.500000f, -0.575000f, 0.125000f);
+			        }, 200, 0),
+			        // mag touches gun
 			        new Transition((renderContext) -> {
                         	GL11.glScalef(3.5f, 3.5f, 3.5f);
                             GL11.glRotatef(-75.000000f, 1f, 0f, 0f);
@@ -1721,6 +1840,45 @@ public class AR10SuperSASSFactory implements GunFactory {
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
 					}, 250, 1000),
+// mag shows itself
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+			        }, 230, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+			        }, 60, 0),
+			        
+			        // jiggle
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+			        }, 90, 0),
+			        
+			        // mag goes down
+			        
+			        new Transition((renderContext) -> {
+			        	GL11.glScalef(4f, 4f, 5f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+			        }, 200, 0),
 					new Transition((renderContext) -> { // Reload position
 					    GL11.glScalef(4f, 4f, 5f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);

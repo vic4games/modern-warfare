@@ -1,0 +1,234 @@
+package com.vicmatskiv.mw.vehicle;
+
+import org.lwjgl.opengl.GL11;
+
+import com.vicmatskiv.mw.ModernWarfareMod;
+import com.vicmatskiv.mw.models.AudiS4;
+import com.vicmatskiv.mw.models.AudiS4SteeringWheel;
+import com.vicmatskiv.mw.models.AudiS4Wheel;
+import com.vicmatskiv.mw.models.SampleVehicleControlArm;
+import com.vicmatskiv.weaponlib.EntityConfiguration;
+import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
+import com.vicmatskiv.weaponlib.vehicle.EntityVehicleConfiguration;
+import com.vicmatskiv.weaponlib.vehicle.Positioners;
+import com.vicmatskiv.weaponlib.vehicle.StatefulRenderer;
+import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
+import com.vicmatskiv.weaponlib.vehicle.VehicleRenderableState;
+import com.vicmatskiv.weaponlib.vehicle.VehicleRendererBuilder;
+
+public class AudiS4Factory implements VehicleFactory {
+
+    public EntityConfiguration createVehicle(ModContext modContext) {
+        
+        StatefulRenderer<VehicleRenderableState> renderer = new VehicleRendererBuilder()
+                
+                .withPartTexturedModel(VehiclePart.MAIN, AudiS4::new, "audis4")
+                .withPartTexturedModel(VehiclePart.STEERING_WHEEL, AudiS4SteeringWheel::new, "audis4")
+                .withPartTexturedModel(VehiclePart.FRONT_LEFT_CONTROL_ARM, SampleVehicleControlArm::new, "sample-vehicle")
+                .withPartTexturedModel(VehiclePart.FRONT_RIGHT_CONTROL_ARM, SampleVehicleControlArm::new, "sample-vehicle")
+                .withPartTexturedModel(VehiclePart.FRONT_LEFT_WHEEL, AudiS4Wheel::new, "audis4")
+                .withPartTexturedModel(VehiclePart.FRONT_RIGHT_WHEEL, AudiS4Wheel::new, "audis4")
+                .withPartTexturedModel(VehiclePart.REAR_LEFT_WHEEL, AudiS4Wheel::new, "audis4")
+                .withPartTexturedModel(VehiclePart.REAR_RIGHT_WHEEL, AudiS4Wheel::new, "audis4")
+
+                // part positions
+                
+                .withPartPosition(VehiclePart.MAIN, c -> {
+//                    GL11.glTranslatef(0.000000f, -1.449999f, 0f);
+                    Positioners.position(
+                            1.0000f, -1.700000f, -2.700000f,
+                            0.000000f, 0.000000f, 0.000000f,
+                            0.000000f, 0.000000f, 0.000000f,
+                            1.000000f, 1.000000f, 1.000000f
+                        );
+                })
+
+                .withPartPosition(VehiclePart.STEERING_WHEEL, context -> {
+                	
+                	Positioners.position(
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    0.000000f, 0f, -context.getSymmetricProgress() * 90f,
+                		    -1.025000f, -0.325000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+//                    Positioners.position(
+//                            0.000000f, -0.150000f, 0.725000f,
+//                            0.000000f, context.getSymmetricProgress() * 90f, 0.000000f,
+//                            0.000000f, 0.000000f, 0.000000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+                })
+
+                .withPartPosition(VehiclePart.LEFT_HAND, VehicleRenderableState.IDLE, context -> {
+                	Positioners.position(
+                		    -0.945000f, -0.575000f, 2.730000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+                	
+//                    Positioners.position(
+//                            0.1f, -0.85f, 2f,
+//                            0f, 0f, 0f, 
+//                            0.3f, 0.75f, -0.05f, 
+//                            1f, 1f, 1f);
+                })
+
+                .withPartPosition(VehiclePart.LEFT_HAND, VehicleRenderableState.DRIVING, context -> {
+                	Positioners.position(
+                		    -0.920000f, -0.240000f, 2.809999f,
+                		    -90.000000f, 5.000000f, 10.000000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+//                    Positioners.position(
+//                            0.1f, -0.85f, 0.2f,
+//                            -90f, -100f * context.getSymmetricProgress(), 0f,
+//                            0.3f, 0.75f, -0.05f, 
+//                            1f, 1f, 1f);
+                })
+
+                .withPartPosition(VehiclePart.RIGHT_HAND, VehicleRenderableState.IDLE, context -> {
+                	Positioners.position(
+                		    -1.000000f, -0.670000f, 2.780000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+                	
+                })
+                .withPartPosition(VehiclePart.RIGHT_HAND, VehicleRenderableState.DRIVING, context -> {
+                	Positioners.position(
+                		    -1.050000f, -0.380001f, 2.760000f,
+                		    -95.000000f, 0.000000f, -5.000000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+//                    Positioners.position(
+//                            -0.1f, -0.860000f, 0.100000f,
+//                            -90.000000f, -100f * context.getSymmetricProgress(), 0f,
+//                            -0.350000f, 0.785000f, -0.000000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                            );
+                })
+                
+                .withPartPosition(VehiclePart.FRONT_LEFT_CONTROL_ARM, context -> {
+                	
+                	Positioners.position(
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    0.000000f, context.getSymmetricProgress() * 80f - 180f, 0.000000f,
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+//                    Positioners.position(
+//                            0.050000f, -0.060000f, -0.1500000f,
+//                            0.000000f, context.getSymmetricProgress() * 80f - 180f, 0.000000f,
+//                            0.800000f, 0.000000f, 0.400000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+
+                })
+                
+                .withPartPosition(VehiclePart.FRONT_RIGHT_CONTROL_ARM, context -> {
+//                    Positioners.position(
+//                            -1.600001f, -0.000000f, 2.749997f,
+//                            0.000000f, context.getSymmetricProgress() * 80f - 180f, 0.000000f,
+//                            0.840000f, -0.600000f, -2.430000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+//                    
+                })
+                
+                .withPartPosition(VehiclePart.FRONT_LEFT_WHEEL, context -> {
+                	EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+                	
+                	Positioners.position(
+                		    0.000000f, 0.000000f, 0.000000f,
+                		    -entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+                		    0.000000f, 0.750000f, -0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+                	
+                	
+//                    EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+//                    Positioners.position(
+//                            0.975000f, 0.095001f, 0.350003f,
+//                            entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+//                            0.000000f, 0.990000f, 0.030000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+                })
+                
+                .withPartPosition(VehiclePart.FRONT_RIGHT_WHEEL, context -> {
+                	
+                	EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+                	
+                	Positioners.position(
+                		    -3.899998f, 0.000000f, 0.000000f,
+                		    -entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+                		    -0.650000f, 0.750000f, 0.010000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+                	
+//                    EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+//                    Positioners.position(
+//                            0.970000f, 0.089997f, -2.500000f,
+//                            entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+//                            -0.100000f, 0.965000f, 0.025000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+//                    
+                })
+
+                .withPartPosition(VehiclePart.REAR_LEFT_WHEEL, context -> {
+                	
+                	EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+                	Positioners.position(
+                		    0.000000f, 0.000000f, 5.724997f,
+                		    -entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+                		    0.000000f, 0.740000f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+
+                })
+                
+                .withPartPosition(VehiclePart.REAR_RIGHT_WHEEL, context -> {
+                	EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+                	
+                	Positioners.position(
+                		    -3.799999f, 0.000000f, 5.720000f,
+                		    -entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+                		    0.000000f, 0.749999f, 0.000000f,
+                		    1.000000f, 1.000000f, 1.000000f
+                		);
+                	
+//                    EntityVehicle entityVehicle = (EntityVehicle) context.getEntity();
+//                    Positioners.position(
+//                            -0.730000f, 0.089997f, 2.570000f,
+//                            -entityVehicle.getWheelRotationAngle(), 0.000000f, 0.000000f,
+//                            -0.100000f, 0.965000f, 0.025000f,
+//                            1.000000f, 1.000000f, 1.000000f
+//                        );
+
+                })
+
+                .build(modContext, VehiclePart.MAIN);
+        
+        return new EntityVehicleConfiguration.Builder()
+                .withName("audis4")
+                .withEntityIdSupplier(() -> 10202)
+                .withEnterSound("vehicle-enter")
+                .withExitSound("vehicle-exit")
+                .withRunSound("vehicle-driving")
+                .withIdleSound("vehicle-idle")
+                .withSeat()
+                .withSeat()
+                .withHandlingFactor(10)
+                .withAccelerationIncrement(0.015)
+                .withForwardDeccelerationFactor(0.97)
+                .withRenderer(renderer)
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    }
+
+}

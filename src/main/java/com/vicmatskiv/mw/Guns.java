@@ -10,6 +10,7 @@ public class Guns {
 
     public static Item M249;
     public static Item M40A6;
+    public static Item Beowulf50Cal;
     public static Item M110;
     public static Item AR10SuperSASS;
     public static Item M1014;
@@ -20,6 +21,7 @@ public class Guns {
     public static Item M4A1;
     public static Item P226;
     public static Item M9A1;
+    public static Item MAS21;
     
     public static Item MP443;
     public static Item AK15;
@@ -38,6 +40,7 @@ public class Guns {
     public static Item MAC10;
     public static Item ScorpionEVO3A1;
     public static Item APC9;
+    public static Item S710Tricun;
     public static Item ScarL;
     public static Item ScarH;
     public static Item VP70;
@@ -119,6 +122,7 @@ public class Guns {
     public static Item RPG7;
     public static Item M202;
     public static Item M134;
+    public static Item NinthSin;
     
     
     // TDM
@@ -212,6 +216,7 @@ public class Guns {
 
         M249 = new M249Factory().createGun(proxy);
         M40A6 = new M40A6Factory().createGun(proxy);
+        Beowulf50Cal = new Beowulf50CalFactory().createGun(proxy);
         M110 = new M110Factory().createGun(proxy);
         AR10SuperSASS = new AR10SuperSASSFactory().createGun(proxy);
         M1014 = new M1014Factory().createGun(proxy);
@@ -222,6 +227,7 @@ public class Guns {
         M4A1 = new M4A1Factory().createGun(proxy);
         P226 = new P226Factory().createGun(proxy);
         M9A1 = new M9A1Factory().createGun(proxy);
+        MAS21 = new MAS21Factory().createGun(proxy);
         
         MP443 = new MP443Factory().createGun(proxy);
         AK15 = new AK15Factory().createGun(proxy);
@@ -240,6 +246,7 @@ public class Guns {
         MAC10 = new MAC10Factory().createGun(proxy);
         ScorpionEVO3A1 = new ScorpionEVO3A1Factory().createGun(proxy);
         APC9 = new APC9Factory().createGun(proxy);
+        S710Tricun = new S710TricunFactory().createGun(proxy);
         
         ScarL = new ScarLFactory().createGun(proxy);
         ScarH = new ScarHFactory().createGun(proxy);
@@ -365,6 +372,7 @@ public class Guns {
         RPG7 = new RPG7Factory().createGun(proxy);
         M202 = new M202Factory().createGun(proxy);
         M134 = new M134Factory().createGun(proxy);
+        NinthSin = new NinthSinFactory().createGun(proxy);
         CSA16 = new CSA16Factory().createGun(proxy);
         SSG42 = new SSG42Factory().createGun(proxy);
         HAR27 = new HAR27Factory().createGun(proxy);

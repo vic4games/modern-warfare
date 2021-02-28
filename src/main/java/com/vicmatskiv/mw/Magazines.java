@@ -14,7 +14,9 @@ import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 public class Magazines {
 
     public static ItemMagazine AUG9mmMag;
+    public static ItemMagazine S710TricunMag;
     public static ItemMagazine M4A1Mag;
+    public static ItemMagazine BeowulfMag;
     public static ItemMagazine M4AsiimovMag;
     public static ItemMagazine M38Mag;
     public static ItemMagazine SOCOM_Mag;
@@ -112,6 +114,7 @@ public class Magazines {
     public static ItemMagazine StonerMag;
     public static ItemMagazine M134Mag;
     public static ItemMagazine FuelCell;
+    public static ItemMagazine NinthSinMag;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         
@@ -119,6 +122,35 @@ public class Magazines {
                 .withName("FuelCell")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.ChainsawFuel(), "ChainsawFuel.png")
+
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(10F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(0.3F, 0.5F, -0F);
+                    GL11.glRotatef(-150F, 0f, 1f, 0f);
+                    GL11.glRotatef(-6F, 1f, 0f, 0f);
+                    GL11.glRotatef(-15F, 0f, 0f, 1f);
+                    GL11.glScaled(1F, 1F, 1f);
+                })
+                .withMaxStackSize(6)
+//                .withCrafting(CraftingComplexity.MEDIUM,
+//                          Ores.INGOT_STEEL,
+//                          Ores.GunmetalIngot)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
+        Magazines.NinthSinMag = new ItemMagazine.Builder()
+        		.withAmmo(100)
+                .withName("NinthSinMag")
+                .withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withModel(new com.vicmatskiv.mw.models.NinthSinMagazine(), "ninthsin.png")
 
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -0.3F, 0.4F);
@@ -255,6 +287,38 @@ public class Magazines {
                           Ores.GunmetalIngot)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
+        Magazines.BeowulfMag = new ItemMagazine.Builder()
+        		.withAmmo(13)
+        		.withCompatibleBullet(Bullets.Bullet50Beowulf)
+        		.withName("BeowulfMag")
+                .withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withModel(new com.vicmatskiv.mw.models.Beowulf50CalMagazine(), "Beowulf50CalMagazine.png")
+                .withRequiredAttachments(Attachments.Placeholder, Attachments.M4Receiver, Attachments.VLTORReceiver, 
+                        Attachments.AUGDefaultKit, Attachments.Vector556Handguard, Attachments.M4AsiimovStock,
+                        Attachments.M16A1RearSights, Attachments.Beowulf50CalReceiver)
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(10F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(0.3F, 0.9F, -2.5F);
+                    GL11.glRotatef(-150F, 0f, 1f, 0f);
+                    GL11.glRotatef(-6F, 1f, 0f, 0f);
+                    GL11.glRotatef(-15F, 0f, 0f, 1f);
+                    GL11.glScaled(0.9F, 0.9F, 0.9f);
+                })
+                .withMaxStackSize(6)
+                .withCrafting(CraftingComplexity.MEDIUM,
+                          Ores.INGOT_STEEL,
+                          Ores.GunmetalIngot)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
         Magazines.M4AsiimovMag = new ItemMagazine.Builder()
         		.withAmmo(30)
         		.withCompatibleBullet(Bullets.Bullet556x45)
@@ -335,6 +399,35 @@ public class Magazines {
                     GL11.glRotatef(-6F, 1f, 0f, 0f);
                     GL11.glRotatef(-15F, 0f, 0f, 1f);
                     GL11.glScaled(1.1F, 1.1F, 1.1f);
+                })
+                .withMaxStackSize(6)
+                .withCrafting(CraftingComplexity.MEDIUM,
+                          Ores.INGOT_STEEL,
+                          Ores.GunmetalIngot)
+                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
+        
+        Magazines.S710TricunMag = new ItemMagazine.Builder()
+        		.withAmmo(30)
+        		.withCompatibleBullet(Bullets.Bullet10mm)
+        		.withName("S710TricunMag")
+                .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withModel(new com.vicmatskiv.mw.models.S710TricunMag(), "S710Tricun.png")
+                .withRequiredAttachments(Attachments.S710Receiver)
+                .withFirstPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(0.1F, -0.3F, 0.4F);
+                    GL11.glRotatef(30F, 0f, 1f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withThirdPersonPositioning((player, itemStack) -> {
+                    GL11.glTranslatef(-0.3F, 0.5F, 0.1F);
+                    GL11.glRotatef(-50F, 0f, 1f, 0f);
+                    GL11.glRotatef(10F, 1f, 0f, 0f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7F);
+                }).withInventoryPositioning((itemStack) -> {
+                    GL11.glTranslatef(0.3F, 0.6F, -1.6F);
+                    GL11.glRotatef(-150F, 0f, 1f, 0f);
+                    GL11.glRotatef(-6F, 1f, 0f, 0f);
+                    GL11.glRotatef(-15F, 0f, 0f, 1f);
+                    GL11.glScaled(0.7F, 0.7F, 0.7f);
                 })
                 .withMaxStackSize(6)
                 .withCrafting(CraftingComplexity.MEDIUM,
@@ -1689,7 +1782,7 @@ public class Magazines {
                           Ores.GunmetalIngot)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemMagazine.class);
         
-        Magazines.L96A1Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullets.Bullet762x54).withName("L96A1Mag_2")
+        Magazines.L96A1Mag = new ItemMagazine.Builder().withAmmo(10).withCompatibleBullet(Bullets.Bullet762x51).withName("L96A1Mag_2")
                 .withModId(ModernWarfareMod.MODID).withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withModel(new com.vicmatskiv.mw.models.L115Mag(), "gun.png")
 
