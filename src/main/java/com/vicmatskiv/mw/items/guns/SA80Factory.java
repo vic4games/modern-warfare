@@ -102,7 +102,7 @@ public class SA80Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine/ Squad-Automatic Weapon", 
-        "Damage: 5.5", 
+        "Damage: 6", 
         "Cartridge: 5.56x45mm NATO",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
@@ -1118,7 +1118,7 @@ public class SA80Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(5.5f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.0118f)
          
         .build(ModernWarfareMod.MOD_CONTEXT);

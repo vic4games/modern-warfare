@@ -106,7 +106,7 @@ public class Beowulf50CalFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: .50 Beowulf Rifle", 
-		"Damage: 10", 
+		"Damage: 7", 
 		"Cartridge: .50 Beowulf",
 		"Fire Rate: SEMI",
 		"Rate of Fire: 30/100",
@@ -164,15 +164,10 @@ public class Beowulf50CalFactory implements GunFactory {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
         })
-        .withCompatibleAttachment(Attachments.M16StockTan, (model) -> {
-            GL11.glTranslatef(0f, -0.28f, -0.55f);
-            GL11.glScaled(1F, 1F, 0.85F);
-        })
         .withCompatibleAttachment(Attachments.PRSPrecisionStock, (model) -> {
 //            GL11.glTranslatef(0f, -0.28f, -0.55f);
             GL11.glScaled(1F, 1F, 0.85F);
         })
-        
         .withCompatibleAttachment(Attachments.HK416FrontSight, renderContext -> {
             PlayerWeaponInstance instance = renderContext.getWeaponInstance();
             if(instance != null) {
@@ -2393,7 +2388,7 @@ public class Beowulf50CalFactory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(10f)
+		.withSpawnEntityDamage(7f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

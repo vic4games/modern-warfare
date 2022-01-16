@@ -67,7 +67,7 @@ public class DesertEagleFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Pistol", 
-        "Damage: 15", 
+        "Damage: 7", 
         "Cartridge: .50 AE",
         "Fire Rate: SEMI",
         "Rate of Fire: 20/100",
@@ -1467,7 +1467,7 @@ public class DesertEagleFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(15f)
+        .withSpawnEntityDamage(7f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

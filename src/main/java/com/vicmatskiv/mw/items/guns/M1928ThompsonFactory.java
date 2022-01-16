@@ -41,14 +41,13 @@ import com.vicmatskiv.mw.models.M1A1Thompson;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP40;
-import com.vicmatskiv.mw.models.MP5A5;
+import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
@@ -92,7 +91,7 @@ public class M1928ThompsonFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Sub Machine Gun",
-        "Damage: 7", 
+        "Damage: 5.3", 
         "Cartridge: .45 ACP",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100",
@@ -1345,7 +1344,7 @@ public class M1928ThompsonFactory {
                     )
              
             .build())
-        .withSpawnEntityDamage(7f)
+        .withSpawnEntityDamage(5.3f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

@@ -88,7 +88,7 @@ public class AX50Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Anti-Materiel Sniper Rifle",
-        "Damage: 20", 
+        "Damage: 25", 
         "Cartridge: .50 BMG",
         "Fire Rate: BOLT ACTION",
         "Rate of Fire: 16/100",
@@ -1808,7 +1808,7 @@ public class AX50Factory implements GunFactory {
                     }, 50, 200))
                     
             .build())
-        .withSpawnEntityDamage(20f)
+        .withSpawnEntityDamage(25f)
         .withSpawnEntityGravityVelocity(0f)
         
          

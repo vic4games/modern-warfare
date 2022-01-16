@@ -66,7 +66,7 @@ public class TheDechardFactory implements GunFactory {
                 Ores.GunmetalPlate)
         .withInformationProvider(stack -> Arrays.asList(
                 "Type: Revolver",
-                "Damage: 13",
+                "Damage: 6",
                 "Cartridge: 5.56x45mm Bullet", 
                 "Fire Rate: Semi",
                 "Rate of Fire: 20/100"))
@@ -1324,7 +1324,7 @@ public class TheDechardFactory implements GunFactory {
                     )
             
             .build())
-        .withSpawnEntityDamage(13f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.016f)
         
          

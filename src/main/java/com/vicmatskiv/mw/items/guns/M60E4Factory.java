@@ -75,7 +75,7 @@ public class M60E4Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: General-Purpose Machine Gun",
-        "Damage: 13", 
+        "Damage: 10", 
         "Cartridge: 7.62x51mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
@@ -5320,7 +5320,7 @@ public class M60E4Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(13f)
+        .withSpawnEntityDamage(10f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

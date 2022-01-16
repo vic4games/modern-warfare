@@ -15,7 +15,7 @@ import com.vicmatskiv.weaponlib.vehicle.StatefulRenderer;
 import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
 import com.vicmatskiv.weaponlib.vehicle.VehicleRenderableState;
 import com.vicmatskiv.weaponlib.vehicle.VehicleRendererBuilder;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle.Type;
+//import com.vicmatskiv.weaponlib.vehicle.EntityVehicle.Type;
 
 import net.minecraft.entity.Entity;
 
@@ -213,11 +213,11 @@ public class SampleVehicleFactory implements VehicleFactory {
                 .withExitSound("vehicle-exit")
                 .withRunSound("vehicle-driving")
                 .withIdleSound("vehicle-idle")
-                .withSeat()
-                .withSeat()
-                .withHandlingFactor(10)
-                .withAccelerationIncrement(0.015)
-                .withForwardDeccelerationFactor(0.97)
+//                .withSeat()
+//                .withSeat()
+//                .withHandlingFactor(10)
+//                .withAccelerationIncrement(0.015)
+//                .withForwardDeccelerationFactor(0.97)
                 .withRenderer(renderer)
                 .build(ModernWarfareMod.MOD_CONTEXT);
     }

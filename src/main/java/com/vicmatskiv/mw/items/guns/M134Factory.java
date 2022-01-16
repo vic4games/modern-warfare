@@ -89,7 +89,7 @@ public class M134Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Minigun", 
-        "Damage: 15", 
+        "Damage: 10", 
         "Cartridge: 7.62x51mm NATO",
         "Fire Rate: AUTO",
         "Rate of Fire: Excuse me?",
@@ -1061,7 +1061,7 @@ public class M134Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(15f)
+        .withSpawnEntityDamage(10f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
          

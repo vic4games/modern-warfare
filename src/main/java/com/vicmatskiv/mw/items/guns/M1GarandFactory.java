@@ -89,7 +89,7 @@ public class M1GarandFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Rifle", 
-        "Damage: 10", 
+        "Damage: 15", 
         "Cartridge: .30-06 Springfield Bullet",
         "Fire Rate: SEMI",
         "Rate of Fire: 20/100"))
@@ -789,7 +789,7 @@ public class M1GarandFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(10f)
+        .withSpawnEntityDamage(15f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
          

@@ -69,7 +69,7 @@ public class ScarHFactory implements GunFactory {
         .withModId(ModernWarfareMod.MODID)
         .withName("scar_h_cqc")
         .withFireRate(0.55f)
-        .withRecoil(3.5f)
+        .withRecoil(4f)
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         .withShootSound("scar_h")
@@ -92,7 +92,7 @@ public class ScarHFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Battle Rifle", 
-        "Damage: 14", 
+        "Damage: 8", 
         "Cartridge: 7.62x51mm NATO",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 55/100",
@@ -105,9 +105,9 @@ public class ScarHFactory implements GunFactory {
                 Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
-                 2f, // x 
-                 1f, // y
-                 6f) // z
+                 1.5f, // x 
+                 1.5f, // y
+                 4f) // z
          
         .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
         .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
@@ -2237,7 +2237,7 @@ public class ScarHFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(14f)
+        .withSpawnEntityDamage(8f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
          

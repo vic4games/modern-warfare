@@ -105,7 +105,7 @@ public class S710TricunFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: Submachine Gun", 
-		"Damage: 6.5", 
+		"Damage: 5.4", 
 		"Cartridge: 10mm",
 		"Fire Rate: SEMI, AUTO",
 		"Rate of Fire: 80/100",
@@ -181,10 +181,6 @@ public class S710TricunFactory implements GunFactory {
         .withCompatibleAttachment(Attachments.HK416StockTan, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
-        })
-        .withCompatibleAttachment(Attachments.M16StockTan, (model) -> {
-            GL11.glTranslatef(0f, -0.28f, -0.55f);
-            GL11.glScaled(1F, 1F, 0.85F);
         })
         .withCompatibleAttachment(Attachments.PRSPrecisionStock, (model) -> {
 //            GL11.glTranslatef(0f, -0.28f, -0.55f);
@@ -2065,7 +2061,7 @@ public class S710TricunFactory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(10f)
+		.withSpawnEntityDamage(5.4f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

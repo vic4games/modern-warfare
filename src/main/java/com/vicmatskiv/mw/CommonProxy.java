@@ -11,8 +11,11 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.vehicle.network.VehicleDataSerializer;
+import com.vicmatskiv.weaponlib.vehicle.network.VehiclePhysSerializer;
 
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.network.datasync.DataSerializers;
 
 public class CommonProxy {
 
@@ -143,6 +146,9 @@ public class CommonProxy {
 //        compatibility.registerItem(ModernWarfareMod.MODID, Piston, "Piston");
 //        compatibility.registerItem(ModernWarfareMod.MODID, LaserPointer, "LaserPointer");
 //        compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
+        
+        DataSerializers.registerSerializer(VehicleDataSerializer.SERIALIZER);
+        DataSerializers.registerSerializer(VehiclePhysSerializer.SERIALIZER);
 
         Backpacks.preInit(mod, configurationManager, event);
         Vests.preInit(mod, configurationManager, event);

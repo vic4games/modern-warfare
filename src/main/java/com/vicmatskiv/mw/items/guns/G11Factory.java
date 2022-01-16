@@ -43,7 +43,7 @@ import com.vicmatskiv.mw.models.M27rearsight;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MBUSiron;
-import com.vicmatskiv.mw.models.MP5A5;
+import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MP7;
 import com.vicmatskiv.mw.models.MicroT1;
@@ -52,7 +52,6 @@ import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.UTGTriRailHandGuard;
@@ -96,7 +95,7 @@ public class G11Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/Light Machine Gun/Personal Defense Weapon",
-        "Damage: 6", 
+        "Damage: 5", 
         "Cartridge: 4.73x33mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
@@ -1279,7 +1278,7 @@ public class G11Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(6f)
+        .withSpawnEntityDamage(5f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

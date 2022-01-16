@@ -69,7 +69,7 @@ public class G2ContenderFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Break-Action",
-        "Damage: 20", 
+        "Damage: 6.5", 
         "Cartridge: .45-70 Government",
         "Fire Rate: SEMI",
         "Rate of Fire: 30/100"))
@@ -158,23 +158,22 @@ public class G2ContenderFactory implements GunFactory {
                 })
                 
             .withFirstPersonPositioning((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(5F, 0f, 0f, 1f);
-                GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
-                GL11.glTranslatef(-0.150000f, 0.335000f, -1.049999f);
-                
+//                GL11.glRotatef(45F, 0f, 1f, 0f);
+//                GL11.glRotatef(5F, 0f, 0f, 1f);
 //                GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
-//                GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(35.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(0.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-0.150000f, 0.350000f, -0.950000f);
+//                GL11.glTranslatef(-0.150000f, 0.335000f, -1.049999f);
+                
+                GL11.glRotatef(45F, 0f, 1f, 0f);
+                GL11.glRotatef(12F, 0f, 0f, 1f);
+                GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
+                GL11.glTranslatef(-0.110000f, 0.355000f, -1.449999f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
             	GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(5F, 0f, 0f, 1f);
+                GL11.glRotatef(12F, 0f, 0f, 1f);
                 GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
-                GL11.glTranslatef(-0.150000f, 0.335000f, -0.349999f);
+                GL11.glTranslatef(-0.110000f, 0.355000f, -0.849999f);
                 GL11.glRotatef(-3F, 1f, 0f, 0f);
                 })
                 
@@ -1115,18 +1114,18 @@ public class G2ContenderFactory implements GunFactory {
              }) 
             .withFirstPersonHandPositioning(
                      (renderContext) -> {
-                         GL11.glScalef(3f, 3f, 3f);
-                         GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(-40.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(40.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.160000f, -0.525000f, 0.250000f);
+                    	 GL11.glScalef(3f, 3f, 3f);
+                    	 GL11.glRotatef(0.000000f, 1f, 0f, 0f);
+                    	 GL11.glRotatef(0.000000f, 0f, 1f, 0f);
+                    	 GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
+                    	 GL11.glTranslatef(0.375000f, 0.125000f, 0.650000f);
                      }, 
                      (renderContext) -> {
                     	 GL11.glScalef(3f, 3f, 3f);
-                    	 GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                    	 GL11.glRotatef(5.000000f, 0f, 1f, 0f);
-                    	 GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
-                    	 GL11.glTranslatef(0.500000f, -0.700000f, 0.350000f);
+                    	 GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
+                    	 GL11.glRotatef(15.000000f, 0f, 1f, 0f);
+                    	 GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
+                    	 GL11.glTranslatef(0.520000f, -0.730000f, 0.270000f);
                      })
                      
             .withFirstPersonHandPositioningRunning(
@@ -1693,7 +1692,7 @@ public class G2ContenderFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(20f)
+        .withSpawnEntityDamage(6.5f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

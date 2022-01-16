@@ -96,7 +96,7 @@ public class ACRFactory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
         "Type: Modular Assault Rifle", 
-        "Damage: 7", 
+        "Damage: 6", 
         "Cartridge: 5.56x45mm NATO",
         "Fire Rate: SEMI, BURST, AUTO",
         "Rate of Fire: 65/100",
@@ -2007,7 +2007,7 @@ public class ACRFactory implements GunFactory {
                     )
                     
         .build())
-		.withSpawnEntityDamage(7f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 
 

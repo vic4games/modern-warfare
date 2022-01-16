@@ -162,10 +162,6 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
         })
-        .withCompatibleAttachment(Attachments.M16StockTan, (model) -> {
-            GL11.glTranslatef(0f, -0.28f, -0.55f);
-            GL11.glScaled(1F, 1F, 0.85F);
-        })
         .withCompatibleAttachment(Attachments.PRSPrecisionStock, true, (model) -> {
 //            GL11.glTranslatef(0f, -0.28f, -0.55f);
             GL11.glScaled(1F, 1F, 0.85F);
@@ -363,8 +359,8 @@ public class AR10SuperSASSFactory implements GunFactory {
             GL11.glScaled(1F, 0.95F, 1F);
         })
         .withCompatibleAttachment(Magazines.M110Mag, (model) -> {
-            GL11.glTranslatef(-0.33F, 0.5F, -1.3F);
-            GL11.glScaled(1.05F, 1.2F, 1F);
+            GL11.glTranslatef(0F, 0F, -0.2F);
+            GL11.glScaled(1F, 1F, 0.8F);
         })
 		.withCompatibleAttachment(AuxiliaryAttachments.AR15Action, true, (model) -> {
             GL11.glTranslatef(-0.175F, -1.28F, -0.67F);

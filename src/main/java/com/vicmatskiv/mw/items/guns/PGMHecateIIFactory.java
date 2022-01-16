@@ -99,7 +99,7 @@ public class PGMHecateIIFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Anti-Materiel Rifle",
-        "Damage: 50", 
+        "Damage: 25", 
         "Cartridge: .50 BMG",
         "Fire Rate: BOLT ACTION",
         "Rate of Fire: 16/100",
@@ -2748,7 +2748,7 @@ public class PGMHecateIIFactory implements GunFactory {
                     }, 50, 200))
                     
             .build())
-        .withSpawnEntityDamage(20f)
+        .withSpawnEntityDamage(25f)
         .withSpawnEntityGravityVelocity(0f)
         
          

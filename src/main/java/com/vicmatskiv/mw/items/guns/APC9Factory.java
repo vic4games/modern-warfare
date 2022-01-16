@@ -108,7 +108,7 @@ public class APC9Factory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: Submachine Gun", 
-		"Damage: 5.5", 
+		"Damage: 5", 
 		"Cartridge: 9x19mm",
 		"Fire Rate: SEMI, AUTO",
 		"Rate of Fire: 85/100",
@@ -388,6 +388,12 @@ public class APC9Factory implements GunFactory {
 	                GL11.glRotatef(8F, 0f, 0f, 1f);
 	                GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
 	                GL11.glTranslatef(-0.300000f, 1.449999f, -0.925000f);
+	                
+//	                GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
+//            		GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+//            		GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+//            		GL11.glRotatef(75.000000f, 0f, 0f, 1f);
+//            		GL11.glTranslatef(0.900000f, 2.100000f, -1.075000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
@@ -550,17 +556,17 @@ public class APC9Factory implements GunFactory {
                     }, 100, 0),
 			        new Transition((renderContext) -> {
 			        	GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
-			        	GL11.glRotatef(-11.300000f, 1f, 0f, 0f);
-			        	GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+			        	GL11.glRotatef(-8.300000f, 1f, 0f, 0f);
+			        	GL11.glRotatef(9.000000f, 0f, 1f, 0f);
 			        	GL11.glRotatef(74.000000f, 0f, 0f, 1f);
-			        	GL11.glTranslatef(0.475000f, 3.135003f, -0.425000f);
+			        	GL11.glTranslatef(0.44f, 3.135003f, -0.425000f);
                     }, 70, 0),
 			        new Transition((renderContext) -> {
 			        	GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
-			        	GL11.glRotatef(-10.500000f, 1f, 0f, 0f);
-			        	GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-			        	GL11.glRotatef(75.000000f, 0f, 0f, 1f);
-			        	GL11.glTranslatef(0.475000f, 3.125003f, -0.425000f);
+			        	GL11.glRotatef(-7.500000f, 1f, 0f, 0f);
+			        	GL11.glRotatef(8.000000f, 0f, 1f, 0f);
+			        	GL11.glRotatef(71.000000f, 0f, 0f, 1f);
+			        	GL11.glTranslatef(0.44f, 3.125003f, -0.425000f);
                     }, 100, 0)
                     )
 			
@@ -656,18 +662,18 @@ public class APC9Factory implements GunFactory {
 					
 		    .withFirstPersonPositioningInspecting(
 		    		new Transition((renderContext) -> {
-                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(5.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-20.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-1.5f, 1.2f, -0.6f);
+		    			GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
+		                GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+		                GL11.glRotatef(20.000000f, 0f, 1f, 0f);
+		                GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+		                GL11.glTranslatef(-1.300000f, 1.600000f, -0.575000f);
                     }, 300, 600),
                   new Transition((renderContext) -> {
-                      GL11.glRotatef(50F, 0f, 1f, 0f);
-                      GL11.glRotatef(60F, 0f, 0f, 1f);
-                      GL11.glRotatef(-11F, 1f, 0f, 0f);
-                      GL11.glScalef(4.000000f, 4.000000f, 4.000000f);
-                      GL11.glTranslatef(0.6f, 1.5f, -1.2f);
+                		GL11.glScalef(2.50000f, 2.50000f, 2.5000f);
+                		GL11.glRotatef(-40.000000f, 1f, 0f, 0f);
+                		GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                		GL11.glRotatef(75.000000f, 0f, 0f, 1f);
+                		GL11.glTranslatef(0.900000f, 2.100000f, -1.075000f);
                   }, 350, 600)
                     )
                     
@@ -950,11 +956,11 @@ public class APC9Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
-			    GL11.glRotatef(35F, 0f, 1f, 0f);
-                GL11.glRotatef(20F, 0f, 0f, 1f);
-                GL11.glRotatef(10F, 1f, 0f, 0f);
-                GL11.glScalef(2.00000f, 2.00000f, 2.00000f);
-                GL11.glTranslatef(-0f, 1.35f, -0.55f);
+				GL11.glScalef(1.50000f, 1.500000f, 1.500000f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.300000f, 1.299999f, -0.525000f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
 			     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -1321,18 +1327,18 @@ public class APC9Factory implements GunFactory {
                     
             .withFirstPersonLeftHandPositioningInspecting(
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4f, 4f, 5f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.125000f, -0.350000f, 0.225000f);
+                    	GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(30.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.400000f, 0.000000f, 0.200000f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4f, 4f, 5f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(30.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.125000f, -0.350000f, 0.225000f);
+                    	GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(30.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.400000f, 0.000000f, 0.200000f);
                     }, 250, 50)
                     )
                     
@@ -1345,11 +1351,11 @@ public class APC9Factory implements GunFactory {
                         GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4f, 4f, 5f);
-                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.375000f, -0.500000f, 0.150000f);
+                    	 GL11.glScalef(4f, 4f, 4f);
+                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                         GL11.glRotatef(-5.000000f, 0f, 1f, 0f);
+                         GL11.glRotatef(-35.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(0.450000f, -0.475000f, 0.100000f);
                     }, 250, 50)
                     )
                     
@@ -1574,7 +1580,7 @@ public class APC9Factory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(5.5f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

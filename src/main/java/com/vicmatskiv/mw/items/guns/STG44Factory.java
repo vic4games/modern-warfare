@@ -88,7 +88,7 @@ public class STG44Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault rifle",
-        "Damage: 8", 
+        "Damage: 7.7", 
         "Cartridge: 7.92x33mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
@@ -1500,7 +1500,7 @@ public class STG44Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(7.7f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

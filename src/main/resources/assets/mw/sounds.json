@@ -3409,5 +3409,59 @@
        "stream": false
       }
     ]
+  },
+  "drift_concrete": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:drift_concrete",
+       "stream": false
+      }
+    ]
+  },
+  "drift_dirt": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:drift_dirt",
+       "stream": false
+      }
+    ]
+  },
+  "drift_ground": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:drift_ground",
+       "stream": false
+      }
+    ]
+  },
+  "audi_s4_engine": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:audi_s4_engine",
+       "stream": false
+      }
+    ]
+  },
+  "mclaren_senna_engine": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:mclaren_senna_engine",
+       "stream": false
+      }
+    ]
+  },
+  "carbackfire1": {
+    "category": "master",
+    "sounds": [
+      {
+       "name": "mw:carbackfire1",
+       "stream": false
+      }
+    ]
   }
 }
