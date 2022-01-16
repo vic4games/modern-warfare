@@ -89,7 +89,7 @@ public class Remington870Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",
-        "Damage per Pellet: 4",
+        "Damage per Pellet: 6",
         "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: PUMP ACTION",
@@ -370,12 +370,6 @@ public class Remington870Factory implements GunFactory {
                     GL11.glRotatef(5F, 0f, 0f, 1f);
                     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                     GL11.glTranslatef(-0.150000f, 0.350000f, -1.225000f);
-                    
-//                    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-//                    GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
-//                    GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-//                    GL11.glRotatef(10.000000f, 0f, 0f, 1f);
-//                    GL11.glTranslatef(0.000000f, 0.400000f, -0.925000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
@@ -2437,7 +2431,7 @@ public class Remington870Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(4f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

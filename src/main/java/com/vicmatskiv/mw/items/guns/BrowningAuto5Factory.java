@@ -77,7 +77,7 @@ public class BrowningAuto5Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Shotgun",
-        "Damage per Pellet: 14",
+        "Damage per Pellet: 6",
         "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI",
@@ -721,7 +721,7 @@ public class BrowningAuto5Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(14f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

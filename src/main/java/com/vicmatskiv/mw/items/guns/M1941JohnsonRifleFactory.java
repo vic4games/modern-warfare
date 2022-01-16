@@ -99,7 +99,7 @@ public class M1941JohnsonRifleFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Rifle",
-        "Damage: 9", 
+        "Damage: 15", 
         "Cartridge: .30-06 Springfield",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 50/100",
@@ -1088,7 +1088,7 @@ public class M1941JohnsonRifleFactory {
                     )
              
             .build())
-        .withSpawnEntityDamage(9f)
+        .withSpawnEntityDamage(15f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

@@ -71,7 +71,7 @@ public class M1873Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Lever Action Rifle",
-        "Damage: 13",
+        "Damage: 5.5",
         "Cartridge: 44-40 Winchester",
         "Fire Rate: LEVER ACTION",
         "Rate of Fire: 50/100"))
@@ -952,7 +952,7 @@ public class M1873Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(13f)
+        .withSpawnEntityDamage(5.5f)
         
          
         .build(ModernWarfareMod.MOD_CONTEXT);

@@ -1972,6 +1972,25 @@ public class TileEntities {
         .withEquipmentDispenseTimeout(10)
         .build(ModernWarfareMod.MOD_CONTEXT);
         
+        new LootBoxConfiguration()
+        .withMaterial(CompatibleMaterial.ROCK)
+        .withName("ump45_gfl")
+        .withModelClassName("com.vicmatskiv.mw.models.UMP45GFL")
+        .withTextureName("textures/models/ump45gfl.png")
+//        .withEquipementDispenseSound(sound)
+        .withCreativeTab(ModernWarfareMod.PropsTab)
+        .withBoundingBox(0.3, 0, 0.3, 0.7, 1, 0.7)
+        .withPositioning(tileEntity -> {
+            GL11.glScalef(0.5f, 0.5f, 0.5f);
+            GL11.glTranslatef(1f, 1.5f, 1f);
+//            GL11.glRotatef(-45F, 0f, 1f, 0f);
+        })
+//        .withEquipmentOption(Guns.M9A1, EnumDifficulty.EASY, 4f)
+//        .withEquipmentOption(Guns.M45A1, EnumDifficulty.EASY, 3f)
+//        .withEquipmentOption(Items.air, EnumDifficulty.EASY, 150f, 1)
+//        .withEquipmentDispenseTimeout(10)
+        .build(ModernWarfareMod.MOD_CONTEXT);
+        
         }
     
     

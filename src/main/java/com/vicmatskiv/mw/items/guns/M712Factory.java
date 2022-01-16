@@ -68,7 +68,7 @@ public class M712Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Machine Pistol", 
-        "Damage: 7.5", 
+        "Damage: 5.4", 
         "Cartridge: 7.63x25mm Mauser",
         "Fire Rate: AUTO",
         "Rate of Fire: 75/100",
@@ -989,7 +989,7 @@ public class M712Factory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(6f)
+        .withSpawnEntityDamage(5.4f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

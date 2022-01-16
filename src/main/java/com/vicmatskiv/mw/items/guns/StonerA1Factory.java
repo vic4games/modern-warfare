@@ -94,7 +94,7 @@ public class StonerA1Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Light Machine Gun",
-        "Damage: 10", 
+        "Damage: 6", 
         "Cartridge: 5.56x45mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100",
@@ -1800,7 +1800,7 @@ public class StonerA1Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(10f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

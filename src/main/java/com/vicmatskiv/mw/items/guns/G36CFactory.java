@@ -92,7 +92,7 @@ public class G36CFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle", 
-        "Damage: 7", 
+        "Damage: 6", 
         "Cartridge: 5.56x45mm NATO",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100",
@@ -1739,7 +1739,7 @@ public class G36CFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(7f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
          

@@ -91,7 +91,7 @@ public class M1CarbineFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Rifle",
-        "Damage: 7", 
+        "Damage: 6", 
         "Cartridge: .30 Carbine",
         "Fire Rate: SEMI",
         "Rate of Fire: 55/100",
@@ -1391,7 +1391,7 @@ public class M1CarbineFactory {
                     }, 280, 0))
              
             .build())
-        .withSpawnEntityDamage(7f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

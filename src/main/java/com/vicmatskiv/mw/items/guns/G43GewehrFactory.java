@@ -88,7 +88,7 @@ public class G43GewehrFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Rifle",
-        "Damage: 15", 
+        "Damage: 13.5", 
         "Cartridge: 7.92x57mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 25/100",
@@ -1019,7 +1019,7 @@ public class G43GewehrFactory {
                     }, 280, 0))
              
             .build())
-        .withSpawnEntityDamage(15f)
+        .withSpawnEntityDamage(13.5f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

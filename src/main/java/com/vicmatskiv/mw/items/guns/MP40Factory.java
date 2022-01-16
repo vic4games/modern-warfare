@@ -40,14 +40,13 @@ import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MP40;
-import com.vicmatskiv.mw.models.MP5A5;
+import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.RenderableState;
@@ -86,7 +85,7 @@ public class MP40Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Sub Machine Gun",
-        "Damage: 7", 
+        "Damage: 5", 
         "Cartridge: 9x19mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 50/100",
@@ -1562,7 +1561,7 @@ public class MP40Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(7f)
+        .withSpawnEntityDamage(5f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

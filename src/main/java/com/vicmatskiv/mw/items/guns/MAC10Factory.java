@@ -104,7 +104,7 @@ public class MAC10Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Machine Pistol / Submachine Gun",
-        "Damage: 6", 
+        "Damage: 5.3", 
         "Cartridge: .45 ACP",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 99/100",
@@ -1649,7 +1649,7 @@ public class MAC10Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(5.3f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

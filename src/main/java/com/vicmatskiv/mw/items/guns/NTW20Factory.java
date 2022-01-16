@@ -86,7 +86,7 @@ public class NTW20Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Anti-Materiel Sniper Rifle",
-        "Damage: 100", 
+        "Damage: 35", 
         "Cartridge: 20x82mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 10/100",
@@ -1421,7 +1421,7 @@ public class NTW20Factory implements GunFactory {
             
                     
             .build())
-        .withSpawnEntityDamage(100f)
+        .withSpawnEntityDamage(35f)
         .withSpawnEntityGravityVelocity(0f)
         
          

@@ -58,7 +58,7 @@ public class FrommerStopFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Long-Recoil Pistol", 
-        "Damage: 6", 
+        "Damage: 4.4", 
         "Cartridge: .380 ACP",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100",
@@ -1009,7 +1009,7 @@ public class FrommerStopFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(5.5f)
+        .withSpawnEntityDamage(4.4f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

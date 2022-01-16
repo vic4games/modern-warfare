@@ -5,8 +5,8 @@ import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-// Made with Blockbench 3.6.3
-// Exported for Minecraft version 1.12
+// Made with Blockbench 3.8.4
+// Exported for Minecraft version 1.7 - 1.12
 // Paste this class into your mod and generate all required imports
 
 
@@ -36,8 +36,8 @@ public class ARCarryHandle extends ModelBase {
 	private final ModelRenderer bone23;
 
 	public ARCarryHandle() {
-		textureWidth = 512;
-		textureHeight = 512;
+		textureWidth = 256;
+		textureHeight = 256;
 
 		bone = new ModelRenderer(this);
 		bone.setRotationPoint(0.0F, -4.0F, 0.0F);
@@ -46,26 +46,26 @@ public class ARCarryHandle extends ModelBase {
 		bone.cubeList.add(new ModelBox(bone, 21, 23, 0.0F, 1.0F, -1.0F, 2, 3, 2, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 8, 36, 0.0F, -2.0F, -1.0F, 2, 1, 2, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 8, 71, -3.5F, 4.0F, -6.0F, 9, 3, 11, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 0, 144, -2.51F, 4.05F, -67.0F, 7, 1, 61, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 144, 73, -2.52F, 1.15F, -42.0F, 1, 3, 36, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 75, 144, 3.48F, 1.15F, -42.0F, 1, 3, 36, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 136, 144, -1.5F, 5.05F, -67.0F, 5, 1, 61, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 88, 0, -2.51F, 4.05F, -67.0F, 7, 1, 61, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 144, 62, -2.52F, 1.15F, -42.0F, 1, 3, 36, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 142, 143, 3.48F, 1.15F, -42.0F, 1, 3, 36, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 71, 143, -1.5F, 5.05F, -67.0F, 5, 1, 61, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 21, 52, -1.5F, 6.05F, -63.5F, 5, 8, 1, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 73, 73, -2.5F, 7.0F, -6.0F, 7, 2, 12, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 73, 71, -2.5F, 7.0F, -6.0F, 7, 2, 12, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 21, 28, 0.0F, 6.99F, 5.5F, 2, 2, 2, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 0, -2.5F, 13.0F, -12.0F, 7, 3, 20, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 0, -4.0F, 13.2F, -69.5F, 10, 3, 68, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 73, 87, -2.49F, 5.0F, -12.0F, 7, 8, 6, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 73, 85, -2.49F, 5.0F, -12.0F, 7, 8, 6, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 42, 79, -2.5F, 5.75F, -69.51F, 7, 8, 6, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 8, 85, -3.0F, 9.1F, -5.5F, 8, 3, 10, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 21, 44, -4.5F, 9.09F, -3.0F, 11, 3, 5, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 12, -2.49F, 9.0F, 5.0F, 7, 4, 1, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 25, 52, -2.5F, 12.3F, -6.0F, 7, 1, 13, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 25, 52, -2.499F, 12.3F, -6.0F, 7, 1, 13, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 88, 14, -3.5F, 1.0F, -6.0F, 1, 3, 11, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 88, 0, 4.5F, 1.0F, -6.0F, 1, 3, 11, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 73, 73, 3.75F, -1.0F, -9.75F, 2, 8, 4, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 73, 71, 3.75F, -1.0F, -9.75F, 2, 8, 4, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 44, -3.75F, -1.0F, -9.75F, 2, 8, 4, 0.0F, false));
-		bone.cubeList.add(new ModelBox(bone, 87, 2, 6.0F, 14.0F, -70.0F, 1, 2, 69, 0.0F, false));
+		bone.cubeList.add(new ModelBox(bone, 0, 141, 6.0F, 14.0F, -70.001F, 1, 2, 69, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 44, -5.0F, 12.7F, -18.0F, 2, 4, 17, 0.0F, false));
 		bone.cubeList.add(new ModelBox(bone, 0, 23, -5.0F, 12.7F, -70.0F, 2, 4, 17, 0.0F, false));
 
@@ -79,7 +79,7 @@ public class ARCarryHandle extends ModelBase {
 		bone4.setRotationPoint(2.3F, -0.3F, 0.0F);
 		bone.addChild(bone4);
 		setRotationAngle(bone4, 0.0F, 0.0F, 0.7854F);
-		bone4.cubeList.add(new ModelBox(bone4, 10, 23, -1.0F, -1.0F, -0.99F, 1, 1, 2, 0.0F, false));
+		bone4.cubeList.add(new ModelBox(bone4, 10, 23, -1.0F, -1.001F, -0.99F, 1, 1, 2, 0.0F, false));
 		bone4.cubeList.add(new ModelBox(bone4, 0, 23, -1.4F, -1.0F, -1.01F, 1, 1, 2, 0.0F, false));
 
 		bone3 = new ModelRenderer(this);
@@ -92,7 +92,7 @@ public class ARCarryHandle extends ModelBase {
 		bone5.setRotationPoint(-0.3F, -0.3F, 0.0F);
 		bone.addChild(bone5);
 		setRotationAngle(bone5, 0.0F, 0.0F, 0.7854F);
-		bone5.cubeList.add(new ModelBox(bone5, 0, 3, -1.0F, -1.0F, -0.99F, 1, 1, 2, 0.0F, false));
+		bone5.cubeList.add(new ModelBox(bone5, 0, 3, -1.001F, -1.0F, -0.99F, 1, 1, 2, 0.0F, false));
 		bone5.cubeList.add(new ModelBox(bone5, 0, 0, -1.0F, -1.4F, -1.01F, 1, 1, 2, 0.0F, false));
 
 		bone6 = new ModelRenderer(this);
@@ -153,7 +153,7 @@ public class ARCarryHandle extends ModelBase {
 		bone.addChild(bone14);
 		setRotationAngle(bone14, 0.0F, 0.0F, 0.7854F);
 		bone14.cubeList.add(new ModelBox(bone14, 0, 71, -1.6464F, -0.3536F, 0.0F, 2, 1, 69, 0.0F, false));
-		bone14.cubeList.add(new ModelBox(bone14, 73, 73, 0.7678F, 1.0607F, 0.0F, 1, 2, 69, 0.0F, false));
+		bone14.cubeList.add(new ModelBox(bone14, 73, 72, 0.7678F, 1.0607F, 0.0F, 1, 2, 69, 0.0F, false));
 
 		bone15 = new ModelRenderer(this);
 		bone15.setRotationPoint(6.5F, 10.5F, 2.0F);
@@ -204,7 +204,7 @@ public class ARCarryHandle extends ModelBase {
 		bone22.setRotationPoint(8.0F, 16.0F, -15.0F);
 		bone.addChild(bone22);
 		setRotationAngle(bone22, -0.4189F, 0.0F, 0.0F);
-		bone22.cubeList.add(new ModelBox(bone22, 94, 96, -1.0F, -5.0F, 0.0F, 4, 5, 5, 0.0F, false));
+		bone22.cubeList.add(new ModelBox(bone22, 94, 94, -1.0F, -5.0F, 0.0F, 4, 5, 5, 0.0F, false));
 		bone22.cubeList.add(new ModelBox(bone22, 39, 93, -1.0F, 16.557F, -48.4179F, 4, 5, 5, 0.0F, false));
 		bone22.cubeList.add(new ModelBox(bone22, 34, 0, 3.0F, 16.0905F, -49.0014F, 2, 6, 6, 0.0F, false));
 		bone22.cubeList.add(new ModelBox(bone22, 0, 23, 3.0F, -5.4666F, -0.5835F, 2, 6, 6, 0.0F, false));

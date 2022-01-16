@@ -41,14 +41,13 @@ import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M1911;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MP5A5;
+import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.SightMount;
@@ -97,7 +96,7 @@ public class UMP45Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Universal Machine Pistol",
-        "Damage: 6.5", 
+        "Damage: 5.3", 
         "Cartridge: .45 ACP",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
@@ -404,14 +403,6 @@ public class UMP45Factory {
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
             
-            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.MP5A5action.getRenderablePart(), (renderContext) -> {
-//                GL11.glTranslatef(0f, 0f, 1f);
-                })
-                
-            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.MP5A5action.getRenderablePart(), (renderContext) -> {
-//                GL11.glTranslatef(0f, 0f, 1f);
-                })
-            
             .withFirstPersonCustomPositioning(Magazines.UMP45Mag, (renderContext) -> {
             	
 //            	GL11.glTranslatef(0f, 0.4f, 0f);
@@ -620,87 +611,6 @@ public class UMP45Factory {
                     }, 180, 0)
             )
                     
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.MP5A5action.getRenderablePart(),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000)
-                        )
-                        
-            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.MP5A5action.getRenderablePart(),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0F, 0F, 0.65F);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0.45F, -0.15F, 0.65F);
-                        GL11.glRotatef(-25F, 0f, 0f, 1f);
-                    }, 500, 1000)
-                        )
-                    
             .withFirstPersonCustomPositioningReloading(Magazines.UMP45Mag,
                     new Transition((renderContext) -> {
                         GL11.glTranslatef(0.6F, 2.4F, 1.2F);
@@ -905,30 +815,6 @@ public class UMP45Factory {
 //                }, 100, 0)
             )
             
-            .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.MP5A5action.getRenderablePart(),
-//                    new Transition((renderContext) -> {
-//                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 500, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000)
-                        )
-                        
             .withFirstPersonPositioningDrawing(
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
@@ -965,19 +851,6 @@ public class UMP45Factory {
                         GL11.glRotatef(-5.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.3f, 1f, -0.8f);
                     }, 190, 0)
-                    )
-                    
-            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.MP5A5action.getRenderablePart(),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 150, 0),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 130, 0),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 200, 0),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 130, 60),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 110, 0)
                     )
             
             .withFirstPersonPositioningZooming((renderContext) -> {
@@ -1965,7 +1838,7 @@ public class UMP45Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(5f)
+        .withSpawnEntityDamage(5.3f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

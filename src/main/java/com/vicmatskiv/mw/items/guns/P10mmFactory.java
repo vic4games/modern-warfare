@@ -62,7 +62,7 @@ public class P10mmFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Military Service Pistol", 
-        "Damage: 8", 
+        "Damage: 5.4", 
         "Cartridge: 10mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100"))
@@ -1070,7 +1070,7 @@ public class P10mmFactory implements GunFactory {
                     )
                           
             .build())
-        .withSpawnEntityDamage(8f)
+        .withSpawnEntityDamage(5.4f)
         .withSpawnEntityGravityVelocity(0.02f)
         
          

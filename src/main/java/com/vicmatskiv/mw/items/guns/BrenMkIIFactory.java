@@ -94,7 +94,7 @@ public class BrenMkIIFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Light Machine Gun",
-        "Damage: 9", 
+        "Damage: 10", 
         "Cartridge: 7.62x51mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 50/100",
@@ -1056,7 +1056,7 @@ public class BrenMkIIFactory {
                     )
              
             .build())
-        .withSpawnEntityDamage(9f)
+        .withSpawnEntityDamage(10f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

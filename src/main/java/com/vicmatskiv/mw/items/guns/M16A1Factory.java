@@ -105,7 +105,7 @@ public class M16A1Factory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: Assault Rifle", 
-		"Damage: 8", 
+		"Damage: 6", 
 		"Cartridge: 5.56x45mm NATO",
 		"Fire Rate: SEMI, AUTO",
 		"Rate of Fire: 80/100",
@@ -160,8 +160,8 @@ public class M16A1Factory implements GunFactory {
             GL11.glScaled(1.1F, 1.1F, 1.1F);
         })
         .withCompatibleAttachment(Attachments.M16Stock, true, (model) -> {
-            GL11.glTranslatef(0f, -0.28f, -0.55f);
-            GL11.glScaled(1F, 1F, 0.85F);
+//            GL11.glTranslatef(0f, -0.28f, -0.55f);
+//            GL11.glScaled(1F, 1F, 0.85F);
         })
         .withCompatibleAttachment(Attachments.MagpulCTRStockTan, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
@@ -174,10 +174,6 @@ public class M16A1Factory implements GunFactory {
         .withCompatibleAttachment(Attachments.HK416StockTan, (model) -> {
             GL11.glTranslatef(0.01f, -0.19f, -0.4f);
             GL11.glScaled(1.1F, 1.1F, 1.1F);
-        })
-        .withCompatibleAttachment(Attachments.M16StockTan, (model) -> {
-            GL11.glTranslatef(0f, -0.28f, -0.55f);
-            GL11.glScaled(1F, 1F, 0.85F);
         })
         .withCompatibleAttachment(Attachments.M16A1RearSights, true, (model) -> {
             GL11.glTranslatef(-0.145f, -1.565f, -0.33f);
@@ -1364,17 +1360,11 @@ public class M16A1Factory implements GunFactory {
 				
 				
 			.withFirstPersonPositioningRunning((renderContext) -> {
-//			    GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-//			    GL11.glRotatef(15.000000f, 1f, 0f, 0f);
-//			    GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-//			    GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-//			    GL11.glTranslatef(-0.050000f, 1.299999f, -0.800000f);
-			    
-			    GL11.glRotatef(35F, 0f, 1f, 0f);
-                GL11.glRotatef(20F, 0f, 0f, 1f);
-                GL11.glRotatef(10F, 1f, 0f, 0f);
-                GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
-                GL11.glTranslatef(-0f, 1.35f, -0.55f);
+				GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.200000f, 1.175000f, -0.200000f);
 			 })
 			 .withFirstPersonPositioningModifying((renderContext) -> {
 			     GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -2084,7 +2074,7 @@ public class M16A1Factory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(8f)
+		.withSpawnEntityDamage(6f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

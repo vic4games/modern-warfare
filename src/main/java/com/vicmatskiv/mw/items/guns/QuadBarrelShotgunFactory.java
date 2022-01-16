@@ -48,7 +48,7 @@ public class QuadBarrelShotgunFactory implements GunFactory {
         .withShellCasingEjectEnabled(false)
         .withCrosshairZoomed("Sight")
         .withInaccuracy(15)
-        .withPellets(14)
+        .withPellets(10)
         .withFlashIntensity(0.4f)
         .withFlashScale(() -> 0.8f)
         .withFlashOffsetX(() -> 0.06f)
@@ -60,8 +60,8 @@ public class QuadBarrelShotgunFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",
-        "Damage per Pellet: 23",
-        "Pellets per Shot: 14", 
+        "Damage per Pellet: 6",
+        "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI ACTION",
         "Rate of Fire: 30/100"))
@@ -778,7 +778,7 @@ public class QuadBarrelShotgunFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(23f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

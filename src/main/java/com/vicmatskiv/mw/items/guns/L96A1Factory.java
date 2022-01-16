@@ -98,12 +98,12 @@ public class L96A1Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Sniper Rifle",
-        "Damage: 34", 
-        "Cartridge: 7.62x51mm",
+        "Damage: 14", 
+        "Cartridge: 7.62x54mm",
         "Fire Rate: BOLT ACTION",
         "Rate of Fire: 16/100",
         "Magazines:",
-        "10rnd 7.62x51mm LAPUA Magazine"))
+        "10rnd 7.62x54mm LAPUA Magazine"))
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 3f, // x 
@@ -2289,7 +2289,7 @@ public class L96A1Factory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(34f)
+        .withSpawnEntityDamage(14f)
         .withSpawnEntityGravityVelocity(0f)
         
          

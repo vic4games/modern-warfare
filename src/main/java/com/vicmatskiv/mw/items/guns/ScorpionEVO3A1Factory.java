@@ -108,7 +108,7 @@ public class ScorpionEVO3A1Factory implements GunFactory {
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
 		.withInformationProvider(stack -> Arrays.asList(
 		"Type: Pistol Caliber Carbine/ Submachine Gun", 
-		"Damage: 6", 
+		"Damage: 5", 
 		"Cartridge: 9x19mm",
 		"Fire Rate: SEMI, AUTO",
 		"Rate of Fire: 99/100",
@@ -1661,7 +1661,7 @@ public class ScorpionEVO3A1Factory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(6f)
+		.withSpawnEntityDamage(5f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

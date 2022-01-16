@@ -101,12 +101,12 @@ public class AACHoneyBadgerFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Personal Defense Weapon", 
-        "Damage: 7.5", 
-        "Cartridge: .300 AAC Blackout",
+        "Damage: 5.4", 
+        "Cartridge: 7.62x35mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 70/100",
         "Magazines:",
-        "30rnd .300 AAC Blackout Honeybadger Magazine"
+        "30rnd 7.62x35mm Honeybadger Magazine"
         ))
         .withCrafting(CraftingComplexity.MEDIUM,
                 Ores.GunmetalIngot,
@@ -1912,7 +1912,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
                     )
 					
 			.build())
-		.withSpawnEntityDamage(7.5f)
+		.withSpawnEntityDamage(5.4f)
 		.withSpawnEntityGravityVelocity(0.0118f)
 				
 		 

@@ -80,7 +80,7 @@ public class AK103BPFactory {
         .withZoom(0.9f)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
-        .withShootSound("ak103")
+        .withShootSound("ak101")
         .withSilencedShootSound("ak15_silenced")
         .withReloadSound("ak_reload")
         .withUnloadSound("ak_unload")
@@ -100,7 +100,7 @@ public class AK103BPFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Bullpup Assault Rifle",
-        "Damage: 7.5", 
+        "Damage: 6.6", 
         "Cartridge: 7.62x39mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 60/100",
@@ -120,8 +120,11 @@ public class AK103BPFactory {
                  1.5f, // y
                  3.5f) // z
          
-        .withCompatibleAttachment(Attachments.AKMDustCover, true, (model) -> {
+        .withCompatibleAttachment(Attachments.AK47DustCover, true, (model) -> {
 //            GL11.glTranslatef(0f, 0f, 1f);
+        })
+        .withCompatibleAttachment(Attachments.AKMDustCover, (model) -> {
+//          GL11.glTranslatef(0f, 0f, 1f);
         })
         .withCompatibleAttachment(Attachments.AK101DustCover, (model) -> {
 //            GL11.glTranslatef(0f, 0f, 1f);
@@ -134,23 +137,7 @@ public class AK103BPFactory {
                 GL11.glScaled(0.7F, 0.8F, 1.1F);
             }
         })
-        .withCompatibleAttachment(Attachments.AK15DustCover, (model) -> {
-            if(model instanceof AK15DustCover) {
-//                GL11.glScaled(1F, 0.98F, 1);
-            } else if(model instanceof AKRail) {
-                GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
-                GL11.glScaled(0.6F, 0.8F, 1.12F);
-            }
-        })
-        .withCompatibleAttachment(Attachments.RPKDustCover, (model) -> {
-            if(model instanceof AK101DustCover) {
-//                GL11.glScaled(1F, 0.98F, 1);
-            } else if(model instanceof AKRail) {
-                GL11.glTranslatef(-0.205F, -1.3F, -2.75f);
-                GL11.glScaled(0.6F, 0.8F, 1.12F);
-            }
-        })
-        .withCompatibleAttachment(AuxiliaryAttachments.AKaction, true, (model) -> {
+        .withCompatibleAttachment(AuxiliaryAttachments.AK15action, true, (model) -> {
 //        	 GL11.glTranslatef(0F, 0F, 1F);
         })
         .withCompatibleAttachment(Attachments.AKIron, true, (model) -> {
@@ -465,11 +452,11 @@ public class AK103BPFactory {
                 GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
             
-            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.AK15action.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
                 
-            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AKaction.getRenderablePart(), (renderContext) -> {
+            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.AK15action.getRenderablePart(), (renderContext) -> {
                 GL11.glTranslatef(0f, 0f, 1f);
                 })
             
@@ -642,7 +629,7 @@ public class AK103BPFactory {
                     }, 160, 0)
                     )
                     
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.AK15action.getRenderablePart(),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -675,7 +662,7 @@ public class AK103BPFactory {
                     }, 250, 1000)
                         )
                         
-             .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
+             .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.AK15action.getRenderablePart(),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -1096,7 +1083,7 @@ public class AK103BPFactory {
             )
             
                     
-            .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.AKaction.getRenderablePart(),
+            .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.AK15action.getRenderablePart(),
 //                    new Transition((renderContext) -> {
 //                    }, 500, 1000),
                     new Transition((renderContext) -> {
@@ -1158,7 +1145,7 @@ public class AK103BPFactory {
                     }, 190, 0)
                     )
                     
-            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.AKaction.getRenderablePart(),
+            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.AK15action.getRenderablePart(),
                     new Transition((renderContext) -> { // Reload position
                     }, 150, 0),
                     new Transition((renderContext) -> { // Reload position
@@ -2095,7 +2082,7 @@ public class AK103BPFactory {
                     )
              
             .build())
-        .withSpawnEntityDamage(7.5f)
+        .withSpawnEntityDamage(6.6f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

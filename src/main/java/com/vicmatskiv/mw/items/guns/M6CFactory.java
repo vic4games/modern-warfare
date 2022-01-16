@@ -89,8 +89,6 @@ public class M6CFactory implements GunFactory {
                 GL11.glRotatef(8F, 1f, 0f, 0f);
             }
         })
-        .withCompatibleAttachment(AuxiliaryAttachments.M6CMag, true, (model) -> {
-        })
 //        .withCompatibleAttachment(Attachments.Laser, (p, s) -> {
 //            GL11.glTranslatef(0.01F, -0.65F, -2.2F);
 //            GL11.glScaled(1.1F, 1.1F, 1.1F);
@@ -171,18 +169,6 @@ public class M6CFactory implements GunFactory {
 //              GL11.glScaled(0.55F, 0.55F, 0.55F);
                 })
                 
-            .withFirstPersonPositioningCustomRecoiled(AuxiliaryAttachments.M6CMag.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0F, 0F, 0F);
-//              GL11.glRotatef(45F, 0f, 1f, 0f);
-//              GL11.glScaled(0.55F, 0.55F, 0.55F);
-                })
-                
-            .withFirstPersonPositioningCustomZoomingRecoiled(AuxiliaryAttachments.M6CMag.getRenderablePart(), (renderContext) -> {
-                GL11.glTranslatef(0F, 0F, 0F);
-//              GL11.glRotatef(45F, 0f, 1f, 0f);
-//              GL11.glScaled(0.55F, 0.55F, 0.55F);
-                })
-                
             .withFirstPersonCustomPositioning(AuxiliaryAttachments.M6Cslide.getRenderablePart(), (renderContext) -> {
                 if(renderContext.getWeaponInstance().getAmmo() == 0) {
                     GL11.glTranslatef(0F, 0F, 0.6F);
@@ -255,45 +241,6 @@ public class M6CFactory implements GunFactory {
                         GL11.glTranslatef(-1.2f, 1.15f, -2.2f);
                     }, 70, 50)
                 )
-                    
-            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M6CMag.getRenderablePart(),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
-                        GL11.glTranslatef(0F, 1F, 0.4F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0F, 1.9F, 0.4F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(0F, 1.9F, 0.4F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-//                    GL11.glTranslatef(0.5F, 0F, -0.2F);
-//                    GL11.glRotatef(0F, 0f, 1f, 0f);
-//                    GL11.glScaled(0.55F, 0.55F, 0.55F);
-//                    GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-//                      GL11.glTranslatef(0.5F, 0F, -0.2F);
-//                      GL11.glRotatef(0F, 0f, 1f, 0f);
-//                      GL11.glScaled(0.55F, 0.55F, 0.55F);
-//                      GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-                      }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        /*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-                        GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glScaled(0.55F, 0.55F, 0.55F);
-                        GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        /*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-                        GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glScaled(0.55F, 0.55F, 0.55F);
-                        GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-                    }, 250, 1000)
-                        )
                     
             .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.M6Cslide.getRenderablePart(),
                     new Transition((renderContext) -> {
@@ -397,43 +344,6 @@ public class M6CFactory implements GunFactory {
                         GL11.glRotatef(90F, 1f, 0f, 0f);
                     }, 70, 50)
                 )
-                    
-            .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.M6CMag.getRenderablePart(),
-                    new Transition((renderContext) -> {
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(1F, 1.7F, -0.6F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(1.4F, 2.3F, -0.2F);
-                        GL11.glRotatef(-40F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(1.4F, 2.3F, -0.2F);
-                        GL11.glRotatef(-40F, 0f, 0f, 1f);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        GL11.glTranslatef(1F, 1.7F, -0.6F);
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-//                      GL11.glTranslatef(0.5F, 0F, -0.2F);
-//                      GL11.glRotatef(0F, 0f, 1f, 0f);
-//                      GL11.glScaled(0.55F, 0.55F, 0.55F);
-//                      GL11.glTranslatef(-0.4F, -0.8F, 0.9F);
-                      }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        /*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-                        GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glScaled(0.55F, 0.55F, 0.55F);
-                        GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-                    }, 250, 1000),
-                    new Transition((renderContext) -> {
-                        /*GL11.glTranslatef(0.25F, -0.32F, -0.2F);
-                        GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glScaled(0.55F, 0.55F, 0.55F);
-                        GL11.glTranslatef(-0.4F, -0.8F, 0.9F);*/
-                    }, 250, 1000)
-                        )
                     
             .withThirdPersonCustomPositioningReloading(AuxiliaryAttachments.M6Cslide.getRenderablePart(),
                     new Transition((renderContext) -> {

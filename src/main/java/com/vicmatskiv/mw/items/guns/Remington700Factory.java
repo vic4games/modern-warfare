@@ -26,6 +26,7 @@ import com.vicmatskiv.mw.models.AX50;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
+import com.vicmatskiv.mw.models.EotechScopeRing;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -50,9 +51,13 @@ import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.mw.models.SightMount;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
@@ -89,44 +94,220 @@ public class Remington700Factory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Precision Sniper Rifle",
-        "Damage: 20", 
-        "Cartridge: .300 Winchester",
+        "Damage: 14", 
+        "Cartridge: 7.62x54mm",
         "Fire Rate: BOLT ACTION",
         "Rate of Fire: 16/100",
         "Magazines:",
-        "6rnd .300 Winchester M700 Magazine"))
+        "5rnd 7.62x54mm M700 Magazine",
+        "10rnd 7.62x54mm M700 Magazine"))
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 
                  6f, // y
                  10f) // z
          
-        .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
-        .withUnremovableAttachmentCategories(AttachmentCategory.SCOPE)
-        .withUnremovableAttachmentCategories(AttachmentCategory.GUARD)
+        .withUnremovableAttachmentCategories(AttachmentCategory.BACKGRIP)
         .withCompatibleAttachment(Magazines.R700Mag, (model) -> {
 //        	GL11.glTranslatef(0f, 0.2f, 0f);
 //        	GL11.glRotatef(-20f, 1f, 0f, 0f);
         })
+        .withCompatibleAttachment(Magazines.R700Mag10rnd, (model) -> {
+//        	GL11.glTranslatef(0f, 0.2f, 0f);
+//        	GL11.glRotatef(-20f, 1f, 0f, 0f);
+        })
         .withCompatibleAttachment(AuxiliaryAttachments.Remington700BoltAction, true, (model) -> {
-        	GL11.glTranslatef(-0.105F, -0.585F, 0.63F);
-            GL11.glScalef(0.62f, 0.62f, 0.5f);
+//        	GL11.glTranslatef(-0.105F, -0.585F, 0.63F);
+//            GL11.glScalef(0.62f, 0.62f, 0.5f);
+        })
+        .withCompatibleAttachment(AuxiliaryAttachments.Remington700BoltActionMain, true, (model) -> {
+//        	GL11.glTranslatef(-0.105F, -0.585F, 0.63F);
+//            GL11.glScalef(0.62f, 0.62f, 0.5f);
         })
         .withCompatibleAttachment(Attachments.Remington700Chassis, true, (model) -> {
 //          GL11.glTranslatef(-1.39f, -1.13f, 1.5f);
 //          GL11.glRotatef(70f, 0f, 0f, 1f);
         })
-        .withCompatibleAttachment(Attachments.LeupoldScope, true, (player, stack) -> {
-            GL11.glTranslatef(-0.105F, -0.53F, -0.43F);
-            GL11.glScaled(0.35F, 0.35F, 0.35F);
-        },(model) -> {
-             if(model instanceof JPUreticle) {
-                GL11.glTranslatef(0.076F, -0.67F, 4.0251F);
-                GL11.glScaled(0.04F, 0.04F, 0.04F);
-            }
+        .withCompatibleAttachment(Attachments.Remington700APACChassis, (model) -> {
+//          GL11.glTranslatef(-1.39f, -1.13f, 1.5f);
+//          GL11.glRotatef(70f, 0f, 0f, 1f);
         })
-        .withTextureNames("gun")
+        .withCompatibleAttachment(Attachments.Remington700MDTXRSChassis, (model) -> {
+//          GL11.glTranslatef(-1.39f, -1.13f, 1.5f);
+//          GL11.glRotatef(70f, 0f, 0f, 1f);
+        })
+
+
+		.withCompatibleAttachment(Attachments.NightRaider, (player, stack) -> {
+		            GL11.glTranslatef(-0.155F, -0.75F, -0.8F);
+		            GL11.glScaled(0.65F, 0.65F, 0.65F);
+		},(model) -> {
+		    if(model instanceof JPUreticle) {
+		        GL11.glTranslatef(0.12F, -0.2F, 2.49F);
+		        GL11.glScaled(0.03F, 0.03F, 0.03F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.ACOG, (player, stack) -> {
+		            GL11.glTranslatef(-0.225F, -0.77F, 0.3F);
+		            GL11.glScaled(0.6F, 0.6F, 0.6F);
+		},(model) -> {
+		    if(model instanceof AcogScope2) {
+		        GL11.glTranslatef(-0.018F, -0.25F, 0.13F);
+		        GL11.glScaled(0.5F, 0.5F, 0.5F);
+		    }
+		    else if(model instanceof AcogReticle) {
+		        GL11.glTranslatef(0.243F, -0.23F, 0.68f);
+		        GL11.glScaled(0.03F, 0.03F, 0.03F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.Specter, (player, stack) -> {
+		            GL11.glTranslatef(-0.135F, -0.5F, -0.1F);
+		            GL11.glScaled(0.35F, 0.35F, 0.35F);
+		},(model) -> {
+		    if(model instanceof Acog2) {
+		        GL11.glTranslatef(0.15F, -1.035F, 1.513F);
+		        GL11.glScaled(0.1F, 0.1F, 0.1F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.LeupoldRailScope, (player, stack) -> {
+		            GL11.glTranslatef(-0.105F, -0.62F, -0.6F);
+		            GL11.glScaled(0.35F, 0.35F, 0.35F);
+		},(model) -> {
+		     if(model instanceof JPUreticle) {
+		        GL11.glTranslatef(0.076F, -0.67F, 4.0251F);
+		        GL11.glScaled(0.04F, 0.04F, 0.04F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.MicroReflex, (player, stack) -> {
+		    GL11.glTranslatef(-0.1F, -1.12F, -0.2F);
+		    GL11.glScaled(0.25F, 0.25F, 0.25F);
+		    },(model) -> {
+		        if(model instanceof Reflex2) {
+		            GL11.glTranslatef(0.08F, 0.97F, -0.4F);
+		            GL11.glScaled(0.15F, 0.15F, 0.15F);
+		        } else if (model instanceof SightMount) {
+		//        	GL11.glTranslatef(-0.15F, -1.82F, -1F);
+		//            GL11.glScaled(0.4F, 0.4F, 0.4F);
+		        }
+		    })
+
+		.withCompatibleAttachment(Attachments.Reflex, (player, stack) -> {
+		            GL11.glTranslatef(-0.036F, -0.6F, -0.2F);
+		            GL11.glScaled(0.35F, 0.35F, 0.35F);
+		},(model) -> {
+		    if(model instanceof Reflex2) {
+			    GL11.glTranslatef(-0.125F, -0.7F, -0.4F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+			}
+		})
+		.withCompatibleAttachment(Attachments.BijiaReflex, (player, stack) -> {
+		                GL11.glTranslatef(-0.036F, -0.585F, -0.2F);
+		                GL11.glScaled(0.38F, 0.38F, 0.38F);
+			},(model) -> {
+		    if(model instanceof Reflex2) {
+		        GL11.glTranslatef(-0.125F, -0.68F, -0.4F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+		    }
+			})
+		
+		.withCompatibleAttachment(Attachments.Holographic, (player, stack) -> {
+		            GL11.glTranslatef(-0.01F, -0.63F, -0.1F);
+		            GL11.glScaled(0.55F, 0.55F, 0.55F);
+			},(model) -> {
+		        if(model instanceof Holo2) {
+		            GL11.glTranslatef(-0.125F, -0.5F, -0.1F);
+		            GL11.glScaled(0.1F, 0.1F, 0.1F);
+		        }
+		    })
+		
+		.withCompatibleAttachment(Attachments.HolographicAlt, (player, stack) -> {
+			GL11.glTranslatef(-0.01F, -0.63F, -0.1F);
+            GL11.glScaled(0.55F, 0.55F, 0.55F);
+		},(model) -> {
+		    if(model instanceof Holo2) {
+		        GL11.glTranslatef(-0.125F, -0.5F, -0.1F);
+		        GL11.glScaled(0.1F, 0.1F, 0.1F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.EotechHybrid2, (player, stack) -> {
+			GL11.glTranslatef(-0.01F, -0.63F, -0.3F);
+            GL11.glScaled(0.55F, 0.55F, 0.55F);
+		},(model) -> {
+		    if(model instanceof EotechScopeRing) {
+		        GL11.glTranslatef(-0.2F, -0.41F, 1.8F);
+		        GL11.glScaled(0.5F, 0.5F, 0.5F);
+		    }
+		    if(model instanceof Holo2) {
+		        GL11.glTranslatef(-0.118F, -0.535F, 1.9F);
+		        GL11.glScaled(0.05F, 0.05F, 0.05F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.VortexRedux, (player, stack) -> {
+		    GL11.glTranslatef(-0.22F, -0.8F, -0.2F);
+		    GL11.glScaled(0.35F, 0.35F, 0.35F);
+		},(model) -> {
+		    if(model instanceof Holo2) {
+		        GL11.glTranslatef(0.395F, -0.33F, -0.1F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.Kobra, (player, stack) -> {
+		            GL11.glTranslatef(-0.015F, -0.63F, -0F);
+		            GL11.glScaled(0.55F, 0.55F, 0.55F);
+		},(model) -> {
+		    if(model instanceof Reflex2) {
+		        GL11.glTranslatef(-0.125F, -0.45F, -0.85F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.KobraGen3, (player, stack) -> {
+		        	 GL11.glTranslatef(-0.015F, -0.63F, -0F);
+			            GL11.glScaled(0.55F, 0.55F, 0.55F);
+		},(model) -> {
+		    if(model instanceof Reflex2) {
+		        GL11.glTranslatef(-0.125F, -0.45F, -0.85F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+		    }
+		})
+		
+		.withCompatibleAttachment(Attachments.MicroT1, (player, stack) -> {
+		            GL11.glTranslatef(-0.12F, -0.77F, -0F);
+		            GL11.glScaled(0.28F, 0.28F, 0.28F);
+		    },(model) -> {
+		        if(model instanceof Reflex2) {
+		            GL11.glTranslatef(0.155F, -0.4F, -0.5F);
+		            GL11.glScaled(0.15F, 0.15F, 0.15F);
+		        }
+		    })
+		
+		.withCompatibleAttachment(Attachments.AimpointCompM5, (player, stack) -> {
+			GL11.glTranslatef(-0.12F, -0.77F, -0F);
+            GL11.glScaled(0.28F, 0.28F, 0.28F);
+		},(model) -> {
+		    if(model instanceof Reflex2) {
+		        GL11.glTranslatef(0.155F, -0.4F, -0.5F);
+		        GL11.glScaled(0.15F, 0.15F, 0.15F);
+		    }
+		})
+		.withCompatibleAttachment(Attachments.AimpointCompM2, (player, stack) -> {
+            GL11.glTranslatef(-0.08F, -0.26F, 0.3F);
+            GL11.glScaled(0.65F, 0.65F, 0.65F);
+        },(model) -> {
+        if(model instanceof Reflex2) {
+            GL11.glTranslatef(-0.005F, -0.89F, -1.5F);
+            GL11.glScaled(0.15F, 0.15F, 0.15F);
+        }
+        })
+        .withTextureNames("remington700")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
             .withModel(new Remington700())
@@ -153,14 +334,14 @@ public class Remington700Factory implements GunFactory {
                 GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
                 GL11.glRotatef(4f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.075000f, 0.200000f, -1.025000f);
+                GL11.glTranslatef(-0.075000f, 0.250000f, -1.125000f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
             	 GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
                  GL11.glRotatef(45F, 0f, 1f, 0f);
                  GL11.glRotatef(4f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-0.075000f, 0.200000f, -0.225000f);
+                 GL11.glTranslatef(-0.075000f, 0.250000f, -0.325000f);
                  GL11.glRotatef(-2f, 1f, 0f, 0f);
                 })
                 
@@ -205,7 +386,14 @@ public class Remington700Factory implements GunFactory {
                         GL11.glRotatef(45.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(7.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.120000f, 0.300000f, -0.998000f);
-                    }, 110, 70),
+                    }, 110, 0),
+                    new Transition((renderContext) -> { // Reload position
+                    	GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
+                        GL11.glRotatef(2.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(8.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.120000f, 0.300000f, -0.998000f);
+                    }, 70, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
                         GL11.glRotatef(-3.000000f, 1f, 0f, 0f);
@@ -258,7 +446,14 @@ public class Remington700Factory implements GunFactory {
                         GL11.glRotatef(45.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(7.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.300000f, 0.300000f, -0.998000f);
-                    }, 110, 70),
+                    }, 110, 0),
+                    new Transition((renderContext) -> { // Reload position
+                    	GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
+                        GL11.glRotatef(1.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(45.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.300000f, 0.300000f, -0.998000f);
+                    }, 70, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
                         GL11.glRotatef(-3.000000f, 1f, 0f, 0f);
@@ -322,9 +517,40 @@ public class Remington700Factory implements GunFactory {
                           GL11.glScalef(1f, 1f, 1f);
                       }, 250, 50),
                       new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0.59F, -0.43F, 0.5F);
+                          GL11.glRotatef(90F, 0f, 0f, 1f);
+                          GL11.glScalef(1f, 1f, 1f);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
                     	  GL11.glTranslatef(-0.59F, -0.43F, -0.01F);
                           GL11.glRotatef(90F, 0f, 0f, 1f);
                           GL11.glScalef(1f, 1f, 1f);
+
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                      }, 250, 50)
+                    
+                    )
+            
+            .withFirstPersonCustomPositioningEjectSpentRound(AuxiliaryAttachments.Remington700BoltActionMain.getRenderablePart(),
+                    new Transition((renderContext) -> { // Reload position
+                    	
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                      }, 250, 300),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
 
                       }, 250, 50),
                       new Transition((renderContext) -> { // Reload position
@@ -357,9 +583,40 @@ public class Remington700Factory implements GunFactory {
                           GL11.glScalef(1f, 1f, 1f);
                       }, 250, 50),
                       new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0.59F, -0.43F, 0.5F);
+                          GL11.glRotatef(90F, 0f, 0f, 1f);
+                          GL11.glScalef(1f, 1f, 1f);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
                     	  GL11.glTranslatef(-0.59F, -0.43F, -0.01F);
                           GL11.glRotatef(90F, 0f, 0f, 1f);
                           GL11.glScalef(1f, 1f, 1f);
+
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                      }, 250, 50)
+                    
+                    )
+            
+            .withFirstPersonCustomPositioningEjectSpentRoundAimed(AuxiliaryAttachments.Remington700BoltActionMain.getRenderablePart(),
+            		new Transition((renderContext) -> { // Reload position
+                    	
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                      }, 250, 300),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
 
                       }, 250, 50),
                       new Transition((renderContext) -> { // Reload position
@@ -412,13 +669,37 @@ public class Remington700Factory implements GunFactory {
                     
                     )
             
-            .withFirstPersonCustomPositioningUnloading(AuxiliaryAttachments.Remington700BoltAction.getRenderablePart(),
+            .withFirstPersonCustomPositioningReloading(AuxiliaryAttachments.Remington700BoltActionMain.getRenderablePart(),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
-                    }, 250, 1000)
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> { // Reload position
+                    	
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                      }, 250, 300),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                    	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                      }, 250, 50)
+                    
                     )
                     
                 
@@ -571,6 +852,50 @@ public class Remington700Factory implements GunFactory {
                     )
                     
             .withFirstPersonCustomPositioningUnloading(Magazines.R700Mag,
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    	GL11.glTranslatef(0f, 0.2f, 0f);
+                    	GL11.glRotatef(-20f, 1f, 0f, 0f);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    	GL11.glTranslatef(0f, 3f, 0f);
+                    	GL11.glRotatef(15f, 1f, 0f, 0f);
+                    }, 250, 1000)
+                    )
+            
+            .withFirstPersonCustomPositioningReloading(Magazines.R700Mag10rnd,
+                    new Transition((renderContext) -> {
+                    	GL11.glTranslatef(0f, 3f, 0f);
+                    	GL11.glRotatef(15f, 1f, 0f, 0f);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    	GL11.glTranslatef(0f, 0.2f, 0f);
+                    	GL11.glRotatef(-20f, 1f, 0f, 0f);
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000),
+                    new Transition((renderContext) -> {
+                    }, 250, 1000)
+                    )
+                    
+            .withFirstPersonCustomPositioningUnloading(Magazines.R700Mag10rnd,
                     new Transition((renderContext) -> {
                     }, 250, 1000),
                     new Transition((renderContext) -> {
@@ -777,6 +1102,25 @@ public class Remington700Factory implements GunFactory {
                     }, 250, 50)
                   
                   )
+            
+            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.Remington700BoltActionMain.getRenderablePart(),
+            		new Transition((renderContext) -> { // Reload position
+                  	  GL11.glTranslatef(-0F, -0F, 0.5F);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50)
+                  
+                  )
               
             .withFirstPersonPositioningZooming((renderContext) -> {
                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -786,7 +1130,97 @@ public class Remington700Factory implements GunFactory {
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
                     //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.28f, 0.65f);
+                    GL11.glTranslatef(0F, 0.14f, 0.15f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0.3f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.085f, 0.4f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.LeupoldRailScope)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.09f, 0.2f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroReflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.1f, 0.2f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.08f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.08f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0.25f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.VortexRedux)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.KobraGen3)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0.005F, 0.11f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AimpointCompM5)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0.005F, 0.11f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AimpointCompM2)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0F, 0.11f, 0f);
                 } 
                 
                 // Everything else
@@ -804,7 +1238,97 @@ public class Remington700Factory implements GunFactory {
              // HP Zoom
                 if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.NightRaider)) {
                     //System.out.println("Position me for Scope");
-                    GL11.glTranslatef(0F, 0.28f, 0.5f);
+                	 GL11.glTranslatef(0F, 0.14f, 0.1f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.ACOG)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0.25f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Specter)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.085f, 0.35f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.LeupoldRailScope)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.09f, 0.15f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroReflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.1f, 0.2f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Reflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.08f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.BijiaReflex)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.08f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Holographic)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.HolographicAlt)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.EotechHybrid2)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0.2f);
+                } 
+                
+                // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.VortexRedux)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.15f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.Kobra)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.KobraGen3)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(0F, 0.14f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.MicroT1)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0.005F, 0.11f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AimpointCompM5)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0.005F, 0.11f, 0f);
+                } 
+                
+             // HP Zoom
+                if(Weapon.isActiveAttachment(renderContext.getWeaponInstance(), Attachments.AimpointCompM2)) {
+                    //System.out.println("Position me for Scope");
+                    GL11.glTranslatef(-0F, 0.11f, 0f);
                 } 
                 
                 // Everything else
@@ -815,11 +1339,11 @@ public class Remington700Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningRunning((renderContext) -> {
-            	GL11.glScalef(2.500000f, 2.500000f, 2.500000f);
-            	GL11.glRotatef(15.000000f, 1f, 0f, 0f);
-            	GL11.glRotatef(30.000000f, 0f, 1f, 0f);
-            	GL11.glRotatef(20.000000f, 0f, 0f, 1f);
-            	GL11.glTranslatef(-0.100000f, 0.500000f, -0.500000f);
+            	GL11.glScalef(1.000000f, 1.000000f, 1.000000f);
+                GL11.glRotatef(12.000000f, 1f, 0f, 0f);
+                GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                GL11.glRotatef(20.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(0.325000f, -0.525000f, -0.675000f);
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {
@@ -840,12 +1364,10 @@ public class Remington700Factory implements GunFactory {
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
                     	 GL11.glScalef(3f, 3f, 3f);
-                    	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+                    	 GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
                     	 GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
-                    	 GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                    	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
-                    	 
-//                    	 GL11.glScalef(3f, 3f, 3f);
+                    	 GL11.glRotatef(40.000000f, 0f, 0f, 1f);
+                    	 GL11.glTranslatef(0.260000f, -0.415000f, 0.290000f);
                      }, 
                      (renderContext) -> {
                     	 GL11.glScalef(3f, 3f, 3f);
@@ -875,11 +1397,11 @@ public class Remington700Factory implements GunFactory {
                      
             .withFirstPersonHandPositioningZooming(
             		(renderContext) -> {
-                   	 GL11.glScalef(3f, 3f, 3f);
-                   	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+            			GL11.glScalef(3f, 3f, 3f);
+                   	 GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
                    	 GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
-                   	 GL11.glRotatef(35.000000f, 0f, 0f, 1f);
-                   	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
+                   	 GL11.glRotatef(40.000000f, 0f, 0f, 1f);
+                   	 GL11.glTranslatef(0.260000f, -0.415000f, 0.290000f);
                     }, 
                     (renderContext) -> {
                    	 GL11.glScalef(3f, 3f, 3f);
@@ -1172,6 +1694,13 @@ public class Remington700Factory implements GunFactory {
                     	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
+                   	 GL11.glScalef(3f, 3f, 3f);
+                   	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+                   	 GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                   	 GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                   	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
+                   }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
                     	 GL11.glScalef(3f, 3f, 3f);
                     	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
                     	 GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
@@ -1240,6 +1769,13 @@ public class Remington700Factory implements GunFactory {
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3f, 3f, 3f);
+                    	GL11.glRotatef(-55.000000f, 1f, 0f, 0f);
+                    	GL11.glRotatef(50.000000f, 0f, 1f, 0f);
+                    	GL11.glRotatef(-120.000000f, 0f, 0f, 1f);
+                    	GL11.glTranslatef(0.800000f, -0.600000f, -0.050000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                    	GL11.glScalef(3f, 3f, 3f);
                     	GL11.glRotatef(-130.000000f, 1f, 0f, 0f);
                     	GL11.glRotatef(25.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(-40.000000f, 0f, 0f, 1f);
@@ -1276,6 +1812,13 @@ public class Remington700Factory implements GunFactory {
                     	 GL11.glRotatef(35.000000f, 0f, 0f, 1f);
                     	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
                     }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                   	 GL11.glScalef(3f, 3f, 3f);
+                   	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
+                   	 GL11.glRotatef(-35.000000f, 0f, 1f, 0f);
+                   	 GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                   	 GL11.glTranslatef(0.250000f, -0.400000f, 0.325000f);
+                   }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                     	 GL11.glScalef(3f, 3f, 3f);
                     	 GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
@@ -1321,6 +1864,13 @@ public class Remington700Factory implements GunFactory {
                     	GL11.glRotatef(50.000000f, 0f, 1f, 0f);
                     	GL11.glRotatef(-120.000000f, 0f, 0f, 1f);
                     	GL11.glTranslatef(0.625000f, -0.600000f, 0.000000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                    	GL11.glScalef(3f, 3f, 3f);
+                    	GL11.glRotatef(-55.000000f, 1f, 0f, 0f);
+                    	GL11.glRotatef(50.000000f, 0f, 1f, 0f);
+                    	GL11.glRotatef(-120.000000f, 0f, 0f, 1f);
+                    	GL11.glTranslatef(0.800000f, -0.600000f, -0.050000f);
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3f, 3f, 3f);
@@ -1639,7 +2189,7 @@ public class Remington700Factory implements GunFactory {
                     }, 50, 200))
                     
             .build())
-        .withSpawnEntityDamage(20f)
+        .withSpawnEntityDamage(14f)
         .withSpawnEntityGravityVelocity(0f)
         
          

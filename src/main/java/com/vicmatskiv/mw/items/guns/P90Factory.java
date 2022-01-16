@@ -42,7 +42,7 @@ import com.vicmatskiv.mw.models.M27rearsight;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MBUSiron;
-import com.vicmatskiv.mw.models.MP5A5;
+import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MP7;
 import com.vicmatskiv.mw.models.MicroT1;
@@ -51,7 +51,6 @@ import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.Reflex;
 import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.SR3;
 import com.vicmatskiv.mw.models.ScarIron1;
 import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.mw.models.SightMount;
@@ -97,7 +96,7 @@ public class P90Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Personal Defense Weapon",
-        "Damage: 5", 
+        "Damage: 5.5", 
         "Cartridge: 5.7x28mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 80/100",
@@ -457,21 +456,6 @@ public class P90Factory {
                         GL11.glRotatef(1.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.500000f, 1.500000f, -1.225000f);
                     }
-                })
-                
-            .withFirstPersonPositioningProning((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.25f, 0.7f, -0.7f);
-                })
-                
-            .withFirstPersonPositioningProningRecoiled((renderContext) -> {
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glScalef(2f, 2f, 2f);
-                GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.25f, 0.7f, -0.6f);
-                GL11.glRotatef(-0.7F, 1f, 0f, 0f);
                 })
             
             .withFirstPersonCustomPositioning(Magazines.P90TerminatorMag.getRenderablePart(), (renderContext) -> {
@@ -1184,18 +1168,18 @@ public class P90Factory {
                     
             .withFirstPersonPositioningInspecting(
                     new Transition((renderContext) -> {
-                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                        GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(5.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-1.6f, 1.175000f, -1.5f);
+                    	GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                    	GL11.glRotatef(-35.000000f, 1f, 0f, 0f);
+                    	GL11.glRotatef(20.000000f, 0f, 1f, 0f);
+                    	GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
+                    	GL11.glTranslatef(-2.200000f, 1.600000f, -1.900000f);
                     }, 300, 600),
                   new Transition((renderContext) -> {
                       GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
-                      GL11.glRotatef(-5.000000f, 1f, 0f, 0f);
-                      GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                      GL11.glRotatef(80.000000f, 0f, 0f, 1f);
-                      GL11.glTranslatef(0.300000f, 2.5f, -1f);
+                      GL11.glRotatef(-25.000000f, 1f, 0f, 0f);
+                      GL11.glRotatef(40.000000f, 0f, 1f, 0f);
+                      GL11.glRotatef(85.000000f, 0f, 0f, 1f);
+                      GL11.glTranslatef(1.000000f, 1.600000f, -1.900000f);
                   }, 350, 600)
                     )
                     
@@ -1510,19 +1494,19 @@ public class P90Factory {
              })
              
              .withFirstPersonPositioningModifying((renderContext) -> {
-                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
                  GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
-                 GL11.glRotatef(5.000000f, 0f, 1f, 0f);
-                 GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-1.3f, 0.975000f, -1.5f);
+                 GL11.glRotatef(10.000000f, 0f, 1f, 0f);
+                 GL11.glRotatef(-10.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-1.400000f, 1.300000f, -1.425000f);
              })
              
              .withFirstPersonPositioningModifyingAlt((renderContext) -> {
-                 GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
-                 GL11.glRotatef(-15.000000f, 1f, 0f, 0f);
-                 GL11.glRotatef(-10.000000f, 0f, 1f, 0f);
+                 GL11.glScalef(2.000000f, 2.000000f, 2.000000f);
+                 GL11.glRotatef(-10.000000f, 1f, 0f, 0f);
+                 GL11.glRotatef(0.000000f, 0f, 1f, 0f);
                  GL11.glRotatef(-15.000000f, 0f, 0f, 1f);
-                 GL11.glTranslatef(-2.250000f, 0.725000f, -1.80000f);
+                 GL11.glTranslatef(-2.400000f, 0.800000f, -1.900000f);
              })
              .withFirstPersonHandPositioning(
                      (renderContext) -> {
@@ -1543,6 +1527,8 @@ public class P90Factory {
                              GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
                              GL11.glRotatef(55.000000f, 0f, 0f, 1f);
                              GL11.glTranslatef(0.100000f, -0.500000f, 0.045000f);
+                             
+//                             GL11.glScalef(5f, 5f, 5f);
                          }
                      }, 
                      (renderContext) -> {
@@ -1552,35 +1538,6 @@ public class P90Factory {
                          GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
                          GL11.glTranslatef(0.460000f, -0.550000f, 0.175000f);
                      })
-                     
-            .withFirstPersonHandPositioningProning(
-            		(renderContext) -> {
-                        RenderContext<?> rc = (RenderContext<?>) renderContext;
-                        ItemAttachment<Weapon> activeAttachment = WeaponAttachmentAspect.getActiveAttachment(
-                                AttachmentCategory.GRIP, rc.getWeaponInstance());
-                        if(activeAttachment == Attachments.Grip2 || 
-                           activeAttachment == Attachments.StubbyGrip ||
-                           activeAttachment == Attachments.VGrip) {
-                            GL11.glScalef(4.5f, 4.5f, 4.5f);
-                            GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(0.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(15.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(-0.050000f, -0.200000f, 0.325000f);
-                        } else {
-                            GL11.glScalef(5f, 5f, 5f);
-                            GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                            GL11.glRotatef(-45.000000f, 0f, 1f, 0f);
-                            GL11.glRotatef(55.000000f, 0f, 0f, 1f);
-                            GL11.glTranslatef(0.100000f, -0.500000f, 0.045000f);
-                        }
-                    }, 
-                    (renderContext) -> {
-                        GL11.glScalef(4.5f, 4.5f, 4.5f);
-                        GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.460000f, -0.550000f, 0.175000f);
-                    })
                      
             .withFirstPersonHandPositioningZooming(
             		(renderContext) -> {
@@ -1614,10 +1571,10 @@ public class P90Factory {
             .withFirstPersonHandPositioningModifying(
                     (renderContext) -> {
                         GL11.glScalef(5f, 5f, 5f);
-                        GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(40.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.100000f, -0.500000f, 0.075000f);
+                        GL11.glRotatef(-60.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-50.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.200000f, -0.475000f, 0.000000f);
                     }, 
                     (renderContext) -> {
                     	 GL11.glScalef(4.5f, 4.5f, 4.5f);
@@ -1630,17 +1587,17 @@ public class P90Factory {
             .withFirstPersonHandPositioningModifyingAlt(
                     (renderContext) -> {
                         GL11.glScalef(5f, 5f, 5f);
-                        GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(40.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(0.100000f, -0.500000f, 0.075000f);
+                        GL11.glRotatef(-20.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(105.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.175000f, -0.525000f, -0.175000f);
                     }, 
                     (renderContext) -> {
                     	 GL11.glScalef(4.5f, 4.5f, 4.5f);
-                         GL11.glRotatef(-90.000000f, 1f, 0f, 0f);
-                         GL11.glRotatef(10.000000f, 0f, 1f, 0f);
-                         GL11.glRotatef(-50.000000f, 0f, 0f, 1f);
-                         GL11.glTranslatef(0.460000f, -0.550000f, 0.175000f);
+                    	 GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                    	 GL11.glRotatef(30.000000f, 0f, 1f, 0f);
+                    	 GL11.glRotatef(-30.000000f, 0f, 0f, 1f);
+                    	 GL11.glTranslatef(0.350000f, -0.750000f, 0.200000f);
                     })
                      
             .withFirstPersonLeftHandPositioningReloading(
@@ -2230,18 +2187,18 @@ public class P90Factory {
                     
             .withFirstPersonLeftHandPositioningInspecting(
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4.5f, 4.5f, 4.5f);
-                        GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-25.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.100000f, -0.975000f, 0.150000f);
+                    	GL11.glScalef(5f, 5f, 5f);
+                        GL11.glRotatef(5.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(35.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.225000f, -0.100000f, 0.600000f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(4.5f, 4.5f, 4.5f);
-                        GL11.glRotatef(-70.000000f, 1f, 0f, 0f);
-                        GL11.glRotatef(-25.000000f, 0f, 1f, 0f);
-                        GL11.glRotatef(50.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.100000f, -0.975000f, 0.150000f);
+                    	GL11.glScalef(5f, 5f, 5f);
+                    	GL11.glRotatef(-55.000000f, 1f, 0f, 0f);
+                    	GL11.glRotatef(5.000000f, 0f, 1f, 0f);
+                    	GL11.glRotatef(45.000000f, 0f, 0f, 1f);
+                    	GL11.glTranslatef(-0.025000f, -0.375000f, 0.050000f);
                     }, 250, 50))
                     
             .withFirstPersonRightHandPositioningInspecting(
@@ -2486,7 +2443,7 @@ public class P90Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(5f)
+        .withSpawnEntityDamage(5.5f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

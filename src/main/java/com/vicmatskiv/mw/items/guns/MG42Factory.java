@@ -85,7 +85,7 @@ public class MG42Factory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: General-Purpose Machine Gun",
-        "Damage: 13", 
+        "Damage: 13.5", 
         "Cartridge: 7.92x57mm",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 95/100",
@@ -1746,7 +1746,7 @@ public class MG42Factory {
                     )
              
             .build())
-        .withSpawnEntityDamage(13f)
+        .withSpawnEntityDamage(13.5f)
         .withSpawnEntityGravityVelocity(0.0118f)
                 
         .build(ModernWarfareMod.MOD_CONTEXT);

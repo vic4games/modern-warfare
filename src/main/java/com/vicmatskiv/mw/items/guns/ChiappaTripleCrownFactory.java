@@ -58,7 +58,7 @@ public class ChiappaTripleCrownFactory implements GunFactory {
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",
-        "Damage per Pellet: 12",
+        "Damage per Pellet: 6",
         "Pellets per Shot: 10", 
         "Cartridge: 12 Gauge Shotgun Shell",
         "Fire Rate: SEMI ACTION",
@@ -781,7 +781,7 @@ public class ChiappaTripleCrownFactory implements GunFactory {
                     )
                     
             .build())
-        .withSpawnEntityDamage(12f)
+        .withSpawnEntityDamage(6f)
         .withSpawnEntityGravityVelocity(0.8f)
         
          

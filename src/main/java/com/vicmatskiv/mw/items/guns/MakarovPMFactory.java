@@ -156,21 +156,15 @@ public class MakarovPMFactory implements GunFactory {
             .withFirstPersonPositioning((renderContext) -> {
                 GL11.glScaled(2F, 2F, 2F);
                 GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(9.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.105000f, 0.935000f, -1.649999f);
-                
-//                GL11.glScaled(2F, 2F, 2F);
-//                GL11.glRotatef(-32.000000f, 1f, 0f, 0f);
-//                GL11.glRotatef(35.000000f, 0f, 1f, 0f);
-//                GL11.glRotatef(-39.000000f, 0f, 0f, 1f);
-//                GL11.glTranslatef(-1.199999f, 0.300000f, -1.550000f);
+                GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                GL11.glTranslatef(-0.025000f, 0.800000f, -1.599999f);
                 })
                 
             .withFirstPersonPositioningRecoiled((renderContext) -> {
-            	GL11.glScaled(2F, 2F, 2F);
-                GL11.glRotatef(45F, 0f, 1f, 0f);
-                GL11.glRotatef(9.000000f, 0f, 0f, 1f);
-                GL11.glTranslatef(-0.105000f, 0.935000f, -1.249999f);
+            	 GL11.glScaled(2F, 2F, 2F);
+                 GL11.glRotatef(45F, 0f, 1f, 0f);
+                 GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                 GL11.glTranslatef(-0.025000f, 0.800000f, -1.299999f);
                 GL11.glRotatef(-6F, 1f, 0f, 0f);
                 })
                 
