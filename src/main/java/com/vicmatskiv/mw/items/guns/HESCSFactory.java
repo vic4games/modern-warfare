@@ -83,9 +83,6 @@ public class HESCSFactory implements GunFactory {
         .withFlashScale(() -> 1f)
         .withFlashOffsetX(() -> 0.05f)
         .withFlashOffsetY(() -> 0.15f)
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 5f, // x 

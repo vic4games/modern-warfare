@@ -22,8 +22,8 @@ public class BlockLeadOre extends Block {
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }
     
-    public Block getBlockDropped(int meta, Random rand, int fortune) {
-        return Ores.LeadOre;
-    }
+//    public Block getBlockDropped(int meta, Random rand, int fortune) {
+//        return Ores.LeadOre;
+//    }
 
 }

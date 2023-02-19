@@ -22,6 +22,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SW500MagnumFactory implements GunFactory {
@@ -35,6 +36,7 @@ public class SW500MagnumFactory implements GunFactory {
         .withFireRate(0.2f)
         .withRecoil(11f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.REVOLVER)
         .withMaxShots(1)
         .withShootSound("sw_500_magnum")
         //.withSilencedShootSound("M9silenced")
@@ -53,9 +55,6 @@ public class SW500MagnumFactory implements GunFactory {
         .withInaccuracy(2)
         .withShellCasingEjectEnabled(false)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab) 
-        .withCrafting(CraftingComplexity.LOW,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withInformationProvider(stack -> Arrays.asList(
                 "Type: Revolver",
                 "Damage: 7",

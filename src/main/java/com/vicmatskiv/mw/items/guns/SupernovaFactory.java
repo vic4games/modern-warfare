@@ -50,6 +50,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SupernovaFactory implements GunFactory {
@@ -68,6 +69,7 @@ public class SupernovaFactory implements GunFactory {
         .withFireRate(0.2f)
         .withRecoil(11f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SHOTGUN)
         .withMaxShots(1)
         .withPumpTimeout(600)
         .withShootSound("supernova")
@@ -88,9 +90,6 @@ public class SupernovaFactory implements GunFactory {
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.05f)
         .withFlashOffsetY(() -> 0.12f)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",

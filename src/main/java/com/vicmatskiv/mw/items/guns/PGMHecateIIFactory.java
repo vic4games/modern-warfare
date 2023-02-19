@@ -65,6 +65,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class PGMHecateIIFactory implements GunFactory {
@@ -79,6 +80,7 @@ public class PGMHecateIIFactory implements GunFactory {
         .withEjectSpentRoundSound("pgmhecateii_boltaction")
         .withRecoil(14f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("pgmhecateii")
         .withPumpTimeout(1100)

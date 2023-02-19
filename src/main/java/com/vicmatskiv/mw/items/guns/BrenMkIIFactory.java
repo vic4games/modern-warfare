@@ -64,6 +64,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class BrenMkIIFactory {
@@ -75,6 +76,7 @@ public class BrenMkIIFactory {
         .withFireRate(0.5f)
         .withRecoil(2.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("bren")
@@ -100,9 +102,6 @@ public class BrenMkIIFactory {
         "Rate of Fire: 50/100",
         "Magazines:",
         "30rnd 7.62x51mm Bren Magazine"))
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.GunmetalIngot,
-                Ores.PlasticPlate)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 2f, // x 

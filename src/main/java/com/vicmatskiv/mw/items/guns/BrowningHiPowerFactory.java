@@ -27,6 +27,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class BrowningHiPowerFactory implements GunFactory {
@@ -38,6 +39,7 @@ public class BrowningHiPowerFactory implements GunFactory {
         .withFireRate(0.65f)
         .withRecoil(4f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMaxShots(1)
         .withShootSound("hi_power")
         .withSilencedShootSound("colt_m45a1_silenced")
@@ -64,9 +66,6 @@ public class BrowningHiPowerFactory implements GunFactory {
         "Rate of Fire: 65/100",
         "Magazines:",
         "13rnd 9x19mm Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  4f, // x 

@@ -54,6 +54,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MP40Factory {
@@ -65,6 +66,7 @@ public class MP40Factory {
         .withFireRate(0.55f)
         .withRecoil(1.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("mp40")
@@ -91,9 +93,6 @@ public class MP40Factory {
         "Rate of Fire: 50/100",
         "Magazines:",
         "32rnd 9x19mm MP Magazine"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 

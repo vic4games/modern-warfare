@@ -6,16 +6,23 @@ import com.vicmatskiv.mw.items.melee.BaseballBatFactory;
 import com.vicmatskiv.mw.items.melee.BaseballBatNailsFactory;
 import com.vicmatskiv.mw.items.melee.NightStickFactory;
 import com.vicmatskiv.mw.items.melee.TacticalTomahawkFactory;
+import com.vicmatskiv.weaponlib.UniversalSoundLookup;
+import com.vicmatskiv.weaponlib.animation.SpecialAttachments;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.crafting.workbench.TileEntityWorkbench;
+import com.vicmatskiv.weaponlib.crafting.workbench.WorkbenchBlock;
 import com.vicmatskiv.weaponlib.vehicle.network.VehicleDataSerializer;
 import com.vicmatskiv.weaponlib.vehicle.network.VehiclePhysSerializer;
 
+import net.minecraft.block.BlockFurnace;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.network.datasync.DataSerializers;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 public class CommonProxy {
 
@@ -51,6 +58,8 @@ public class CommonProxy {
     protected boolean isClient() {
         return false;
     }
+    
+    public void postInit(Object mod, ConfigurationManager configurationManager, FMLPostInitializationEvent event) {}
 
     public void preInit(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
 
@@ -147,9 +156,17 @@ public class CommonProxy {
 //        compatibility.registerItem(ModernWarfareMod.MODID, LaserPointer, "LaserPointer");
 //        compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
         
+        
+        
+        
+        UniversalSoundRegistry.init();
+        UniversalSoundLookup.initialize(ModernWarfareMod.MOD_CONTEXT);
+        
         DataSerializers.registerSerializer(VehicleDataSerializer.SERIALIZER);
         DataSerializers.registerSerializer(VehiclePhysSerializer.SERIALIZER);
 
+        SpecialAttachments.init(mod, configurationManager, event, ModernWarfareMod.MOD_CONTEXT);
+        
         Backpacks.preInit(mod, configurationManager, event);
         Vests.preInit(mod, configurationManager, event);
         Ores.init(mod, configurationManager, event);
@@ -163,6 +180,7 @@ public class CommonProxy {
         Guns.init(mod, configurationManager, event, this);
         com.vicmatskiv.mw.Electronics.init(mod, configurationManager, event);
         Grenades.init(mod, configurationManager, event, this);
+        CustomSpawnEggs.init(mod, configurationManager, event, this);
         
         new TacticalTomahawkFactory().createMelee(this);
         
@@ -173,6 +191,12 @@ public class CommonProxy {
         new NightStickFactory().createMelee(this);
         
         TileEntities.init(this);
+        
+        ModernWarfareMod.MOD_CONTEXT.preInitEnd(mod, ModernWarfareMod.MODID, configurationManager, event, ModernWarfareMod.MOD_CONTEXT.getChannel());
+        
+       
+        
+        
     }
 
     public void init(ModernWarfareMod mod, ConfigurationManager configurationManager, CompatibleFmlInitializationEvent event) {

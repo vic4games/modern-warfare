@@ -1,15 +1,17 @@
 package com.vicmatskiv.mw;
 
 import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 import org.lwjgl.opengl.GL11;
 
 import com.vicmatskiv.mw.models.AK47iron;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.BR55scopereticle;
-import com.vicmatskiv.mw.models.DMRscopeReticle;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.G36CIron1;
 import com.vicmatskiv.mw.models.G36CIron2;
@@ -35,11 +37,14 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEven
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
+import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 
 public class Attachments {
 
     public static ItemAttachment<Weapon> OKP7;
     public static ItemAttachment<Weapon> PSO1;
+    public static ItemAttachment<Weapon> FMG9Sight;
     public static ItemAttachment<Weapon> Reflex;
     public static ItemAttachment<Weapon> BijiaReflex;
     public static ItemAttachment<Weapon> Holographic;
@@ -59,10 +64,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> NightRaider;
     public static ItemAttachment<Weapon> M2A1sight;
     public static ItemAttachment<Weapon> F2000Scope;
-    public static ItemAttachment<Weapon> MA5Dcover;
-    public static ItemAttachment<Weapon> BR55Scope;
-    public static ItemAttachment<Weapon> DMRScope;
-    public static ItemAttachment<Weapon> SRS99Scope;
     public static ItemAttachment<Weapon> Silencer556x45;
     public static ItemAttachment<Weapon> Silencer762x39;
     public static ItemAttachment<Weapon> Silencer556x39;
@@ -108,7 +109,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> AUGscope;
     public static ItemAttachment<Weapon> M1928Grip;
     public static ItemAttachment<Weapon> M1A1Grip;
-    public static ItemAttachment<Weapon> G36KScope;
     public static ItemAttachment<Weapon> LeupoldScope;
     public static ItemAttachment<Weapon> TritiumRearSights;
     public static ItemAttachment<Weapon> MBUSRearSights;
@@ -124,11 +124,17 @@ public class Attachments {
     public static ItemAttachment<Weapon> MP7IronSightsStanding;
     
     //Weapon Parts
+    public static ItemAttachment<Weapon> G11HandguardK1;
+    public static ItemAttachment<Weapon> G11HandguardK2;
+    
     public static ItemAttachment<Weapon> AK47DustCover;
     public static ItemAttachment<Weapon> AKMDustCover;
     public static ItemAttachment<Weapon> VeprDustCover;
     public static ItemAttachment<Weapon> AK101DustCover;
     public static ItemAttachment<Weapon> AK15DustCover;
+    
+    public static ItemAttachment<Weapon> DragunovDustCover;
+    public static ItemAttachment<Weapon> Dragunov98DustCover;
 
     public static ItemAttachment<Weapon> AK12DustCover;
     public static ItemAttachment<Weapon> AK12BDustCover;
@@ -145,12 +151,16 @@ public class Attachments {
     
     public static ItemAttachment<Weapon> AK47HandleGuard;
     public static ItemAttachment<Weapon> AK101HandGuard;
+    public static ItemAttachment<Weapon> AK74Handguard;
     public static ItemAttachment<Weapon> AKMagpulHandleGuard;
     public static ItemAttachment<Weapon> AKMagpulHandleGuardTan;
     public static ItemAttachment<Weapon> MLOKHandguard;
     public static ItemAttachment<Weapon> MLOKExtendedHandguard;
     public static ItemAttachment<Weapon> AK15HandleGuard;
+    public static ItemAttachment<Weapon> AK12kalHandguard;
     public static ItemAttachment<Weapon> RPK16Handguard;
+    public static ItemAttachment<Weapon> DragunovHandguard;
+    public static ItemAttachment<Weapon> Dragunov98Handguard;
     
     public static ItemAttachment<Weapon> AK12Handguard;
     public static ItemAttachment<Weapon> AK12BHandguard;
@@ -188,15 +198,25 @@ public class Attachments {
     // other ARs
     
     public static ItemAttachment<Weapon> M110Handguard;
+    public static ItemAttachment<Weapon> Z10Handguard;
     public static ItemAttachment<Weapon> AR10SuperSASSHandguard;
     public static ItemAttachment<Weapon> C8SFWHandguard;
     public static ItemAttachment<Weapon> HK417Handguard;
     public static ItemAttachment<Weapon> HK417HandguardTan;
     
+    public static ItemAttachment<Weapon> SIG556Handguard;
+    public static ItemAttachment<Weapon> SIG556HandguardRailed;
+    public static ItemAttachment<Weapon> SIG556HandguardKA;
+    public static ItemAttachment<Weapon> SIG556Grip;
+    
     public static ItemAttachment<Weapon> S710Handguard;
     
     public static ItemAttachment<Weapon> SIGMCXHandguard;
     public static ItemAttachment<Weapon> SIGMCXHandguardShort;
+    
+    public static ItemAttachment<Weapon> MPXHandguard;
+    public static ItemAttachment<Weapon> MPXHandguardRailed;
+    public static ItemAttachment<Weapon> MPXHandguardExtended;
     
     public static ItemAttachment<Weapon> K2C1Handguard;
     
@@ -211,6 +231,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> ScorpionHandguardLong;
     
     public static ItemAttachment<Weapon> ScarHandGuard;
+    public static ItemAttachment<Weapon> ScarHHandGuard;
     public static ItemAttachment<Weapon> ScarMidWestIndustriesHandGuard;
     public static ItemAttachment<Weapon> ScarMLOKHandguard;
     public static ItemAttachment<Weapon> ScarLReceiver;
@@ -227,6 +248,8 @@ public class Attachments {
     public static ItemAttachment<Weapon> ACRPolymerHandGuardTan;
     public static ItemAttachment<Weapon> ACRSquareDropHandguard;
     public static ItemAttachment<Weapon> ACRSquareDropHandguardTan;
+    
+    public static ItemAttachment<Weapon> Type20Handguard;
     
     public static ItemAttachment<Weapon> HoneyBadgerHandguard;
     public static ItemAttachment<Weapon> HoneyBadgerMatrixArmsHandguard;
@@ -273,6 +296,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> M1CarbineScoutHandguard;
     
     public static ItemAttachment<Weapon> G3A1Handguard;
+    public static ItemAttachment<Weapon> G3HandguardRailed;
     
     public static ItemAttachment<Weapon> DSR1Handguard;
     public static ItemAttachment<Weapon> DSR1HandguardRailed;
@@ -289,8 +313,6 @@ public class Attachments {
     public static ItemAttachment<Weapon> SSG08Chassis;
     
     public static ItemAttachment<Weapon> ARX160Chassis;
-    public static ItemAttachment<Weapon> ARX160ChassisOlive;
-    public static ItemAttachment<Weapon> ARX160ChassisTan;
     
     public static ItemAttachment<Weapon> G2ContenderBarrelShort;
     public static ItemAttachment<Weapon> G2ContenderBarrelLong;
@@ -308,6 +330,9 @@ public class Attachments {
     public static ItemAttachment<Weapon> AK47Stock;
     public static ItemAttachment<Weapon> RPKStock;
     public static ItemAttachment<Weapon> AK101Stock;
+    public static ItemAttachment<Weapon> AK74Stock;
+    public static ItemAttachment<Weapon> DragunovGripStock;
+    public static ItemAttachment<Weapon> Dragunov98Stock;
     
     public static ItemAttachment<Weapon> AK12Stock;
     public static ItemAttachment<Weapon> AK12ZenitcoStock;
@@ -317,6 +342,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> VSSVintorezMilspecStock;
     
     public static ItemAttachment<Weapon> CollapsableMOEStock;
+    public static ItemAttachment<Weapon> CollapsableMOEStockGreen;
     public static ItemAttachment<Weapon> MagpulCTRStock;
     public static ItemAttachment<Weapon> MilSpecStock;
     
@@ -410,10 +436,12 @@ public class Attachments {
     public static ItemAttachment<Weapon> HKS20Stock;
     
     public static ItemAttachment<Weapon> MAC10Stock;
+    public static ItemAttachment<Weapon> MAC21Stock;
     
     public static ItemAttachment<Weapon> AK47Grip;
     public static ItemAttachment<Weapon> AK101Grip;
     public static ItemAttachment<Weapon> AKErgoGrip;
+    public static ItemAttachment<Weapon> AKErgoGripGreen;
     public static ItemAttachment<Weapon> AKErgoGripTan;
     
     public static ItemAttachment<Weapon> M4Grip;
@@ -451,6 +479,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> HK417ReceiverTan;
     
     public static ItemAttachment<Weapon> M110Receiver;
+    public static ItemAttachment<Weapon> Z10Receiver;
     
     public static ItemAttachment<Weapon> Beowulf50CalReceiver;
     
@@ -476,6 +505,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> FamasF1ScopeMount;
     public static ItemAttachment<Weapon> M16A1PicatinnyRail;
     public static ItemAttachment<Weapon> FamasF1PicatinnyRail;
+    public static ItemAttachment<Weapon> NGSWRRail;
     public static ItemAttachment<Weapon> RailRiser;
     public static ItemAttachment<Weapon> M1911Slide;
     public static ItemAttachment<Weapon> M1911Body;
@@ -501,6 +531,7 @@ public class Attachments {
     public static ItemAttachment<Weapon> Glock18CSlide;
     public static ItemAttachment<Weapon> Glock18CCNCSlide;
     public static ItemAttachment<Weapon> P226Slide;
+    public static ItemAttachment<Weapon> FiveSevenSlide;
     public static ItemAttachment<Weapon> MakarovBody;
     public static ItemAttachment<Weapon> MakarovPBBody;
     public static ItemAttachment<Weapon> MakarovSlide;
@@ -547,10 +578,84 @@ public class Attachments {
     public static ItemAttachment<Weapon> MAC10Action;
 
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
+    	
+    	G11HandguardK1 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.G11HandguardK1(), "g11.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK1) {
+                        GL11.glTranslatef(-0.6F, -0.3F, 1.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK1) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK1) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("G11HandguardK1").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+    	
+    	G11HandguardK2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.G11HandguardK2(), "g11.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK2) {
+                        GL11.glTranslatef(-0.6F, -0.3F, 1.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK2) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G11HandguardK2) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("G11HandguardK2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+
         
         FABDefenseMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.FABDefenseMount(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.FABDefenseMount) {
                         GL11.glTranslatef(-0.6F, -0.3F, 1.2F);
@@ -631,6 +736,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail4(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.P90Swordfish) {
                         GL11.glTranslatef(-0.6F, 0.1F, -0.6F);
@@ -736,6 +844,9 @@ public class Attachments {
         ScarHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarLHandguard(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarLHandguard) {
                     	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
@@ -768,9 +879,51 @@ public class Attachments {
                 .withName("ScarHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        ScarHHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.ScarHHandguard(), "scarh.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.ScarHHandguard) {
+                    	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
+                         GL11.glRotatef(10F, 1f, 0f, 0f);
+                         GL11.glRotatef(-190F, 0f, 1f, 0f);
+                         GL11.glRotatef(0F, 0f, 0f, 1f);
+                         GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.ScarHHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.ScarHHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("ScarHHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         ScarMidWestIndustriesHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarMidWestIndustriesHandguard(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarMidWestIndustriesHandguard) {
                         GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
@@ -808,6 +961,9 @@ public class Attachments {
         ScarMLOKHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarMLOKHandguard(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarMLOKHandguard) {
                     	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
@@ -842,9 +998,178 @@ public class Attachments {
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        SIG556Handguard = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.SIG556Handguard(), "sig556.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Handguard) {
+                    	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
+                         GL11.glRotatef(10F, 1f, 0f, 0f);
+                         GL11.glRotatef(-190F, 0f, 1f, 0f);
+                         GL11.glRotatef(0F, 0f, 0f, 1f);
+                         GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("SIG556Handguard")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        SIG556HandguardRailed = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.SIG556HandguardRailed(), "sig556.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardRailed) {
+                    	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
+                         GL11.glRotatef(10F, 1f, 0f, 0f);
+                         GL11.glRotatef(-190F, 0f, 1f, 0f);
+                         GL11.glRotatef(0F, 0f, 0f, 1f);
+                         GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardRailed) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardRailed) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("SIG556HandguardRailed")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        SIG556HandguardKA = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.SIG556HandguardKA(), "sig556.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardKA) {
+                    	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
+                         GL11.glRotatef(10F, 1f, 0f, 0f);
+                         GL11.glRotatef(-190F, 0f, 1f, 0f);
+                         GL11.glRotatef(0F, 0f, 0f, 1f);
+                         GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardKA) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556HandguardKA) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("SIG556HandguardKA")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        SIG556Grip = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.BACKGRIP)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.SIG556Grip(), "sig556.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Grip) {
+                    	 GL11.glTranslatef(-0.6F, 0.1F, -1.6F);
+                         GL11.glRotatef(10F, 1f, 0f, 0f);
+                         GL11.glRotatef(-190F, 0f, 1f, 0f);
+                         GL11.glRotatef(0F, 0f, 0f, 1f);
+                         GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Grip) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.SIG556Grip) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("SIG556Grip")
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         ScarLReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarReceiver(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarReceiver) {
                         GL11.glTranslatef(-0.6F, -0F, -0.2F);
@@ -880,6 +1205,9 @@ public class Attachments {
         KrissVectorReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorReceiver(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorReceiver) {
                         GL11.glTranslatef(-0.6F, -0.5F, -1F);
@@ -915,6 +1243,12 @@ public class Attachments {
         Vector556Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorModified(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 5),
+                    	new CraftingEntry(Items.STRING, 4),
+                    	new CraftingEntry(Items.PAPER, 5))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorModified) {
                         GL11.glTranslatef(-0.6F, -0.5F, -1.2F);
@@ -950,6 +1284,10 @@ public class Attachments {
         VectorMk1ModularHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorMk1ModularGuard(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorMk1ModularGuard) {
                         GL11.glTranslatef(-0.6F, -0.5F, -1.2F);
@@ -985,6 +1323,10 @@ public class Attachments {
         VectorCarbineHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorCarbineGuard(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorCarbineGuard) {
                         GL11.glTranslatef(-0.6F, -0.5F, -1.2F);
@@ -1020,6 +1362,11 @@ public class Attachments {
         VectorTapedGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorTapedGrip(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3),
+                    	new CraftingEntry(Items.STRING, 2),
+                    	new CraftingEntry(Items.PAPER, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorTapedGrip) {
                         GL11.glTranslatef(-0.6F, -0.5F, -1.2F);
@@ -1057,6 +1404,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Origin12Handguard(), "origin12.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Origin12Handguard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.5F);
@@ -1270,6 +1621,10 @@ public class Attachments {
         ARX160Chassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ARX160(), "arx160.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 6), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ARX160) {
                         GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
@@ -1300,76 +1655,6 @@ public class Attachments {
                     }
                 })
                 .withName("ARX160Chassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        ARX160ChassisOlive = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.ARX160(), "arx160olive.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.43F, 0.43F, 0.43f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("ARX160ChassisOlive").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        ARX160ChassisTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.ARX160(), "arx160tan.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(-0.6F, -0.2F, -0.15F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.43F, 0.43F, 0.43f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.ARX160) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("ARX160ChassisTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G2ContenderBarrelShort = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -1524,6 +1809,10 @@ public class Attachments {
         Origin12Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Origin12Grip(), "origin12.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Origin12Grip) {
                         GL11.glTranslatef(-0.6F, -0F, 0F);
@@ -1594,6 +1883,10 @@ public class Attachments {
         Origin12Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Origin12Stock(), "origin12.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withRequiredAttachments(Origin12Grip)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Origin12Stock) {
@@ -1669,6 +1962,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "acrsbrhandguardtan.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "acrsbrhandguardtan.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "acrsbrhandguardtan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -1707,6 +2003,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -1743,6 +2043,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRWEMSKHandguard(), "ACRWEMSKHandguard.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRWEMSKHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -1779,6 +2083,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRWEMSKHandguard(), "ACRWEMSKHandguardtan.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRWEMSKHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -1814,6 +2121,9 @@ public class Attachments {
         ACRPrecisionHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPrecisionHandguard(), "ACRPrecisionHandGuard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPrecisionHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.6F);
@@ -1849,6 +2159,9 @@ public class Attachments {
         ACRPrecisionHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPrecisionHandguard(), "ACRPrecisionHandGuardTan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPrecisionHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.6F);
@@ -1884,6 +2197,9 @@ public class Attachments {
         ACRSBRHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRSBRHandguard(), "acrsbrhandguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRSBRHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.6F);
@@ -1919,6 +2235,9 @@ public class Attachments {
         ACRSBRHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRSBRHandguard(), "ACRSBRHandGuardtan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRSBRHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.6F);
@@ -1954,6 +2273,9 @@ public class Attachments {
         ACRPolymerHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPolymerHandguard(), "acrpolymerhandguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPolymerHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -1989,6 +2311,9 @@ public class Attachments {
         ACRPolymerHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPolymerHandguard(), "acrpolymerhandguardtan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPolymerHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -2024,6 +2349,9 @@ public class Attachments {
         ACRSquareDropHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRSquareDropHandguard(), "ACRSBRHandguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRSquareDropHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -2059,6 +2387,9 @@ public class Attachments {
         ACRSquareDropHandguardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRSquareDropHandguard(), "ACRSBRHandguardtan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRSquareDropHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
@@ -2089,6 +2420,44 @@ public class Attachments {
                     }
                 })
                 .withName("ACRSquareDropHandguardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Type20Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Type20Handguard(), "type20.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Type20Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.5F, -1.3F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Type20Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Type20Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Type20Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2853,6 +3222,10 @@ public class Attachments {
         G3A1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.G3A1Handguard(), "g3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.G3A1Handguard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.4F);
@@ -2883,6 +3256,48 @@ public class Attachments {
                     }
                 })
                 .withName("G3A1Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        G3HandguardRailed = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.G3HandguardRailed(), "g3.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G3HandguardRailed) {
+                        GL11.glTranslatef(-0.6F, 0.3F, -1.4F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G3HandguardRailed) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.G3HandguardRailed) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("G3HandguardRailed").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3028,6 +3443,10 @@ public class Attachments {
         M14Body = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M14Body(), "m14dmr.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withModel(new FALIron(), "gun.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M14Body) {
@@ -3066,6 +3485,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.M14DMRSocomChassis(), "m14dmr.png")
                 .withModel(new FALIron(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M14DMRSocomChassis) {
                         GL11.glTranslatef(-0.6F, -0.2F, -0F);
@@ -3103,6 +3526,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Mk14Body(), "mk14ebrtan.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Mk14Body) {
                         GL11.glTranslatef(-0.6F, -0.2F, -0F);
@@ -3140,6 +3567,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Mk14Body(), "mk14ebrsnow.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Mk14Body) {
                         GL11.glTranslatef(-0.6F, -0.2F, -0F);
@@ -3177,6 +3608,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Mk14Body(), "mk14ebr.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Mk14Body) {
                         GL11.glTranslatef(-0.6F, -0.2F, -0F);
@@ -3212,6 +3647,10 @@ public class Attachments {
         M14Cover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M14Cover(), "m14dmr.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(M14Body, M14SOCOMChassis)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M14Cover) {
@@ -3251,6 +3690,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(M14Body, M14SOCOMChassis)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M14TriRailCover) {
@@ -3288,6 +3731,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRequiredAttachments(M14Body, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, M14SOCOMChassis)
                 .withModel(new com.vicmatskiv.mw.models.M14DMRRail(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M14DMRRail) {
                         GL11.glTranslatef(-0.6F, -1F, 1.4F);
@@ -3323,6 +3769,9 @@ public class Attachments {
         ScarStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarStock(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.5F);
@@ -3358,6 +3807,9 @@ public class Attachments {
         ScarRetractableStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarShortStock(), "scarl.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarShortStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0.8F);
@@ -3394,6 +3846,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScarAdapterStock(), "scarl.png")
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarAdapterStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -3430,7 +3886,10 @@ public class Attachments {
         
         ScarHStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.ScarStock(), "scarh.png")
+                .withModel(new com.vicmatskiv.mw.models.ScarStock(), "scar_stock_h.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScarStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.8F);
@@ -3466,6 +3925,10 @@ public class Attachments {
         VectorStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorStock(), "krissvector.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorStock) {
                         GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
@@ -3502,6 +3965,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KrissVectorStockAdapter(), "krissvector.png")
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KrissVectorStockAdapter) {
                         GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
@@ -3536,20 +4003,19 @@ public class Attachments {
         
         UMP45Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.UMP45(), "ump45.png")
-                .withModel(new com.vicmatskiv.mw.models.Written45ACP(), "written45acp.png")
+                .withModel(new com.vicmatskiv.mw.models.UMP45Receiver(), "ump45.png")
                 .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
-                        GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
+                        GL11.glTranslatef(-0.6F, 0.0F, -0.1F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                        GL11.glScaled(0.6F, 0.6F, 0.6f);
                     } else {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -3558,7 +4024,7 @@ public class Attachments {
                     }
 
                 }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
@@ -3572,20 +4038,19 @@ public class Attachments {
         
         UMP9Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.UMP45(), "ump45.png")
-                .withModel(new com.vicmatskiv.mw.models.Written45ACP(), "written9x19mm.png")
+                .withModel(new com.vicmatskiv.mw.models.UMP45Receiver(), "ump45.png")
                 .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
-                        GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
+                        GL11.glTranslatef(-0.6F, 0.0F, -0.1F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                        GL11.glScaled(0.6F, 0.6F, 0.6f);
                     } else {
                         GL11.glScalef(0f, 0f, 0f);
                     }
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
                         GL11.glRotatef(30F, 0f, 1f, 0f);
                         GL11.glScaled(0.7F, 0.7F, 0.7F);
@@ -3594,7 +4059,7 @@ public class Attachments {
                     }
 
                 }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.UMP45) {
+                    if (model instanceof com.vicmatskiv.mw.models.UMP45Receiver) {
                         GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
                         GL11.glRotatef(-50F, 0f, 1f, 0f);
                         GL11.glRotatef(80F, 1f, 0f, 0f);
@@ -3644,6 +4109,9 @@ public class Attachments {
         MAC10Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MAC10Stock(), "mac10.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MAC10Stock) {
                         GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
@@ -3676,9 +4144,51 @@ public class Attachments {
                 .withName("MAC10Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        MAC21Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Mac10stockwithrail(), "Mac10stockwithrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Mac10stockwithrail) {
+                        GL11.glTranslatef(-0.6F, -0.5F, 1.5F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Mac10stockwithrail) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Mac10stockwithrail) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("MAC21Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         ACRStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRStock(), "acr.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3714,6 +4224,9 @@ public class Attachments {
         ACRStockBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRStock(), "acrblack.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3749,6 +4262,9 @@ public class Attachments {
         ACRFixedStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRFixedStock(), "acrfixedstock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRFixedStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3784,6 +4300,9 @@ public class Attachments {
         ACRFixedStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRFixedStock(), "acrfixedstocktan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRFixedStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3819,6 +4338,9 @@ public class Attachments {
         ACRPRSStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPRSStock(), "acrprsstock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPRSStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3854,6 +4376,9 @@ public class Attachments {
         ACRPRSStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPRSStock(), "acrprsstocktan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPRSStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3889,6 +4414,10 @@ public class Attachments {
         ACRLongRangeStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRLongRangeStock(), "ACRLongRangeStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRLongRangeStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -3924,6 +4453,9 @@ public class Attachments {
         ACRPDWStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACRPDWStock(), "ACRPDWStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACRPDWStock) {
                         GL11.glTranslatef(-0.6F, 0.3F, 1.4F);
@@ -4248,6 +4780,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.UTGTriRailHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -4286,6 +4822,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5BMHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -4321,6 +4861,9 @@ public class Attachments {
         MIMP5MHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MIMP5MHandGuard(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MIMP5MHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -4360,6 +4903,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail4(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScorpionEVO3A1HandguardShort) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -4396,6 +4942,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ScorpionEVO3A1HandguardLong(), "ScorpionEVO3A1.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ScorpionEVO3A1HandguardLong) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -4467,6 +5016,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MIMP5TRRail(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MIMP5TRRail) {
                         GL11.glTranslatef(-0.6F, 0.7F, -0.8F);
@@ -4503,6 +5055,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MIMP5MRail(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MIMP5MRail) {
                         GL11.glTranslatef(-0.6F, 1.2F, -0.7F);
@@ -4648,6 +5203,9 @@ public class Attachments {
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.M16A1ScopeMount(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16A1ScopeMount) {
                         GL11.glTranslatef(-0.6F, 3F, -1F);
@@ -4685,6 +5243,9 @@ public class Attachments {
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.FamasF1ScopeRail(), "famasf1.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.FamasF1ScopeRail) {
                         GL11.glTranslatef(-0.6F, 1.3F, -0.3F);
@@ -4722,6 +5283,9 @@ public class Attachments {
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.M16A1PicatinnyRail(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16A1PicatinnyRail) {
                         GL11.glTranslatef(-0.6F, 1.3F, -5.1F);
@@ -4761,6 +5325,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.FamasF1GripRail) {
                         GL11.glTranslatef(-0.6F, 0.4F, -1.3F);
@@ -4791,6 +5358,42 @@ public class Attachments {
                     }
                 })
                 .withName("FamasF1PicatinnyRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        NGSWRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withRenderablePart()
+                .withModel(new com.vicmatskiv.mw.models.NGSWRRails(), "ngswr.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.NGSWRRails) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -1.3F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(1F, 1F, 1f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.NGSWRRails) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.NGSWRRails) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("NGSWRRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RailRiser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -4988,6 +5591,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.M9slide(), "m9a1.png")
                 .withModel(new com.vicmatskiv.mw.models.M9A1frontsight(), "M9A1frontsight")
                 .withModel(new com.vicmatskiv.mw.models.M9A1rearsight(), "M9A1rearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M9slide) {
                         GL11.glTranslatef(-0.6F, 0.2F, -0.3F);
@@ -5025,6 +5631,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M9(), "m9a1.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M9) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.1F);
@@ -5064,6 +5673,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.SamuraiEdgeSlide(), "samuraiedge.png")
                 .withModel(new com.vicmatskiv.mw.models.M9A1frontsight(), "M9A1frontsight")
                 .withModel(new com.vicmatskiv.mw.models.M9A1rearsight(), "M9A1rearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SamuraiEdgeSlide) {
                         GL11.glTranslatef(-0.6F, 0.2F, -0.3F);
@@ -5101,6 +5714,10 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SamuraiEdge(), "samuraiedge.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SamuraiEdge) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.1F);
@@ -5174,7 +5791,7 @@ public class Attachments {
         
         DesertEagleSlide = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.FRONTSIGHT)
-                .withModel(new com.vicmatskiv.mw.models.DesertEagleSlide(), "DesertEagle.png")
+                .withModel(new com.vicmatskiv.mw.models.DesertEagleSlide(), "deagle.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.DesertEagleSlide) {
                         GL11.glTranslatef(-0.6F, 0.2F, -0.4F);
@@ -5211,7 +5828,7 @@ public class Attachments {
         DesertEagleBody = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.DesertEagle(), "DesertEagle.png")
+                .withModel(new com.vicmatskiv.mw.models.DesertEagle(), "deagle.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.DesertEagle) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5286,6 +5903,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Glock19(), "glock19.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5360,6 +5980,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Glock19XBody(), "glock19.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19XBody) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5397,6 +6020,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.GlockRazorback(), "glock19.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.GlockRazorback) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5436,6 +6062,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock19Slide(), "glock19.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19Slide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5475,6 +6104,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock18Cslide(), "glock18c.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock18Cslide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5514,6 +6146,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock18CCNCslide(), "glock18c.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock18CCNCslide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5553,6 +6188,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock19XSlide(), "glock19.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19XSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5592,6 +6230,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.GlockRazorbackSlide(), "glock19.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.GlockRazorbackSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5631,6 +6272,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock19Rockslide(), "glock19.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19Rockslide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5670,6 +6314,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.Glock19GhostPrecisionSlide(), "glock19.png")
                 .withModel(new com.vicmatskiv.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.vicmatskiv.mw.models.GlockRearSight(), "glockrearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Glock19GhostPrecisionSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5707,6 +6354,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2(), "sccycpx2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SCCYCPX2) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5744,6 +6394,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2BodyTan(), "sccycpx2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SCCYCPX2BodyTan) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5781,6 +6434,10 @@ public class Attachments {
                 .withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2GripTape(), "sccycpx2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Items.STRING, 4), 
+                    	new CraftingEntry(Items.PAPER, 5))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SCCYCPX2GripTape) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5820,6 +6477,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2Slide(), "sccycpx2.png")
                 .withModel(new com.vicmatskiv.mw.models.M9A1frontsight(), "M9A1frontsight")
                 .withModel(new com.vicmatskiv.mw.models.M9A1rearsight(), "M9A1rearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SCCYCPX2Slide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5859,6 +6519,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2BSlide(), "sccycpx2.png")
                 .withModel(new com.vicmatskiv.mw.models.M9A1frontsight(), "M9A1frontsight")
                 .withModel(new com.vicmatskiv.mw.models.M9A1rearsight(), "M9A1rearsight")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SCCYCPX2BSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5898,6 +6561,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.P226Slide(), "P226.png")
                 .withModel(new com.vicmatskiv.mw.models.P226rearsight(), "p226rearsight.png")
                 .withModel(new com.vicmatskiv.mw.models.P226frontsight(), "p226frontsight.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.P226Slide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5931,10 +6597,52 @@ public class Attachments {
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        FiveSevenSlide = new AttachmentBuilder<Weapon>()
+                .withCategory(AttachmentCategory.FRONTSIGHT)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.FiveSevenSlide(), "fiveseven.png")
+                .withModel(new com.vicmatskiv.mw.models.P226rearsight(), "p226rearsight.png")
+                .withModel(new com.vicmatskiv.mw.models.P226frontsight(), "p226frontsight.png")
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.P226Slide) {
+                        GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.P226Slide) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.P226Slide) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("FiveSevenSlide")
+                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         MakarovBody = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MakarovPM(), "makarovpm.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MakarovPM) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -5974,6 +6682,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.MakarovPMSlide(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.makarovrearsight(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.makarovfrontsight(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MakarovPMSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -6012,6 +6723,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MakarovPBSSlide(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.makarovrearsight(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MakarovPBSSlide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -6049,6 +6764,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP443Slide(), "mp443.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP443Slide) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -6088,6 +6806,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MakarovPBBody(), "makarovpm.png")
                 .withModel(new com.vicmatskiv.mw.models.makarovfrontsight(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MakarovPBBody) {
                         GL11.glTranslatef(-0.6F, -0.1F, -0.3F);
@@ -6124,6 +6846,9 @@ public class Attachments {
         MAC10Body = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MAC10Body(), "mac10.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MAC10Body) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -6160,6 +6885,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MAC10Action(), "mac10.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withRequiredAttachments(MAC10Body)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MAC10Action) {
@@ -6197,6 +6925,9 @@ public class Attachments {
         MP5NavyHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5NavyHandGuard(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5NavyHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -6232,6 +6963,9 @@ public class Attachments {
         MP5A5HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5A5HandGuard(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5A5HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -6267,6 +7001,10 @@ public class Attachments {
         MP5SDHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5SDHandGuard(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5SDHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -1.3F);
@@ -6302,6 +7040,9 @@ public class Attachments {
         MP5HOGUEGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5HOGUEGrip(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5HOGUEGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -6372,6 +7113,9 @@ public class Attachments {
         GlockHOGUEGripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.GlockHogueGrip(), "tan.png")
+//                .withModernRecipe(
+//                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+//                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.GlockHogueGrip) {
                         GL11.glTranslatef(-0.6F, -0.4F, 0.4F);
@@ -6407,6 +7151,10 @@ public class Attachments {
         APSGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.APSgrip(), "aps.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Blocks.PLANKS, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.APSgrip) {
                         GL11.glTranslatef(-0.6F, -0.4F, 0.4F);
@@ -6442,6 +7190,10 @@ public class Attachments {
         APSStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.APSstock(), "aps.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Blocks.PLANKS, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.APSstock) {
                         GL11.glTranslatef(-0.6F, -0.6F, 1.5F);
@@ -6477,6 +7229,9 @@ public class Attachments {
         MAC10Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MAC10Grip(), "mac10.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MAC10Grip) {
                         GL11.glTranslatef(-0.6F, -0.4F, 0.4F);
@@ -6512,6 +7267,9 @@ public class Attachments {
         MP5Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5Stock(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5Stock) {
                         GL11.glTranslatef(-0.6F, 0.2F, 1.6F);
@@ -6547,6 +7305,9 @@ public class Attachments {
         MP5A3Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5A3RetractableStock(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5A3RetractableStock) {
                         GL11.glTranslatef(-0.6F, 0.2F, 1.6F);
@@ -6582,6 +7343,9 @@ public class Attachments {
         MP5A4Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5A4Stock(), "mp5.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5A4Stock) {
                         GL11.glTranslatef(-0.6F, 0.2F, 1.6F);
@@ -6618,6 +7382,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MP5StockAdapter(), "mp5.png")
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP5StockAdapter) {
                         GL11.glTranslatef(-0.6F, 0.2F, 1.6F);
@@ -6661,6 +7429,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.LVOAVHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
@@ -6698,6 +7469,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AR15FN15Handguard(), "ar15.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AR15FN15Handguard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
@@ -6737,6 +7511,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M38HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -6776,6 +7553,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrailblackandtan.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M38HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -6893,6 +7673,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "mk18rail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "mk18rail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "mk18rail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Mk18HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -6932,6 +7715,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Mk18HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -6971,6 +7757,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Block2SOCOMHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -7010,6 +7800,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.FSSTacLiteHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.4F);
@@ -7045,6 +7838,9 @@ public class Attachments {
         M4MagpulHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4MagpulHandGuard(), "m4magpulhandleguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4MagpulHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
@@ -7080,6 +7876,9 @@ public class Attachments {
         M4MagpulHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4MagpulHandGuard(), "m4magpulhandleguardtan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4MagpulHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
@@ -7116,6 +7915,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Receiver(), "m4a1.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Receiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7152,6 +7954,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.HK416Receiver(), "HK416Receiver.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Receiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7224,6 +8029,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VLTORReceiver(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VLTORReceiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7368,6 +8176,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M110Receiver(), "M110.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrailm110.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M110Receiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7400,10 +8211,52 @@ public class Attachments {
                 .withName("M110Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        Z10Receiver = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.RECEIVER)
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKRail) {
+                        GL11.glTranslatef(-0.6F, 0.3F, 0F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKRail) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKRail) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Z10Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         Beowulf50CalReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Beowulf50CalReceiver(), "beowulf50cal.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Beowulf50CalReceiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7474,6 +8327,9 @@ public class Attachments {
         CZ805BrenReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.CZ805BrenReceiver(), "CZ805Bren.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.CZ805BrenReceiver) {
                         GL11.glTranslatef(-0.6F, 0.3F, 0F);
@@ -7829,6 +8685,9 @@ public class Attachments {
         M4HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4HandGuard(), "m4a1.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
@@ -7939,6 +8798,9 @@ public class Attachments {
         M16HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M16HandGuard(), "m16a4.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
@@ -7974,6 +8836,9 @@ public class Attachments {
         M16A1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M16A1Handguard(), "m16a1.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16A1Handguard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
@@ -8013,6 +8878,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4CarbineHandGuard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
@@ -8052,6 +8920,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16A4Handguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.8F);
@@ -8091,6 +8962,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrailm110.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrailm110.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrailm110.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M110Handguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.8F);
@@ -8123,6 +8997,46 @@ public class Attachments {
                 .withName("M110Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        Z10Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Z10Handguard(), "z10.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Z10Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.5F, -1.8F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Z10Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Z10Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Z10Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AR10SuperSASSHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AR10SuperSASSHandguard(), "gun.png")
@@ -8130,6 +9044,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail5(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AR10SuperSASSHandguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.8F);
@@ -8242,6 +9159,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail3(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SIGMCXHandguard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
@@ -8312,11 +9232,131 @@ public class Attachments {
                 .withName("SIGMCXHandguardShort").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        MPXHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.MPXHandguard(), "mpx.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguard) {
+                        GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("MPXHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MPXHandguardExtended = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.MPXHandguardExtended(), "mpx.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardExtended) {
+                        GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardExtended) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardExtended) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("MPXHandguardExtended").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        MPXHandguardRailed = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.MPXHandguardRailed(), "mpx.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardRailed) {
+                        GL11.glTranslatef(-0.6F, 0.3F, -1.5F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.8F, 0.8F, 0.8f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardRailed) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.MPXHandguardRailed) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("MPXHandguardRailed").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         K2C1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.K2C1Handguard(), "k2c1.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.K2C1Handguard) {
                         GL11.glTranslatef(-0.6F, 0.5F, -1.8F);
@@ -8352,6 +9392,9 @@ public class Attachments {
         HeraArmsGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.HeraArmsGrip(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HeraArmsGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8387,6 +9430,9 @@ public class Attachments {
         M4Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Grip(), "m4a1.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Grip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8422,6 +9468,9 @@ public class Attachments {
         M4GripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4GripTan(), "m4griptan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4GripTan) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8492,6 +9541,9 @@ public class Attachments {
         M4GripGray = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Grip(), "gun2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M4Grip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8527,6 +9579,9 @@ public class Attachments {
         HK416Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.HKgrip(), "hkgrip.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HKgrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8562,6 +9617,9 @@ public class Attachments {
         HK416GripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.HKgrip(), "hkgriptan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HKgrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8597,6 +9655,9 @@ public class Attachments {
         M110Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M110Grip(), "M110.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M110Grip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8667,6 +9728,9 @@ public class Attachments {
         K2C1Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.K2C1Grip(), "k2c1.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.K2C1Grip) {
                         GL11.glTranslatef(-0.6F, -0F, 0F);
@@ -8702,6 +9766,10 @@ public class Attachments {
         AK47Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AKGrip(), "ak47.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Blocks.PLANKS, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AKGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8737,6 +9805,9 @@ public class Attachments {
         AK101Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK101Grip(), "AK101Grip.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK101Grip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8772,6 +9843,9 @@ public class Attachments {
         AKErgoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AKErgoGrip(), "akergogrip.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AKErgoGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8804,9 +9878,50 @@ public class Attachments {
                 .withName("AKErgoGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        AKErgoGripGreen = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AKErgoGrip(), "ak12grip.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKErgoGrip) {
+                        GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKErgoGrip) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AKErgoGrip) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AKErgoGripGreen").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AKErgoGripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AKErgoGrip(), "akergogriptan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AKErgoGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8842,6 +9957,9 @@ public class Attachments {
         AK12Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12Grip(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12Grip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8877,6 +9995,9 @@ public class Attachments {
         AK12ErgoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12ErgoGrip(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12ErgoGrip) {
                         GL11.glTranslatef(-0.6F, -0.6F, 0.4F);
@@ -8985,6 +10106,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.G3Stock(), "g3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.G3Stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9021,9 +10146,13 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MP7Stock(), "mp7.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP7Stock) {
-                        GL11.glTranslatef(-0.6F, 1.5F, 1.4F);
+                        GL11.glTranslatef(-0.6F, -0.0F, 1.3F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -9058,9 +10187,13 @@ public class Attachments {
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MP7MilSpecStock(), "mp7.png")
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MP7MilSpecStock) {
-                    	GL11.glTranslatef(-0.5F, 1.5F, 2F);
+                    	GL11.glTranslatef(-0.5F, 0.0F, 1.7F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
@@ -9094,9 +10227,18 @@ public class Attachments {
                 .withName("MP7MilSpecStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        AK47Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+        AK47Stock = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK47stock(), "ak47.png")
+                .withModernRecipe(
+                	CraftingGroup.ATTACHMENT_MODIFICATION,
+                	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                	new CraftingEntry(Blocks.PLANKS, 2))
+//                .withModernRecipe(new ItemStack(Ores.SteelIngot, 8), new
+//                		ItemStack(Ores.CarbonComposite, 8), new
+//                		ItemStack(Ores.GunmetalPlate, 12), new
+//                		ItemStack(Blocks.PLANKS, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK47stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.6F);
@@ -9127,6 +10269,93 @@ public class Attachments {
                     }
                 })
                 .withName("AK47stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        DragunovGripStock = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.DragunovStock(), "dragunov.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Blocks.PLANKS, 4))
+//                .withModernRecipe(new ItemStack(Ores.SteelIngot, 8), new
+//                		ItemStack(Ores.CarbonComposite, 8), new
+//                		ItemStack(Ores.GunmetalPlate, 12), new
+//                		ItemStack(Blocks.PLANKS, 4))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovStock) {
+                        GL11.glTranslatef(-0.6F, 0F, 1.6F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovStock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovStock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("DragunovGripStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+
+        Dragunov98Stock = new AttachmentBuilder<Weapon>()
+        		.withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Dragunov98Stock(), "dragunov98.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 6))
+//                .withModernRecipe(new ItemStack(Ores.SteelIngot, 8), new
+//                		ItemStack(Ores.CarbonComposite, 8), new
+//                		ItemStack(Ores.GunmetalPlate, 12), new
+//                		ItemStack(Blocks.PLANKS, 4))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Stock) {
+                        GL11.glTranslatef(-0.6F, 0F, 1.6F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Stock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Stock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Dragunov98Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RPKStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -9167,6 +10396,9 @@ public class Attachments {
         AK101Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK101Stock(), "ak101stock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK101Stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.6F);
@@ -9199,9 +10431,50 @@ public class Attachments {
                 .withName("AK101Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        AK74Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AK74Stock(), "AK74Stock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Stock) {
+                        GL11.glTranslatef(-0.6F, 0F, 1.6F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Stock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Stock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AK74Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AK12Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12Stock(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12Stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.6F);
@@ -9237,6 +10510,9 @@ public class Attachments {
         AK12ZenitcoStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12ZenitcoStock(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12ZenitcoStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.6F);
@@ -9272,6 +10548,10 @@ public class Attachments {
         VSSVintorezStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezStock(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Blocks.PLANKS, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezStock) {
                         GL11.glTranslatef(-0.6F, -0.6F, 1.2F);
@@ -9307,6 +10587,10 @@ public class Attachments {
         ASValStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ASValStock(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ASValStock) {
                     	GL11.glTranslatef(-0.6F, -0.6F, 1.2F);
@@ -9343,6 +10627,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezKulaTacStock(), "vssvintorez.png")
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezKulaTacStock) {
                     	GL11.glTranslatef(-0.6F, -0.6F, 1.2F);
@@ -9384,6 +10672,9 @@ public class Attachments {
                 .withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.CollapsableMOEStock(), "CollapsableMOEStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.CollapsableMOEStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9416,10 +10707,53 @@ public class Attachments {
                 .withName("CollapsableMOEStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        CollapsableMOEStockGreen = new AttachmentBuilder<Weapon>()
+                .withRenderablePart()
+                .withCategory(AttachmentCategory.STOCK)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.CollapsableMOEStock(), "ak12stock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.CollapsableMOEStock) {
+                        GL11.glTranslatef(-0.6F, 0F, 1.4F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.CollapsableMOEStock) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.CollapsableMOEStock) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("CollapsableMOEStockGreen").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         MagpulCTRStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MagpulCTRStock(), "MagpulCTRStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MagpulCTRStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9456,6 +10790,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MagpulCTRStock(), "MagpulCTRStocktan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MagpulCTRStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9492,6 +10829,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MilSpecStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9528,6 +10868,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.CZ805BrenStock(), "CZ805Bren.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.CZ805BrenStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9564,6 +10907,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.SIGMCXStock(), "sigmcx.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SIGMCXStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9636,6 +10982,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MilSpecStock(), "MilSpecStocktan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MilSpecStock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9671,6 +11020,9 @@ public class Attachments {
         HeraArmsStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.HeraArmsStock(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withRequiredAttachments(HeraArmsGrip)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HeraArmsStock) {
@@ -9708,6 +11060,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.HK416Stock(), "HK416Stock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HK416Stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9816,6 +11171,9 @@ public class Attachments {
         M16Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M16Stock(), "m16stock.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M16Stock) {
                         GL11.glTranslatef(-0.6F, -0.2F, 1.7F);
@@ -9852,6 +11210,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.HK416Stock(), "HK416Stocktan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.HK416Stock) {
                         GL11.glTranslatef(-0.6F, 0F, 1.4F);
@@ -9887,6 +11248,10 @@ public class Attachments {
         M110Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M110Stock(), "m110.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.M110Stock) {
                         GL11.glTranslatef(-0.6F, -0.2F, 1.7F);
@@ -9922,6 +11287,10 @@ public class Attachments {
         PRSPrecisionStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ARPRSPrecisionStock(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ARPRSPrecisionStock) {
                         GL11.glTranslatef(-0.6F, -0.2F, 1.7F);
@@ -9957,6 +11326,10 @@ public class Attachments {
         AK47HandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK47HandleGuard(), "ak47.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Blocks.PLANKS, 2))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK47HandleGuard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -9989,9 +11362,92 @@ public class Attachments {
                 .withName("AK47HandleGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        DragunovHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.DragunovHandguard(), "dragunov.png")
+                .withModel(new com.vicmatskiv.mw.models.AKMiron2(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AK47iron(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Blocks.PLANKS, 4))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovHandguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovHandguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovHandguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("DragunovHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Dragunov98Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Dragunov98Handguard(), "dragunov98.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 6), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Dragunov98Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AK101HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK101HandGuard(), "ak101handguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK101HandGuard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10024,9 +11480,50 @@ public class Attachments {
                 .withName("AK101HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        AK74Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AK74Handguard(), "AK74Handguard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Handguard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Handguard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK74Handguard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AK74Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AKMagpulHandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MagpulHandleGuard(), "MagpulHandleGuard.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MagpulHandleGuard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10062,6 +11559,9 @@ public class Attachments {
         AKMagpulHandleGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MagpulHandleGuard(), "MagpulHandleGuardTan.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MagpulHandleGuard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10099,6 +11599,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.MLOKHandguard(), "mlokhandguard.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MLOKHandguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10136,6 +11639,9 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.MLOKExtendedHandguard(), "MLOKExtendedHandguard.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail2(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MLOKExtendedHandguard) {
                         GL11.glTranslatef(-0.6F, 0.2F, -2.1F);
@@ -10172,6 +11678,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK15HandleGuard(), "AK15HandleGuard.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "AKRailgrey.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK15HandleGuard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10204,10 +11713,52 @@ public class Attachments {
                 .withName("AK15HandleGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        AK12kalHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.AK15HandleGuard(), "ak12handguard.png")
+                .withModel(new com.vicmatskiv.mw.models.AKRail(), "AKRailgrey.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK15HandleGuard) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK15HandleGuard) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.AK15HandleGuard) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("AK12kalHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         RPK16Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.RPK16handguard(), "rpk16handguard.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrailgrey.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.RPK16handguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10243,6 +11794,9 @@ public class Attachments {
         AK12Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12Handguard(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12Handguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10278,6 +11832,9 @@ public class Attachments {
         AK12BHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12BHandguard(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12BHandguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10313,6 +11870,9 @@ public class Attachments {
         KBP9A91Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KBP9A91Handguard(), "kbp9a91.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KBP9A91Handguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10348,6 +11908,9 @@ public class Attachments {
         KBP9A91CompactHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KBP9A91CompactHandguard(), "kbp9a91.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KBP9A91CompactHandguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10383,6 +11946,9 @@ public class Attachments {
         KBP9A91KulaTacHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KBP9A91KulaTacHandguard(), "kbp9a91.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KBP9A91KulaTacHandguard) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10418,6 +11984,10 @@ public class Attachments {
         VSSVintorezHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezHandguard(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Blocks.PLANKS, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezHandguard) {
                         GL11.glTranslatef(-0.6F, 0.3F, -1.4F);
@@ -10453,6 +12023,9 @@ public class Attachments {
         ASValHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ASValHandguard(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ASValHandguard) {
                     	GL11.glTranslatef(-0.6F, 0.3F, -1.4F);
@@ -10488,6 +12061,9 @@ public class Attachments {
         VSSVintorezTriRailMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezTriRailMount(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezTriRailMount) {
                         GL11.glTranslatef(-0.6F, 0.4F, -2F);
@@ -10523,6 +12099,9 @@ public class Attachments {
         AK47DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK47DustCover(), "ak47.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK47DustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10555,9 +12134,88 @@ public class Attachments {
                 .withName("AK47Dustcover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
+        DragunovDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.DragunovDustCover(), "dragunov.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovDustCover) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovDustCover) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.DragunovDustCover) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("DragunovDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Dragunov98DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Dragunov98(), "dragunov98.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5))
+                .withInventoryModelPositioning((model, s) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98) {
+                        GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-190F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(0.9F, 0.9F, 0.9f);
+                    } else {
+                        GL11.glScalef(0f, 0f, 0f);
+                    }
+                }).withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.7F, 0.7F, 0.7F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.Dragunov98) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("Dragunov98DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
         AKMDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AKMDustCover(), "AKMDustCover.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AKMDustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10593,6 +12251,9 @@ public class Attachments {
         AK101DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK101DustCover(), "ak101dustcover.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK101DustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10629,6 +12290,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VeprDustCover(), "veprdustcover.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VeprDustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10665,6 +12329,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK15DustCover(), "ak15dustcover.png")
                 .withModel(new com.vicmatskiv.mw.models.AKRail(), "akrail.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK15DustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10700,6 +12367,9 @@ public class Attachments {
         AK12DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12DustCover(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12DustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10735,6 +12405,9 @@ public class Attachments {
         AK12BDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.AK12BDustCover(), "ak12kal.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AK12BDustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10770,6 +12443,9 @@ public class Attachments {
         VSSVintorezDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezDustCover(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezDustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -10805,6 +12481,9 @@ public class Attachments {
         VSSMDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.VSSVintorezVSSMDustCover(), "vssvintorez.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VSSVintorezVSSMDustCover) {
                         GL11.glTranslatef(-0.6F, 0.4F, -0.2F);
@@ -11053,6 +12732,9 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.M4Iron2(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.FALIron(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withRequiredAttachments(M4HandGuard, M4CarbineHandGuard, M4MagpulHandGuard, 
                         M4MagpulHandGuardTan, M16HandGuard, Mk18HandGuard, M16A4HandGuard, Block2SOCOMHandguard, 
                         Mk18HandGuardBlack)
@@ -11166,6 +12848,9 @@ public class Attachments {
         HK416FrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.G95_upright_frontsights(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withRequiredAttachments(M38HandGuard, LVOAVHandGuard, Mk18HandGuard, 
                         StonerHANDGUARD, AR57Handguard, M16A4HandGuard, M4CarbineHandGuard, 
                         ACRHandGuard, ACRHandGuardBlack, ACRWEMSKHandGuard, ACRWEMSKHandGuardTan,
@@ -11175,7 +12860,7 @@ public class Attachments {
                         HoneyBadgerMatrixArmsHandguard, Placeholder, HK417Handguard, HK417HandguardTan, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, 
                         HK416HandGuardBlackAndTan, SIGMCXHandguard, SIGMCXHandguardShort, AR15HandGuard, 
-                        DSR1Handguard, DSR1HandguardRailed)
+                        DSR1Handguard, DSR1HandguardRailed, Z10Handguard)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.G95_upright_frontsights) {
                         GL11.glTranslatef(-0.6F, -1.2F, 0.3F);
@@ -11211,6 +12896,9 @@ public class Attachments {
         MBUSFrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.MBUSFrontSight(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withRequiredAttachments(M38HandGuard, LVOAVHandGuard, Mk18HandGuard, 
                         StonerHANDGUARD, AR57Handguard, M16A4HandGuard, M4CarbineHandGuard, 
                         ACRHandGuard, ACRHandGuardBlack, ACRWEMSKHandGuard, ACRWEMSKHandGuardTan,
@@ -11218,9 +12906,10 @@ public class Attachments {
                         ACRSBRHandGuardTan, ACRPolymerHandGuard, ACRPolymerHandGuardTan,
                         ACRSquareDropHandguard, ACRSquareDropHandguardTan, HoneyBadgerHandguard,
                         HoneyBadgerMatrixArmsHandguard, KrissVectorReceiver, Vector556Handguard, APC9Placeholder,
-                        ARX160Chassis, ARX160ChassisOlive, ARX160ChassisTan, HK417Handguard, HK417HandguardTan, 
+                        ARX160Chassis, HK417Handguard, HK417HandguardTan, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Placeholder, 
-                        HK416HandGuardBlackAndTan, SIGMCXHandguard, SIGMCXHandguardShort, AR15HandGuard)
+                        HK416HandGuardBlackAndTan, SIGMCXHandguard, SIGMCXHandguardShort, AR15HandGuard, Z10Handguard,
+                        Origin12Grip, HKS20Grip)
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MBUSFrontSight) {
                     	 GL11.glTranslatef(-0.6F, -0.9F, 0.5F);
@@ -11253,67 +12942,9 @@ public class Attachments {
                 .withName("MBUSFrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        G36KScope = new ItemScope.Builder()
+        LeupoldScope = new ItemScope.Builder()
         		.withOpticalZoom()
-        		.withZoomRange(0.3f, 0.1f)
-                .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(0.71f, 0.71f, 0.71f);
-                    GL11.glTranslatef(-0.29f, -2.08f, 0.26f);
-                })
-                .withCategory(AttachmentCategory.SCOPE)
-                .withCrosshair("LP")
-                .withModel(new com.vicmatskiv.mw.models.G36KScope(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.G36KReticle(), "black.png")
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.PSO1) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO1reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO12) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.PSO1) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO1reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO12) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.PSO1) {
-                        GL11.glTranslatef(-0.6F, -0.3F, 0.7F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1F, 1F, 1f);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO1reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO12) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.PSO1) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO1reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.PSO12) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("G36KScope")
-                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        LeupoldScope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
+        		.withZoomRange(0.22f, 0.06f)
         		.withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(2.3f, 2.3f, 2.3f);
                     GL11.glTranslatef(-0.085f, 0.33f, 1.75f);
@@ -11370,14 +13001,20 @@ public class Attachments {
                 .withName("Leupold")
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
-        PSO1 = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
+        PSO1 = new ItemScope.Builder()
+        		.withSniperReticle(Reticles.RETICLE_PSO1)
+        		.withOpticalZoom()
+        		.withZoomRange(0.22f, 0.06f)
                 .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.05f, 1.05f, 1.05f);
-                    GL11.glTranslatef(-0.3165f, 0.17f, 1.2f);
+                    GL11.glScalef(1.15f, 1.15f, 1.1f);
+                    GL11.glTranslatef(-0.299f, 0.215f, 1.15f);
                 }).withCategory(AttachmentCategory.SCOPE).withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("LP")
                 .withModel(new com.vicmatskiv.mw.models.PSO1(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.PSO12(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.PSO1reticle(), "black.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 5))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.PSO1) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -11427,10 +13064,21 @@ public class Attachments {
                 .withName("PSO1")
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
-        OKP7 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        OKP7 = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.OKP)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.23, -4.4, -0.2);
+        			GlStateManager.scale(2.05, 2.05, 2.05);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.OKP7(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.OKP7reticle(), "green.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
+//                .withModel(new com.vicmatskiv.mw.models.OKP7reticle(), "green.png")
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.OKP7) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11472,11 +13120,71 @@ public class Attachments {
                 .withName("okp7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        Reflex = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        FMG9Sight = new ItemScope.Builder()
+        		.withCategory(AttachmentCategory.SCOPE)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withRenderablePart()
+                .withModel(new com.vicmatskiv.mw.models.FMG9Carryhandle(), "fmg9.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
+                .withFirstPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMG9Carryhandle) {
+                        GL11.glTranslatef(0.1F, -0.8F, 0.2F);
+                        GL11.glRotatef(30F, 0f, 1f, 0f);
+                        GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+
+                }).withThirdPersonModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMG9Carryhandle) {
+                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
+                        GL11.glRotatef(-50F, 0f, 1f, 0f);
+                        GL11.glRotatef(80F, 1f, 0f, 0f);
+                        GL11.glScaled(0.3F, 0.3F, 0.3F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                }).withInventoryModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMG9Carryhandle) {
+                        GL11.glTranslatef(-0.6F, 1.1F, -0.7F);
+                        GL11.glRotatef(10F, 1f, 0f, 0f);
+                        GL11.glRotatef(-180F, 0f, 1f, 0f);
+                        GL11.glRotatef(0F, 0f, 0f, 1f);
+                        GL11.glScaled(1F, 1F, 1f);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+
+                    }
+                }).withEntityModelPositioning((model, itemStack) -> {
+                    if (model instanceof com.vicmatskiv.mw.models.FMG9Carryhandle) {
+                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
+                        GL11.glRotatef(90F, 0f, 0f, 1f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    } else if (model instanceof com.vicmatskiv.mw.models.Reflex2) {
+                        GL11.glScaled(0F, 0F, 0F);
+                    }
+                })
+                .withName("fmg9carryhandle").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT);
+        
+        Reflex = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.REFLEX)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.08, -3, 0);
+        			GlStateManager.scale(1.4, 1.4, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.Reflex(), "Reflex.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+//                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail,
                         M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -11488,7 +13196,8 @@ public class Attachments {
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver, 
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Reflex) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11530,11 +13239,20 @@ public class Attachments {
                 .withName("Reflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        BijiaReflex = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        BijiaReflex = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.BIJIA)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.08, -2.95, 0.1);
+        			GlStateManager.scale(1.4, 1.4, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.BijiaReflex(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "green.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, FABDefenseMount, 
                         Placeholder, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -11546,7 +13264,8 @@ public class Attachments {
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver,
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.BijiaReflex) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11588,12 +13307,21 @@ public class Attachments {
                 .withName("BijiaReflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        MicroReflex = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        MicroReflex = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.MICROREFLEX)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.13, -1.62, -0.1);
+        			GlStateManager.scale(1.6, 1.6, 1.6);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MicroReflexSight(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.SightMount(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0F, 2.3F, 1.8F);
                     // GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -11611,7 +13339,8 @@ public class Attachments {
                         MAS21Mount, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, HK416Receiver,
                         M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MicroReflexSight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11653,16 +13382,23 @@ public class Attachments {
                 .withName("MicroReflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        ACOG = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
+        ACOG = new ItemScope.Builder()
+        		.withSniperReticle(Reticles.RETICLE_ACOG)
+        		.withOpticalZoom()
+        		.withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.18f, 1.18f, 1.18f);
-                    GL11.glTranslatef(0.086f, 0.42f, 0.56f);
+                    GL11.glScalef(1.52f, 1.52f, 1.52f);
+                    GL11.glTranslatef(0.038f, 0.485f, 0.37f);
                 })
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.ACOG(), "Acog.png")
-                .withModel(new com.vicmatskiv.mw.models.AcogScope2(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.AcogReticle(), "acogreticle.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
+//                .withModel(new com.vicmatskiv.mw.models.AcogScope2(), "gun.png")
+//                .withModel(new com.vicmatskiv.mw.models.AcogReticle(), "acogreticle.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
                         AUGA2handguard, AUGA3handguard, 
@@ -11674,7 +13410,8 @@ public class Attachments {
                         S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, Origin12Grip, 
+                        HKS20Grip, FABDefenseMount, MAC21Stock, VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.ACOG) {
                         GL11.glTranslatef(0.1F, -0.8F, 1.2F);
@@ -11725,18 +13462,28 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Acog").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Acog")
+                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
+                .withModId(ModernWarfareMod.MODID)
+                .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        Specter = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
+        Specter = new ItemScope.Builder()
+        		.withSniperReticle(Reticles.RETICLE_SPECTRE)
+        		.withOpticalZoom()
+        		.withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(2.7f, 2.8f, 2.7f);
-                    GL11.glTranslatef(-0.06f, 0.28f, 0.56f);
+                    GL11.glScalef(3.7f, 3.7f, 3.7f);
+                    GL11.glTranslatef(-0.075f, 0.38f, 0.42f);
                 })
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SpecterSight(), "SpecterSight.png")
-                .withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
+//                .withModel(new com.vicmatskiv.mw.models.Acog2(), "Acog2.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail, 
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
                         AUGA2handguard, AUGA3handguard, 
@@ -11748,7 +13495,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SpecterSight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -11788,13 +13536,24 @@ public class Attachments {
                     }
                 })
                 .withName("Specter").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        Holographic = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        Holographic = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.HOLO_ONE)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.1, -2.7, 0.3);
+        			GlStateManager.scale(1.4, 1.4, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.Holographic2(), "Holographic2.png")
-                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+//                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -11807,7 +13566,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Holographic2) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11847,13 +13607,24 @@ public class Attachments {
                     }
                 })
                 .withName("Holographic2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        HolographicAlt = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        HolographicAlt = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.HOLO_ONE)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.1, -2.7, 0.3);
+        			GlStateManager.scale(1.4, 1.4, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.Holographic(), "Holographic.png")
-                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+//                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, 
                         AUGA2handguard, AUGA3handguard, 
@@ -11866,7 +13637,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Holographic) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11909,18 +13681,22 @@ public class Attachments {
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         EotechHybrid2 = new ItemScope.Builder()
-                .withOpticalZoom()
-                .withZoomRange(0.22f, 0.2f)
+        		.withSniperReticle(Reticles.RETICLE_HOLO)
+        		.withOpticalZoom()
+        		.withZoomRange(0.22f, 0.1f)
                 .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.35f, 1.35f, 1.35f);
-                    GL11.glTranslatef(-0.207f, 0.26f, 1.4f);
+                	GL11.glScalef(1.41f, 1.41f, 1.35f);
+                    GL11.glTranslatef(-0.204f, 0.28f, 1.35f);
                 })
                 .withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.EotechHybrid2(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.EotechScopeRing(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -11932,7 +13708,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.EotechHybrid2) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -11981,11 +13758,20 @@ public class Attachments {
                 .withName("EotechHybrid2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        VortexRedux = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        VortexRedux = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.VORTEX)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.45, -3.15, 0.5);
+        			GlStateManager.scale(1.73, 1.73, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.VortexSight(), "vortexsight.png")
-                .withModel(new com.vicmatskiv.mw.models.Holo2(), "Holo3.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -11998,7 +13784,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VortexSight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -12040,11 +13827,21 @@ public class Attachments {
                 .withName("VortexSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        MicroT1 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        MicroT1 = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.REFLEX)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.3, -6, -0.2);
+        			GlStateManager.scale(3.5, 3.5, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.MicroT1(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -12057,7 +13854,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MicroT1) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -12099,11 +13897,21 @@ public class Attachments {
                 .withName("MicroT1").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        AimpointCompM2 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        AimpointCompM2 = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.REFLEX)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.06, -3.8, -0.4);
+        			GlStateManager.scale(1.8, 1.8, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.AimpointCompM2(), "AimpointCompM2.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -12116,7 +13924,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AimpointCompM2) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -12156,13 +13965,24 @@ public class Attachments {
                     }
                 })
                 .withName("AimpointCompM2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        AimpointCompM5 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        AimpointCompM5 = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.REFLEX)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.3, -6, -0.2);
+        			GlStateManager.scale(3.5, 3.5, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.AimpointCompM5(), "aimpointcompm5.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder,
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, 
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -12175,7 +13995,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.AimpointCompM5) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -12217,18 +14038,29 @@ public class Attachments {
                 .withName("AimpointCompM5").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        RMR = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        RMR = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.RMR)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(0.22, -2.75, -0.53);
+        			GlStateManager.scale(1.7, 1.6, 1.6);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.RMRsight(), "RMRsight.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
+//                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
                 .withRequiredAttachments(FABDefenseMount, VeprDustCover, AK15DustCover,
-                        Placeholder, MIMP5TRRail, MIMP5MRail, ShotgunRail, Placeholder, Kar98Krail, 
+                        Placeholder, MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, 
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
                         M4Receiver, VLTORReceiver, AR57Receiver, NTW20HandguardRAIL,
                         Attachments.EF88Handguard, KrissVectorReceiver, 
                         Vector556Handguard, DesertEagleSlide, M1CarbineScoutHandguard, Origin12Grip, HKS20Grip,
-                        M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, MAS21Mount)
+                        M14TriRailCover, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, MAS21Mount, APC9Placeholder, 
+                        MAC21Stock, VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.RMRsight) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.2F);
@@ -12270,9 +14102,20 @@ public class Attachments {
                 .withName("RMRsight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
-        Kobra = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Kobra(), "gunmetaltexture.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+        Kobra = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.KOBRA)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.05, -3.35, -0.8);
+        			GlStateManager.scale(1.8, 1.8, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.Kobra(), "gunmetaltexture.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -12285,7 +14128,8 @@ public class Attachments {
                         G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver,
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withRenderablePart()
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Kobra) {
@@ -12328,10 +14172,20 @@ public class Attachments {
                 .withName("Kobra").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        KobraGen3 = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        KobraGen3 = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.KOBRA)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.05, -3.35, -0.9);
+        			GlStateManager.scale(1.8, 1.8, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KobraGen3(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, 
                         MIMP5TRRail, MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail,
                         P90Placeholder, AUGA2handguard, AUGA3handguard, 
@@ -12344,7 +14198,8 @@ public class Attachments {
                         UMP9Receiver, G2ContenderBarrelLong, S710Receiver, Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, CZ805BrenReceiver, 
                         HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withRenderablePart()
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KobraGen3) {
@@ -12387,10 +14242,20 @@ public class Attachments {
                 .withName("KobraGen3").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        KobraMount = new ItemScope.Builder().withCategory(AttachmentCategory.SCOPE)
+        KobraMount = new ItemScope.Builder()
+        		.withHolographicReticles(Reticles.KOBRA)
+        		.withRadialCut(0.1f)
+        		.withReticlePositioning((model, itemStack) -> {
+        			GlStateManager.translate(-0.05, -3.35, -0.8);
+        			GlStateManager.scale(1.8, 1.8, 1.4);
+        		})
+        		.withCategory(AttachmentCategory.SCOPE)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KobraMount(), "kobramount.png")
-                .withModel(new com.vicmatskiv.mw.models.Reflex2(), "Reflex2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withRenderablePart()
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KobraMount) {
@@ -12486,10 +14351,13 @@ public class Attachments {
                 .withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        LeupoldRailScope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.06f)
+        LeupoldRailScope = new ItemScope.Builder()
+        		.withSniperReticle(Reticles.RETICLE_1)
+        		.withOpticalZoom()
+        		.withZoomRange(0.22f, 0.06f)
         		.withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(2.3f, 2.3f, 2.3f);
-                    GL11.glTranslatef(-0.085f, 0.33f, 1.75f);
+                    GL11.glScalef(2.9f, 2.9f, 2.9f);
+                    GL11.glTranslatef(-0.09f, 0.405f, 1.43f);
                 })
         		.withCategory(AttachmentCategory.SCOPE)
         		.withCreativeTab(ModernWarfareMod.AttachmentsTab)
@@ -12500,11 +14368,16 @@ public class Attachments {
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, AK12DustCover, AK12BDustCover, MIMP5TRRail, MIMP5MRail,
                         CZ805BrenReceiver, HK416Receiver, M110Receiver, ScarLReceiver, Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, 
+                        VSSMDustCover, Dragunov98DustCover)
+        		.withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 5), 
+                    	new CraftingEntry(Ores.SteelIngot, 5))
         		.withCrosshair("LP")
         		.withRenderablePart()
                 .withModel(new com.vicmatskiv.mw.models.LeupoldRail(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
+//                .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.LeupoldRail) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -12544,6 +14417,7 @@ public class Attachments {
                     }
                 })
                 .withName("LeupoldRailScope")
+                .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AX50Scope = new ItemScope.Builder()
@@ -12600,6 +14474,7 @@ public class Attachments {
         NightRaider = new ItemScope.Builder()
                 .withNightVision()
                 .withOpticalZoom()
+                .withSniperReticle(Reticles.RETICLE_NIGHTRAIDER)
                 .withZoomRange(0.22f, 0.02f)
                 .withViewfinderPositioning((p, s) -> {
                     GL11.glScalef(1.6f, 1.6f, 1.6f);
@@ -12608,7 +14483,10 @@ public class Attachments {
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
                 .withModel(new com.vicmatskiv.mw.models.NightRaiderScope(), "gun.png")
-                .withModel(new com.vicmatskiv.mw.models.JPUreticle(), "black.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 6), 
+                    	new CraftingEntry(Ores.SteelIngot, 5))
                 .withRequiredAttachments(VeprDustCover, AK15DustCover, Placeholder, MIMP5TRRail,
                         MIMP5MRail, ShotgunRail, Kar98Krail, M60Rail, P90Placeholder, AUGA2handguard, AUGA3handguard, 
                         Attachments.EF88Handguard, KrissVectorReceiver, 
@@ -12617,7 +14495,8 @@ public class Attachments {
                         Beowulf50CalReceiver, FamasF1ScopeMount,
                         HK417Receiver, HK417ReceiverTan, CZ805BrenReceiver, HK416Receiver, M110Receiver, ScarLReceiver,
                         Remington700Chassis, Remington700APACChassis,
-                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed)
+                        Remington700MDTXRSChassis, DSR1Handguard, DSR1HandguardRailed, Z10Receiver, MAC21Stock, 
+                        VSSMDustCover, Dragunov98DustCover)
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.NightRaiderScope) {
                         GL11.glTranslatef(0.1F, -0.8F, 0.4F);
@@ -12977,211 +14856,14 @@ public class Attachments {
                 .withName("OSIPRSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        MA5Dcover = new ItemScope.Builder()
-                .withNightVision()
-                .withOpticalZoom()
-                .withZoomRange(0.22f, 0.02f)
-                .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(0.59f, 0.59f, 0.55f);
-                    GL11.glTranslatef(-0.123f, -0.83f, 1.62f);
-                })
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
-                .withModel(new com.vicmatskiv.mw.models.MA5Dcover(), "MA5D.png")
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.MA5Dcover) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.MA5Dcover) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.MA5Dcover) {
-                        GL11.glTranslatef(-0.6F, 1.4F, -2F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.15F, 1.15F, 1.15f);
-                    }   
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.MA5Dcover) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    }
-                })
-                .withName("MA5Dcover")
-                .withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        BR55Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
-                .withViewfinderPositioning((p, s) -> {
-//                    float scale = 2.7f;
-//                    GL11.glScalef(scale, scale / compatibility.getAspectRatio(ModernWarfareMod.MOD_CONTEXT), scale);
-                    GL11.glScalef(2.7f, 2.7f, 2.7f);
-                    GL11.glTranslatef(-0.046f, 0.547f, 0.07f);
-                })
-//                .withViewfinderSize(427, 240)
-                .withRenderablePart()
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.BR55scope(), "BR55scope.png")
-                .withModel(new BR55scopereticle(), "BR55scopereticle.png")
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.BR55scope) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.BR55scopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                    
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.BR55scope) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.BR55scopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.BR55scope) {
-                        GL11.glTranslatef(-0.6F, -0.5F, 0.15F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.55F, 0.55F, 0.55f);
-                    } else if (model instanceof com.vicmatskiv.mw.models.BR55scopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.BR55scope) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.BR55scopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("BR55scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        DMRScope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
-                .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.7f, 1.7f, 1.7f);
-                    GL11.glTranslatef(-0.05f, 0.56f, 0.1f);
-                })
-                .withRenderablePart()
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.DMRscope(), "DMRscope.png")
-                .withModel(new DMRscopeReticle(), "black.png")
-
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.DMRscopeReticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                    
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.DMRscopeReticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(-0.6F, -0.5F, 0.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.95F, 0.95F, 0.95f);
-                    } else if (model instanceof com.vicmatskiv.mw.models.DMRscopeReticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.DMRscopeReticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("DMRscope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        SRS99Scope = new ItemScope.Builder().withOpticalZoom().withZoomRange(0.22f, 0.1f)
-                .withViewfinderPositioning((p, s) -> {
-                    float scale = 3f;
-                    GL11.glScalef(scale, scale / compatibility.getAspectRatio(ModernWarfareMod.MOD_CONTEXT), scale);
-                    GL11.glTranslatef(-0.02f, 0.65f, 0.26f);
-                    GL11.glScalef(1.8f, 1.2f, 1f);
-                })
-                .withViewfinderSize(650, 250)
-                .withRenderablePart()
-                .withModel(new com.vicmatskiv.mw.models.SRS99Scope(), "srs99scope.png")
-                .withModel(new com.vicmatskiv.mw.models.SRS99Reticle(), "SRS99Reticle.png")
-
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.SRS99Reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                    
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.SRS99Reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(-0.6F, -0.5F, 0.05F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.65F, 0.65F, 0.65f);
-                    } else if (model instanceof com.vicmatskiv.mw.models.SRS99Reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.vicmatskiv.mw.models.DMRscope) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.vicmatskiv.mw.models.SRS99Reticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("SRS99Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
         Silencer556x45 = new AttachmentBuilder<Weapon>()
         		.withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor556x45(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor556x45) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -13218,6 +14900,10 @@ public class Attachments {
         Silencer545x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor556x39(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor556x39) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -13254,6 +14940,10 @@ public class Attachments {
         Silencer762x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor762x39(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor762x39) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14009,6 +15699,10 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.RPKbarrel(), "gun.png")
                 .withModel(new com.vicmatskiv.mw.models.AKiron3(), "gun")
                 .withModel(new com.vicmatskiv.mw.models.AKMiron2(), "gun")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_MODIFICATION,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1), 
+                    	new CraftingEntry(Ores.SteelIngot, 3))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.RPKbarrel) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14126,6 +15820,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRequiredAttachments(MakarovPBBody)
                 .withModel(new com.vicmatskiv.mw.models.MakarovPBSSilencer(), "MakarovPBSSilencer.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MakarovPBSSilencer) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14166,6 +15864,10 @@ public class Attachments {
                 		Glock19RazorbackBody, P226Slide, APC9Placeholder, MP443Slide, MP5NavyHandGuard, 
                 		MP5A5HandGuard, MP5SDHandGuard, MIMP5MHandGuard, UTGTriRailHandGuard, MP5BMHandguard, SCCYCPX2Body, SCCYCPX2BodyTan)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "GunmetalTexture.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14204,6 +15906,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRequiredAttachments(SamuraiEdgeMount)
                 .withModel(new com.vicmatskiv.mw.models.SamuraiEdgeSuppressor(), "samuraiedge.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.SamuraiEdgeSuppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14241,6 +15947,10 @@ public class Attachments {
         Silencer9x39mm = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "GunmetalTexture.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14278,6 +15988,10 @@ public class Attachments {
         SuppressorKBP9A91 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.KBP9A91Suppressor(), "kbp9a91.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.KBP9A91Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14316,6 +16030,10 @@ public class Attachments {
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withRequiredAttachments(KrissVectorReceiver, M1911Body)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor45ACP(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor45ACP) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14386,6 +16104,10 @@ public class Attachments {
         Silencer762x54 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14422,6 +16144,10 @@ public class Attachments {
         Silencer762x51 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor762x51(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor762x51) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14458,6 +16184,10 @@ public class Attachments {
         Silencer50BMG = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "GunmetalTexture.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 4), 
+                    	new CraftingEntry(Ores.SteelIngot, 4))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14495,6 +16225,10 @@ public class Attachments {
         Silencer556x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor556x39(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor556x39) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -14589,7 +16323,11 @@ public class Attachments {
                         VLTORReceiver, AR57Receiver, Attachments.EF88Handguard, 
                         KrissVectorReceiver, Vector556Handguard, Origin12Grip, HKS20Grip,
                         Beowulf50CalReceiver, HK417Receiver, HK417ReceiverTan, HK416Receiver, 
-                        M110Receiver)
+                        M110Receiver, Z10Receiver)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.TritiumRearSights) {
                         GL11.glTranslatef(-0.6F, -0.9F, 0.45F);
@@ -14631,9 +16369,13 @@ public class Attachments {
                         P90Placeholder, AUGA2handguard, AUGA3handguard, M4Receiver, 
                         VLTORReceiver, AR57Receiver, Attachments.EF88Handguard, 
                         KrissVectorReceiver, Vector556Handguard, Origin12Grip, HKS20Grip,
-                        ARX160Chassis, ARX160ChassisOlive, ARX160ChassisTan,
+                        ARX160Chassis,
                         Beowulf50CalReceiver, HK417Receiver, HK417ReceiverTan, HK416Receiver,
-                        M110Receiver)
+                        M110Receiver, Z10Receiver)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.MBUSRearSight) {
                     	 GL11.glTranslatef(-0.6F, -0.9F, 0.45F);
@@ -14676,7 +16418,11 @@ public class Attachments {
                         VLTORReceiver, AR57Receiver, Attachments.EF88Handguard, 
                         KrissVectorReceiver, Vector556Handguard, Origin12Grip, HKS20Grip,
                         Beowulf50CalReceiver, HK417Receiver, HK417ReceiverTan, CZ805BrenReceiver, 
-                        HK416Receiver, M110Receiver, DSR1Handguard, DSR1HandguardRailed)
+                        HK416Receiver, M110Receiver, DSR1Handguard, DSR1HandguardRailed, Z10Receiver)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.G95_upright_rearsights) {
                     	 GL11.glTranslatef(-0.6F, -0.9F, 0.45F);
@@ -14788,11 +16534,11 @@ public class Attachments {
                 .withModel(new com.vicmatskiv.mw.models.FALIron(), "gun.png")
                 .withInventoryModelPositioning((model, s) -> {
                     if (model instanceof com.vicmatskiv.mw.models.K2C1RearSight) {
-                        GL11.glTranslatef(-0.6F, -0.7F, 0.65F);
+                        GL11.glTranslatef(-0.6F, -0.7F, 0.3F);
                         GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-190F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.2F, 1.2F, 1.2f);
+                        GL11.glScaled(0.6F, 0.6F, 0.6f);
                     } else {
                         GL11.glScalef(0f, 0f, 0f);
                     }
@@ -15084,6 +16830,10 @@ public class Attachments {
         SilencerMP7 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -15154,6 +16904,10 @@ public class Attachments {
         Silencer57x38 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -15190,6 +16944,10 @@ public class Attachments {
         Silencer12Gauge = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor45ACP(), "GunmetalTexture.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3), 
+                    	new CraftingEntry(Ores.SteelIngot, 2))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor45ACP) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -15226,6 +16984,10 @@ public class Attachments {
         Silencer300AACBlackout = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor300AACBlackout(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor300AACBlackout) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -15297,6 +17059,10 @@ public class Attachments {
         Silencer65x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.Suppressor556x39(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 1), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withFirstPersonModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.Suppressor556x39) {
                         GL11.glTranslatef(0.5F, -1.3F, -0.1F);
@@ -15338,12 +17104,18 @@ public class Attachments {
                         M16A4HandGuard, ACRHandGuard, ACRHandGuardBlack,
                         HoneyBadgerMatrixArmsHandguard,
                         UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                         FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, Block2SOCOMHandguard,
                         FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48UpperHandGuard,
                         M9A1Body, SamuraiEdgeMount, KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, M14TriRailCover, 
                         MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, AR15HandGuard)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, NGSWRRail, K2C1Handguard, G3HandguardRailed,
+                        ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withModel(new com.vicmatskiv.mw.models.Laser(), "gun.png")
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.4F, 1.8F);
@@ -15398,12 +17170,18 @@ public class Attachments {
                         LaserPlaceholder, Mk18HandGuard, M60E4HandGuard, P90Swordfish, 
                         AUGA3extGuard, StonerHANDGUARD, AR57Handguard, M16A4HandGuard, ACRHandGuard, ACRHandGuardBlack,
                         HoneyBadgerMatrixArmsHandguard, AR10SuperSASSHandguard,
-                        UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                        UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis, FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12BHandguard, CZ805BrenReceiver, Block2SOCOMHandguard,
                         LVOAVHandGuard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48UpperHandGuard,
-                        KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, M14TriRailCover, MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, AR15HandGuard)
+                        KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, M14TriRailCover, MP5BMHandguard, 
+                        HK416HandGuardBlackAndTan, ScarHandGuard, ScarMidWestIndustriesHandGuard, 
+                        Z10Handguard, SIGMCXHandguard, SIGMCXHandguardShort, NGSWRRail, K2C1Handguard, G3HandguardRailed,
+                        ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.2F, 1.3F, 1.8F);
                     // GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -15446,6 +17224,10 @@ public class Attachments {
         		.withCategory(AttachmentCategory.LASER)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.vicmatskiv.mw.models.SCCYCPX2Laser(), "sccycpx2.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2), 
+                    	new CraftingEntry(Ores.SteelIngot, 1))
                 .withPostRender(new LaserBeamRenderer((p, s) -> {
                     GL11.glTranslatef(-0.62F, 0.82F, 0.5F);
                     // GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -15677,11 +17459,16 @@ public class Attachments {
                         HoneyBadgerMatrixArmsHandguard, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, 
                         FNFALPARAHandguard, M16A1PicatinnyRail, K2C1Handguard, AR10SuperSASSHandguard,
                         UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                         FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, M14SOCOMChassis, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48HandGuard,
                         KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort, Z10Handguard,
+                        NGSWRRail, G3HandguardRailed, ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard, AK12kalHandguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -15725,7 +17512,12 @@ public class Attachments {
                         HoneyBadgerMatrixArmsHandguard, AR10SuperSASSHandguard, 
                         HK417Handguard, HK417HandguardTan, Block2SOCOMHandguard, FSSTacLiteHandguard, 
                         Mk18HandGuardBlack, M110Handguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort, Z10Handguard,
+                        NGSWRRail, G3HandguardRailed, ScarHHandGuard,
+                        SIG556HandguardKA, SIG556HandguardRailed)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -15764,6 +17556,9 @@ public class Attachments {
         GlockStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.Glock18Cstock(), "gun.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.4f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -15801,7 +17596,11 @@ public class Attachments {
         
         VP70Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withRenderablePart()
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab).withModel(new com.vicmatskiv.mw.models.VP70stock(), "gun.png")
+                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
+                .withModel(new com.vicmatskiv.mw.models.VP70stock(), "vp70.png")
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 3))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {
@@ -15820,11 +17619,11 @@ public class Attachments {
                     }
                 }).withInventoryModelPositioning((model, itemStack) -> {
                     if (model instanceof com.vicmatskiv.mw.models.VP70stock) {
-                        GL11.glTranslatef(0.6F, 0.3F, 0.5F);
+                        GL11.glTranslatef(0.6F, 0.6F, 0.1F);
                         // GL11.glRotatef(10F, 1f, 0f, 0f);
                         GL11.glRotatef(-180F, 0f, 1f, 0f);
                         GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7f);
+                        GL11.glScaled(0.4F, 0.4F, 0.4f);
 
                     }
                 }).withEntityModelPositioning((model, itemStack) -> {
@@ -15840,7 +17639,7 @@ public class Attachments {
         AngledGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
                 .withRenderablePart()
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "gun.png")
+                .withModel(new com.vicmatskiv.mw.models.AngledGrip(), "angledgrip.png")
                 .withRequiredAttachments(MLOKExtendedHandguard, M4CarbineHandGuard, 
                         LVOAVHandGuard, M38HandGuard, GripPlaceholder, UTGTriRailHandGuard, Mk18HandGuard, 
                         M60E4HandGuard, AUGA3extGuard, AR57Handguard, RPK16Handguard, 
@@ -15848,11 +17647,16 @@ public class Attachments {
                         Origin12Handguard, HKS20Handguard, M16A4HandGuard, ACRHandGuard, ACRHandGuardBlack, 
                         ACRWEMSKHandGuard, ACRWEMSKHandGuardTan,
                         HoneyBadgerMatrixArmsHandguard, FNFALPARAHandguard, M16A1PicatinnyRail, 
-                        AR10SuperSASSHandguard, ARX160Chassis, ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                        AR10SuperSASSHandguard, ARX160Chassis, FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, M14SOCOMChassis, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48HandGuard,
                         KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort, Z10Handguard,
+                        NGSWRRail, G3HandguardRailed, ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -15905,11 +17709,16 @@ public class Attachments {
                         HoneyBadgerMatrixArmsHandguard, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, 
                         FNFALPARAHandguard, M16A1PicatinnyRail, K2C1Handguard, AR10SuperSASSHandguard,
                         UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                         FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, M14SOCOMChassis,
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48HandGuard,
                         KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort, Z10Handguard,
+                        NGSWRRail, G3HandguardRailed, ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard, AK12kalHandguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -15966,11 +17775,16 @@ public class Attachments {
                         HoneyBadgerMatrixArmsHandguard, Mk14TanBody, Mk14SnowBody, 
                         Mk14BlackBody, FNFALPARAHandguard, M16A1PicatinnyRail, K2C1Handguard, AR10SuperSASSHandguard,
                         UMP45Receiver, UMP9Receiver, ScorpionHandguardShort, APC9Placeholder, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, FamasF1PicatinnyRail, 
+                         FamasF1PicatinnyRail, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, M14SOCOMChassis, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, Mk48HandGuard,
                         KBP9A91KulaTacHandguard, VSSVintorezTriRailMount, MP5BMHandguard, HK416HandGuardBlackAndTan, 
-                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort)
+                        ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort, Z10Handguard,
+                        NGSWRRail, G3HandguardRailed, ScarHHandGuard, MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard, AK12kalHandguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.6f);
                 })
@@ -16017,12 +17831,16 @@ public class Attachments {
                         ACRPrecisionHandGuardTan, ACRHandGuardBlack, ACRWEMSKHandGuard, ACRWEMSKHandGuardTan,
                         HoneyBadgerMatrixArmsHandguard, Mk14TanBody, Mk14SnowBody, Mk14BlackBody, SSG08Chassis,
                         FNFALPARAHandguard, M16A1PicatinnyRail, K2C1Handguard, AR10SuperSASSHandguard, ARX160Chassis,
-                        ARX160ChassisOlive, ARX160ChassisTan, 
                         HK417Handguard, HK417HandguardTan, AK12Handguard, AK12BHandguard, CZ805BrenReceiver, M14SOCOMChassis, 
                         Block2SOCOMHandguard, FSSTacLiteHandguard, Mk18HandGuardBlack, M110Handguard, M249HandGuard, Mk48HandGuard,
                         M40A6GripPlaceholder, VSSVintorezTriRailMount, MP5BMHandguard, HK416HandGuardBlackAndTan, 
                         ScarHandGuard, ScarMidWestIndustriesHandGuard, SIGMCXHandguard, SIGMCXHandguardShort,
-                        DSR1HandguardRailed)
+                        DSR1HandguardRailed, Z10Handguard, NGSWRRail, G3HandguardRailed, ScarHHandGuard, 
+                        MPXHandguardRailed, MPXHandguardExtended,
+                        SIG556HandguardKA, SIG556HandguardRailed, Type20Handguard, AK12kalHandguard)
+                .withModernRecipe(
+                    	CraftingGroup.ATTACHMENT_NORMAL,
+                    	new CraftingEntry(Ores.GunmetalIngot, 2))
                 .withApply((a, i) -> {
                     i.setRecoil(i.getWeapon().getRecoil() * 0.4f);
                 }).withFirstPersonModelPositioning((model, itemStack) -> {

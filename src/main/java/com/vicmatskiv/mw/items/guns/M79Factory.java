@@ -76,10 +76,6 @@ public class M79Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.101f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.SteelIngot)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 

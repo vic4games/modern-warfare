@@ -61,6 +61,7 @@ import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1CarbineFactory {
@@ -72,6 +73,7 @@ public class M1CarbineFactory {
         .withFireRate(0.55f)
         .withRecoil(4.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(1)
         //.withMaxShots(5)
         .withShootSound("m1carbine")
@@ -97,9 +99,6 @@ public class M1CarbineFactory {
         "Rate of Fire: 55/100",
         "Magazines:",
         "15rnd .30 Carbine Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  1f, // x 

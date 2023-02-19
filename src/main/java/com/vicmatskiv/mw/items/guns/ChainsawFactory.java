@@ -45,7 +45,6 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
-import com.vicmatskiv.mw.models.NV4;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.RailAlt;

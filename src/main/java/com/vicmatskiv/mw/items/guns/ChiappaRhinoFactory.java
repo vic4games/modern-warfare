@@ -23,6 +23,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class ChiappaRhinoFactory implements GunFactory {
@@ -37,6 +38,7 @@ public class ChiappaRhinoFactory implements GunFactory {
         .withFireRate(0.2f)
         .withRecoil(6f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.REVOLVER)
         .withMaxShots(1)
         .withShootSound("chiapparhino")
         //.withSilencedShootSound("M9silenced")
@@ -55,9 +57,7 @@ public class ChiappaRhinoFactory implements GunFactory {
         .withInaccuracy(3)
         .withShellCasingEjectEnabled(false)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab) 
-        .withCrafting(CraftingComplexity.LOW,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
+        
         .withInformationProvider(stack -> Arrays.asList(
                 "Type: Revolver",
                 "Damage: 5.4",
@@ -90,7 +90,7 @@ public class ChiappaRhinoFactory implements GunFactory {
         .withTextureNames("chiapparhino")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModernWarfareMod.MODID)
-            .withModel(new ChiappaRhino())
+            .withModel(new ChiappaRhino()) 
             //.withTextureName("XEagle")
             //.withWeaponProximity(0.99F)
             //.withYOffsetZoom(5F)

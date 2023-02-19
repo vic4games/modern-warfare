@@ -6,7 +6,7 @@ item.mclaren_senna.name=Mclaren Senna
 item.ae86trueno.name=Toyota AE86 Trueno
 item.atv_polaris_sportsman_850_2019.name=2019 Polaris Sportsman 850
 
-entity.bandit1.name=Bandit
+entity.terrorist.name=Terrorist
 entity.zombieBlistered.name=Blistered Zombie
 entity.zombieBlistered.name=Blistered Zombie
 entity.zombieRipper.name=Ripper Zombie
@@ -22,32 +22,37 @@ entity.molded.name=Molded
 item.mw_gas-detector.name=Gas Detector
 item.mw_GasGrenade.name=Gas Grenade
 
-item.Marine_helmet.name=Marine Helmet
-item.Marine_chest.name=Marine Chestplate
-item.Marine_boots.name=Marine Boots
+item.Marine_helmet.name=Kevlar Helmet (Tan)
+item.Marine_chest.name=Combat Jacket (Tan)
+item.Marine_boots.name=Combat Boots (Tan)
 
-item.Spetznaz_helmet.name=Spetsnaz Helmet
-item.Spetznaz_chest.name=Spetsnaz Chestplate
-item.Spetznaz_boots.name=Spetsnaz Boots
+item.Spec_Ops_helmet.name=Kevlar Helmet (Black)
+item.Spec_Ops_chest.name=Combat Jacket (Black)
+item.Spec_Ops_boots.name=Combat Boots (Black)
+
+item.Spetznaz_helmet.name=Kevlar Helmet (Green)
+item.Spetznaz_chest.name=Combat Jacket (Forest)
+item.Spetznaz_boots.name=Combat Boots (Forest)
+
+item.Urban_helmet.name=Kevlar Helmet (Urban)
+item.Urban_chest.name=Combat Jacket (Urban)
+item.Urban_boots.name=Combat Boots (Urban)
+
+item.ghillie_helmet.name=Ghillie Hood
+item.ghillie_chest.name=Ghillie Fatigues
+item.ghillie_boots.name=Ghillie Boots
+
+item.blackcamo_chest.name=Multi-Camo Black Shirt
+item.forest_chest.name=Military Forest Shirt
+
+item.blackjeans_boots.name=Black Jeans/Boots
+item.khakijeans_boots.name=Khaki Jeans/Black Boots
 
 item.Swat_helmet.name=Swat Helmet
 item.Swat_chest.name=Swat Chestplate
 item.Swat_boots.name=Swat Boots
 
-item.GasSwat_helmet.name=Swat Gas Mask
-item.GasSwat_chest.name=Swat Heavy Vest
-item.GasSwat_boots.name=Swat Heavy Boots
-
 item.Tactical_helmet.name=Tactical Nightvision Goggles
-item.Tactical_chest.name=Spec-ops Vest
-item.Tactical_boots.name=Spec-ops Boots
-
-item.Umbrella_helmet.name=Umbrella Corp. Helmet
-item.Umbrella_chest.name=Umbrella Corp. Chestpiece
-item.Umbrella_boots.name=Umbrella Corp. Boots
-
-item.KCPD_chest.name=KCPD vest
-item.KCPD_boots.name=KCPD boots
 
 item.Nazisanta_helmet.name=Third Reich Santa Hat
 item.Nazisanta_chest.name=Third Reich Santa Coat
@@ -57,22 +62,6 @@ item.Santa_helmet.name=Santa Beret
 item.Santa_chest.name=Santa Coat
 item.Santa_boots.name=Santa Boots
 
-item.Spec_Ops_helmet.name=Spec-Ops Helmet
-item.Spec_Ops_chest.name=Spec-Ops Torso
-item.Spec_Ops_boots.name=Spec-Ops Boots
-
-item.merc_helmet.name=Blackhawk Merc. Helmet
-item.merc_chest.name=Blackhawk Merc. Torso
-item.merc_boots.name=Blackhawk Merc. Boots
-
-item.NCR_helmet.name=NCR helmet
-item.NCR_chest.name=NCR Fatigues
-item.NCR_boots.name=NCR Boots
-
-item.t60_helmet.name=T-60 Helmet
-item.t60_chest.name=T-60 ChestRig 
-item.t60_boots.name=T-60 Boots
-
 item.Juggernaut_helmet.name=Juggernaut Helmet
 item.Juggernaut_chest.name=Juggernaut Chestpiece
 item.Juggernaut_boots.name=Juggernaut Boots
@@ -81,10 +70,6 @@ item.Astronaut_helmet.name=Astronaut Helmet
 item.Astronaut_chest.name=Astronaut Chestpiece
 item.Astronaut_boots.name=Astronaut Boots
 
-item.doom_helmet.name=Doom Helmet
-item.doom_chest.name=Doom Chestpiece
-item.doom_boots.name=Doom Boots
-
 item.SCPGuard_helmet.name=SCP Guard Helmet
 item.SCPGuard_chest.name=SCP Guard Chestpiece
 item.SCPGuard_boots.name=SCP Guard Boots
@@ -92,135 +77,49 @@ item.SCPGuard_boots.name=SCP Guard Boots
 item.Dclass_chest.name=D-Class Chestpiece
 item.Dclass_boots.name=D-Class Boots
 
-item.stars_chest.name=S.T.A.R.S. Torso Fatigues
-item.stars_boots.name=S.T.A.R.S. Boots
-
-item.HECU_helmet.name=H.E.C.U. Helmet
-item.HECU_chest.name=H.E.C.U. Torso Fatigues
-item.HECU_boots.name=H.E.C.U. Boots
-
-item.scar_helmet.name=SCAR Combat EVA Helmet
-item.scar_chest.name=SCAR Combat EVA Rig
-item.scar_boots.name=SCAR Combat EVA Boots
-
-item.mkvi_main_helmet.name=Spartan MkVI Helmet (Green)
-item.mkvi_main_chest.name=Spartan MkVI Chestpiece (Green)
-item.mkvi_main_boots.name=Spartan MkVI Boots (Green)
-
-item.mkviblue_helmet.name=Spartan MkVI Helmet (Blue)
-item.mkviblue_chest.name=Spartan MkVI Chestpiece (Blue)
-item.mkviblue_boots.name=Spartan MkVI Boots (Blue)
-
-item.mkvired_helmet.name=Spartan MkVI Helmet (Red)
-item.mkvired_chest.name=Spartan MkVI Chestpiece (Red)
-item.mkvired_boots.name=Spartan MkVI Boots (Red)
-
-item.mkvidefault_helmet.name=Spartan MkVI Helmet
-item.mkvidefault_chest.name=Spartan MkVI Chestpiece
-item.mkvidefault_boots.name=Spartan MkVI Boots
-
-item.mkv_default_helmet.name=Spartan MkV Helmet
-item.mkv_default_chest.name=Spartan MkV Chestpiece
-item.mkv_default_boots.name=Spartan MkV Boots
-
-item.mkv_red_helmet.name=Spartan MkV Helmet (Red)
-item.mkv_red_chest.name=Spartan MkV Chestpiece (Red)
-item.mkv_red_boots.name=Spartan MkV Boots (Red)
-
-item.mkv_green_helmet.name=Spartan MkV Helmet (Green)
-item.mkv_green_chest.name=Spartan MkV Chestpiece (Green)
-item.mkv_green_boots.name=Spartan MkV Boots (Green)
-
-item.mkv_blue_helmet.name=Spartan MkV Helmet (Blue)
-item.mkv_blue_chest.name=Spartan MkV Chestpiece (Blue)
-item.mkv_blue_boots.name=Spartan MkV Boots (Blue)
-
-item.mkv_default_odst_helmet.name=ODST Integ. MkV Helmet
-item.mkv_default_odst_chest.name=ODST Integ. MkV Chestpiece
-item.mkv_default_odst_boots.name=ODST Integ. MkV Boots
-
-item.mkv_green_odst_helmet.name=ODST Integ. MkV Helmet (Green)
-item.mkv_green_odst_chest.name=ODST Integ. MkV Chestpiece (Green)
-item.mkv_green_odst_boots.name=ODST Integ. MkV Boots (Green)
-
-item.mkv_blue_odst_helmet.name=ODST Integ. MkV Helmet (Blue)
-item.mkv_blue_odst_chest.name=ODST Integ. MkV Chestpiece (Blue)
-item.mkv_blue_odst_boots.name=ODST Integ. MkV Boots (Blue)
-
-item.mkv_red_odst_helmet.name=ODST Integ. MkV Helmet (Red)
-item.mkv_red_odst_chest.name=ODST Integ. MkV Chestpiece (Red)
-item.mkv_red_odst_boots.name=ODST Integ. MkV Boots (Red)
-
 item.mw_tactical_push_backpack.name=Tactical Push Pack
-item.mw_desert_tactical_push_backpack.name=(Desert) Tactical Push Pack
 
 item.mw_combat_sustainment_backpack.name=Combat Sustainment Backpack
-item.mw_forest_combat_sustainment_backpack.name=(Forest) Combat Sustainment Backpack
-
-item.mw_blackhawk_stealth_backpack.name=Blackhawk Stealth Backpack
-item.mw_urban_blackhawk_stealth_backpack.name=(Urban) Blackhawk Stealth Backpack
-item.mw_forest_blackhawk_stealth_backpack.name=(Forest) Blackhawk Stealth Backpack
+item.mw_combat_sustainment_backpack_black.name=Combat Sustainment Backpack (Black)
+item.mw_combat_sustainment_backpack_forest.name=Combat Sustainment Backpack (Forest)
 
 item.mw_assault_backpack.name=Assault Backpack
-item.mw_urban_assault_backpack.name=(Urban) Assault Backpack
-item.mw_forest_assault_backpack.name=(Forest) Assault Backpack
+item.mw_assault_backpack_black.name=Assault Backpack (Black)
+item.mw_assault_backpack_forest.name=Assault Backpack (Forest)
 
 item.mw_tru_spec_cordura_backpack.name=Tru-Spec Cordura Backpack
-item.mw_desert_tru_spec_cordura_backpack.name=(Desert) Tru-Spec Cordura Backpack
-item.mw_black_tru_spec_cordura_backpack.name=(Black) Tru-Spec Cordura Backpack
-
-item.mw_mil_spec_alice_backpack.name=Mil-Spec Alice Backpack
-item.mw_desert_mil_spec_alice_backpack.name=(Desert) Mil-Spec Alice Backpack
-item.mw_urban_mil_spec_alice_backpack.name=(Urban) Mil-Spec Alice Backpack
+item.mw_tru_spec_cordura_backpack_black.name=Tru-Spec Cordura Backpack (Black)
+item.mw_tru_spec_cordura_backpack_forest.name=Tru-Spec Cordura Backpack (Forest)
 
 item.mw_duffle_bag.name=Duffle Bag
-
-item.mw_tri_zip_backpack.name=Tri-Zip Backpack
 
 item.mw_pilgrim_backpack.name=Pilgrim Backpack
 
 item.mw_f4m_terminator_backpack.name=F4M Terminator Backpack
-item.mw_urban_f4m_terminator_backpack.name=(Urban) F4M Terminator Backpack
-item.mw_forest_f4m_terminator_backpack.name=(Forest) F4M Terminator Backpack
 
 item.mw_bergen_backpack.name=Bergen Backpack
-item.mw_forest_bergen_backpack.name=(Forest) Bergen Backpack
-item.mw_urban_bergen_backpack.name=(Urban) Bergen Backpack
-
-item.mw_sso_attack_2.name=SSO Attack II Backpack
-item.mw_forest_sso_attack_2.name=(Forest) SSO Attack II Backpack
 
 item.mw_g2_gunslinger2_backpack.name=G2 Gunslinger II Backpack
 
-item.mw_flyye_field_compact_plate_carrier.name=Flyye Field Compact Plate Carrier
-item.mw_forest_flyye_field_compact_plate_carrier.name=(Forest) Flyye Field Compact Plate Carrier
-item.mw_black_flyye_field_compact_plate_carrier.name=(Black) Flyye Field Compact Plate Carrier
-
-item.mw_flyye_molle_rrv.name=Flyye Molle RRV
-item.mw_black_flyye_molle_rrv.name=(Black) Flyye Molle RRV
-item.mw_urban_flyye_molle_rrv.name=(Urban) Flyye Molle RRV
-
-item.mw_force_recon_vest.name=Force Recon Vest
-item.mw_forest_force_recon_vest.name=(Forest) Force Recon Vest
-item.mw_urban_force_recon_vest.name=(Urban) Force Recon Vest
-item.mw_black_force_recon_vest.name=(Black) Force Recon Vest
+item.mw_flyye_field_compact_plate_carrier.name=Molle Plate Carrier
+item.mw_molle_black.name=Molle Plate Carrier (Black)
+item.mw_molle_green.name=Molle Plate Carrier (Green)
+item.mw_molle_urban.name=Molle Plate Carrier (Urban)
 
 item.mw_fort_armor.name=6B43 6A Body Armor
-item.mw_viper_sf_desert.name=(Desert) Viper SF
-item.mw_blackhawk_ballistic_vest.name=Blackhawk Ballistic Vest
-item.mw_umbrella_corp_vest.name=Umbrella Corp Vest
-item.mw_hammer_down_vest.name=Hammer Down Vest
-item.mw_hecu_vest.name=HECU Vest
-item.mw_juggernaut_body_armor.name=Juggernaut Body Armor
-item.mw_marine_vest.name=Marine Vest
-item.mw_swat_vest.name=SWAT Vest
-item.mw_viper_sf.name=(Black) Viper SF
-item.mw_viper_sf_green.name=(Forest) Viper SF
-item.mw_usmc_vest.name=USMC Vest
-item.mw_wfi_task_force_vest.name=Wellness/Fitness Task Force Vest
-item.mw_scar_vest.name=Scar Tactical Vest
 
-item.sv98.name=Izhmash SV-98
+item.mw_usmc_vest.name=Force Recon Vest
+item.mw_usmc_vest_black.name=Force Recon Vest (Black)
+item.mw_usmc_vest_green.name=Force Recon Vest (Green)
+item.mw_usmc_vest_urban.name=Force Recon Vest (Urban)
+
+item.mw_juggernaut_body_armor.name=Juggernaut Body Armor
+
+item.mw_swat_vest.name=UTG-547 Tactical Vest
+
+item.mw_m43a_chest_harness.name=M43A Chest Harness
+
+item.sv98.name=SV-98
 item.mp5a5.name=HK MP5
 item.m40a6.name=M40A6
 item.m110_sass.name=M110 SASS
@@ -331,7 +230,8 @@ item.p90.name=FN P90
 item.mp7.name=HK MP7
 item.sccy_cpx_2.name=CPX-2
 item.chiappa_rhino.name=Chiappa Rhino
-item.izhmash_ak12.name=Izhmash AK-12
+item.izhmash_ak12.name=AK-12 Prototype
+item.ak12_kal.name=AK-12
 item.steyr_aug_a1.name=Steyr AUG A1
 item.g11.name=HK G11
 item.stonera1.name=Stoner A1
@@ -353,7 +253,6 @@ item.l131a1.name=L131A1
 item.p2022.name=SIG P2022
 item.c8_sfw.name=C8 SFW
 item.tokyo_90.name=Tokyo 90
-item.kalashnikov_ak12.name=Kalashnikov AK-12
 item.mp443_grach.name=MP443 Grach
 item.ax50.name=AX-50
 item.g36k.name=HK G36K
@@ -395,8 +294,19 @@ item.ngsw_r.name=NGSW-R
 item.the_dechard.name=The Dechard
 item.ssg_08.name=SSG-08
 item.pgm_hecate_ii.name=PGM Hécate II
+item.sig556.name=SIG-556
+item.fmg9.name=FMG-9
+item.svd_dragunov.name=SVD Dragunov
+item.type20.name=Type-20
+item.fiveseven.name=FN Five-Seven
+item.zbroyarz10.name=Zbroyar-Z10
+item.malyuk.name=Malyuk
+item.turret.name=Automated Turret
+item.turretupgraded.name=Automated Turret vers.2
+item.turretsilenced.name=Automated Turret vers.SA
 
 
+item.mw_FiveSevenMag.name=20rnd 5.7x28mm Five-Seven Magazine
 item.mw_KedrMag_2.name=20rnd 9x19mm Magazine (Kedr)
 item.mw_M4A1Mag_2.name=30rnd 5.56x45mm NATO STANAG Magazine
 item.mw_AK101Mag_2.name=30rnd 5.56x45mm Magazine
@@ -458,6 +368,7 @@ item.mw_stonermag.name=100rnd 5.56x45mm Magazine
 item.mw_AK12Mag.name=31rnd 5.45x39mm Magazine
 item.mw_DesertEagleMag.name=.50 AE 7rnd Magazine
 item.mw_MP7Mag.name=40rnd 4.6x30mm Magazine
+item.mw_MP7Mag20.name=20rnd 4.6x30mm Magazine
 item.mw_P90Mag.name=50rnd 5.7x28mm Magazine
 item.mw_P90TerminatorMag.name=65rnd 5.7x28mm Terminator Magazine
 item.mw_G11Mag.name=50rnd 4.73x33mm Magazine
@@ -510,6 +421,11 @@ item.mw_SSG08Mag.name=8rnd .308 Winchester Magazine
 item.mw_HecateIIMag.name=7rnd .50 BMG Magazine
 item.mw_M1CarbineMag.name=15rnd .30 Carbine Magazine
 item.mw_G3Mag.name=20rnd 7.62x51mm HK G3 Magazine
+item.mw_DragunovMag.name=10rnd 7.62x54mm SVD Magazine
+item.mw_AK74Mag60.name=60rnd 5.45x39mm 74 Magazine
+item.mw_AK75Mag545x39.name=75rnd 5.45x39mm Drum Magazine
+item.mw_AK12Mag_2.name=30rnd 5.45x39mm 12 Magazine
+item.mw_Z10Mag.name=10rnd 7.62x51mm NATO Z10 Magazine
 
 
 item.mw_Bullet765x21.name=7.65x21mm Bullet
@@ -586,7 +502,7 @@ item.mw_Silencer50BMG.name=.50 BMG Silencer
 item.mw_Silencer762x39.name=7.62x39mm Silencer
 item.mw_Silencer556x39.name=5.56x39mm Silencer
 item.mw_Silencer300AACBlackout.name=.300 AAC Blackout Silencer
-item.mw_Silencer65x39.name=6.5x39mm NATO Silencer
+item.mw_Silencer65x39.name=6.5mm Silencer
 item.mw_Silencer9x39mm.name=9x39mm Silencer
 item.mw_SilencerMP7.name=4.6x30mm Silencer
 item.mw_silencer_eabh.name=EABH Silencer
@@ -598,7 +514,27 @@ item.mw_KBP9A91Suppressor.name=KBP 9A-91 Carbine Silencer
 item.mw_SamuraiEdgeSuppressor.name=Samurai Edge Silencer
 
 
+item.mw_NGSWRail.name=NGSW-R Rail
+item.mw_Z10Handguard.name=Zbroyar Z10 Handguard
+item.mw_Type20Handguard.name=Type-20 Handguard
+item.mw_MPXHandguard.name=SIG MPX Handguard
+item.mw_MPXHandguardRailed.name=SIG MPX Handguard
+item.mw_MPXHandguardExtended.name=SIG MPX Extended Handguard
+item.mw_AK74Handguard.name=AK-74 Handguard
+item.mw_AK74Stock.name=AK-74 Stock
+item.mw_Dragunov98Handguard.name=SVD Dragunov-98 Handguard
+item.mw_Dragunov98DustCover.name=SVD Dragunov-98 Dust Cover
+item.mw_Dragunov98Stock.name=SVD Dragunov-98 Stock
+item.mw_SIG556Handguard.name=SIG-556 Handguard
+item.mw_SIG556HandguardRailed.name=SIG-556 Quad-Rail Handguard
+item.mw_SIG556HandguardKA.name=SIG-556 KA Handguard
+item.mw_SIG556Grip.name=SIG-556 Grip
+item.mw_DragunovHandguard.name=SVD Dragunov Handguard
+item.mw_DragunovGripStock.name=SVD Dragunov Stock
+item.mw_fmg9carryhandle.name=FMG-9 Carry Handle
+item.mw_DragunovDustCover.name=SVD Dragunov Dust Cover
 item.mw_ScarHandGuard.name=Scar Handguard
+item.mw_ScarHHandGuard.name=Scar-H Handguard
 item.mw_ACRHandGuard.name=ACR Handguard
 item.mw_M60HandGuard.name=M60 Handguard
 item.mw_M60E4Guard.name=M60E4 Handguard
@@ -622,6 +558,7 @@ item.mw_AKMagpulHandleGuardTan.name=AK Magpul Handguard (Tan)
 item.mw_MLOKHandguard.name=MLOK Handguard
 item.mw_MLOKExtendedHandguard.name=MLOK Extended Handguard
 item.mw_AK15HandleGuard.name=AK-15 Handguard
+item.mw_AK12kalHandguard.name=AK-12 Handguard
 item.mw_StonerHANDGUARD.name=Stoner A1 Handguard
 item.mw_AUGA2handguard.name=AUG A2 Handguard
 item.mw_AUGA3handguard.name=AUG A3 Handguard
@@ -661,6 +598,7 @@ item.mw_Mk48HandGuard.name=Mk48 Handguard
 item.mw_M249UpperHandGuard.name=M249 Upper Handguard
 item.mw_Mk48UpperHandGuard.name=Mk48 Upper Handguard
 item.mw_G3A1Handguard.name=G3 Handguard
+item.mw_G3A1Handguard.name=G3 Railed Handguard
 item.mw_DSR1Handguard.name=DSR-1 Handguard
 item.mw_DSR1HandguardRailed.name=DSR-1 Railed Handguard
 item.mw_MP5BMHandGuard.name=MP5BM Handguard
@@ -681,8 +619,8 @@ item.mw_S710Handguard.name=S7-10 Handguard
 item.mw_SIGMCXHandguard.name=SIG MCX Handguard
 item.mw_SIGMCXHandguardShort.name=Long SIG MCX Handguard
 item.mw_K2C1Handguard.name=K2C1 Handguard
-item.mw_AK12Handguard.name=AK-12 Handguard
-item.mw_AK12BHandguard.name= AK-12 Handguard
+item.mw_AK12Handguard.name=AK-12 Prototype Handguard
+item.mw_AK12BHandguard.name=AK-12B Handguard
 item.mw_KBP9A91Handguard.name=KBP 9A-91 Handguard
 item.mw_KBP9A91CompactHandguard.name=KBP 9A-91 Compact Handguard
 item.mw_KBP9A91KulaTacHandguard.name=KBP 9A-91 KulaTac Handguard
@@ -769,6 +707,7 @@ item.mw_MP5A4Stock.name=MP5A4 Stock
 item.mw_AK47Stock.name=AK-47 Stock
 item.mw_AK101Stock.name=AK-101 Stock
 item.mw_CollapsableMOEStock.name=Collapsible MOE Stock
+item.mw_CollapsableMOEStockGreen.name=Collapsible MOE Stock (Olive)
 item.mw_MagpulCTRStock.name=Magpul CTR Stock
 item.mw_MagpulCTRStockTan.name=Magpul CTR Stock (Tan)
 item.mw_MilSpecStock.name=Mil-Spec Stock
@@ -805,6 +744,7 @@ item.mw_ScarAdapterStock.name=Scar Stock Adapter
 item.mw_VectorStockAdapter.name=Vector Stock Adapter
 item.mw_UMP45Stock.name=UMP45 Stock
 item.mw_MAC10Stock.name=MAC-10 Stock
+item.mw_MAC21Stock.name=MAC-21 Stock
 item.mw_M249ParaStock.name=M249 Para Stock
 item.mw_M249MilspecStock.name=M249 Mil-Spec Stock
 item.mw_M249Hk416Stock.name=M249 HK416 Stock
@@ -814,7 +754,7 @@ item.mw_MP5StockAdapter.name=MP5 Stock Adapter
 item.mw_G3Stock.name=G3 Stock
 item.mw_MP7Stock.name=MP7 Stock
 item.mw_MP7MilSpecStock.name=MP7 Mil-Spec Stock
-item.mw_AK12Stock.name=AK-12 Stock
+item.mw_AK12Stock.name=AK-12 Prototype Stock
 item.mw_AK12ZenitcoStock.name=AK-12 Zenitco Stock
 item.mw_VSSVintorezStock.name=VSS Vintorez Stock
 item.mw_ASValStock.name=AS Val Stock
@@ -842,6 +782,7 @@ item.mw_M4GripGray.name=M4 Grip (Gray)
 item.mw_AK47Grip.name=AK-47 Grip
 item.mw_AK101Grip.name=AK-101 Grip
 item.mw_AKErgoGrip.name=AK Ergo Grip
+item.mw_AKErgoGripGreen.name=AK Ergo Grip (Olive)
 item.mw_AUGgrip.name=AUG Grip
 item.mw_M1A1Grip.name=M1A1 Grip
 item.mw_M1928Grip.name=M1928 Grip
@@ -859,7 +800,7 @@ item.mw_HK416GripTan.name=HK-416 Grip (Tan)
 item.mw_M110Grip.name=M110 Grip
 item.mw_S710TricunGrip.name=S7-10 Tricun Grip
 item.mw_K2C1Grip.name=K2C1 Grip
-item.mw_AK12Grip.name=AK-12 Grip
+item.mw_AK12Grip.name=AK-12 Prototype Grip
 item.mw_AK12ErgoGrip.name=AK-12 Ergo Grip
 item.mw_AKErgoGripTan.name=AK Ergo Grip (Tan)
 item.mw_KS23RaptorGrip.name=KS-23 Grip
@@ -874,8 +815,8 @@ item.mw_RPKDustCover.name=RPK-16 Dust Cover
 item.mw_FNFALDustCover.name=FN FAL Dust Cover
 item.mw_SA58DustCover.name=SA-58 Dust Cover
 item.mw_AKMDustcover.name=AKM Dust Cover
-item.mw_AK12DustCover.name=AK-12 Dust Cover
-item.mw_AK12BDustCover.name=AK-12 Dust Cover
+item.mw_AK12DustCover.name=AK-12 Prototype Dust Cover
+item.mw_AK12BDustCover.name=AK-12B Dust Cover
 item.mw_VSSVintorezDustCover.name=VSS Vintorez Dust Cover
 item.mw_VSSMDustCover.name=VSSM Dust Cover
 
@@ -998,6 +939,10 @@ item.mw_USPMatchCompensator.name=P12 Compensator
 item.mw_DSR1Barrel.name=DSR1 Barrel
 item.mw_DSR1BarrelLong.name=DSR-1 Extended Barrel
 
+tile.weapon_workbench.name=Weapons/Armor Workbench
+tile.ammo_press.name=Ammo Press
+
+tile.mw_turret_base.name=Turret Base
 
 tile.mw:tinore.name=Tin Ore
 tile.mw_GraphiteOre.name=Graphite Ore
@@ -1007,14 +952,14 @@ tile.mw_SulfurOre.name=Sulfur Ore
 
 item.mw_CarbonComposite.name=Carbon Composite
 item.mw_SteelIngot.name=Steel Ingot
-item.mw_CarbonFiber.name=Carbon Fiber
+item.mw_CarbonFiber.name=Kevlar
 item.mw_GunmetalPlate.name=Gunmetal Plate
 item.mw_GraphiteChunk.name=Graphite Chunk
 item.mw_SteelDust.name=Steel Dust
 item.mw_SulfurDust.name=Sulfur Dust
 item.mw_TinIngot.name=Tin Ingot
 item.mw_PlasticPlate.name=Plastic Plate
-item.mw_SyntheticPlastic.name=Synthetic Plastic
+item.mw_SyntheticPlastic.name=Nylon
 item.mw_SyntheticPolymerComposite.name=Synthetic Polymer Composite
 item.mw_LeadIngot.name=Lead Ingot
 item.mw_GunmetalIngot.name=Gunmetal Ingot
@@ -1194,3 +1139,21 @@ gui.inventoryFull=Inventory full
 gui.currentZoom=Zoom: %s%%
 gui.grenadeExplodes=Explodes in %s sec
 gui.coolingDown=Cooling down...
+
+config.category.rendering.name=Rendering
+config.category.screenshaders.name=Screen Shaders
+config.rendering.enableAllShaders.property.name=Enable All Shaders
+config.rendering.enableScreenShaders.property.name=Disable Screen Shaders
+config.rendering.enableWorldShaders.property.name=Disable World Shaders
+config.rendering.enableGunShaders.property.name=Enable Gun Shaders
+config.rendering.enableFlashShaders.property.name=Enable Flash Shaders
+config.rendering.enableReticleShaders.property.name=Enable Reticle Shaders
+config.rendering.enableHDRFramebuffer.property.name=Enable HDR Framebuffer
+config.rendering.enableScopeEffects.property.name=Enable Scope Effects
+config.rendering.screenshaders.bloomEffect.property.name=Enable Bloom
+config.rendering.screenshaders.filmGrain.property.name=Enable Film Grain
+config.rendering.screenshaders.filmGrainIntensity.property.name=Film Grain Intensity
+config.rendering.screenshaders.bloomLayers.property.name=Amount of Bloom Layers
+config.rendering.screenshaders.onScreenRainAndSnow.property.name=On-Screen Rain and Snow
+
+overlay.opendoor.name=Open Door

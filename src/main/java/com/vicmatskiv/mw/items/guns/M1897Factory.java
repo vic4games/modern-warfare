@@ -31,6 +31,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1897Factory implements GunFactory {
@@ -50,6 +51,7 @@ public class M1897Factory implements GunFactory {
         .withFireRate(0.1f)
         .withRecoil(9f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SHOTGUN)
         .withMaxShots(1)
         .withShootSound("m1897")
         .withSilencedShootSound("ShotgunSilenced")
@@ -70,9 +72,6 @@ public class M1897Factory implements GunFactory {
 		.withFlashOffsetX(() -> 0.08f)
 		.withFlashOffsetY(() -> 0.13f)
 		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
-		 .withCrafting(CraftingComplexity.HIGH,
-	                Ores.PlasticPlate,
-	                Ores.GunmetalPlate)
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
 	                5f, // x 

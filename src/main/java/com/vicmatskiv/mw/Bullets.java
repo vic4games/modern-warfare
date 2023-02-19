@@ -53,7 +53,6 @@ public class Bullets {
     public static ItemBullet MiniNuke;
     public static ItemBullet EnergyCase;
     public static ItemBullet PlasmaCapsule;
-    public static ItemBullet BFGammo;
     
 //    public static ItemBullet Bullet9x18mm;
 
@@ -193,243 +192,248 @@ public class Bullets {
                 })
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        BFGammo = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("BFGammo")
-                .withModel(new com.vicmatskiv.mw.models.BFGproj(), "BFGproj.png")
-//                .withMaxStackSize(500)
-//                .withCrafting(8, CraftingComplexity.LOW, SteelPlate, "ingotUranium")
+        Bullet3006Springfield = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet3006Springfield")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletspringfield.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.5F, 0.5F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.6F, -3F);
-                    GL11.glRotatef(10F, 0f, 1f, 0f);
-                    GL11.glRotatef(2F, 1f, 0f, 0f);
-                    GL11.glRotatef(20F, 0f, 0f, 1f);
-                    GL11.glScaled(1.2F, 1.2F, 1.2f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
-        
-        Bullet3006Springfield = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet3006Springfield")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
-                .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
-                    GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
-                }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
-                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-                    GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
-                }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet8x58 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet8x58")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet8x58 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet8x58")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet8x58.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.55F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.75F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.4F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet792x33Kurz = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet792x33Kurz")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet792x33Kurz = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet792x33Kurz")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.5F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.7F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.35F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet50BMG = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet50BMG")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet50BMG = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet50BMG")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.7F, 0.6F, 0.7F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.6F, 0.5F, 0.6F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.7F, 1.6F, 1.7f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet20x82mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet20x82mm")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet20x82mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet20x82mm")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet20x82.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.7F, 0.6F, 0.7F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.6F, 0.5F, 0.6F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.7F, 1.6F, 1.7f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet408CT = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+        Bullet408CT = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withName("Bullet408CT")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.5F, 0.5F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet308Winchester = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet308Winchester")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet308Winchester = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet308Winchester")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletspringfield.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.5F, 0.4F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.9F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.5F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet792x57 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet792x57")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet792x57 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet792x57")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet8x58.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.5F, 0.5F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet762x54 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet762x54")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet762x54 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet762x54")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet762x54.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.5F, 0.5F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
         Bullet762x51 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet762x51")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet762x51")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.6F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
                     GL11.glScaled(0.5F, 0.5F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.6F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
         Shotgun12Guage = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Shotgun12Gauge")
                 .withModel(new com.vicmatskiv.mw.models.Shotgun12Gauge(), "Shotgun12Gauge.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -450,7 +454,6 @@ public class Bullets {
         Shotgun4G = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Shotgun4G")
                 .withModel(new com.vicmatskiv.mw.models.Shotgun12Gauge(), "Shotgun4Gauge.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
                 .withFirstPersonPositioning((player, itemStack) -> {
                     GL11.glTranslatef(0.1F, -1F, 0.4F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
@@ -468,535 +471,579 @@ public class Bullets {
                     GL11.glScaled(1.4F, 1.4F, 1.4f);
                 }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet762x35 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet762x35")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet762x35 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet762x35")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.5F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.5F, 0.4F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.75F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.4F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet765x21 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet765x21")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet765x21 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet765x21")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet765x21.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.5F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.4F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -3.7F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.2F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet762x39 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet762x39")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet762x39 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet762x39")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet762x39.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.6F, 0.55F, 0.6F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.84F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.6F, 1.5F, 1.6f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
 
-        Bullet556x45 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet556x45")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet556x45 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet556x45")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.5F, 0.65F, 0.5F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.4F, 0.55F, 0.4F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.9F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.4F, 1.55F, 1.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet65 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet65")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet65 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet65")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.5F, 0.65F, 0.5F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.4F, 0.55F, 0.4F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.9F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.4F, 1.55F, 1.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet545x39 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet545x39")
-                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet545x39 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet545x39")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bullet545x39.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.65F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.55F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.9F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.5F, 1.55F, 1.5f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet4570 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
+        Bullet4570 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withName("Bullet4570")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet765x21.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.75F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.75F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.8F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 3F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet4440 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet4440")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet4440 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet4440")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet765x21.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
     
-        Bullet45ACP = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-            .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet45ACP")
-            .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-            .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet45ACP = new ItemBullet.Builder()
+        	.withModId(ModernWarfareMod.MODID)
+            .withCreativeTab(ModernWarfareMod.AmmoTab)
+            .withName("Bullet45ACP")
+            .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
             .withFirstPersonPositioning((player, itemStack) -> {
-                GL11.glTranslatef(0.1F, -1F, 0.4F);
+                GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                 GL11.glRotatef(30F, 0f, 1f, 0f);
-                GL11.glScaled(0.4F, 0.4F, 0.4F);
+                GL11.glScaled(0.55F, 0.55F, 0.55F);
             }).withThirdPersonPositioning((player, itemStack) -> {
-                GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                 GL11.glRotatef(-50F, 0f, 1f, 0f);
                 GL11.glRotatef(80F, 1f, 0f, 0f);
-                GL11.glScaled(0.5F, 0.5F, 0.5F);
+                GL11.glScaled(0.45F, 0.45F, 0.45F);
             }).withInventoryPositioning((itemStack) -> {
-                GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                GL11.glTranslatef(-0.8F, -4F, 0.7F);
                 GL11.glRotatef(10F, 0f, 1f, 0f);
                 GL11.glRotatef(2F, 1f, 0f, 0f);
                 GL11.glRotatef(0F, 0f, 0f, 1f);
-                GL11.glScaled(1.4F, 1.4F, 1.4f);
-            }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                GL11.glScaled(2.4F, 2.4F, 2.4f);
+            })
+            .withTextureName("Dummy.png")
+            .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet357 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet357")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet357 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet357")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -2.1F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.45F, 0.85F, 0.45F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.35F, 0.75F, 0.35F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.5F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.0F, 2.8F, 2.0f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet44 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet44")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet44 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet44")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.8F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 3F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet40SW = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet40SW")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet40SW = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet40SW")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet50AE = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet50AE")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet50AE = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet50AE")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet50ae.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.8F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.8F, 3F, 2.8f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet50Beowulf = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet50Beowulf")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet50Beowulf = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet50Beowulf")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.8F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 3F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet500 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet500")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet500 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet500")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.8F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 3F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet380ACP = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet380ACP")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet380ACP = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet380ACP")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet763x25 = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet763x25")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet763x25 = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet763x25")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                }).withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet9x39mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet9x39mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet9x39mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet9x39mm")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet50ae.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet9x19mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet9x19mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet9x19mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet9x19mm")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
         Bullet9x18mm = new ItemBullet.Builder()
         		.withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withName("Bullet9x18mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bullet9x18.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.4F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
         Bullet57x28mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
                 .withCreativeTab(ModernWarfareMod.AmmoTab)
                 .withName("Bullet57x28mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.4F, 0.35F, 0.4F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.45F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.3F, 1.2F, 1.3f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet46x30mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet46x30mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet46x30mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet46x30mm")
+                .withModel(new com.vicmatskiv.mw.models.BulletBig(), "bulletbig.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.5F, 0.45F, 0.5F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.4F, 0.35F, 0.4F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -2.45F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(1.3F, 1.2F, 1.3f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet10mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet10mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet10mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet10mm")
+                .withModel(new com.vicmatskiv.mw.models.BulletSmall(), "bulletsmall.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.5F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
+                    GL11.glScaled(2.4F, 2.8F, 2.4f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
         
-        Bullet473x33mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet473x33mm")
-                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
+        Bullet473x33mm = new ItemBullet.Builder()
+        		.withModId(ModernWarfareMod.MODID)
+                .withCreativeTab(ModernWarfareMod.AmmoTab)
+                .withName("Bullet473x33mm")
+                .withModel(new com.vicmatskiv.mw.models.Bulletcaseless(), "bulletcaseless.png")
                 .withFirstPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(0.1F, -1F, 0.4F);
+                    GL11.glTranslatef(0.2F, -1.9F, 0.5F);
                     GL11.glRotatef(30F, 0f, 1f, 0f);
-                    GL11.glScaled(0.4F, 0.4F, 0.4F);
+                    GL11.glScaled(0.55F, 0.55F, 0.55F);
                 }).withThirdPersonPositioning((player, itemStack) -> {
-                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
+                    GL11.glTranslatef(-0.2F, -0.3F, 0.4F);
                     GL11.glRotatef(-50F, 0f, 1f, 0f);
                     GL11.glRotatef(80F, 1f, 0f, 0f);
-                    GL11.glScaled(0.5F, 0.5F, 0.5F);
+                    GL11.glScaled(0.45F, 0.45F, 0.45F);
                 }).withInventoryPositioning((itemStack) -> {
-                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
+                    GL11.glTranslatef(-0.8F, -4.0F, 0.7F);
                     GL11.glRotatef(10F, 0f, 1f, 0f);
                     GL11.glRotatef(2F, 1f, 0f, 0f);
                     GL11.glRotatef(0F, 0f, 0f, 1f);
-                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
-        
-//        Bullet9x18mm = new ItemBullet.Builder().withModId(ModernWarfareMod.MODID)
-//                .withCreativeTab(ModernWarfareMod.AmmoTab).withName("Bullet9x18mm")
-//                .withModel(new com.vicmatskiv.mw.models.Bullet44(), "Bullet.png")
-////                .withCrafting(8, CraftingComplexity.LOW, "ingotCopper", CompatibleItems.GUNPOWDER)
-//                .withFirstPersonPositioning((player, itemStack) -> {
-//                    GL11.glTranslatef(0.1F, -1F, 0.4F);
-//                    GL11.glRotatef(30F, 0f, 1f, 0f);
-//                    GL11.glScaled(0.4F, 0.4F, 0.4F);
-//                }).withThirdPersonPositioning((player, itemStack) -> {
-//                    GL11.glTranslatef(-0.7F, -0.29F, 0.7F);
-//                    GL11.glRotatef(-50F, 0f, 1f, 0f);
-//                    GL11.glRotatef(80F, 1f, 0f, 0f);
-//                    GL11.glScaled(0.5F, 0.5F, 0.5F);
-//                }).withInventoryPositioning((itemStack) -> {
-//                    GL11.glTranslatef(-0.8F, -0.45F, 0.4F);
-//                    GL11.glRotatef(10F, 0f, 1f, 0f);
-//                    GL11.glRotatef(2F, 1f, 0f, 0f);
-//                    GL11.glRotatef(0F, 0f, 0f, 1f);
-//                    GL11.glScaled(1.4F, 1.4F, 1.4f);
-//                }).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
-        
+                    GL11.glScaled(1.7F, 2F, 1.7f);
+                })
+                .withTextureName("Dummy.png")
+                .build(ModernWarfareMod.MOD_CONTEXT, ItemBullet.class);
     }
 
 }

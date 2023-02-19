@@ -52,9 +52,6 @@ public class SSG42Factory implements GunFactory {
         .withFlashScale(() -> 1.3f)
         .withFlashOffsetX(() -> 0.11f)
         .withFlashOffsetY(() -> 0.15f)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Super Shotgun (MkII Demon Slayer)",

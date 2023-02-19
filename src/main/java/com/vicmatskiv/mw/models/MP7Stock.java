@@ -7,13 +7,12 @@ import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-// Made with Blockbench 3.9.2
+// Made with Blockbench 4.2.1
 // Exported for Minecraft version 1.7 - 1.12
 // Paste this class into your mod and generate all required imports
 
 
 public class MP7Stock extends ModelWithAttachments {
-	private final QRenderer master;
 	private final ModelRenderer mag_40;
 	private final ModelRenderer cube_r1;
 	private final ModelRenderer cube_r2;
@@ -33,7 +32,7 @@ public class MP7Stock extends ModelWithAttachments {
 	private final ModelRenderer cube_r13;
 	private final ModelRenderer cube_r14;
 	private final ModelRenderer cube_r15;
-	private final ModelRenderer stock;
+	private final QRenderer stock;
 	private final ModelRenderer gun9_r1;
 	private final ModelRenderer gun8_r1;
 	private final ModelRenderer gun9_r2;
@@ -195,13 +194,8 @@ public class MP7Stock extends ModelWithAttachments {
 		textureWidth = 200;
 		textureHeight = 200;
 
-		master = new QRenderer(this);
-		master.setRotationPoint(0.0F, 24.0F, 0.0F);
-		
-
 		mag_40 = new ModelRenderer(this);
-		mag_40.setRotationPoint(0.2F, -16.1F, -2.8F);
-		master.addChild(mag_40);
+		mag_40.setRotationPoint(0.2F, 7.9F, -2.8F);
 		mag_40.cubeList.add(new ModelBox(mag_40, 39, 77, -1.0F, -1.0F, 0.0F, 1, 1, 4, 0.0F, false));
 		mag_40.cubeList.add(new ModelBox(mag_40, 39, 32, -2.45F, -0.999F, 0.55F, 2, 1, 4, 0.0F, false));
 		mag_40.cubeList.add(new ModelBox(mag_40, 23, 56, -2.65F, -0.998F, -0.7F, 2, 1, 2, 0.0F, false));
@@ -271,8 +265,7 @@ public class MP7Stock extends ModelWithAttachments {
 		cube_r8.cubeList.add(new ModelBox(cube_r8, 30, 65, -2.0F, 0.002F, -1.0F, 2, 9, 1, -0.001F, false));
 
 		mag_20 = new ModelRenderer(this);
-		mag_20.setRotationPoint(0.2F, -16.1F, -2.8F);
-		master.addChild(mag_20);
+		mag_20.setRotationPoint(0.2F, 7.9F, -2.8F);
 		mag_20.cubeList.add(new ModelBox(mag_20, 78, 0, -1.0F, -1.0F, 0.0F, 1, 1, 4, 0.0F, false));
 		mag_20.cubeList.add(new ModelBox(mag_20, 51, 32, -2.45F, -0.999F, 0.55F, 2, 1, 4, 0.0F, false));
 		mag_20.cubeList.add(new ModelBox(mag_20, 55, 66, -2.65F, -0.998F, -0.7F, 2, 1, 2, 0.0F, false));
@@ -314,13 +307,11 @@ public class MP7Stock extends ModelWithAttachments {
 		cube_r12.cubeList.add(new ModelBox(cube_r12, 66, 39, -2.0F, 0.0F, -3.0F, 2, 4, 3, 0.001F, false));
 
 		action = new ModelRenderer(this);
-		action.setRotationPoint(-2.0F, -30.0F, -3.6F);
-		master.addChild(action);
+		action.setRotationPoint(-2.0F, -6.0F, -3.6F);
 		action.cubeList.add(new ModelBox(action, 0, 38, -1.0F, -1.0F, 0.0F, 1, 2, 7, 0.0F, false));
 
 		milspec_stock = new ModelRenderer(this);
-		milspec_stock.setRotationPoint(-0.5F, -33.0F, 13.2F);
-		master.addChild(milspec_stock);
+		milspec_stock.setRotationPoint(-0.5F, -9.0F, 13.2F);
 		milspec_stock.cubeList.add(new ModelBox(milspec_stock, 0, 63, -2.0F, 0.0F, 0.0F, 2, 4, 3, 0.001F, false));
 		milspec_stock.cubeList.add(new ModelBox(milspec_stock, 78, 10, -2.0F, 3.7F, 0.0F, 2, 1, 3, 0.002F, false));
 		milspec_stock.cubeList.add(new ModelBox(milspec_stock, 29, 19, -0.3F, 0.7F, 0.0F, 1, 4, 3, 0.0F, false));
@@ -347,9 +338,8 @@ public class MP7Stock extends ModelWithAttachments {
 		cube_r15.cubeList.add(new ModelBox(cube_r15, 56, 5, -3.3F, -1.1F, -2.1F, 2, 1, 2, 0.099F, false));
 		cube_r15.cubeList.add(new ModelBox(cube_r15, 46, 62, -1.1F, -1.1F, -2.1F, 1, 1, 2, 0.099F, false));
 
-		stock = new ModelRenderer(this);
-		stock.setRotationPoint(-2.0F, -27.05F, 34.05F);
-		master.addChild(stock);
+		stock = new QRenderer(this);
+		stock.setRotationPoint(-2.0F, -3.05F, 34.05F);
 		stock.cubeList.add(new ModelBox(stock, 78, 20, 1.7F, -5.4F, -2.8F, 1, 1, 4, 0.001F, false));
 		stock.cubeList.add(new ModelBox(stock, 84, 59, 0.2F, -6.6F, -2.8F, 2, 1, 2, 0.001F, false));
 		stock.cubeList.add(new ModelBox(stock, 16, 72, 0.2F, -6.8F, -0.8F, 2, 1, 2, 0.001F, false));
@@ -452,8 +442,7 @@ public class MP7Stock extends ModelWithAttachments {
 		gun9_r5.cubeList.add(new ModelBox(gun9_r5, 55, 55, -2.0F, 4.1F, -1.0F, 2, 7, 2, -0.001F, false));
 
 		grip = new ModelRenderer(this);
-		grip.setRotationPoint(-2.2F, -26.75F, -20.1F);
-		master.addChild(grip);
+		grip.setRotationPoint(-2.2F, -2.75F, -20.1F);
 		
 
 		bone9 = new ModelRenderer(this);
@@ -511,8 +500,7 @@ public class MP7Stock extends ModelWithAttachments {
 		gun7_r3.cubeList.add(new ModelBox(gun7_r3, 55, 50, -1.3F, 3.2836F, -2.8763F, 3, 1, 2, 0.0F, false));
 
 		mp7_body = new ModelRenderer(this);
-		mp7_body.setRotationPoint(-2.0F, -29.5F, -9.0F);
-		master.addChild(mp7_body);
+		mp7_body.setRotationPoint(-2.0F, -5.5F, -9.0F);
 		mp7_body.cubeList.add(new ModelBox(mp7_body, 84, 39, -0.5F, -2.0F, -18.15F, 2, 2, 2, -0.4F, false));
 		mp7_body.cubeList.add(new ModelBox(mp7_body, 0, 56, -0.5F, 0.25F, -13.1F, 2, 3, 4, 0.001F, false));
 
@@ -1666,7 +1654,11 @@ public class MP7Stock extends ModelWithAttachments {
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+//		mag_40.render(f5);
+//		mag_20.render(f5);
+//		action.render(f5);
 		stock.render(f5);
+//		grip.render(f5);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

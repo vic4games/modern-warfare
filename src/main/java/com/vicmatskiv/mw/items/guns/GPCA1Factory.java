@@ -93,10 +93,6 @@ public class GPCA1Factory {
         "Damage: 400",
         "Chamber: Type-2 Plasma Capsule",
         "Rate of Fire: 4/100"))
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.GunmetalIngot)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 1f, // x 

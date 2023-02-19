@@ -38,6 +38,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class BrowningAuto5Factory implements GunFactory {
@@ -53,6 +54,7 @@ public class BrowningAuto5Factory implements GunFactory {
         .withIteratedLoad()
         .withRecoil(9f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SHOTGUN)
         .withMaxShots(1)
         .withPumpTimeout(800)
         .withShootSound("browningauto5")
@@ -71,9 +73,6 @@ public class BrowningAuto5Factory implements GunFactory {
         .withFlashScale(() -> 0.6f)
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.1f)
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Semi-Automatic Shotgun",

@@ -93,10 +93,6 @@ public class M32MGLFactory implements GunFactory {
         .withFlashOffsetY(() -> 0.101f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.INGOT_STEEL)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 4f, // x 

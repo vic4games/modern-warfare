@@ -5,9 +5,13 @@ import java.io.File;
 import javax.xml.transform.stream.StreamSource;
 
 import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.command.BalancePackCommand;
+import com.vicmatskiv.weaponlib.command.CraftingFileCommand;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
+import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -16,16 +20,17 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
-@Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION)
+@Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION, guiFactory = "com.vicmatskiv.weaponlib.config.ConfigGUIFactory")
 public class ModernWarfareMod {
 
 	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
     private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
     public static final String MODID = "mw";
-	public static final String VERSION = "0.5";
+	public static final String VERSION = "0.7.1";
 
     @SidedProxy(serverSide = "com.vicmatskiv.weaponlib.CommonModContext", clientSide = "com.vicmatskiv.weaponlib.ClientModContext")
     public static ModContext MOD_CONTEXT;
@@ -34,9 +39,6 @@ public class ModernWarfareMod {
 	
     public static CreativeTabs ArmorTab = new ArmorTab(
             CreativeTabs.getNextID(), "ArmorTab");
-	
-	public static CreativeTabs SpartanTab = new SpartanTab(
-            CreativeTabs.getNextID(), "SpartanTab");
 
 	public static CreativeTabs AssaultRiflesTab = new AssaultRiflesTab(
             CreativeTabs.getNextID(), "AssaultRifles_tab");
@@ -59,7 +61,7 @@ public class ModernWarfareMod {
 	public static CreativeTabs PropsTab = new PropsTab(
             CreativeTabs.getNextID(), "props_tab");
 	
-	public static CreativeTabs BlocksTab = new PropsTab(
+	public static CreativeTabs BlocksTab = new BlocksTab(
 	        CreativeTabs.getNextID(), "BlocksTab");
 	        
     @SidedProxy(serverSide = "com.vicmatskiv.mw.CommonProxy",
@@ -86,6 +88,16 @@ public class ModernWarfareMod {
         if(configurationManager != null) {
             configurationManager.save();
         }
+        
+        proxy.postInit(this, configurationManager, event);
+    }
+    
+    @EventHandler
+    public void onServerStarting(FMLServerStartingEvent event) {
+        event.registerServerCommand(new BalancePackCommand());
+        event.registerServerCommand(new CraftingFileCommand());
+        BalancePackManager.loadDirectory();
+        CraftingFileManager.getInstance().loadDirectory();
     }
 
     private void initConfigurationManager(FMLPreInitializationEvent event) {

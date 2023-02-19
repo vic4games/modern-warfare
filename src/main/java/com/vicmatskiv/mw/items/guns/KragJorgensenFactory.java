@@ -39,6 +39,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class KragJorgensenFactory implements GunFactory {
@@ -55,6 +56,7 @@ public class KragJorgensenFactory implements GunFactory {
         .withEjectSpentRoundSound("krag_boltaction")
         .withRecoil(6f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("kragjorgensen")
         .withPumpTimeout(950)
@@ -74,9 +76,6 @@ public class KragJorgensenFactory implements GunFactory {
         .withFlashOffsetX(() -> 0.08f)
         .withFlashOffsetY(() -> 0.16f)
         .withShellCasingEjectEnabled(false)
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 3f, // x 

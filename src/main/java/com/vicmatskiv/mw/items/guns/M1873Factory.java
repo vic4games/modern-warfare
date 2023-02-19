@@ -31,6 +31,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1873Factory implements GunFactory {
@@ -49,6 +50,7 @@ public class M1873Factory implements GunFactory {
         .withFireRate(0.1f)
         .withRecoil(9f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(1)
         .withPumpTimeout(800)
         .withShootSound("m1873")
@@ -65,9 +67,6 @@ public class M1873Factory implements GunFactory {
         .withFlashScale(() -> 0.5f)
         .withFlashOffsetX(() -> 0.11f)
         .withFlashOffsetY(() -> 0.06f)
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Lever Action Rifle",

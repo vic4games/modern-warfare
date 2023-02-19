@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 // Paste this class into your mod and generate all required imports
 
 
-public class USMCVest extends ModelBase {
+public class USMCVest extends ModelBiped {
 	private final ModelRenderer head;
 	private final ModelRenderer body;
 	private final ModelRenderer rightarm;
@@ -526,18 +526,25 @@ public class USMCVest extends ModelBase {
 //		this.bipedLeftLeg.addChild(leftleg_usmc);
 //		this.bipedRightLeg.addChild(rightleg_usmc);
 		
+		bipedLeftArm.isHidden = true;
+		bipedRightArm.isHidden = true;
+		bipedBody = vest;
+		bipedLeftLeg.isHidden = true;
+		bipedRightLeg.isHidden = true;
+		bipedHead.isHidden = true;
+		bipedHeadwear.isHidden = true;
+		
     }
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-//		head.render(f5);
-//		body.render(f5);
-		vest.render(f5);
-//		rightarm.render(f5);
-//		leftarm.render(f5);
-//		rightleg.render(f5);
-//		leftleg.render(f5);
-//		helmet.render(f5);
+//		if(entity != null) {
+//			super.render(entity, f, f1, f2, f3, f4, f5);
+//		} else vest.render(f5);
+		
+		super.render(entity, f, f1, f2, f3, f4, f5);
+//		setRotationAngles(f, f1, f2, f3, f4, f5, entity);
+//		vest.render(f5);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

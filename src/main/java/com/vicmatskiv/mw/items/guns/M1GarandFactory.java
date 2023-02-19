@@ -45,7 +45,6 @@ import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
-import com.vicmatskiv.mw.models.NV4;
 import com.vicmatskiv.mw.models.P90iron;
 import com.vicmatskiv.mw.models.RMRsight;
 import com.vicmatskiv.mw.models.RailAlt;
@@ -57,6 +56,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1GarandFactory implements GunFactory {
@@ -69,6 +69,7 @@ public class M1GarandFactory implements GunFactory {
         .withFireRate(0.2f)
         .withRecoil(3.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(1)
         .withShootSound("m1garand")
 //        .withSilencedShootSound("m4a1_silenced")
@@ -93,9 +94,6 @@ public class M1GarandFactory implements GunFactory {
         "Cartridge: .30-06 Springfield Bullet",
         "Fire Rate: SEMI",
         "Rate of Fire: 20/100"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  3f, // x 
@@ -375,13 +373,6 @@ public class M1GarandFactory implements GunFactory {
                   }, 350, 600)
                     )
                     
-            .withFirstPersonCustomPositioningInspecting(AuxiliaryAttachments.NV4Action.getRenderablePart(),
-                    new Transition((renderContext) -> {
-                    }, 300, 600),
-                  new Transition((renderContext) -> {
-                  }, 350, 600)
-                    )
-                    
             .withFirstPersonPositioningDrawing(
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glRotatef(2F, 0f, 1f, 0f);
@@ -417,20 +408,6 @@ public class M1GarandFactory implements GunFactory {
                         GL11.glRotatef(10.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.175000f, 1.050000f, 0.175000f);
                     }, 170, 0)
-                    )
-                    
-            .withFirstPersonCustomPositioningDrawing(AuxiliaryAttachments.NV4Action.getRenderablePart(),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 150, 0),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 130, 0),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 200, 0),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glTranslatef(0F, 0F, 0.5F);
-                    }, 130, 60),
-                    new Transition((renderContext) -> { // Reload position
-                    }, 110, 0)
                     )
             
             .withFirstPersonPositioningZooming((renderContext) -> {

@@ -58,6 +58,7 @@ import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class G43GewehrFactory {
@@ -69,6 +70,7 @@ public class G43GewehrFactory {
         .withFireRate(0.25f)
         .withRecoil(4.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.DMR)
         .withMaxShots(1)
         //.withMaxShots(5)
         .withShootSound("g43_gewehr")
@@ -94,9 +96,6 @@ public class G43GewehrFactory {
         "Rate of Fire: 25/100",
         "Magazines:",
         "10rnd 7.92x57mm Gewehr Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  3f, // x 

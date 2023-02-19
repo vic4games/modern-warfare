@@ -73,7 +73,9 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 
 public class APC9Factory implements GunFactory {
 
@@ -85,6 +87,7 @@ public class APC9Factory implements GunFactory {
 		.withFireRate(0.85f)
 		.withRecoil(2f)
 		.withZoom(0.9f)
+		.withConfigGroup(GunConfigurationGroup.SIDEARM)
 		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("apc9")
 		.withSilencedShootSound("mp5_silenced")
@@ -114,9 +117,6 @@ public class APC9Factory implements GunFactory {
 		"Rate of Fire: 85/100",
 		"Magazines:",
         "30rnd 9x19mm APC9 Magazine"))
-		 .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 

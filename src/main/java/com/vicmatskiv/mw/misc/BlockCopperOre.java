@@ -26,4 +26,8 @@ public class BlockCopperOre extends Block {
         return Ores.CopperOre;
     }
 
+    public int quantityDropped(Random random)
+    {
+        return 2;
+    }
 }

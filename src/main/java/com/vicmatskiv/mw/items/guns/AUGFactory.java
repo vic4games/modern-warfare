@@ -62,6 +62,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class AUGFactory implements GunFactory {
@@ -74,6 +75,7 @@ public class AUGFactory implements GunFactory {
         .withFireRate(0.75f)
         .withRecoil(3f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(1, Integer.MAX_VALUE)
         .withShootSound("aug")
         .withSilencedShootSound("m4a1_silenced")
@@ -106,9 +108,6 @@ public class AUGFactory implements GunFactory {
         "60rnd 5.56x45mm NATO STANAG Drum Magazine",
         "100rnd 5.56x45mm NATO STANAG Drum Magazine",
         "30rnd 9x19mm PARA Magazine (w/ PARA conversion kit)"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  -1f, // x 
@@ -740,7 +739,7 @@ public class AUGFactory implements GunFactory {
                         GL11.glRotatef(35.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(31.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.100000f, 1.51f, -1.900000f);
-                    }, 70, 0),
+                    }, 50, 0),
                     new Transition((renderContext) -> { // Reload position
                     	GL11.glScalef(3.00000f, 3.00000f, 3.00000f);
                         GL11.glRotatef(2.000000f, 1f, 0f, 0f);

@@ -20,7 +20,6 @@ import com.vicmatskiv.mw.models.AK15DustCover;
 import com.vicmatskiv.mw.models.AK15HandleGuard;
 import com.vicmatskiv.mw.models.AK15ironsight;
 import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AK74;
 import com.vicmatskiv.mw.models.AK74Vulcan;
 import com.vicmatskiv.mw.models.AKMiron1;
 import com.vicmatskiv.mw.models.AKMiron2;

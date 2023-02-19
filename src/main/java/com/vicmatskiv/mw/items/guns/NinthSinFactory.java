@@ -99,9 +99,6 @@ public class NinthSinFactory implements GunFactory {
         "Mode of Fire: 3 shots per trigger-pull",
         "Ammunition Intake:",
         "XI-57809 VCS Battery"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 

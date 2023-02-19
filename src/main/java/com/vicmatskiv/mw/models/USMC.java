@@ -56,9 +56,9 @@ public class USMC extends ModelBiped {
 	private final ModelRenderer bone;
 	private final ModelRenderer bone16;
 	private final ModelRenderer bone2;
-//	private final ModelRenderer bone14;
-//	private final ModelRenderer bone10;
-//	private final ModelRenderer bone18;
+	private final ModelRenderer bone14;
+	private final ModelRenderer bone10;
+	private final ModelRenderer bone18;
 	private final ModelRenderer bone15;
 	private final ModelRenderer bone3;
 	private final ModelRenderer bone5;
@@ -68,20 +68,20 @@ public class USMC extends ModelBiped {
 	private final ModelRenderer bone4;
 	private final ModelRenderer bone8;
 	private final ModelRenderer bone9;
-	private final ModelRenderer vest;
-	private final ModelRenderer bone19;
-	private final ModelRenderer bone20;
-	private final ModelRenderer bone21;
-	private final ModelRenderer bone22;
-	private final ModelRenderer bone23;
-	private final ModelRenderer bone24;
-	private final ModelRenderer bone25;
-	private final ModelRenderer bone26;
-	private final ModelRenderer bone27;
+//	private final ModelRenderer vest;
+//	private final ModelRenderer bone19;
+//	private final ModelRenderer bone20;
+//	private final ModelRenderer bone21;
+//	private final ModelRenderer bone22;
+//	private final ModelRenderer bone23;
+//	private final ModelRenderer bone24;
+//	private final ModelRenderer bone25;
+//	private final ModelRenderer bone26;
+//	private final ModelRenderer bone27;
 
 	public USMC()
     {
-        super(0.01f, 0, 128, 128);
+        super(0.04f, 0, 128, 128);
       textureWidth = 128;
       textureHeight = 128;
 
@@ -99,7 +99,7 @@ public class USMC extends ModelBiped {
 
 		bipedLeftArm = new ModelRenderer(this);
 		bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
-		bipedLeftArm.cubeList.add(new ModelBox(bipedLeftArm, 0, 46, -1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, false));
+		bipedLeftArm.cubeList.add(new ModelBox(bipedLeftArm, 0, 46, -1.0F, -2.0F, -2.0F, 4, 12, 4, 0.02F, false));
 
 		bipedRightLeg = new ModelRenderer(this);
 		bipedRightLeg.setRotationPoint(-2.0F, 12.0F, 0.0F);
@@ -365,24 +365,24 @@ public class USMC extends ModelBiped {
 		bone2.cubeList.add(new ModelBox(bone2, 60, 36, 4.7462F, -4.7514F, 2.0F, 1, 3, 2, 0.0F, false));
 		bone2.cubeList.add(new ModelBox(bone2, 76, 54, 5.0165F, -6.023F, -2.8F, 1, 2, 5, 0.0F, false));
 
-//		bone14 = new ModelRenderer(this);
-//		bone14.setRotationPoint(0.0F, 0.0F, 0.0F);
-//		helmet.addChild(bone14);
-//		setRotationAngle(bone14, -0.0873F, 0.0F, 0.0349F);
-//		bone14.cubeList.add(new ModelBox(bone14, 41, 90, 3.7095F, -5.2174F, -2.4267F, 1, 3, 3, 0.0F, false));
-//		bone14.cubeList.add(new ModelBox(bone14, 16, 51, 4.0848F, -6.0241F, -1.3931F, 1, 2, 1, 0.0F, false));
+		bone14 = new ModelRenderer(this);
+		bone14.setRotationPoint(0.0F, 0.0F, 0.0F);
+		helmet.addChild(bone14);
+		setRotationAngle(bone14, -0.0873F, 0.0F, 0.0349F);
+		bone14.cubeList.add(new ModelBox(bone14, 41, 90, 3.7095F, -5.2174F, -2.4267F, 1, 3, 3, 0.0F, false));
+		bone14.cubeList.add(new ModelBox(bone14, 16, 51, 4.0848F, -6.0241F, -1.3931F, 1, 2, 1, 0.0F, false));
 
-//		bone10 = new ModelRenderer(this);
-//		bone10.setRotationPoint(0.0F, 0.0F, 0.0F);
-//		helmet.addChild(bone10);
-//		setRotationAngle(bone10, 0.4189F, 0.1047F, 0.0349F);
-//		bone10.cubeList.add(new ModelBox(bone10, 20, 16, 4.3965F, -3.6503F, -3.0403F, 1, 1, 3, 0.0F, false));
+		bone10 = new ModelRenderer(this);
+		bone10.setRotationPoint(0.0F, 0.0F, 0.0F);
+		helmet.addChild(bone10);
+		setRotationAngle(bone10, 0.4189F, 0.1047F, 0.0349F);
+		bone10.cubeList.add(new ModelBox(bone10, 20, 16, 4.3965F, -3.6503F, -3.0403F, 1, 1, 3, 0.0F, false));
 
-//		bone18 = new ModelRenderer(this);
-//		bone18.setRotationPoint(0.0F, 0.0F, 0.0F);
-//		helmet.addChild(bone18);
-//		setRotationAngle(bone18, 0.2618F, -0.2967F, -0.192F);
-//		bone18.cubeList.add(new ModelBox(bone18, 0, 6, 0.5022F, -2.7282F, -5.6578F, 3, 1, 1, 0.0F, false));
+		bone18 = new ModelRenderer(this);
+		bone18.setRotationPoint(0.0F, 0.0F, 0.0F);
+		helmet.addChild(bone18);
+		setRotationAngle(bone18, 0.2618F, -0.2967F, -0.192F);
+		bone18.cubeList.add(new ModelBox(bone18, 0, 6, 0.5022F, -2.7282F, -5.6578F, 3, 1, 1, 0.0F, false));
 
 		bone15 = new ModelRenderer(this);
 		bone15.setRotationPoint(0.0F, 0.0F, 0.0F);
@@ -447,86 +447,86 @@ public class USMC extends ModelBiped {
 		bone9.cubeList.add(new ModelBox(bone9, 47, 25, -2.5F, -1.9616F, -4.14F, 5, 1, 1, 0.0F, false));
 		bone9.cubeList.add(new ModelBox(bone9, 44, 0, 1.1F, -1.8253F, -3.9628F, 3, 1, 8, 0.0F, false));
 
-		vest = new ModelRenderer(this);
-		vest.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.cubeList.add(new ModelBox(vest, 38, 76, -2.0F, 1.3F, -3.25F, 4, 9, 1, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 83, 41, -1.5F, 6.2F, -4.95F, 3, 5, 2, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 88, 31, -1.6F, 6.8F, -5.05F, 3, 1, 2, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 86, 10, -1.6F, 8.3F, -5.05F, 3, 1, 2, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 83, 54, -2.5F, 2.0F, -3.45F, 5, 4, 1, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 24, 24, -4.5F, 4.0F, -2.5F, 9, 6, 5, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 29, 13, -5.0F, 3.5F, -1.5F, 10, 6, 3, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 0, 62, -3.5F, 0.2F, 1.8F, 7, 10, 1, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 46, 36, -2.0F, 9.9F, -3.0F, 5, 2, 1, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 58, 47, -2.0F, 11.9F, -2.7F, 4, 3, 1, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 57, 9, -4.6F, 9.8F, -2.8F, 5, 2, 5, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 69, 34, 2.6F, 9.8F, -2.6F, 2, 2, 5, 0.0F, false));
-		vest.cubeList.add(new ModelBox(vest, 57, 16, -4.1F, 9.8F, 1.6F, 8, 2, 1, 0.0F, false));
+//		vest = new ModelRenderer(this);
+//		vest.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.cubeList.add(new ModelBox(vest, 38, 76, -2.0F, 1.3F, -3.25F, 4, 9, 1, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 83, 41, -1.5F, 6.2F, -4.95F, 3, 5, 2, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 88, 31, -1.6F, 6.8F, -5.05F, 3, 1, 2, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 86, 10, -1.6F, 8.3F, -5.05F, 3, 1, 2, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 83, 54, -2.5F, 2.0F, -3.45F, 5, 4, 1, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 24, 24, -4.5F, 4.0F, -2.5F, 9, 6, 5, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 29, 13, -5.0F, 3.5F, -1.5F, 10, 6, 3, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 0, 62, -3.5F, 0.2F, 1.8F, 7, 10, 1, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 46, 36, -2.0F, 9.9F, -3.0F, 5, 2, 1, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 58, 47, -2.0F, 11.9F, -2.7F, 4, 3, 1, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 57, 9, -4.6F, 9.8F, -2.8F, 5, 2, 5, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 69, 34, 2.6F, 9.8F, -2.6F, 2, 2, 5, 0.0F, false));
+//		vest.cubeList.add(new ModelBox(vest, 57, 16, -4.1F, 9.8F, 1.6F, 8, 2, 1, 0.0F, false));
 
-		bone19 = new ModelRenderer(this);
-		bone19.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone19);
-		setRotationAngle(bone19, 0.0F, -0.192F, 0.0F);
-		bone19.cubeList.add(new ModelBox(bone19, 54, 85, 1.3523F, 1.3F, -3.5654F, 2, 9, 1, 0.0F, false));
-		bone19.cubeList.add(new ModelBox(bone19, 84, 70, 0.8903F, 6.2F, -5.0868F, 3, 5, 2, 0.0F, false));
-		bone19.cubeList.add(new ModelBox(bone19, 87, 0, 0.9693F, 6.8F, -5.2041F, 3, 1, 2, 0.0F, false));
-		bone19.cubeList.add(new ModelBox(bone19, 57, 19, 0.9693F, 8.3F, -5.2041F, 3, 1, 2, 0.0F, false));
-
-		bone20 = new ModelRenderer(this);
-		bone20.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone20);
-		setRotationAngle(bone20, 0.0F, 0.192F, 0.0F);
-		bone20.cubeList.add(new ModelBox(bone20, 20, 83, -3.3423F, 1.3F, -3.5754F, 2, 9, 1, 0.0F, false));
-		bone20.cubeList.add(new ModelBox(bone20, 83, 13, -3.9278F, 6.2F, -5.0874F, 3, 5, 2, 0.0F, false));
-		bone20.cubeList.add(new ModelBox(bone20, 88, 49, -4.0069F, 6.7F, -5.2046F, 3, 1, 2, 0.0F, false));
-		bone20.cubeList.add(new ModelBox(bone20, 86, 82, -4.0069F, 8.2F, -5.2046F, 3, 1, 2, 0.0F, false));
-		bone20.cubeList.add(new ModelBox(bone20, 68, 59, -5.7718F, 6.2F, -3.1308F, 2, 5, 4, 0.0F, false));
-
-		bone21 = new ModelRenderer(this);
-		bone21.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone21);
-		setRotationAngle(bone21, -0.2618F, -0.192F, 0.0F);
-		bone21.cubeList.add(new ModelBox(bone21, 78, 0, 1.3731F, 0.2132F, -3.107F, 2, 2, 1, 0.0F, false));
-		bone21.cubeList.add(new ModelBox(bone21, 24, 24, 1.9423F, 0.0511F, -3.2747F, 1, 3, 1, 0.0F, false));
-
-		bone22 = new ModelRenderer(this);
-		bone22.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone22);
-		setRotationAngle(bone22, -0.2618F, 0.192F, 0.0F);
-		bone22.cubeList.add(new ModelBox(bone22, 77, 13, -3.3169F, 0.2166F, -3.1199F, 2, 2, 1, 0.0F, false));
-		bone22.cubeList.add(new ModelBox(bone22, 0, 16, -2.8677F, -0.0268F, -3.239F, 1, 3, 1, 0.0F, false));
-
-		bone23 = new ModelRenderer(this);
-		bone23.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone23);
-		setRotationAngle(bone23, 0.0F, -0.1745F, 0.0F);
-		bone23.cubeList.add(new ModelBox(bone23, 75, 75, 1.4F, -0.6F, -2.9199F, 2, 1, 5, 0.0F, false));
-
-		bone24 = new ModelRenderer(this);
-		bone24.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone24);
-		setRotationAngle(bone24, 0.0F, 0.1745F, 0.0F);
-		bone24.cubeList.add(new ModelBox(bone24, 72, 7, -3.35F, -0.6F, -2.9482F, 2, 1, 5, 0.0F, false));
-
-		bone25 = new ModelRenderer(this);
-		bone25.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone25);
-		setRotationAngle(bone25, -0.733F, 0.0F, 0.0F);
-		bone25.cubeList.add(new ModelBox(bone25, 66, 7, -2.0F, 2.1363F, -2.2526F, 4, 1, 1, 0.0F, false));
-
-		bone26 = new ModelRenderer(this);
-		bone26.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone26);
-		setRotationAngle(bone26, -1.4661F, 0.0F, 0.3316F);
-		bone26.cubeList.add(new ModelBox(bone26, 76, 50, -0.6482F, 3.1437F, 1.5609F, 5, 2, 2, 0.0F, false));
-		bone26.cubeList.add(new ModelBox(bone26, 50, 9, -0.4529F, 3.0041F, 3.146F, 2, 2, 1, 0.0F, false));
-
-		bone27 = new ModelRenderer(this);
-		bone27.setRotationPoint(0.0F, 0.0F, 0.0F);
-		vest.addChild(bone27);
-		setRotationAngle(bone27, 0.0349F, 0.0F, 0.0F);
-		bone27.cubeList.add(new ModelBox(bone27, 16, 64, -2.5F, 0.5117F, 2.3347F, 5, 10, 1, 0.0F, false));
-		bone27.cubeList.add(new ModelBox(bone27, 62, 52, -3.0F, 6.1183F, 1.5136F, 6, 5, 2, 0.0F, false));
+//		bone19 = new ModelRenderer(this);
+//		bone19.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone19);
+//		setRotationAngle(bone19, 0.0F, -0.192F, 0.0F);
+//		bone19.cubeList.add(new ModelBox(bone19, 54, 85, 1.3523F, 1.3F, -3.5654F, 2, 9, 1, 0.0F, false));
+//		bone19.cubeList.add(new ModelBox(bone19, 84, 70, 0.8903F, 6.2F, -5.0868F, 3, 5, 2, 0.0F, false));
+//		bone19.cubeList.add(new ModelBox(bone19, 87, 0, 0.9693F, 6.8F, -5.2041F, 3, 1, 2, 0.0F, false));
+//		bone19.cubeList.add(new ModelBox(bone19, 57, 19, 0.9693F, 8.3F, -5.2041F, 3, 1, 2, 0.0F, false));
+//
+//		bone20 = new ModelRenderer(this);
+//		bone20.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone20);
+//		setRotationAngle(bone20, 0.0F, 0.192F, 0.0F);
+//		bone20.cubeList.add(new ModelBox(bone20, 20, 83, -3.3423F, 1.3F, -3.5754F, 2, 9, 1, 0.0F, false));
+//		bone20.cubeList.add(new ModelBox(bone20, 83, 13, -3.9278F, 6.2F, -5.0874F, 3, 5, 2, 0.0F, false));
+//		bone20.cubeList.add(new ModelBox(bone20, 88, 49, -4.0069F, 6.7F, -5.2046F, 3, 1, 2, 0.0F, false));
+//		bone20.cubeList.add(new ModelBox(bone20, 86, 82, -4.0069F, 8.2F, -5.2046F, 3, 1, 2, 0.0F, false));
+//		bone20.cubeList.add(new ModelBox(bone20, 68, 59, -5.7718F, 6.2F, -3.1308F, 2, 5, 4, 0.0F, false));
+//
+//		bone21 = new ModelRenderer(this);
+//		bone21.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone21);
+//		setRotationAngle(bone21, -0.2618F, -0.192F, 0.0F);
+//		bone21.cubeList.add(new ModelBox(bone21, 78, 0, 1.3731F, 0.2132F, -3.107F, 2, 2, 1, 0.0F, false));
+//		bone21.cubeList.add(new ModelBox(bone21, 24, 24, 1.9423F, 0.0511F, -3.2747F, 1, 3, 1, 0.0F, false));
+//
+//		bone22 = new ModelRenderer(this);
+//		bone22.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone22);
+//		setRotationAngle(bone22, -0.2618F, 0.192F, 0.0F);
+//		bone22.cubeList.add(new ModelBox(bone22, 77, 13, -3.3169F, 0.2166F, -3.1199F, 2, 2, 1, 0.0F, false));
+//		bone22.cubeList.add(new ModelBox(bone22, 0, 16, -2.8677F, -0.0268F, -3.239F, 1, 3, 1, 0.0F, false));
+//
+//		bone23 = new ModelRenderer(this);
+//		bone23.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone23);
+//		setRotationAngle(bone23, 0.0F, -0.1745F, 0.0F);
+//		bone23.cubeList.add(new ModelBox(bone23, 75, 75, 1.4F, -0.6F, -2.9199F, 2, 1, 5, 0.0F, false));
+//
+//		bone24 = new ModelRenderer(this);
+//		bone24.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone24);
+//		setRotationAngle(bone24, 0.0F, 0.1745F, 0.0F);
+//		bone24.cubeList.add(new ModelBox(bone24, 72, 7, -3.35F, -0.6F, -2.9482F, 2, 1, 5, 0.0F, false));
+//
+//		bone25 = new ModelRenderer(this);
+//		bone25.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone25);
+//		setRotationAngle(bone25, -0.733F, 0.0F, 0.0F);
+//		bone25.cubeList.add(new ModelBox(bone25, 66, 7, -2.0F, 2.1363F, -2.2526F, 4, 1, 1, 0.0F, false));
+//
+//		bone26 = new ModelRenderer(this);
+//		bone26.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone26);
+//		setRotationAngle(bone26, -1.4661F, 0.0F, 0.3316F);
+//		bone26.cubeList.add(new ModelBox(bone26, 76, 50, -0.6482F, 3.1437F, 1.5609F, 5, 2, 2, 0.0F, false));
+//		bone26.cubeList.add(new ModelBox(bone26, 50, 9, -0.4529F, 3.0041F, 3.146F, 2, 2, 1, 0.0F, false));
+//
+//		bone27 = new ModelRenderer(this);
+//		bone27.setRotationPoint(0.0F, 0.0F, 0.0F);
+//		vest.addChild(bone27);
+//		setRotationAngle(bone27, 0.0349F, 0.0F, 0.0F);
+//		bone27.cubeList.add(new ModelBox(bone27, 16, 64, -2.5F, 0.5117F, 2.3347F, 5, 10, 1, 0.0F, false));
+//		bone27.cubeList.add(new ModelBox(bone27, 62, 52, -3.0F, 6.1183F, 1.5136F, 6, 5, 2, 0.0F, false));
 		
 		this.bipedHead.addChild(helmet);
 		this.bipedBody.addChild(jacket);
@@ -536,6 +536,7 @@ public class USMC extends ModelBiped {
 		this.bipedLeftLeg.addChild(leftleg_usmc);
 		this.bipedRightLeg.addChild(rightleg_usmc);
 		
+		this.bipedHeadwear.isHidden = true;
 	}
 
 	@Override
@@ -553,6 +554,9 @@ public class USMC extends ModelBiped {
 //		rightarm_usmc.render(f5);
 //		helmet.render(f5);
 //		vest.render(f5);
+		
+		super.render(entity, f, f1, f2, f3, f4, f5);
+	    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {

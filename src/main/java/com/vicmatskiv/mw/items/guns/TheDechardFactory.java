@@ -61,9 +61,6 @@ public class TheDechardFactory implements GunFactory {
         
         .withShellCasingEjectEnabled(false)
         .withCreativeTab(ModernWarfareMod.CombatServerTab) 
-        .withCrafting(CraftingComplexity.LOW,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withInformationProvider(stack -> Arrays.asList(
                 "Type: Revolver",
                 "Damage: 6",

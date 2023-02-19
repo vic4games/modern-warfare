@@ -56,6 +56,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M134Factory implements GunFactory {
@@ -67,6 +68,7 @@ public class M134Factory implements GunFactory {
         .withFireRate(0.9999999f)
         .withRecoil(1f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.HEAVY)
         .withMaxShots(Integer.MAX_VALUE)
         .withShootSound("m134")
         .withSilencedShootSound("m4a1_silenced")
@@ -95,9 +97,6 @@ public class M134Factory implements GunFactory {
         "Rate of Fire: Excuse me?",
         "Magazines:",
         "1000rnd 7.62x51mm Box Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  1f, // x 

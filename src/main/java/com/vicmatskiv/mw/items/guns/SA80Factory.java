@@ -66,6 +66,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SA80Factory implements GunFactory {
@@ -78,6 +79,7 @@ public class SA80Factory implements GunFactory {
         .withFireRate(0.6f)
         .withRecoil(2.5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.RIFLES)
         .withMaxShots(Integer.MAX_VALUE, 1)
         .withShootSound("sa80")
         .withSilencedShootSound("m4a1_silenced")
@@ -99,7 +101,7 @@ public class SA80Factory implements GunFactory {
         
         // .withInaccuracy(1)
         
-        .withCreativeTab(ModernWarfareMod.CombatServerTab)
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Assault Rifle/ Carbine/ Squad-Automatic Weapon", 
         "Damage: 6", 

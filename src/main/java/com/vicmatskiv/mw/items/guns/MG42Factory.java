@@ -53,6 +53,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MG42Factory {
@@ -64,6 +65,7 @@ public class MG42Factory {
         .withFireRate(0.99f)
         .withRecoil(2f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.HEAVY)
         .withMaxShots(Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("mg42")
@@ -91,9 +93,6 @@ public class MG42Factory {
         "Rate of Fire: 95/100",
         "Magazines:",
         "50rnd 7.92x57mm MG Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  3f, // x 

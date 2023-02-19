@@ -53,6 +53,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SV98Factory implements GunFactory {
@@ -66,6 +67,7 @@ public class SV98Factory implements GunFactory {
         .withEjectSpentRoundSound("sv98_bolt_action")
         .withRecoil(9f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("sv98")
         .withPumpTimeout(1000)
@@ -92,10 +94,6 @@ public class SV98Factory implements GunFactory {
         "Rate of Fire: 16/100",
         "Magazines:",
         "10rnd 7.62x54mmR Izhmash Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.GunmetalIngot)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  3f, // x 

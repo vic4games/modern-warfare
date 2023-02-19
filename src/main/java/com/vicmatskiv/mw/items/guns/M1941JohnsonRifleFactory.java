@@ -111,9 +111,6 @@ public class M1941JohnsonRifleFactory {
                 2f, // y
                 6f) // z
         
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.GunmetalIngot,
-                Ores.PlasticPlate)
         .withCompatibleBullet(Bullets.Bullet3006Springfield, (model) -> {})
         .withCompatibleAttachment(AuxiliaryAttachments.JohnsonRifleACTION, true, (model) -> {
         })

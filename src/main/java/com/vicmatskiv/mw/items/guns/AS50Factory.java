@@ -59,6 +59,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class AS50Factory implements GunFactory {
@@ -70,6 +71,7 @@ public class AS50Factory implements GunFactory {
         .withFireRate(0.1f)
         .withRecoil(14f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("as50")
         .withPumpTimeout(1000)
@@ -100,11 +102,7 @@ public class AS50Factory implements GunFactory {
                 6f, // x 
                 -5f, // y
                 12f) // z
-        
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.GunmetalIngot,
-                Ores.GunmetalPlate,
-                Ores.PlasticPlate)
+        		
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
         .withUnremovableAttachmentCategories(AttachmentCategory.RECEIVER)
         .withCompatibleAttachment(Attachments.Placeholder, true, (model) -> {

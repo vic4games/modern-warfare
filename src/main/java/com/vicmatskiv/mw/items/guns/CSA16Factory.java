@@ -75,9 +75,7 @@ public class CSA16Factory implements GunFactory {
         .withFlashScale(() -> 1f)
         .withFlashOffsetX(() -> 0.05f)
         .withFlashOffsetY(() -> 0.15f)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
+        
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Carbine/Shotgun",

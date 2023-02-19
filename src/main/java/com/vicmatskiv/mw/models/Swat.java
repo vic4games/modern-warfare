@@ -1025,6 +1025,7 @@ public class Swat extends ModelBiped
       this.bipedHead.addChild(head24);
       this.bipedHead.addChild(head25);
       this.bipedHead.addChild(head26);
+      
 //      this.bipedBody.addChild(vest1);
 //      this.bipedBody.addChild(vest2);
 //      this.bipedBody.addChild(vest3);

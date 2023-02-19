@@ -4,20 +4,48 @@ import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compa
 
 import com.vicmatskiv.mw.entities.BanditEntityFactory;
 import com.vicmatskiv.mw.entities.SampleMissionGiverEntityFactory;
+import com.vicmatskiv.weaponlib.ai.BetterAINearestAttackableTarget;
+import com.vicmatskiv.weaponlib.ai.EntityAIAttackRangedWeapon;
 import com.vicmatskiv.weaponlib.ai.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
+import com.vicmatskiv.weaponlib.ai.ExplosionAttack;
 import com.vicmatskiv.weaponlib.ai.InfectionAttack;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBiomeType;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIAttackOnCollide;
 
 import net.minecraft.entity.EntityCreature;
+import net.minecraft.entity.ai.EntityAIBreakDoor;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILeapAtTarget;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.boss.EntityDragon;
+import net.minecraft.entity.boss.EntityWither;
+import net.minecraft.entity.monster.EntityBlaze;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.monster.EntityEnderman;
+import net.minecraft.entity.monster.EntityEndermite;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityHusk;
+import net.minecraft.entity.monster.EntityIllusionIllager;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
+import net.minecraft.entity.monster.EntitySkeleton;
+import net.minecraft.entity.monster.EntitySlime;
+import net.minecraft.entity.monster.EntitySpellcasterIllager;
+import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.monster.EntityStray;
+import net.minecraft.entity.monster.EntityVindicator;
+import net.minecraft.entity.monster.EntityWitch;
+import net.minecraft.entity.monster.EntityWitherSkeleton;
+import net.minecraft.entity.monster.EntityZombie;
+import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.entity.passive.EntityVillager;
+import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.EnumDifficulty;
 
 public class Entities {
 
@@ -167,9 +195,9 @@ public class Entities {
             .register(ModernWarfareMod.MOD_CONTEXT);
         
         new EntityConfiguration.Builder()
-            .withName("licker")
+            .withName("tyke")
             .withBaseClass(EntityCustomMob.class)
-            .withMaxHealth(200)
+            .withMaxHealth(40)
             .withEntityIdSupplier(() -> 10005)
     //      .withEquipmentOption(Guns.MakarovPM, EnumDifficulty.EASY, 4f, Magazines.Magazine9mm)
     //      .withEquipmentOption(Guns.MakarovPM, EnumDifficulty.EASY, 3.8f, Magazines.Magazine9mm, Attachments.Silencer9mm)
@@ -178,18 +206,18 @@ public class Entities {
     //       .withEquipmentOption(Guns.VSSVintorez, EnumDifficulty.EASY, 0.1f, Magazines.VSSVintorezMag, Attachments.PSO1)
     //      .withEquipmentOption(Guns.Remington870, EnumDifficulty.EASY, 0.07f)
             .withPrimaryEquipmentDropChance(1f)
-            .withSpawn(0, 0, 0, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+            .withSpawn(60, 30, 35, CompatibleBiomeType.SANDY)
             .withSpawnEgg(0xA0A000, 0xA0A010)
-            .withTexturedModelVariant("com.vicmatskiv.mw.models.Licker", "licker.png")
-            .withHurtSound("hurt")
-            .withAmbientSound("drawweapon")
-    //      .withStepSound("step")
-    //      .withAmbientSound(sound)
+            .withTexturedModelVariant("com.vicmatskiv.mw.models.Tyke", "tyke.png")
+            .withHurtSound("tyke_hurt")
+            .withAmbientSound("tyke_ambient")
+            .withStepSound("tyke_step")
+            .withDeathSound("tyke_death")
             .withMaxSpeed(0.35F) // 0.1-0.3 is normal speed
-            .withCollisionAttackDamage(10.0)
+            .withSize(1f, 1f)
+            .withCollisionAttackDamage(6.0)
             .withAiTask(1, e -> new EntityAISwimming(e))
-    //      .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
-    //       .withAiTask(4, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 10, 30.0F))
+            .withAiTask(2, e-> new EntityAILeapAtTarget(e, 0.4F))
             .withAiTask(3, e -> new CompatibleEntityAIAttackOnCollide((EntityCustomMob)e, EntityPlayer.class, 1.0D, false))
             .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
             .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
@@ -197,8 +225,8 @@ public class Entities {
             .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
             .withAiTargetTask(2, e -> compatibility.createAINearestAttackableTarget(e, EntityPlayer.class, true))
             .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
-    //       .withCollisionAttack(new InfectionAttack(0.1f, 20000, 1.2f, 1.0f, 1.8f))
-    //      .withDelayedAttack(new ExplosionAttack(2f, true, 30))
+            .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "soldier", true))
+            .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "terrorist", true))
             .register(ModernWarfareMod.MOD_CONTEXT);
         
         new EntityConfiguration.Builder()
@@ -223,10 +251,11 @@ public class Entities {
             .withStepSound("zombie_step")
             .withDeathSound("zombie_death")
             .withAiTask(1, e -> new EntityAISwimming(e))
-            .withMaxSpeed(0.3F) // 0.1-0.3 is normal speed
+            .withMaxSpeed(0.1F) // 0.1-0.3 is normal speed
     //      .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
     //       .withAiTask(4, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 10, 30.0F))
-            .withAiTask(3, e -> new CompatibleEntityAIAttackOnCollide((EntityCustomMob)e, EntityPlayer.class, 1.0D, false))
+//            .withAiTask(3, e -> new CompatibleEntityAIAttackOnCollide((EntityCustomMob)e, EntityPlayer.class, 1.0D, false))
+            
             .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
             .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
             .withAiTask(6, e -> new EntityAILookIdle(e))
@@ -235,7 +264,7 @@ public class Entities {
             .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
     
     //       .withCollisionAttack(new InfectionAttack(0.1f, 20000, 1.2f, 1.0f, 1.8f))
-    //      .withDelayedAttack(new ExplosionAttack(2f, true, 30))
+//            .withDelayedAttack(new ExplosionAttack(2f, true, 30))
             .register(ModernWarfareMod.MOD_CONTEXT);
         
         new EntityConfiguration.Builder()
@@ -377,6 +406,207 @@ public class Entities {
         .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
 //   .withCollisionAttack(new InfectionAttack(0.1f, 20000, 1.2f, 1.0f, 1.8f))
 //      .withDelayedAttack(new ExplosionAttack(2f, true, 30))
+        .register(ModernWarfareMod.MOD_CONTEXT);
+        
+        new EntityConfiguration.Builder()
+        .withName("soldier")
+        .withBaseClass(EntityCustomMob.class)
+        .withMaxHealth(80)
+        .withEntityIdSupplier(() -> 10011)
+        .withEquipmentOption(Guns.M4A1, EnumDifficulty.EASY, 0.1f, Magazines.M4A1Mag)
+        .withEquipmentOption(Guns.M110, EnumDifficulty.EASY, 0.1f, Magazines.M110Mag)
+        .withPrimaryEquipmentDropChance(0.4f)
+        .withSpawn(1, 5, 6, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+        .withMaxTolerableLightBrightness(1f)
+        .withSpawnEgg(0x5A674F, 0x464039)
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.Soldier", "soldier.png")
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.Soldier2", "soldier2.png")
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.SoldierSniper", "soldiersniper.png")
+        .withHurtSound("hurt")
+        .withAmbientSound("drawweapon")
+//        .withStepSound("step")
+        .withAiTask(1, e -> new EntityAISwimming(e))
+        .withAiTask(3, e -> compatibility.createAiAvoidEntity((EntityCreature)e, EntityWolf.class, 6.0F, 1.0D, 1.2D))
+        .withAiTask(4, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 10, 30.0F))
+        .withAiTask(5, e -> new EntityAIWander((EntityCreature)e, 1.0D))
+        .withAiTask(6, e -> new EntityAIWatchClosest(e, EntityPlayer.class, 50.0F))
+        .withAiTask(6, e -> new EntityAILookIdle(e))
+        .withAiTask(7, e -> new EntityAIBreakDoor(e))
+        
+        .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
+        .withAiTargetTask(2, e -> compatibility.createAINearestAttackableTarget(e, EntityPlayer.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityHusk.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySkeleton.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpider.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEnderman.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityCreeper.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySlime.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityDragon.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEndermite.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityBlaze.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityGhast.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIllusionIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityMagmaCube.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityPigZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpellcasterIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityStray.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVindicator.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityWitch.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombieVillager.class, true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "terrorist", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
+        .register(ModernWarfareMod.MOD_CONTEXT);
+        
+        new EntityConfiguration.Builder()
+        .withName("turret")
+        .withBaseClass(EntityCustomMob.class)
+        .withMaxHealth(80)
+        .withEntityIdSupplier(() -> 10012)
+        .withEquipmentOption(Guns.turretgun, EnumDifficulty.EASY, 0.1f)
+        .withPrimaryEquipmentDropChance(0.0f)
+//        .withSpawn(1, 5, 6, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+//        .withMaxTolerableLightBrightness(1f)
+        .withSpawnEgg(0x5A674F, 0x464039)
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.Turret", "turret.png")
+        .withAmbientSound("turret_turn")
+//        .withStepSound("step")
+        .withMaxSpeed(0.0F) // 0.1-0.3 is normal speed
+        .withAiTask(1, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 1, 50.0F))
+        .withAiTask(2, e -> new EntityAILookIdle(e))
+        .withCollidability(false)
+        .withDespawnability(false)
+        .withPushability(false)
+        .withInvulnerability()
+        .withLookHeightMulitplier(1.5f)
+        .withSize(1f, 0.7f)
+        .withPickupItemID(1)
+        
+        .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityHusk.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySkeleton.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpider.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEnderman.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityCreeper.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySlime.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityDragon.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEndermite.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityBlaze.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityGhast.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIllusionIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityMagmaCube.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityPigZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpellcasterIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityStray.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVindicator.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityWitch.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombieVillager.class, true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "soldier", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "terrorist", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
+        .register(ModernWarfareMod.MOD_CONTEXT);
+        
+        new EntityConfiguration.Builder()
+        .withName("turretupgraded")
+        .withBaseClass(EntityCustomMob.class)
+        .withMaxHealth(80)
+        .withEntityIdSupplier(() -> 10013)
+        .withEquipmentOption(Guns.turretgunupgraded, EnumDifficulty.EASY, 0.1f)
+        .withPrimaryEquipmentDropChance(0.0f)
+//        .withSpawn(1, 5, 6, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+//        .withMaxTolerableLightBrightness(1f)
+        .withSpawnEgg(0x5A674F, 0x464039)
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.TurretBuff", "turretbuff.png")
+        .withAmbientSound("turret_turn")
+//        .withStepSound("step")
+        .withMaxSpeed(0.0F) // 0.1-0.3 is normal speed
+        .withAiTask(1, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 1, 50.0F))
+        .withAiTask(2, e -> new EntityAILookIdle(e))
+        .withCollidability(false)
+        .withDespawnability(false)
+        .withPushability(false)
+        .withInvulnerability()
+        .withLookHeightMulitplier(1.5f)
+        .withSize(1f, 0.7f)
+        .withPickupItemID(2)
+        
+        .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityHusk.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySkeleton.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpider.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEnderman.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityCreeper.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySlime.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityDragon.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEndermite.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityBlaze.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityGhast.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIllusionIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityMagmaCube.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityPigZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpellcasterIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityStray.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVindicator.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityWitch.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombieVillager.class, true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "soldier", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "terrorist", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
+        .register(ModernWarfareMod.MOD_CONTEXT);
+        
+        new EntityConfiguration.Builder()
+        .withName("turretsilenced")
+        .withBaseClass(EntityCustomMob.class)
+        .withMaxHealth(80)
+        .withEntityIdSupplier(() -> 10014)
+        .withEquipmentOption(Guns.turretgunsilenced, EnumDifficulty.EASY, 0.1f)
+        .withPrimaryEquipmentDropChance(0.0f)
+//        .withSpawn(1, 5, 6, CompatibleBiomeType.PLAINS, CompatibleBiomeType.FOREST, CompatibleBiomeType.HILLS)
+//        .withMaxTolerableLightBrightness(1f)
+        .withSpawnEgg(0x5A674F, 0x464039)
+        .withTexturedModelVariant("com.vicmatskiv.mw.models.turretsilenced", "turretsilenced.png")
+        .withAmbientSound("turret_turn")
+//        .withStepSound("step")
+        .withMaxSpeed(0.0F) // 0.1-0.3 is normal speed
+        .withAiTask(1, e -> new EntityAIAttackRangedWeapon((EntityCustomMob)e, 1.0D, 1, 50.0F))
+        .withAiTask(2, e -> new EntityAILookIdle(e))
+        .withCollidability(false)
+        .withDespawnability(false)
+        .withPushability(false)
+        .withInvulnerability()
+        .withLookHeightMulitplier(1.5f)
+        .withSize(1f, 0.7f)
+        .withPickupItemID(3)
+        
+        .withAiTargetTask(1, e -> new EntityAIHurtByTarget((EntityCreature)e, false))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVillager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityHusk.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySkeleton.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpider.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEnderman.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityCreeper.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySlime.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityDragon.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityEndermite.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityBlaze.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityGhast.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityIllusionIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityMagmaCube.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityPigZombie.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntitySpellcasterIllager.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityStray.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityVindicator.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityWitch.class, true))
+        .withAiTargetTask(3, e -> compatibility.createAINearestAttackableTarget(e, EntityZombieVillager.class, true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "soldier", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "terrorist", true))
+        .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
         .register(ModernWarfareMod.MOD_CONTEXT);
         }
 

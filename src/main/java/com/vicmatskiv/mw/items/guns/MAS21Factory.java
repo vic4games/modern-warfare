@@ -36,6 +36,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class MAS21Factory implements GunFactory {
@@ -47,6 +48,7 @@ public class MAS21Factory implements GunFactory {
         .withFireRate(0.5f)
         .withRecoil(2f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMaxShots(1)
         .withShootSound("m9a1")
         .withSilencedShootSound("m9a1_silenced")
@@ -76,9 +78,6 @@ public class MAS21Factory implements GunFactory {
         "30rnd 9x19mm Magazine",
         "65rnd 9x19mm Drum Magazine",
         "15rnd .40 S&W Samurai Edge Magazine (w/ Samurai Edge kit)"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2.5f, // x 

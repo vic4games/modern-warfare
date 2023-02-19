@@ -39,6 +39,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class Remington870Factory implements GunFactory {
@@ -57,6 +58,7 @@ public class Remington870Factory implements GunFactory {
         .withFireRate(0.1f)
         .withRecoil(15f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SHOTGUN)
         .withMaxShots(1)
         .withPumpTimeout(610)
         .withShootSound("r870")
@@ -83,9 +85,6 @@ public class Remington870Factory implements GunFactory {
                 1f, // y
                 10f) // z
         
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",

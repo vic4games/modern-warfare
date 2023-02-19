@@ -79,10 +79,6 @@ public class RPG7Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.14f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 
@@ -1002,8 +998,9 @@ public class RPG7Factory implements GunFactory {
                     
             .build())
             .withSpawnEntityDamage(70f)
-            .withSpawnEntitySpeed(3f)
-            .withSpawnEntityGravityVelocity(0.05f)
+            .withSpawnEntityRocketParticles()
+            .withSpawnEntitySpeed(4f)
+            .withSpawnEntityGravityVelocity(0.001f)
             .withSpawnEntityExplosionRadius(4f)
             .withSpawnEntityModel(new RPG7rocketPROJECTILE())
             .withSpawnEntityModelTexture("rpg7")

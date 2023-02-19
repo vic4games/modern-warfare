@@ -59,6 +59,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class Saiga12Factory {
@@ -70,6 +71,7 @@ public class Saiga12Factory {
         .withFireRate(0.4f)
         .withRecoil(5f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SHOTGUN)
         .withMaxShots(1)
         //.withMaxShots(5)
         .withShootSound("saiga12")
@@ -91,9 +93,6 @@ public class Saiga12Factory {
         .withShellCasingModelTexture("shotgun12gauge")
         .withShellCasingForwardOffset(0.01f)
         .withShellCasingVerticalOffset(-0.03f)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  5f, // x 

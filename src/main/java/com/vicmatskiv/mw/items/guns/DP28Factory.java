@@ -56,6 +56,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class DP28Factory {
@@ -67,6 +68,7 @@ public class DP28Factory {
         .withFireRate(0.5f)
         .withRecoil(4f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.HEAVY)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("dp28")
@@ -93,9 +95,6 @@ public class DP28Factory {
         "Rate of Fire: 50/100",
         "Magazines:",
         "47rnd 7.62x54mmR Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2.5f, // x 

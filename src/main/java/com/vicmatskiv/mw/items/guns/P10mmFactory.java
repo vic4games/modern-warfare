@@ -66,9 +66,6 @@ public class P10mmFactory implements GunFactory {
         "Cartridge: 10mm",
         "Fire Rate: SEMI",
         "Rate of Fire: 50/100"))
-         .withCrafting(CraftingComplexity.LOW,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  4f, // x 

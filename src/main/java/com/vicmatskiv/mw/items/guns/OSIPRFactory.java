@@ -42,7 +42,6 @@ import com.vicmatskiv.mw.models.M14Iron;
 import com.vicmatskiv.mw.models.M27rearsight;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MA37;
 import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5;
 import com.vicmatskiv.mw.models.MP5Iron;
@@ -96,9 +95,6 @@ public class OSIPRFactory {
         "Cartridge: 7.62x51mm (WIP, will change)",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 75/100"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 

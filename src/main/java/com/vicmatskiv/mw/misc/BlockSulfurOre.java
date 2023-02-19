@@ -29,4 +29,8 @@ public class BlockSulfurOre extends Block {
         return Ores.SulfurDust;
     }
 
+    public int quantityDropped(Random random)
+    {
+        return 4;
+    }
 }

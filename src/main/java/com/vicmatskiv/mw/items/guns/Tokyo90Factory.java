@@ -88,9 +88,6 @@ public class Tokyo90Factory implements GunFactory {
                 1f, // y
                 10f) // z
         
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Shotgun",

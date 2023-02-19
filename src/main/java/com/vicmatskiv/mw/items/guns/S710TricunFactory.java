@@ -71,6 +71,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class S710TricunFactory implements GunFactory {
@@ -83,6 +84,7 @@ public class S710TricunFactory implements GunFactory {
 		.withFireRate(0.85f)
 		.withRecoil(1.5f)
 		.withZoom(0.9f)
+		.withConfigGroup(GunConfigurationGroup.SIDEARM)
 		.withMaxShots(1, Integer.MAX_VALUE)
 		.withShootSound("mpx")
 		.withSilencedShootSound("m110_silenced")
@@ -111,9 +113,6 @@ public class S710TricunFactory implements GunFactory {
 		"Rate of Fire: 80/100",
 		"Magazines:",
         "30rnd 10mm Magazine"))
-		 .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
 		 
 		 .withScreenShaking(RenderableState.SHOOTING, 
 	                2f, // x 

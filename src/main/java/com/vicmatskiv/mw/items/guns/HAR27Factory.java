@@ -92,9 +92,6 @@ public class HAR27Factory implements GunFactory {
         "Cartridge: 5.56x45mm NATO",
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 50/100"))
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 3f, // x 

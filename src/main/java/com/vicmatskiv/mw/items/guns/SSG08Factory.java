@@ -63,6 +63,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class SSG08Factory implements GunFactory {
@@ -77,6 +78,7 @@ public class SSG08Factory implements GunFactory {
         .withEjectSpentRoundSound("ssg08_boltaction")
         .withRecoil(10f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("ssg08")
         .withPumpTimeout(1100)
@@ -94,7 +96,7 @@ public class SSG08Factory implements GunFactory {
         .withFlashOffsetX(() -> 0.1f)
         .withFlashOffsetY(() -> 0.08f)
         .withShellCasingEjectEnabled(false)
-        .withCreativeTab(ModernWarfareMod.CombatServerTab)
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         .withInformationProvider(stack -> Arrays.asList(
         "Type: Precision Sniper Rifle",
         "Damage: 27", 

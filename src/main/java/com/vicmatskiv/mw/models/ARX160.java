@@ -1,18 +1,19 @@
 package com.vicmatskiv.mw.models;
 
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
+import com.vicmatskiv.weaponlib.render.qrender.QRenderer;
 
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-// Made with Blockbench 3.7.4
-// Exported for Minecraft version 1.12
+// Made with Blockbench 4.2.4
+// Exported for Minecraft version 1.7 - 1.12
 // Paste this class into your mod and generate all required imports
 
 
 public class ARX160 extends ModelWithAttachments {
-	private final ModelRenderer gun;
+	private final QRenderer gun;
 	private final ModelRenderer cube_r1;
 	private final ModelRenderer cube_r2;
 	private final ModelRenderer cube_r3;
@@ -46,8 +47,8 @@ public class ARX160 extends ModelWithAttachments {
 	private final ModelRenderer cube_r31;
 	private final ModelRenderer cube_r32;
 	private final ModelRenderer cube_r33;
-//	private final ModelRenderer cube_r34;
-//	private final ModelRenderer cube_r35;
+	private final ModelRenderer cube_r34;
+	private final ModelRenderer cube_r35;
 	private final ModelRenderer cube_r36;
 	private final ModelRenderer cube_r37;
 	private final ModelRenderer cube_r38;
@@ -299,11 +300,11 @@ public class ARX160 extends ModelWithAttachments {
 	private final ModelRenderer grip3_r1;
 	private final ModelRenderer grip2;
 	private final ModelRenderer grip3_r2;
-	private final ModelRenderer action;
+	private final QRenderer action;
 	private final ModelRenderer cube_r250;
 	private final ModelRenderer cube_r251;
 	private final ModelRenderer cube_r252;
-	private final ModelRenderer underbarrelbrace;
+	private final QRenderer underbarrelbrace;
 	private final ModelRenderer cube_r253;
 	private final ModelRenderer cube_r254;
 	private final ModelRenderer cube_r255;
@@ -315,7 +316,7 @@ public class ARX160 extends ModelWithAttachments {
 		textureWidth = 200;
 		textureHeight = 200;
 
-		gun = new ModelRenderer(this);
+		gun = new QRenderer(this);
 		gun.setRotationPoint(0.0F, -8.7619F, -17.2889F);
 		gun.cubeList.add(new ModelBox(gun, 86, 24, -3.5F, -1.0F, -1.5F, 4, 3, 2, 0.0F, false));
 		gun.cubeList.add(new ModelBox(gun, 129, 82, -3.0F, -5.3881F, -33.2235F, 3, 1, 18, 0.0F, false));
@@ -584,17 +585,17 @@ public class ARX160 extends ModelWithAttachments {
 		setRotationAngle(cube_r33, -1.2217F, 0.0F, 0.0F);
 		cube_r33.cubeList.add(new ModelBox(cube_r33, 76, 95, -2.5F, -0.5F, -1.0F, 2, 1, 2, 0.0F, false));
 
-//		cube_r34 = new ModelRenderer(this);
-//		cube_r34.setRotationPoint(-2.95F, -13.3222F, -22.9584F);
-//		gun.addChild(cube_r34);
-//		setRotationAngle(cube_r34, 0.0F, 0.0F, 0.1309F);
-//		cube_r34.cubeList.add(new ModelBox(cube_r34, 0, 0, -0.5F, -0.5F, -9.5F, 1, 1, 50, 0.0F, false));
+		cube_r34 = new ModelRenderer(this);
+		cube_r34.setRotationPoint(-2.95F, -13.3222F, -22.9584F);
+		gun.addChild(cube_r34);
+		setRotationAngle(cube_r34, 0.0F, 0.0F, 0.1309F);
+		cube_r34.cubeList.add(new ModelBox(cube_r34, 0, 0, -0.5F, -0.5F, -9.5F, 1, 1, 50, 0.0F, false));
 
-//		cube_r35 = new ModelRenderer(this);
-//		cube_r35.setRotationPoint(-0.05F, -13.3222F, -22.9584F);
-//		gun.addChild(cube_r35);
-//		setRotationAngle(cube_r35, 0.0F, 0.0F, -0.1309F);
-//		cube_r35.cubeList.add(new ModelBox(cube_r35, 0, 0, -0.5F, -0.5F, -9.5F, 1, 1, 50, 0.0F, false));
+		cube_r35 = new ModelRenderer(this);
+		cube_r35.setRotationPoint(-0.05F, -13.3222F, -22.9584F);
+		gun.addChild(cube_r35);
+		setRotationAngle(cube_r35, 0.0F, 0.0F, -0.1309F);
+		cube_r35.cubeList.add(new ModelBox(cube_r35, 0, 0, -0.5F, -0.5F, -9.5F, 1, 1, 50, 0.0F, false));
 
 		cube_r36 = new ModelRenderer(this);
 		cube_r36.setRotationPoint(-1.5F, -12.6666F, -32.6292F);
@@ -2188,7 +2189,7 @@ public class ARX160 extends ModelWithAttachments {
 		grip3_r2.cubeList.add(new ModelBox(grip3_r2, 0, 98, -2.0F, 1.1358F, 1.1736F, 4, 2, 1, 0.0F, false));
 		grip3_r2.cubeList.add(new ModelBox(grip3_r2, 25, 39, -2.0F, 3.1358F, -2.8264F, 4, 2, 5, 0.0F, false));
 
-		action = new ModelRenderer(this);
+		action = new QRenderer(this);
 		action.setRotationPoint(0.0F, 20.0F, 0.0F);
 		action.cubeList.add(new ModelBox(action, 151, 20, -0.75F, -38.3341F, -25.2473F, 1, 1, 16, 0.0F, false));
 		action.cubeList.add(new ModelBox(action, 52, 52, -0.76F, -37.5841F, -24.4973F, 1, 1, 9, 0.0F, false));
@@ -2217,7 +2218,7 @@ public class ARX160 extends ModelWithAttachments {
 		setRotationAngle(cube_r252, 0.0F, -0.1309F, 0.0F);
 		cube_r252.cubeList.add(new ModelBox(cube_r252, 25, 57, -1.5F, -0.5F, -0.5F, 3, 1, 1, 0.0F, false));
 
-		underbarrelbrace = new ModelRenderer(this);
+		underbarrelbrace = new QRenderer(this);
 		underbarrelbrace.setRotationPoint(0.0F, 20.0F, 0.0F);
 		underbarrelbrace.cubeList.add(new ModelBox(underbarrelbrace, 10, 102, -0.6993F, -33.4724F, -44.0043F, 1, 1, 2, 0.0F, false));
 		underbarrelbrace.cubeList.add(new ModelBox(underbarrelbrace, 98, 40, -0.6993F, -33.4724F, -41.0043F, 1, 1, 2, 0.0F, false));

@@ -81,10 +81,6 @@ public class M202Factory implements GunFactory {
         .withFlashOffsetY(() -> 0.14f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.INGOT_STEEL)
         .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 
@@ -716,8 +712,9 @@ public class M202Factory implements GunFactory {
                     
             .build())
             .withSpawnEntityDamage(70f)
-            .withSpawnEntitySpeed(3f)
-            .withSpawnEntityGravityVelocity(0.05f)
+            .withSpawnEntityRocketParticles()
+            .withSpawnEntitySpeed(4f)
+            .withSpawnEntityGravityVelocity(0.001f)
             .withSpawnEntityExplosionRadius(4f)
             .withSpawnEntityParticleAgeCoefficient(0.2F)
             .withSpawnEntityModel(new M202RocketPROJECTILE())

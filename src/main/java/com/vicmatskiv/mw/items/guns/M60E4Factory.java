@@ -41,7 +41,9 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.vehicle.Positioners;
 
 import net.minecraft.item.Item;
 
@@ -54,6 +56,7 @@ public class M60E4Factory {
         .withFireRate(0.6f)
         .withRecoil(2f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.HEAVY)
         .withMaxShots(Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("m60")
@@ -81,9 +84,6 @@ public class M60E4Factory {
         "Rate of Fire: 60/100",
         "Magazines:",
         "100rnd 7.62x51mm Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 
@@ -371,7 +371,7 @@ public class M60E4Factory {
                 GL11.glScalef(2f, 2f, 2f);
                 GL11.glRotatef(8.000000f, 0f, 0f, 1f);
                 GL11.glTranslatef(-0.500000f, -0.200000f, -5.074998f);
-                
+            	 
 //                GL11.glScalef(2f, 2f, 2f);
                 })
                 

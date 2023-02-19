@@ -58,6 +58,7 @@ import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class KedrFactory {
@@ -69,6 +70,7 @@ public class KedrFactory {
         .withFireRate(0.7f)
         .withRecoil(2f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("kedr")
@@ -95,9 +97,6 @@ public class KedrFactory {
         "Rate of Fire: 70/100",
         "Magazines:",
         "20rnd 9x19mm Magazine (Kedr)"))
-        .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalIngot)
         
         .withScreenShaking(RenderableState.SHOOTING, 
                 2f, // x 

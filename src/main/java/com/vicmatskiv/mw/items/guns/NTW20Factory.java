@@ -35,7 +35,6 @@ import com.vicmatskiv.mw.models.Holographic;
 import com.vicmatskiv.mw.models.Holographic2;
 import com.vicmatskiv.mw.models.JPUreticle;
 import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.M107;
 import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.NTW20;
 import com.vicmatskiv.mw.models.RMRsight;
@@ -54,6 +53,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class NTW20Factory implements GunFactory {
@@ -64,8 +64,9 @@ public class NTW20Factory implements GunFactory {
         .withName("ntw_20")
         .withFireRate(0.1f)
         .withEjectRoundRequired()
-        .withRecoil(20f)
+        .withRecoil(13f)
         .withZoom(0.8f)
+        .withConfigGroup(GunConfigurationGroup.LONG_RANGE_RIFLES)
         .withMaxShots(1)
         .withShootSound("ntw20")
         .withEjectSpentRoundSound("ntw20_boltaction")
@@ -92,15 +93,11 @@ public class NTW20Factory implements GunFactory {
         "Rate of Fire: 10/100",
         "Magazines:",
         "3rnd 20x82mm Magazine"))
-         .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.GunmetalIngot)
          
          .withScreenShaking(RenderableState.SHOOTING, 
-                 6f, // x 
-                 -5f, // y
-                 16f) // z
+                 2f, // x 
+                 -2f, // y
+                 7f) // z
          
         .withUnremovableAttachmentCategories(AttachmentCategory.FRONTSIGHT)
         .withUnremovableAttachmentCategories(AttachmentCategory.RAILING)
@@ -201,36 +198,72 @@ public class NTW20Factory implements GunFactory {
                 })
                 
             .withFirstPersonPositioningEjectSpentRound(
+            		// goes to action
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(8.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 180, 0),
+                    }, 120, 0),
+                    // up
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(43F, 0f, 1f, 0f);
                         GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.2F, 1f, 0f, 0f);
                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 130, 50),
+                    }, 100, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.1F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
+                    }, 80, 0),
+                    // back
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(43.5F, 0f, 1f, 0f);
-                        GL11.glRotatef(13.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.399999f);
-                    }, 130, 50),
+                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.9F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.55f);
+                    }, 80, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43.1F, 0f, 1f, 0f);
+                        GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.7F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.52f);
+                    }, 90, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43.2F, 0f, 1f, 0f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.8F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.53f);
+                    }, 100, 0),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(44.3F, 0f, 1f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.6F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.5f);
+                    }, 90, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
-                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.2F, 1f, 0f, 0f);
                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.599999f);
-                    }, 100, 0),
+                    }, 80, 0),
+                    // down
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 120, 0)
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.63f);
+                    }, 110, 0)
                     
                     )
                     
@@ -241,8 +274,24 @@ public class NTW20Factory implements GunFactory {
                       GL11.glTranslatef(0.05f, 0f, 0f);
                       GL11.glRotatef(25F, 0f, 0f, 1f);
                     }, 250, 300),
+                  new Transition((renderContext) -> { // Reload position
+                      GL11.glTranslatef(0.05f, 0f, 0f);
+                      GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 300),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 0f);
                         GL11.glRotatef(25F, 0f, 0f, 1f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
@@ -261,6 +310,7 @@ public class NTW20Factory implements GunFactory {
                         GL11.glTranslatef(0.185f, 0f, -3.050000f);
                         GL11.glRotatef(1F, 0f, 0f, 1f);
                     }, 180, 0),
+                    // up
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -270,15 +320,36 @@ public class NTW20Factory implements GunFactory {
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glTranslatef(0.185f, 0f, -3.050000f);
+                        GL11.glRotatef(1F, 0f, 0f, 1f);
+                    }, 170, 0),
+                    // back
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(45F, 0f, 1f, 0f);
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(0.185f, 0f, -2.750000f);
                         GL11.glRotatef(4F, 0f, 0f, 1f);
                     }, 160, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glTranslatef(0.185f, 0f, -2.750000f);
+                        GL11.glRotatef(4F, 0f, 0f, 1f);
+                    }, 160, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(45F, 0f, 1f, 0f);
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
+                        GL11.glTranslatef(0.185f, 0f, -2.750000f);
+                        GL11.glRotatef(4F, 0f, 0f, 1f);
+                    }, 160, 0),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glRotatef(45F, 0f, 1f, 0f);
+                        GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
                         GL11.glTranslatef(0.185f, 0f, -2.850000f);
                         GL11.glRotatef(2F, 0f, 0f, 1f);
                     }, 180, 0),
+                    // down
                     new Transition((renderContext) -> { // Reload position
                         GL11.glRotatef(45F, 0f, 1f, 0f);
                         GL11.glScalef(3.000000f, 3.000000f, 3.000000f);
@@ -294,8 +365,24 @@ public class NTW20Factory implements GunFactory {
                       GL11.glTranslatef(0.05f, 0f, 0f);
                       GL11.glRotatef(25F, 0f, 0f, 1f);
                     }, 250, 300),
+                  new Transition((renderContext) -> { // Reload position
+                      GL11.glTranslatef(0.05f, 0f, 0f);
+                      GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 300),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 1f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 0f);
                         GL11.glRotatef(25F, 0f, 0f, 1f);
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
@@ -315,11 +402,33 @@ public class NTW20Factory implements GunFactory {
                     new Transition((renderContext) -> { // Reload position
                     }, 250, 50),
                     new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 250, 50),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glTranslatef(0.05f, 0f, 0f);
+                        GL11.glRotatef(25F, 0f, 0f, 1f);
+                      }, 250, 300),
+                    new Transition((renderContext) -> { // Reload position
                         GL11.glTranslatef(0.05f, 0f, 0f);
                         GL11.glRotatef(25F, 0f, 0f, 1f);
                       }, 250, 300),
                       new Transition((renderContext) -> { // Reload position
                           GL11.glTranslatef(0.05f, 0f, 1f);
+                          GL11.glRotatef(25F, 0f, 0f, 1f);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                          GL11.glTranslatef(0.05f, 0f, 1f);
+                          GL11.glRotatef(25F, 0f, 0f, 1f);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                          GL11.glTranslatef(0.05f, 0f, 1f);
+                          GL11.glRotatef(25F, 0f, 0f, 1f);
+                      }, 250, 50),
+                      new Transition((renderContext) -> { // Reload position
+                          GL11.glTranslatef(0.05f, 0f, 0f);
                           GL11.glRotatef(25F, 0f, 0f, 1f);
                       }, 250, 50),
                       new Transition((renderContext) -> { // Reload position
@@ -346,44 +455,98 @@ public class NTW20Factory implements GunFactory {
                          GL11.glRotatef(44F, 0f, 1f, 0f);
                          GL11.glRotatef(5.000000f, 0f, 0f, 1f);
                          GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                     }, 330, 100),
+                     }, 200, 0),
+                     new Transition((renderContext) -> { // Reload position
+                         GL11.glScalef(2.5f, 2.5f, 2.5f);
+                         GL11.glRotatef(44F, 0f, 1f, 0f);
+                         GL11.glRotatef(5.000000f, 0f, 0f, 1f);
+                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
+                     }, 120, 0),
+                  // mag insert
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(43F, 0f, 1f, 0f);
                         GL11.glRotatef(3.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 300, 50),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(2.5f, 2.5f, 2.5f);
-                        GL11.glRotatef(44F, 0f, 1f, 0f);
-                        GL11.glRotatef(4.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.420000f, 0.100000f, -3.699999f);
-                    }, 200, 0),
-                    new Transition((renderContext) -> { // Reload position
-                        GL11.glScalef(2.5f, 2.5f, 2.5f);
-                        GL11.glRotatef(42F, 0f, 1f, 0f);
-                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 190, 100),
+                    }, 90, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(43F, 0f, 1f, 0f);
-                        GL11.glRotatef(9.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.399999f);
-                    }, 140, 100),
+                        GL11.glRotatef(3.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
+                    }, 90, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glRotatef(3.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
+                    }, 100, 0),
+                 // goes to action
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
                         GL11.glRotatef(44F, 0f, 1f, 0f);
                         GL11.glRotatef(8.000000f, 0f, 0f, 1f);
-                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.599999f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
+                    }, 200, 0),
+                    // up
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.2F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
                     }, 100, 0),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(2.5f, 2.5f, 2.5f);
-                        GL11.glRotatef(45F, 0f, 1f, 0f);
-                        GL11.glRotatef(7.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(43F, 0f, 1f, 0f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.1F, 1f, 0f, 0f);
                         GL11.glTranslatef(-0.400000f, 0.100000f, -3.699999f);
-                    }, 120, 0)
-                    
+                    }, 80, 0),
+                    // back
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43.5F, 0f, 1f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.9F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.55f);
+                    }, 80, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43.1F, 0f, 1f, 0f);
+                        GL11.glRotatef(12.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.7F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.52f);
+                    }, 90, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(43.2F, 0f, 1f, 0f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.8F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.53f);
+                    }, 100, 0),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(44.3F, 0f, 1f, 0f);
+                        GL11.glRotatef(10.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.6F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.5f);
+                    }, 90, 0),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(44F, 0f, 1f, 0f);
+                        GL11.glRotatef(11.000000f, 0f, 0f, 1f);
+                        GL11.glRotatef(-0.2F, 1f, 0f, 0f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.599999f);
+                    }, 80, 0),
+                    // down
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(2.5f, 2.5f, 2.5f);
+                        GL11.glRotatef(45F, 0f, 1f, 0f);
+                        GL11.glRotatef(8.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.400000f, 0.100000f, -3.63f);
+                    }, 110, 0)
                     )
                     
             .withFirstPersonPositioningUnloading(
@@ -418,14 +581,33 @@ public class NTW20Factory implements GunFactory {
                         GL11.glTranslatef(0.3F, -0F, 0F);
                         GL11.glRotatef(10f, 0f, 0f, 1f);
                     }, 250, 1000),
+                    // to
+                    new Transition((renderContext) -> { // Reload position
+                    }, 180, 0),
+                    // up
+                    new Transition((renderContext) -> { // Reload position
+                    }, 170, 0),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 170, 0),
+                    // back
+                    new Transition((renderContext) -> { // Reload position
+                    }, 160, 0),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 170, 0),
+                    new Transition((renderContext) -> { // Reload position
+                    }, 170, 0),
+                    // forward
                     new Transition((renderContext) -> { // Reload position
                     }, 180, 0),
                     new Transition((renderContext) -> { // Reload position
                     }, 170, 0),
                     new Transition((renderContext) -> { // Reload position
-                    }, 160, 0),
+                    }, 170, 0),
                     new Transition((renderContext) -> { // Reload position
-                    }, 180, 0),
+                    }, 170, 0),
+                    // down 
+                    new Transition((renderContext) -> { // Reload position
+                    }, 120, 0),
                     new Transition((renderContext) -> { // Reload position
                     }, 120, 0)
                     
@@ -863,6 +1045,8 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.375000f, -1.424999f, 0.100000f);
                     }, 50, 200),
+                    
+                    // to
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-95.000000f, 1f, 0f, 0f);
@@ -870,7 +1054,34 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.450000f, -1.374999f, 0.125000f);
                     }, 50, 200),
-                    
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
@@ -917,6 +1128,7 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(-45.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.750000f, -1.349999f, 0.450000f);
                     }, 50, 200),
+                    // to
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
@@ -924,12 +1136,28 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.525000f, -1.299999f, 0.225000f);
                     }, 50, 200),
+                    // up
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    // back
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
@@ -940,11 +1168,27 @@ public class NTW20Factory implements GunFactory {
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
+                    }, 50, 200),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
                     }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    // down
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
@@ -1007,7 +1251,22 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
                     }, 50, 200),
-                    
+                    // up
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    // back
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
@@ -1029,6 +1288,22 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
                     }, 50, 200),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    // down
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
@@ -1047,12 +1322,28 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.525000f, -1.299999f, 0.225000f);
                     }, 50, 200),
+                    // up
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    // back
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
@@ -1063,11 +1354,27 @@ public class NTW20Factory implements GunFactory {
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
+                    }, 50, 200),
+                    // forward
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(60.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
                     }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    // down
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
@@ -1084,7 +1391,34 @@ public class NTW20Factory implements GunFactory {
                         GL11.glRotatef(25.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
                     }, 50, 200),
-                    
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(25.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(-0.225000f, -1.125000f, 0.125000f);
+                    }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-105.000000f, 1f, 0f, 0f);
@@ -1133,10 +1467,38 @@ public class NTW20Factory implements GunFactory {
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
                         GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
                         GL11.glRotatef(75.000000f, 0f, 1f, 0f);
                         GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
                         GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-100.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(75.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-55.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.925000f, -1.149999f, -0.300000f);
+                    }, 50, 200),
+                    new Transition((renderContext) -> { // Reload position
+                        GL11.glScalef(4f, 4f, 4f);
+                        GL11.glRotatef(-85.000000f, 1f, 0f, 0f);
+                        GL11.glRotatef(60.000000f, 0f, 1f, 0f);
+                        GL11.glRotatef(-65.000000f, 0f, 0f, 1f);
+                        GL11.glTranslatef(0.700000f, -1.149999f, -0.100000f);
                     }, 50, 200),
                     new Transition((renderContext) -> { // Reload position
                         GL11.glScalef(4f, 4f, 4f);

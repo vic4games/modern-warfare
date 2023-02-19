@@ -20,7 +20,6 @@ import com.vicmatskiv.mw.models.AKMiron2;
 import com.vicmatskiv.mw.models.Acog2;
 import com.vicmatskiv.mw.models.AcogReticle;
 import com.vicmatskiv.mw.models.AcogScope2;
-import com.vicmatskiv.mw.models.BFG9000;
 import com.vicmatskiv.mw.models.FALIron;
 import com.vicmatskiv.mw.models.Fatman;
 import com.vicmatskiv.mw.models.G36CIron1;
@@ -79,10 +78,7 @@ public class FatmanFactory implements GunFactory {
         .withFlashOffsetY(() -> 0.14f)
         .withShellCasingEjectEnabled(false)
         .withDestroyingBlocks(false)
-        .withCrafting(CraftingComplexity.HIGH,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate,
-                Ores.GunmetalIngot)
+        
         .withCreativeTab(ModernWarfareMod.CombatServerTab)
         
         .withScreenShaking(RenderableState.SHOOTING, 

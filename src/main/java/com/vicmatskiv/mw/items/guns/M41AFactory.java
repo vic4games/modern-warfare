@@ -42,7 +42,6 @@ import com.vicmatskiv.mw.models.M4A1;
 import com.vicmatskiv.mw.models.M4Iron1;
 import com.vicmatskiv.mw.models.M4Iron2;
 import com.vicmatskiv.mw.models.M56;
-import com.vicmatskiv.mw.models.M8A7;
 import com.vicmatskiv.mw.models.MBUSiron;
 import com.vicmatskiv.mw.models.MP5Iron;
 import com.vicmatskiv.mw.models.MicroT1;
@@ -94,9 +93,6 @@ public class M41AFactory implements GunFactory {
         "Fire Rate: SEMI, AUTO",
         "Rate of Fire: 99/100"
         ))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  1.5f, // x 

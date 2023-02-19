@@ -59,6 +59,7 @@ import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 
 public class M1928ThompsonFactory {
@@ -71,6 +72,7 @@ public class M1928ThompsonFactory {
         .withFireRate(0.75f)
         .withRecoil(1.8f)
         .withZoom(0.9f)
+        .withConfigGroup(GunConfigurationGroup.SIDEARM)
         .withMaxShots(1, Integer.MAX_VALUE)
         //.withMaxShots(5)
         .withShootSound("m1a1_thompson")
@@ -98,9 +100,6 @@ public class M1928ThompsonFactory {
         "Magazines:",
         "30rnd .45 ACP Magazine (M1A1)",
         "50rnd .45 ACP Magazine (M1928)"))
-         .withCrafting(CraftingComplexity.MEDIUM,
-                Ores.PlasticPlate,
-                Ores.GunmetalPlate)
          
          .withScreenShaking(RenderableState.SHOOTING, 
                  2f, // x 

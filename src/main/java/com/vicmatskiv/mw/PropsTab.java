@@ -16,7 +16,7 @@ public class PropsTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(Guns.M9A1);
+		return new ItemStack(Guns.M4A1);
 	}
 
 }
