@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
+// Package
 
+// IMPORT LIST START
 import java.util.Arrays;
 
 import net.minecraft.item.Item;
@@ -72,6 +74,8 @@ import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+// IMPORT LIST END
+
 
 public class AACHoneyBadgerFactory implements GunFactory {
 
