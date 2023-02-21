@@ -81,7 +81,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID) // Mod id
+        .withModId(ModernWarfareMod.MODID) // MOD ID
         .withName("aac_honey_badger") // Name of the item and model
         .withFireRate(0.80f) // Fire rate in rounds per minute
         .withRecoil(3f) // Recoil in degrees
@@ -133,7 +133,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
         "Fire Rate: SEMI, AUTO", // Fire Rate in Item Description
         "Rate of Fire: 70/100", // Rate of Fire in Item Description
         "Magazines:", // Magazines in Item Description
-        "30rnd 7.62x35mm Honeybadger Magazine" // Magazines in Item Description
+        "30rnd 7.62x35mm Honeybadger Magazine" // Magazines Tyoes in Item Description
         ))
         
         .withScreenShaking(RenderableState.SHOOTING,  // Screen shaking

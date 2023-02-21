@@ -1,5 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
+// Package
 
+// IMPORT LIST START
 import java.util.Arrays;
 
 import net.minecraft.init.Blocks;
@@ -74,37 +76,39 @@ import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
+// IMPORT LIST END
+
 
 public class ACRFactory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
-		.withModId(ModernWarfareMod.MODID)
-		.withName("acr")
-		.withFireRate(0.65f)
-		.withRecoil(3f)
-		.withZoom(0.9f)
-		.withConfigGroup(GunConfigurationGroup.RIFLES)
-		.withMuzzlePosition(new Vec3d(0.0, -1.076000002264977, -6.227999991893772))
-		.hasFlashPedals()
-		.withMaxShots(1, 3, Integer.MAX_VALUE)
+		.withModId(ModernWarfareMod.MODID) // MOD ID
+		.withName("acr") // Name of the item and model
+		.withFireRate(0.65f) // Fire rate in rounds per minute
+		.withRecoil(3f) // Recoil in degrees
+		.withZoom(0.9f) // Zoom factor
+		.withConfigGroup(GunConfigurationGroup.RIFLES) // Config group
+		.withMuzzlePosition(new Vec3d(0.0, -1.076000002264977, -6.227999991893772)) // Muzzle position
+		.hasFlashPedals() // Has flash pedals
+		.withMaxShots(1, 3, Integer.MAX_VALUE) // Max shots
 		//.withMaxShots(5)
-		.withShootSound("acr")
-		.withSilencedShootSound("m4a1_silenced")
-		.withReloadSound("acr_reload")
-		.withUnloadSound("acr_unload")
-		.withDrawSound("acr_draw")
-		.withReloadingTime(30)
-		.withCrosshair("gun")
-		.withCrosshairRunning("Running")
-		.withCrosshairZoomed("Sight")
-		.withFlashIntensity(0.5f)
-        .withFlashScale(() -> 0.6f)
-        .withFlashOffsetX(() -> 0.14f)
-        .withFlashOffsetY(() -> 0.16f)
-		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
-		.useNewSystem()
-		.withRecoilParam(new RecoilParam(
+		.withShootSound("acr") // Shoot sound
+		.withSilencedShootSound("m4a1_silenced") // Silenced shoot sound
+		.withReloadSound("acr_reload") // Reload sound
+		.withUnloadSound("acr_unload") // Unload sound
+		.withDrawSound("acr_draw") // Draw sound
+		.withReloadingTime(30) // Reloading time in ticks
+		.withCrosshair("gun") // Crosshair
+		.withCrosshairRunning("Running") // Running crosshair
+		.withCrosshairZoomed("Sight") // Zoomed crosshair
+		.withFlashIntensity(0.5f) // Flash intensity
+        .withFlashScale(() -> 0.6f) // Flash scale
+        .withFlashOffsetX(() -> 0.14f) // Flash offset X
+        .withFlashOffsetY(() -> 0.16f) // Flash offset Y
+		.withCreativeTab(ModernWarfareMod.AssaultRiflesTab) // Creative tab
+		.useNewSystem() // Use new system
+		.withRecoilParam(new RecoilParam( // Recoil param
 				// The weapon power
 				15.0,
 				// Muzzle climb divisor
@@ -122,14 +126,14 @@ public class ACRFactory implements GunFactory {
 				// Ads similarity divisor
 				1.0
 		))
-		.withInformationProvider(stack -> Arrays.asList(
-        "Type: Modular Assault Rifle", 
-        "Damage: 6", 
-        "Cartridge: 5.56x45mm NATO",
-        "Fire Rate: SEMI, BURST, AUTO",
-        "Rate of Fire: 65/100",
-        "Magazines:",
-        "30rnd 5.56x45mm NATO STANAG Magazine",
+		.withInformationProvider(stack -> Arrays.asList( // Information provider
+        "Type: Modular Assault Rifle", // Information
+        "Damage: 6", // Damage in Item Description
+        "Cartridge: 5.56x45mm NATO", // Cartridge in Item Description
+        "Fire Rate: SEMI, BURST, AUTO", // Fire Rate in Item Description
+        "Rate of Fire: 65/100",// Rate of Fire in Item Description
+        "Magazines:", // Magazines in Item Description
+        "30rnd 5.56x45mm NATO STANAG Magazine",  // Magazines Tyoes in Item Description
         "30rnd 5.56x45mm NATO PMAG Magazine",
         "50rnd 5.56x45mm NATO STANAG Drum Magazine",
 		"60rnd 5.56x45mm NATO STANAG Drum Magazine",
