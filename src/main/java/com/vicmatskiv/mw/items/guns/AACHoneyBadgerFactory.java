@@ -77,12 +77,12 @@ public class AACHoneyBadgerFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
-        .withName("aac_honey_badger")
-        .withFireRate(0.80f)
-        .withRecoil(3f)
-        .withZoom(0.9f)
-        .withConfigGroup(GunConfigurationGroup.RIFLES)
+        .withModId(ModernWarfareMod.MODID) // Mod id
+        .withName("aac_honey_badger") // Name of the item and model
+        .withFireRate(0.80f) // Fire rate in rounds per minute
+        .withRecoil(3f) // Recoil in degrees
+        .withZoom(0.9f) // Zoom factor
+        .withConfigGroup(GunConfigurationGroup.RIFLES) // Config group
         .withMaxShots(1, Integer.MAX_VALUE)
         .withShootSound("aac_honeybadger")
         .withSilencedShootSound("aac_honeybadger")
