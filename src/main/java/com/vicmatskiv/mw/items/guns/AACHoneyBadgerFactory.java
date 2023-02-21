@@ -83,28 +83,28 @@ public class AACHoneyBadgerFactory implements GunFactory {
         .withRecoil(3f) // Recoil in degrees
         .withZoom(0.9f) // Zoom factor
         .withConfigGroup(GunConfigurationGroup.RIFLES) // Config group
-        .withMaxShots(1, Integer.MAX_VALUE)
-        .withShootSound("aac_honeybadger")
-        .withSilencedShootSound("aac_honeybadger")
-        .withReloadSound("honeybadger_reload")
-        .withUnloadSound("honeybadger_unload")
-        .withEndOfShootSound("gun_click")
-        .withInspectSound("m4a1_inspection")
-        .withDrawSound("m4_draw")
-        .withReloadingTime(50)
-        .withCrosshair("gun")
-        .withCrosshairRunning("Running")
-        .withCrosshairZoomed("Sight")
-        .withFlashIntensity(0.5f)
-        .withFlashScale(() -> 0.6f)
-        .withFlashOffsetX(() -> 0.13f)
-        .withFlashOffsetY(() -> 0.17f)
+        .withMaxShots(1, Integer.MAX_VALUE) // Max shots per reload
+        .withShootSound("aac_honeybadger") // Shoot sound
+        .withSilencedShootSound("aac_honeybadger") // Silenced shoot sound
+        .withReloadSound("honeybadger_reload") // Reload sound
+        .withUnloadSound("honeybadger_unload") // Unload sound
+        .withEndOfShootSound("gun_click") // End of shoot sound
+        .withInspectSound("m4a1_inspection") // Inspection sound
+        .withDrawSound("m4_draw") // Draw sound
+        .withReloadingTime(50)  // Reloading time in ticks
+        .withCrosshair("gun") // Crosshair
+        .withCrosshairRunning("Running") // Crosshair when running
+        .withCrosshairZoomed("Sight") // Crosshair when zoomed
+        .withFlashIntensity(0.5f) // Flash intensity
+        .withFlashScale(() -> 0.6f) // Flash scale
+        .withFlashOffsetX(() -> 0.13f) // Flash offset X
+        .withFlashOffsetY(() -> 0.17f) // Flash offset Y
 //        .withShootSoundVolume(1f)
-        .withShellCasingForwardOffset(0.1f)
-        .withShellCasingVerticalOffset(-0.05f)
-        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
-        .useNewSystem()
-		.withRecoilParam(new RecoilParam(
+        .withShellCasingForwardOffset(0.1f) // Shell casing forward offset
+        .withShellCasingVerticalOffset(-0.05f) // Shell casing vertical offset
+        .withCreativeTab(ModernWarfareMod.AssaultRiflesTab) // Creative tab
+        .useNewSystem() // Use new system
+		.withRecoilParam(new RecoilParam( // Recoil param
 				// The weapon power
 				15.0,
 				// Muzzle climb divisor
@@ -122,14 +122,14 @@ public class AACHoneyBadgerFactory implements GunFactory {
 				// Ads similarity divisor
 				1.0
 		))
-        .withInformationProvider(stack -> Arrays.asList(
-        "Type: Personal Defense Weapon", 
-        "Damage: 5.4", 
-        "Cartridge: 7.62x35mm",
-        "Fire Rate: SEMI, AUTO",
-        "Rate of Fire: 70/100",
-        "Magazines:",
-        "30rnd 7.62x35mm Honeybadger Magazine"
+        .withInformationProvider(stack -> Arrays.asList( // Information provider
+        "Type: Personal Defense Weapon",  // Information
+        "Damage: 5.4", // Damage in Item Description
+        "Cartridge: 7.62x35mm", // Cartridge in Item Description
+        "Fire Rate: SEMI, AUTO", // Fire Rate in Item Description
+        "Rate of Fire: 70/100", // Rate of Fire in Item Description
+        "Magazines:", // Magazines in Item Description
+        "30rnd 7.62x35mm Honeybadger Magazine" // Magazines in Item Description
         ))
         
         .withScreenShaking(RenderableState.SHOOTING, 
