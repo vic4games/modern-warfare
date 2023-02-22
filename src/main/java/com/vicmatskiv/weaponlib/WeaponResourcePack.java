@@ -18,9 +18,8 @@ public class WeaponResourcePack extends CompatibleResourcePack {
 			Collections.singleton(WEAPONLIB_RESOURCE_DOMAIN)));
 
 	@Override
-	public InputStream getInputStream(ResourceLocation resourceLocation) throws IOException {
-	    String resourcePath = modifyResourcePath(resourceLocation);
-		return getClass().getResourceAsStream(resourcePath);
+	public InputStream getInputStream(ResourceLocation resourceLocation) {
+		return getClass().getResourceAsStream(modifyResourcePath(resourceLocation));
 	}
 
     private String modifyResourcePath(ResourceLocation resourceLocation) {

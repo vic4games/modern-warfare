@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.jim.util;
 
-
-
 import net.minecraft.entity.Entity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.RayTraceResult;
@@ -12,9 +10,7 @@ public class HitUtil {
 	public static RayTraceResult traceMeleeHit(Entity attacker, Entity hurt) {
 		Vec3d startVec = attacker.getPositionEyes(1.0F);
 		Vec3d endVec = startVec.add(attacker.getLookVec().scale(3));
-		RayTraceResult result = hurt.getEntityBoundingBox().calculateIntercept(startVec, endVec);
-		return result;
-		
+		return hurt.getEntityBoundingBox().calculateIntercept(startVec, endVec);
 	}
 	
 	public static RayTraceResult traceProjectilehit(Entity attacker, Entity hurt) {
@@ -26,8 +22,7 @@ public class HitUtil {
 				attacker.posX + attacker.motionX, 
 				attacker.posY + attacker.motionY,
 				attacker.posZ + attacker.motionZ);
-		RayTraceResult result = hurt.getEntityBoundingBox().grow(0.1).calculateIntercept(start, end);
-		return result;
+		return hurt.getEntityBoundingBox().grow(0.1).calculateIntercept(start, end);
 		
 	}
 	

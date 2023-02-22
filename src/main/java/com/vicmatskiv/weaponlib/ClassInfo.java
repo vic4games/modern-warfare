@@ -38,11 +38,8 @@ public class ClassInfo {
             } else if (!name.equals(other.name))
                 return false;
             if (signature == null) {
-                if (other.signature != null)
-                    return false;
-            } else if (!signature.equals(other.signature))
-                return false;
-            return true;
+                return other.signature == null;
+            } else return signature.equals(other.signature);
         }
     }
 
@@ -85,8 +82,8 @@ public class ClassInfo {
     }
 
     public boolean classMatches(String className) {
-    	String normalizedClassName = "";
-    	if(!className.equals("paulscode.sound.libraries.SourceLWJGLOpenAL")) {
+    	String normalizedClassName;
+    	if (!className.equals("paulscode.sound.libraries.SourceLWJGLOpenAL")) {
     		normalizedClassName = className.replace('.', '/');
     	} else normalizedClassName = className;
         

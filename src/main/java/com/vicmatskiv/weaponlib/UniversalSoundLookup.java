@@ -3,7 +3,6 @@ package com.vicmatskiv.weaponlib;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 
 import java.util.HashMap;
-import java.util.Map.Entry;
 
 public class UniversalSoundLookup {
 	
@@ -11,11 +10,8 @@ public class UniversalSoundLookup {
 	
 	
 	public static void initialize(ModContext context) {
-		for(Entry<String, CompatibleSound> entry : registry.entrySet()) {
-			
-			registry.put(entry.getKey(), context.registerSound(entry.getKey()));	
 		//	System.out.println("Properly initialized " + entry.getKey() + " | " + registry.get(entry.getKey()));
-		}
+		registry.replaceAll((k, v) -> context.registerSound(k));
 	}
 	
 	public static boolean hasSound(String name) {
