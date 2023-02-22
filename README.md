@@ -7,13 +7,11 @@ Massive shoutout to the original Author: Vic4Games and his team for creating the
 ---
 
 ### How do I compile?
-Compiling is simple, however for the time being you need to first compile the [WeaponLib](https://github.com/Paneedah/paneedah-weaponlib) mod and then continue these steps!
-1. Clone the repository.
-2. Open the directory and create a folder called `libs`.
-3. Place the compiled `WeaponLib-1.0.jar` jar file in the `libs` folder.
-4. Run `./gradlew build` to compile the mod.
-5. The compiled jar file will be in the `build/libs` folder (the one not ending with `-sources.jar`).
-6. Enjoy the mod!
+1. Install Java 1.8 JDK. Verify you're running it in console using `java -version`.
+2. Clone the repository.
+3. Run `./gradlew build` to compile the mod.
+4. The compiled jar file will be in the `build/libs` folder.
+5. Enjoy the mod!
 
 ---
 
