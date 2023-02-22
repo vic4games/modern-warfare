@@ -1,17 +1,12 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleCustomPlayerInventoryCapability;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageHandler;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleTargetPoint;
-
+import com.vicmatskiv.weaponlib.compatibility.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityInventorySyncHandler implements CompatibleMessageHandler<EntityInventorySyncMessage, CompatibleMessage>  {
 

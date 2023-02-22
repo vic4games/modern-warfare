@@ -1,16 +1,12 @@
 package com.vicmatskiv.weaponlib;
 
-import java.lang.reflect.InvocationTargetException;
-
-import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
+import akka.japi.Predicate;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
 import com.vicmatskiv.weaponlib.compatibility.ModelRegistryServerInterchange;
 import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
 import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
-
-import akka.japi.Predicate;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -26,7 +22,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.storage.AnvilChunkLoader;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class HighIQSpawnEgg extends CompatibleItem implements IModernCrafting {

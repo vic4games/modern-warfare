@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.state.ManagedState;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 

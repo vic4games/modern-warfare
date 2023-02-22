@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.Collection;
-import java.util.List;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+
+import java.util.Collection;
+import java.util.List;
 
 public interface AttachmentContainer {
     List<CompatibleAttachment<? extends AttachmentContainer>> getActiveAttachments(EntityLivingBase entityPlayer,

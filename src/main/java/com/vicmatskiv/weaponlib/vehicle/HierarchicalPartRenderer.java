@@ -1,39 +1,21 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
+import com.vicmatskiv.weaponlib.animation.DebugPositioner;
+import com.vicmatskiv.weaponlib.animation.MultipartPositioning;
+import com.vicmatskiv.weaponlib.animation.MultipartPositioning.Positioner;
+import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
+import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL13;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL21;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL32;
-import org.lwjgl.opengl.GL33;
-import org.lwjgl.opengl.GL40;
-import org.lwjgl.opengl.GL41;
-import org.lwjgl.opengl.GL42;
-import org.lwjgl.opengl.GL43;
-import org.lwjgl.opengl.GL44;
-
-import com.vicmatskiv.weaponlib.animation.DebugPositioner;
-import com.vicmatskiv.weaponlib.animation.MultipartPositioning;
-import com.vicmatskiv.weaponlib.animation.MultipartPositioning.Positioner;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-import com.vicmatskiv.weaponlib.vehicle.network.VehicleClientPacket;
-import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.ResourceLocation;
 
 final class HierarchicalPartRenderer<Part, State> implements StatefulRenderer<State> {
     

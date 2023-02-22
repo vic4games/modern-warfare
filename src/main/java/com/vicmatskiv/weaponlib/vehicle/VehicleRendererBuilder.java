@@ -1,5 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
+import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
+import com.vicmatskiv.weaponlib.vehicle.HierarchicalPartRenderer.SinglePart;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,13 +10,6 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
-import com.vicmatskiv.weaponlib.vehicle.HierarchicalPartRenderer.SinglePart;
-
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class VehicleRendererBuilder extends HierarchicalRendererBuilder<VehiclePart, VehicleRenderableState> {
 

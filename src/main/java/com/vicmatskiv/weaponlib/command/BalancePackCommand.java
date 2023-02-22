@@ -1,20 +1,18 @@
 package com.vicmatskiv.weaponlib.command;
 
-import java.io.File;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import org.apache.commons.io.IOUtils;
-
 import com.vicmatskiv.weaponlib.CommonModContext;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.BalancePack;
 import com.vicmatskiv.weaponlib.network.packets.BalancePackClient;
-
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
+import org.apache.commons.io.IOUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class BalancePackCommand extends TidyCompatibleCommand {
 

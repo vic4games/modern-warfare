@@ -1,24 +1,7 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Collections;
-import java.util.List;
-
-import javax.vecmath.Matrix4f;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.CustomRenderer;
-import com.vicmatskiv.weaponlib.ItemStorage;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.ModelSource;
-import com.vicmatskiv.weaponlib.RenderContext;
-import com.vicmatskiv.weaponlib.RenderableState;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.StaticModelSourceRenderer.Builder;
-import com.vicmatskiv.weaponlib.Tuple;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
@@ -26,13 +9,8 @@ import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.block.model.BakedQuad;
-import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
-import net.minecraft.client.renderer.block.model.ItemOverride;
-import net.minecraft.client.renderer.block.model.ItemOverrideList;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -45,6 +23,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.tuple.Pair;
+import org.lwjgl.opengl.GL11;
+
+import javax.vecmath.Matrix4f;
+import java.util.Collections;
+import java.util.List;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public abstract class CompatibleStaticModelSourceRenderer extends ModelSourceRenderer implements IBakedModel {
 

@@ -1,17 +1,11 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleThrowableEntity;
 import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
 import com.vicmatskiv.weaponlib.tracking.SyncPlayerEntityTrackerMessage;
 import com.vicmatskiv.weaponlib.tracking.TrackableEntity;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -21,6 +15,10 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityWirelessCamera extends CompatibleThrowableEntity {
 

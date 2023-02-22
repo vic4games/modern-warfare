@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.ai;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRenderBiped;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.util.ResourceLocation;
 

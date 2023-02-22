@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.Arrays;
-
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IEntityLivingData;
@@ -13,6 +11,8 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
+
+import java.util.Arrays;
 
 public abstract class CompatibleEntityMob extends EntityMob {
     

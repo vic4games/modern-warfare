@@ -1,42 +1,29 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.function.Function;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
 import com.vicmatskiv.weaponlib.animation.DebugPositioner;
 import com.vicmatskiv.weaponlib.animation.OpenGLSelectionHelper;
-import com.vicmatskiv.weaponlib.animation.gui.AnimationGUI;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleExtraEntityFlags;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleWeaponKeyInputHandler;
-import com.vicmatskiv.weaponlib.electronics.PlayerTabletInstance;
 import com.vicmatskiv.weaponlib.inventory.GuiHandler;
 import com.vicmatskiv.weaponlib.inventory.OpenCustomPlayerInventoryGuiMessage;
-import com.vicmatskiv.weaponlib.melee.MeleeState;
-import com.vicmatskiv.weaponlib.melee.PlayerMeleeInstance;
-import com.vicmatskiv.weaponlib.network.packets.OpenDoorPacket;
 import com.vicmatskiv.weaponlib.render.ModificationGUI;
-
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.input.Keyboard;
+
+import java.util.function.Function;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class WeaponKeyInputHandler extends CompatibleWeaponKeyInputHandler {
 

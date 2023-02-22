@@ -1,19 +1,14 @@
 package com.vicmatskiv.weaponlib.render.cam;
 
-import java.util.LinkedList;
-import java.util.concurrent.SynchronousQueue;
-
+import com.vicmatskiv.weaponlib.ClientModContext;
+import com.vicmatskiv.weaponlib.WeaponState;
+import com.vicmatskiv.weaponlib.numerical.LissajousCurve;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Quaternion;
 
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.WeaponState;
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-import com.vicmatskiv.weaponlib.numerical.LissajousCurve;
-
-import net.minecraft.advancements.critereon.CuredZombieVillagerTrigger;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.math.Vec3d;
+import java.util.LinkedList;
 
 public class NaturalCamera {
 

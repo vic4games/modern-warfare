@@ -1,7 +1,8 @@
 package com.vicmatskiv.weaponlib.ai;
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 import net.minecraft.entity.Entity;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class ExplosionAttack implements CustomMobAttack, Timeable {
     

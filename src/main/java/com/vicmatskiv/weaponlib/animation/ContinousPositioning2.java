@@ -1,13 +1,13 @@
 package com.vicmatskiv.weaponlib.animation;
 
+import org.lwjgl.util.vector.Matrix4f;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.function.Consumer;
 import java.util.function.Function;
-
-import org.lwjgl.util.vector.Matrix4f;
 
 class ContinousPositioning2<State, Part, Context extends PartPositionProvider> implements MultipartPositioning<Part, Context> {
 

@@ -1,13 +1,11 @@
 package com.vicmatskiv.mw;
 
-import net.minecraft.creativetab.CreativeTabs;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ItemVest;
 import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import net.minecraft.creativetab.CreativeTabs;
+import org.lwjgl.opengl.GL11;
 
 public class Vests {
 

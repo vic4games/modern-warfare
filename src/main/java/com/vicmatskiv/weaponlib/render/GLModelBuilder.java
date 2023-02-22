@@ -1,24 +1,13 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.nio.Buffer;
-import java.nio.ByteBuffer;
+import com.vicmatskiv.weaponlib.render.WavefrontModel.Vertex;
+import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL15;
+
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
-
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL30;
-
-
-import com.vicmatskiv.weaponlib.render.WavefrontModel.Vertex;
-import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-
-import net.minecraft.client.renderer.GlStateManager;
-import scala.actors.threadpool.Arrays;
 
 public class GLModelBuilder {
 	

@@ -1,44 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-import net.minecraft.util.math.Vec3d;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.Magazines;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AKMiron1;
-import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.Emp1911;
-import com.vicmatskiv.mw.models.Emp1911Slide;
-import com.vicmatskiv.mw.models.FALIron;
-import com.vicmatskiv.mw.models.G36CIron1;
-import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.M14Iron;
-import com.vicmatskiv.mw.models.M1911frontsight;
-import com.vicmatskiv.mw.models.M1911rearsight;
-import com.vicmatskiv.mw.models.M4Iron1;
-import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.M9A1;
-import com.vicmatskiv.mw.models.M9A1frontsight;
-import com.vicmatskiv.mw.models.M9A1rearsight;
-import com.vicmatskiv.mw.models.MP5Iron;
-import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.ScarIron1;
-import com.vicmatskiv.mw.models.ScarIron2;
-import com.vicmatskiv.mw.models.UziAction;
-import com.vicmatskiv.mw.models.Uzi;
-import com.vicmatskiv.mw.models.UziFrontSight;
-import com.vicmatskiv.mw.models.UziRearSight;
+import com.vicmatskiv.mw.*;
+import com.vicmatskiv.mw.models.*;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
@@ -46,8 +9,12 @@ import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
+import net.minecraft.item.Item;
+import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class UziFactory implements GunFactory {
 

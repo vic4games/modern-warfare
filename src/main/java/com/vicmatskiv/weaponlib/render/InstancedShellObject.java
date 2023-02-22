@@ -1,26 +1,18 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.util.ArrayList;
-
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.util.vector.Quaternion;
-
-import com.google.gson.JsonObject;
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-import com.vicmatskiv.weaponlib.render.bgl.ModernUtil;
 import com.vicmatskiv.weaponlib.render.bgl.instancing.InstancedAttribute;
 import com.vicmatskiv.weaponlib.render.bgl.instancing.ModelInstancedObject;
 import com.vicmatskiv.weaponlib.render.shells.ShellManager;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
-import com.vicmatskiv.weaponlib.shader.jim.Shader;
-import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
 import com.vicmatskiv.weaponlib.shader.jim.Uniform;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import org.lwjgl.opengl.GL20;
+import org.lwjgl.util.vector.Quaternion;
+
+import java.util.ArrayList;
 
 public class InstancedShellObject extends ModelInstancedObject<ShellManager> {
 	private Type type;

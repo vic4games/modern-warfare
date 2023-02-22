@@ -1,11 +1,9 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import org.lwjgl.util.vector.Matrix4f;
-
 import com.vicmatskiv.weaponlib.animation.PartPositionProvider;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.util.vector.Matrix4f;
 
 public class PartRenderContext<State> implements PartPositionProvider {
     

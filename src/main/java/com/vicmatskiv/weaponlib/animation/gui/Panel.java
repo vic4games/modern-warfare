@@ -1,14 +1,12 @@
 package com.vicmatskiv.weaponlib.animation.gui;
 
-import java.awt.Color;
-import java.util.ArrayList;
-
 import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
 import com.vicmatskiv.weaponlib.jim.util.Vec2d;
 import com.vicmatskiv.weaponlib.jim.util.Vec2i;
-
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.math.Vec2f;
+
+import java.awt.*;
+import java.util.ArrayList;
 
 public class Panel {
 	

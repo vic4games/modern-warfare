@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.numerical;
 
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
 

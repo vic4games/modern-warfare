@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib.melee;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;

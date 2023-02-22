@@ -1,8 +1,5 @@
 package com.vicmatskiv.weaponlib.model;
 
-import com.vicmatskiv.weaponlib.render.SpecialModelBiped;
-
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

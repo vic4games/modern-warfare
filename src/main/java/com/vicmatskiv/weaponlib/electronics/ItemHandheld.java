@@ -1,19 +1,13 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import java.util.function.BiConsumer;
-
-import com.vicmatskiv.weaponlib.AttachmentBuilder;
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.PlayerItemInstanceFactory;
-import com.vicmatskiv.weaponlib.Updatable;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.perspective.Perspective;
 import com.vicmatskiv.weaponlib.perspective.PerspectiveRenderer;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import java.util.function.BiConsumer;
 
 public class ItemHandheld<T> extends ItemAttachment<T>
 implements PlayerItemInstanceFactory<PlayerHandheldInstance, HandheldState>, Updatable {

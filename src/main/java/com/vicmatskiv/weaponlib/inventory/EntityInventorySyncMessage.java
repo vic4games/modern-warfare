@@ -1,16 +1,15 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.io.IOException;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
+
+import java.io.IOException;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityInventorySyncMessage implements CompatibleMessage {
 

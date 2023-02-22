@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 
 public class MaterialImpactSound {
     private List<CompatibleSound> sounds = new ArrayList<>();

@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMovingSound;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
-
 import net.minecraft.client.audio.MovingSound;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 public abstract class VehicleTransmissionStrategy {
     

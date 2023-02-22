@@ -1,7 +1,5 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.mw.items.melee.BaseballBatFactory;
 import com.vicmatskiv.mw.items.melee.BaseballBatNailsFactory;
 import com.vicmatskiv.mw.items.melee.NightStickFactory;
@@ -13,16 +11,13 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-import com.vicmatskiv.weaponlib.crafting.workbench.TileEntityWorkbench;
-import com.vicmatskiv.weaponlib.crafting.workbench.WorkbenchBlock;
 import com.vicmatskiv.weaponlib.vehicle.network.VehicleDataSerializer;
 import com.vicmatskiv.weaponlib.vehicle.network.VehiclePhysSerializer;
-
-import net.minecraft.block.BlockFurnace;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class CommonProxy {
 

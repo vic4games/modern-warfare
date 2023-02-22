@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
 
 public class SpreadableExposureMessage implements CompatibleMessage {

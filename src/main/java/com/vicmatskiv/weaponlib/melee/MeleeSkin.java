@@ -1,17 +1,15 @@
 package com.vicmatskiv.weaponlib.melee;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.model.FlatModel;
-
 import net.minecraft.client.model.ModelBase;
+import org.lwjgl.opengl.GL11;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MeleeSkin extends ItemAttachment<ItemMelee> {
 	

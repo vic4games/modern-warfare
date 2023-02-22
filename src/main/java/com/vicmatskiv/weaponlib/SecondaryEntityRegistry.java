@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.HashMap;
-
-
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
+
+import java.util.HashMap;
 
 public class SecondaryEntityRegistry {
 	

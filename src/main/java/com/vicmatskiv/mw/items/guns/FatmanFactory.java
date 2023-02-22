@@ -1,57 +1,16 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.Magazines;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AKMiron1;
-import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.Acog2;
-import com.vicmatskiv.mw.models.AcogReticle;
-import com.vicmatskiv.mw.models.AcogScope2;
-import com.vicmatskiv.mw.models.FALIron;
+import com.vicmatskiv.mw.*;
 import com.vicmatskiv.mw.models.Fatman;
-import com.vicmatskiv.mw.models.G36CIron1;
-import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.GL06;
-import com.vicmatskiv.mw.models.Grenade;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.Holographic;
-import com.vicmatskiv.mw.models.Holographic2;
-import com.vicmatskiv.mw.models.JPUreticle;
-import com.vicmatskiv.mw.models.Kobra;
-import com.vicmatskiv.mw.models.LPscope;
-import com.vicmatskiv.mw.models.M110;
-import com.vicmatskiv.mw.models.M14Iron;
-import com.vicmatskiv.mw.models.M4Iron1;
-import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MBUSiron;
-import com.vicmatskiv.mw.models.MP5Iron;
-import com.vicmatskiv.mw.models.MicroT1;
 import com.vicmatskiv.mw.models.MiniNuke;
-import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.RMRsight;
-import com.vicmatskiv.mw.models.RPG7;
-import com.vicmatskiv.mw.models.Reflex;
-import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.ScarIron1;
-import com.vicmatskiv.mw.models.ScarIron2;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class FatmanFactory implements GunFactory {
 

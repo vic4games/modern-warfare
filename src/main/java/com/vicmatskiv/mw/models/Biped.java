@@ -11,6 +11,7 @@
 
 package com.vicmatskiv.mw.models;
 
+import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
@@ -20,8 +21,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumHandSide;
 import net.minecraft.util.math.MathHelper;
-
-import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 
 public class Biped extends ModelBiped
 {

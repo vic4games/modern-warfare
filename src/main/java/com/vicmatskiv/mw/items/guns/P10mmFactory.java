@@ -1,37 +1,15 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.Magazines;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.models.Emp1911;
-import com.vicmatskiv.mw.models.Emp1911Slide;
-import com.vicmatskiv.mw.models.M1911frontsight;
-import com.vicmatskiv.mw.models.M1911rearsight;
-import com.vicmatskiv.mw.models.M9A1;
-import com.vicmatskiv.mw.models.M9A1frontsight;
-import com.vicmatskiv.mw.models.M9A1rearsight;
-import com.vicmatskiv.mw.models.MP443;
-import com.vicmatskiv.mw.models.P10mm;
-import com.vicmatskiv.mw.models.P10mmSlide;
-import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.makarovfrontsight;
-import com.vicmatskiv.mw.models.makarovrearsight;
+import com.vicmatskiv.mw.*;
+import com.vicmatskiv.mw.models.*;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class P10mmFactory implements GunFactory {
 

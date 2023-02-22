@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
 import com.vicmatskiv.weaponlib.ModContext;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleBreaking;

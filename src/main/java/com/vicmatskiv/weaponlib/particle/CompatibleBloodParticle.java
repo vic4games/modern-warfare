@@ -1,27 +1,18 @@
 package com.vicmatskiv.weaponlib.particle;
 
-import javax.annotation.Nullable;
-
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.render.SpriteSheetTools;
-import com.vicmatskiv.weaponlib.render.SpriteSheetTools.Sprite;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.particle.Particle;
-import net.minecraft.client.particle.ParticleDigging;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
 
 public class CompatibleBloodParticle extends Particle {
 

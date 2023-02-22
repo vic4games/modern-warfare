@@ -1,13 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
+import io.netty.buffer.ByteBuf;
+
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-
-import io.netty.buffer.ByteBuf;
 
 public class Trees {
 

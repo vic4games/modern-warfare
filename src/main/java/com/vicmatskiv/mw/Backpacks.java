@@ -1,16 +1,14 @@
 package com.vicmatskiv.mw;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ItemStorage;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
 
 public class Backpacks {
 

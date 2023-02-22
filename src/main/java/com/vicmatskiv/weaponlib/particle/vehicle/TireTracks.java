@@ -1,9 +1,5 @@
 package com.vicmatskiv.weaponlib.particle.vehicle;
 
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
 import net.minecraft.client.particle.ParticleFootStep;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -14,6 +10,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.lwjgl.opengl.GL11;
 
 public class TireTracks extends ParticleFootStep {
 

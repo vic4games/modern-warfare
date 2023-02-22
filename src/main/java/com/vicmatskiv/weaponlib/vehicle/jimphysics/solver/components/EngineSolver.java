@@ -7,8 +7,6 @@ import com.vicmatskiv.weaponlib.vehicle.jimphysics.VehiclePhysUtil;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.engines.FlywheelSolver;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.VehiclePhysicsSolver;
 
-import scala.reflect.internal.Trees.This;
-
 public class EngineSolver {
 
 	// ENGINE CLASS

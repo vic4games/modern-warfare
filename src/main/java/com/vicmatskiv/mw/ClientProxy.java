@@ -14,11 +14,9 @@ import com.vicmatskiv.weaponlib.inventory.CustomPlayerInventoryTab;
 import com.vicmatskiv.weaponlib.inventory.InventoryTabs;
 import com.vicmatskiv.weaponlib.inventory.StandardPlayerInventoryTab;
 import com.vicmatskiv.weaponlib.render.CustomArmorLayer;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.ClientRegistry;

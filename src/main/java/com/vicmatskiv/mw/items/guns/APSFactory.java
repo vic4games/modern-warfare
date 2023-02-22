@@ -1,28 +1,8 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.Magazines;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
+import com.vicmatskiv.mw.*;
 import com.vicmatskiv.mw.models.APS;
 import com.vicmatskiv.mw.models.APSrearsight;
-import com.vicmatskiv.mw.models.Emp1911;
-import com.vicmatskiv.mw.models.Emp1911Slide;
-import com.vicmatskiv.mw.models.M1911frontsight;
-import com.vicmatskiv.mw.models.M1911rearsight;
-import com.vicmatskiv.mw.models.M9A1;
-import com.vicmatskiv.mw.models.M9A1frontsight;
-import com.vicmatskiv.mw.models.M9A1rearsight;
 import com.vicmatskiv.mw.models.APSslide;
 import com.vicmatskiv.mw.models.makarovfrontsight;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
@@ -33,9 +13,12 @@ import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class APSFactory implements GunFactory {
 

@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib.shader;
 
+import com.vicmatskiv.weaponlib.Tuple;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Function;
-
-import com.vicmatskiv.weaponlib.Tuple;
-
-import net.minecraft.util.ResourceLocation;
 
 public class DynamicShaderGroupSource {
 

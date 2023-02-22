@@ -1,16 +1,13 @@
 package com.vicmatskiv.weaponlib.tile;
 
-import java.util.function.Consumer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleTileEntitySpecialRenderer;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.function.Consumer;
 
 public class CustomTileEntityRenderer extends CompatibleTileEntitySpecialRenderer<CustomTileEntity<?>> {
     

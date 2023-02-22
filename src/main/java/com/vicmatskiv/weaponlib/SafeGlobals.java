@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
+
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
 
 public class SafeGlobals {
 

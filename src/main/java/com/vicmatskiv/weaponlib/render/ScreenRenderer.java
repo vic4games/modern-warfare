@@ -1,17 +1,12 @@
 package com.vicmatskiv.weaponlib.render;
 
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.model.CameraModel;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class ScreenRenderer {
 	

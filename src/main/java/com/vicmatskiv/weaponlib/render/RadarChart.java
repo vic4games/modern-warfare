@@ -1,17 +1,13 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
-import javax.vecmath.Vector2d;
-
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import org.lwjgl.opengl.GL11;
+
+import java.util.LinkedList;
 
 public class RadarChart {
 	

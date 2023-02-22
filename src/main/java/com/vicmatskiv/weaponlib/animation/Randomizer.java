@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.nio.FloatBuffer;
-import java.util.Random;
-
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Matrix4f;
+
+import java.nio.FloatBuffer;
+import java.util.Random;
 
 public final class Randomizer {
 

@@ -1,22 +1,16 @@
 package com.vicmatskiv.weaponlib.particle;
 
-import java.util.Random;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
 import com.vicmatskiv.weaponlib.particle.vehicle.TurbulentSmokeParticle;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Random;
 
 public class BetterMuzzleSmoke extends TurbulentSmokeParticle {
 

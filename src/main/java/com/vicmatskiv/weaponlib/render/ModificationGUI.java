@@ -1,55 +1,24 @@
 package com.vicmatskiv.weaponlib.render;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.TimerTask;
-
-import javax.jws.soap.SOAPBinding.Use;
-
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.AttachmentContainer;
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.CompatibleAttachment;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
-import com.vicmatskiv.weaponlib.UniversalSoundLookup;
-import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.WeaponAttachmentAspect.FlaggedAttachment;
-import com.vicmatskiv.weaponlib.animation.DebugPositioner;
 import com.vicmatskiv.weaponlib.command.DebugCommand;
-import com.vicmatskiv.weaponlib.debug.SysOutController;
 import com.vicmatskiv.weaponlib.render.gui.ColorPalette;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper.StringAlignment;
-import com.vicmatskiv.weaponlib.render.modern.GLStateWrapper;
-import com.vicmatskiv.weaponlib.shader.jim.Shader;
-import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
-import scala.util.Random;
+import org.lwjgl.input.Mouse;
+
+import java.util.ArrayList;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 /**
  * Singleton modification GUI render & logic class
@@ -286,7 +255,7 @@ public class ModificationGUI {
 		 * @param line
 		 */
 		public void addBulletPoint(String text) {
-			addLine("• " + text);
+			addLine("ï¿½ " + text);
 		}
 		
 		/**

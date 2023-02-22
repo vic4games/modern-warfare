@@ -1,15 +1,9 @@
 package com.vicmatskiv.weaponlib.crafting;
 
+import net.minecraft.item.Item;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.omg.CORBA.CTX_RESTRICT_SCOPE;
-
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.Weapon;
-
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 
 /**

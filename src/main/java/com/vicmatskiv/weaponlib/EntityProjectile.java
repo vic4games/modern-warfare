@@ -1,24 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleAxisAlignedBB;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockState;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEnumFacing;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleIEntityAdditionalSpawnData;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMathHelper;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTracing;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleTargetPoint;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
-
+import com.vicmatskiv.weaponlib.compatibility.*;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -28,13 +10,17 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
-//import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.layer.GenLayerAddSnow;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public abstract class EntityProjectile extends Entity implements IProjectile, CompatibleIEntityAdditionalSpawnData {
 

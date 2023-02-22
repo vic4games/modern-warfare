@@ -1,13 +1,12 @@
 package com.vicmatskiv.weaponlib.ai;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIBase;
+import net.minecraft.entity.EntityLivingBase;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIBase;
-
-import net.minecraft.entity.EntityLivingBase;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityAIAttackRangedWeapon extends CompatibleEntityAIBase
 {

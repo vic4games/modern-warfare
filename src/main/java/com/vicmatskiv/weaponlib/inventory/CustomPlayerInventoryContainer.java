@@ -1,19 +1,8 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.vicmatskiv.weaponlib.ItemStorage;
 import com.vicmatskiv.weaponlib.ItemVest;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleContainer;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleCustomArmor;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityEquipmentSlot;
-
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -23,6 +12,13 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class CustomPlayerInventoryContainer extends CompatibleContainer {
     

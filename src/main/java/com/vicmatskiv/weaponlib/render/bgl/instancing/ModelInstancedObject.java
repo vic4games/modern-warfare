@@ -1,21 +1,12 @@
 package com.vicmatskiv.weaponlib.render.bgl.instancing;
 
-import java.awt.List;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
-
-import javax.xml.bind.ValidationException;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL31;
-
-import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
 import com.vicmatskiv.weaponlib.render.VAOData;
 import com.vicmatskiv.weaponlib.render.WavefrontModel;
 import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
 import com.vicmatskiv.weaponlib.shader.jim.Attribute;
 import com.vicmatskiv.weaponlib.shader.jim.Shader;
 import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
+import org.lwjgl.opengl.GL11;
 
 public class ModelInstancedObject<K> extends BasicInstancedObject<K> {
 

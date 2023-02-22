@@ -1,23 +1,12 @@
 package com.vicmatskiv.mw.vehicle;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.AudiS4;
-import com.vicmatskiv.mw.models.AudiS4SteeringWheel;
-import com.vicmatskiv.mw.models.AudiS4Wheel;
 import com.vicmatskiv.mw.models.JLTVM1280;
 import com.vicmatskiv.mw.models.JLTVM1280wheel;
 import com.vicmatskiv.mw.models.SampleVehicleControlArm;
 import com.vicmatskiv.weaponlib.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicleConfiguration;
-import com.vicmatskiv.weaponlib.vehicle.Positioners;
-import com.vicmatskiv.weaponlib.vehicle.StatefulRenderer;
-import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRenderableState;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRendererBuilder;
+import com.vicmatskiv.weaponlib.vehicle.*;
 
 public class JLTVM1280Factory implements VehicleFactory {
 

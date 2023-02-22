@@ -1,22 +1,11 @@
 package com.vicmatskiv.weaponlib.animation.jim;
 
-import java.util.AbstractQueue;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.concurrent.SynchronousQueue;
-import java.util.function.Function;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.animation.jim.BasicStateAnimator.Transition;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.VehicleState;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.util.LinkedList;
 
 public class BasicStateAnimator {
 	

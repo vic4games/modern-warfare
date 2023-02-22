@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.models;
 
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

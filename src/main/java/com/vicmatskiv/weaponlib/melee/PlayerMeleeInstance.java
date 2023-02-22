@@ -1,22 +1,20 @@
 package com.vicmatskiv.weaponlib.melee;
 
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.concurrent.LinkedBlockingDeque;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.CompatibleAttachment;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.PlayerItemInstance;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.concurrent.LinkedBlockingDeque;
 
 
 public class PlayerMeleeInstance extends PlayerItemInstance<MeleeState> {

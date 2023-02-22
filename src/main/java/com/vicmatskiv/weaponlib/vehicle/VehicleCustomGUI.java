@@ -1,16 +1,10 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.awt.Color;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.KeyBindings;
-import com.vicmatskiv.weaponlib.animation.jim.BasicStateAnimator;
 import com.vicmatskiv.weaponlib.animation.jim.KeyStateAnimator;
 import com.vicmatskiv.weaponlib.render.ScreenRenderer;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -19,9 +13,11 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.awt.*;
 
 public class VehicleCustomGUI extends Gui {
 	

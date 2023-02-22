@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib.config.novel;
 
-import java.util.List;
-
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.client.config.DummyConfigElement.DummyCategoryElement;
 import net.minecraftforge.fml.client.config.IConfigElement;
+
+import java.util.List;
 
 public class ModernConfigCategory extends DummyCategoryElement {
 

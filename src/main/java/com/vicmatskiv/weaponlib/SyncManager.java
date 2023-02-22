@@ -1,18 +1,16 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.state.ManagedState;
+import com.vicmatskiv.weaponlib.state.Permit;
+import com.vicmatskiv.weaponlib.state.PermitManager;
+import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.state.ManagedState;
-import com.vicmatskiv.weaponlib.state.Permit;
-import com.vicmatskiv.weaponlib.state.PermitManager;
-
-import net.minecraft.item.ItemStack;
 
 public class SyncManager<S extends ManagedState<S>> {
 	

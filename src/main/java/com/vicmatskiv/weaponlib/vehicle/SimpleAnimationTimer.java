@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import net.minecraft.client.Minecraft;
-
 public class SimpleAnimationTimer {
 	
 	private int time = 0, maxTime;

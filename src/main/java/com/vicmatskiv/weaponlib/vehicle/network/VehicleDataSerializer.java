@@ -1,17 +1,13 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.VehiclePhysicsSolver;
-
-import net.minecraft.entity.MoverType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializer;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+
+import java.io.IOException;
 
 public class VehicleDataSerializer {
 

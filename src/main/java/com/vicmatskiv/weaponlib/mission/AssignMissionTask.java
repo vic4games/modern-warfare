@@ -3,8 +3,6 @@ package com.vicmatskiv.weaponlib.mission;
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIBase;
 
-import net.minecraft.entity.player.EntityPlayer;
-
 public class AssignMissionTask extends CompatibleEntityAIBase {
     private final EntityCustomMob merchant;
 

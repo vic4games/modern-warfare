@@ -1,15 +1,12 @@
 package com.vicmatskiv.mw;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.models.UMP45mag;
 import com.vicmatskiv.mw.models.UMP9Mag;
-import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import org.lwjgl.opengl.GL11;
 
 public class Magazines {
 

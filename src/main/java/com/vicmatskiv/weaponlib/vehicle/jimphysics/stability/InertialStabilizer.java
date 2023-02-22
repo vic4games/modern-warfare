@@ -1,11 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.stability;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
 
 public class InertialStabilizer {
 	

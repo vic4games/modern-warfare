@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.mission;
 
 import com.vicmatskiv.weaponlib.network.UniversallySerializable;
-
 import net.minecraft.entity.player.EntityPlayer;
 
 public abstract class Action implements UniversallySerializable {

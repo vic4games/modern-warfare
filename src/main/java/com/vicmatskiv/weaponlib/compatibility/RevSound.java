@@ -1,16 +1,12 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.ISound;
-import net.minecraft.client.audio.MovingSound;
 import net.minecraft.client.audio.PositionedSound;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.function.Supplier;
 
 @SideOnly(Side.CLIENT)
 public class RevSound extends PositionedSound {

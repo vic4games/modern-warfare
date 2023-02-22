@@ -1,18 +1,17 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.network.UniversalObject;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-import com.vicmatskiv.weaponlib.network.UniversalObject;
-
-import io.netty.buffer.ByteBuf;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.world.World;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class Mission extends UniversalObject {
 

@@ -1,13 +1,11 @@
 package com.vicmatskiv.weaponlib.compatibility.sound;
 
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
 import net.minecraft.client.audio.ISound;
-import net.minecraft.client.renderer.vertex.VertexBuffer;
+
+import java.util.function.Supplier;
 
 public class EngineMovingSound extends AdvCompatibleMovingSound {
 

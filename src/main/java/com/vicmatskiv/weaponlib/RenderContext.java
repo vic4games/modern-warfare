@@ -1,17 +1,15 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.lwjgl.util.vector.Matrix4f;
-
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.animation.PartPositionProvider;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleTransformType;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.util.vector.Matrix4f;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RenderContext<RS> implements PartPositionProvider {
 

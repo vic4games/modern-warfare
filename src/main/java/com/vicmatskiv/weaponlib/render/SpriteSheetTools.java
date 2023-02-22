@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.render;
 
-import com.vicmatskiv.weaponlib.debug.SysOutController;
-
 public class SpriteSheetTools {
 	
 	public static class Sprite {

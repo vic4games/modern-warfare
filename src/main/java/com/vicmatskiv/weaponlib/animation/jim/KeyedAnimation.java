@@ -1,27 +1,14 @@
 package com.vicmatskiv.weaponlib.animation.jim;
 
-import java.nio.FloatBuffer;
-import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.TreeMap;
-
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLSync;
-import org.lwjgl.util.vector.Quaternion;
-
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.animation.jim.AnimationData.BlockbenchTransition;
-import com.vicmatskiv.weaponlib.debug.DebugRenderer;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 public class KeyedAnimation {
 

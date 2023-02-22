@@ -1,17 +1,13 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.nio.FloatBuffer;
-
-import javax.vecmath.Vector3d;
-
+import net.minecraft.util.math.Vec3d;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix3f;
 import org.lwjgl.util.vector.Matrix4f;
 import org.lwjgl.util.vector.Quaternion;
 
-import akka.japi.Pair;
-import net.minecraft.util.math.Vec3d;
+import javax.vecmath.Vector3d;
+import java.nio.FloatBuffer;
 
 public class MatrixHelper {
 	

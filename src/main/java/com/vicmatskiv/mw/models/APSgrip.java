@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.models;
 
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
-
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

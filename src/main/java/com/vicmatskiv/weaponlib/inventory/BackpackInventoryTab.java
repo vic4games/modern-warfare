@@ -1,12 +1,11 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.weaponlib.ItemStorage;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleCustomPlayerInventoryCapability;
-
 import net.minecraft.item.ItemStack;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class BackpackInventoryTab extends InventoryTab {
 

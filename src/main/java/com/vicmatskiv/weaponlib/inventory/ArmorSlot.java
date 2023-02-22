@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityEquipmentSlot;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSlot;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class ArmorSlot extends CompatibleSlot {
 

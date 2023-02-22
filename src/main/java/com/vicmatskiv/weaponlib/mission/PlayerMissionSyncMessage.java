@@ -1,12 +1,11 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class PlayerMissionSyncMessage implements CompatibleMessage {
 

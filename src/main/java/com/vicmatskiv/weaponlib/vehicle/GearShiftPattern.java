@@ -1,16 +1,7 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
-
 import akka.japi.Pair;
-import akka.util.Collections;
+import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.BufferBuilder;
@@ -18,6 +9,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class GearShiftPattern {
 	

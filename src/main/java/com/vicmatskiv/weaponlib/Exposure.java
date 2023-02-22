@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.network.UniversallySerializable;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 

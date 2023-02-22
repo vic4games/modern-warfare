@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.util.Random;
-
 import com.vicmatskiv.weaponlib.animation.ScreenShakingAnimationManager.State;
-
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.Random;
 
 public class PlayerRawPitchAnimation implements PlayerAnimation {
 

@@ -1,29 +1,16 @@
 package com.vicmatskiv.weaponlib.compatibility.graph;
 
-import java.lang.reflect.AnnotatedType;
-import java.lang.reflect.Executable;
+import akka.japi.Pair;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.reflect.ClassPath;
+import com.google.common.reflect.ClassPath.ClassInfo;
+import org.lwjgl.opengl.GLContext;
+import scala.actors.threadpool.Arrays;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map.Entry;
-
-import org.lwjgl.opengl.ContextCapabilities;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL32;
-import org.lwjgl.opengl.GLContext;
-
-import com.google.common.collect.ImmutableSet;
-import com.google.common.reflect.ClassPath;
-import com.google.common.reflect.Parameter;
-
-import akka.japi.Pair;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
-import scala.actors.threadpool.Arrays;
-
-import com.google.common.reflect.ClassPath.ClassInfo;
 
 /**
  * Make sure to enable

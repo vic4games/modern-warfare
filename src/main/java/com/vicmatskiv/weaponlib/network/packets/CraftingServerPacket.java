@@ -8,7 +8,6 @@ import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
 import com.vicmatskiv.weaponlib.network.advanced.SimplePacket;
 import com.vicmatskiv.weaponlib.network.advanced.data.DataTypes;
 import com.vicmatskiv.weaponlib.network.advanced.data.PacketSerializer;
-
 import net.minecraft.entity.player.EntityPlayerMP;
 
 public class CraftingServerPacket extends SimplePacket {

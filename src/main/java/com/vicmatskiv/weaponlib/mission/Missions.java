@@ -1,5 +1,13 @@
 package com.vicmatskiv.weaponlib.mission;
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
+import com.vicmatskiv.weaponlib.mission.MissionReward.ItemReward;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,15 +17,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
-import com.vicmatskiv.weaponlib.mission.MissionReward.ItemReward;
-
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class Missions {
     

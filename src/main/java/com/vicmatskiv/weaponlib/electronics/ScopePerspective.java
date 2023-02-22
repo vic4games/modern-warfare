@@ -1,11 +1,5 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.function.BiConsumer;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ClientModContext;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
@@ -13,10 +7,14 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleTransformType;
 import com.vicmatskiv.weaponlib.perspective.Perspective;
 import com.vicmatskiv.weaponlib.perspective.PerspectiveRenderer;
 import com.vicmatskiv.weaponlib.render.scopes.Reticle;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
+
+import java.util.function.BiConsumer;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class ScopePerspective extends PerspectiveRenderer {
 	

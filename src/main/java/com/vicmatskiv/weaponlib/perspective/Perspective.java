@@ -8,7 +8,6 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleWorldRenderer;
 import com.vicmatskiv.weaponlib.compatibility.Framebuffers;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderContext;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupManager;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.shader.Framebuffer;

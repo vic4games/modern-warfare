@@ -1,16 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.NavigableSet;
-import java.util.Random;
-import java.util.TreeSet;
+import io.netty.buffer.ByteBuf;
+
+import java.util.*;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-
-import io.netty.buffer.ByteBuf;
 
 public class WeightedOptions<Category, T> {
     

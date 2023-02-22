@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib.render;
 
 import com.vicmatskiv.weaponlib.shader.jim.Shader;
 import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
-
 import net.minecraft.util.ResourceLocation;
 
 /**

@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.util.UUID;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.UUID;
 
 public class AcceptMissionMessage implements CompatibleMessage {
     

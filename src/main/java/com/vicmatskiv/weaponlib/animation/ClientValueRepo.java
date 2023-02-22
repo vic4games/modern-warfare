@@ -1,5 +1,6 @@
 package com.vicmatskiv.weaponlib.animation;
 
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
 import com.vicmatskiv.weaponlib.compatibility.Interceptors;
@@ -7,8 +8,6 @@ import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.numerical.LerpedValue;
 import com.vicmatskiv.weaponlib.numerical.RandomVector;
 import com.vicmatskiv.weaponlib.numerical.SpringValue;
-
-import akka.japi.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 

@@ -1,5 +1,14 @@
 package com.vicmatskiv.weaponlib.electronics;
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+
+import com.vicmatskiv.weaponlib.*;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
+import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import com.vicmatskiv.weaponlib.crafting.OptionsMetadata;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,23 +16,7 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.CustomRenderer;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.ModelSource;
-import com.vicmatskiv.weaponlib.RenderContext;
-import com.vicmatskiv.weaponlib.RenderableState;
-import com.vicmatskiv.weaponlib.StaticModelSourceRenderer;
-import com.vicmatskiv.weaponlib.Tuple;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-import com.vicmatskiv.weaponlib.crafting.OptionsMetadata;
-
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class ItemWirelessCamera extends CompatibleItem implements ModelSource {
 

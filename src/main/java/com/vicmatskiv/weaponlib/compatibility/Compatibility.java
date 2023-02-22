@@ -1,19 +1,10 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.io.IOException;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.List;
-import java.util.UUID;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-
 import com.vicmatskiv.weaponlib.Explosion;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import com.vicmatskiv.weaponlib.inventory.GuiHandler;
 import com.vicmatskiv.weaponlib.tile.CustomTileEntityRenderer;
-
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiScreen;
@@ -58,6 +49,14 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.Pre;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
+
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.UUID;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public interface Compatibility {
 

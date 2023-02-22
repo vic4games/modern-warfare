@@ -1,18 +1,15 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.nio.FloatBuffer;
-
+import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.shader.Framebuffer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.shader.Framebuffer;
+import java.nio.FloatBuffer;
 
 /**
  * Depth texture class that holds a depth buffer with a depth texture attachment that allows

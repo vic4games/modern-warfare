@@ -1,25 +1,16 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import java.nio.DoubleBuffer;
-import java.nio.FloatBuffer;
-
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-import javax.vecmath.Tuple3d;
-import javax.vecmath.Vector3d;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix;
-
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import javax.vecmath.Matrix3d;
+import javax.vecmath.Matrix3f;
+import javax.vecmath.Vector3d;
 
 public class OreintedBB {
 	

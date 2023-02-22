@@ -1,22 +1,19 @@
 package com.vicmatskiv.weaponlib.animation.movement;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.animation.ClientValueRepo;
 import com.vicmatskiv.weaponlib.animation.jim.BBLoader;
 import com.vicmatskiv.weaponlib.animation.jim.KeyedAnimation;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleWeaponRenderer.StateDescriptor;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleWeaponRenderer.StateDescriptor;
 import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.numerical.LissajousCurve;
 import com.vicmatskiv.weaponlib.numerical.SpringValue;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
 
 /**
  * Class that handles weapon rotations, handles recoil animations, walking

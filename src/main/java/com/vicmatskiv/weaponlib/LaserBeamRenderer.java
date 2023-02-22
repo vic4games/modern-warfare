@@ -1,26 +1,18 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.Random;
-import java.util.function.BiConsumer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLSync;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleTessellator;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleTransformType;
 import com.vicmatskiv.weaponlib.render.Bloom;
 import com.vicmatskiv.weaponlib.render.Shaders;
-import com.vicmatskiv.weaponlib.shader.jim.Shader;
-import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
+
+import java.util.function.BiConsumer;
 
 public class LaserBeamRenderer implements CustomRenderer {
 	

@@ -1,21 +1,12 @@
 package com.vicmatskiv.weaponlib.render.qrender;
 
-import javax.vecmath.Matrix4d;
-
-import javax.vecmath.Vector3d;
-import javax.vecmath.Vector3f;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix4f;
-import org.lwjgl.util.vector.Vector4f;
-
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.client.model.PositionTextureVertex;
 import net.minecraft.client.model.TexturedQuad;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.util.vector.Matrix4f;
+import org.lwjgl.util.vector.Vector4f;
 
 public class QBoxer extends ModelBox {
 

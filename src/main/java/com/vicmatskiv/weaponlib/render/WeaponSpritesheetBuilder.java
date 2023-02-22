@@ -1,6 +1,10 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.awt.Graphics2D;
+import com.vicmatskiv.weaponlib.ClientModContext;
+import com.vicmatskiv.weaponlib.WeaponRenderer;
+import com.vicmatskiv.weaponlib.render.SpriteSheetTools.Sprite;
+
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -8,14 +12,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
-
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.WeaponRenderer;
-import com.vicmatskiv.weaponlib.render.SpriteSheetTools.Sprite;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ResourceLocation;
 
 public class WeaponSpritesheetBuilder {
 	

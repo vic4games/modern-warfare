@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.render.cam;
 
 import com.vicmatskiv.weaponlib.numerical.SpringValue;
-
 import net.minecraft.util.math.Vec3d;
 
 public class ShockVector {

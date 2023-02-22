@@ -1,38 +1,20 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
 import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.GunSkins;
 import com.vicmatskiv.mw.Magazines;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.models.Emp1911;
-import com.vicmatskiv.mw.models.Emp1911Slide;
-import com.vicmatskiv.mw.models.M1911;
-import com.vicmatskiv.mw.models.M191144MagSlide;
-import com.vicmatskiv.mw.models.M1911Slide;
-import com.vicmatskiv.mw.models.M1911frontsight;
-import com.vicmatskiv.mw.models.M1911rearsight;
-import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.makarovrearsight;
+import com.vicmatskiv.mw.models.*;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class M1911Factory implements GunFactory {
 

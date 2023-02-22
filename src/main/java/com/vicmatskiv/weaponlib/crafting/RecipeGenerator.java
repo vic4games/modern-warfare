@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib.crafting;
 
+import com.vicmatskiv.weaponlib.crafting.OptionsMetadata.OptionMetadata;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.vicmatskiv.weaponlib.crafting.OptionsMetadata.OptionMetadata;
 
 final class RecipeGenerator {
 

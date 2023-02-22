@@ -11,12 +11,10 @@
 
 package com.vicmatskiv.mw.models;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
-
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import org.lwjgl.opengl.GL11;
 
 public class M202RocketPROJECTILE extends ModelWithAttachments
 {

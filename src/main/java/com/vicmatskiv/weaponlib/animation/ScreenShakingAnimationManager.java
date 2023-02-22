@@ -1,15 +1,14 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-
 import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.animation.ScreenShakeAnimation.Builder;
-
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 public class ScreenShakingAnimationManager {
     

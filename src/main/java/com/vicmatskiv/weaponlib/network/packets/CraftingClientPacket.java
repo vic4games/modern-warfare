@@ -1,9 +1,5 @@
 package com.vicmatskiv.weaponlib.network.packets;
 
-import java.io.ByteArrayOutputStream;
-
-import org.apache.commons.codec.binary.Hex;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
@@ -12,8 +8,9 @@ import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
 import com.vicmatskiv.weaponlib.network.advanced.SimplePacket;
 import com.vicmatskiv.weaponlib.network.advanced.data.DataTypes;
 import com.vicmatskiv.weaponlib.network.advanced.data.PacketSerializer;
-
 import net.minecraft.client.Minecraft;
+
+import java.io.ByteArrayOutputStream;
 
 public class CraftingClientPacket extends SimplePacket {
 	

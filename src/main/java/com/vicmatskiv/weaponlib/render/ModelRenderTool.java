@@ -1,15 +1,14 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.lwjgl.util.vector.Matrix4f;
-
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.TexturedQuad;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import org.lwjgl.util.vector.Matrix4f;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ModelRenderTool {
 	

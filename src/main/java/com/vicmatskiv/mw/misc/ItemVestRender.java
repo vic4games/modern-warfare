@@ -1,8 +1,7 @@
 package com.vicmatskiv.mw.misc;
 
-import net.minecraft.item.Item;
-
 import com.vicmatskiv.mw.ModernWarfareMod;
+import net.minecraft.item.Item;
 
 public class ItemVestRender extends Item
 {

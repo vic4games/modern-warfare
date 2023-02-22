@@ -7,17 +7,7 @@ import com.vicmatskiv.mw.models.SampleVehicleSteeringWheel;
 import com.vicmatskiv.mw.models.Wheel;
 import com.vicmatskiv.weaponlib.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicleConfiguration;
-import com.vicmatskiv.weaponlib.vehicle.ItemVehicle;
-import com.vicmatskiv.weaponlib.vehicle.Positioners;
-import com.vicmatskiv.weaponlib.vehicle.StatefulRenderer;
-import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRenderableState;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRendererBuilder;
-//import com.vicmatskiv.weaponlib.vehicle.EntityVehicle.Type;
-
-import net.minecraft.entity.Entity;
+import com.vicmatskiv.weaponlib.vehicle.*;
 
 public class SampleVehicleFactory implements VehicleFactory {
 

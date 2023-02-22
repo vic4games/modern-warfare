@@ -1,14 +1,11 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
+import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.Minecraft;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class Transform {
 	

@@ -1,14 +1,12 @@
 package com.vicmatskiv.weaponlib.shader.jim;
 
+import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
+import net.minecraft.client.renderer.OpenGlHelper;
+import org.lwjgl.opengl.GL20;
+
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.lwjgl.opengl.GL20;
-
-import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
-
-import net.minecraft.client.renderer.OpenGlHelper;
 
 
 public class Shader {

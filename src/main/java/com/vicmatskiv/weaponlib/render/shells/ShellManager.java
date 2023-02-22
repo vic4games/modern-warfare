@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.render.shells;
 
-import java.util.ArrayList;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.SynchronousQueue;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleShellRenderer;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell;
+
+import java.util.ArrayList;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Since the renderer and the physics are kept in separate classes, this helps

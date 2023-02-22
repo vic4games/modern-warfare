@@ -1,11 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.StatusMessageCenter.Message;
-import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
 import com.vicmatskiv.weaponlib.animation.gui.AnimationGUI;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityEquipmentSlot;
@@ -14,7 +9,6 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleMathHelper;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleTessellator;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager.StatusBarPosition;
-import com.vicmatskiv.weaponlib.config.novel.HierarchialTree;
 import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
 import com.vicmatskiv.weaponlib.debug.DebugRenderer;
 import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
@@ -23,11 +17,9 @@ import com.vicmatskiv.weaponlib.jim.util.LangTools;
 import com.vicmatskiv.weaponlib.jim.util.VectorTools;
 import com.vicmatskiv.weaponlib.jim.util.color.FlatUIColors;
 import com.vicmatskiv.weaponlib.render.ModificationGUI;
-import com.vicmatskiv.weaponlib.render.gui.ColorPalette;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
 import com.vicmatskiv.weaponlib.vehicle.VehicleCustomGUI;
-
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -45,9 +37,10 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
-import static net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType.*;
+import org.lwjgl.opengl.GL11;
 
-import java.util.List;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import static net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType.*;
 
 public class CustomGui extends CompatibleGui {
 

@@ -1,38 +1,26 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.function.BiFunction;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.Weapon.State;
 import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
-import com.vicmatskiv.weaponlib.animation.SpecialAttachments;
-import com.vicmatskiv.weaponlib.animation.Transform;
-import com.vicmatskiv.weaponlib.animation.jim.BBLoader;
-import com.vicmatskiv.weaponlib.debug.SysOutController;
-import com.vicmatskiv.weaponlib.melee.MeleeState;
-import com.vicmatskiv.weaponlib.melee.MeleeAttachmentAspect.ExitAttachmentModePermit;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
 import com.vicmatskiv.weaponlib.state.Aspect;
 import com.vicmatskiv.weaponlib.state.Permit;
 import com.vicmatskiv.weaponlib.state.Permit.Status;
 import com.vicmatskiv.weaponlib.state.PermitManager;
 import com.vicmatskiv.weaponlib.state.StateManager;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class WeaponReloadAspect implements Aspect<WeaponState, PlayerWeaponInstance> {
 

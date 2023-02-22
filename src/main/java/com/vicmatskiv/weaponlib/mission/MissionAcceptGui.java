@@ -1,15 +1,8 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.util.List;
-import java.util.Set;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
 import com.vicmatskiv.weaponlib.mission.MissionReward.ItemReward;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
@@ -19,6 +12,11 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.GL11;
+
+import java.util.List;
+import java.util.Set;
 
 public class MissionAcceptGui extends GuiScreen {
         

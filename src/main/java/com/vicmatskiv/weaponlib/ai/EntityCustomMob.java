@@ -1,72 +1,19 @@
 package com.vicmatskiv.weaponlib.ai;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.function.BiFunction;
-import java.util.function.Predicate;
-
-import javax.annotation.Nullable;
-
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.Configurable;
-import com.vicmatskiv.weaponlib.Contextual;
-import com.vicmatskiv.weaponlib.CustomArmor;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ItemMagazine;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.PlayerItemInstance;
-import com.vicmatskiv.weaponlib.PlayerItemInstanceFactory;
-import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
-import com.vicmatskiv.weaponlib.Tags;
-import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
-import com.vicmatskiv.weaponlib.WeaponFireAspect;
-import com.vicmatskiv.weaponlib.WeaponSpawnEntity;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.ai.EntityConfiguration.Equipment;
 import com.vicmatskiv.weaponlib.ai.EntityConfiguration.TexturedModel;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleAchievement;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleDataManager;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleDifficulty;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityEquipmentSlot;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityMob;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSharedMonsterAttributes;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
+import com.vicmatskiv.weaponlib.compatibility.*;
 import com.vicmatskiv.weaponlib.grenade.GrenadeAttackAspect;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
 import com.vicmatskiv.weaponlib.grenade.PlayerGrenadeInstance;
-import com.vicmatskiv.weaponlib.mission.Goal;
-import com.vicmatskiv.weaponlib.mission.Mission;
-import com.vicmatskiv.weaponlib.mission.MissionAcceptGui;
-import com.vicmatskiv.weaponlib.mission.MissionAssigner;
-import com.vicmatskiv.weaponlib.mission.MissionIntroGui;
 import com.vicmatskiv.weaponlib.mission.MissionManager;
 import com.vicmatskiv.weaponlib.mission.MissionOffering;
-import com.vicmatskiv.weaponlib.mission.Missions;
-import com.vicmatskiv.weaponlib.mission.ObtainItemAction;
-import com.vicmatskiv.weaponlib.mission.PlayerMissionSyncMessage;
 import com.vicmatskiv.weaponlib.network.packets.HighIQPickupPacket;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.EnumPushReaction;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.IRangedAttackMob;
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.*;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -77,8 +24,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldType;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Predicate;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityCustomMob extends CompatibleEntityMob
         implements IRangedAttackMob, Contextual, Configurable<EntityConfiguration> {

@@ -1,18 +1,13 @@
 package com.vicmatskiv.weaponlib.compatibility.sound;
 
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import scala.reflect.internal.Trees.This;
+
+import java.util.function.Supplier;
 
 @SideOnly(Side.CLIENT)
 public class AdvCompatibleMovingSound extends MovingSound {

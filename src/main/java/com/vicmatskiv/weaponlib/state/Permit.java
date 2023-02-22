@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib.state;
 
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
 import com.vicmatskiv.weaponlib.network.UniversalObject;
-
 import io.netty.buffer.ByteBuf;
 
 public class Permit<S extends ManagedState<S>> extends UniversalObject {

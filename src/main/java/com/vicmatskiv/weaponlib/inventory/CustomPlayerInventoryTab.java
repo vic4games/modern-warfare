@@ -1,9 +1,8 @@
 package com.vicmatskiv.weaponlib.inventory;
 
+import com.vicmatskiv.weaponlib.ModContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com.vicmatskiv.weaponlib.ModContext;
 
 public class CustomPlayerInventoryTab extends InventoryTab {
 

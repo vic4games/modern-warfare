@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompatibleRayTraceResult {
 	public static enum Type {

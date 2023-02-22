@@ -1,16 +1,15 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleGuiButton;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleInventoryTabs;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.inventory.GuiInventory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.vicmatskiv.weaponlib.compatibility.CompatibleGuiButton;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleInventoryTabs;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.inventory.GuiInventory;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class InventoryTabs extends CompatibleInventoryTabs {
 

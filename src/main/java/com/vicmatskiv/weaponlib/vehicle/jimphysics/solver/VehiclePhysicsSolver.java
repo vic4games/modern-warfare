@@ -1,44 +1,23 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.solver;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-import javax.vecmath.Quat4f;
-import javax.vecmath.Vector2d;
-
-import org.lwjgl.input.Keyboard;
-
-import com.vicmatskiv.weaponlib.KeyBindings;
 import com.vicmatskiv.weaponlib.network.IEncodable;
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.VehicleTransmissionStrategy.DefaultTransmissionStrategy;
-import com.vicmatskiv.weaponlib.vehicle.collisions.GJKResult;
-import com.vicmatskiv.weaponlib.vehicle.collisions.InertiaKit;
-import com.vicmatskiv.weaponlib.vehicle.collisions.MathHelper;
-import com.vicmatskiv.weaponlib.vehicle.collisions.OBBCollider;
-import com.vicmatskiv.weaponlib.vehicle.collisions.OreintedBB;
-import com.vicmatskiv.weaponlib.vehicle.collisions.VehicleInertiaBuilder;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Engine;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.MechanicalClutch;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.PhysicsConfiguration;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.VehiclePhysUtil;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.engines.FlywheelSolver;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.aero.IAeroComponent;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.components.EngineSolver;
-import com.vicmatskiv.weaponlib.vehicle.network.VehicleClientPacket;
-import com.vicmatskiv.weaponlib.vehicle.network.VehicleClientPacketHandler;
-
 import io.netty.buffer.ByteBuf;
-
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.MoverType;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Matrix3d;
+import javax.vecmath.Matrix3f;
+import javax.vecmath.Vector2d;
+import java.util.ArrayList;
 
 public class VehiclePhysicsSolver implements IEncodable<VehiclePhysicsSolver> {
 	

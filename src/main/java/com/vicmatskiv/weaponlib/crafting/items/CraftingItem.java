@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.crafting.items;
 
-import com.vicmatskiv.weaponlib.CommonModContext;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 

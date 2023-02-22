@@ -1,57 +1,18 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.function.BiConsumer;
-import java.util.function.BiFunction;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.animation.ScreenShakingAnimationManager;
-import com.vicmatskiv.weaponlib.animation.SpecialAttachments;
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.BulletHoleRenderer.BulletHole;
 import com.vicmatskiv.weaponlib.animation.ScreenShakeAnimation;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockState;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleReflection;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleTargetPoint;
-import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
+import com.vicmatskiv.weaponlib.animation.ScreenShakingAnimationManager;
+import com.vicmatskiv.weaponlib.animation.SpecialAttachments;
+import com.vicmatskiv.weaponlib.compatibility.*;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
-import com.vicmatskiv.weaponlib.config.Gun;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
-import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
-import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
-import com.vicmatskiv.weaponlib.crafting.OptionsMetadata;
-import com.vicmatskiv.weaponlib.jim.util.VMWHooksHandler;
+import com.vicmatskiv.weaponlib.config.Gun;
+import com.vicmatskiv.weaponlib.crafting.*;
 import com.vicmatskiv.weaponlib.model.Shell;
-import com.vicmatskiv.weaponlib.render.ModificationGUI;
 import com.vicmatskiv.weaponlib.render.WeaponSpritesheetBuilder;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
-
-import akka.japi.Pair;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
@@ -65,10 +26,15 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import scala.tools.nsc.typechecker.MethodSynthesis.MethodSynth.LazyValGetter.ChangeOwnerAndModuleClassTraverser;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.function.*;
+import java.util.stream.Collectors;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class Weapon extends CompatibleItem implements PlayerItemInstanceFactory<PlayerWeaponInstance, WeaponState>, 
 AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCrafting {

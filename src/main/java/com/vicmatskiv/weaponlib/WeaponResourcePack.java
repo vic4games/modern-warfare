@@ -1,15 +1,14 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleResourcePack;
+import net.minecraft.util.ResourceLocation;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleResourcePack;
-
-import net.minecraft.util.ResourceLocation;
 
 public class WeaponResourcePack extends CompatibleResourcePack {
 	

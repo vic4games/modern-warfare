@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.function.Supplier;
-
 import net.minecraft.client.audio.MovingSound;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.function.Supplier;
 
 @SideOnly(Side.CLIENT)
 public class CompatibleMovingSound extends MovingSound {

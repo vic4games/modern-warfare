@@ -1,17 +1,13 @@
 package com.vicmatskiv.mw;
 
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.entities.BanditEntityFactory;
 import com.vicmatskiv.mw.tileentities.TurretBaseFactory;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
-import com.vicmatskiv.weaponlib.tile.CustomTileEntity;
 import com.vicmatskiv.weaponlib.tile.CustomTileEntityBlock;
 import com.vicmatskiv.weaponlib.tile.LootBoxConfiguration;
-
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.EnumDifficulty;
+import org.lwjgl.opengl.GL11;
 
 public class TileEntities {
 

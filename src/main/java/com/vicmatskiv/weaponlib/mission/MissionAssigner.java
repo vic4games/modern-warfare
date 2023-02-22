@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.mission;
 
+import net.minecraft.entity.player.EntityPlayer;
+
 import java.util.Map;
 import java.util.UUID;
-
-import net.minecraft.entity.player.EntityPlayer;
 
 public interface MissionAssigner {
 

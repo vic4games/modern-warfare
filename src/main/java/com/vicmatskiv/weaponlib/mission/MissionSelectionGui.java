@@ -1,13 +1,6 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.io.IOException;
-
-import javax.annotation.Nullable;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.ModContext;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -15,6 +8,10 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
+
+import javax.annotation.Nullable;
+import java.io.IOException;
 
 @SideOnly(Side.CLIENT)
 public class MissionSelectionGui extends GuiScreen {

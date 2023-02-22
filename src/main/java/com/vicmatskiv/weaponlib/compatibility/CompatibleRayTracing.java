@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.function.BiPredicate;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -11,6 +9,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
+import java.util.function.BiPredicate;
 
 public class CompatibleRayTracing {
 

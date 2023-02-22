@@ -1,10 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockState;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleChannel;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
+import com.vicmatskiv.weaponlib.compatibility.*;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.RecipeManager;
 import com.vicmatskiv.weaponlib.grenade.GrenadeAttackAspect;
@@ -15,7 +11,6 @@ import com.vicmatskiv.weaponlib.melee.MeleeAttachmentAspect;
 import com.vicmatskiv.weaponlib.melee.MeleeAttackAspect;
 import com.vicmatskiv.weaponlib.melee.MeleeRenderer;
 import com.vicmatskiv.weaponlib.mission.MissionManager;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;

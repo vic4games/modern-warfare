@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.util.HashMap;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
+
+import java.util.HashMap;
 
 public class VehiclePacketLatencyTracker {
 	

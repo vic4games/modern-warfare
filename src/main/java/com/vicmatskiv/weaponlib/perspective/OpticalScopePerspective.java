@@ -1,26 +1,16 @@
 package com.vicmatskiv.weaponlib.perspective;
 
-import java.nio.FloatBuffer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GLSync;
-
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.ItemScope;
-import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
-import com.vicmatskiv.weaponlib.RenderContext;
-import com.vicmatskiv.weaponlib.RenderableState;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRenderTickEvent;
-import com.vicmatskiv.weaponlib.shader.DynamicShaderContext;
-import com.vicmatskiv.weaponlib.shader.DynamicShaderPhase;
 import com.vicmatskiv.weaponlib.shader.jim.Shader;
 import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
 import com.vicmatskiv.weaponlib.shader.jim.Uniform;
-
 import net.minecraft.client.renderer.GLAllocation;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL20;
+
+import java.nio.FloatBuffer;
 
 public class OpticalScopePerspective extends FirstPersonPerspective<RenderableState> {
 

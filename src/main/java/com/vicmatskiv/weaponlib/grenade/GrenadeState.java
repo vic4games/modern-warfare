@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib.grenade;
 
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
 import com.vicmatskiv.weaponlib.state.ManagedState;
-
 import io.netty.buffer.ByteBuf;
 
 public enum GrenadeState implements ManagedState<GrenadeState> {

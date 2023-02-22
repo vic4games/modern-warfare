@@ -1,11 +1,10 @@
 package com.vicmatskiv.weaponlib.animation.jim;
 
+import com.vicmatskiv.weaponlib.vehicle.GearShiftPattern;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.ArrayList;
 import java.util.TreeMap;
-
-import com.vicmatskiv.weaponlib.vehicle.GearShiftPattern;
-
-import net.minecraft.util.math.Vec3d;
 
 public class GearShiftAnimation {
 	

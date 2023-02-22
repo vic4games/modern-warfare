@@ -1,28 +1,22 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.util.function.BiConsumer;
-
 import com.vicmatskiv.weaponlib.ItemStorage;
 import com.vicmatskiv.weaponlib.ItemVest;
-import com.vicmatskiv.weaponlib.KeyBindings;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBiomeType;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleCustomPlayerInventoryCapability;
 import com.vicmatskiv.weaponlib.inventory.CustomPlayerInventory;
 import com.vicmatskiv.weaponlib.model.USMCVestTwo;
 import com.vicmatskiv.weaponlib.render.modelrepo.GearModelRepository;
-import com.vicmatskiv.weaponlib.render.modelrepo.ServerGearModelHookRegistry;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLivingBase;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
-import net.minecraft.client.renderer.tileentity.TileEntityItemStackRenderer;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemBanner;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.function.BiConsumer;
 
 public class CustomArmorLayer implements LayerRenderer<EntityPlayer> {
 

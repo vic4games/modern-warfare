@@ -1,12 +1,12 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.Random;
-
 import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
+
+import java.util.Random;
 
 public abstract class CompatibleWorldGenerator implements IWorldGenerator {
 

@@ -1,20 +1,12 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.apache.commons.lang3.StringUtils;
-
-import com.google.common.base.Preconditions;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
-import net.minecraftforge.fml.relauncher.ReflectionHelper.UnableToFindFieldException;
-import net.minecraftforge.fml.relauncher.ReflectionHelper.UnableToFindMethodException;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.lang.reflect.Field;
 
 /**
  * Better reflection class that enables the lookup of

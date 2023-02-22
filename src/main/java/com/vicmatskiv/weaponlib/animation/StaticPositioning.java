@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib.animation;
 
+import org.lwjgl.util.vector.Matrix4f;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
-
-import org.lwjgl.util.vector.Matrix4f;
 
 class StaticPositioning<State, Part, Context extends PartPositionProvider> implements MultipartPositioning<Part, Context> {
 

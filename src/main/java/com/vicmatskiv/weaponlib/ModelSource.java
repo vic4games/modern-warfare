@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.List;
-
 import net.minecraft.client.model.ModelBase;
+
+import java.util.List;
 
 public interface ModelSource {
 

@@ -1,14 +1,12 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-
 import com.vicmatskiv.weaponlib.melee.ItemMelee;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
 
 public class CompatibleAttachment<T> {
 

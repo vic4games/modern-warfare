@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import org.lwjgl.opengl.ARBFramebufferObject;
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
+import org.lwjgl.opengl.ARBFramebufferObject;
+import org.lwjgl.opengl.GL11;
 
 public class Framebuffers {
 

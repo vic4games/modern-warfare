@@ -1,13 +1,13 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.lang.reflect.Method;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.items.ItemStackHandler;
+
+import java.lang.reflect.Method;
 
 public class forjosh {
 	

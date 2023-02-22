@@ -1,7 +1,5 @@
 package com.vicmatskiv.mw.models;
 
-import com.vicmatskiv.mw.Attachments;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

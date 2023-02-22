@@ -1,22 +1,18 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
+import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler.MuzzleFlash;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
 import com.vicmatskiv.weaponlib.compatibility.Interceptors;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler.MuzzleFlash;
 import com.vicmatskiv.weaponlib.particle.BetterMuzzleSmoke;
 import com.vicmatskiv.weaponlib.particle.ExplosionParticleFX;
 import com.vicmatskiv.weaponlib.particle.ExplosionSmokeFX;
-import com.vicmatskiv.weaponlib.particle.FlashFX;
-import com.vicmatskiv.weaponlib.particle.SmokeFX;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 final class ClientEffectManager implements EffectManager {
 

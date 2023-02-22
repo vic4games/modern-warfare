@@ -1,54 +1,27 @@
 package com.vicmatskiv.weaponlib.crafting.ammopress;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.concurrent.TimeUnit;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import com.vicmatskiv.weaponlib.ItemBullet;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.animation.gui.GuiRenderUtil;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleGuiContainer;
-import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
-import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
 import com.vicmatskiv.weaponlib.crafting.base.GUIContainerStation;
-import com.vicmatskiv.weaponlib.crafting.items.CraftingItem;
 import com.vicmatskiv.weaponlib.crafting.workbench.CustomSearchTextField;
 import com.vicmatskiv.weaponlib.crafting.workbench.GUIButtonCustom;
-import com.vicmatskiv.weaponlib.crafting.workbench.GUIContainerWorkbench;
-import com.vicmatskiv.weaponlib.crafting.workbench.TileEntityWorkbench;
-import com.vicmatskiv.weaponlib.crafting.workbench.WorkbenchBlock;
 import com.vicmatskiv.weaponlib.network.packets.StationPacket;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
-import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper.StringAlignment;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
-import akka.japi.Pair;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
-import static net.minecraft.util.text.TextFormatting.*;
-import net.minecraftforge.oredict.OreDictionary;
-import scala.actors.threadpool.Arrays;
+import org.lwjgl.input.Keyboard;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+import static net.minecraft.util.text.TextFormatting.WHITE;
 
 /**
  * GUIContainer for the Workbench Block

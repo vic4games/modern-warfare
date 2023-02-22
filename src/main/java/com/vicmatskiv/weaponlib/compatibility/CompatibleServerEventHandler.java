@@ -1,15 +1,12 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
 
-import java.io.ByteArrayOutputStream;
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.ServerEventHandler;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
 import com.vicmatskiv.weaponlib.jim.util.ByteArrayUtils;
 import com.vicmatskiv.weaponlib.network.packets.BalancePackClient;
 import com.vicmatskiv.weaponlib.network.packets.CraftingClientPacket;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -32,6 +29,8 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent.Phase;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * Handles server events 

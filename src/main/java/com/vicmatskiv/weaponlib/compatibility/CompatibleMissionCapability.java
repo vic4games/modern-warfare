@@ -1,13 +1,8 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.mission.Mission;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.entity.Entity;
@@ -20,6 +15,10 @@ import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class CompatibleMissionCapability implements ICapabilitySerializable<NBTBase> {
 

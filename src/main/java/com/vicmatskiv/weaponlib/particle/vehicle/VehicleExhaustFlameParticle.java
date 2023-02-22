@@ -1,16 +1,13 @@
 package com.vicmatskiv.weaponlib.particle.vehicle;
 
-import java.util.Random;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class VehicleExhaustFlameParticle extends Particle {
 	

@@ -1,22 +1,15 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.function.BiConsumer;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.electronics.ScopePerspective;
-import com.vicmatskiv.weaponlib.perspective.PerspectiveRenderer;
 import com.vicmatskiv.weaponlib.perspective.ReflexScreen;
 import com.vicmatskiv.weaponlib.render.scopes.CyclicList;
 import com.vicmatskiv.weaponlib.render.scopes.Reticle;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
+import java.util.function.BiConsumer;
 
 public class ItemScope extends ItemAttachment<Weapon> {
 

@@ -1,6 +1,19 @@
 package com.vicmatskiv.weaponlib.melee;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.*;
+import com.vicmatskiv.weaponlib.network.TypeRegistry;
+import com.vicmatskiv.weaponlib.state.Aspect;
+import com.vicmatskiv.weaponlib.state.Permit;
+import com.vicmatskiv.weaponlib.state.Permit.Status;
+import com.vicmatskiv.weaponlib.state.PermitManager;
+import com.vicmatskiv.weaponlib.state.StateManager;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,27 +21,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.AttachmentContainer;
-import com.vicmatskiv.weaponlib.CompatibleAttachment;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.PlayerItemInstance;
-import com.vicmatskiv.weaponlib.network.TypeRegistry;
-import com.vicmatskiv.weaponlib.state.Aspect;
-import com.vicmatskiv.weaponlib.state.Permit;
-import com.vicmatskiv.weaponlib.state.Permit.Status;
-import com.vicmatskiv.weaponlib.state.PermitManager;
-import com.vicmatskiv.weaponlib.state.StateManager;
-
-import io.netty.buffer.ByteBuf;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public final class MeleeAttachmentAspect implements Aspect<MeleeState, PlayerMeleeInstance> {
 	

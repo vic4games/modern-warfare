@@ -1,11 +1,6 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.solver;
 
 
-
-import javax.vecmath.Vector3d;
-
-import org.lwjgl.input.Keyboard;
-
 import com.vicmatskiv.weaponlib.KeyBindings;
 import com.vicmatskiv.weaponlib.network.IEncodable;
 import com.vicmatskiv.weaponlib.vehicle.collisions.InertiaKit;
@@ -13,12 +8,12 @@ import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.TyreSize;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.VehiclePhysUtil;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.stability.numerical.vehicle.WheelSolutionVector;
-
 import io.netty.buffer.ByteBuf;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Vector3d;
 
 public class WheelSolver implements IEncodable<WheelSolver>{
 	

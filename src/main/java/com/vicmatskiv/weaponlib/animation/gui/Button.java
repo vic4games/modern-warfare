@@ -1,13 +1,8 @@
 package com.vicmatskiv.weaponlib.animation.gui;
 
-import java.awt.Color;
-
-import org.lwjgl.opengl.GL11;
-
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+
+import java.awt.*;
 
 public class Button {
 	

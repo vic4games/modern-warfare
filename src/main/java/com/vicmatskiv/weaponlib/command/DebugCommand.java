@@ -1,15 +1,6 @@
 package com.vicmatskiv.weaponlib.command;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.ClientModContext;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.Part;
@@ -23,11 +14,15 @@ import com.vicmatskiv.weaponlib.compatibility.graph.CompatibilityClassGenerator;
 import com.vicmatskiv.weaponlib.render.ModificationGUI;
 import com.vicmatskiv.weaponlib.render.WeaponSpritesheetBuilder;
 import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
-
-import akka.japi.Pair;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.item.Item;
 import net.minecraft.util.text.TextFormatting;
+
+import java.io.*;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class DebugCommand extends CompatibleCommand {
 

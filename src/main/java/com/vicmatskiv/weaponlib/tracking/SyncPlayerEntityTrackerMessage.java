@@ -1,11 +1,9 @@
 package com.vicmatskiv.weaponlib.tracking;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
+import io.netty.buffer.ByteBuf;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
-import io.netty.buffer.ByteBuf;
 
 public class SyncPlayerEntityTrackerMessage implements CompatibleMessage {
 

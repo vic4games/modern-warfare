@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.vehicle.smoothlib;
 
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.Vec3d;
 

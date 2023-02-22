@@ -1,12 +1,11 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class ExposureMessage implements CompatibleMessage {
     

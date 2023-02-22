@@ -1,25 +1,7 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayDeque;
-import java.util.List;
-import java.util.Queue;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleAxisAlignedBB;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockState;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleIEntityAdditionalSpawnData;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleIThrowableEntity;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMathHelper;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult;
+import com.vicmatskiv.weaponlib.compatibility.*;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTraceResult.Type;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleRayTracing;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -27,6 +9,14 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.ArrayDeque;
+import java.util.List;
+import java.util.Queue;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityBounceable extends Entity implements Contextual, CompatibleIEntityAdditionalSpawnData, CompatibleIThrowableEntity {
 

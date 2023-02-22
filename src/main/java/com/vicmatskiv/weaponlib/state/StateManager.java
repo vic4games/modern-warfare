@@ -1,18 +1,13 @@
 package com.vicmatskiv.weaponlib.state;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.function.BiFunction;
-import java.util.function.BiPredicate;
-import java.util.function.Predicate;
-
+import com.vicmatskiv.weaponlib.state.Permit.Status;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.vicmatskiv.weaponlib.state.Permit.Status;
+import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 public class StateManager<S extends ManagedState<S>, E extends ExtendedState<S>> {
 	

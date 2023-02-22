@@ -1,50 +1,18 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.models.AKRail;
-import com.vicmatskiv.mw.models.AKRail2;
-import com.vicmatskiv.mw.models.AKRail3;
-import com.vicmatskiv.mw.models.AKRail4;
-import com.vicmatskiv.mw.models.AKRail5;
-import com.vicmatskiv.mw.models.Acog2;
-import com.vicmatskiv.mw.models.AcogReticle;
-import com.vicmatskiv.mw.models.AcogScope2;
-import com.vicmatskiv.mw.models.HK416Stock;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.JPUreticle;
-import com.vicmatskiv.mw.models.M500A2;
-import com.vicmatskiv.mw.models.M9A1frontsight;
-import com.vicmatskiv.mw.models.MP7FrontSights;
-import com.vicmatskiv.mw.models.MP7RearSights;
-import com.vicmatskiv.mw.models.MilSpecStock;
-import com.vicmatskiv.mw.models.R870part;
-import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.Remington870;
+import com.vicmatskiv.mw.*;
 import com.vicmatskiv.mw.models.Tokyo90;
 import com.vicmatskiv.mw.models.Tokyo90FrontSights;
 import com.vicmatskiv.mw.models.Tokyo90RearSights;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
-import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.WeaponAttachmentAspect;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class Tokyo90Factory implements GunFactory {
 

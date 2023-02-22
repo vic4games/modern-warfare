@@ -1,11 +1,9 @@
 package com.vicmatskiv.weaponlib.render.scopes;
 
-import java.awt.Color;
-
-import com.vicmatskiv.weaponlib.ItemScope.Builder;
-
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
+
+import java.awt.*;
 
 public class Reticle {
 	

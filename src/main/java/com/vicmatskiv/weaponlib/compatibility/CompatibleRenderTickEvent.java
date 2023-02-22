@@ -1,8 +1,7 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
-
 import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.RenderTickEvent;
 
 public class CompatibleRenderTickEvent {
 	

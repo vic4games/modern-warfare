@@ -1,29 +1,22 @@
 package com.vicmatskiv.weaponlib.render.qrender;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix4f;
-import org.lwjgl.util.vector.Vector4f;
-
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-
 import akka.japi.Pair;
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.model.ModelBox;
-import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.model.PositionTextureVertex;
-import net.minecraft.client.model.TexturedQuad;
+import com.vicmatskiv.weaponlib.animation.MatrixHelper;
+import net.minecraft.client.model.*;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.vector.Matrix4f;
+import org.lwjgl.util.vector.Vector4f;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class QRenderer extends ModelRenderer {
 

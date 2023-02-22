@@ -1,13 +1,11 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
+import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
-import com.vicmatskiv.weaponlib.crafting.workbench.TileEntityWorkbench;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class RecipeManager {
 

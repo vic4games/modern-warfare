@@ -1,9 +1,8 @@
 package com.vicmatskiv.weaponlib.shader.jim;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.ByteBuffer;
-
+import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
+import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.compress.utils.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,9 +10,9 @@ import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 
-import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.ResourceLocation;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.ByteBuffer;
 
 public class ShaderManager {
 	

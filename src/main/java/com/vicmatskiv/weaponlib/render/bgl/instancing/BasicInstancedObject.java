@@ -1,17 +1,13 @@
 package com.vicmatskiv.weaponlib.render.bgl.instancing;
 
-import java.nio.FloatBuffer;
-
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-
-import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
 import com.vicmatskiv.weaponlib.render.VAOData;
 import com.vicmatskiv.weaponlib.render.VAOLoader;
 import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
 import com.vicmatskiv.weaponlib.render.bgl.ModernUtil;
 import com.vicmatskiv.weaponlib.shader.jim.Shader;
+import org.lwjgl.BufferUtils;
+
+import java.nio.FloatBuffer;
 
 public abstract class BasicInstancedObject<K> {
 	

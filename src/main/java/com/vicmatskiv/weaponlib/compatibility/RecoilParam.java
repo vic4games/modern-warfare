@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import net.minecraft.util.math.Vec3d;
-
 public class RecoilParam {
 	
 	private double weaponPower, muzzleClimbDivisor, stockLength, powerRecoveryNormalRate, powerRecoveryStockRate, weaponRotationX, weaponRotationY, adsSimilarity;

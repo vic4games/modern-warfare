@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.crafting;
 
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 /**
  * Important interface that defines several properties:

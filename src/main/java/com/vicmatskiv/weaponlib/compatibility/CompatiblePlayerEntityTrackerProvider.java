@@ -1,10 +1,7 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.function.Function;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagByteArray;
@@ -15,6 +12,8 @@ import net.minecraftforge.common.capabilities.Capability.IStorage;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+
+import java.util.function.Function;
 
 public class CompatiblePlayerEntityTrackerProvider implements ICapabilitySerializable<NBTBase> {
 

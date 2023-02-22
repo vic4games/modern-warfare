@@ -2,8 +2,6 @@ package com.vicmatskiv.weaponlib.animation;
 
 import java.util.Queue;
 
-import com.vicmatskiv.weaponlib.PlayerWeaponInstance;
-
 public interface MultipartPositioning<Part, Context> {
 	
 	public interface Positioner<Part, Context> {

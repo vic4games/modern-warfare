@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics;
 
-import javax.vecmath.Quat4d;
-
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Quat4d;
 
 /**
  * http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToEuler/index.htm

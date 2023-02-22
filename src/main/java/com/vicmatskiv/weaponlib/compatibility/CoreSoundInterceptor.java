@@ -1,21 +1,9 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import org.lwjgl.openal.AL10;
-import org.lwjgl.openal.AL11;
-import org.lwjgl.openal.ALC10;
-import org.lwjgl.openal.ALCcontext;
-import org.lwjgl.openal.ALCdevice;
-import org.lwjgl.openal.EFX10;
-import org.lwjgl.openal.EFXUtil;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.MathHelper;
-import net.minecraftforge.common.util.EnumHelper;
-import paulscode.sound.Channel;
+import org.lwjgl.openal.*;
 import paulscode.sound.SoundSystem;
-import paulscode.sound.libraries.ChannelLWJGLOpenAL;
-import paulscode.sound.libraries.LibraryLWJGLOpenAL;
-import paulscode.sound.libraries.SourceLWJGLOpenAL;
 
 public class CoreSoundInterceptor {
 	

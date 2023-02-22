@@ -1,6 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.network.TypeRegistry;
+import com.vicmatskiv.weaponlib.state.Aspect;
+import com.vicmatskiv.weaponlib.state.Permit;
+import com.vicmatskiv.weaponlib.state.Permit.Status;
+import com.vicmatskiv.weaponlib.state.PermitManager;
+import com.vicmatskiv.weaponlib.state.StateManager;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -8,17 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import com.vicmatskiv.weaponlib.network.TypeRegistry;
-import com.vicmatskiv.weaponlib.state.Aspect;
-import com.vicmatskiv.weaponlib.state.Permit;
-import com.vicmatskiv.weaponlib.state.Permit.Status;
-import com.vicmatskiv.weaponlib.state.PermitManager;
-import com.vicmatskiv.weaponlib.state.StateManager;
-
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.ItemStack;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class MagazineReloadAspect implements Aspect<MagazineState, PlayerMagazineInstance> {
 

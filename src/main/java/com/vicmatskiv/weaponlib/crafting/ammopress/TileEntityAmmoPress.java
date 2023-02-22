@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.crafting.ammopress;
 
-import java.util.LinkedList;
-
 import com.vicmatskiv.weaponlib.ItemBullet;
 import com.vicmatskiv.weaponlib.ItemMagazine;
 import com.vicmatskiv.weaponlib.Tags;
@@ -9,7 +7,6 @@ import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
 import com.vicmatskiv.weaponlib.crafting.base.TileEntityStation;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,6 +14,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.common.util.Constants.NBT;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
+
+import java.util.LinkedList;
 
 public class TileEntityAmmoPress extends TileEntityStation {
 	

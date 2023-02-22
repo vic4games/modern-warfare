@@ -1,12 +1,9 @@
 package com.vicmatskiv.weaponlib.crafting.ammopress;
 
-import java.util.List;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.crafting.base.BlockStation;
 import com.vicmatskiv.weaponlib.inventory.GuiHandler;
 import com.vicmatskiv.weaponlib.network.packets.StationClientPacket;
-
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -19,6 +16,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class BlockAmmoPress extends BlockStation {
 	

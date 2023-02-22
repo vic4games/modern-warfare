@@ -1,14 +1,11 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.util.ArrayList;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.SynchronousQueue;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.entity.MoverType;
 import net.minecraft.util.math.Vec3d;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class VehicleSmoothShell {
 	

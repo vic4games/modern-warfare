@@ -1,16 +1,10 @@
 package com.vicmatskiv.weaponlib.crafting.ammopress;
 
-import java.util.function.Supplier;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleContainer;
 import com.vicmatskiv.weaponlib.crafting.base.ContainerStation;
 import com.vicmatskiv.weaponlib.crafting.workbench.PagedSlot;
 import com.vicmatskiv.weaponlib.crafting.workbench.PagedSlotItemHandler;
-import com.vicmatskiv.weaponlib.crafting.workbench.TileEntityWorkbench;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 

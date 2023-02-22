@@ -1,21 +1,18 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.models.GasDetector;
 import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
 import com.vicmatskiv.weaponlib.electronics.ItemHandheld;
 import com.vicmatskiv.weaponlib.electronics.ItemTablet;
 import com.vicmatskiv.weaponlib.electronics.ItemWirelessCamera;
 import com.vicmatskiv.weaponlib.model.CameraModel;
 import com.vicmatskiv.weaponlib.model.TabletModel;
 import com.vicmatskiv.weaponlib.perspective.GasDetectorScreenPerspective;
+import org.lwjgl.opengl.GL11;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class Electronics {
 

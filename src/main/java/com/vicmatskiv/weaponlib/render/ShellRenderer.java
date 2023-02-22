@@ -1,17 +1,10 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.nio.ByteBuffer;
-import java.nio.FloatBuffer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL33;
-
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.*;
+
+import java.nio.ByteBuffer;
 
 public class ShellRenderer {
 	

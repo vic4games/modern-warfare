@@ -1,22 +1,17 @@
 package com.vicmatskiv.mw.items.grenade;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.CommonProxy;
 import com.vicmatskiv.mw.Grenades;
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
 import com.vicmatskiv.mw.models.M18;
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.grenade.GrenadeRenderer;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade;
-import com.vicmatskiv.weaponlib.grenade.RenderableState;
 import com.vicmatskiv.weaponlib.grenade.ItemGrenade.Type;
+import com.vicmatskiv.weaponlib.grenade.RenderableState;
+import org.lwjgl.opengl.GL11;
 
 public class SmokeGrenadeFactory implements GrenadeFactory {
 

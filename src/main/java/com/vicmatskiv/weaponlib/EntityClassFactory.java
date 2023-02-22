@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import net.minecraft.entity.Entity;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-import net.minecraft.entity.Entity;
+import java.util.HashMap;
+import java.util.Map;
 
 public class EntityClassFactory implements Opcodes {
 

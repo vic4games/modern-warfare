@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib;
 
+import net.minecraft.client.model.ModelBase;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import net.minecraft.client.model.ModelBase;
 
 public class ItemBullet extends ItemAttachment<Weapon> {
 	

@@ -1,14 +1,5 @@
 package com.vicmatskiv.weaponlib.crafting.base;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.animation.gui.GuiRenderUtil;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleGuiContainer;
@@ -21,10 +12,8 @@ import com.vicmatskiv.weaponlib.network.packets.StationPacket;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper.StringAlignment;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
@@ -37,6 +26,14 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.oredict.OreDictionary;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public abstract class GUIContainerStation<T extends TileEntityStation> extends CompatibleGuiContainer {

@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.render;
 
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.animation.ClientValueRepo;
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.numerical.RandomVector;
 import com.vicmatskiv.weaponlib.numerical.SpringVector;
-
-import akka.japi.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.Vec3d;

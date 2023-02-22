@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityRenderer;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class WirelessCameraRenderer extends CompatibleEntityRenderer {
 

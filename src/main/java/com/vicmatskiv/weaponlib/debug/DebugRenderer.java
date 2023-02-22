@@ -1,9 +1,8 @@
 package com.vicmatskiv.weaponlib.debug;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.opengl.GL11;
 
 public class DebugRenderer {
 	

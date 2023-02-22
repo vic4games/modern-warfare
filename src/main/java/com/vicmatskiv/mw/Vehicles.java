@@ -6,8 +6,6 @@ import com.vicmatskiv.mw.vehicle.AE86TruenoFactory;
 import com.vicmatskiv.mw.vehicle.ATVFactory;
 import com.vicmatskiv.mw.vehicle.AudiS4Factory;
 import com.vicmatskiv.mw.vehicle.McLarenSennaFactory;
-import com.vicmatskiv.mw.vehicle.SampleVehicleFactory;
-import com.vicmatskiv.weaponlib.CustomGui;
 import com.vicmatskiv.weaponlib.render.QRL;
 import com.vicmatskiv.weaponlib.vehicle.AccessibleVehicleGUI;
 import com.vicmatskiv.weaponlib.vehicle.GeneralVehicleSounds;

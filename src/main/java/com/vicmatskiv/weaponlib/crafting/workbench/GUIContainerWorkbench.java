@@ -1,9 +1,5 @@
 package com.vicmatskiv.weaponlib.crafting.workbench;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
-
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.animation.gui.GuiRenderUtil;
 import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
@@ -11,7 +7,6 @@ import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
 import com.vicmatskiv.weaponlib.crafting.base.GUIContainerStation;
 import com.vicmatskiv.weaponlib.network.packets.StationPacket;
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,6 +14,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 
 /**

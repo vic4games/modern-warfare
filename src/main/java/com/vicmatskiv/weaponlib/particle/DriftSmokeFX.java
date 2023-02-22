@@ -1,12 +1,7 @@
 package com.vicmatskiv.weaponlib.particle;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.particle.ParticleCloud;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.GlStateManager.DestFactor;
-import net.minecraft.client.renderer.GlStateManager.SourceFactor;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 

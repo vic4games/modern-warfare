@@ -1,19 +1,12 @@
 package com.vicmatskiv.weaponlib.shader;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.lang.reflect.Field;
-import java.util.List;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleWorldRenderer;
-
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.shader.Shader;
 import net.minecraft.client.shader.ShaderGroup;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import org.lwjgl.opengl.GL11;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public interface DynamicShaderPhase {
 

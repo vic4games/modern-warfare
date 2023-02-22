@@ -1,11 +1,9 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.util.function.Consumer;
-
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 
-import net.minecraft.util.SoundEvent;
+import java.util.function.Consumer;
 
 public class Transition<Context> {
 

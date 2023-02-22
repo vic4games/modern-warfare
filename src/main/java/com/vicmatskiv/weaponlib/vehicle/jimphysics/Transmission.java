@@ -1,11 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
 
-import net.minecraft.world.gen.structure.StructureNetherBridgePieces.End;
+import java.util.ArrayList;
 
 public class Transmission {
 	

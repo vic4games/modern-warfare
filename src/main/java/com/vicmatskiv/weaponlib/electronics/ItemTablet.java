@@ -1,20 +1,13 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import java.util.function.BiConsumer;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.AttachmentBuilder;
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.PlayerItemInstanceFactory;
-import com.vicmatskiv.weaponlib.Updatable;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.perspective.PerspectiveRenderer;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
+
+import java.util.function.BiConsumer;
 
 public class ItemTablet<T> extends ItemAttachment<T> 
 implements PlayerItemInstanceFactory<PlayerTabletInstance, TabletState>, Updatable {

@@ -1,21 +1,12 @@
 package com.vicmatskiv.weaponlib.crafting.base;
 
-import java.lang.reflect.Array;
-import java.util.HashMap;
-import java.util.LinkedList;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleTileEntity;
 import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
 import com.vicmatskiv.weaponlib.crafting.items.CraftingItem;
-import com.vicmatskiv.weaponlib.network.packets.StationPacket;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -24,9 +15,9 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.items.ItemStackHandler;
+
+import java.util.LinkedList;
 
 /**
  * Parent class for the workbench and ammo press tile entities.

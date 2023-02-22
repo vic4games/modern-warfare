@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleVec3;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExplosionMessage implements CompatibleMessage {
 

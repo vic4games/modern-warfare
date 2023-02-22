@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.ArrayList;
-
 import net.minecraft.client.model.ModelBox;
+
+import java.util.ArrayList;
 
 public class OptimizedCubeList extends ArrayList<ModelBox> {
     

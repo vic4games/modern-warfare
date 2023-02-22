@@ -1,12 +1,11 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import java.util.function.Predicate;
-
 import com.vicmatskiv.weaponlib.ItemStorage;
-
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+
+import java.util.function.Predicate;
 
 public class StorageSlot extends Slot {
 

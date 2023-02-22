@@ -1,18 +1,6 @@
 package com.vicmatskiv.weaponlib.tile;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.function.Function;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockContainer;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockRenderType;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockState;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEnumFacing;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEnumHand;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMaterial;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMathHelper;
-
+import com.vicmatskiv.weaponlib.compatibility.*;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -28,6 +16,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.function.Function;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class CustomTileEntityBlock extends CompatibleBlockContainer {
 	

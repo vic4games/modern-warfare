@@ -1,41 +1,8 @@
 package com.vicmatskiv.weaponlib.render.bgl;
 
-import java.nio.IntBuffer;
-
-import org.apache.commons.lang3.SystemUtils;
-import org.lwjgl.opengl.APPLEFloatPixels;
-import org.lwjgl.opengl.APPLEVertexArrayObject;
-import org.lwjgl.opengl.ARBColorBufferFloat;
-import org.lwjgl.opengl.ARBComputeShader;
-import org.lwjgl.opengl.ARBDepthTexture;
-import org.lwjgl.opengl.ARBDrawInstanced;
-import org.lwjgl.opengl.ARBFramebufferObject;
-import org.lwjgl.opengl.ARBInstancedArrays;
-import org.lwjgl.opengl.ARBMultisample;
-import org.lwjgl.opengl.ARBTextureFloat;
-import org.lwjgl.opengl.ARBTextureMultisample;
-import org.lwjgl.opengl.ARBVertexArrayObject;
-import org.lwjgl.opengl.ARBVertexAttrib64bit;
-import org.lwjgl.opengl.ARBVertexAttribBinding;
-import org.lwjgl.opengl.ATITextureFloat;
-import org.lwjgl.opengl.ATIVertexArrayObject;
-import org.lwjgl.opengl.ContextCapabilities;
-import org.lwjgl.opengl.EXTDrawInstanced;
-import org.lwjgl.opengl.EXTFramebufferBlit;
-import org.lwjgl.opengl.EXTFramebufferMultisample;
-import org.lwjgl.opengl.EXTFramebufferMultisampleBlitScaled;
-import org.lwjgl.opengl.EXTFramebufferObject;
-import org.lwjgl.opengl.EXTFramebufferSRGB;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL32;
-import org.lwjgl.opengl.GL33;
-import org.lwjgl.opengl.GLContext;
-import org.lwjgl.opengl.NVTextureMultisample;
-
 import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
+import org.apache.commons.lang3.SystemUtils;
+import org.lwjgl.opengl.*;
 
 public class GLCompatible {
 

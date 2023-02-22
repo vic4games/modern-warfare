@@ -1,14 +1,8 @@
 package com.vicmatskiv.weaponlib.ai;
 
 
-import java.util.Collections;
-import java.util.List;
-
-import javax.annotation.Nullable;
-
 import com.google.common.base.Function;
 import com.google.common.base.Predicate;
-
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
@@ -20,6 +14,10 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nullable;
+import java.util.Collections;
+import java.util.List;
 
 public class BetterAINearestAttackableTarget<T extends EntityLivingBase> extends EntityAINearestAttackableTarget<T> {
 

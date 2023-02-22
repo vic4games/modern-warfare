@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.config.novel;
 
-import java.lang.reflect.Field;
-import java.util.regex.Pattern;
-
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.client.config.ConfigGuiType;
 import net.minecraftforge.fml.client.config.DummyConfigElement;
-import net.minecraftforge.fml.client.config.DummyConfigElement.DummyCategoryElement;
+
+import java.lang.reflect.Field;
 
 public class SynchronizedConfigElement extends DummyConfigElement {
 	

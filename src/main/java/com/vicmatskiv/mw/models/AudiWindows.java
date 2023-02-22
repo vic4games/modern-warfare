@@ -3,7 +3,6 @@ package com.vicmatskiv.mw.models;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
-import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 
 // Made with Blockbench 3.8.4

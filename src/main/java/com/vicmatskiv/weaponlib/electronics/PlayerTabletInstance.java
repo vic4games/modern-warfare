@@ -1,17 +1,15 @@
 package com.vicmatskiv.weaponlib.electronics;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.vicmatskiv.weaponlib.PlayerItemInstance;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
 import com.vicmatskiv.weaponlib.perspective.Perspective;
 import com.vicmatskiv.weaponlib.perspective.WirelessCameraPerspective;
 import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PlayerTabletInstance extends PlayerItemInstance<TabletState> {
 	

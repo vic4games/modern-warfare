@@ -1,39 +1,17 @@
 package com.vicmatskiv.mw.items.guns;
 
-import java.util.Arrays;
-
-import net.minecraft.item.Item;
-
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.Attachments;
-import com.vicmatskiv.mw.AuxiliaryAttachments;
-import com.vicmatskiv.mw.Bullets;
-import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.Ores;
-import com.vicmatskiv.mw.GunSkins;
-import com.vicmatskiv.mw.models.AKRail;
-import com.vicmatskiv.mw.models.AKRail2;
-import com.vicmatskiv.mw.models.Acog2;
-import com.vicmatskiv.mw.models.AcogReticle;
-import com.vicmatskiv.mw.models.AcogScope2;
-import com.vicmatskiv.mw.models.HS12;
-import com.vicmatskiv.mw.models.HS12Barrels;
-import com.vicmatskiv.mw.models.Holo2;
-import com.vicmatskiv.mw.models.M1911frontsight;
-import com.vicmatskiv.mw.models.MP43E;
-import com.vicmatskiv.mw.models.RPK16handguard;
-import com.vicmatskiv.mw.models.Reflex2;
-import com.vicmatskiv.mw.models.Shotgun12Gauge;
-import com.vicmatskiv.mw.models.Shotgun12Gauge2;
+import com.vicmatskiv.mw.*;
+import com.vicmatskiv.mw.models.*;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
+import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
+
+import java.util.Arrays;
 
 public class HS12Factory implements GunFactory {
 

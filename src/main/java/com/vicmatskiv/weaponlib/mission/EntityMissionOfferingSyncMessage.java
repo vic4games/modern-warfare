@@ -1,16 +1,11 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.UUID;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
+
+import java.nio.charset.Charset;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class EntityMissionOfferingSyncMessage implements CompatibleMessage {
 

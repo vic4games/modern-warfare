@@ -1,12 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.List;
-import java.util.Random;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleModelBiped;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBiped;
@@ -15,6 +9,10 @@ import net.minecraft.client.model.TextureOffset;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+
+import java.util.List;
+import java.util.Random;
 
 public class ModelBipedWithAttachments extends CompatibleModelBiped {
 	

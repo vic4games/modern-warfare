@@ -2,8 +2,6 @@ package com.vicmatskiv.weaponlib.vehicle.collisions;
 
 import com.vicmatskiv.weaponlib.vehicle.collisions.OBBCollider.MKV;
 
-import net.minecraft.util.math.Vec3d;
-
 public class Simplex {
 	
 	public int size = 0;

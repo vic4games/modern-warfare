@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib.render.modelrepo;
 
-import java.util.HashMap;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.HashMap;
 
 @SideOnly(Side.CLIENT)
 public class GearModelRepository {

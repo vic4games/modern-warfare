@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.io.IOException;
-import java.util.Set;
-
 import net.minecraft.client.resources.IResourcePack;
 import net.minecraft.client.resources.data.IMetadataSection;
 import net.minecraft.client.resources.data.MetadataSerializer;
+
+import java.io.IOException;
+import java.util.Set;
 
 public abstract class CompatibleResourcePack implements IResourcePack {
 

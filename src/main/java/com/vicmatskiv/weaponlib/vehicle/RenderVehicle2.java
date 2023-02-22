@@ -1,73 +1,34 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.nio.DoubleBuffer;
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-import javax.vecmath.Vector3d;
-
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL13;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.util.vector.Matrix4f;
-
-import com.vicmatskiv.weaponlib.CommonModContext;
-import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityRenderer;
-import com.vicmatskiv.weaponlib.compatibility.Interceptors;
 import com.vicmatskiv.weaponlib.debug.DebugRenderer;
-import com.vicmatskiv.weaponlib.shader.DynamicShaderContext;
-import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupManager;
 import com.vicmatskiv.weaponlib.vehicle.collisions.GJKResult;
 import com.vicmatskiv.weaponlib.vehicle.collisions.OBBCollider;
 import com.vicmatskiv.weaponlib.vehicle.collisions.OreintedBB;
 import com.vicmatskiv.weaponlib.vehicle.collisions.RigidBody;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.SuspensionSolver;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.WheelSolver;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.stability.InertialStabilizer;
-import com.vicmatskiv.weaponlib.vehicle.render.SuspensionModel;
-
-import akka.japi.pf.DeciderBuilder;
-import net.minecraft.advancements.critereon.EnchantedItemTrigger;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelLeashKnot;
 import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderGlobal;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.debug.DebugRendererSolidFace;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RenderPlayer;
-import net.minecraft.client.renderer.texture.SimpleTexture;
-import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.client.shader.Framebuffer;
-import net.minecraft.client.shader.ShaderLoader;
-import net.minecraft.client.shader.ShaderManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
-import scala.actors.threadpool.Arrays;
-import scala.collection.parallel.ParIterableLike.Min;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.vector.Matrix4f;
+
+import javax.vecmath.Matrix3f;
+import javax.vecmath.Vector3d;
 
 public class RenderVehicle2 extends CompatibleEntityRenderer
 {

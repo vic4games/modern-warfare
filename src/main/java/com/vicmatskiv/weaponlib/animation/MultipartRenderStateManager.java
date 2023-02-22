@@ -1,47 +1,27 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.WeakHashMap;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-import javax.vecmath.Quat4f;
-
-import org.apache.commons.codec.language.bm.BeiderMorseEncoder;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.lwjgl.BufferUtils;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix3f;
-import org.lwjgl.util.vector.Matrix4f;
-import org.lwjgl.util.vector.Quaternion;
-import org.lwjgl.util.vector.Vector3f;
-import org.lwjgl.util.vector.Vector4f;
-
-import com.vicmatskiv.weaponlib.ClientModContext;
 import com.vicmatskiv.weaponlib.DefaultPart;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
-import com.vicmatskiv.weaponlib.UniversalSoundLookup;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 import com.vicmatskiv.weaponlib.compatibility.Interceptors;
-
-import akka.japi.Pair;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.Vec3d;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.vector.Matrix4f;
+import org.lwjgl.util.vector.Quaternion;
+import org.lwjgl.util.vector.Vector3f;
+
+import java.nio.FloatBuffer;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 
 public class MultipartRenderStateManager<State, Part, Context extends PartPositionProvider> {

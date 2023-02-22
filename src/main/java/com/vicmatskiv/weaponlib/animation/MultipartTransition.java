@@ -1,14 +1,11 @@
 package com.vicmatskiv.weaponlib.animation;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
+import net.minecraft.util.math.Vec3d;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Consumer;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
-
-import net.minecraft.client.audio.ISound;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.Vec3d;
 
 public class MultipartTransition<Part, Context> {
 

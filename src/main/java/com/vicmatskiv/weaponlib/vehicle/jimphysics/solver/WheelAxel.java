@@ -1,9 +1,6 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.solver;
 
-import java.sql.Driver;
-
 import com.vicmatskiv.weaponlib.network.IEncodable;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.Vec3d;
 

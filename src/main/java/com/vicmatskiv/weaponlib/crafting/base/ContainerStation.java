@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.crafting.base;
 
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleContainer;
-
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.function.Supplier;
 
 public class ContainerStation extends CompatibleContainer {
 	

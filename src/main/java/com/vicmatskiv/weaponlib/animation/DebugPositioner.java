@@ -1,22 +1,20 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.KeyBindings;
+import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
+import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.vector.Matrix4f;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Matrix4f;
-
-import com.vicmatskiv.weaponlib.KeyBindings;
-import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.Entity;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class DebugPositioner {
 

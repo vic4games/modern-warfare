@@ -1,13 +1,9 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics;
 
-import java.util.ArrayList;
-
 import com.vicmatskiv.weaponlib.vehicle.GearShiftPattern;
 import com.vicmatskiv.weaponlib.vehicle.collisions.VehicleInertiaBuilder;
 import com.vicmatskiv.weaponlib.vehicle.collisions.VehicleMassObject;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.VehiclePhysicsSolver;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.aero.IAeroComponent;
-
 import net.minecraft.util.math.Vec3d;
 
 public class PhysicsConfiguration {

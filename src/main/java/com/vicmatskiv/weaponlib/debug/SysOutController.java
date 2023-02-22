@@ -1,10 +1,6 @@
 package com.vicmatskiv.weaponlib.debug;
 
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintStream;
+import java.io.*;
 
 /**
  * Based off of post on Stack Overflow (https://stackoverflow.com/questions/25711648/find-the-location-in-code-of-a-system-out-println)

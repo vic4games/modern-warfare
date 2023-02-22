@@ -1,14 +1,12 @@
 package com.vicmatskiv.weaponlib.grenade;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityRenderer;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 
 public class EntityGrenadeRenderer extends CompatibleEntityRenderer {
 

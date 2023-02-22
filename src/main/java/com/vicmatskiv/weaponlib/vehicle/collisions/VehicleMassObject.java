@@ -1,9 +1,8 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Matrix3f;
 
 public class VehicleMassObject {
 	

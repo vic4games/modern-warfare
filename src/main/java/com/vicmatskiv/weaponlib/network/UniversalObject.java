@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib.network;
 
-import java.util.UUID;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.UUID;
 
 public abstract class UniversalObject implements UniversallySerializable {
 	

@@ -3,7 +3,6 @@ package com.vicmatskiv.weaponlib.tile;
 import com.vicmatskiv.weaponlib.Configurable;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlockPos;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleTileEntity;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;

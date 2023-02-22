@@ -1,11 +1,7 @@
 package com.vicmatskiv.weaponlib.animation;
 
 
-import com.vicmatskiv.weaponlib.AttachmentBuilder;
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.Weapon;
+import com.vicmatskiv.weaponlib.*;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.model.Bullet556;

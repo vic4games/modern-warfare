@@ -1,10 +1,10 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.List;
-
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.player.PlayerDropsEvent;
+
+import java.util.List;
 
 public class CompatiblePlayerDropsEvent {
     

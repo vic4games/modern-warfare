@@ -1,12 +1,8 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.weaponlib.CommonRegistry;
 import com.vicmatskiv.weaponlib.ItemSkin;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
 public class GunSkins {

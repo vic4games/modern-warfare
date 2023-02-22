@@ -1,51 +1,20 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
 import com.vicmatskiv.mw.entities.BanditEntityFactory;
 import com.vicmatskiv.mw.entities.SampleMissionGiverEntityFactory;
-import com.vicmatskiv.weaponlib.ai.BetterAINearestAttackableTarget;
-import com.vicmatskiv.weaponlib.ai.EntityAIAttackRangedWeapon;
-import com.vicmatskiv.weaponlib.ai.EntityConfiguration;
-import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
-import com.vicmatskiv.weaponlib.ai.ExplosionAttack;
-import com.vicmatskiv.weaponlib.ai.InfectionAttack;
+import com.vicmatskiv.weaponlib.ai.*;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBiomeType;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIAttackOnCollide;
-
 import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.ai.EntityAIBreakDoor;
-import net.minecraft.entity.ai.EntityAIHurtByTarget;
-import net.minecraft.entity.ai.EntityAILeapAtTarget;
-import net.minecraft.entity.ai.EntityAILookIdle;
-import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.*;
 import net.minecraft.entity.boss.EntityDragon;
-import net.minecraft.entity.boss.EntityWither;
-import net.minecraft.entity.monster.EntityBlaze;
-import net.minecraft.entity.monster.EntityCreeper;
-import net.minecraft.entity.monster.EntityEnderman;
-import net.minecraft.entity.monster.EntityEndermite;
-import net.minecraft.entity.monster.EntityGhast;
-import net.minecraft.entity.monster.EntityHusk;
-import net.minecraft.entity.monster.EntityIllusionIllager;
-import net.minecraft.entity.monster.EntityMagmaCube;
-import net.minecraft.entity.monster.EntityPigZombie;
-import net.minecraft.entity.monster.EntitySkeleton;
-import net.minecraft.entity.monster.EntitySlime;
-import net.minecraft.entity.monster.EntitySpellcasterIllager;
-import net.minecraft.entity.monster.EntitySpider;
-import net.minecraft.entity.monster.EntityStray;
-import net.minecraft.entity.monster.EntityVindicator;
-import net.minecraft.entity.monster.EntityWitch;
-import net.minecraft.entity.monster.EntityWitherSkeleton;
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.entity.monster.EntityZombieVillager;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.EnumDifficulty;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class Entities {
 

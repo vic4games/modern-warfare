@@ -1,18 +1,5 @@
 package com.vicmatskiv.weaponlib.animation.jim;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.TreeMap;
-import java.util.Map.Entry;
-import java.util.function.Consumer;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLSync;
-import org.lwjgl.util.vector.Quaternion;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -20,21 +7,18 @@ import com.vicmatskiv.weaponlib.ClientModContext;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.UniversalSoundLookup;
-import com.vicmatskiv.weaponlib.WeaponRenderer;
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.animation.Transform;
 import com.vicmatskiv.weaponlib.animation.Transition;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 import com.vicmatskiv.weaponlib.render.bgl.math.AngleKit.EulerAngle;
 import com.vicmatskiv.weaponlib.render.bgl.math.AngleKit.Format;
-import com.vicmatskiv.weaponlib.animation.DebugPositioner.Position;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.init.SoundEvents;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.Vec3d;
-import scala.actors.threadpool.Arrays;
+import org.lwjgl.opengl.GL11;
+
+import java.util.*;
+import java.util.Map.Entry;
 
 public class AnimationData {
 

@@ -1,22 +1,10 @@
 package com.vicmatskiv.weaponlib.perspective;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GLSync;
-
 import com.vicmatskiv.weaponlib.RenderingPhase;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRenderTickEvent;
-import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
-import com.vicmatskiv.weaponlib.render.DepthTexture;
-import com.vicmatskiv.weaponlib.render.Shaders;
 import com.vicmatskiv.weaponlib.render.bgl.PostProcessPipeline;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.EntityRenderer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.entity.player.EntityPlayer;
 
 public class FirstPersonPerspective<S> extends Perspective<S> {
 

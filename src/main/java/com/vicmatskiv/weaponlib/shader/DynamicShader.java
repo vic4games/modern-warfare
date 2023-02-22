@@ -1,15 +1,14 @@
 package com.vicmatskiv.weaponlib.shader;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.io.IOException;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleShader;
-
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.ShaderUniform;
 import net.minecraft.client.util.JsonException;
+
+import java.io.IOException;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 class DynamicShader extends CompatibleShader {
 

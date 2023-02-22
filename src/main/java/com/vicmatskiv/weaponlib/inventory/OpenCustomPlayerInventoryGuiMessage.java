@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.inventory;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
 
 public class OpenCustomPlayerInventoryGuiMessage implements CompatibleMessage {

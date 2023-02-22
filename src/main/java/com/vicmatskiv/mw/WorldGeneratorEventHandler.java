@@ -1,15 +1,14 @@
 package com.vicmatskiv.mw;
 
-import java.util.Random;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleWorldGenerator;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+
+import java.util.Random;
 
 public class WorldGeneratorEventHandler extends CompatibleWorldGenerator {
 

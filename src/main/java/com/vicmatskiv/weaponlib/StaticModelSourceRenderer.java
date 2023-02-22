@@ -1,19 +1,17 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.animation.MultipartPositioning.Positioner;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleStaticModelSourceRenderer;
+import com.vicmatskiv.weaponlib.compatibility.Interceptors;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import org.lwjgl.opengl.GL11;
 
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.weaponlib.animation.MultipartPositioning.Positioner;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleStaticModelSourceRenderer;
-import com.vicmatskiv.weaponlib.compatibility.Interceptors;
-
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class StaticModelSourceRenderer extends CompatibleStaticModelSourceRenderer {
 

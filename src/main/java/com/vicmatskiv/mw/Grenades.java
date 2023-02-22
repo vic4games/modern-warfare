@@ -1,10 +1,6 @@
 package com.vicmatskiv.mw;
 
-import com.vicmatskiv.mw.items.grenade.FlashGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.FuseGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.GasGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.ImpactGrenadeFactory;
-import com.vicmatskiv.mw.items.grenade.SmokeGrenadeFactory;
+import com.vicmatskiv.mw.items.grenade.*;
 import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;

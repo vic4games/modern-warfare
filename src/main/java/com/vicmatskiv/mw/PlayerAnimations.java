@@ -1,7 +1,5 @@
 package com.vicmatskiv.mw;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.Part;
 import com.vicmatskiv.weaponlib.PlayerTransitionProvider;
 import com.vicmatskiv.weaponlib.RenderContext;
@@ -9,6 +7,7 @@ import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.animation.MultipartTransition;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import org.lwjgl.opengl.GL11;
 
 public class PlayerAnimations {
 

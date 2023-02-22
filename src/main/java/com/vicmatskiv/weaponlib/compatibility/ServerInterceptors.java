@@ -5,7 +5,6 @@ import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.WeaponSpawnEntity;
 import com.vicmatskiv.weaponlib.mission.Missions;
 import com.vicmatskiv.weaponlib.mission.ObtainItemAction;
-
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.DamageSource;

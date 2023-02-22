@@ -1,13 +1,12 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.nio.IntBuffer;
-
 import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.shader.Framebuffer;
+
+import java.nio.IntBuffer;
 
 public class HDRFramebuffer extends Framebuffer {
 

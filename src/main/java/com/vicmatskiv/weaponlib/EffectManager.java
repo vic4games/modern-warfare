@@ -1,9 +1,7 @@
 package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.particle.ExplosionSmokeFX.Behavior;
-
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.ResourceLocation;
 
 public interface EffectManager {
 

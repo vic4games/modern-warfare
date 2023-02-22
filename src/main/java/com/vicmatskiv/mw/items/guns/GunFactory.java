@@ -1,8 +1,7 @@
 package com.vicmatskiv.mw.items.guns;
 
-import net.minecraft.item.Item;
-
 import com.vicmatskiv.mw.CommonProxy;
+import net.minecraft.item.Item;
 
 public interface GunFactory {
 	

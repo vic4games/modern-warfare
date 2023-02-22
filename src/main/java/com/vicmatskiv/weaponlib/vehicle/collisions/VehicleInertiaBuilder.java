@@ -1,14 +1,11 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import java.util.ArrayList;
-
-import javax.vecmath.Matrix3f;
-
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Chassis;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Dimensions;
-
-import net.minecraft.client.renderer.Vector3d;
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Matrix3f;
+import java.util.ArrayList;
 
 /**
  * Inertia builder based on the paper 

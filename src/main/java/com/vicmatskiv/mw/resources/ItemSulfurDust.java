@@ -1,8 +1,7 @@
 package com.vicmatskiv.mw.resources;
 
-import net.minecraft.item.Item;
-
 import com.vicmatskiv.mw.ModernWarfareMod;
+import net.minecraft.item.Item;
 
 public class ItemSulfurDust extends Item
 {

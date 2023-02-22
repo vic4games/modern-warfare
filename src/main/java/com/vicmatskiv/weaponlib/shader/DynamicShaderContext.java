@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.shader;
 
+import net.minecraft.client.shader.Framebuffer;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import net.minecraft.client.shader.Framebuffer;
 
 public class DynamicShaderContext {
     private float partialTicks;

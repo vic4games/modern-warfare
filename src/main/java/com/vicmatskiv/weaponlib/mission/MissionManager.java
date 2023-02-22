@@ -1,47 +1,25 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import java.io.BufferedReader;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.UUID;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
+import com.google.gson.*;
+import com.vicmatskiv.weaponlib.mission.MissionReward.ItemReward;
+import net.minecraft.advancements.AdvancementManager;
+import net.minecraft.item.crafting.CraftingManager;
+import net.minecraft.util.JsonUtils;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonIOException;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonSyntaxException;
-import com.vicmatskiv.weaponlib.mission.MissionReward.ItemReward;
-
-import net.minecraft.advancements.AdvancementManager;
-import net.minecraft.item.crafting.CraftingManager;
-import net.minecraft.util.JsonUtils;
+import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.FileSystem;
+import java.nio.file.*;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 public class MissionManager {
     

@@ -3,8 +3,6 @@ package com.vicmatskiv.weaponlib;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClassInfoProvider;
-
 public class ClassInfo {
 
     private static class MethodSignature {

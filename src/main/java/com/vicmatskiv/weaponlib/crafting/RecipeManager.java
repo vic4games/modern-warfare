@@ -1,20 +1,18 @@
 package com.vicmatskiv.weaponlib.crafting;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
-
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class RecipeManager {
 

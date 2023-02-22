@@ -1,14 +1,11 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.vicmatskiv.weaponlib.model.FlatModel;
+import net.minecraft.client.model.ModelBase;
 import org.lwjgl.opengl.GL11;
 
-import com.vicmatskiv.weaponlib.model.FlatModel;
-
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.client.renderer.GlStateManager;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemSkin extends ItemAttachment<Weapon> {
 

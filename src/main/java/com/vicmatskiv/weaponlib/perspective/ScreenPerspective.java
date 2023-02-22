@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.perspective;
 
-import net.minecraft.client.Minecraft;
-
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRenderTickEvent;
 import com.vicmatskiv.weaponlib.compatibility.Framebuffers;
+import net.minecraft.client.Minecraft;
+import org.lwjgl.opengl.GL11;
 
 public abstract class ScreenPerspective extends Perspective<RenderableState> {
 

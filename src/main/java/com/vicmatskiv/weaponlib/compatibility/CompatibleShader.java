@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.io.IOException;
-
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.client.shader.Shader;
 import net.minecraft.client.util.JsonException;
+
+import java.io.IOException;
 
 public class CompatibleShader extends Shader {
 

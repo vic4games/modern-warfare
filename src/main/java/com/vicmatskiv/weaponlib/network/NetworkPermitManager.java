@@ -1,15 +1,5 @@
 package com.vicmatskiv.weaponlib.network;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
-import java.util.function.BiConsumer;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.PlayerContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
@@ -19,8 +9,16 @@ import com.vicmatskiv.weaponlib.state.ExtendedState;
 import com.vicmatskiv.weaponlib.state.ManagedState;
 import com.vicmatskiv.weaponlib.state.Permit;
 import com.vicmatskiv.weaponlib.state.PermitManager;
-
 import net.minecraft.entity.player.EntityPlayerMP;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+import java.util.function.BiConsumer;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class NetworkPermitManager
 implements PermitManager, CompatibleMessageHandler<PermitMessage, CompatibleMessage>  {

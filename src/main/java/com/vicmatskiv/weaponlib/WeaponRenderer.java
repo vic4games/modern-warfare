@@ -1,41 +1,9 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.nio.FloatBuffer;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Random;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.stream.Collectors;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL13;
-import org.lwjgl.opengl.GL20;
-
-import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
-import com.vicmatskiv.weaponlib.animation.ClientValueRepo;
-import com.vicmatskiv.weaponlib.animation.DebugPositioner;
+import akka.japi.Pair;
+import com.vicmatskiv.weaponlib.animation.*;
 import com.vicmatskiv.weaponlib.animation.DebugPositioner.TransitionConfiguration;
-import com.vicmatskiv.weaponlib.animation.Interpolation;
 import com.vicmatskiv.weaponlib.animation.MultipartPositioning.Positioner;
-import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
-import com.vicmatskiv.weaponlib.animation.MultipartTransition;
-import com.vicmatskiv.weaponlib.animation.MultipartTransitionProvider;
-import com.vicmatskiv.weaponlib.animation.OpenGLSelectionHelper;
-import com.vicmatskiv.weaponlib.animation.SpecialAttachments;
-import com.vicmatskiv.weaponlib.animation.Transform;
-import com.vicmatskiv.weaponlib.animation.Transition;
 import com.vicmatskiv.weaponlib.animation.gui.AnimationGUI;
 import com.vicmatskiv.weaponlib.animation.jim.AnimationData;
 import com.vicmatskiv.weaponlib.animation.jim.AnimationSet;
@@ -51,9 +19,6 @@ import com.vicmatskiv.weaponlib.config.novel.ModernConfigManager;
 import com.vicmatskiv.weaponlib.jim.util.VMWHooksHandler;
 import com.vicmatskiv.weaponlib.render.MuzzleFlashRenderer;
 import com.vicmatskiv.weaponlib.render.Shaders;
-
-import akka.japi.Pair;
-import net.minecraft.block.BlockBanner.BlockBannerHanging;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
@@ -64,6 +29,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL13;
+import org.lwjgl.opengl.GL20;
+
+import java.nio.FloatBuffer;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class WeaponRenderer extends CompatibleWeaponRenderer {
 

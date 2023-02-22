@@ -1,33 +1,13 @@
 package com.vicmatskiv.mw;
 
-import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AKMiron1;
-import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.AR15CarryHandle;
-import com.vicmatskiv.mw.models.ARCarryHandle;
-import com.vicmatskiv.mw.models.AS50action;
-import com.vicmatskiv.mw.models.AS50mag;
-import com.vicmatskiv.mw.models.ChiappoRhinoChamber;
-import com.vicmatskiv.mw.models.FALIron;
-import com.vicmatskiv.mw.models.G36CIron1;
-import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.GL06Grenade;
-import com.vicmatskiv.mw.models.M14Iron;
-import com.vicmatskiv.mw.models.M27rearsight;
-import com.vicmatskiv.mw.models.M4Iron1;
-import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MP5Iron;
-import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.ScarIron1;
-import com.vicmatskiv.mw.models.ScarIron2;
+import com.vicmatskiv.mw.models.*;
 import com.vicmatskiv.weaponlib.AttachmentBuilder;
 import com.vicmatskiv.weaponlib.AttachmentCategory;
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.Weapon;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import org.lwjgl.opengl.GL11;
 
 public class AuxiliaryAttachments {
 

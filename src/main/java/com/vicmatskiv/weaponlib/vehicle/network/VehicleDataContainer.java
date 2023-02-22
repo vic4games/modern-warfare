@@ -1,15 +1,11 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.io.IOException;
-
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.VehiclePhysicsSolver;
-
 import io.netty.buffer.ByteBuf;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.network.datasync.DataParameter;
-import net.minecraft.network.datasync.DataSerializer;
 import net.minecraft.util.math.Vec3d;
+
+import java.io.IOException;
 
 public class VehicleDataContainer {
 	

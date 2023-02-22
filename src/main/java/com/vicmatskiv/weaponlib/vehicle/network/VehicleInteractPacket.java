@@ -1,14 +1,7 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.io.IOException;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
 import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
-import net.minecraft.network.PacketBuffer;
-import net.minecraft.util.math.Vec3d;
 
 public class VehicleInteractPacket implements CompatibleMessage {
 

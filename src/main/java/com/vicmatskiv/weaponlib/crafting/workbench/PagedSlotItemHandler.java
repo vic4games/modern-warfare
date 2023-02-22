@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.crafting.workbench;
 
-import java.util.function.Supplier;
-
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+
+import java.util.function.Supplier;
 
 /**
  * Paged slot class that works off a supplier lambda,

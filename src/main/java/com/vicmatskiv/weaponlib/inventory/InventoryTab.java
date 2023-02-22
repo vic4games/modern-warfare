@@ -1,16 +1,13 @@
 package com.vicmatskiv.weaponlib.inventory;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleGuiButton;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleRenderItem;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderHelper;
-//import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
 
 public class InventoryTab extends CompatibleGuiButton {
     private ResourceLocation texture = new ResourceLocation("textures/gui/container/creative_inventory/tabs.png");

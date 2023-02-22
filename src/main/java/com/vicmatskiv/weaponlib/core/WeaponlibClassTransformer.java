@@ -1,35 +1,16 @@
 package com.vicmatskiv.weaponlib.core;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.lang.reflect.Method;
-
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassVisitor;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.FieldVisitor;
-import org.objectweb.asm.Label;
-import org.objectweb.asm.MethodVisitor;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.Type;
-import org.objectweb.asm.tree.ClassNode;
-import org.objectweb.asm.tree.InsnList;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.MethodNode;
-import org.objectweb.asm.tree.VarInsnNode;
-import org.objectweb.asm.util.Textifier;
-import org.objectweb.asm.util.TraceClassVisitor;
-
 import com.vicmatskiv.weaponlib.ClassInfo;
 import com.vicmatskiv.weaponlib.OptimizedCubeList;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleClassInfoProvider;
-
-import net.minecraft.client.audio.SoundManager;
-import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.launchwrapper.IClassTransformer;
+import org.objectweb.asm.*;
+import org.objectweb.asm.util.TraceClassVisitor;
+
+import java.io.File;
+import java.io.PrintWriter;
 
 public class WeaponlibClassTransformer implements IClassTransformer {
 

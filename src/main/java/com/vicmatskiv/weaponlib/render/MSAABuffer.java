@@ -1,15 +1,9 @@
 package com.vicmatskiv.weaponlib.render;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL32;
-
 import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.shader.Framebuffer;
+import org.lwjgl.opengl.GL11;
 
 public class MSAABuffer {
 	

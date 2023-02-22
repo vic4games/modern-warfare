@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.misc;
 
 import com.vicmatskiv.mw.ModernWarfareMod;
-
 import net.minecraft.item.Item;
 
 public class ItemCarbonComposite extends Item 

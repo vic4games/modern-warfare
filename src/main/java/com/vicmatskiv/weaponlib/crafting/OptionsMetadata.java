@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.crafting;
 
-import java.util.LinkedHashMap;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
+
+import java.util.LinkedHashMap;
 
 public class OptionsMetadata {
 

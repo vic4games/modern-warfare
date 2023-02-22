@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
+import net.minecraft.block.material.Material;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import net.minecraft.block.material.Material;
 
 public class CompatibleMaterial {
     

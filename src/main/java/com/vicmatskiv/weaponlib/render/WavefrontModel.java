@@ -1,34 +1,15 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.io.BufferedReader;
-import java.nio.ByteBuffer;
+import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
+import net.minecraft.client.renderer.GlStateManager;
+import org.lwjgl.BufferUtils;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL15;
+import org.lwjgl.opengl.GL20;
+
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.lwjgl.BufferUtils;
-import org.lwjgl.opengl.ARBDrawElementsBaseVertex;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL15;
-import org.lwjgl.opengl.GL20;
-import org.lwjgl.opengl.GL21;
-import org.lwjgl.opengl.GL30;
-import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL33;
-
-import com.vicmatskiv.weaponlib.ClientModContext;
-import com.vicmatskiv.weaponlib.WeaponState;
-import com.vicmatskiv.weaponlib.debug.DebugRenderer;
-import com.vicmatskiv.weaponlib.render.bgl.GLCompatible;
-
-import net.minecraft.client.renderer.BufferBuilder;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-import net.minecraft.util.math.Vec3d;
-import scala.actors.threadpool.Arrays;
 
 public class WavefrontModel {
 	

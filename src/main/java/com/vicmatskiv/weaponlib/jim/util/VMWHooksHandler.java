@@ -1,15 +1,12 @@
 package com.vicmatskiv.weaponlib.jim.util;
 
-import java.lang.reflect.Field;
-
+import com.vicmatskiv.weaponlib.ItemAttachment;
+import com.vicmatskiv.weaponlib.Weapon;
+import net.minecraftforge.fml.relauncher.ReflectionHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.Weapon;
-
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.fml.relauncher.ReflectionHelper;
+import java.lang.reflect.Field;
 
 public class VMWHooksHandler {
 	

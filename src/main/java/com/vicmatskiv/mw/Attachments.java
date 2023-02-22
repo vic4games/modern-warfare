@@ -1,44 +1,15 @@
 package com.vicmatskiv.mw;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
+import com.vicmatskiv.mw.models.*;
+import com.vicmatskiv.weaponlib.*;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
+import com.vicmatskiv.weaponlib.config.ConfigurationManager;
+import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
+import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-
 import org.lwjgl.opengl.GL11;
-
-import com.vicmatskiv.mw.models.AK47iron;
-import com.vicmatskiv.mw.models.AKMiron1;
-import com.vicmatskiv.mw.models.AKMiron2;
-import com.vicmatskiv.mw.models.FALIron;
-import com.vicmatskiv.mw.models.G36CIron1;
-import com.vicmatskiv.mw.models.G36CIron2;
-import com.vicmatskiv.mw.models.M14Iron;
-import com.vicmatskiv.mw.models.M27rearsight;
-import com.vicmatskiv.mw.models.M4Iron1;
-import com.vicmatskiv.mw.models.M4Iron2;
-import com.vicmatskiv.mw.models.MBUSRearSight;
-import com.vicmatskiv.mw.models.MBUSiron;
-import com.vicmatskiv.mw.models.MP5Iron;
-import com.vicmatskiv.mw.models.OSIPRscopereticle;
-import com.vicmatskiv.mw.models.P90iron;
-import com.vicmatskiv.mw.models.ScarIron1;
-import com.vicmatskiv.mw.models.ScarIron2;
-import com.vicmatskiv.weaponlib.AttachmentBuilder;
-import com.vicmatskiv.weaponlib.AttachmentCategory;
-import com.vicmatskiv.weaponlib.ItemAttachment;
-import com.vicmatskiv.weaponlib.ItemScope;
-import com.vicmatskiv.weaponlib.LaserBeamRenderer;
-import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBlocks;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
-import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
-import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 
 public class Attachments {
 

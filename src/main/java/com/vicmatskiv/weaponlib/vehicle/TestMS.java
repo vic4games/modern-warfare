@@ -3,9 +3,7 @@ package com.vicmatskiv.weaponlib.vehicle;
 
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.MovingSound;
-import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;

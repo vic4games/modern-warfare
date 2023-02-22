@@ -1,22 +1,16 @@
 package com.vicmatskiv.weaponlib.tile;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import com.vicmatskiv.weaponlib.ItemAttachment;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.WeightedOptions;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
-
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.EnumDifficulty;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.*;
 
 public class LootBoxConfiguration extends CustomTileEntityConfiguration<LootBoxConfiguration> {
 

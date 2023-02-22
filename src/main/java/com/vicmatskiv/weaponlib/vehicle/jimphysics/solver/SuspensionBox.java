@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.solver;
 
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.InterpolationKit;
-
 import net.minecraft.client.Minecraft;
 
 public class SuspensionBox {

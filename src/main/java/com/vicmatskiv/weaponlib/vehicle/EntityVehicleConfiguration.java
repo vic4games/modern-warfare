@@ -1,34 +1,22 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-import org.apache.logging.log4j.core.config.builder.api.ConfigurationBuilder;
-
 import com.vicmatskiv.weaponlib.EntityClassFactory;
 import com.vicmatskiv.weaponlib.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
-import com.vicmatskiv.weaponlib.compatibility.ModelSourceRenderer;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.Engine;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.PhysicsConfiguration;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
-
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.Item;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Function;
+import java.util.function.Supplier;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class EntityVehicleConfiguration implements EntityConfiguration {
 

@@ -1,12 +1,12 @@
 package com.vicmatskiv.weaponlib.network;
 
+import io.netty.buffer.ByteBuf;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
-
-import io.netty.buffer.ByteBuf;
 
 public class TypeRegistry {
 	

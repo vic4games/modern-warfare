@@ -1,20 +1,12 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.vecmath.AxisAngle4d;
-import javax.vecmath.AxisAngle4f;
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-import javax.vecmath.Quat4f;
-import javax.vecmath.Vector3d;
-import javax.vecmath.Vector3f;
-
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary.OreRegisterEvent;
+
+import javax.vecmath.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RigidBody {
 	

@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
 import com.vicmatskiv.weaponlib.ModContext;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;

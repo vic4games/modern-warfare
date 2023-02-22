@@ -1,8 +1,6 @@
 package com.vicmatskiv.weaponlib.render.bgl.math;
 
 import org.lwjgl.util.vector.Quaternion;
-
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 /**
  * 
  * 

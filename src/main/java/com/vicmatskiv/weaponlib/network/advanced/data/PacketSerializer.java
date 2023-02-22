@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib.network.advanced.data;
 
-import java.util.ArrayList;
-
 import io.netty.buffer.ByteBuf;
+
+import java.util.ArrayList;
 
 public class PacketSerializer<K> {
 	

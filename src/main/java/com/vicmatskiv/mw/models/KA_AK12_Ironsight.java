@@ -11,8 +11,6 @@
 
 package com.vicmatskiv.mw.models;
 
-import javax.swing.text.html.parser.Entity;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 

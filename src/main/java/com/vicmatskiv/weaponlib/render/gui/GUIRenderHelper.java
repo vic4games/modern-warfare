@@ -1,8 +1,5 @@
 package com.vicmatskiv.weaponlib.render.gui;
 
-import java.time.temporal.ChronoUnit;
-import java.util.concurrent.TimeUnit;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
@@ -12,6 +9,8 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import scala.concurrent.duration.Duration;
+
+import java.util.concurrent.TimeUnit;
 
 public class GUIRenderHelper {
 	

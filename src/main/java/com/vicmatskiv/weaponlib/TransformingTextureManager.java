@@ -1,13 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.function.UnaryOperator;
-
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.ITextureObject;
 import net.minecraft.client.renderer.texture.ITickableTextureObject;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.IResourceManager;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.function.UnaryOperator;
 
 public class TransformingTextureManager extends TextureManager {
 

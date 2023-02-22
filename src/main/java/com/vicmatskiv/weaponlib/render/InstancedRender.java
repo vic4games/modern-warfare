@@ -1,21 +1,16 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.nio.FloatBuffer;
-
+import com.vicmatskiv.weaponlib.shader.jim.Shader;
+import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
+import net.minecraft.client.renderer.GlStateManager;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 import org.lwjgl.opengl.GL31;
-import org.lwjgl.opengl.GL33;
-import org.lwjgl.opengl.GLSync;
 import org.lwjgl.util.vector.Matrix4f;
 
-import com.vicmatskiv.weaponlib.shader.jim.Shader;
-import com.vicmatskiv.weaponlib.shader.jim.ShaderManager;
-
-import net.minecraft.client.renderer.GlStateManager;
+import java.nio.FloatBuffer;
 
 public class InstancedRender {
 	

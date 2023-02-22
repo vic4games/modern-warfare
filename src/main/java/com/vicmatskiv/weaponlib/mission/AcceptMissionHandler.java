@@ -1,17 +1,16 @@
 package com.vicmatskiv.weaponlib.mission;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Set;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageHandler;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.Set;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class AcceptMissionHandler implements CompatibleMessageHandler<AcceptMissionMessage, CompatibleMessage>  {
 

@@ -1,16 +1,13 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.animation.Transition;
+import net.minecraft.client.renderer.GlStateManager;
+
+import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
-import javax.annotation.Nullable;
-
-import com.vicmatskiv.weaponlib.animation.Transition;
-
-import net.minecraft.client.renderer.GlStateManager;
 
 public class TransitionContainer {
 

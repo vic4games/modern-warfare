@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib.compatibility.shells;
 
-import java.util.HashMap;
-
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.render.WavefrontLoader;
 import com.vicmatskiv.weaponlib.render.WavefrontModel;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell;
 import com.vicmatskiv.weaponlib.render.shells.ShellParticleSimulator.Shell.Type;
-
-import akka.japi.Pair;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.HashMap;
 
 /**
  * This class was created in case that in the future more shell types will be added.

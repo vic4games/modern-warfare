@@ -1,18 +1,15 @@
 package com.vicmatskiv.weaponlib;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 import com.vicmatskiv.weaponlib.vehicle.collisions.GJKResult;
 import com.vicmatskiv.weaponlib.vehicle.collisions.OBBCollider;
 import com.vicmatskiv.weaponlib.vehicle.collisions.OreintedBB;
-
-import net.minecraft.block.BlockAir;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class RopeSimulation {
 	

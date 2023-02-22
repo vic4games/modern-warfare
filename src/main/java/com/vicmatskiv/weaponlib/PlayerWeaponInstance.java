@@ -1,21 +1,9 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.UUID;
-import java.util.concurrent.LinkedBlockingDeque;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.lwjgl.opengl.GL13;
-import org.lwjgl.opengl.GL20;
-
+import akka.japi.Pair;
 import com.vicmatskiv.weaponlib.animation.AnimationModeProcessor;
 import com.vicmatskiv.weaponlib.animation.gui.AnimationGUI;
 import com.vicmatskiv.weaponlib.command.DebugCommand;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
 import com.vicmatskiv.weaponlib.compatibility.RecoilParam;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.network.TypeRegistry;
@@ -24,8 +12,6 @@ import com.vicmatskiv.weaponlib.perspective.Perspective;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupSource;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupSourceProvider;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderPhase;
-
-import akka.japi.Pair;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
@@ -34,6 +20,16 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.lwjgl.opengl.GL13;
+
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.UUID;
+import java.util.concurrent.LinkedBlockingDeque;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 
 public class PlayerWeaponInstance extends PlayerItemInstance<WeaponState> implements DynamicShaderGroupSourceProvider {

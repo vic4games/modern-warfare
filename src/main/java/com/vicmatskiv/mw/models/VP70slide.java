@@ -1,7 +1,6 @@
 package com.vicmatskiv.mw.models;
 
 import com.vicmatskiv.weaponlib.render.qrender.QRenderer;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

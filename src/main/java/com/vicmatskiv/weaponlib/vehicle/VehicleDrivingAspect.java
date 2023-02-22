@@ -1,17 +1,15 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
+import com.vicmatskiv.weaponlib.state.Aspect;
+import com.vicmatskiv.weaponlib.state.PermitManager;
+import com.vicmatskiv.weaponlib.state.StateManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.Predicate;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleExtraEntityFlags;
-import com.vicmatskiv.weaponlib.state.Aspect;
-import com.vicmatskiv.weaponlib.state.PermitManager;
-import com.vicmatskiv.weaponlib.state.StateManager;
 
 public class VehicleDrivingAspect implements Aspect<VehicleState, EntityVehicle> {
     

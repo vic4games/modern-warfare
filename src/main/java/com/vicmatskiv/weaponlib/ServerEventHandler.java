@@ -1,45 +1,15 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.Collection;
-import java.util.Iterator;
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleCustomPlayerInventoryCapability;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityJoinWorldEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleExposureCapability;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleExtraEntityFlags;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleLivingDeathEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleLivingHurtEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleLivingUpdateEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleMissionCapability;
-import com.vicmatskiv.weaponlib.compatibility.CompatiblePlayerCloneEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatiblePlayerDropsEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatiblePlayerEntityInteractEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatiblePlayerRespawnEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleServerEventHandler;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleServerTickEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleStartTrackingEvent;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleStopTrackingEvent;
+import com.vicmatskiv.weaponlib.compatibility.*;
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.electronics.ItemHandheld;
 import com.vicmatskiv.weaponlib.inventory.CustomPlayerInventory;
 import com.vicmatskiv.weaponlib.inventory.EntityInventorySyncMessage;
 import com.vicmatskiv.weaponlib.jim.util.HitUtil;
-import com.vicmatskiv.weaponlib.mission.EntityMissionOfferingSyncMessage;
-import com.vicmatskiv.weaponlib.mission.GoToLocationAction;
-import com.vicmatskiv.weaponlib.mission.KillEntityAction;
-import com.vicmatskiv.weaponlib.mission.MissionManager;
-import com.vicmatskiv.weaponlib.mission.MissionOfferingSyncMessage;
-import com.vicmatskiv.weaponlib.mission.Missions;
-import com.vicmatskiv.weaponlib.mission.PlayerMissionSyncMessage;
+import com.vicmatskiv.weaponlib.mission.*;
 import com.vicmatskiv.weaponlib.network.packets.HeadshotSFXPacket;
 import com.vicmatskiv.weaponlib.tracking.PlayerEntityTracker;
 import com.vicmatskiv.weaponlib.tracking.SyncPlayerEntityTrackerMessage;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -53,6 +23,13 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Collection;
+import java.util.Iterator;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 /**
  * TODO: rename to common event handler, since it's invoked on both sides

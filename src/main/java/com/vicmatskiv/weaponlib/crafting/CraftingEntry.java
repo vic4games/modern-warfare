@@ -1,11 +1,7 @@
 package com.vicmatskiv.weaponlib.crafting;
 
 import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 /**
  * CraftingEntry class stores an item, the count, and an optional OreDictionary name.

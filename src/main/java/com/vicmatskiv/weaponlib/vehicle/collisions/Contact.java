@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import javax.vecmath.Matrix3d;
-
 import net.minecraft.util.math.Vec3d;
 
 public class Contact {

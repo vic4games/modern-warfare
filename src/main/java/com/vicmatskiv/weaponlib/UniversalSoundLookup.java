@@ -1,11 +1,9 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleSound;
 
-import net.minecraft.util.SoundEvent;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 public class UniversalSoundLookup {
 	

@@ -1,11 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
+import net.minecraft.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItem;
-
-import net.minecraft.item.ItemStack;
 
 public class ItemAmmo extends CompatibleItem {
 	

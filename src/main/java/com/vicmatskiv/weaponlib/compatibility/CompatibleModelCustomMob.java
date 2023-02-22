@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
-
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;

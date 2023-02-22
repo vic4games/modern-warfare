@@ -1,15 +1,11 @@
 package com.vicmatskiv.weaponlib.animation.jim;
 
+import com.google.gson.JsonObject;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map.Entry;
-
-import javax.print.attribute.HashAttributeSet;
-
-import com.google.gson.JsonObject;
-
-import net.minecraft.util.datafix.fixes.TotemItemRename;
 
 public class SingleAnimation {
 	

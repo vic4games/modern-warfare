@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEnumFacing;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.BlockPos;
 

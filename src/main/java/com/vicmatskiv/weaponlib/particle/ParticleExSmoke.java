@@ -1,16 +1,14 @@
 package com.vicmatskiv.weaponlib.particle;
 
-import java.util.Random;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 @SideOnly(Side.CLIENT)
 public class ParticleExSmoke extends Particle {

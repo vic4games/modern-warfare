@@ -1,11 +1,10 @@
 package com.vicmatskiv.weaponlib.network.advanced.data;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.lang.reflect.Array;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class DataTypes {
 

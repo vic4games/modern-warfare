@@ -1,10 +1,7 @@
 package com.vicmatskiv.weaponlib;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import com.vicmatskiv.weaponlib.compatibility.Interceptors;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.TextureOffset;
@@ -14,6 +11,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 public class ModelRenderer extends net.minecraft.client.model.ModelRenderer
 {

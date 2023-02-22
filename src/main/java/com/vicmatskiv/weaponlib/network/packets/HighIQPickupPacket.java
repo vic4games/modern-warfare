@@ -7,16 +7,12 @@ import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageHandler;
-import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
 import com.vicmatskiv.weaponlib.network.advanced.SimplePacket;
 import com.vicmatskiv.weaponlib.network.advanced.data.DataTypes;
 import com.vicmatskiv.weaponlib.network.advanced.data.PacketSerializer;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
 
 public class HighIQPickupPacket extends SimplePacket {
 	

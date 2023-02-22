@@ -1,54 +1,24 @@
 package com.vicmatskiv.mw.vehicle;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.ModernWarfareMod;
-import com.vicmatskiv.mw.models.AE86Trueno;
-import com.vicmatskiv.mw.models.AE86TruenoSteeringWheel;
-import com.vicmatskiv.mw.models.AE86TruenoWheel;
-import com.vicmatskiv.mw.models.AE86TruenoWindows;
 import com.vicmatskiv.mw.models.ATV;
 import com.vicmatskiv.mw.models.ATVSteering;
 import com.vicmatskiv.mw.models.ATVWheel;
-import com.vicmatskiv.mw.models.AudiS4;
-import com.vicmatskiv.mw.models.AudiS4SteeringWheel;
-import com.vicmatskiv.mw.models.AudiS4Wheel;
-import com.vicmatskiv.mw.models.AudiWindows;
 import com.vicmatskiv.mw.models.SampleVehicleControlArm;
-import com.vicmatskiv.mw.vehicle.engines.AE86TruenoEngine;
-import com.vicmatskiv.mw.vehicle.engines.AudiS4Engine;
-import com.vicmatskiv.mw.vehicle.engines.EvoIVEngine;
 import com.vicmatskiv.mw.vehicle.engines.PolarisATVEngine;
 import com.vicmatskiv.weaponlib.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicleConfiguration;
-import com.vicmatskiv.weaponlib.vehicle.GearShiftPattern;
-import com.vicmatskiv.weaponlib.vehicle.Positioners;
-import com.vicmatskiv.weaponlib.vehicle.StatefulRenderer;
-import com.vicmatskiv.weaponlib.vehicle.VehicleDrivingAspect;
-import com.vicmatskiv.weaponlib.vehicle.VehiclePart;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRenderableState;
-import com.vicmatskiv.weaponlib.vehicle.VehicleRendererBuilder;
-import com.vicmatskiv.weaponlib.vehicle.VehicleState;
-import com.vicmatskiv.weaponlib.vehicle.collisions.VehicleInertiaBuilder;
+import com.vicmatskiv.weaponlib.vehicle.*;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Chassis;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.Dimensions;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.PhysicsConfiguration;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.Transmission;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.TyreSize;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.VehiclePhysicsSolver;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.WheelAxel;
 import com.vicmatskiv.weaponlib.vehicle.jimphysics.solver.WheelSolver;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.enchantment.EnchantmentFishingSpeed;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.opengl.GL11;
 
 public class ATVFactory implements VehicleFactory {
 

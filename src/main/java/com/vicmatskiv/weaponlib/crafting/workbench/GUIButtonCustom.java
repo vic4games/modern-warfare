@@ -1,12 +1,12 @@
 package com.vicmatskiv.weaponlib.crafting.workbench;
 
-import java.util.function.Supplier;
-
 import com.vicmatskiv.weaponlib.render.gui.GUIRenderHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
+
+import java.util.function.Supplier;
 
 /**
  * Custom GUI button class that adds several functionalities:

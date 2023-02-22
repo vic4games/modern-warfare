@@ -1,14 +1,13 @@
 package com.vicmatskiv.weaponlib.tile;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import net.minecraft.tileentity.TileEntity;
 import org.objectweb.asm.ClassWriter;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-import net.minecraft.tileentity.TileEntity;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CustomTileEntityClassFactory implements Opcodes {
 

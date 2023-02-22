@@ -1,8 +1,8 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.util.ArrayList;
-
 import net.minecraft.item.Item;
+
+import java.util.ArrayList;
 
 public class ModelRegistryServerInterchange {
 	

@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
+import com.vicmatskiv.weaponlib.animation.DebugPositioner;
+import net.minecraft.client.settings.KeyBinding;
 import org.lwjgl.input.Keyboard;
 
-import com.vicmatskiv.weaponlib.animation.DebugPositioner;
-
-import net.minecraft.client.settings.KeyBinding;
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class KeyBindings {
 

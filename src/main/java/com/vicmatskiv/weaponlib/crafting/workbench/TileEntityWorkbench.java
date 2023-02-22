@@ -1,20 +1,14 @@
 package com.vicmatskiv.weaponlib.crafting.workbench;
 
-import com.vicmatskiv.weaponlib.animation.movement.WeaponRotationHandler;
-import com.vicmatskiv.weaponlib.Weapon;
-import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
 import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
 import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
 import com.vicmatskiv.weaponlib.crafting.IModernCrafting;
 import com.vicmatskiv.weaponlib.crafting.base.TileEntityStation;
-import com.vicmatskiv.weaponlib.crafting.items.CraftingItem;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
-import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityWorkbench extends TileEntityStation {
 

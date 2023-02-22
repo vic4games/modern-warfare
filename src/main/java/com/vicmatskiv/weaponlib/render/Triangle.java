@@ -1,6 +1,5 @@
 package com.vicmatskiv.weaponlib.render;
 
-import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.util.math.Vec3d;
 
 public class Triangle {

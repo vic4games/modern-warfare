@@ -1,24 +1,15 @@
 package com.vicmatskiv.weaponlib.render.shells;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.vecmath.Vector3d;
-
-import com.vicmatskiv.weaponlib.animation.MatrixHelper;
 import com.vicmatskiv.weaponlib.model.Bullet556;
-import com.vicmatskiv.weaponlib.vehicle.collisions.GJKResult;
-import com.vicmatskiv.weaponlib.vehicle.collisions.OBBCollider;
-import com.vicmatskiv.weaponlib.vehicle.collisions.OreintedBB;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.math.RayTraceResult.Type;
-import scala.collection.generic.Shrinkable;
-import scala.collection.mutable.ResizableArray;
 import net.minecraft.util.math.Vec3d;
+
+import javax.vecmath.Vector3d;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShellParticleSimulator {
 	

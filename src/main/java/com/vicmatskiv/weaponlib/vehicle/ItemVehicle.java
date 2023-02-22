@@ -1,8 +1,5 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
-import java.lang.reflect.InvocationTargetException;
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
@@ -19,6 +16,9 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+
+import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 
 public class ItemVehicle extends Item
 {

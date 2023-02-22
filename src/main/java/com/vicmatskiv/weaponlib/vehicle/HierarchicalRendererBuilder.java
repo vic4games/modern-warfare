@@ -1,5 +1,13 @@
 package com.vicmatskiv.weaponlib.vehicle;
 
+import com.vicmatskiv.weaponlib.ModContext;
+import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
+import com.vicmatskiv.weaponlib.animation.MultipartTransition;
+import com.vicmatskiv.weaponlib.animation.MultipartTransitionProvider;
+import com.vicmatskiv.weaponlib.vehicle.HierarchicalPartRenderer.SinglePart;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.util.ResourceLocation;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,17 +16,6 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
-
-import com.vicmatskiv.weaponlib.ModContext;
-import com.vicmatskiv.weaponlib.animation.MultipartRenderStateManager;
-import com.vicmatskiv.weaponlib.animation.MultipartTransition;
-import com.vicmatskiv.weaponlib.animation.MultipartTransitionProvider;
-import com.vicmatskiv.weaponlib.vehicle.HierarchicalPartRenderer.SinglePart;
-
-import net.minecraft.client.model.ModelBase;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class HierarchicalRendererBuilder<Part, State extends RenderState> {
 

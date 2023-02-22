@@ -4,9 +4,6 @@ import com.vicmatskiv.weaponlib.HighIQSpawnEgg;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-
 public class CustomSpawnEggs {
 	
 	public static HighIQSpawnEgg TURRET_EGG;

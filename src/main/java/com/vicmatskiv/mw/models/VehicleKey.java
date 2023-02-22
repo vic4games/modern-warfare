@@ -3,8 +3,6 @@
 // Paste this class into your mod and generate all required imports
 package com.vicmatskiv.mw.models;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;

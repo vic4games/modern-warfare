@@ -1,19 +1,17 @@
 package com.vicmatskiv.weaponlib.render;
 
-import java.awt.Graphics2D;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.texture.TextureUtil;
+import org.lwjgl.BufferUtils;
+
+import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.nio.IntBuffer;
-
-import javax.imageio.ImageIO;
-
-import org.lwjgl.BufferUtils;
-
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.texture.TextureUtil;
 
 public class ImageCaptureUtil {
 	

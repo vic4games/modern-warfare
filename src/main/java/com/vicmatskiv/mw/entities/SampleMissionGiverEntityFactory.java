@@ -7,17 +7,9 @@ import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.ai.EntityConfiguration;
 import com.vicmatskiv.weaponlib.ai.EntityCustomMob;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleBiomeType;
-import com.vicmatskiv.weaponlib.mission.GoToLocationAction;
-import com.vicmatskiv.weaponlib.mission.KillEntityAction;
-import com.vicmatskiv.weaponlib.mission.MissionOffering;
-import com.vicmatskiv.weaponlib.mission.MissionOffering.Level;
-import com.vicmatskiv.weaponlib.mission.ObtainItemAction;
-
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.world.EnumDifficulty;
 
 public class SampleMissionGiverEntityFactory implements EntityFactory {

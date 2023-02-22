@@ -1,13 +1,13 @@
 package com.vicmatskiv.weaponlib.crafting;
 
+import com.vicmatskiv.weaponlib.crafting.OptionsMetadata.OptionMetadata;
+
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.vicmatskiv.weaponlib.crafting.OptionsMetadata.OptionMetadata;
 
 class SequenceGenerator {
     

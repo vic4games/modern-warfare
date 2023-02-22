@@ -1,20 +1,19 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.UUID;
-
 import com.vicmatskiv.weaponlib.SpreadableExposure.Blackout;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleExposureCapability;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupSource;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderGroupSourceProvider;
 import com.vicmatskiv.weaponlib.shader.DynamicShaderPhase;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+
+import java.util.UUID;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 class PipelineShaderGroupSourceProvider implements DynamicShaderGroupSourceProvider {
     

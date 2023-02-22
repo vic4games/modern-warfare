@@ -1,18 +1,13 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import com.vicmatskiv.weaponlib.CommonModContext;
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageContext;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessageHandler;
 import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-
-import net.minecraft.entity.MoverType;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.Vec3d;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class VehicleClientPacketHandler implements CompatibleMessageHandler<VehicleClientPacket, CompatibleMessage> {
 	

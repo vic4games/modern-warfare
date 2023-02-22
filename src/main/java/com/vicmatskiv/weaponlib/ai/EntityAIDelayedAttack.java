@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib.ai;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityAIBase;
-
 import net.minecraft.entity.EntityLivingBase;
 
 public class EntityAIDelayedAttack extends CompatibleEntityAIBase {

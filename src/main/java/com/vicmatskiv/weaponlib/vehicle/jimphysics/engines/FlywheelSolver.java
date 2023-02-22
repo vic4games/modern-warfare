@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.vehicle.jimphysics.engines;
 
-import javax.vecmath.Matrix3d;
-
 import com.vicmatskiv.weaponlib.vehicle.collisions.InertiaKit;
 
 public class FlywheelSolver {

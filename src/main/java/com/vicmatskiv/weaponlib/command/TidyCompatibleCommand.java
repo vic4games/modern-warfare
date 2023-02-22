@@ -1,16 +1,15 @@
 package com.vicmatskiv.weaponlib.command;
 
+import akka.japi.Pair;
+import com.vicmatskiv.weaponlib.compatibility.CompatibleCommand;
+import net.minecraft.command.ICommandSender;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
-
-import com.vicmatskiv.weaponlib.compatibility.CompatibleCommand;
-
-import akka.japi.Pair;
-import net.minecraft.command.ICommandSender;
-import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
 
 /**
  * Base command class that allows for a pretty output, good functionality,

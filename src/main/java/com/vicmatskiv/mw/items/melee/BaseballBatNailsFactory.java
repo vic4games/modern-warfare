@@ -1,18 +1,14 @@
 package com.vicmatskiv.mw.items.melee;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.mw.CommonProxy;
-import com.vicmatskiv.mw.MeleeSkins;
 import com.vicmatskiv.mw.ModernWarfareMod;
 import com.vicmatskiv.weaponlib.RenderContext;
 import com.vicmatskiv.weaponlib.animation.Transition;
-import com.vicmatskiv.weaponlib.compatibility.CompatibleItems;
 import com.vicmatskiv.weaponlib.melee.ItemMelee;
 import com.vicmatskiv.weaponlib.melee.MeleeRenderer;
 import com.vicmatskiv.weaponlib.melee.RenderableState;
-
 import net.minecraft.item.Item;
+import org.lwjgl.opengl.GL11;
 
 public class BaseballBatNailsFactory implements MeleeFactory {
 

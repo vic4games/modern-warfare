@@ -1,7 +1,6 @@
 package com.vicmatskiv.weaponlib;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleEntityRenderer;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 

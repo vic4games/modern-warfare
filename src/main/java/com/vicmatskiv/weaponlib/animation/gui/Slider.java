@@ -1,16 +1,13 @@
 package com.vicmatskiv.weaponlib.animation.gui;
 
-import java.awt.Color;
-
-import org.lwjgl.input.Mouse;
-
 import com.vicmatskiv.weaponlib.animation.MatrixHelper;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.datafix.fixes.MinecartEntityTypes;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
+import org.lwjgl.input.Mouse;
+
+import java.awt.*;
 
 public class Slider implements IElement{
 

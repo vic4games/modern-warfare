@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import org.lwjgl.util.vector.Quaternion;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.math.Vec3d;
+import org.lwjgl.util.vector.Quaternion;
 
 public class Arcball {
 	

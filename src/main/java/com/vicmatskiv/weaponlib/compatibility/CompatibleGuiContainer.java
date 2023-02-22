@@ -1,7 +1,5 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import java.io.IOException;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
@@ -10,6 +8,8 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.inventory.Container;
+
+import java.io.IOException;
 
 public abstract class CompatibleGuiContainer extends GuiContainer {
 

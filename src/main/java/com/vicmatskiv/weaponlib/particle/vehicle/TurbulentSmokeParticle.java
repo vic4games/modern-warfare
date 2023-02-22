@@ -1,27 +1,14 @@
 package com.vicmatskiv.weaponlib.particle.vehicle;
 
-import java.util.List;
-import java.util.Random;
-
-import com.google.common.base.Predicate;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleClientEventHandler;
-import com.vicmatskiv.weaponlib.particle.ParticleExSmoke;
-import com.vicmatskiv.weaponlib.vehicle.EntityVehicle;
-import com.vicmatskiv.weaponlib.vehicle.jimphysics.SimplexNoise;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.client.particle.ParticleCloud;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.EntitySelectors;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.NoiseGenerator;
-import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.NoiseGeneratorSimplex;
+
+import java.util.Random;
 
 public class TurbulentSmokeParticle extends ParticleCloud {
 

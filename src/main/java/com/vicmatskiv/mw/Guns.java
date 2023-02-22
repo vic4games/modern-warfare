@@ -3,7 +3,6 @@ package com.vicmatskiv.mw;
 import com.vicmatskiv.mw.items.guns.*;
 import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
-
 import net.minecraft.item.Item;
 
 public class Guns {

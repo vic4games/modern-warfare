@@ -1,12 +1,9 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
+import net.minecraft.util.math.Vec3d;
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.Vec3d;
-import scala.actors.threadpool.Arrays;
-import scala.collection.mutable.ArrayLike;
 
 public class OBBCollider {
 	
@@ -290,7 +287,7 @@ public class OBBCollider {
 				 * 
 				 * 
 				 * "Project the origin onto the closest triangle.
-				 *  This is our closest point to the origin on the CSO’s boundary.
+				 *  This is our closest point to the origin on the CSOï¿½s boundary.
 				 *  Compute the barycentric coordinates of this closest 
 				 *  point using the vertices from this triangle. 
 				 *  The barycentric coordinates are linear combination coefficients 

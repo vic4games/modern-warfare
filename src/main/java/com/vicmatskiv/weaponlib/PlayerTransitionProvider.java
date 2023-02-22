@@ -1,11 +1,11 @@
 package com.vicmatskiv.weaponlib;
 
+import com.vicmatskiv.weaponlib.animation.MultipartTransition;
+import com.vicmatskiv.weaponlib.animation.MultipartTransitionProvider;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import com.vicmatskiv.weaponlib.animation.MultipartTransition;
-import com.vicmatskiv.weaponlib.animation.MultipartTransitionProvider;
 
 public class PlayerTransitionProvider implements MultipartTransitionProvider<RenderableState, Part, RenderContext<RenderableState>>  {
 

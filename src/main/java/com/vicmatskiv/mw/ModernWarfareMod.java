@@ -1,9 +1,5 @@
 package com.vicmatskiv.mw;
 
-import java.io.File;
-
-import javax.xml.transform.stream.StreamSource;
-
 import com.vicmatskiv.weaponlib.ModContext;
 import com.vicmatskiv.weaponlib.command.BalancePackCommand;
 import com.vicmatskiv.weaponlib.command.CraftingFileCommand;
@@ -12,7 +8,6 @@ import com.vicmatskiv.weaponlib.compatibility.CompatibleFmlPreInitializationEven
 import com.vicmatskiv.weaponlib.config.BalancePackManager;
 import com.vicmatskiv.weaponlib.config.ConfigurationManager;
 import com.vicmatskiv.weaponlib.crafting.CraftingFileManager;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -23,6 +18,9 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
 
 @Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION, guiFactory = "com.vicmatskiv.weaponlib.config.ConfigGUIFactory")
 public class ModernWarfareMod {

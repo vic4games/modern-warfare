@@ -1,9 +1,9 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
+import com.vicmatskiv.weaponlib.ClassInfo;
+
 import java.util.HashMap;
 import java.util.Map;
-
-import com.vicmatskiv.weaponlib.ClassInfo;
 
 public class CompatibleClassInfoProvider {
 

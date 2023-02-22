@@ -1,30 +1,20 @@
 package com.vicmatskiv.weaponlib;
 
-import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
-
 import com.vicmatskiv.weaponlib.ItemAttachment.ApplyHandler;
 import com.vicmatskiv.weaponlib.ItemAttachment.ApplyHandler2;
-import com.vicmatskiv.weaponlib.ItemMagazine.Builder;
-import com.vicmatskiv.weaponlib.crafting.CraftingComplexity;
-import com.vicmatskiv.weaponlib.crafting.CraftingEntry;
-import com.vicmatskiv.weaponlib.crafting.CraftingGroup;
-import com.vicmatskiv.weaponlib.crafting.CraftingRegistry;
-import com.vicmatskiv.weaponlib.crafting.OptionsMetadata;
-
+import com.vicmatskiv.weaponlib.crafting.*;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
+
+import java.util.*;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
+import static com.vicmatskiv.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class AttachmentBuilder<T> {
 	

@@ -1,12 +1,10 @@
 package com.vicmatskiv.weaponlib.animation;
 
-import org.lwjgl.opengl.GL11;
-
 import com.vicmatskiv.weaponlib.RenderableState;
 import com.vicmatskiv.weaponlib.animation.ScreenShakingAnimationManager.State;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.MathHelper;
+import org.lwjgl.opengl.GL11;
 
 public class ScreenShakeAnimation implements PlayerAnimation {
     

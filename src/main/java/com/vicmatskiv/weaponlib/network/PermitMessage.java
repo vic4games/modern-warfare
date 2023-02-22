@@ -2,7 +2,6 @@ package com.vicmatskiv.weaponlib.network;
 
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
 import com.vicmatskiv.weaponlib.state.Permit;
-
 import io.netty.buffer.ByteBuf;
 
 public class PermitMessage implements CompatibleMessage {

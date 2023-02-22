@@ -1,10 +1,9 @@
 package com.vicmatskiv.weaponlib.compatibility;
 
-import org.lwjgl.opengl.GL11;
-
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import org.lwjgl.opengl.GL11;
 
 /**
  * Pay special attention to the fact this class is stateful.

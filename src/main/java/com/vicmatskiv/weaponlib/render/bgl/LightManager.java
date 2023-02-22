@@ -1,17 +1,15 @@
 package com.vicmatskiv.weaponlib.render.bgl;
 
-import java.util.ArrayList;
-import java.util.Map.Entry;
-import java.util.Stack;
-
 import com.vicmatskiv.weaponlib.ClientEventHandler;
 import com.vicmatskiv.weaponlib.shader.jim.Shader;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
-import scala.actors.threadpool.Arrays;
+
+import java.util.ArrayList;
+import java.util.Map.Entry;
+import java.util.Stack;
 
 public class LightManager {
 	

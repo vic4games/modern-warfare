@@ -1,12 +1,9 @@
 package com.vicmatskiv.weaponlib.vehicle.network;
 
-import java.io.IOException;
-
 import com.vicmatskiv.weaponlib.compatibility.CompatibleMessage;
-
 import io.netty.buffer.ByteBuf;
-import net.minecraft.util.math.Vec3d;
-import scala.reflect.internal.Trees.This;
+
+import java.io.IOException;
 
 public class VehicleControlPacket implements CompatibleMessage {
 

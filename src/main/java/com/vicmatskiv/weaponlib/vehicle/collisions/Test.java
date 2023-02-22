@@ -1,16 +1,10 @@
 package com.vicmatskiv.weaponlib.vehicle.collisions;
 
-import java.util.ArrayList;
-
-import javax.vecmath.Matrix3d;
-import javax.vecmath.Matrix3f;
-
-import com.vicmatskiv.weaponlib.animation.jim.GearShiftAnimation;
 import com.vicmatskiv.weaponlib.vehicle.GearShiftPattern;
-
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
-import scala.actors.threadpool.Arrays;
+
+import java.util.ArrayList;
 
 public class Test {
 

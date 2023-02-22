@@ -11,11 +11,9 @@
 
 package com.vicmatskiv.mw.models;
 
-import net.minecraft.entity.Entity;
-
 import com.vicmatskiv.weaponlib.ModelWithAttachments;
-
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
 
 public class KA_AK12 extends ModelWithAttachments
 {
