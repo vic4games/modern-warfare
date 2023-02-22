@@ -9,8 +9,7 @@ Massive shoutout to the original Author: Vic4Games and his team for creating the
 ### How do I compile?
 1. Install [Java 1.8 JDK](https://adoptium.net/en-GB/temurin/releases/?version=8). Verify you're running it in console using `java -version`.
 2. Clone the repository.
-3. Run `./gradlew.bat` to compile the mod.
-4. Run ./gradlew build to compile the mod.
+4. Run `./gradlew build` to compile the mod.
 5. The compiled jar file will be in the `build/libs` folder.
 6. Enjoy the mod!
 
@@ -24,7 +23,7 @@ _Ensure that your changes make sense, and that they are not breaking changes. If
 
 
 ### Contributors
-Big thanks to all of the people who are attempting to maintain the project!
+Big thanks to all of the people who are working hard in order to maintain this project!
 
 <a href="https://github.com/Paneedah/paneedah-modern-warfare/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Paneedah/paneedah-modern-warfare" />
