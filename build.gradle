@@ -1,15 +1,12 @@
 buildscript {
     repositories {
-        jcenter()
         maven {
             name = "forge"
             url = "https://files.minecraftforge.net/maven"
         }
-        //flatDir dirs: '/libs'
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-        //classpath ':weaponlib:1.0'
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
