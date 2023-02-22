@@ -7,7 +7,7 @@ Massive shoutout to the original Author: Vic4Games and his team for creating the
 ---
 
 ### How do I compile?
-1. Install Java 1.8 JDK. Verify you're running it in console using `java -version`.
+1. Install [Java 1.8 JDK](https://adoptium.net/en-GB/temurin/releases/?version=8). Verify you're running it in console using `java -version`.
 2. Clone the repository.
 3. Run `./gradlew build` to compile the mod.
 4. The compiled jar file will be in the `build/libs` folder.
