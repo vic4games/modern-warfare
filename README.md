@@ -2,7 +2,7 @@
 
 Paneedah's Modern Warfare! A mod for Minecraft 1.12.2!
 
-Massive shoutout to the original Author: Vic4Games and his team for creating the original mod!
+Massive shoutout to the original Author: <a href="https://github.com/vic4games">Vic4Games</a> and his team for creating the original mod!
 
 ---
 
