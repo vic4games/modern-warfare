@@ -1135,4 +1135,5 @@ public class ACRFactory implements GunFactory {
 
 		.build(ModernWarfareMod.MOD_CONTEXT);
 	}
+
 }
