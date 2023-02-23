@@ -67,7 +67,9 @@ public class BulletHoleRenderer {
 		GlStateManager.disableCull();
 		
 		ResourceLocation rl = new ResourceLocation("mw:textures/entity/bullethole.png");
-		mc.getTextureManager().bindTexture(rl);
+
+		// TODO: Actually add the texture
+		// mc.getTextureManager().bindTexture(rl);
 		
 	
 	//	GL14.glBlendEquation(GL14.GL_FUNC_ADD);
