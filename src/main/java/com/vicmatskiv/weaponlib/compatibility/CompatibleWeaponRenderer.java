@@ -142,10 +142,10 @@ public abstract class CompatibleWeaponRenderer extends ModelSourceRenderer imple
 	
 	@Override
 	public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand) {
-		
-//if(true) return Collections.emptyList();
-	
-		
+		// Todo: Actually make rendering compatible with Emissive Renderer
+		if (net.minecraftforge.common.ForgeModContainer.allowEmissiveItems) {
+			return Collections.emptyList();
+		}
 		
 		if (transformType == TransformType.GROUND
 				|| transformType == TransformType.GUI
