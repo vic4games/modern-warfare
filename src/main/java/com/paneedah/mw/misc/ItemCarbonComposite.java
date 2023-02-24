@@ -11,5 +11,4 @@ public class ItemCarbonComposite extends Item {
         //setTextureName(ModernWarfareMod.MODID + ":" + "carboncomposite");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }
-    
 }
