@@ -233,4 +233,5 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
                 .withRewardsBackground("rewards.png")
                 .register(ModernWarfareMod.MOD_CONTEXT);
     }
+
 }

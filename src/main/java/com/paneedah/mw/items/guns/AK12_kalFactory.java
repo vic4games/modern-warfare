@@ -901,6 +901,5 @@ public class AK12_kalFactory {
                     
             .build(ModernWarfareMod.MOD_CONTEXT);
         }
-
     }
 

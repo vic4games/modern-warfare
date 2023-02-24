@@ -77,4 +77,5 @@ public class BanditEntityFactory implements EntityFactory {
         .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
         .register(modContext);
     }
+
 }

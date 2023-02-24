@@ -341,4 +341,5 @@ public class FuseGrenadeFactory implements GrenadeFactory {
 
                 .build(ModernWarfareMod.MOD_CONTEXT);
     }
+
 }

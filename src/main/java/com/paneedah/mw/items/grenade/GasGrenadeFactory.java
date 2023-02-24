@@ -349,4 +349,5 @@ public class GasGrenadeFactory implements GrenadeFactory {
 
                 .build(ModernWarfareMod.MOD_CONTEXT);
     }
+
 }

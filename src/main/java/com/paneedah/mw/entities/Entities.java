@@ -580,4 +580,5 @@ public class Entities {
         .withAiTargetTask(4, e -> new BetterAINearestAttackableTarget<>((EntityCreature) e, EntityCustomMob.class, "tyke", true))
         .register(ModernWarfareMod.MOD_CONTEXT);
         }
+
 }
