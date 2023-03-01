@@ -159,7 +159,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M249Action;
     public static ItemAttachment<Weapon> FatmanGrip;
     public static ItemAttachment<Weapon> FatmanRack;
-    public static ItemAttachment<Weapon> MiniNuke;
     public static ItemAttachment<Weapon> BrowningAuto5Action;
     public static ItemAttachment<Weapon> M1GarandAction;
     public static ItemAttachment<Weapon> M1GarandMag;
@@ -324,14 +323,6 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinCycle(), "ninthsin.png")
                 .withName("Cycler")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        MiniNuke = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.MiniNuke(), "mininuke.png")
-                .withName("MiniNukeAttachment")
                 .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
