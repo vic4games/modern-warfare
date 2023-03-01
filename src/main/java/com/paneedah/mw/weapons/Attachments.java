@@ -4950,41 +4950,6 @@ public class Attachments {
                 .withName("ScorpionEVO3A1HandguardLong").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        OSIPRMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRMount(), "OSIPRmount.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(-0.6F, -0.3F, -0.2F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.3F, 1.3F, 1.3f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
         MIMP5TRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.paneedah.mw.models.MIMP5TRRail(), "gun.png")
@@ -9052,45 +9017,6 @@ public class Attachments {
                 .withName("AR10SuperSASSHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
-        C8SFWHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.C8SFWHandguard(), "C8SFWHandguard.png")
-                .withModel(new com.paneedah.mw.models.AKRail(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail2(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail3(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail5(), "c8sfw_gun.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("C8SFWHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
         S710Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.paneedah.mw.models.S710TricunHandguard(), "s710tricun.png")
@@ -9125,7 +9051,6 @@ public class Attachments {
                 })
                 .withName("S710Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
         SIGMCXHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.paneedah.mw.models.SIGMCXHandguard(), "sigmcx.png")
@@ -11103,43 +11028,6 @@ public class Attachments {
                 })
                 .withName("SOCOM_Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        M4AsiimovStock = new AttachmentBuilder<Weapon>()
-        		.withCategory(AttachmentCategory.STOCK)
-//              .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-              .withRenderablePart()
-              .withModel(new com.paneedah.mw.models.M4AsiimovStock(), "m4a1asiimovstock.png")
-              .withInventoryModelPositioning((model, s) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(-0.6F, 0F, 1.4F);
-                      GL11.glRotatef(10F, 1f, 0f, 0f);
-                      GL11.glRotatef(-190F, 0f, 1f, 0f);
-                      GL11.glRotatef(0F, 0f, 0f, 1f);
-                      GL11.glScaled(0.9F, 0.9F, 0.9f);
-                  } else {
-                      GL11.glScalef(0f, 0f, 0f);
-                  }
-              }).withFirstPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                      GL11.glRotatef(30F, 0f, 1f, 0f);
-                      GL11.glScaled(0.7F, 0.7F, 0.7F);
-                  } else {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-
-              }).withThirdPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                      GL11.glRotatef(-50F, 0f, 1f, 0f);
-                      GL11.glRotatef(80F, 1f, 0f, 0f);
-                      GL11.glScaled(0.5F, 0.5F, 0.5F);
-                  } else {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              })
-              .withName("M4AsiimovStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-              .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
@@ -14393,57 +14281,6 @@ public class Attachments {
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
-        AX50Scope = new ItemScope.Builder()
-//              .withNightVision()
-              .withOpticalZoom()
-              .withZoomRange(0.22f, 0.02f)
-              .withViewfinderPositioning((p, s) -> {
-                  GL11.glScalef(1.85f, 1.85f, 1.85f);
-                  GL11.glTranslatef(-0.0765f, 0.565f, 0.7f);
-              })
-              .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
-              .withModel(new com.paneedah.mw.models.AX50Scope(), "gun.png")
-              .withModel(new com.paneedah.mw.models.JPUreticle(), "black.png")
-              .withFirstPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                      GL11.glRotatef(30F, 0f, 1f, 0f);
-                      GL11.glScaled(0.3F, 0.3F, 0.3F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-
-              }).withThirdPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                      GL11.glRotatef(-50F, 0f, 1f, 0f);
-                      GL11.glRotatef(80F, 1f, 0f, 0f);
-                      GL11.glScaled(0.2F, 0.2F, 0.2F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              }).withInventoryModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(-0.6F, -0.6F, 0F);
-                      GL11.glRotatef(10F, 1f, 0f, 0f);
-                      GL11.glRotatef(-190F, 0f, 1f, 0f);
-                      GL11.glRotatef(0F, 0f, 0f, 1f);
-                      GL11.glScaled(0.45F, 0.45F, 0.45f);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              }).withEntityModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                      GL11.glRotatef(90F, 0f, 0f, 1f);
-                      GL11.glScaled(0.4F, 0.4F, 0.4F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              })
-              .withName("AX50Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-              .build(ModernWarfareMod.MOD_CONTEXT);
-        
         NightRaider = new ItemScope.Builder()
                 .withNightVision()
                 .withOpticalZoom()
@@ -14727,106 +14564,6 @@ public class Attachments {
                 .withName("AUGscope")
                 .withModId(ModernWarfareMod.MODID)
                 .withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRMiniScope = new ItemScope.Builder()
-                .withOpticalZoom()
-                .withZoomRange(0.22f, 0.2f)
-                .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.35f, 1.35f, 1.35f);
-                    GL11.glTranslatef(-0.385f, 1.215f, 0.2f);
-//                    GL11.glScalef(0f, 0f, 0f);
-                })
-                .withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withRenderablePart()
-                .withModel(new com.paneedah.mw.models.OSIPRminiscope(), "gun.png")
-                .withModel(new FALIron(), "gun.png")
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(-0.6F, -0.9F, 0F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.8F, 0.8F, 0.8f);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRMiniScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRSight = new ItemScope.Builder()
-                .withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withRenderablePart()
-                .withModel(new com.paneedah.mw.models.OSIPRSight(), "OSIPRMount.png")
-                .withModel(new OSIPRscopereticle(), "OSIPRscopereticle.png")
-                .withRequiredAttachments(OSIPRMount)
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.5F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(2F, 2F, 2f);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Silencer556x45 = new AttachmentBuilder<Weapon>()
@@ -17291,55 +17028,6 @@ public class Attachments {
                 })
                 .withRenderablePart()
                 .withName("DanWessonLaser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRLaser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRLaser(), "OSIPRMount.png")
-                .withRequiredAttachments(OSIPRMount)
-                .withPostRender(new LaserBeamRenderer((p, s) -> {
-                    GL11.glTranslatef(-0.5F, 0.95F, 0.5F);
-                    // GL11.glRotatef(30F, 0f, 1f, 0f);
-                    // GL11.glScaled(0.6F, 0.6F, 0.6F);
-                })).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.5F, -1.3F, -0.1F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    }
-
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.6F, 1.3F, -4.6F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(3F, 3F, 3f);
-
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    }
-                })
-                .withRenderablePart()
-                .withName("OSIPRLaser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1928Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
