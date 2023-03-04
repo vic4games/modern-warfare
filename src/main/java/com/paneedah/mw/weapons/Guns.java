@@ -1,6 +1,6 @@
 package com.paneedah.mw.weapons;
 
-import com.paneedah.mw.CommonProxy;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.items.guns.*;
 import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.ConfigurationManager;

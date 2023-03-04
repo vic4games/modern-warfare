@@ -1,6 +1,6 @@
 package com.paneedah.mw.entities;
 
-import com.paneedah.mw.CommonProxy;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.weapons.Guns;
 import com.paneedah.mw.weapons.Magazines;

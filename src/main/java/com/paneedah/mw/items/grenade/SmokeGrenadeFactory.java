@@ -1,6 +1,6 @@
 package com.paneedah.mw.items.grenade;
 
-import com.paneedah.mw.CommonProxy;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.Grenades;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.M18;

@@ -3,7 +3,7 @@ package com.paneedah.mw.items.guns;
 
 // IMPORT LIST START
 
-import com.paneedah.mw.CommonProxy;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.weapons.Attachments;

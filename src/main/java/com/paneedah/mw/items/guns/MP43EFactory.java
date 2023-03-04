@@ -1,6 +1,6 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.MP43E;
 import com.paneedah.mw.models.Shotgun12Gauge;

@@ -1,6 +1,7 @@
 package com.paneedah.mw;
 
 import com.paneedah.mw.creativetab.*;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.command.BalancePackCommand;
 import com.paneedah.weaponlib.command.CraftingFileCommand;
@@ -48,7 +49,7 @@ public class ModernWarfareMod {
 	public static CreativeTabs PropsTab = new PropsTab(CreativeTabs.getNextID(), "props_tab");
 	public static CreativeTabs BlocksTab = new BlocksTab(CreativeTabs.getNextID(), "BlocksTab");
 	        
-    @SidedProxy(serverSide = "com.paneedah.mw.CommonProxy", clientSide = "com.paneedah.mw.ClientProxy")
+    @SidedProxy(serverSide = "com.paneedah.mw.proxies.CommonProxy", clientSide = "com.paneedah.mw.proxies.ClientProxy")
     public static CommonProxy proxy;
 
     private ConfigurationManager configurationManager;

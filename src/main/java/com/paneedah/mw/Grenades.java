@@ -1,6 +1,7 @@
 package com.paneedah.mw;
 
 import com.paneedah.mw.items.grenade.*;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.weaponlib.AttachmentBuilder;
 import com.paneedah.weaponlib.AttachmentCategory;
 import com.paneedah.weaponlib.ItemAttachment;
