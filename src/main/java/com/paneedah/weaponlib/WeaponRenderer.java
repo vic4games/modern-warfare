@@ -3370,13 +3370,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 							renderContext.getHeadPitch(),
 							renderContext.getScale());
 				} else {
-					getBuilder().getBakedModel().render(this.player,
-							renderContext.getLimbSwing(),
-							renderContext.getFlimbSwingAmount(),
-							renderContext.getAgeInTicks(),
-							renderContext.getNetHeadYaw(),
-							renderContext.getHeadPitch(),
-							renderContext.getScale());
+					getBuilder().getBakedModel();
 				}
 
 			}
