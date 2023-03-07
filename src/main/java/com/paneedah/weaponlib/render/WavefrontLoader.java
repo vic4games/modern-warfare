@@ -18,7 +18,6 @@ public class WavefrontLoader {
 	private static final String HEADER_TEX_COORD = "vt";
 	private static final String HEADER_LIGHT_COORD = "vn";
 	private static final String HEADER_FACE = "f";
-
 	private static final String OBJ_MODEL_LOCATION = "mw:models/obj/";
 
 	/*
@@ -39,30 +38,25 @@ public class WavefrontLoader {
 		
 		boolean startRead = false;
 		ArrayList<String> lines = new ArrayList<>();
+
 		try {
 			while(br.ready()) {
-				try {
 					String line = br.readLine();
+
 					if(line.startsWith("o")) {
 						if(line.split(" ")[1].equals(subModel)) {
 							startRead = true;
 						} else {
 							break;
 						//	startRead = false;
-							
 						}
 						startRead = true;
 					}
-					if(startRead) lines.add(line);
+					if(startRead)
+						lines.add(line);
 					
-					if(!startRead &&
-							(line.startsWith("v") || line.startsWith("vn") || line.startsWith("vt"))) {
-							lines.add(line);
-					}
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+					if(!startRead && (line.startsWith("v") || line.startsWith("vn") || line.startsWith("vt")))
+						lines.add(line);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -70,47 +64,37 @@ public class WavefrontLoader {
 		}
 		
 		return process(lines, vaoMode);
-		
 	}
 	
 	public static WavefrontModel load(ResourceLocation loc) {
-
-
-
 		BufferedReader br = createBufferedReader(loc);
-	
 		ArrayList<String> lines = new ArrayList<>();
+
 		try {
 			while(br.ready()) {
-				try {
-					lines.add(br.readLine());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				lines.add(br.readLine());
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 		return process(lines, false);
-
 	}
 	
 	private static BufferedReader createBufferedReader(ResourceLocation loc) {
 		IResource resource = null;
+
 		try {
 			resource = mc.getResourceManager().getResource(loc);
 		} catch (IOException e) {
 			System.err.println("Could not load obj file " + loc.getResourcePath());
 			return null;
 		}
+
 		InputStream is = resource.getInputStream();
 
 		return new BufferedReader(new InputStreamReader(is));
-		
 	}
 
 	private static WavefrontModel process(ArrayList<String> unprocessed, boolean vaoMode) {
@@ -118,66 +102,49 @@ public class WavefrontLoader {
 		ArrayList<String[]> preprocesFace = new ArrayList<>();
 		
 		for(String rawLine : unprocessed) {
-			
-				
-				// We are not interested in
-				// blank lines.
+				// We are not interested in blank lines.
 				if(rawLine.length() == 0) continue;
-				
-				
 				
 				String[] line = rawLine.split(" ");
 				
 				// pass if it's not useful stuff
 				if(!line[0].equals(HEADER_OBJECT) && !line[0].equals(HEADER_VERTEX) && !line[0].equals(HEADER_LIGHT_COORD) && !line[0].equals(HEADER_TEX_COORD) && !line[0].equals(HEADER_FACE)) continue;
 				
-				
-				
-				 
-				
-				
 				switch(line[0]) {
-				case HEADER_VERTEX:
-					float[] vertex = new float[3];
-					for(int i = 1; i < line.length; ++i) {
-						vertex[i-1] = Float.parseFloat(line[i])*0.2f;
-						
-					}
+					case HEADER_VERTEX:
+						float[] vertex = new float[3];
+
+						for(int i = 1; i < line.length; ++i) {
+							vertex[i-1] = Float.parseFloat(line[i])*0.2f;
+						}
 					
-					
-					model.vertex.add(vertex);
-					
-					break;
-				case HEADER_TEX_COORD:
-					float[] texCoord = new float[2];
-					for(int i = 1; i < line.length; ++i) {
-						texCoord[i-1] = Float.parseFloat(line[i]);
-						
-					}
-					model.texcoord.add(texCoord);
-					break;
-				case HEADER_FACE:
-					preprocesFace.add(line);
-					break;
-				case HEADER_LIGHT_COORD:
-					float[] normal = new float[3];
-					for(int i = 1; i < line.length; ++i) {
-						normal[i-1] = Float.parseFloat(line[i]);
-						
-					}
-					model.normals.add(normal);
-					break;
-				
+						model.vertex.add(vertex);
+						break;
+					case HEADER_TEX_COORD:
+						float[] texCoord = new float[2];
+						for(int i = 1; i < line.length; ++i) {
+							texCoord[i-1] = Float.parseFloat(line[i]);
+						}
+
+						model.texcoord.add(texCoord);
+						break;
+					case HEADER_FACE:
+						preprocesFace.add(line);
+						break;
+					case HEADER_LIGHT_COORD:
+						float[] normal = new float[3];
+						for(int i = 1; i < line.length; ++i) {
+							normal[i-1] = Float.parseFloat(line[i]);
+						}
+
+						model.normals.add(normal);
+						break;
 				}
-			
 		}
 
 	// System.out.println("Count: " + model.vertex.size());
 
-	for(
-
-	String[] ar:preprocesFace)
-	{
+	for(String[] ar:preprocesFace) {
 		model.buildIndexBuffer(ar);
 		// model.buildFace(ar);
 	}
@@ -187,10 +154,7 @@ public class WavefrontLoader {
 	} else {
 		model.buildVAO();
 	}
-	 
 
 	return model;
-
-}
-
+	}
 }
