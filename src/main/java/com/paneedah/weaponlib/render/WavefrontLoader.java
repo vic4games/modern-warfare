@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.paneedah.mw.ModernWarfareMod.mc;
 
@@ -35,7 +36,7 @@ public class WavefrontLoader {
 
 	public static WavefrontModel loadSubModel(String model, String subModel, boolean vaoMode) {
 		BufferedReader br = createBufferedReader(new ResourceLocation(OBJ_MODEL_LOCATION + model + ".obj"));
-		
+
 		boolean startRead = false;
 		ArrayList<String> lines = new ArrayList<>();
 
@@ -54,7 +55,7 @@ public class WavefrontLoader {
 					}
 					if(startRead)
 						lines.add(line);
-					
+
 					if(!startRead && (line.startsWith("v") || line.startsWith("vn") || line.startsWith("vt")))
 						lines.add(line);
 			}
@@ -62,10 +63,44 @@ public class WavefrontLoader {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return process(lines, vaoMode);
 	}
-	
+
+	public static WavefrontModel loadWeaponModel(String model, List<String> objectNames, boolean vaoMode) {
+		BufferedReader br = createBufferedReader(new ResourceLocation(OBJ_MODEL_LOCATION + model + ".obj"));
+		boolean startRead = false;
+		ArrayList<String> lines = new ArrayList<>();
+
+		try {
+			while (br.ready()) {
+				String line = br.readLine();
+
+				if (line.startsWith("o")) {
+					String objectName = line.split(" ")[1];
+					if (objectNames.contains(objectName)) {
+						startRead = true;
+					} else {
+						startRead = false;
+					}
+				}
+				if (startRead) {
+					lines.add(line);
+				}
+
+				if (!startRead && (line.startsWith("v") || line.startsWith("vn") || line.startsWith("vt"))) {
+					lines.add(line);
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return process(lines, vaoMode);
+	}
+
+
+
 	public static WavefrontModel load(ResourceLocation loc) {
 		BufferedReader br = createBufferedReader(loc);
 		ArrayList<String> lines = new ArrayList<>();

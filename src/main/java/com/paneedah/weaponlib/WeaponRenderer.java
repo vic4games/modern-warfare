@@ -2283,6 +2283,10 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 			return model;
 		}
 
+		public WavefrontModel getBakedModel() {
+			return bakedModel;
+		}
+
 		public String getModId() {
 			return modId;
 		}
@@ -3356,14 +3360,25 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 				//GlStateManager.translate(-0.05*test1, 0.01*test1, 0);
 				//GlStateManager.rotate(-10f*test1, 1, 1, 0);
 				//mc.getTextureManager().bindTexture(new ResourceLocation("mw:textures/items/sexmoiv.png"));
-				
-				getBuilder().getModel().render(this.player,
-		                renderContext.getLimbSwing(),
-		                renderContext.getFlimbSwingAmount(),
-		                renderContext.getAgeInTicks(),
-		                renderContext.getNetHeadYaw(),
-		                renderContext.getHeadPitch(),
-		                renderContext.getScale());
+
+				if (getBuilder().getModel() != null) {
+					getBuilder().getModel().render(this.player,
+							renderContext.getLimbSwing(),
+							renderContext.getFlimbSwingAmount(),
+							renderContext.getAgeInTicks(),
+							renderContext.getNetHeadYaw(),
+							renderContext.getHeadPitch(),
+							renderContext.getScale());
+				} else {
+					getBuilder().getBakedModel().render(this.player,
+							renderContext.getLimbSwing(),
+							renderContext.getFlimbSwingAmount(),
+							renderContext.getAgeInTicks(),
+							renderContext.getNetHeadYaw(),
+							renderContext.getHeadPitch(),
+							renderContext.getScale());
+				}
+
 			}
 		    
 			if(DebugCommand.debugFlag == 6) return;
