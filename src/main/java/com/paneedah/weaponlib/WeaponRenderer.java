@@ -3373,7 +3373,6 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 					// TODO: Make It render
 					getBuilder().getBakedModel();
 				}
-
 			}
 		    
 			if(DebugCommand.debugFlag == 6) return;
