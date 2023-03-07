@@ -12,6 +12,8 @@ import com.paneedah.weaponlib.Weapon;
 import com.paneedah.weaponlib.WeaponRenderer;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
+import com.paneedah.weaponlib.render.WavefrontLoader;
+import com.paneedah.weaponlib.render.WavefrontModel;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
@@ -119,7 +121,7 @@ public class M1911Factory implements GunFactory {
         .withTextureNames("m1911")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModReference.MWC_ID)
-            .withModel(new M1911())
+            .withBakedModel(WavefrontLoader.loadWeaponModel("m1911test", Arrays.asList("body", "handle"), false))
             //.withTextureName("M9")
             //.withWeaponProximity(0.99F)
             //.withYOffsetZoom(5F)
