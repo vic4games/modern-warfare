@@ -28,7 +28,7 @@ minecraft {
     serverJvmArgs.add(args)
 
     replace('@VERSION@', project.mod_version)
-    replaceIn('ModernWarfareMod.java')
+    replaceIn('ModReference.java')
 }
 
 

@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -27,7 +28,7 @@ public class MAC10Factory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("mac10")
         .withFireRate(0.999f)
         .withRecoil(1f)
@@ -291,7 +292,7 @@ public class MAC10Factory {
         })
         .withTextureNames("gun")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new MAC10())
             .withADSBeizer(new Vec3d(0.0, 4, -3))
             .withActionPiece(Attachments.MAC10Action)

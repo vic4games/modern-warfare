@@ -1,6 +1,7 @@
 package com.paneedah.mw.ores;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,8 +15,8 @@ public class BlockGraphiteOre extends Block {
     public BlockGraphiteOre() {
         super(Material.ROCK);
 
-        setUnlocalizedName(ModernWarfareMod.MODID + "_" + "GraphiteOre");
-        //setBlockTextureName(ModernWarfareMod.MODID + ":" + "graphiteore");
+        setUnlocalizedName(ModReference.MWC_ID + "_" + "GraphiteOre");
+        //setBlockTextureName(ModReference.MWC_ID + ":" + "graphiteore");
         setHardness(6F);
         setResistance(15F);
         setSoundType(SoundType.STONE); 

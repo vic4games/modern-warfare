@@ -1,6 +1,7 @@
 package com.paneedah.mw.ores;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -12,8 +13,8 @@ public class BlockTinOre extends Block {
     public BlockTinOre() {
         super(Material.ROCK);
 
-        //setBlockName(ModernWarfareMod.MODID + "_" + "TinOre");
-        setUnlocalizedName(ModernWarfareMod.MODID + ":" + "tinore");
+        //setBlockName(ModReference.MWC_ID + "_" + "TinOre");
+        setUnlocalizedName(ModReference.MWC_ID + ":" + "tinore");
         setHardness(6F);
         setResistance(15F);
         setSoundType(SoundType.STONE); 

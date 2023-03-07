@@ -3,10 +3,11 @@ package com.paneedah.mw.items.guns;
 
 // IMPORT LIST START
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -28,7 +29,7 @@ public class ACRFactory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
-		.withModId(ModernWarfareMod.MODID) // MOD ID
+		.withModId(ModReference.MWC_ID) // MOD ID
 		.withName("acr") // Name of the item and model
 		.withFireRate(0.65f) // Fire rate in rounds per minute
 		.withRecoil(3f) // Recoil in degrees
@@ -682,7 +683,7 @@ public class ACRFactory implements GunFactory {
         // BUILDS THE GUN
         .withTextureNames("acr")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new BushmasterACR())
             .withActionPiece(AuxiliaryAttachments.ACRAction)
             .withActionTransform(new Transform().withPosition(0, 0, 1))

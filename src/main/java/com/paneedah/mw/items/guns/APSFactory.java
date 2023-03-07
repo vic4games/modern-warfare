@@ -1,12 +1,13 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.APS;
 import com.paneedah.mw.models.APSrearsight;
 import com.paneedah.mw.models.APSslide;
 import com.paneedah.mw.models.makarovfrontsight;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -29,7 +30,7 @@ public class APSFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("aps")
         .withFireRate(0.6f)
         .withRecoil(3f)
@@ -128,7 +129,7 @@ public class APSFactory implements GunFactory {
       })
         .withTextureNames("APS")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new APS())
             .withActionPiece(
             		AuxiliaryAttachments.APSslide)

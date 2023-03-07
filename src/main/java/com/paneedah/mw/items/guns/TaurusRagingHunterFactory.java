@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.Reflex2;
 import com.paneedah.mw.models.TaurusRagingHunter;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -20,7 +21,7 @@ public class TaurusRagingHunterFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("taurus_raging_hunter")
         .withAmmoCapacity(6)
         .withFireRate(0.2f)
@@ -111,7 +112,7 @@ public class TaurusRagingHunterFactory implements GunFactory {
         .withCompatibleBullet(Bullets.Bullet44, (model) -> {})
         .withTextureNames("taurusraginghunter")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new TaurusRagingHunter())
             //.withTextureName("XEagle")
             //.withWeaponProximity(0.99F)

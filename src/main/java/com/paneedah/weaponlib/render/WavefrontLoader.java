@@ -75,8 +75,8 @@ public class WavefrontLoader {
 	
 	public static WavefrontModel load(ResourceLocation loc) {
 
-		
-		
+
+
 		BufferedReader br = createBufferedReader(loc);
 	
 		ArrayList<String> lines = new ArrayList<>();

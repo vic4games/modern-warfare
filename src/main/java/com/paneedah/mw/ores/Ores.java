@@ -4,6 +4,7 @@ import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.misc.*;
 import com.paneedah.mw.resources.ItemSulfurDust;
 import com.paneedah.mw.resources.ItemTinIngot;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.crafting.items.CraftingItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -65,16 +66,16 @@ public class Ores {
         SulfurDust = new ItemSulfurDust();
 
         SteelDust = new ItemSteelDust();
-        SteelIngot = new CraftingItem("SteelIngot", ModernWarfareMod.MODID, Ores.SteelIngot, 0.3, ModernWarfareMod.BlocksTab);
+        SteelIngot = new CraftingItem("SteelIngot", ModReference.MWC_ID, Ores.SteelIngot, 0.3, ModernWarfareMod.BlocksTab);
         
         GunmetalComposite = new ItemGunmetalComposite();
         GunmetalIngot = new ItemGunmetalIngot();
-        GunmetalIngot = new CraftingItem("GunmetalIngot", ModernWarfareMod.MODID, Ores.GunmetalIngot, 0.3, ModernWarfareMod.BlocksTab);
+        GunmetalIngot = new CraftingItem("GunmetalIngot", ModReference.MWC_ID, Ores.GunmetalIngot, 0.3, ModernWarfareMod.BlocksTab);
         GunmetalPlate = new ItemGunmetalPlate();
-        GunmetalPlate = new CraftingItem("GunmetalPlate", ModernWarfareMod.MODID, Ores.GunmetalPlate, 0.3, ModernWarfareMod.BlocksTab);
+        GunmetalPlate = new CraftingItem("GunmetalPlate", ModReference.MWC_ID, Ores.GunmetalPlate, 0.3, ModernWarfareMod.BlocksTab);
         
         CarbonComposite = new ItemCarbonComposite();
-        CarbonComposite = new CraftingItem("CarbonComposite", ModernWarfareMod.MODID, Ores.CarbonComposite, 0.3, ModernWarfareMod.BlocksTab);
+        CarbonComposite = new CraftingItem("CarbonComposite", ModReference.MWC_ID, Ores.CarbonComposite, 0.3, ModernWarfareMod.BlocksTab);
         CarbonFiber = new ItemCarbonFiber();
         SyntheticPolymerComposite = new ItemSyntheticPolymerComposite();
         SyntheticPlastic = new ItemSyntheticPlastic();
@@ -82,33 +83,33 @@ public class Ores {
         VestRender = new ItemVestRender();
         
         compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, LeadOre, "LeadOre");
-        compatibility.registerItem(ModernWarfareMod.MODID, LeadIngot, "leadingot");
+        compatibility.registerItem(ModReference.MWC_ID, LeadIngot, "leadingot");
 
         compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, CopperOre, "CopperOre");
-        compatibility.registerItem(ModernWarfareMod.MODID, CopperIngot, "CopperIngot");
+        compatibility.registerItem(ModReference.MWC_ID, CopperIngot, "CopperIngot");
         
         compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, GraphiteOre, "GraphiteOre");
-        compatibility.registerItem(ModernWarfareMod.MODID, GraphiteChunk, "GraphiteChunk");
+        compatibility.registerItem(ModReference.MWC_ID, GraphiteChunk, "GraphiteChunk");
 
         compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, TinOre, "TinOre");
-        compatibility.registerItem(ModernWarfareMod.MODID, TinIngot, "TinIngot");
+        compatibility.registerItem(ModReference.MWC_ID, TinIngot, "TinIngot");
 
         compatibility.registerBlock(ModernWarfareMod.MOD_CONTEXT, SulfurOre, "SulfurOre");
-        compatibility.registerItem(ModernWarfareMod.MODID, SulfurDust, "SulfureDust");
+        compatibility.registerItem(ModReference.MWC_ID, SulfurDust, "SulfureDust");
 
-        compatibility.registerItem(ModernWarfareMod.MODID, SteelDust, "SteelDust");
-        compatibility.registerItem(ModernWarfareMod.MODID, SteelIngot, "SteelIngot");
+        compatibility.registerItem(ModReference.MWC_ID, SteelDust, "SteelDust");
+        compatibility.registerItem(ModReference.MWC_ID, SteelIngot, "SteelIngot");
         
-        compatibility.registerItem(ModernWarfareMod.MODID, GunmetalIngot, "GunmetalIngot");
-        compatibility.registerItem(ModernWarfareMod.MODID, GunmetalPlate, "GunmetalPlate");
-        compatibility.registerItem(ModernWarfareMod.MODID, GunmetalComposite, "GunmetalComposite");
+        compatibility.registerItem(ModReference.MWC_ID, GunmetalIngot, "GunmetalIngot");
+        compatibility.registerItem(ModReference.MWC_ID, GunmetalPlate, "GunmetalPlate");
+        compatibility.registerItem(ModReference.MWC_ID, GunmetalComposite, "GunmetalComposite");
         
-        compatibility.registerItem(ModernWarfareMod.MODID, CarbonComposite, "CarbonComposite");
-        compatibility.registerItem(ModernWarfareMod.MODID, CarbonFiber, "CarbonFiber");
-        compatibility.registerItem(ModernWarfareMod.MODID, SyntheticPolymerComposite, "SyntheticPolymerComposite");
-        compatibility.registerItem(ModernWarfareMod.MODID, SyntheticPlastic, "SyntheticPlastic");
+        compatibility.registerItem(ModReference.MWC_ID, CarbonComposite, "CarbonComposite");
+        compatibility.registerItem(ModReference.MWC_ID, CarbonFiber, "CarbonFiber");
+        compatibility.registerItem(ModReference.MWC_ID, SyntheticPolymerComposite, "SyntheticPolymerComposite");
+        compatibility.registerItem(ModReference.MWC_ID, SyntheticPlastic, "SyntheticPlastic");
         
-        compatibility.registerItem(ModernWarfareMod.MODID, VestRender, "vestrender");
+        compatibility.registerItem(ModReference.MWC_ID, VestRender, "vestrender");
 
         OreDictionary.registerOre(INGOT_LEAD, LeadIngot);
         OreDictionary.registerOre(INGOT_COPPER, CopperIngot);

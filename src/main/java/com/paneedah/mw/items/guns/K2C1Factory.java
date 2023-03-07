@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -26,7 +27,7 @@ public class K2C1Factory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
-		.withModId(ModernWarfareMod.MODID)
+		.withModId(ModReference.MWC_ID)
 		.withName("k2c1")
 		//.withAmmoCapacity(30)
 		.withFireRate(0.75f)
@@ -392,7 +393,7 @@ public class K2C1Factory implements GunFactory {
 		})
 		.withTextureNames("k2c1")
 		.withRenderer(new WeaponRenderer.Builder()
-			.withModId(ModernWarfareMod.MODID)
+			.withModId(ModReference.MWC_ID)
 			.withModel(new K2C1())
 			.withActionPiece(AuxiliaryAttachments.K2C1Action)
             .withActionTransform(new Transform().withPosition(0, 0, 1))

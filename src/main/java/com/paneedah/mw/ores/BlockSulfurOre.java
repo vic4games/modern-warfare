@@ -1,6 +1,7 @@
 package com.paneedah.mw.ores;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -14,8 +15,8 @@ public class BlockSulfurOre extends Block {
     public BlockSulfurOre() {
         super(Material.ROCK);
 
-        setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SulfurOre");
-        //setBlockTextureName(ModernWarfareMod.MODID + ":" + "sulfurore");
+        setUnlocalizedName(ModReference.MWC_ID + "_" + "SulfurOre");
+        //setBlockTextureName(ModReference.MWC_ID + ":" + "sulfurore");
         setHardness(6F);
         setResistance(15F);
         setSoundType(SoundType.STONE); 

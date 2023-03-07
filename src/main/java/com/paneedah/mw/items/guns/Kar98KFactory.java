@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -20,7 +21,7 @@ public class Kar98KFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("Kar98K")
 //      .withAmmo(CommonProxy.XWPMag)
         .withAmmoCapacity(5)
@@ -274,7 +275,7 @@ public class Kar98KFactory implements GunFactory {
         })
         .withTextureNames("M1903A3")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new Kar98K())
             .withPrepareFirstLoadIterationAnimationDuration(1100)
             .withAllLoadIterationAnimationsCompletedDuration(800)

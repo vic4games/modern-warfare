@@ -1,9 +1,9 @@
 package com.paneedah.mw.vehicle;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.VehicleKey;
 import com.paneedah.mw.models.VehicleLock;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.weaponlib.render.QRL;
 import com.paneedah.weaponlib.vehicle.AccessibleVehicleGUI;
 import com.paneedah.weaponlib.vehicle.GeneralVehicleSounds;

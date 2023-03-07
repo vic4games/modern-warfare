@@ -1,6 +1,7 @@
 package com.paneedah.mw.ores;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -12,8 +13,8 @@ public class BlockLeadOre extends Block {
     public BlockLeadOre() {
         super(Material.ROCK);
 
-        setUnlocalizedName(ModernWarfareMod.MODID + "_" + "LeadOre");
-        //setBlockTextureName(ModernWarfareMod.MODID + ":" + "leadore");
+        setUnlocalizedName(ModReference.MWC_ID + "_" + "LeadOre");
+        //setBlockTextureName(ModReference.MWC_ID + ":" + "leadore");
         setHardness(6F);
         setResistance(15F);
         setSoundType(SoundType.STONE); 

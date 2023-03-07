@@ -1,14 +1,15 @@
 package com.paneedah.mw.misc;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.item.Item;
 
 public class ItemCarbonFiber extends Item {
 
     public ItemCarbonFiber() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModernWarfareMod.MODID + "_" + "CarbonFiber"); 
-//        setTextureName(ModernWarfareMod.MODID + ":" + "carbonfiber");
+        setUnlocalizedName(ModReference.MWC_ID + "_" + "CarbonFiber");
+//        setTextureName(ModReference.MWC_ID + ":" + "carbonfiber");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }
 }

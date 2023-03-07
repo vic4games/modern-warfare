@@ -10,6 +10,7 @@ import com.paneedah.mw.ores.Ores;
 import com.paneedah.mw.skins.GunSkins;
 import com.paneedah.mw.skins.MeleeSkins;
 import com.paneedah.mw.tileentities.TileEntities;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.vehicle.Vehicles;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
@@ -68,7 +69,7 @@ public class CommonProxy {
     }
 
     public void preInit(final ModernWarfareMod mod, final ConfigurationManager configurationManager, final CompatibleFmlPreInitializationEvent initializationEvent) {
-        ModernWarfareMod.MOD_CONTEXT.preInit(mod, ModernWarfareMod.MODID, configurationManager, initializationEvent, new CompatibleChannel(ModernWarfareMod.CHANNEL));
+        ModernWarfareMod.MOD_CONTEXT.preInit(mod, ModReference.MWC_ID, configurationManager, initializationEvent, new CompatibleChannel(ModernWarfareMod.CHANNEL));
 
         ModernWarfareMod.MOD_CONTEXT.setChangeZoomSound("OpticZoom");
         ModernWarfareMod.MOD_CONTEXT.setNightVisionOnSound("nightvision_on");
@@ -105,25 +106,25 @@ public class CommonProxy {
         
         Backpack = new ItemStorage.Builder().withName("Backpack").withSize(32).withTextureName("knapsack").withTab(CreativeTabs.tabMisc).withModel(new TabletModel()).withModelTextureName("IPad.png").withGuiTextureName("inventoryitem.png").withCustomEquippedPositioning((player, stack) -> { GL11.glScalef(0.3f, 1f, 1f); GL11.glTranslatef(0f, 0f, 0.3f); }).build(ModernWarfareMod.MOD_CONTEXT);
 
-        compatibility.registerItem(ModernWarfareMod.MODID, ElectronicCircuitBoard, "Electronics");
-        compatibility.registerItem(ModernWarfareMod.MODID, OpticGlass, "OpticGlass");
-        compatibility.registerItem(ModernWarfareMod.MODID, Cloth, "Cloth");
-        compatibility.registerItem(ModernWarfareMod.MODID, TanCloth, "TanCloth");
-        compatibility.registerItem(ModernWarfareMod.MODID, GreenCloth, "GreenCloth");
-        compatibility.registerItem(ModernWarfareMod.MODID, AluminumPlate, "AluminumPlate");
-        compatibility.registerItem(ModernWarfareMod.MODID, SteelPlate, "SteelPlate");
-        compatibility.registerItem(ModernWarfareMod.MODID, BigSteelPlate, "BigSteelPlate");
-        compatibility.registerItem(ModernWarfareMod.MODID, MiniSteelPlate, "MiniSteelPlate");
-        compatibility.registerItem(ModernWarfareMod.MODID, MetalComponents, "MetalComponents");
-        compatibility.registerItem(ModernWarfareMod.MODID, Transistor, "Transistor");
-        compatibility.registerItem(ModernWarfareMod.MODID, Resistor, "Resistor");
-        compatibility.registerItem(ModernWarfareMod.MODID, Inductor, "Inductor");
-        compatibility.registerItem(ModernWarfareMod.MODID, Diode, "Diode");
-        compatibility.registerItem(ModernWarfareMod.MODID, Capacitor, "Capacitor");
-        compatibility.registerItem(ModernWarfareMod.MODID, CopperWiring, "CopperWiring");
-        compatibility.registerItem(ModernWarfareMod.MODID, Piston, "Piston");
-        compatibility.registerItem(ModernWarfareMod.MODID, LaserPointer, "LaserPointer");
-        compatibility.registerItem(ModernWarfareMod.MODID, Plastic, "plastic");
+        compatibility.registerItem(ModReference.MWC_ID, ElectronicCircuitBoard, "Electronics");
+        compatibility.registerItem(ModReference.MWC_ID, OpticGlass, "OpticGlass");
+        compatibility.registerItem(ModReference.MWC_ID, Cloth, "Cloth");
+        compatibility.registerItem(ModReference.MWC_ID, TanCloth, "TanCloth");
+        compatibility.registerItem(ModReference.MWC_ID, GreenCloth, "GreenCloth");
+        compatibility.registerItem(ModReference.MWC_ID, AluminumPlate, "AluminumPlate");
+        compatibility.registerItem(ModReference.MWC_ID, SteelPlate, "SteelPlate");
+        compatibility.registerItem(ModReference.MWC_ID, BigSteelPlate, "BigSteelPlate");
+        compatibility.registerItem(ModReference.MWC_ID, MiniSteelPlate, "MiniSteelPlate");
+        compatibility.registerItem(ModReference.MWC_ID, MetalComponents, "MetalComponents");
+        compatibility.registerItem(ModReference.MWC_ID, Transistor, "Transistor");
+        compatibility.registerItem(ModReference.MWC_ID, Resistor, "Resistor");
+        compatibility.registerItem(ModReference.MWC_ID, Inductor, "Inductor");
+        compatibility.registerItem(ModReference.MWC_ID, Diode, "Diode");
+        compatibility.registerItem(ModReference.MWC_ID, Capacitor, "Capacitor");
+        compatibility.registerItem(ModReference.MWC_ID, CopperWiring, "CopperWiring");
+        compatibility.registerItem(ModReference.MWC_ID, Piston, "Piston");
+        compatibility.registerItem(ModReference.MWC_ID, LaserPointer, "LaserPointer");
+        compatibility.registerItem(ModReference.MWC_ID, Plastic, "plastic");
         */
         
         UniversalSoundRegistry.init();
@@ -155,11 +156,11 @@ public class CommonProxy {
         new BaseballBatNailsFactory().createMelee(this);
         new NightStickFactory().createMelee(this);
         
-        ModernWarfareMod.MOD_CONTEXT.preInitEnd(mod, ModernWarfareMod.MODID, configurationManager, initializationEvent, ModernWarfareMod.MOD_CONTEXT.getChannel());
+        ModernWarfareMod.MOD_CONTEXT.preInitEnd(mod, ModReference.MWC_ID, configurationManager, initializationEvent, ModernWarfareMod.MOD_CONTEXT.getChannel());
     }
 
     public void init(final ModernWarfareMod mod, final ConfigurationManager configurationManager, final CompatibleFmlInitializationEvent initializationEvent) {
-        ModernWarfareMod.MOD_CONTEXT.init(mod, ModernWarfareMod.MODID);
+        ModernWarfareMod.MOD_CONTEXT.init(mod, ModReference.MWC_ID);
 
         Entities.init(this);
         Vehicles.init(this);

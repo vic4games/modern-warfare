@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -18,7 +19,7 @@ public class Remington870Factory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("remington870")
 //      .withAmmo(CommonProxy.Remington870Mag)
         .withAmmoCapacity(4)
@@ -307,7 +308,7 @@ public class Remington870Factory implements GunFactory {
         .withCompatibleBullet(Bullets.Shotgun12Guage, (model) -> {})
         .withTextureNames("remington870")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new Remington870())
             //.withTextureName("Remington900")
             //.withWeaponProximity(0.99F)

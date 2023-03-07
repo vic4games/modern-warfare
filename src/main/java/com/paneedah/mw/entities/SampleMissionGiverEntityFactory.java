@@ -56,7 +56,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withLevel(Level.EASY)
 //                                .withReward(Attachments.ACOG)
 //                                .withReward(Guns.M4A1)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //                )
 //
 //                .withMissionOffering(
@@ -68,7 +68,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withCooldownTime(500)
 //                                .withLevel(Level.EASY)
 //                                .withReward(Guns.M4A1)
-//                                .build(ModernWarfareMod.MODID))
+//                                .build(ModReference.MWC_ID))
 //
 //                .withMissionOffering(
 //
@@ -79,7 +79,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withCooldownTime(1000)
 //                                .withLevel(Level.EASY)
 //                                .withReward(Guns.M4A1)
-//                                .build(ModernWarfareMod.MODID))
+//                                .build(ModReference.MWC_ID))
 //
 //                .withMissionOffering(
 //
@@ -90,7 +90,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withLevel(Level.EASY)
 //                                .withReward(Items.APPLE, 5)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //
@@ -104,7 +104,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_AXE)
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //
@@ -118,7 +118,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //                )
 //
 //                .withMissionOffering(
@@ -132,7 +132,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //                )
 
 //                .withMissionOffering(
@@ -146,7 +146,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //
@@ -161,7 +161,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //                
@@ -175,7 +175,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //                
@@ -189,7 +189,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //                
@@ -203,7 +203,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
 //                
@@ -217,7 +217,7 @@ public class SampleMissionGiverEntityFactory implements EntityFactory {
 //                                .withReward(Items.DIAMOND_PICKAXE)
 //                                .withReward(Items.DIAMOND_BOOTS)
 //                                .withReward(Items.DIAMOND_SWORD)
-//                                .build(ModernWarfareMod.MODID)
+//                                .build(ModReference.MWC_ID)
 //
 //                )
                 .withIntroDialog(

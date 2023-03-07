@@ -1,14 +1,15 @@
 package com.paneedah.mw.misc;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import net.minecraft.item.Item;
 
 public class ItemSyntheticPlastic extends Item {
 
     public ItemSyntheticPlastic() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModernWarfareMod.MODID + "_" + "SyntheticPlastic"); 
-//        setTextureName(ModernWarfareMod.MODID + ":" + "syntheticplastic");
+        setUnlocalizedName(ModReference.MWC_ID + "_" + "SyntheticPlastic");
+//        setTextureName(ModReference.MWC_ID + ":" + "syntheticplastic");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }
 }

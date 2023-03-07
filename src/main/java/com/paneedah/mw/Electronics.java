@@ -1,6 +1,7 @@
 package com.paneedah.mw;
 
 import com.paneedah.mw.models.GasDetector;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.ItemAttachment;
 import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.ConfigurationManager;
@@ -78,12 +79,12 @@ public class Electronics {
                             GL11.glTranslatef(0.040000f, -0.575000f, 0.125000f);
                         })
                 .withName("tablet")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         new ItemWirelessCamera.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("wcam")
         .withCreativeTab(ModernWarfareMod.GadgetsTab)
         .withModel(new CameraModel(), "gun")
@@ -206,7 +207,7 @@ public class Electronics {
 //                    GL11.glTranslatef(0f, -0.1f, 0.8f);
                 })
         .withName("gas-detector")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withTextureName("Dummy.png")
         .build(ModernWarfareMod.MOD_CONTEXT);
     }

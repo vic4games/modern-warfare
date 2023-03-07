@@ -1,11 +1,12 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.BrowningHiPower;
 import com.paneedah.mw.models.Emp1911Slide;
 import com.paneedah.mw.models.M1911frontsight;
 import com.paneedah.mw.models.makarovrearsight;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -24,7 +25,7 @@ public class BrowningHiPowerFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("browning_hi_power")
         .withFireRate(0.65f)
         .withRecoil(4f)
@@ -90,7 +91,7 @@ public class BrowningHiPowerFactory implements GunFactory {
 //        })
         .withTextureNames("BrowningHiPower")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new BrowningHiPower())
             //.withTextureName("M9")
             //.withWeaponProximity(0.99F)

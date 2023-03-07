@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -20,7 +21,7 @@ public class KragJorgensenFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("Krag_Jorgensen")
 //      .withAmmo(CommonProxy.XWPMag)
         .withAmmoCapacity(5)
@@ -140,7 +141,7 @@ public class KragJorgensenFactory implements GunFactory {
         })
         .withTextureNames("KragJorgensen")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new KragJorgensen())
             .withPrepareFirstLoadIterationAnimationDuration(1000)
             .withAllLoadIterationAnimationsCompletedDuration(400)

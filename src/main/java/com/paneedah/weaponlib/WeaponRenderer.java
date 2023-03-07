@@ -19,6 +19,7 @@ import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.jim.util.VMWHooksHandler;
 import com.paneedah.weaponlib.render.MuzzleFlashRenderer;
 import com.paneedah.weaponlib.render.Shaders;
+import com.paneedah.weaponlib.render.WavefrontModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
@@ -73,6 +74,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
         private Vec3d beizer = new Vec3d(0, 3.5, -1);
 
 		private ModelBase model;
+		private WavefrontModel bakedModel;
 		private String textureName;
 		private Consumer<ItemStack> entityPositioning;
 		private Consumer<ItemStack> inventoryPositioning;
@@ -351,6 +353,10 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 
 		public Builder withModel(ModelBase model) {
 			this.model = model;
+			return this;
+		}
+		public Builder withBakedModel(WavefrontModel bakedModel) {
+			this.bakedModel = bakedModel;
 			return this;
 		}
 		

@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.JohnsonLMG;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -20,7 +21,7 @@ public class M1941JohnsonFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("m1941_johnson")
         .withFireRate(0.5f)
         .withRecoil(2.5f)
@@ -117,7 +118,7 @@ public class M1941JohnsonFactory {
       })
         .withTextureNames("gun") // this is temporary - the johnson will have its own texture
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new JohnsonLMG())
             //.withTextureName("AK47")
             //.withWeaponProximity(0.99F)

@@ -3,7 +3,7 @@ package com.paneedah.weaponlib.render.scopes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class Reticle {
 	

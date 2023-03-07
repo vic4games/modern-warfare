@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.M202;
 import com.paneedah.mw.models.M202RocketPROJECTILE;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -21,7 +22,7 @@ public class M202Factory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("m202")
 //      .withAmmo(CommonProxy.AR15Mag)
         .withAmmoCapacity(4)
@@ -61,7 +62,7 @@ public class M202Factory implements GunFactory {
       })
         .withTextureNames("m202")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new M202())
             //.withTextureName("M4A1")
             //.withWeaponProximity(0.99F)

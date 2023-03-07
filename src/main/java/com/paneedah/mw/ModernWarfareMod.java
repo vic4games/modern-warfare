@@ -2,6 +2,7 @@ package com.paneedah.mw;
 
 import com.paneedah.mw.creativetab.*;
 import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.command.BalancePackCommand;
 import com.paneedah.weaponlib.command.CraftingFileCommand;
@@ -25,7 +26,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 
-@Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION, guiFactory = "com.paneedah.weaponlib.config.ConfigGUIFactory")
+@Mod(modid = ModReference.MWC_ID, version = ModernWarfareMod.VERSION, guiFactory = "com.paneedah.weaponlib.config.ConfigGUIFactory")
 public class ModernWarfareMod {
 
 	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
