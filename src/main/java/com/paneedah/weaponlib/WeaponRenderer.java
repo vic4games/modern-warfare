@@ -3370,6 +3370,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 							renderContext.getHeadPitch(),
 							renderContext.getScale());
 				} else {
+					// TODO: Make It render
 					getBuilder().getBakedModel();
 				}
 
