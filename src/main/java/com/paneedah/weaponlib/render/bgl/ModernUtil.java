@@ -14,7 +14,7 @@ public class ModernUtil {
 	public static void setupLighting(Vec3d position) {
 		GlStateManager.enableLighting();
 		mc.entityRenderer.enableLightmap();
-		CompatibleShellRenderer.setupLightmapCoords(mc.player.getPositionVector().addVector(0, 1, 0));
+		CompatibleShellRenderer.setupLightmapCoords(mc.player.getPositionVector().add(0, 1, 0));
 		
 	}
 	

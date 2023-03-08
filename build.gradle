@@ -19,7 +19,7 @@ version project.mod_version
 
 minecraft {
     version = "1.12.2-14.23.5.2847"
-    mappings = "snapshot_20170624"
+    mappings = "stable_39"
 
     runDir = "run"
 

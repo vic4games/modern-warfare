@@ -31,7 +31,7 @@ public class AssignMissionTask extends CompatibleEntityAIBase {
 
             if (entityplayer == null) {
                 return false;
-            } else if (this.merchant.getDistanceSqToEntity(entityplayer) > 16.0D) {
+            } else if (this.merchant.getDistanceSq(entityplayer) > 16.0D) {
                 return false;
             } else {
                 return entityplayer.openContainer != null;
@@ -43,7 +43,7 @@ public class AssignMissionTask extends CompatibleEntityAIBase {
      * Execute a one shot task or start executing a continuous task
      */
     public void startExecuting() {
-        this.merchant.getNavigator().clearPathEntity();
+        this.merchant.getNavigator().clearPath();
     }
 
     /**

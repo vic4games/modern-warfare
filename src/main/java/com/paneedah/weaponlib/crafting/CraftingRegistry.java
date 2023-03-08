@@ -128,7 +128,7 @@ public class CraftingRegistry {
 	
 	protected static void deleteRecipeRegistry(IModernCrafting crafting) {
 		craftingMap.get(crafting.getCraftingGroup()).remove(crafting);
-		categoricalLookup.get(crafting.getCraftingGroup()).remove(crafting.getItem().getUnlocalizedName());
+		categoricalLookup.get(crafting.getCraftingGroup()).remove(crafting.getItem().getTranslationKey());
 	}
 	
 	
@@ -145,7 +145,7 @@ public class CraftingRegistry {
 		
 		// Registers them
 		craftingMap.get(crafting.getCraftingGroup()).add(crafting);
-		categoricalLookup.get(crafting.getCraftingGroup()).put(crafting.getItem().getUnlocalizedName(), crafting);
+		categoricalLookup.get(crafting.getCraftingGroup()).put(crafting.getItem().getTranslationKey(), crafting);
 	}
 
 	public static void clearRegistry() {

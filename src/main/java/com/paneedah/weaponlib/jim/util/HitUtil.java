@@ -41,7 +41,7 @@ public class HitUtil {
 		startVec = rotateVector(startVec, hurt.getPositionVector(), pitch, yaw);
 		endVec = rotateVector(endVec, hurt.getPositionVector(), pitch, yaw);
 		
-		Vec3d zpV = hurt.getPositionVector().addVector(0, hurt.getEyeHeight(), 0);
+		Vec3d zpV = hurt.getPositionVector().add(0, hurt.getEyeHeight(), 0);
 		RayTraceResult result = hurt.getEntityBoundingBox().calculateIntercept(startVec, endVec);
 		if(result != null) {
 			return result.sideHit;

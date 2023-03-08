@@ -104,7 +104,7 @@ public class OreintedBB {
 	}
 	
 	public void move(double x, double y, double z) {
-		this.c = this.c.addVector(x, y, z);
+		this.c = this.c.add(x, y, z);
 	}
 	
 	public double qPTI(double a, double b, float t) {

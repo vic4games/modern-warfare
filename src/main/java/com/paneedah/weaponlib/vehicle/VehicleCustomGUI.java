@@ -467,7 +467,7 @@ public class VehicleCustomGUI extends Gui {
 		
 		double add = 0.0;
 		
-		if(keyAnimator.currentPosition.lengthVector() == 0.0) {
+		if(keyAnimator.currentPosition.length() == 0.0) {
 			
 			add = iPM;
 		}

@@ -250,7 +250,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             if (creativeTab != null)
                 armorHelmet.setCreativeTab(creativeTab);
 
-            armorHelmet.setUnlocalizedName(unlocalizedHelmetName);
+            armorHelmet.setTranslationKey(unlocalizedHelmetName);
             compatibility.registerItem(armorHelmet, unlocalizedHelmetName.toLowerCase());
 
             String unlocalizedChestName = unlocalizedName + "_chest";
@@ -259,7 +259,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             if(creativeTab != null) {
                 armorChest.setCreativeTab(creativeTab);
             }
-            armorChest.setUnlocalizedName(unlocalizedChestName);
+            armorChest.setTranslationKey(unlocalizedChestName);
             compatibility.registerItem(armorChest, unlocalizedChestName.toLowerCase());
 
             String unlocalizedBootsName = unlocalizedName + "_boots";
@@ -269,7 +269,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             if(armorBoots != null)
                 armorBoots.setCreativeTab(creativeTab);
 
-            armorBoots.setUnlocalizedName(unlocalizedBootsName);
+            armorBoots.setTranslationKey(unlocalizedBootsName);
             compatibility.registerItem(armorBoots, unlocalizedBootsName.toLowerCase());
             
             armorHelmet.maxShieldCapacity = maxShieldCapacity;
@@ -323,7 +323,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             armorHelmet.hasNightVision = nightVision;
             armorHelmet.vignetteEnabled = vignetteEnabled;
             armorHelmet.exposureReductionFactor = this.exposureReductionFactor;
-            armorHelmet.setUnlocalizedName(unlocalizedHelmetName);
+            armorHelmet.setTranslationKey(unlocalizedHelmetName);
             armorHelmet.breathingSound = context.registerSound(breathingSound);
             compatibility.registerItem(armorHelmet, unlocalizedHelmetName.toLowerCase());
 
@@ -357,7 +357,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             if(creativeTab != null)
                 armorChest.setCreativeTab(creativeTab);
 
-            armorChest.setUnlocalizedName(unlocalizedChestName);
+            armorChest.setTranslationKey(unlocalizedChestName);
             compatibility.registerItem(armorChest, unlocalizedChestName.toLowerCase());
             
             armorChest.maxShieldCapacity = maxShieldCapacity;
@@ -390,7 +390,7 @@ public class CustomArmor extends CompatibleCustomArmor implements ExposureProtec
             if (creativeTab != null)
                 armorBoots.setCreativeTab(creativeTab);
 
-            armorBoots.setUnlocalizedName(unlocalizedBootsName);
+            armorBoots.setTranslationKey(unlocalizedBootsName);
             compatibility.registerItem(armorBoots, unlocalizedBootsName.toLowerCase());
             
 //            armorBoots.maxShieldCapacity = maxShieldCapacity;

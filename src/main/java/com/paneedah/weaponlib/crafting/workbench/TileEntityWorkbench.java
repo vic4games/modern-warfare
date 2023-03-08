@@ -61,8 +61,8 @@ public class TileEntityWorkbench extends TileEntityStation {
 	//	System.out.println("Writing bytes for client sync, target is currently: " + this.craftingTarget);
 		if(this.craftingTarget != null) {
 			buf.writeBoolean(true);
-			ByteBufUtils.writeUTF8String(buf, this.craftingTarget.getItem().getUnlocalizedName());
-			//System.out.println("Tile Entity Workbench writing " + this.craftingTarget.getItem().getUnlocalizedName());
+			ByteBufUtils.writeUTF8String(buf, this.craftingTarget.getItem().getTranslationKey());
+			//System.out.println("Tile Entity Workbench writing " + this.craftingTarget.getItem().getTranslationKey());
 		} else {
 			buf.writeBoolean(false);
 		}
@@ -85,7 +85,7 @@ public class TileEntityWorkbench extends TileEntityStation {
 		//System.out.println(compound);
 		if (craftingTimer != -1 && this.craftingTarget != null) {
 			compound.setInteger("craftingTargetID", this.craftingTarget.getCraftingGroup().getID());
-			compound.setString("craftingTargetName", this.craftingTarget.getItem().getUnlocalizedName());
+			compound.setString("craftingTargetName", this.craftingTarget.getItem().getTranslationKey());
 
 		}
 		return compound;

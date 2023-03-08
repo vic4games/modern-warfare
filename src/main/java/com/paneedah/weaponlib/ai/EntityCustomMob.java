@@ -382,7 +382,7 @@ public class EntityCustomMob extends CompatibleEntityMob
             WeaponFireAspect fireAspect = modContext.getWeaponFireAspect();
 
             BiFunction<Weapon, EntityLivingBase, ? extends WeaponSpawnEntity> spawnEntityWith = (weapon, player) -> {
-                int difficultyId = compatibility.getDifficulty(compatibility.world(this)).getDifficultyId();
+                int difficultyId = compatibility.getDifficulty(compatibility.world(this)).getId();
                 float inaccuracy = weapon.getInaccuracy() + (3f - difficultyId) * 0.5f; // *
                                                                                         // 2
                                                                                         // +

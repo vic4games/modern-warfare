@@ -37,8 +37,8 @@ public class SyncManager<S extends ManagedState<S>> {
                 instance.reconcile();
                 if(instance.shouldHaveInstanceTags()) Tags.setInstance(itemStack, instance);
             } else {
-                logger.debug("Item mismatch, expected: {}, actual: {}", instance.getItem().getUnlocalizedName(), 
-                        itemStack.getItem().getUnlocalizedName());
+                logger.debug("Item mismatch, expected: {}, actual: {}", instance.getItem().getTranslationKey(), 
+                        itemStack.getItem().getTranslationKey());
             }
         }
 	}

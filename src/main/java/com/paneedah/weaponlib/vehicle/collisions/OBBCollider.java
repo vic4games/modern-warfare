@@ -306,7 +306,7 @@ public class OBBCollider {
 				// get the contact normal and the penetration depth
 				Vec3d spV =  planeProjectOrigin(closestFace);
 				result.separationVector = spV.normalize();
-				result.penetrationDepth = spV.lengthVector();
+				result.penetrationDepth = spV.length();
 				
 				Vec3d[][] com = new Vec3d[2][3];
 				
@@ -406,9 +406,9 @@ public class OBBCollider {
 		
 		// (p) -> (a, b, c) => (u, v, w)
 		// point   triangle     barry :)
-		float u = (float) face[1].v.subtract(point).crossProduct(face[2].v.subtract(point)).lengthVector();
-		float v = (float) face[0].v.subtract(point).crossProduct(face[2].v.subtract(point)).lengthVector();
-		float w = (float) face[0].v.subtract(point).crossProduct(face[1].v.subtract(point)).lengthVector();
+		float u = (float) face[1].v.subtract(point).crossProduct(face[2].v.subtract(point)).length();
+		float v = (float) face[0].v.subtract(point).crossProduct(face[2].v.subtract(point)).length();
+		float w = (float) face[0].v.subtract(point).crossProduct(face[1].v.subtract(point)).length();
 		float uvw = u+v+w;
 		return new Vec3d(u, v, w).scale(1/uvw);
 		

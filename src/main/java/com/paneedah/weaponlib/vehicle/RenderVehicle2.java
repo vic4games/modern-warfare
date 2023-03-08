@@ -227,7 +227,7 @@ public class RenderVehicle2 extends CompatibleEntityRenderer
 		
 		double sr = entityVehicle.getSolver().rearAxel.leftWheel.slipRatio;
 		
-		//DebugRenderer.renderLine(Vec3d.ZERO.addVector(0, 3, 0), Vec3d.ZERO.addVector(0, -sr*100, 0), new Vec3d(1, 0, 0));
+		//DebugRenderer.renderLine(Vec3d.ZERO.add(0, 3, 0), Vec3d.ZERO.add(0, -sr*100, 0), new Vec3d(1, 0, 0));
 		GlStateManager.color(1.0f, 1f, 1f);
 		if(mc.getRenderManager().isDebugBoundingBox()) {
 			entityVehicle.oreintedBoundingBox.renderOBB();
@@ -360,7 +360,7 @@ public class RenderVehicle2 extends CompatibleEntityRenderer
 			RayTraceResult rtr = entityVehicle.world.rayTraceBlocks(startLift, endLift, false, true, false);
 			if(rtr != null) {
 				entityVehicle.prevLiftOffset = entityVehicle.liftOffset;
-				entityVehicle.liftOffset = (float) rtr.hitVec.subtract(startLift).lengthVector();
+				entityVehicle.liftOffset = (float) rtr.hitVec.subtract(startLift).length();
 				
 			}
 			
@@ -381,7 +381,7 @@ public class RenderVehicle2 extends CompatibleEntityRenderer
 				GL11.glTranslated(-seatOffset.x, seatOffset.y, -seatOffset.z);
 				
 				if(!(pass instanceof EntityPlayer)) {
-					mc.getRenderManager().doRenderEntity(pass, 0, 0, 0, -pass.rotationYaw, mc.getRenderPartialTicks(), true);		
+					mc.getRenderManager().renderEntity(pass, 0, 0, 0, -pass.rotationYaw, mc.getRenderPartialTicks(), true);		
 				} else {
 					EntityPlayer player = (EntityPlayer) pass;
 					RenderManager rManager = mc.getRenderManager();

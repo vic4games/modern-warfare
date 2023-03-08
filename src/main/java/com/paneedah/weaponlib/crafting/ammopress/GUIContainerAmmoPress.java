@@ -133,7 +133,7 @@ public class GUIContainerAmmoPress extends GUIContainerStation<TileEntityAmmoPre
 				
 			
 				modContext.getChannel().getChannel()
-						.sendToServer(new StationPacket(StationPacket.CRAFT, tileEntity.getPos(), getSelectedCraftingPiece().getItem().getUnlocalizedName(), getSelectedCraftingPiece().getCraftingGroup(), quantity));
+						.sendToServer(new StationPacket(StationPacket.CRAFT, tileEntity.getPos(), getSelectedCraftingPiece().getItem().getTranslationKey(), getSelectedCraftingPiece().getCraftingGroup(), quantity));
 
 				
 			}
@@ -170,7 +170,7 @@ public class GUIContainerAmmoPress extends GUIContainerStation<TileEntityAmmoPre
 	public void addCraftingInformationToTooltip(ArrayList<String> tooltip) {
 		
 		ItemStack stack = tileEntity.getLatestStackInQueue();
-		tooltip.add(GOLD + "Crafting: " + WHITE + format(stack.getUnlocalizedName()));
+		tooltip.add(GOLD + "Crafting: " + WHITE + format(stack.getTranslationKey()));
 		
 
 		if(stack.getItem() instanceof ItemBullet) {
@@ -199,7 +199,7 @@ public class GUIContainerAmmoPress extends GUIContainerStation<TileEntityAmmoPre
 					ItemStack stack = tileEntity.getCraftingQueue().get(id);
 					
 				
-					tooltip.add(format(stack.getUnlocalizedName()));
+					tooltip.add(format(stack.getTranslationKey()));
 					if(stack.getItem() instanceof ItemBullet) {
 						tooltip.add(GRAY + "Quantity: " + GOLD +
 								stack.getCount() + GREEN + " -> " + (stack.getCount() * TileEntityAmmoPress.BULLETS_CRAFTED_PER_PRESS));

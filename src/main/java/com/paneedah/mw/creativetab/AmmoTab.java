@@ -14,7 +14,7 @@ public class AmmoTab extends CreativeTabs {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
 		return new ItemStack(Bullets.Bullet556x45);
 	}
 }

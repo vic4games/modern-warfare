@@ -8,7 +8,7 @@ public class ItemSteelDust extends Item {
 
 	public ItemSteelDust() {
 		setMaxStackSize(64);
-		setUnlocalizedName(ModReference.MWC_ID + "_" + "SteelDust");
+		setTranslationKey(ModReference.MWC_ID + "_" + "SteelDust");
 //		setTextureName(ModReference.MWC_ID + ":" + "steeldust");
 		setCreativeTab(ModernWarfareMod.BlocksTab);
 	}

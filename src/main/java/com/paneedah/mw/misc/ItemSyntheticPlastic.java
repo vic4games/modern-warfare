@@ -8,7 +8,7 @@ public class ItemSyntheticPlastic extends Item {
 
     public ItemSyntheticPlastic() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModReference.MWC_ID + "_" + "SyntheticPlastic");
+        setTranslationKey(ModReference.MWC_ID + "_" + "SyntheticPlastic");
 //        setTextureName(ModReference.MWC_ID + ":" + "syntheticplastic");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }

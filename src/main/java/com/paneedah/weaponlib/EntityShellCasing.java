@@ -233,4 +233,7 @@ public class EntityShellCasing extends EntityProjectile {
         // logger.debug("{} despawned", this);
     }
 
+    // Todo: Remove this method and make this class abstract, making it abstract will break stuff but is probably better
+    @Override
+    public void shoot(double x, double y, double z, float velocity, float inaccuracy) {}
 }

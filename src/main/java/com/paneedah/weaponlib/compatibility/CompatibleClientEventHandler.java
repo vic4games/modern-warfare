@@ -194,7 +194,7 @@ public abstract class CompatibleClientEventHandler {
 
 			// Use the scroll wheel to zoom in and out the camera
 			double pan = Math.max(0.01, Math.abs(amp.pan.z) / 10000f);
-			amp.pan = amp.pan.addVector(0, 0, (me.getDwheel()) * pan);
+			amp.pan = amp.pan.add(0, 0, (me.getDwheel()) * pan);
 
 			if (EVENT_DWHEEL_FIELD == null) {
 				// Usually we would include the MCP mapping, however this tool is
@@ -298,7 +298,7 @@ public abstract class CompatibleClientEventHandler {
 			// Swap for a HDR buffer.
 			if (framebufferMcLink == null) {
 
-				framebufferMcLink = CompatibleReflection.findField(Minecraft.class, "framebufferMc", "field_147124_at");
+				framebufferMcLink = CompatibleReflection.findField(Minecraft.class, "framebuffer", "field_147124_at");
 				framebufferMcLink.setAccessible(true);
 
 			}

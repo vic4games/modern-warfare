@@ -14,7 +14,7 @@ public class BlockTinOre extends Block {
         super(Material.ROCK);
 
         //setBlockName(ModReference.MWC_ID + "_" + "TinOre");
-        setUnlocalizedName(ModReference.MWC_ID + ":" + "tinore");
+        setTranslationKey(ModReference.MWC_ID + ":" + "tinore");
         setHardness(6F);
         setResistance(15F);
         setSoundType(SoundType.STONE); 

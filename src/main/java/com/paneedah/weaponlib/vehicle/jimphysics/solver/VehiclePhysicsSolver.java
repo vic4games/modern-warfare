@@ -241,15 +241,15 @@ public class VehiclePhysicsSolver implements IEncodable<VehiclePhysicsSolver> {
 	}
 	
 	public double getLongitudinalSpeed() {
-		if(Double.isNaN(velocity.lengthVector())) return 0.0;
+		if(Double.isNaN(velocity.length())) return 0.0;
 		
 
-		return velocity.lengthVector();
+		return velocity.length();
 		/*
-		if(Double.isNaN(velocity.lengthVector())) return vehicle.throttle;
+		if(Double.isNaN(velocity.length())) return vehicle.throttle;
 		
 
-		return velocity.lengthVector()/+(vehicle.throttle/10);*/
+		return velocity.length()/+(vehicle.throttle/10);*/
 
 	}
 	
@@ -562,7 +562,7 @@ public class VehiclePhysicsSolver implements IEncodable<VehiclePhysicsSolver> {
 		sideAcceleration *= timeStep;
 		
 		
-		suspensionRoll = 5.53*sideG.lengthVector()*Math.signum(getSideSlipAngle());
+		suspensionRoll = 5.53*sideG.length()*Math.signum(getSideSlipAngle());
 		suspensionPitch = -1.53*(acceleration*2.81);
 		
 		
@@ -616,7 +616,7 @@ public class VehiclePhysicsSolver implements IEncodable<VehiclePhysicsSolver> {
 		// https://suspensionsecrets.co.uk/calculating-ideal-spring-and-roll-bar-rates/
 		/*
 		double rollContant = 1.5;
-		double rollTorque = (velocity.lengthVector()*getSideSlipAngle());
+		double rollTorque = (velocity.length()*getSideSlipAngle());
 		vehicle.rotationRoll += (float) Math.toDegrees(rollTorque/(inertia.m00));
 		double diff = 1.0*Math.sin(Math.toRadians(vehicle.rotationRoll));
 		if(vehicle.rotationRoll < 0) {
@@ -777,14 +777,14 @@ public class VehiclePhysicsSolver implements IEncodable<VehiclePhysicsSolver> {
 
 		
 			boolean wheelThrottle = vehicle.throttle == 0.0 || transmission.isEngineDeclutched();
-			//System.out.println(velocity.lengthVector());
-			if(/*velocity.lengthVector() < 10*/vehicle.getRealSpeed() < 2 && wheelThrottle && !transmission.isReverseGear ) {
+			//System.out.println(velocity.length());
+			if(/*velocity.length() < 10*/vehicle.getRealSpeed() < 2 && wheelThrottle && !transmission.isReverseGear ) {
 				
 				velocity = velocity.scale(0.01);
 				
 			}
 			
-			if(velocity.lengthVector() < 0.03 && wheelThrottle) {
+			if(velocity.length() < 0.03 && wheelThrottle) {
 				
 				velocity = Vec3d.ZERO;
 			}

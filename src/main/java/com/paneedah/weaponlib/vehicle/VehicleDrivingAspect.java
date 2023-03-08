@@ -28,7 +28,7 @@ public class VehicleDrivingAspect implements Aspect<VehicleState, EntityVehicle>
 
    // private static Predicate<EntityVehicle> hasMinimalSpeed = vehicle -> vehicle.getSpeed() > 0.01;
     
-    private static Predicate<EntityVehicle> hasMinimalSpeed = vehicle -> vehicle.solver.velocity.lengthVector() != 0.0;
+    private static Predicate<EntityVehicle> hasMinimalSpeed = vehicle -> vehicle.solver.velocity.length() != 0.0;
     
     private static Predicate<EntityVehicle> movingForwardOrBackward = vehicle -> {
         return vehicle.isSteeredForward() || vehicle.isSteeredBackward();

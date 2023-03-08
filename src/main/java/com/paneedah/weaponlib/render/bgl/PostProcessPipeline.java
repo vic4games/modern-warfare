@@ -494,8 +494,8 @@ public class PostProcessPipeline {
 		Vec3d playerPos = mc.player.getPositionVector();
 
 		distortionList.sort((a, b) -> {
-			double distA = new Vec3d(a.getX(), a.getY(), a.getZ()).subtract(playerPos).lengthVector();
-			double distB = new Vec3d(b.getX(), b.getY(), b.getZ()).subtract(playerPos).lengthVector();
+			double distA = new Vec3d(a.getX(), a.getY(), a.getZ()).subtract(playerPos).length();
+			double distB = new Vec3d(b.getX(), b.getY(), b.getZ()).subtract(playerPos).length();
 
 			return (int) (Math.round(distB) - Math.round(distA));
 

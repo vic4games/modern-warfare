@@ -117,7 +117,7 @@ public class GUIContainerWorkbench extends GUIContainerStation<TileEntityWorkben
 				modContext.getChannel().getChannel()
 						.sendToServer(new StationPacket(StationPacket.CRAFT, tileEntity.getPos(), 0, getCraftingMode() == 1 ? WorkbenchBlock.WORKBENCH_WEAPON_CRAFTING_TIME : WorkbenchBlock.WORKBENCH_ATTACHMENT_CRAFTING_TIME,
 								CraftingGroup.getValue(getCraftingMode()),
-								getSelectedCraftingPiece().getItem().getUnlocalizedName()));
+								getSelectedCraftingPiece().getItem().getTranslationKey()));
 
 			}
 
@@ -210,7 +210,7 @@ public class GUIContainerWorkbench extends GUIContainerStation<TileEntityWorkben
 		if(!(getSelectedCraftingPiece().getItem() instanceof Weapon)) return;
 	
 		Weapon weapon = (Weapon) getSelectedCraftingPiece().getItem();
-        GuiRenderUtil.drawScaledString(fontRenderer, format(weapon.getUnlocalizedName()),
+        GuiRenderUtil.drawScaledString(fontRenderer, format(weapon.getTranslationKey()),
                         this.guiLeft + 214, this.guiTop + 31, 1.2, 0xFDF17C);
         GuiRenderUtil.drawScaledString(fontRenderer, weapon.builder.getWeaponType(), this.guiLeft + 214, this.guiTop + 43, 0.75,
                         0xC8C49C);

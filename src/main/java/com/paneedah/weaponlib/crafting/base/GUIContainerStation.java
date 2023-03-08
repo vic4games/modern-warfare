@@ -324,7 +324,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends C
 					
 					int seconds = (tileEntity.dismantleDuration[i] - tileEntity.dismantleStatus[i]) / 20;
 					strings.add(TextFormatting.BLUE + "Dismantling: " + TextFormatting.WHITE + I18n.format(
-							tileEntity.mainInventory.getStackInSlot(i + 9).getItem().getUnlocalizedName() + ".name"));
+							tileEntity.mainInventory.getStackInSlot(i + 9).getItem().getTranslationKey() + ".name"));
 					strings.add(TextFormatting.BLUE + "Time remaining: " + TextFormatting.WHITE
 							+ GUIRenderHelper.formatTimeString(seconds, TimeUnit.SECONDS));
 					strings.add(TextFormatting.BLUE + "Products:");
@@ -336,7 +336,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends C
 								? ((CraftingItem) s.getItem()).getRecoveryPercentage()
 								: 1.0));
 						strings.add(TextFormatting.GOLD + "" + count + "x " + TextFormatting.WHITE
-								+ format(s.getItem().getUnlocalizedName()));
+								+ format(s.getItem().getTranslationKey()));
 					}
 
 				}
@@ -422,7 +422,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends C
 
 			if (searchBox.getText().length() != 0) {
 				// Filter out bad results.
-				filteredCraftingList.removeIf((a) -> !I18n.format(a.getItem().getUnlocalizedName() + ".name").toLowerCase()
+				filteredCraftingList.removeIf((a) -> !I18n.format(a.getItem().getTranslationKey() + ".name").toLowerCase()
 						.contains(searchBox.getText().toLowerCase()));
 			}
 		}
@@ -436,7 +436,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends C
 		if(stack.isEmpty()) return;
 		
 		this.tooltipRenderItem.clear();
-		this.tooltipRenderItem.add(format(stack.getItem().getUnlocalizedName()));
+		this.tooltipRenderItem.add(format(stack.getItem().getTranslationKey()));
 
 		ITooltipFlag flag = mc.gameSettings.advancedItemTooltips
 				? ITooltipFlag.TooltipFlags.ADVANCED
@@ -644,7 +644,7 @@ public abstract class GUIContainerStation<T extends TileEntityStation> extends C
 			} else if(hasSelectedCraftingPiece()){
 
 				GuiRenderUtil.drawScaledString(fontRenderer,
-						format(getSelectedCraftingPiece().getItem().getUnlocalizedName()), this.guiLeft + 214, this.guiTop + 31,
+						format(getSelectedCraftingPiece().getItem().getTranslationKey()), this.guiLeft + 214, this.guiTop + 31,
 						0.9, 0xFDF17C);
 				GlStateManager.pushMatrix();
 				RenderHelper.enableGUIStandardItemLighting();

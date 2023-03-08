@@ -123,7 +123,7 @@ public class WavefrontLoader {
 		try {
 			resource = mc.getResourceManager().getResource(loc);
 		} catch (IOException e) {
-			System.err.println("Could not load obj file " + loc.getResourcePath());
+			System.err.println("Could not load obj file " + loc.getPath());
 			return null;
 		}
 

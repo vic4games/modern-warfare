@@ -278,7 +278,7 @@ public class Compatibility1_12_2 implements Compatibility {
     @Override
     public void registerItem(String modId, Item item, String name) {
         if(item.getRegistryName() == null) {
-            String registryName = item.getUnlocalizedName().toLowerCase();
+            String registryName = item.getTranslationKey().toLowerCase();
             int indexOfPrefix = registryName.indexOf("." + modId);
             if(indexOfPrefix > 0) {
                 registryName = registryName.substring(indexOfPrefix + modId.length() + 2);
@@ -505,7 +505,7 @@ public class Compatibility1_12_2 implements Compatibility {
         //GameRegistry.addShapedRecipe(itemStack, materials);
         ForgeRegistries.RECIPES.register(new ShapedOreRecipe(null, itemStack, materials)
                 .setMirrored(false)
-                .setRegistryName("mw", itemStack.getItem().getUnlocalizedName() + "_recipe"));
+                .setRegistryName("mw", itemStack.getItem().getTranslationKey() + "_recipe"));
 
     }
 
@@ -515,7 +515,7 @@ public class Compatibility1_12_2 implements Compatibility {
         ForgeRegistries.RECIPES.register(
                 new ShapedOreRecipe(null, itemStack, materials)
                 .setMirrored(false)
-                .setRegistryName("mw", itemStack.getItem().getUnlocalizedName() + "_recipe") // TODO: temporary hack
+                .setRegistryName("mw", itemStack.getItem().getTranslationKey() + "_recipe") // TODO: temporary hack
                 );
     }
 
@@ -535,10 +535,10 @@ public class Compatibility1_12_2 implements Compatibility {
     public void registerBlock(ModContext context, Block block, String name) {
         String modId = context.getModId();
         if(block.getRegistryName() == null) {
-            if(block.getUnlocalizedName().length() < modId.length() + 2 + 5) {
-                throw new IllegalArgumentException("Unlocalize block name too short " + block.getUnlocalizedName());
+            if(block.getTranslationKey().length() < modId.length() + 2 + 5) {
+                throw new IllegalArgumentException("Unlocalize block name too short " + block.getTranslationKey());
             }
-            String unlocalizedName = block.getUnlocalizedName().toLowerCase();
+            String unlocalizedName = block.getTranslationKey().toLowerCase();
             String registryName = unlocalizedName.substring(5 + modId.length() + 1);
             block.setRegistryName(modId, registryName);
         }

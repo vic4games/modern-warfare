@@ -225,7 +225,7 @@ PlayerItemInstanceFactory<PlayerMeleeInstance, MeleeState>, AttachmentContainer,
                     modContext.registerSound(this.heavyAttackSound) : CompatibleSound.SNOWBALL_THROW;
 
             itemMelee.setCreativeTab(creativeTab);
-            itemMelee.setUnlocalizedName(name);
+            itemMelee.setTranslationKey(name);
 
             modContext.registerMeleeWeapon(name, itemMelee, renderer);
 

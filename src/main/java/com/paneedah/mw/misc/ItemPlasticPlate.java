@@ -8,7 +8,7 @@ public class ItemPlasticPlate extends Item {
 
     public ItemPlasticPlate() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModReference.MWC_ID + "_" + "PlasticPlate");
+        setTranslationKey(ModReference.MWC_ID + "_" + "PlasticPlate");
 //        setTextureName(ModReference.MWC_ID + ":" + "plasticplate");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }

@@ -3146,7 +3146,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 			Positioner<Part, RenderContext<RenderableState>> positioner) {
 		
 		
-//	    if(player.getDistanceSqToEntity(compatibility.clientPlayer()) > 400) {
+//	    if(player.getDistanceSq(compatibility.clientPlayer()) > 400) {
 //	        return;
 //	    }
 		
@@ -3665,7 +3665,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 	    if(renderViewEntity == null) {
 	        renderViewEntity = mc.player;
 	    }
-//	    double distanceSq = this.player != null ? renderViewEntity.getDistanceSqToEntity(this.player) : 0;
+//	    double distanceSq = this.player != null ? renderViewEntity.getDistanceSq(this.player) : 0;
 
 	   // GlStateManager.rotate(45, 1, 0, 0);
 	    

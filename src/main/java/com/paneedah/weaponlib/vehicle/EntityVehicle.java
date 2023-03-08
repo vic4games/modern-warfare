@@ -448,7 +448,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		
 		Vec3d speed = getSolver().getVelocityVector().scale(0.5);
 		double bruh = 0.0;
-		if(speed.lengthVector() != 0.0) {
+		if(speed.length() != 0.0) {
 			bruh = 0.3;
 		}
 		passenger.addVelocity(speed.x, speed.y, speed.z);
@@ -725,7 +725,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 						throttle -= 0.1;
 				}
 				
-				if (getSolver().getVelocityVector().lengthVector() < 0.5 && !KeyBindings.vehicleBrake.isKeyDown()) {
+				if (getSolver().getVelocityVector().length() < 0.5 && !KeyBindings.vehicleBrake.isKeyDown()) {
 					reverseLockout = false;
 				}
 			}
@@ -739,7 +739,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 				// REVERSE LOCKOUT ALLOWS THE PROCESS TO BE SMOOTHER;
 				// YOU HAVE TO LET GO OF THE BRAKE TO ENTER REVERSE.
 				if(isVehicleRunning()) {
-					if (getSolver().getVelocityVector().lengthVector() < 0.5 && !reverseLockout) {
+					if (getSolver().getVelocityVector().length() < 0.5 && !reverseLockout) {
 						trans.enterReverse();
 					}
 				}
@@ -756,7 +756,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 
 			if (KeyBindings.vehicleThrottle.isKeyDown()) {
 
-				if (getSolver().getVelocityVector().lengthVector() < 2.5) {
+				if (getSolver().getVelocityVector().length() < 2.5) {
 					trans.exitReverse();
 				}
 
@@ -835,7 +835,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		prevWheelRotationAngle = wheelRotationAngle;
 		double angVel = getRealSpeed();
 		wheelRotationAngle += angVel % 360; // wheelRotationAngle = 0.0f;
-		// wheelRotationAngle -= (float) solver.velocity.lengthVector();
+		// wheelRotationAngle -= (float) solver.velocity.length();
 
 	}
 
@@ -881,19 +881,19 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 	        double a = 1;
 	        
 	        /*
-	        double cD = Math.abs(bestResult.contactPointA.subtract(bestResult.contactPointB).lengthVector());
+	        double cD = Math.abs(bestResult.contactPointA.subtract(bestResult.contactPointB).length());
 	        if(Math.abs(bestResult.penetrationDepth) > cD) {
 	        	bestResult.penetrationDepth = cD*Math.signum(bestResult.penetrationDepth);
 	        	
 	        }
 	        System.out.println(bestResult.penetrationDepth);*/
-	        //if(solver.velocity.lengthVector() > 15) a = 0.5;
+	        //if(solver.velocity.length() > 15) a = 0.5;
 	        Vec3d aSep = normal.scale(-bestResult.penetrationDepth*a);
 	        this.prevPosX = this.posX;
 	        this.prevPosY = this.posY;
 	        this.prevPosZ = this.posZ;
-	        if(aSep.lengthVector() > 0.1) aSep = aSep.scale(1/(aSep.lengthVector()/0.1));
-	       // System.out.println(aSep.lengthVector());
+	        if(aSep.length() > 0.1) aSep = aSep.scale(1/(aSep.length()/0.1));
+	       // System.out.println(aSep.length());
 	        setPosition(this.posX+aSep.x, this.posY/*+aSep.y*/, this.posZ+aSep.z);
        	 
 	        
@@ -985,7 +985,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 	             
 	         }
 	        // System.out.println(aSep);
-	         if(aSep.lengthVector() != 0.0) {
+	         if(aSep.length() != 0.0) {
 
 	        	 Vec3d rC = bestResult.contactPointA.subtract(getPositionVector()).rotateYaw((float) Math.toRadians(rotationYaw));
 	        	 Vec3d coG = getSolver().getPhysConf().getVehicleMassObject().centerOfGravity;
@@ -1352,10 +1352,10 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			this.world.profiler.endSection();
 			this.world.profiler.startSection("rest");
 			this.resetPositionToBB();
-			this.isCollidedHorizontally = d2 != x || d4 != z;
-			this.isCollidedVertically = d3 != y;
-			this.onGround = this.isCollidedVertically && d3 < 0.0D;
-			this.isCollided = this.isCollidedHorizontally || this.isCollidedVertically;
+			this.collidedHorizontally = d2 != x || d4 != z;
+			this.collidedVertically = d3 != y;
+			this.onGround = this.collidedVertically && d3 < 0.0D;
+			this.collided = this.collidedHorizontally || this.collidedVertically;
 			int j6 = MathHelper.floor(this.posX);
 			int i1 = MathHelper.floor(this.posY - 0.20000000298023224D);
 			int k6 = MathHelper.floor(this.posZ);
@@ -1490,7 +1490,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 				.add(getPositionVector());
 		RayTraceResult rayDown = world.rayTraceBlocks(sDown, eDown);
 		if (rayDown != null) {
-			dist = rayDown.hitVec.subtract(sDown).lengthVector();
+			dist = rayDown.hitVec.subtract(sDown).length();
 			float newPitch = (float) -Math.toDegrees(Math.atan(dist / (2.5)));
 			targetDown = newPitch;
 
@@ -1555,7 +1555,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			if (heightRay != null) {
 
 				opp = heightRay.hitVec.y - getPositionVector().y;
-				adj = heightRay.hitVec.subtract(ray.hitVec).lengthVector();
+				adj = heightRay.hitVec.subtract(ray.hitVec).length();
 				// double hyp = Math.sqrt(Math.pow(opp, 2) + Math.pow(opp, 2));
 
 				// System.out.println(opp + " | " + adj);
@@ -1750,11 +1750,11 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		if (rollRA == null) {
 			rollHA = 5;
 		} else
-			rollHA = rollRA.hitVec.subtract(rollSA).lengthVector();
+			rollHA = rollRA.hitVec.subtract(rollSA).length();
 		if (rollRB == null) {
 			rollHB = 5;
 		} else
-			rollHB = rollRB.hitVec.subtract(rollSB).lengthVector();
+			rollHB = rollRB.hitVec.subtract(rollSB).length();
 
 		double sideWidth = 1.847;
 
@@ -1844,7 +1844,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		 * Vec3d(-0.5, -10, forwardNess).rotateYaw((float)
 		 * Math.toRadians(-rotationYaw)).add(getPositionVector()); RayTraceResult
 		 * rayDown = world.rayTraceBlocks(sDown, eDown, false, true, false); if(rayDown
-		 * != null) { dist = rayDown.hitVec.subtract(sDown).lengthVector(); float
+		 * != null) { dist = rayDown.hitVec.subtract(sDown).length(); float
 		 * newPitch = (float) -Math.toDegrees(Math.atan(dist/(2.5))); targetDown =
 		 * newPitch; }
 		 */
@@ -1876,11 +1876,11 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			rotationPitch *= 1.2;
 			rotationRoll *= 1.2;
 		} else {
-			hB = rayDown2.hitVec.subtract(sDown2).lengthVector();
+			hB = rayDown2.hitVec.subtract(sDown2).length();
 		}
 		
 		if(rayDown != null) {
-			hF = rayDown.hitVec.subtract(sDown).lengthVector();
+			hF = rayDown.hitVec.subtract(sDown).length();
 		}
 		
 	
@@ -1898,7 +1898,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			 */
 
 			if (rayDown != null && (hF - hB) >= 0) {
-				dist = rayDown.hitVec.subtract(sDown).lengthVector();
+				dist = rayDown.hitVec.subtract(sDown).length();
 
 				getSolver().velocity = getSolver().getVelocityVector().scale(1.005);
 				float newPitch = (float) -Math.toDegrees(Math.atan(dist / (wheelbase)));
@@ -1922,8 +1922,8 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		}
 
 		boolean flagOne = false;
-		if (isBraking || getSolver().getVelocityVector().lengthVector() < 0.3
-				|| (throttle == 0 && getSolver().getVelocityVector().lengthVector() < 25)) {
+		if (isBraking || getSolver().getVelocityVector().length() < 0.3
+				|| (throttle == 0 && getSolver().getVelocityVector().length() < 25)) {
 			flagOne = true;
 		}
 		//System.out.println(flagOne);
@@ -2022,7 +2022,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 
 			if (heightRay != null) {
 				opp = heightRay.hitVec.y - getPositionVector().y;
-				adj = heightRay.hitVec.subtract(ray.hitVec).lengthVector();
+				adj = heightRay.hitVec.subtract(ray.hitVec).length();
 			}
 			float t = 1.0f;
 			float mu2 = (float) ((1 - Math.cos(t * Math.PI)) / 2f);
@@ -2030,7 +2030,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			Vec3d lift = new Vec3d(0.0, upMag + 0.55, 0.05 + liftPush).rotateYaw((float) Math.toRadians(-rotationYaw))
 					.scale(mu2);
 
-			// getSolver().velocity = getSolver().getVelocityVector().addVector(0.0,
+			// getSolver().velocity = getSolver().getVelocityVector().add(0.0,
 			// lift.y/100, 0.0);
 			getSolver().velocity = getSolver().getVelocityVector().scale(0.95);
 
@@ -2449,8 +2449,8 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 	public void updateSuspension(WheelSolver solver) {
 		Vec3d realPos = solver.relativePosition.rotatePitch((float) Math.toRadians(rotationPitch))
 				.rotateYaw((float) Math.toRadians(-rotationYaw)).add(getPositionVector())
-				.addVector(0.0, this.rideOffset, 0.0);
-		RayTraceResult result = world.rayTraceBlocks(realPos.addVector(0.0, 3.0, 0.0), realPos.subtract(0.0, 8.0, 0.0));
+				.add(0.0, this.rideOffset, 0.0);
+		RayTraceResult result = world.rayTraceBlocks(realPos.add(0.0, 3.0, 0.0), realPos.subtract(0.0, 8.0, 0.0));
 		// System.out.println(result.hitVec);
 
 		if (result != null) {
@@ -2537,7 +2537,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 			
 
 			/*
-			if(getSolver().velocity.lengthVector() == 0.0) {
+			if(getSolver().velocity.length() == 0.0) {
 				setSize(1.5f, 1.4f);
 			} else setSize(0.4f, 0.4f);
 			*/
@@ -2593,7 +2593,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 					GearShiftPattern pattern = this.getSolver().getPhysConf().getShiftPattern();
             		
 					if(!(getState() == VehicleState.STARTING_TO_SHIFT || getState() == VehicleState.SHIFTING || getState() == VehicleState.FINISHING_SHIFT)) {
-						if(this.smoothShift.get().lengthVector() != 0.0) {
+						if(this.smoothShift.get().length() != 0.0) {
 							this.smoothShift.set(pattern.quickDoAnimation(this.getSolver().transmission).scale(0.3));
 						}
 						this.smoothShift.updatePrev();
@@ -2661,7 +2661,7 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 					
 					
 					
-					this.dist = newPos.subtract(oldPos).lengthVector();
+					this.dist = newPos.subtract(oldPos).length();
 
 					
 					this.prevtV = tV;
@@ -2865,5 +2865,4 @@ public class EntityVehicle extends Entity implements Configurable<EntityVehicleC
 		}
 		return super.attackEntityFrom(source, amount);
 	}
-
 }

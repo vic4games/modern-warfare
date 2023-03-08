@@ -1035,7 +1035,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             }
 
             weapon.setCreativeTab(creativeTab);
-            weapon.setUnlocalizedName(name);
+            weapon.setTranslationKey(name);
             if (ammo != null) {
                 ammo.addCompatibleWeapon(weapon);
             }
@@ -1101,7 +1101,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             	for(Entry<ItemAttachment<Weapon>, CompatibleAttachment<Weapon>> i : compatibleAttachments.entrySet()) {
             		if(i.getValue().getAttachment().getCategory() == AttachmentCategory.BULLET) {
             			cartridgeDriven = true;
-            			catridgeName = new TextComponentTranslation(i.getValue().getAttachment().getUnlocalizedName() + ".name").getFormattedText();
+            			catridgeName = new TextComponentTranslation(i.getValue().getAttachment().getTranslationKey() + ".name").getFormattedText();
             		}
             	}
             	
@@ -1111,7 +1111,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                     weapon.getCompatibleAttachments(AttachmentCategory.MAGAZINE).forEach(c -> mags.add((ItemMagazine) c.getAttachment()));
                     mags.sort((a, b) -> a.getAmmo()-b.getAmmo());
                   
-                    mags.forEach(c -> descriptionBuilder.add(plain + (I18n.format(c.getUnlocalizedName() + ".name"))));
+                    mags.forEach(c -> descriptionBuilder.add(plain + (I18n.format(c.getTranslationKey() + ".name"))));
             	} else {
             		descriptionBuilder.add(plate + "Cartridge: " + plain + catridgeName);
             	}
@@ -1120,7 +1120,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                 //mags.sort((a, b) -> a
                  
                  
-              // descriptionBuilder.add(plain + (I18n.format(ca.getAttachment().getUnlocalizedName() + ".name")));
+              // descriptionBuilder.add(plain + (I18n.format(ca.getAttachment().getTranslationKey() + ".name")));
                  
             	
                  return descriptionBuilder;

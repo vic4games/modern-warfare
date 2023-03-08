@@ -624,7 +624,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
 
             for (CompatibleRenderGlobal.ContainerLocalRenderInformation renderglobal$containerlocalrenderinformation : this.renderInfos)
             {
-                Chunk chunk = this.world.getChunkFromBlockCoords(renderglobal$containerlocalrenderinformation.renderChunk.getPosition());
+                Chunk chunk = this.world.getChunk(renderglobal$containerlocalrenderinformation.renderChunk.getPosition());
                 ClassInheritanceMultiMap<Entity> classinheritancemultimap = chunk.getEntityLists()[renderglobal$containerlocalrenderinformation.renderChunk.getPosition().getY() / 16];
 
                 if (!classinheritancemultimap.isEmpty())
@@ -770,7 +770,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
 
             this.postRenderDamagedBlocks();
             this.mc.entityRenderer.disableLightmap();
-            this.mc.mcProfiler.endSection();
+            this.mc.profiler.endSection();
         }
     }
 
@@ -871,7 +871,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
             camera = frustum;
         }
 
-        this.mc.mcProfiler.endStartSection("culling");
+        this.mc.profiler.endStartSection("culling");
         BlockPos blockpos1 = new BlockPos(d3, d4 + (double)viewEntity.getEyeHeight(), d5);
         RenderChunk renderchunk = this.viewFrustum.getRenderChunk(blockpos1);
         BlockPos blockpos = new BlockPos(MathHelper.floor(d3 / 16.0D) * 16, MathHelper.floor(d4 / 16.0D) * 16, MathHelper.floor(d5 / 16.0D) * 16);
@@ -882,7 +882,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
         this.lastViewEntityPitch = (double)viewEntity.rotationPitch;
         this.lastViewEntityYaw = (double)viewEntity.rotationYaw;
         boolean flag = this.debugFixedClippingHelper != null;
-        this.mc.mcProfiler.endStartSection("update");
+        this.mc.profiler.endStartSection("update");
 
         if (!flag && this.displayListEntitiesDirty)
         {
@@ -944,7 +944,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
                 }
             }
 
-            this.mc.mcProfiler.startSection("iteration");
+            this.mc.profiler.startSection("iteration");
 
             while (!queue.isEmpty())
             {
@@ -966,10 +966,10 @@ public class CompatibleRenderGlobal extends RenderGlobal
                 }
             }
 
-            this.mc.mcProfiler.endSection();
+            this.mc.profiler.endSection();
         }
 
-        this.mc.mcProfiler.endStartSection("captureFrustum");
+        this.mc.profiler.endStartSection("captureFrustum");
 
         if (this.debugFixTerrainFrustum)
         {
@@ -977,7 +977,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
             this.debugFixTerrainFrustum = false;
         }
 
-        this.mc.mcProfiler.endStartSection("rebuildNear");
+        this.mc.profiler.endStartSection("rebuildNear");
         Set<RenderChunk> set = this.chunksToUpdate;
         this.chunksToUpdate = Sets.<RenderChunk>newLinkedHashSet();
 
@@ -997,23 +997,23 @@ public class CompatibleRenderGlobal extends RenderGlobal
                 }
                 else
                 {
-                    this.mc.mcProfiler.startSection("build near");
+                    this.mc.profiler.startSection("build near");
                     this.renderDispatcher.updateChunkNow(renderchunk4);
                     renderchunk4.clearNeedsUpdate();
-                    this.mc.mcProfiler.endSection();
+                    this.mc.profiler.endSection();
                 }
             }
         }
 
         this.chunksToUpdate.addAll(set);
-        this.mc.mcProfiler.endSection();
+        this.mc.profiler.endSection();
     }
 
     private Set<EnumFacing> getVisibleFacings(BlockPos pos)
     {
         VisGraph visgraph = new VisGraph();
         BlockPos blockpos = new BlockPos(pos.getX() >> 4 << 4, pos.getY() >> 4 << 4, pos.getZ() >> 4 << 4);
-        Chunk chunk = this.world.getChunkFromBlockCoords(blockpos);
+        Chunk chunk = this.world.getChunk(blockpos);
 
         for (BlockPos.MutableBlockPos blockpos$mutableblockpos : BlockPos.getAllInBoxMutable(blockpos, blockpos.add(15, 15, 15)))
         {
@@ -1105,7 +1105,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
 
         if (blockLayerIn == BlockRenderLayer.TRANSLUCENT)
         {
-            this.mc.mcProfiler.startSection("translucent_sort");
+            this.mc.profiler.startSection("translucent_sort");
             double d0 = entityIn.posX - this.prevRenderSortX;
             double d1 = entityIn.posY - this.prevRenderSortY;
             double d2 = entityIn.posZ - this.prevRenderSortZ;
@@ -1126,10 +1126,10 @@ public class CompatibleRenderGlobal extends RenderGlobal
                 }
             }
 
-            this.mc.mcProfiler.endSection();
+            this.mc.profiler.endSection();
         }
 
-        this.mc.mcProfiler.startSection("filterempty");
+        this.mc.profiler.startSection("filterempty");
         int l = 0;
         boolean flag = blockLayerIn == BlockRenderLayer.TRANSLUCENT;
         int i1 = flag ? this.renderInfos.size() - 1 : 0;
@@ -1147,9 +1147,9 @@ public class CompatibleRenderGlobal extends RenderGlobal
             }
         }
 
-        this.mc.mcProfiler.endStartSection("render_" + blockLayerIn);
+        this.mc.profiler.endStartSection("render_" + blockLayerIn);
         this.renderBlockLayer(blockLayerIn);
-        this.mc.mcProfiler.endSection();
+        this.mc.profiler.endSection();
         return l;
     }
 
@@ -2590,7 +2590,7 @@ public class CompatibleRenderGlobal extends RenderGlobal
 
     public boolean hasNoChunkUpdates()
     {
-        return this.chunksToUpdate.isEmpty() && this.renderDispatcher.hasChunkUpdates();
+        return this.chunksToUpdate.isEmpty() && this.renderDispatcher.hasNoChunkUpdates();
     }
 
     public void setDisplayListEntitiesDirty()

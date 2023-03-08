@@ -94,7 +94,7 @@ public class CompatibleRenderingRegistry implements ICustomModelLoader {
 	@Override
 	public boolean accepts(ResourceLocation modelLocation) {
 		// Do not accept attachments
-		return modId.equals(modelLocation.getResourceDomain()) && modelSourceLocations.contains(modelLocation.toString());
+		return modId.equals(modelLocation.getNamespace()) && modelSourceLocations.contains(modelLocation.toString());
 	}
 
 	@Override

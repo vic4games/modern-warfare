@@ -8,7 +8,7 @@ public class ItemCarbonFiber extends Item {
 
     public ItemCarbonFiber() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModReference.MWC_ID + "_" + "CarbonFiber");
+        setTranslationKey(ModReference.MWC_ID + "_" + "CarbonFiber");
 //        setTextureName(ModReference.MWC_ID + ":" + "carbonfiber");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }

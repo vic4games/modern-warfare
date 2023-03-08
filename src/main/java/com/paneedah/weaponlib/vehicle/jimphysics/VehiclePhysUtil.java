@@ -43,7 +43,7 @@ public class VehiclePhysUtil {
 	}
 	
 	public static Vec3d simpleDragForce(float dragC, Vec3d motionVector) {
-		return motionVector.scale(-dragC).scale(motionVector.lengthVector()*100);
+		return motionVector.scale(-dragC).scale(motionVector.length()*100);
 	}
 	
 	public static Vec3d rollingResistance(float cR, Vec3d motionVector) {
@@ -161,15 +161,15 @@ public class VehiclePhysUtil {
 	}
 	
 	public static double carTurnRate(Vec3d speed, double turnRadius) {
-		return speed.lengthVector()/turnRadius;
+		return speed.length()/turnRadius;
 		
 	}
 	
 	/*
 	public static Vec3d getSlipRatio(Vec3d wheelAngularVelocity, double wheelRadius, Vec3d carSpeed) {
-		double x = (wheelAngularVelocity.x*wheelRadius-carSpeed.x)/carSpeed.lengthVector();
-		double y = (wheelAngularVelocity.y*wheelRadius-carSpeed.y)/carSpeed.lengthVector();
-		double z = (wheelAngularVelocity.z*wheelRadius-carSpeed.z)/carSpeed.lengthVector();
+		double x = (wheelAngularVelocity.x*wheelRadius-carSpeed.x)/carSpeed.length();
+		double y = (wheelAngularVelocity.y*wheelRadius-carSpeed.y)/carSpeed.length();
+		double z = (wheelAngularVelocity.z*wheelRadius-carSpeed.z)/carSpeed.length();
 		return new Vec3d(x, y, z);
 	}
 	*/

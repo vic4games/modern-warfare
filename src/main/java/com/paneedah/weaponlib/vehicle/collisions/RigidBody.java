@@ -151,7 +151,7 @@ public class RigidBody {
 		globalCentroid = globalCentroid.add(linearVelocity.scale(dt));
 		if(angularVelocity.lengthSquared() > 0){
 			Vec3d axis = angularVelocity.normalize();
-			double angle = angularVelocity.lengthVector()*dt;
+			double angle = angularVelocity.length()*dt;
 			Matrix3f turn = new Matrix3f();
 			turn.set(new AxisAngle4f((float)axis.x, (float)axis.y, (float)axis.z, (float)angle));
 			turn.mul(rotation);

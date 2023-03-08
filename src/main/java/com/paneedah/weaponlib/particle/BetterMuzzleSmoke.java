@@ -167,9 +167,9 @@ public class BetterMuzzleSmoke extends TurbulentSmokeParticle {
         		 EntityVehicle v = (EntityVehicle) ent;
         		 Vec3d particlePos = new Vec3d(posX, posY, posZ);
         		 
-        		 double distance = particlePos.subtract(ent.getPositionVector()).lengthVector();
+        		 double distance = particlePos.subtract(ent.getPositionVector()).length();
         		 
-        		 if(distance < 1 && v.solver.getVelocityVector().lengthVector() > 3) {
+        		 if(distance < 1 && v.solver.getVelocityVector().length() > 3) {
         			 Vec3d sV = ent.getPositionVector().subtract(particlePos).normalize();
         			 
         			 this.motionX += sV.x;
@@ -177,8 +177,8 @@ public class BetterMuzzleSmoke extends TurbulentSmokeParticle {
         			 this.motionZ += sV.z;
         			 
         			 
-        		 } else if(distance < 5 && distance > 3 && v.solver.getVelocityVector().lengthVector() > 1) {
-        			 Vec3d sV = particlePos.subtract(ent.getPositionVector()).normalize().scale(-v.solver.getVelocityVector().lengthVector()*0.005);
+        		 } else if(distance < 5 && distance > 3 && v.solver.getVelocityVector().length() > 1) {
+        			 Vec3d sV = particlePos.subtract(ent.getPositionVector()).normalize().scale(-v.solver.getVelocityVector().length()*0.005);
         			 
         			 this.motionX += sV.x;
         			 this.motionY += sV.y;

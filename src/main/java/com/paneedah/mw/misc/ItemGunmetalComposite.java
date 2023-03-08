@@ -8,7 +8,7 @@ public class ItemGunmetalComposite extends Item {
 
     public ItemGunmetalComposite() {
         setMaxStackSize(64);
-        setUnlocalizedName(ModReference.MWC_ID + "_" + "GunmetalComposite");
+        setTranslationKey(ModReference.MWC_ID + "_" + "GunmetalComposite");
 //        setTextureName(ModReference.MWC_ID + ":" + "gunmetalcomposite");
         setCreativeTab(ModernWarfareMod.BlocksTab);
     }

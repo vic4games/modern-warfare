@@ -128,7 +128,7 @@ public class WeaponSpawnEntity extends EntityProjectile {
 	
 
 	/**
-	 * @see net.minecraft.entity.projectile.EntityThrowable#onImpact(net.minecraft.util.MovingObjectPosition)
+	 * see net.minecraft.entity.projectile.EntityThrowable#onImpact(net.minecraft.util.MovingObjectPosition)
 	 */
 	@Override
 	protected void onImpact(CompatibleRayTraceResult position) {
@@ -305,4 +305,8 @@ public class WeaponSpawnEntity extends EntityProjectile {
         // TODO Auto-generated method stub
         return null;
     }
+
+	// Todo: Remove this method and make this class abstract, making it abstract will break stuff but is probably better
+	@Override
+	public void shoot(double x, double y, double z, float velocity, float inaccuracy) {}
 }

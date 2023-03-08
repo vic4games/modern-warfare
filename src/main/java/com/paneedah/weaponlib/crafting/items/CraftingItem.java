@@ -15,7 +15,7 @@ public class CraftingItem extends Item {
 	
 	
 	public CraftingItem(String name, String modID, Item recoveryScrap, double recoveryPercentage, CreativeTabs tab) {
-		setUnlocalizedName(modID + "_" + name);
+		setTranslationKey(modID + "_" + name);
 		setMaxStackSize(64);
 		setCreativeTab(tab);
 		

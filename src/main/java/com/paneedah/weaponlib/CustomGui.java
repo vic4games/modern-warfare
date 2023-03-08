@@ -344,7 +344,7 @@ public class CustomGui extends CompatibleGui {
 		GlStateManager.popMatrix();
 		
 		// Get the weapon name from the localization file
-		String weaponName = new TextComponentTranslation(LangTools.formatName(weaponInstance.getWeapon().getUnlocalizedName())).getFormattedText();
+		String weaponName = new TextComponentTranslation(LangTools.formatName(weaponInstance.getWeapon().getTranslationKey())).getFormattedText();
 
 		
 		
@@ -437,7 +437,7 @@ public class CustomGui extends CompatibleGui {
          	cachedPlayerEyeHeight = player.getEyeHeight();
          	shouldRenderDoorOverlay = false;
          
-         	Vec3d originVector = player.getPositionVector().addVector(0, player.getEyeHeight(), 0);
+         	Vec3d originVector = player.getPositionVector().add(0, player.getEyeHeight(), 0);
          	
          	
          	

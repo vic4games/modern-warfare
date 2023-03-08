@@ -286,7 +286,7 @@ public class AnimationModeProcessor {
 				
 				double x = dx / 2f;
 				double y = dy / 2f;
-				rot = rot.addVector(-y, x, 0);
+				rot = rot.add(-y, x, 0);
 			}
 		}
 		if (colorSelected != -1 && Mouse.isButtonDown(0)) {
@@ -320,7 +320,7 @@ public class AnimationModeProcessor {
 				boolean modernMode = true;
 				
 				if(CompatibleClientEventHandler.muzzlePositioner) {
-					 CompatibleClientEventHandler.debugmuzzlePosition = CompatibleClientEventHandler.debugmuzzlePosition.addVector(-vec.x*m*0.1, vec.y*m*0.1, vec.z*m*0.1);
+					 CompatibleClientEventHandler.debugmuzzlePosition = CompatibleClientEventHandler.debugmuzzlePosition.add(-vec.x*m*0.1, vec.y*m*0.1, vec.z*m*0.1);
 				} else if(!modernMode){
 					 DebugPositioner.incrementXPosition((float) vec.x*m, false);
 					 DebugPositioner.incrementYPosition((float) vec.y*m, false);
@@ -329,7 +329,7 @@ public class AnimationModeProcessor {
 				
 					
 					CompatibleClientEventHandler.magRotPositioner = 
-							CompatibleClientEventHandler.magRotPositioner.addVector(vec.x*m, vec.y*m, vec.z*m);
+							CompatibleClientEventHandler.magRotPositioner.add(vec.x*m, vec.y*m, vec.z*m);
 					
 				} else {
 					
@@ -544,7 +544,7 @@ public class AnimationModeProcessor {
 
 			// double x = mc.mouseHelper.deltaX/120.0;
 			// double y = mc.mouseHelper.deltaY/120.0;
-			pan = pan.addVector(-x, -y, 0);
+			pan = pan.add(-x, -y, 0);
 		}
 
 		// rot = Vec3d.ZERO;
@@ -744,7 +744,7 @@ public class AnimationModeProcessor {
 		
 		Shaders.axis.use();
 		
-		float panValue = (float) pan.lengthVector()*1.7f;
+		float panValue = (float) pan.length()*1.7f;
 		
 		panValue = Math.max(45f, panValue);
 		Shaders.axis.uniform1f("zoom", panValue);

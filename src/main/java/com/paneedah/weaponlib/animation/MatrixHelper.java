@@ -97,7 +97,7 @@ public class MatrixHelper {
 		Vec3d b = new Vec3d(mat.m10, mat.m11, mat.m12);
 		Vec3d c = new Vec3d(mat.m20, mat.m21, mat.m22);
 		
-		Vec3d scale = new Vec3d(a.lengthVector(), b.lengthVector(), c.lengthVector());
+		Vec3d scale = new Vec3d(a.length(), b.length(), c.length());
 		
 		
 		mat.m00 /= (float) scale.x;
@@ -118,7 +118,7 @@ public class MatrixHelper {
 		Vec3d b = new Vec3d(mat.m01, mat.m11, mat.m21);
 		Vec3d c = new Vec3d(mat.m02, mat.m12, mat.m22);
 		
-		Vec3d scale = new Vec3d(a.lengthVector(), b.lengthVector(), c.lengthVector());
+		Vec3d scale = new Vec3d(a.length(), b.length(), c.length());
 		
 		
 		mat.m00 /= (float) scale.x;
@@ -141,7 +141,7 @@ public class MatrixHelper {
 		Vec3d b = new Vec3d(mat.m01, mat.m11, mat.m21);
 		Vec3d c = new Vec3d(mat.m02, mat.m12, mat.m22);
 		
-		Vec3d scale = new Vec3d(a.lengthVector(), b.lengthVector(), c.lengthVector());
+		Vec3d scale = new Vec3d(a.length(), b.length(), c.length());
 		
 		
 		mat.m00 /= (float) scale.x;

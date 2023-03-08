@@ -13,7 +13,7 @@ public class BlockLeadOre extends Block {
     public BlockLeadOre() {
         super(Material.ROCK);
 
-        setUnlocalizedName(ModReference.MWC_ID + "_" + "LeadOre");
+        setTranslationKey(ModReference.MWC_ID + "_" + "LeadOre");
         //setBlockTextureName(ModReference.MWC_ID + ":" + "leadore");
         setHardness(6F);
         setResistance(15F);

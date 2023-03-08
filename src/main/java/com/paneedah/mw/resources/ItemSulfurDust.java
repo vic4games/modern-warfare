@@ -8,7 +8,7 @@ public class ItemSulfurDust extends Item {
 
 	public ItemSulfurDust() {
 		setMaxStackSize(64);
-		setUnlocalizedName(ModReference.MWC_ID + "_" + "SulfurDust");
+		setTranslationKey(ModReference.MWC_ID + "_" + "SulfurDust");
 		//setTextureName(ModReference.MWC_ID + ":" + "SulfurDust");
 		setCreativeTab(ModernWarfareMod.BlocksTab);
 	}
