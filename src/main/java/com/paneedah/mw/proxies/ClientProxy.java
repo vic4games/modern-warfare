@@ -19,6 +19,7 @@ import com.paneedah.weaponlib.inventory.CustomPlayerInventoryTab;
 import com.paneedah.weaponlib.inventory.InventoryTabs;
 import com.paneedah.weaponlib.inventory.StandardPlayerInventoryTab;
 import com.paneedah.weaponlib.render.CustomArmorLayer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -26,9 +27,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
-
 public class ClientProxy extends CommonProxy {
+
+        public static final Minecraft mc = Minecraft.getMinecraft();
 
 	@Override
 	protected boolean isClient() {

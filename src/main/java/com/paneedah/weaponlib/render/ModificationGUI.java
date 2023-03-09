@@ -17,7 +17,7 @@ import org.lwjgl.input.Mouse;
 
 import java.util.ArrayList;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 /**

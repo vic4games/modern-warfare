@@ -33,7 +33,7 @@ import org.lwjgl.opengl.GL20;
 
 import java.util.function.BiConsumer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class ReflexScreen extends ModelBase implements CustomRenderer<RenderableState>{
 	

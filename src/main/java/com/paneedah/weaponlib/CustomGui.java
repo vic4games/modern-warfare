@@ -1,6 +1,6 @@
 package com.paneedah.weaponlib;
 
-import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.proxies.ClientProxy;
 import com.paneedah.weaponlib.StatusMessageCenter.Message;
 import com.paneedah.weaponlib.animation.AnimationModeProcessor;
 import com.paneedah.weaponlib.animation.gui.AnimationGUI;
@@ -73,7 +73,7 @@ public class CustomGui extends CompatibleGui {
 	}
 	
 	public static FontRenderer getFontRenderer() {
-		if(FONT_RENDERER == null) FONT_RENDERER = ModernWarfareMod.mc.fontRenderer;
+		if(FONT_RENDERER == null) FONT_RENDERER = ClientProxy.mc.fontRenderer;
 		return FONT_RENDERER;
 	}
 	

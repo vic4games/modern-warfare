@@ -22,7 +22,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 
 public class MultipartRenderStateManager<State, Part, Context extends PartPositionProvider> {

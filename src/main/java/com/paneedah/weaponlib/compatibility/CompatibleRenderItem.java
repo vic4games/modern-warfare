@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.item.ItemStack;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class CompatibleRenderItem {
         

@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class DynamicShaderGroupManager {
     

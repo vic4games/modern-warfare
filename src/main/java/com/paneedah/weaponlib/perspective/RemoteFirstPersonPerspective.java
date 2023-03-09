@@ -13,7 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public abstract class RemoteFirstPersonPerspective extends Perspective<RenderableState> {

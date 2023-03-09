@@ -18,7 +18,7 @@ import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class VehicleCustomGUI extends Gui {
 	

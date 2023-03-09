@@ -49,7 +49,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Supplier;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 /*   __      __  _     _      _           
 	 \ \    / / | |   (_)    | |          

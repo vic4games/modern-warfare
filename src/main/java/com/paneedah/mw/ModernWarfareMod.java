@@ -11,7 +11,6 @@ import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.config.ConfigurationManager;
 import com.paneedah.weaponlib.crafting.CraftingFileManager;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -33,8 +32,6 @@ public class ModernWarfareMod {
     private static final String MODERN_WARFARE_CONFIG_FILE_NAME = "ModernWarfare.cfg";
     public static final String MODID = "mw";
 	public static final String VERSION = "@VERSION@";
-
-    public static final Minecraft mc = Minecraft.getMinecraft();
 
     @SidedProxy(serverSide = "com.paneedah.weaponlib.CommonModContext", clientSide = "com.paneedah.weaponlib.ClientModContext")
     public static ModContext MOD_CONTEXT;

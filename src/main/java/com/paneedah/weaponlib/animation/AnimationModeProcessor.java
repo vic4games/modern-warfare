@@ -28,7 +28,7 @@ import java.nio.FloatBuffer;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class AnimationModeProcessor {
 

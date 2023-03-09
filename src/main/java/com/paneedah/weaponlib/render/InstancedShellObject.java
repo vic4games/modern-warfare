@@ -13,7 +13,7 @@ import org.lwjgl.util.vector.Quaternion;
 
 import java.util.ArrayList;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class InstancedShellObject extends ModelInstancedObject<ShellManager> {
 	private Type type;

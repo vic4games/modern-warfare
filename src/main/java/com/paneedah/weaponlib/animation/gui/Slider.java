@@ -8,7 +8,7 @@ import org.lwjgl.input.Mouse;
 
 import java.awt.Color;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class Slider implements IElement{
 

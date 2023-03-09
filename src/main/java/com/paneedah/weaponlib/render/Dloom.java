@@ -17,7 +17,7 @@ import org.lwjgl.opengl.*;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class Dloom {
 	

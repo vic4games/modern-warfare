@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class VehicleExhaustFlameParticle extends Particle {
 	

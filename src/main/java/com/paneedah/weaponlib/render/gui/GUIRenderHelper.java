@@ -11,7 +11,7 @@ import scala.concurrent.duration.Duration;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class GUIRenderHelper {
 	

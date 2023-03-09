@@ -11,7 +11,7 @@ import com.paneedah.weaponlib.numerical.SpringValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 /**
  * Stores a bunch of values that need to update on an interval, and typically

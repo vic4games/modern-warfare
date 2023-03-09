@@ -1,7 +1,10 @@
 package com.paneedah.mw.items.guns;
 
 import com.paneedah.mw.ModernWarfareMod;
-import com.paneedah.mw.models.*;
+import com.paneedah.mw.models.M191144MagSlide;
+import com.paneedah.mw.models.M1911Slide;
+import com.paneedah.mw.models.M1911frontsight;
+import com.paneedah.mw.models.makarovrearsight;
 import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
@@ -12,8 +15,6 @@ import com.paneedah.weaponlib.Weapon;
 import com.paneedah.weaponlib.WeaponRenderer;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
-import com.paneedah.weaponlib.render.WavefrontLoader;
-import com.paneedah.weaponlib.render.WavefrontModel;
 import net.minecraft.item.Item;
 import org.lwjgl.opengl.GL11;
 
@@ -121,7 +122,7 @@ public class M1911Factory implements GunFactory {
         .withTextureNames("m1911")
         .withRenderer(new WeaponRenderer.Builder()
             .withModId(ModReference.MWC_ID)
-            .withBakedModel(WavefrontLoader.loadWeaponModel("m1911test", Arrays.asList("body", "handle"), false))
+            //.withBakedModel(WavefrontLoader.loadWeaponModel("m1911test", Arrays.asList("body", "handle"), false))
             //.withTextureName("M9")
             //.withWeaponProximity(0.99F)
             //.withYOffsetZoom(5F)
