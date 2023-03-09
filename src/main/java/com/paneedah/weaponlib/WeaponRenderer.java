@@ -1830,7 +1830,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 				totalReloadingDuration += t.getDuration();
 				totalReloadingDuration += t.getPause();
 			}
-			
+
 			
 	
 			

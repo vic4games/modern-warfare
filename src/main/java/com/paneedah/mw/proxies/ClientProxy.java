@@ -24,6 +24,7 @@ import net.minecraft.client.renderer.ItemModelMesher;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
@@ -142,10 +143,14 @@ public class ClientProxy extends CommonProxy {
             
         modelMesher.register(Armors.GasMaskM40, 0, new ModelResourceLocation(ModReference.MWC_ID + ":m40gasmask_helmet", "inventory"));
 
-	}
-	
-	@Override
-	public void postInit(final ModernWarfareMod mod, final ConfigurationManager configurationManager, final FMLPostInitializationEvent initializationEvent) {
-	    mc.getRenderManager().getSkinMap().forEach((p, r) -> r.addLayer(new CustomArmorLayer(r)));
-	}
+        // Todo: Actually remove this once fixed.
+        
+        if (ForgeModContainer.allowEmissiveItems)
+            ForgeModContainer.allowEmissiveItems = false;
+    }
+
+    @Override
+    public void postInit(final ModernWarfareMod mod, final ConfigurationManager configurationManager, final FMLPostInitializationEvent initializationEvent) {
+        mc.getRenderManager().getSkinMap().forEach((p, r) -> r.addLayer(new CustomArmorLayer(r)));
+    }
 }
