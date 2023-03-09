@@ -37,7 +37,7 @@ public class LootBoxTileEntity extends CustomTileEntity<LootBoxConfiguration> {
                 lastEquipmentDispenseTimestamp = world.getWorldTime();
                 Equipment equipment = configuration.getEquipmentOptions().pick(EnumDifficulty.EASY);
                 if (equipment != null && equipment.item != null) {
-                    System.out.println("Dropping " + equipment.item.getUnlocalizedName());
+                    System.out.println("Dropping " + equipment.item.getTranslationKey());
                     compatibility.playSound(player, configuration.getDispenseSound(), 0.15f, 1.0f);
                     ItemStack equipmentItemStack = null;
                     if(equipment.item instanceof Weapon) {

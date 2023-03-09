@@ -1,7 +1,7 @@
 package com.paneedah.mw.tileentities;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.mw.weapons.Guns;
 import com.paneedah.weaponlib.compatibility.CompatibleMaterial;
 import com.paneedah.weaponlib.tile.CustomTileEntityBlock;

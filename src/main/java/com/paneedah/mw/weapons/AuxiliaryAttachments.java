@@ -2,6 +2,7 @@ package com.paneedah.mw.weapons;
 
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.AttachmentBuilder;
 import com.paneedah.weaponlib.AttachmentCategory;
 import com.paneedah.weaponlib.ItemAttachment;
@@ -159,7 +160,6 @@ public class AuxiliaryAttachments {
     public static ItemAttachment<Weapon> M249Action;
     public static ItemAttachment<Weapon> FatmanGrip;
     public static ItemAttachment<Weapon> FatmanRack;
-    public static ItemAttachment<Weapon> MiniNuke;
     public static ItemAttachment<Weapon> BrowningAuto5Action;
     public static ItemAttachment<Weapon> M1GarandAction;
     public static ItemAttachment<Weapon> M1GarandMag;
@@ -236,7 +236,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinPanelUpper(), "ninthsin.png")
                 .withName("PanelUpper")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	PanelLower = new AttachmentBuilder<Weapon>()
@@ -244,7 +244,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinPanelLower(), "ninthsin.png")
                 .withName("PanelLower")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorUpper = new AttachmentBuilder<Weapon>()
@@ -252,7 +252,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorUpper(), "ninthsin.png")
                 .withName("RegulatorUpper")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorLower = new AttachmentBuilder<Weapon>()
@@ -260,7 +260,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorLower(), "ninthsin.png")
                 .withName("RegulatorLower")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorRotator = new AttachmentBuilder<Weapon>()
@@ -268,7 +268,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorRotator(), "ninthsin.png")
                 .withName("RegulatorRotator")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorActionUpper = new AttachmentBuilder<Weapon>()
@@ -276,7 +276,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorActionUpper(), "ninthsin.png")
                 .withName("RegulatorActionUpper")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorActionLower = new AttachmentBuilder<Weapon>()
@@ -284,7 +284,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorActionLower(), "ninthsin.png")
                 .withName("RegulatorActionLower")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	RegulatorAction = new AttachmentBuilder<Weapon>()
@@ -292,7 +292,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinRegulatorAction(), "ninthsin.png")
                 .withName("RegulatorAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	CyclerFront = new AttachmentBuilder<Weapon>()
@@ -300,7 +300,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinCycleFront(), "ninthsin.png")
                 .withName("CyclerFront")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	CyclerBackLeft = new AttachmentBuilder<Weapon>()
@@ -308,7 +308,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinCycleBackLeft(), "ninthsin.png")
                 .withName("CyclerBackLeft")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	CyclerBackRight = new AttachmentBuilder<Weapon>()
@@ -316,7 +316,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinCycleBackRight(), "ninthsin.png")
                 .withName("CyclerBackRight")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	Cycler = new AttachmentBuilder<Weapon>()
@@ -324,79 +324,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.NinthSinCycle(), "ninthsin.png")
                 .withName("Cycler")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRAutoSpanker = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRAutoSpanker(), "OSIPR.png")
-                .withName("OSIPRAutoSpanker")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRCell1 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRCell1(), "OSIPR.png")
-                .withName("OSIPRCell1")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRCell2 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRCell2(), "OSIPR.png")
-                .withName("OSIPRCell2")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRCellClaws = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA4)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRCellClaws(), "OSIPR.png")
-                .withName("OSIPRCellClaws")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRCellFinger = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA5)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRCellFinger(), "OSIPR.png")
-                .withName("OSIPRCellFinger")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-    	OSIPRHeatEscaper = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA6)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRHeatEscaper(), "OSIPR.png")
-                .withName("OSIPRHeatEscaper")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-    	
-        FatmanGrip = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.FatmanGrip(), "gun.png")
-                .withName("FatmanGrip")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        FatmanRack = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.FatmanRack(), "gun.png")
-                .withName("FatmanRack")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        MiniNuke = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.MiniNuke(), "mininuke.png")
-                .withName("MiniNukeAttachment")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ChainB = new AttachmentBuilder<Weapon>()
@@ -404,7 +332,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.ChainsawChainB(), "chainsaw.png")
                 .withName("ChainB")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ChainA = new AttachmentBuilder<Weapon>()
@@ -412,7 +340,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.ChainsawChainA(), "chainsaw.png")
                 .withName("ChainA")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Chain = new AttachmentBuilder<Weapon>()
@@ -420,7 +348,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.ChainsawChain(), "chainsaw.png")
                 .withName("Chain")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G95IronSights = new AttachmentBuilder<Weapon>()
@@ -429,7 +357,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.G95_frontsights(), "gun.png")
                 .withModel(new com.paneedah.mw.models.G95_rearsights(), "gun.png")
                 .withName("G95IronSights")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G95UprightIronSights = new AttachmentBuilder<Weapon>()
@@ -438,16 +366,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.G95_upright_frontsights(), "gun.png")
                 .withModel(new com.paneedah.mw.models.G95_upright_rearsights(), "gun.png")
                 .withName("G95UprightIronSights")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        Tokyo90IronSights = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.Tokyo90RearSights(), "Tokyo90IronSights.png")
-                .withModel(new com.paneedah.mw.models.Tokyo90FrontSights(), "Tokyo90IronSights.png")
-                .withName("Tokyo90IronSights")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Origin12Action = new AttachmentBuilder<Weapon>()
@@ -455,7 +374,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.Origin12Action(), "origin12.png")
                 .withName("Origin12Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P90Action = new AttachmentBuilder<Weapon>()
@@ -463,7 +382,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.P90Action(), "p90.png")
                 .withName("P90Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1CarbineAction = new AttachmentBuilder<Weapon>()
@@ -471,7 +390,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M1CarbineAction(), "gun.png")
                 .withName("M1CarbineAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G11Action = new AttachmentBuilder<Weapon>()
@@ -480,7 +399,7 @@ public class AuxiliaryAttachments {
                 .withRotationPoint(0.1452000024497508, -0.805199984866377, 1.229600028479095)
                 .withModel(new com.paneedah.mw.models.G11Action(), "gun.png")
                 .withName("G11Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGAction = new AttachmentBuilder<Weapon>()
@@ -488,7 +407,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.AUGaction(), "gun.png")
                 .withName("AUGAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAS21Slide = new AttachmentBuilder<Weapon>()
@@ -499,7 +418,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.P226frontsight(), "p226frontsight.png")
                 .withName("MAS21Slide")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -509,7 +428,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MAS21Barrel(), "MAS21.png")
                 .withName("MAS21Barrel")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -519,7 +438,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MAS21Part(), "MAS21.png")
                 .withName("MAS21Part")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -529,7 +448,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M32Main1B(), "gun.png")
                 .withModel(new com.paneedah.mw.models.Suppressor(), "gun.png")
                 .withName("M32Main1B")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M134Barrels = new AttachmentBuilder<Weapon>()
@@ -537,21 +456,21 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M134Barrels(), "gun.png")
                 .withName("M134Barrels")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         BrowningAuto5Action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.BrowningAuto5Action(), "gun.png").withName("BrowningAuto5Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1GarandAction = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M1GarandAction(), "gun.png").withName("M1GarandAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1GarandMag = new AttachmentBuilder<Weapon>()
@@ -560,21 +479,21 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1GarandMag1(), "M1GarandMag.png")
                 .withModel(new com.paneedah.mw.models.M1GarandMag2(), "M1GarandMag.png")
                 .withName("M1GarandMag")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1897Pump = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M1897Pump(), "m1897.png").withName("M1897pump")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Super90Pump = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.Super90Pump(), "gun.png").withName("Super90Pump")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
 //        P226Slide = new AttachmentBuilder<Weapon>()
@@ -584,7 +503,7 @@ public class AuxiliaryAttachments {
 //                .withModel(new com.paneedah.mw.models.P226rearsight(), "p226rearsight.png")
 //                .withModel(new com.paneedah.mw.models.P226frontsight(), "p226frontsight.png")
 //                .withName("P226Slide")
-//                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+//                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
 //                .build(ModernWarfareMod.MOD_CONTEXT);
         
         PythonChamber = new AttachmentBuilder<Weapon>()
@@ -593,7 +512,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.PythonChamber(), "Python.png")
                 .withName("PythonChamber")
                 .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RevolverSpeedLoader = new AttachmentBuilder<Weapon>()
@@ -602,7 +521,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.TaurusLoader(), "taurusraginghunter.png")
                 .withName("RevolverSpeedloader")
                 .withRotationPoint(-0.11759999474287039, 0.07280001164674715, 0.8548000601351243)
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RevolverSpeedLoaderBullets = new AttachmentBuilder<Weapon>()
@@ -611,7 +530,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.TaurusBullets(), "taurusraginghunter.png")
                 .withName("RevolverSpeedloaderBullets")
                 .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MagnumChamber = new AttachmentBuilder<Weapon>()
@@ -620,42 +539,35 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.TaurusRagingHunterChamber(), "taurusraginghunter.png")
                 .withName("MagnumChamber")
                 .withRotationPoint(-0.11759999474287039, -0.9064000131249434, -0.8943999600172051)
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RhinoChamber = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new ChiappoRhinoChamber(), "chiapparhino.png").withName("RhinoChamber")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        TheDechardChamber = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.TheDechardChamber(), "TheDechard.png").withName("TheDechardChamber")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.ACRAction(), "ACR.png")
                 .withModel(new com.paneedah.mw.models.ACRAction2(), "gun.png")
-                .withName("ACRAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("ACRAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1014Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.M1014action(), "m1014.png")
-                .withName("M1014Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M1014Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ShotgunInsertion = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.ShotgunInsertion(), "ShotgunInsertion.png")
-                .withName("ShotgunInsertion").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("ShotgunInsertion").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SupernovaPump = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.SupernovaPump(), "supernova.png")
-                .withName("SupernovaPump").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("SupernovaPump").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRRails = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
@@ -664,99 +576,56 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.AKRail3(), "acrsbrhandguardtan.png")
                 .withModel(new com.paneedah.mw.models.AKRail4(), "acrsbrhandguardtan.png")
                 .withModel(new com.paneedah.mw.models.AKRail5(), "acrsbrhandguardtan.png")
-                .withName("ACRRails").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("ACRRails").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         RPG7rocket = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.RPG7rocket(), "rpg7.png")
                 .withRenderablePart()
-                .withName("RPG7rocket").withModId(ModernWarfareMod.MODID)
+                .withName("RPG7rocket").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M202rockets = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.M202Rockets(), "gun.png")
                 .withRenderablePart()
-                .withName("m202rockets").withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        SSG42Barrels = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                .withModel(new com.paneedah.mw.models.SSG42Barrels(), "ssg42.png")
-                .withRenderablePart()
-                .withName("SSG42Barrels").withModId(ModernWarfareMod.MODID)
+                .withName("m202rockets").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         GLgrenade = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA6)
                 .withModel(new GL06Grenade(), "GL06.png")
                 .withRenderablePart()
-                .withName("GLgrenade").withModId(ModernWarfareMod.MODID)
+                .withName("GLgrenade").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
 
         M79grenade = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA6)
                 .withModel(new com.paneedah.mw.models.M79grenade(), "gun.png")
                 .withRenderablePart()
-                .withName("M79grenade").withModId(ModernWarfareMod.MODID)
+                .withName("M79grenade").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         GL06Cartridge = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.GL06Cartridge(), "GL06.png")
                 .withRenderablePart()
-                .withName("GL06Cartridge").withModId(ModernWarfareMod.MODID)
+                .withName("GL06Cartridge").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M79Cartridge = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.M79Cartridge(), "m79.png")
                 .withRenderablePart()
-                .withName("M79Cartridge").withModId(ModernWarfareMod.MODID)
+                .withName("M79Cartridge").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M32Cartridge = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.M32Cartridge(), "gun.png")
                 .withRenderablePart()
-                .withName("M32Cartridge").withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        M56Mag = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.M56Mag(), "gun.png")
-                .withName("M56Mag")
-                .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        HAR27Mag = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.HAR27Mag(), "har27.png")
-                .withName("HAR27Mag")
-                .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        HAR27Belt = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.HAR27Belt(), "har27.png")
-                .withName("HAR27Belt")
-                .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        HAR27Action = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.HAR27Action(), "har27.png")
-                .withName("HAR27Action")
-                .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withName("M32Cartridge").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M41AMag = new AttachmentBuilder<Weapon>()
@@ -765,7 +634,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M41AMag(), "M41AMag.png")
                 .withName("M41AMag")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP43Edoublebarrel = new AttachmentBuilder<Weapon>()
@@ -774,7 +643,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MP43Edoublebarrel(), "MP43Edoublebarrel.png")
                 .withName("MP43Edoublebarrel")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         HS12Barrels = new AttachmentBuilder<Weapon>()
@@ -786,7 +655,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "gun")
                 .withName("HS12Barrels")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1873action = new AttachmentBuilder<Weapon>()
@@ -795,7 +664,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1873action(), "M1873.png")
                 .withName("M1873action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         F2000Action = new AttachmentBuilder<Weapon>()
@@ -804,7 +673,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.F2000Action(), "gun.png")
                 .withName("F2000Action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         G36CAction = new AttachmentBuilder<Weapon>()
@@ -813,7 +682,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.G36CAction(), "g36c.png")
                 .withName("G36CAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ARX160Action = new AttachmentBuilder<Weapon>()
@@ -822,7 +691,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.ARX160Action(), "gun.png")
                 .withName("ARX160Action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1A1ThompsonAction = new AttachmentBuilder<Weapon>()
@@ -831,7 +700,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1A1action(), "M1A1Thompson.png")
                 .withName("M1A1ThompsonAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         KedrAction = new AttachmentBuilder<Weapon>()
@@ -840,7 +709,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.KedrAction(), "kedr.png")
                 .withName("KedrAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         KedrStock = new AttachmentBuilder<Weapon>()
@@ -849,7 +718,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.KedrStock(), "kedr.png")
                 .withName("KedrStock")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7Grip = new AttachmentBuilder<Weapon>()
@@ -859,7 +728,7 @@ public class AuxiliaryAttachments {
                 .withName("MP7Grip")
                 .withRotationPoint(-0.12000000357627871, -0.20000000596046452, -1.6000000476837126)
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1928ThompsonAction = new AttachmentBuilder<Weapon>()
@@ -868,7 +737,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1928ThompsonAction(), "M1A1Thompson.png")
                 .withName("M1928ThompsonAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1A1Sight = new AttachmentBuilder<Weapon>()
@@ -877,7 +746,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1A1rearsight(), "gun.png")
                 .withName("M1A1ThompsonSight")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M1928Sight = new AttachmentBuilder<Weapon>()
@@ -886,16 +755,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1928rearsight(), "gun.png")
                 .withName("M1928Sight")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        CSA16pump = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.CSA16pump(), "csa16.png")
-                .withName("CSA16pump")
-                .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         R870part = new AttachmentBuilder<Weapon>()
@@ -904,7 +764,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.R870part(), "gun.png")
                 .withName("R870part")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M82Action = new AttachmentBuilder<Weapon>()
@@ -913,7 +773,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M82Action(), "m82.png")
                 .withName("m82action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP40action = new AttachmentBuilder<Weapon>()
@@ -922,7 +782,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MP40Action(), "MP40.png")
                 .withName("MP40action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5boltaction = new AttachmentBuilder<Weapon>()
@@ -932,7 +792,7 @@ public class AuxiliaryAttachments {
                 .withName("MP5boltaction")
                 .withRotationPoint(-0.12000000357627871, -1.1200000333786013, -2.320000069141389)
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         UMP45action = new AttachmentBuilder<Weapon>()
@@ -942,7 +802,7 @@ public class AuxiliaryAttachments {
                 .withName("UMP45action")
                 .withRotationPoint(-0.12000000357627871, -1.1200000333786013, -2.320000069141389)
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5action = new AttachmentBuilder<Weapon>()
@@ -951,7 +811,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MP5action(), "MP5.png")
                 .withName("MP5action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7action = new AttachmentBuilder<Weapon>()
@@ -960,7 +820,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MP7Action(), "MP7.png")
                 .withName("MP7action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         G3Bolt = new AttachmentBuilder<Weapon>()
@@ -970,7 +830,7 @@ public class AuxiliaryAttachments {
                 .withName("G3Bolt")
                 .withRotationPoint(0.0, -1.0800000321865084, -4.120000122785571)
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         G3Action = new AttachmentBuilder<Weapon>()
@@ -979,7 +839,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.G3Action(), "G3.png")
                 .withName("G3Action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MG42Belt = new AttachmentBuilder<Weapon>()
@@ -988,7 +848,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MG42belt(), "mg42.png")
                 .withName("mg42belt")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MG42latch = new AttachmentBuilder<Weapon>()
@@ -997,7 +857,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MG42latch(), "mg42.png")
                 .withName("mg42latch")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MG34latch = new AttachmentBuilder<Weapon>()
@@ -1006,7 +866,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MG34Latch(), "mg42.png")
                 .withName("mg34latch")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M60Belt = new AttachmentBuilder<Weapon>()
@@ -1015,7 +875,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M60Belt(), "m60.png")
                 .withName("M60Belt")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         StonerHATCH = new AttachmentBuilder<Weapon>()
@@ -1025,7 +885,7 @@ public class AuxiliaryAttachments {
                 .withModel(new M27rearsight(), "gun.png")
                 .withName("StonerHATCH")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         StonerBELT = new AttachmentBuilder<Weapon>()
@@ -1034,7 +894,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.StonerA1BELT(), "gun.png")
                 .withName("StonerBELT")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         JohnsonACTION = new AttachmentBuilder<Weapon>()
@@ -1043,7 +903,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.JohnsonLMGACTION(), "gun.png")
                 .withName("JohnsonLMGACTION")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         JohnsonRifleACTION = new AttachmentBuilder<Weapon>()
@@ -1052,7 +912,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.JohnsonRifleAction(), "gun.png")
                 .withName("JohnsonRifleAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         JohnsonRifleSight = new AttachmentBuilder<Weapon>()
@@ -1061,7 +921,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.JohnsonRifleSight(), "gun.png")
                 .withName("JohnsonRifleSight")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         StripperClip = new AttachmentBuilder<Weapon>()
@@ -1070,7 +930,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.LeeEnfieldClip(), "stripperclip.png")
                 .withName("StripperClip")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         StripperClipBullets = new AttachmentBuilder<Weapon>()
@@ -1079,7 +939,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.LeeEnfieldClipBullets(), "stripperclip.png")
                 .withName("StripperClipBullets")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         NTW20Barrel = new AttachmentBuilder<Weapon>()
@@ -1088,7 +948,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.NTW20Barrel(), "gun.png")
                 .withName("NTW20Barrel")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         NTW20Action = new AttachmentBuilder<Weapon>()
@@ -1097,7 +957,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.NTW20ACTION(), "gun.png")
                 .withName("NTW20Action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M60Hatch = new AttachmentBuilder<Weapon>()
@@ -1106,7 +966,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M60Hatch(), "m60.png")
                 .withName("M60Hatch")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M249Belt = new AttachmentBuilder<Weapon>()
@@ -1115,7 +975,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M249Belt(), "m249.png")
                 .withName("M249Belt")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M249Hatch = new AttachmentBuilder<Weapon>()
@@ -1127,7 +987,7 @@ public class AuxiliaryAttachments {
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .withName("M249Hatch")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M249Action = new AttachmentBuilder<Weapon>()
@@ -1136,7 +996,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M249Action(), "m249.png")
                 .withName("M249Action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MG42action = new AttachmentBuilder<Weapon>()
@@ -1145,7 +1005,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.MG42action(), "mg42.png")
                 .withName("mg42action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarAction = new AttachmentBuilder<Weapon>()
@@ -1154,7 +1014,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.ScarAction(), "gun.png")
                 .withName("ScarAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarHAction = new AttachmentBuilder<Weapon>()
@@ -1163,7 +1023,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.ScarHAction(), "scarh.png")
                 .withName("ScarHAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk14EBRaction = new AttachmentBuilder<Weapon>()
@@ -1172,7 +1032,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.Mk14EBRaction(), "m14dmr.png")
                 .withName("Mk14EBRaction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk14EBRsight = new AttachmentBuilder<Weapon>()
@@ -1181,7 +1041,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.m1garandrearsight(), "gun.png")
                 .withName("Mk14EBRsight")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M14DMRRail = new AttachmentBuilder<Weapon>()
@@ -1190,7 +1050,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M14DMRRail(), "gun.png")
                 .withName("M14DMRRail")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         STG44action = new AttachmentBuilder<Weapon>()
@@ -1199,7 +1059,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.STG44Action(), "STG44.png")
                 .withName("STG44action")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         STG44actionCover = new AttachmentBuilder<Weapon>()
@@ -1208,7 +1068,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.STG44actioncover(), "gun.png")
                 .withName("STG44actioncover")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         G43GewehrAction = new AttachmentBuilder<Weapon>()
@@ -1217,7 +1077,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.G43GewehrAction(), "gun.png")
                 .withName("G43GewehrAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SpringfieldRearSight = new AttachmentBuilder<Weapon>()
@@ -1225,7 +1085,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.SpringfieldRearSight(), "gun.png")
                 .withName("SpringfieldRearSight")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SpringfieldAction = new AttachmentBuilder<Weapon>()
@@ -1234,7 +1094,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.SpringfieldAction(), "m1903a3.png")
                 .withName("SpringfieldAction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         Kar98Kaction = new AttachmentBuilder<Weapon>()
@@ -1243,7 +1103,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.Kar98Kboltaction(), "gun.png")
                 .withName("Kar98Kaction")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         VP70slide = new AttachmentBuilder<Weapon>()
@@ -1253,7 +1113,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.paneedah.mw.models.GlockRearSight(), "glockrearsight")
                 .withName("VP70slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         APSslide = new AttachmentBuilder<Weapon>()
@@ -1263,7 +1123,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.makarovfrontsight(), "gun")
                 .withModel(new com.paneedah.mw.models.APSrearsight(), "gun")
                 .withName("APSslide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         APShammer = new AttachmentBuilder<Weapon>()
@@ -1271,7 +1131,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.APShammer(), "APS.png")
                 .withName("APShammer")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         USP45hammer = new AttachmentBuilder<Weapon>()
@@ -1279,7 +1139,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.USP45Hammer(), "usp45.png")
                 .withName("USP45hammer")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P226hammer = new AttachmentBuilder<Weapon>()
@@ -1287,7 +1147,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.P226Hammer(), "p226.png")
                 .withName("P226hammer")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M9A1hammer = new AttachmentBuilder<Weapon>()
@@ -1295,7 +1155,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M9hammer(), "m9a1.png")
                 .withName("M9A1hammer")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP443hammer = new AttachmentBuilder<Weapon>()
@@ -1303,17 +1163,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.MP443Hammer(), "mp443.png")
                 .withName("MP443hammer")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        L131A1slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.L131A1Slide(), "L131A1.png")
-                .withModel(new com.paneedah.mw.models.M1911frontsight(), "m1911frontsight")
-                .withModel(new com.paneedah.mw.models.GlockRearSight(), "glockrearsight")
-                .withName("L131A1slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M712action = new AttachmentBuilder<Weapon>()
@@ -1321,7 +1171,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M712action(), "m712.png")
                 .withName("M712action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M45A1slide = new AttachmentBuilder<Weapon>()
@@ -1331,7 +1181,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.paneedah.mw.models.M1911rearsight(), "m1911rearsight")
                 .withName("M45A1slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M17_Slide = new AttachmentBuilder<Weapon>()
@@ -1341,7 +1191,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.paneedah.mw.models.M9A1rearsight(), "M9A1rearsight")
                 .withName("m17_slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Makarov_Slide = new AttachmentBuilder<Weapon>()
@@ -1351,17 +1201,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.makarovrearsight(), "gun.png")
                 .withModel(new com.paneedah.mw.models.makarovfrontsight(), "gun.png")
                 .withName("Makarov_Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        P2022_Slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.P2022Slide(), "p2022.png")
-                .withModel(new com.paneedah.mw.models.M9A1rearsight(), "M9A1rearsight.png")
-                .withModel(new com.paneedah.mw.models.P226frontsight(), "p226frontsight.png")
-                .withName("P2022_Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P12_Slide = new AttachmentBuilder<Weapon>()
@@ -1371,7 +1211,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "m1911frontsight")
                 .withModel(new com.paneedah.mw.models.P2000rearsight(), "m1911frontsight.png")
                 .withName("P12_Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         BrowningHiPowerSlide = new AttachmentBuilder<Weapon>()
@@ -1381,7 +1221,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M1911frontsight(), "gun")
                 .withModel(new com.paneedah.mw.models.makarovrearsight(), "gun")
                 .withName("BrowningHiPowerSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezAction = new AttachmentBuilder<Weapon>()
@@ -1389,7 +1229,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.VSSVintorezAction(), "vssvintorez.png")
                 .withName("VSSVintorezAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKaction = new AttachmentBuilder<Weapon>()
@@ -1397,7 +1237,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.AK47Action(), "ak47.png")
                 .withName("AKaction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DragunovAction = new AttachmentBuilder<Weapon>()
@@ -1405,7 +1245,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.DragunovAction(), "dragunov.png")
                 .withName("DragunovAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Malyukaction = new AttachmentBuilder<Weapon>()
@@ -1413,7 +1253,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.MalyukAction(), "malyuk.png")
                 .withName("Malyukaction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK15action = new AttachmentBuilder<Weapon>()
@@ -1421,7 +1261,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.AK15Action(), "ak15.png")
                 .withName("AK15action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KBP9A91action = new AttachmentBuilder<Weapon>()
@@ -1429,7 +1269,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.KBP9A91Action(), "KBP9A91.png")
                 .withName("KBP9A91action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALActionLever = new AttachmentBuilder<Weapon>()
@@ -1437,7 +1277,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.FNFALActionLever(), "FNFAL.png")
                 .withName("FNFALActionLever")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALAction = new AttachmentBuilder<Weapon>()
@@ -1445,7 +1285,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.FNFALAction(), "FNFAL.png")
                 .withName("FNFALAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FamasF1Action = new AttachmentBuilder<Weapon>()
@@ -1453,7 +1293,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.FamasF1Action(), "famasf1.png")
                 .withName("FamasF1Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12action = new AttachmentBuilder<Weapon>()
@@ -1461,14 +1301,14 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.AK12action(), "ak12kal.png")
                 .withName("AK12action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Saiga12action = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.Saiga12action(), "gun.png").withName("Saiga12action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Saiga12sights = new AttachmentBuilder<Weapon>()
@@ -1477,7 +1317,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.makarovrearsight(), "gun.png")
                 .withModel(new com.paneedah.mw.models.makarovfrontsight(), "gun.png")
                 .withName("Saiga12sights")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AS50Action = new AttachmentBuilder<Weapon>()
@@ -1485,7 +1325,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new AS50action(), "as50.png")
                 .withName("AS50Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Albert01Rslide = new AttachmentBuilder<Weapon>()
@@ -1495,7 +1335,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.M9A1frontsight(), "M9A1frontsight")
                 .withModel(new com.paneedah.mw.models.M9A1rearsight(), "M9A1rearsight")
                 .withName("albert01R_slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UziAction = new AttachmentBuilder<Weapon>()
@@ -1503,7 +1343,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.UziAction(), "gun.png")
                 .withName("UziAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UziRelease = new AttachmentBuilder<Weapon>()
@@ -1511,7 +1351,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.UziRelease(), "gun.png")
                 .withName("UziRelease")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UziIronSight = new AttachmentBuilder<Weapon>()
@@ -1520,19 +1360,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.UziFrontSight(), "gun.png")
                 .withModel(new com.paneedah.mw.models.UziRearSight(), "gun.png")
                 .withName("UziIronSight")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        P10Slide = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.P10mmSlide(), "p10.png")
-                .withModel(new com.paneedah.mw.models.makarovrearsight(), "gun.png")
-                .withModel(new com.paneedah.mw.models.makarovfrontsight(), "gun.png")
-//                .withModel(new com.paneedah.mw.models.M9A1frontsight(), "M9A1frontsight")
-//                .withModel(new com.paneedah.mw.models.M9A1rearsight(), "M9A1rearsight")
-                .withName("P10Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P10frontsight = new AttachmentBuilder<Weapon>()
@@ -1542,7 +1370,7 @@ public class AuxiliaryAttachments {
 //                .withModel(new com.paneedah.mw.models.M9A1frontsight(), "M9A1frontsight")
 //                .withModel(new com.paneedah.mw.models.M9A1rearsight(), "M9A1rearsight")
                 .withName("P10frontsight")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M40A6BoltAction = new AttachmentBuilder<Weapon>()
@@ -1550,7 +1378,7 @@ public class AuxiliaryAttachments {
                 .withRotationPoint(0.2791999875187876, -1.7068000399291512, 0.3259999854266646)
                 .withModel(new com.paneedah.mw.models.GunwerksHAMRboltaction(), "gunwerkshamr")
                 .withName("M40A6BoltAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M40A6BoltActionPrime = new AttachmentBuilder<Weapon>()
@@ -1558,23 +1386,7 @@ public class AuxiliaryAttachments {
                 .withRotationPoint(0.12159999456405646, -1.5596000435292718, 0.8224000258207329)
                 .withModel(new com.paneedah.mw.models.GunwerksHAMRboltactionPrime(), "gunwerkshamr")
                 .withName("M40A6BoltActionPrime")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        AX50BoltAction1 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.AX50BoltAction(), "ax50")
-                .withName("AX50BoltAction1")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        AX50BoltAction2 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.AX50BoltAction2(), "ax50")
-                .withName("AX50BoltAction2")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SSG08BoltAction1 = new AttachmentBuilder<Weapon>()
@@ -1582,7 +1394,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.SSG08BoltAction1(), "SSG08_2")
                 .withName("SSG08BoltAction1")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SSG08BoltAction2 = new AttachmentBuilder<Weapon>()
@@ -1590,23 +1402,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.SSG08BoltAction2(), "SSG08")
                 .withName("SSG08")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        HecateIIBoltAction1 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA3)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.PGMHecateIIBoltAction1(), "pgmhecateii")
-                .withName("PGMHecateIIBoltAction1")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        HecateIIBoltAction2 = new AttachmentBuilder<Weapon>()
-                .withCategory(AttachmentCategory.EXTRA2)
-                // .withCreativeTab(ModernWarfareMod.gunsTab)
-                .withModel(new com.paneedah.mw.models.PGMHecateIIBoltAction2(), "pgmhecateii")
-                .withName("PGMHecateIIBoltAction2")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Remington700BoltAction = new AttachmentBuilder<Weapon>()
@@ -1614,7 +1410,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.R700action(), "remington700")
                 .withName("Remington700BoltAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Remington700BoltActionMain = new AttachmentBuilder<Weapon>()
@@ -1622,7 +1418,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.R700actionMain(), "remington700")
                 .withName("Remington700BoltActionMain")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SV98BoltAction = new AttachmentBuilder<Weapon>()
@@ -1630,21 +1426,21 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.SV98Action(), "sv98")
                 .withName("SV98BoltAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         L115Bolt1 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA2)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.L96Action(), "L96Action.png").withName("L96Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         L115Bolt2 = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA3)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.L115Bolt2(), "gun.png").withName("LP115Bolt2")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1BoltAction = new AttachmentBuilder<Weapon>()
@@ -1652,7 +1448,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.DSR1BoltAction(), "dsr1.png")
                 .withName("DSR1BoltAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1BoltActionMain = new AttachmentBuilder<Weapon>()
@@ -1660,7 +1456,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.DSR1BoltActionMain(), "dsr1.png")
                 .withName("DSR1BoltActionMain")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         InterventionBoltAction = new AttachmentBuilder<Weapon>()
@@ -1668,14 +1464,14 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.InterventionBoltAction(), "intervention.png")
                 .withName("InterventionBoltAction")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         L115Mag = new AttachmentBuilder<Weapon>()
                 .withCategory(AttachmentCategory.EXTRA4)
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.L115Mag(), "gun.png").withName("L115Mag")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M500A2pump = new AttachmentBuilder<Weapon>()
@@ -1683,7 +1479,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.M500A2pump(), "gun")
                 .withName("M500A2pump")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HESCSpump = new AttachmentBuilder<Weapon>()
@@ -1691,7 +1487,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.HEShotgunPump(), "spas12")
                 .withName("HESCSpump")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KS23pump = new AttachmentBuilder<Weapon>()
@@ -1699,7 +1495,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.KS23pump(), "ks23")
                 .withName("KS23pump")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KragAction1 = new AttachmentBuilder<Weapon>()
@@ -1707,7 +1503,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.KragJorgensenAction1(), "KragJorgensen")
                 .withName("KragAction1")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KragAction2 = new AttachmentBuilder<Weapon>()
@@ -1715,7 +1511,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.KragJorgensenAction2(), "KragJorgensen")
                 .withName("KragAction2")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KragChamber = new AttachmentBuilder<Weapon>()
@@ -1723,7 +1519,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.KragJorgensenChamber(), "KragJorgensen")
                 .withName("KragChamber")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ShotgunShell = new AttachmentBuilder<Weapon>()
@@ -1731,7 +1527,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.Shotgun12Gauge(), "shotgun12gauge")
                 .withName("ShotgunShell")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ShotgunShellDouble = new AttachmentBuilder<Weapon>()
@@ -1740,7 +1536,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.Shotgun12Gauge(), "shotgun12gauge")
                 .withModel(new com.paneedah.mw.models.Shotgun12Gauge2(), "shotgun12gauge")
                 .withName("ShotgunShellDouble")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Shotgun4Gauge = new AttachmentBuilder<Weapon>()
@@ -1748,7 +1544,7 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.Shotgun12Gauge(), "Shotgun4Gauge")
                 .withName("Shotgun4Gauge")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Bullet = new AttachmentBuilder<Weapon>()
@@ -1757,7 +1553,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.BulletBig(), "Bullet")
                 .withName("Bullet")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1767,7 +1563,7 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.Bullet44(), "Bullet")
                 .withName("BulletSmall")
                 .withRenderablePart()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1776,82 +1572,77 @@ public class AuxiliaryAttachments {
                 // .withCreativeTab(ModernWarfareMod.gunsTab)
                 .withModel(new com.paneedah.mw.models.LaserProjectile(), "Laser")
                 .withName("LaserProjectile")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        P10Mag = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
-                .withModel(new com.paneedah.mw.models.P10mmMag(), "gun.png")
-                .withName("P10Mag").withRenderablePart().withModId(ModernWarfareMod.MODID)
-                .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AR15Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.AR15Action(), "ar15action.png")
-                .withName("AR15Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("AR15Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M4EjectorAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.M4A1Action(), "m4a1.png")
-                .withName("M4EjectorAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M4EjectorAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SIG556Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.SIG556Action(), "sig556.png")
-                .withName("SIG556Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("SIG556Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SIGMCXAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.SIGMCXAction(), "sigmcx.png")
-                .withName("SIGMCXAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("SIGMCXAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M110EjectorAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.M110Action(), "m110.png")
-                .withName("M110EjectorAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M110EjectorAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         BeowulfAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.Beowulf50CalAction(), "beowulf50cal.png")
-                .withName("BeowulfAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("BeowulfAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         S710TricunActionPully = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.S710TricunActionPully(), "s710tricun.png")
-                .withName("S710TricunActionPully").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("S710TricunActionPully").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         S710TricunActionEjector = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.S710TricunActionEjector(), "s710tricun.png")
-                .withName("S710TricunActionEjector").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("S710TricunActionEjector").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         K2C1Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.K2C1Action(), "k2c1.png")
-                .withName("K2C1Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("K2C1Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         ScorpionAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.ScorpionEVO3A1Action(), "ScorpionEVO3A1.png")
-                .withName("ScorpionAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("ScorpionAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         APC9Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.APC9Action(), "gun.png")
-                .withName("APC9Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("APC9Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         SA80Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.SA80Action(), "sa80.png")
-                .withName("SA80Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("SA80Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         BrenAction = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.CZ805BrenAction(), "cz805bren.png")
-                .withName("BrenAction").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("BrenAction").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Action = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA2)
                 .withModel(new com.paneedah.mw.models.AR15Action(), "M110action.png")
-                .withName("M110Action").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M110Action").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AR15Iron = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SCOPE)
@@ -1891,7 +1682,7 @@ public class AuxiliaryAttachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AR15Iron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AR15Iron").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Extra = new AttachmentBuilder<Weapon>()
@@ -1904,7 +1695,7 @@ public class AuxiliaryAttachments {
                 .withModel(new ScarIron1(), "gun.png").withModel(new ScarIron2(), "gun.png")
                 .withModel(new FALIron(), "gun.png").withModel(new M14Iron(), "gun.png")
                 .withModel(new MP5Iron(), "gun.png")
-                .withName("Extra").withModId(ModernWarfareMod.MODID)
+                .withName("Extra").withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M4Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
@@ -1913,27 +1704,27 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.AKRail3(), "akrail.png")
                 .withModel(new com.paneedah.mw.models.AKRail4(), "akrail.png")
                 .withModel(new com.paneedah.mw.models.AKRail5(), "akrail.png")
-                .withName("M4Rail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M4Rail").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M4AsiimovRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.paneedah.mw.models.AKRail(), "m4asiimovrail.png")
-                .withName("M4AsiimovRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M4AsiimovRail").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         MagnumRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.paneedah.mw.models.AKRail(), "magnumrail.png")
-                .withName("MagnumRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("MagnumRail").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         RailAlt = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.RailAlt(), "gun.png")
-                .withName("RailAlt").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("RailAlt").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AACRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.paneedah.mw.models.AKRail(), "aacrail_main.png")
-                .withName("AACRail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("AACRail").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
@@ -1942,17 +1733,17 @@ public class AuxiliaryAttachments {
                 .withModel(new com.paneedah.mw.models.AKRail3(), "M110.png")
                 .withModel(new com.paneedah.mw.models.AKRail4(), "M110.png")
                 .withModel(new com.paneedah.mw.models.AKRail5(), "M110.png")
-                .withName("M110Rail").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("M110Rail").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AKpart = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA5)
                 .withModel(new com.paneedah.mw.models.AKpart(), "gun")
-                .withName("AKpart").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("AKpart").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         AKMuzzle = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.EXTRA3)
                 .withModel(new com.paneedah.mw.models.Suppressor(), "gun")
-                .withName("AKmuzzle").withRenderablePart().withModId(ModernWarfareMod.MODID)
+                .withName("AKmuzzle").withRenderablePart().withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
     }
     

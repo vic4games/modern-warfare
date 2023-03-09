@@ -14,7 +14,7 @@ public class CombatServerTab extends CreativeTabs {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
 		return new ItemStack(Guns.AsiimovM4A1);
 	}
 }

@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 @SideOnly(Side.CLIENT)
 public class ModernWeatherRenderer extends IRenderHandler {
@@ -53,7 +53,7 @@ public class ModernWeatherRenderer extends IRenderHandler {
 	 * @return True if raining, false if snowing
 	 */
 	public static boolean isRainingOrSnowing(BlockPos pos) {
-		float f2 = mc.world.getBiome(pos).getFloatTemperature(pos);
+		float f2 = mc.world.getBiome(pos).getTemperature(pos);
 		int j2 = mc.world.getPrecipitationHeight(pos).getY();
 		if (mc.world.getBiomeProvider().getTemperatureAtHeight(f2, j2) >= 0.15F) {
         	return true;

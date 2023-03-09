@@ -14,7 +14,7 @@ import net.minecraft.util.math.Vec3d;
 
 import javax.vecmath.Vector3d;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class WheelSolver implements IEncodable<WheelSolver>{
 	
@@ -133,7 +133,7 @@ public WheelSolver(TyreSize tyreSize, double mass, boolean isDrive, double grass
 	
 	public Vec3d getSuspensionPosition() {
 		Vec3d relative = this.relativePosition;
-		relative = relative.addVector(0.0, getSuspension().getStretch()*-0.15, 0.0);
+		relative = relative.add(0.0, getSuspension().getStretch()*-0.15, 0.0);
 		return relative;
 	}
 

@@ -28,7 +28,7 @@ public abstract class CompatibleThrowableEntity extends EntityThrowable implemen
 	}
 
 	/**
-	 * @see net.minecraft.entity.projectile.EntityThrowable#onImpact(net.minecraft.util.MovingObjectPosition)
+	 * see net.minecraft.entity.projectile.EntityThrowable#onImpact(net.minecraft.util.MovingObjectPosition)
 	 */
 	@Override
 	protected void onImpact(RayTraceResult position) {
@@ -38,7 +38,7 @@ public abstract class CompatibleThrowableEntity extends EntityThrowable implemen
 	protected abstract void onImpact(CompatibleRayTraceResult rayTraceResult);
 
 	@Override
-	public final void setThrowableHeading(double motionX, double motionY, double motionZ, float velocity, float inaccuracy) {
+	public final void shoot(double motionX, double motionY, double motionZ, float velocity, float inaccuracy) {
 		setCompatibleThrowableHeading(motionX, motionY, motionZ, velocity, inaccuracy);
 	}
 

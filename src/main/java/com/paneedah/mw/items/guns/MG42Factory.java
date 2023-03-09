@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -20,7 +21,7 @@ public class MG42Factory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("mg42")
         .withFireRate(0.99f)
         .withRecoil(2f)
@@ -116,7 +117,7 @@ public class MG42Factory {
         })
         .withTextureNames("mg42")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new MG42())
             //.withTextureName("AK47")
             //.withWeaponProximity(0.99F)

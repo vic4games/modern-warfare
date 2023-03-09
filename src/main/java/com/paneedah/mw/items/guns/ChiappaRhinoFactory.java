@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.ChiappaRhino;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -21,7 +22,7 @@ public class ChiappaRhinoFactory implements GunFactory {
     @SuppressWarnings("unchecked")
 	public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("chiappa_rhino")
         .withAmmoCapacity(6)
         .withMaxBulletsPerReload(6)
@@ -79,7 +80,7 @@ public class ChiappaRhinoFactory implements GunFactory {
         .withCompatibleBullet(Bullets.Bullet357, (model) -> {})
         .withTextureNames("chiapparhino")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new ChiappaRhino()) 
             //.withTextureName("XEagle")
             //.withWeaponProximity(0.99F)

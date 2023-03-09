@@ -12,7 +12,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class BulletHoleRenderer {
 	

@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.grenade;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.ImpactGrenade;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.RenderContext;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.grenade.GrenadeRenderer;
@@ -15,7 +16,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
     @Override
     public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withName("ImpactGrenade")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("ImpactGrenade")
@@ -32,7 +33,7 @@ public class ImpactGrenadeFactory implements GrenadeFactory {
                 .withExplosionOnImpact()
                 .withDestroyingBlocks(false)
                 .withRenderer(new GrenadeRenderer.Builder()
-                        .withModId(ModernWarfareMod.MODID)
+                        .withModId(ModReference.MWC_ID)
                         .withModel(new ImpactGrenade())
                         .withAnimationDuration(500)
                          .withThrownEntityPositioning(() -> {

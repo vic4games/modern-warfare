@@ -1,6 +1,8 @@
 package com.paneedah.mw;
 
 import com.paneedah.mw.items.grenade.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.AttachmentBuilder;
 import com.paneedah.weaponlib.AttachmentCategory;
 import com.paneedah.weaponlib.ItemAttachment;
@@ -22,7 +24,7 @@ public class Grenades {
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event, CommonProxy commonProxy) {
         GrenadeSafetyPin = new AttachmentBuilder<ItemGrenade>().withCategory(AttachmentCategory.EXTRA)
                 .withModel(new com.paneedah.mw.models.Pin(), "gun.png").withName("GrenadeSafetyPin")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         FuseGrenade = new FuseGrenadeFactory().createGrenade(commonProxy);

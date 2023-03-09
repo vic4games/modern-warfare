@@ -40,8 +40,7 @@ public class ConfigurationManager {
     private static final Predicate<Ore> DEFAULT_ORE_VALIDATOR = ore -> ore.spawnsPerChunk >= ORE_MIN_PER_CHUNK
             && ore.spawnsPerChunk <= ORE_MAX_PER_CHUNK;
 
-    private static final Predicate<Explosions> DEFAULT_EXPLOSIONS_VALIDATOR = explosions ->
-        explosions != null;
+    private static final Predicate<Explosions> DEFAULT_EXPLOSIONS_VALIDATOR = explosions -> explosions != null;
 
 
     public static final class Builder {
@@ -194,55 +193,52 @@ public class ConfigurationManager {
                 });
             }
 
+            System.out.println("userConfig = " + userConfig);
             if(userConfig != null) {
-                if(userConfig.getProjectiles() != null) {
-                    
-                    Float renderOptimization = userConfig.getProjectiles().getRenderOptimization();
-                    if(renderOptimization != null) {
-                        if(renderOptimization < RENDER_OPTIMIZATION_MIN) {
-                            renderOptimization = RENDER_OPTIMIZATION_MIN;
-                        } else if(renderOptimization > RENDER_OPTIMIZATION_MAX) {
-                            renderOptimization = RENDER_OPTIMIZATION_MAX;
-                        }
-                        defaultUpdatableConfig.getProjectiles().setRenderOptimization(renderOptimization);
+                Float renderOptimization = userConfig.getProjectiles().getRenderOptimization();
+                if(renderOptimization != null) {
+                    if(renderOptimization < RENDER_OPTIMIZATION_MIN) {
+                        renderOptimization = RENDER_OPTIMIZATION_MIN;
+                    } else if(renderOptimization > RENDER_OPTIMIZATION_MAX) {
+                        renderOptimization = RENDER_OPTIMIZATION_MAX;
                     }
-                    Float bleedingOnHit = userConfig.getProjectiles().getBleedingOnHit();
-                    if(bleedingOnHit != null) {
-                        if(bleedingOnHit < BLEEDING_ON_HIT_COEFFICIENT_MIN) {
-                            bleedingOnHit = BLEEDING_ON_HIT_COEFFICIENT_MIN;
-                        } else if(bleedingOnHit > BLEEDING_ON_HIT_COEFFICIENT_MAX) {
-                            bleedingOnHit = BLEEDING_ON_HIT_COEFFICIENT_MAX;
-                        }
-                        defaultUpdatableConfig.getProjectiles().setBleedingOnHit(bleedingOnHit);
+                    defaultUpdatableConfig.getProjectiles().setRenderOptimization(renderOptimization);
+                }
+                Float bleedingOnHit = userConfig.getProjectiles().getBleedingOnHit();
+                if(bleedingOnHit != null) {
+                    if(bleedingOnHit < BLEEDING_ON_HIT_COEFFICIENT_MIN) {
+                        bleedingOnHit = BLEEDING_ON_HIT_COEFFICIENT_MIN;
+                    } else if(bleedingOnHit > BLEEDING_ON_HIT_COEFFICIENT_MAX) {
+                        bleedingOnHit = BLEEDING_ON_HIT_COEFFICIENT_MAX;
                     }
+                    defaultUpdatableConfig.getProjectiles().setBleedingOnHit(bleedingOnHit);
+                }
 
-                    if(userConfig.getProjectiles().isDestroyGlassBlocks() != null) {
-                        defaultUpdatableConfig.getProjectiles().setDestroyGlassBlocks(
-                                userConfig.getProjectiles().isDestroyGlassBlocks());
-                    }
+                System.out.println(".isDestroyGlassBlocks() = " + userConfig.getProjectiles().isDestroyGlassBlocks());
+                defaultUpdatableConfig.getProjectiles().setDestroyGlassBlocks(userConfig.getProjectiles().isDestroyGlassBlocks());
+                System.out.println(".isDestroyGlassBlocks() = " + userConfig.getProjectiles().isDestroyGlassBlocks());
 
-                    if(userConfig.getProjectiles().isKnockbackOnHit() != null) {
-                        defaultUpdatableConfig.getProjectiles().setKnockbackOnHit(
-                                userConfig.getProjectiles().isKnockbackOnHit());
-                    }
+                if(userConfig.getProjectiles().isKnockbackOnHit() == null) {
+                    defaultUpdatableConfig.getProjectiles().setKnockbackOnHit(
+                            userConfig.getProjectiles().isKnockbackOnHit());
+                }
 
-                    if(userConfig.getProjectiles().isMuzzleEffects() != null) {
-                        defaultUpdatableConfig.getProjectiles().setMuzzleEffects(
-                                userConfig.getProjectiles().isMuzzleEffects());
-                    }
-                    
-                    if(userConfig.getProjectiles().isBlurOnAim() != null) {
-                        defaultUpdatableConfig.getProjectiles().setBlurOnAim(
-                                userConfig.getProjectiles().isBlurOnAim());
-                    }
+                if(userConfig.getProjectiles().isMuzzleEffects() == null) {
+                    defaultUpdatableConfig.getProjectiles().setMuzzleEffects(
+                            userConfig.getProjectiles().isMuzzleEffects());
+                }
 
-                    for(Gun gun: userConfig.getProjectiles().getGun()) {
-                        if(gun.getDamage() < MIN_GUN_DAMAGE_MULTIPLIER || gun.getDamage() > MAX_GUN_DAMAGE_MULTIPLIER) {
-                            gun.setDamage(DEFAULT_GUN_DAMAGE_MULTIPLIER);
-                        }
-                        if(gun.getId() != null) {
-                            guns.put(gun.getId(), gun);
-                        }
+                if(userConfig.getProjectiles().isBlurOnAim() == null) {
+                    defaultUpdatableConfig.getProjectiles().setBlurOnAim(
+                            userConfig.getProjectiles().isBlurOnAim());
+                }
+
+                for(Gun gun: userConfig.getProjectiles().getGun()) {
+                    if(gun.getDamage() < MIN_GUN_DAMAGE_MULTIPLIER || gun.getDamage() > MAX_GUN_DAMAGE_MULTIPLIER) {
+                        gun.setDamage(DEFAULT_GUN_DAMAGE_MULTIPLIER);
+                    }
+                    if(gun.getId() != null) {
+                        guns.put(gun.getId(), gun);
                     }
                 }
             }

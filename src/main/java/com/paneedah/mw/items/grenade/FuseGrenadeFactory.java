@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.grenade;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.Grenades;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.M67Frag;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.Part;
 import com.paneedah.weaponlib.RenderContext;
 import com.paneedah.weaponlib.animation.Transition;
@@ -17,7 +18,7 @@ public class FuseGrenadeFactory implements GrenadeFactory {
     @Override
     public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withName("M67Frag")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M67Frag")
@@ -39,7 +40,7 @@ public class FuseGrenadeFactory implements GrenadeFactory {
                 .withDestroyingBlocks(false)
                 .withRenderer(
                         new GrenadeRenderer.Builder()
-                        .withModId(ModernWarfareMod.MODID)
+                        .withModId(ModReference.MWC_ID)
                         .withModel(new M67Frag())
                         .withAnimationDuration(500)
 

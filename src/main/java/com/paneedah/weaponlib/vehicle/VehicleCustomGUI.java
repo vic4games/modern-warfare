@@ -18,7 +18,7 @@ import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class VehicleCustomGUI extends Gui {
 	
@@ -467,7 +467,7 @@ public class VehicleCustomGUI extends Gui {
 		
 		double add = 0.0;
 		
-		if(keyAnimator.currentPosition.lengthVector() == 0.0) {
+		if(keyAnimator.currentPosition.length() == 0.0) {
 			
 			add = iPM;
 		}

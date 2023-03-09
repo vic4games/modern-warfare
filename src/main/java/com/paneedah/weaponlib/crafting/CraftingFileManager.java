@@ -15,7 +15,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.*;
 import java.util.Arrays;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class CraftingFileManager extends JSONDatabaseManager {
 

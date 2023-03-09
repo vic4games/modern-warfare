@@ -1,7 +1,7 @@
 package com.paneedah.mw.weapons;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.items.guns.*;
+import com.paneedah.mw.proxies.CommonProxy;
 import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.ConfigurationManager;
 import net.minecraft.item.Item;
@@ -62,7 +62,6 @@ public class Guns {
     public static Item Python;
     public static Item TaurusRagingHunter;
     public static Item ChiappaRhino;
-    public static Item TheDechard;
     public static Item SW500Magnum;
     public static Item DesertEagle;
     public static Item MP40;
@@ -101,12 +100,10 @@ public class Guns {
     public static Item MakarovPM;
     public static Item APS;
     public static Item M712;
-    public static Item P10mm;
     public static Item Uzi;
     public static Item AACHoneyBadger;
     public static Item KrissVector;
     public static Item FMG9;
-    public static Item HESCS;
     public static Item Saiga12;
     public static Item Spas12;
     public static Item MP43E;
@@ -127,7 +124,6 @@ public class Guns {
     public static Item DSR1;
     public static Item L96A1;
     public static Item M200Intervention;
-    public static Item PGMHecateII;
     public static Item AS50;
     public static Item M82;
 //    public static Item NTW20;
@@ -148,47 +144,26 @@ public class Guns {
     public static Item AsiimovM4A1;
     
     // German Assault
-    public static Item HK_G95;
     public static Item HK_P12;
     
     // UK Light Support
     public static Item SA80;
-    public static Item L131A1;
     
     // French Light
-    public static Item P2022;
     
     // Canada Heavy CQB
-    public static Item C8SFW;
-    public static Item Tokyo90;
     
     // Russian Assault
     public static Item Kalashnikov_AK12;
     
     // UK Heavy Long Range
-    public static Item AX50;
+
     // and an L131A1
     
     // Soviet Assault
     
-    public static Item AKMVulcan;
-    
     // Remington-700
     public static Item Remington700;
-    
-    
-    // Video Games
-    
-    public static Item CSA16;
-    public static Item SSG42;
-    public static Item HAR27;
-    public static Item GPCA1;
-    
-    public static Item M41A;
-    public static Item M56;
-    
-    public static Item OSIPR;
-    public static Item Fatman;
     
     public static Item Chainsaw;
     
@@ -244,23 +219,10 @@ public class Guns {
         ScarH = new ScarHFactory().createGun(proxy);
         
         M17 = new M17Factory().createGun(proxy);
-        
-        AsiimovM4A1 = new AsiimovM4A1Factory().createGun(proxy);
-        
-        HK_G95 = new HK_G95Factory().createGun(proxy);
+
         HK_P12 = new HK_P12Factory().createGun(proxy);
         
         SA80 = new SA80Factory().createGun(proxy);
-        L131A1 = new L131A1Factory().createGun(proxy);
-        
-        P2022 = new P2022Factory().createGun(proxy);
-        
-        C8SFW = new C8SFWFactory().createGun(proxy);
-        Tokyo90 = new Tokyo90Factory().createGun(proxy);
-        
-        AX50 = new AX50Factory().createGun(proxy);
-        
-        AKMVulcan = new AKMVulcanFactory().createGun(proxy);
         
         Remington700 = new Remington700Factory().createGun(proxy);
         
@@ -272,7 +234,6 @@ public class Guns {
         Python = new PythonFactory().createGun(proxy);
         TaurusRagingHunter = new TaurusRagingHunterFactory().createGun(proxy);
         ChiappaRhino = new ChiappaRhinoFactory().createGun(proxy);
-        TheDechard = new TheDechardFactory().createGun(proxy);
         SW500Magnum = new SW500MagnumFactory().createGun(proxy);
         DesertEagle = new DesertEagleFactory().createGun(proxy);
         MP40 = new MP40Factory().createGun(proxy);
@@ -308,14 +269,12 @@ public class Guns {
         Springfield = new SpringfieldFactory().createGun(proxy);
         Kar98K = new Kar98KFactory().createGun(proxy);
         KragJorgensen = new KragJorgensenFactory().createGun(proxy);
-        P10mm = new P10mmFactory().createGun(proxy);
         Glock18C = new Glock18CFactory().createGun(proxy);
         MakarovPM = new MakarovPMFactory().createGun(proxy);
         APS = new APSFactory().createGun(proxy);
         M712 = new M712Factory().createGun(proxy);
         Uzi = new UziFactory().createGun(proxy);
         AACHoneyBadger = new AACHoneyBadgerFactory().createGun(proxy);
-        HESCS = new HESCSFactory().createGun(proxy);
         Saiga12 = new Saiga12Factory().createGun(proxy);
         Spas12 = new Spas12Factory().createGun(proxy);
         MP43E = new MP43EFactory().createGun(proxy);
@@ -337,7 +296,6 @@ public class Guns {
         DSR1 = new DSR1Factory().createGun(proxy);
         L96A1 = new L96A1Factory().createGun(proxy);
         M200Intervention = new M200InterventionFactory().createGun(proxy);
-        PGMHecateII = new PGMHecateIIFactory().createGun(proxy);
         AS50 = new AS50Factory().createGun(proxy);
         M82 = new M82Factory().createGun(proxy);
 //        NTW20 = new NTW20Factory().createGun(proxy);
@@ -348,16 +306,6 @@ public class Guns {
         M202 = new M202Factory().createGun(proxy);
         M134 = new M134Factory().createGun(proxy);
 //        NinthSin = new NinthSinFactory().createGun(proxy);
-        
-        CSA16 = new CSA16Factory().createGun(proxy);
-        SSG42 = new SSG42Factory().createGun(proxy);
-        HAR27 = new HAR27Factory().createGun(proxy);
-        GPCA1 = new GPCA1Factory().createGun(proxy);
-        
-        M41A = new M41AFactory().createGun(proxy);
-        M56 = new M56Factory().createGun(proxy);
-        OSIPR = new OSIPRFactory().createGun(proxy);
-        Fatman = new FatmanFactory().createGun(proxy);
         
         Chainsaw = new ChainsawFactory().createGun(proxy);
        

@@ -165,7 +165,7 @@ public class ItemWirelessCamera extends CompatibleItem implements ModelSource {
         public ItemWirelessCamera build(ModContext modContext) {
 
             ItemWirelessCamera camera = new ItemWirelessCamera(this, modContext);
-            camera.setUnlocalizedName(modId + "_" + name);
+            camera.setTranslationKey(modId + "_" + name);
             camera.setCreativeTab(tab);
 //            camera.setPostRenderer(postRenderer);
 //            camera.setName(name);

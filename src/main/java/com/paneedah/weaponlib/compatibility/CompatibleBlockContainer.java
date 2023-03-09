@@ -24,7 +24,7 @@ public abstract class CompatibleBlockContainer extends BlockContainer {
     }
     
     public Block setBlockName(String name) {
-        return super.setUnlocalizedName(name);
+        return super.setTranslationKey(name);
     }
 
     @Override

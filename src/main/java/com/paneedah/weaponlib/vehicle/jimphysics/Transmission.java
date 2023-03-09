@@ -224,9 +224,9 @@ public class Transmission {
 
 		
 		
-		if((((getCurrentGear() == 1 || isReverseGear) && engineRPM <= vehicle.solver.engine.getIdleRPM()) || (vehicle.solver.getVelocityVector().lengthVector() == 0 && vehicle.throttle == 0 && engineRPM < 1100)) && vehicle.getRealSpeed() < 10.0 && !inNeutral()) {
+		if((((getCurrentGear() == 1 || isReverseGear) && engineRPM <= vehicle.solver.engine.getIdleRPM()) || (vehicle.solver.getVelocityVector().length() == 0 && vehicle.throttle == 0 && engineRPM < 1100)) && vehicle.getRealSpeed() < 10.0 && !inNeutral()) {
 			setNeutral(true);
-		} else if (vehicle.solver.getVelocityVector().lengthVector() < 0.1 && vehicle.throttle > 0.5 && inNeutral()){
+		} else if (vehicle.solver.getVelocityVector().length() < 0.1 && vehicle.throttle > 0.5 && inNeutral()){
 			vehicle.solver.engineSolver.rpm += 2000;
 			//System.out.println("sussy");
 
@@ -234,7 +234,7 @@ public class Transmission {
 			//vehicle.clutchTimer = 0;
 			//clutch.applyPedalPressure(1.0-getClutch().engagementPoint);
 			setNeutral(false);
-		}else if(vehicle.solver.getVelocityVector().lengthVector() > 0.1 && vehicle.throttle > 0.2 && inNeutral()) {
+		}else if(vehicle.solver.getVelocityVector().length() > 0.1 && vehicle.throttle > 0.2 && inNeutral()) {
 			setNeutral(false);
 		}
 		
@@ -273,8 +273,8 @@ public class Transmission {
 
 		if(isReverseGear || isEngineDeclutched()) return;
 		//System.out.println(vehicle.solver.getLongitudinalSpeed());
-		//System.out.println("conditions: " + (vehicle.solver.getVelocityVector().lengthVector() == 0.0 && vehicle.throttle > 0.5));
-		//System.out.println("shawty " + vehicle.throttle + " | " + vehicle.solver.getVelocityVector().lengthVector());
+		//System.out.println("conditions: " + (vehicle.solver.getVelocityVector().length() == 0.0 && vehicle.throttle > 0.5));
+		//System.out.println("shawty " + vehicle.throttle + " | " + vehicle.solver.getVelocityVector().length());
 		
 		
 		

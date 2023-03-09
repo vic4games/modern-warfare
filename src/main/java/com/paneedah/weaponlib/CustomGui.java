@@ -1,6 +1,6 @@
 package com.paneedah.weaponlib;
 
-import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.proxies.ClientProxy;
 import com.paneedah.weaponlib.StatusMessageCenter.Message;
 import com.paneedah.weaponlib.animation.AnimationModeProcessor;
 import com.paneedah.weaponlib.animation.gui.AnimationGUI;
@@ -73,7 +73,7 @@ public class CustomGui extends CompatibleGui {
 	}
 	
 	public static FontRenderer getFontRenderer() {
-		if(FONT_RENDERER == null) FONT_RENDERER = ModernWarfareMod.mc.fontRenderer;
+		if(FONT_RENDERER == null) FONT_RENDERER = ClientProxy.mc.fontRenderer;
 		return FONT_RENDERER;
 	}
 	
@@ -344,7 +344,7 @@ public class CustomGui extends CompatibleGui {
 		GlStateManager.popMatrix();
 		
 		// Get the weapon name from the localization file
-		String weaponName = new TextComponentTranslation(LangTools.formatName(weaponInstance.getWeapon().getUnlocalizedName())).getFormattedText();
+		String weaponName = new TextComponentTranslation(LangTools.formatName(weaponInstance.getWeapon().getTranslationKey())).getFormattedText();
 
 		
 		
@@ -437,7 +437,7 @@ public class CustomGui extends CompatibleGui {
          	cachedPlayerEyeHeight = player.getEyeHeight();
          	shouldRenderDoorOverlay = false;
          
-         	Vec3d originVector = player.getPositionVector().addVector(0, player.getEyeHeight(), 0);
+         	Vec3d originVector = player.getPositionVector().add(0, player.getEyeHeight(), 0);
          	
          	
          	

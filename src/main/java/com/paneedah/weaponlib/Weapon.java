@@ -9,6 +9,7 @@ import com.paneedah.weaponlib.compatibility.*;
 import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.paneedah.weaponlib.config.Gun;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.crafting.*;
 import com.paneedah.weaponlib.model.Shell;
 import com.paneedah.weaponlib.render.WeaponSpritesheetBuilder;
@@ -981,10 +982,10 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             if (blockImpactHandler == null) {
                 blockImpactHandler = (world, player, entity, position) -> {
                     CompatibleBlockState blockState = compatibility.getBlockAtPosition(world, position);
-                    Boolean canDestroyGlassBlocks = modContext.getConfigurationManager().getProjectiles().isDestroyGlassBlocks();
-                    if (canDestroyGlassBlocks != null && canDestroyGlassBlocks && compatibility.isGlassBlock(blockState)) {
+                    if (ModernConfigManager.bulletBreakGlass && compatibility.isGlassBlock(blockState)) {
                         compatibility.destroyBlock(world, position);
-                    } else  {
+
+                    } else {
                         //compatibility.addBlockHitEffect(position);
                         //compatibility.playSound(world, posX, posY, posZ, explosionSound, volume, pitch);
                         CompatibleTargetPoint point = new CompatibleTargetPoint(entity.dimension,
@@ -1035,7 +1036,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             }
 
             weapon.setCreativeTab(creativeTab);
-            weapon.setUnlocalizedName(name);
+            weapon.setTranslationKey(name);
             if (ammo != null) {
                 ammo.addCompatibleWeapon(weapon);
             }
@@ -1101,7 +1102,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             	for(Entry<ItemAttachment<Weapon>, CompatibleAttachment<Weapon>> i : compatibleAttachments.entrySet()) {
             		if(i.getValue().getAttachment().getCategory() == AttachmentCategory.BULLET) {
             			cartridgeDriven = true;
-            			catridgeName = new TextComponentTranslation(i.getValue().getAttachment().getUnlocalizedName() + ".name").getFormattedText();
+            			catridgeName = new TextComponentTranslation(i.getValue().getAttachment().getTranslationKey() + ".name").getFormattedText();
             		}
             	}
             	
@@ -1111,7 +1112,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                     weapon.getCompatibleAttachments(AttachmentCategory.MAGAZINE).forEach(c -> mags.add((ItemMagazine) c.getAttachment()));
                     mags.sort((a, b) -> a.getAmmo()-b.getAmmo());
                   
-                    mags.forEach(c -> descriptionBuilder.add(plain + (I18n.format(c.getUnlocalizedName() + ".name"))));
+                    mags.forEach(c -> descriptionBuilder.add(plain + (I18n.format(c.getTranslationKey() + ".name"))));
             	} else {
             		descriptionBuilder.add(plate + "Cartridge: " + plain + catridgeName);
             	}
@@ -1120,7 +1121,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                 //mags.sort((a, b) -> a
                  
                  
-              // descriptionBuilder.add(plain + (I18n.format(ca.getAttachment().getUnlocalizedName() + ".name")));
+              // descriptionBuilder.add(plain + (I18n.format(ca.getAttachment().getTranslationKey() + ".name")));
                  
             	
                  return descriptionBuilder;

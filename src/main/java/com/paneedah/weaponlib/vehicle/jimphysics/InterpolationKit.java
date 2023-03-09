@@ -3,7 +3,7 @@ package com.paneedah.weaponlib.vehicle.jimphysics;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class InterpolationKit {
 

@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -27,7 +28,7 @@ public class P90Factory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("p90")
         .withFireRate(0.85f)
         .withRecoil(1.5f)
@@ -366,7 +367,7 @@ public class P90Factory {
         })
         .withTextureNames("p90")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new P90())
             .withADSBeizer(new Vec3d(0.2, 6, -1))
             //.withTextureName("AK47")

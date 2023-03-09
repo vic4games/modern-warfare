@@ -102,7 +102,7 @@ public class MainCommand extends CompatibleCommand {
                         AttachmentCategory.SILENCER,
                         AttachmentCategory.SKIN);
                 List<CompatibleAttachment<? extends AttachmentContainer>> sorted = new ArrayList<>(compatibleAttachments);
-                sorted.sort((c1, c2) -> c1.getAttachment().getUnlocalizedName().compareTo(c2.getAttachment().getUnlocalizedName()));
+                sorted.sort((c1, c2) -> c1.getAttachment().getTranslationKey().compareTo(c2.getAttachment().getTranslationKey()));
                 int pageSize = 8;
                 int offset = pageSize * (page - 1);
                 if(page < 1) {
@@ -155,13 +155,13 @@ public class MainCommand extends CompatibleCommand {
             for(CraftingEntry stack : modernRecipe) {
             	
             	
-            	String toPrint = "> " + stack.getCount() + "x " + TextFormatting.WHITE + I18n.format(stack.getItem().getUnlocalizedName() + ".name");
+            	String toPrint = "> " + stack.getCount() + "x " + TextFormatting.WHITE + I18n.format(stack.getItem().getTranslationKey() + ".name");
             	
             	// Appends the disassembly to the end of the string
             	if(stack.getItem() instanceof CraftingItem) {
             		CraftingItem craftingItem = (CraftingItem) stack.getItem();
             		System.out.println(craftingItem.getRecoveryScrap());
-            		toPrint += " -> " + (stack.getCount()*craftingItem.getRecoveryPercentage()) + "x " + I18n.format(craftingItem.getRecoveryScrap().getUnlocalizedName() + ".name");
+            		toPrint += " -> " + (stack.getCount()*craftingItem.getRecoveryPercentage()) + "x " + I18n.format(craftingItem.getRecoveryScrap().getTranslationKey() + ".name");
             	}
             	
             	compatibility.addChatMessage(compatibility.clientPlayer(), TextFormatting.GOLD + toPrint);

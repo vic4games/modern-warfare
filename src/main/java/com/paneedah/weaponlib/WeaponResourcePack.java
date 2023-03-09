@@ -22,7 +22,7 @@ public class WeaponResourcePack extends CompatibleResourcePack {
 	}
 
     private String modifyResourcePath(ResourceLocation resourceLocation) {
-        String resourcePath = resourceLocation.getResourcePath();
+        String resourcePath = resourceLocation.getPath();
         if(resourcePath.startsWith("textures")) {
             int lastIndexOfSlash = resourcePath.lastIndexOf('/');
             if(lastIndexOfSlash >= 0) {
@@ -36,7 +36,7 @@ public class WeaponResourcePack extends CompatibleResourcePack {
 	@Override
 	public boolean resourceExists(ResourceLocation resourceLocation) {
 	    String resourcePath = modifyResourcePath(resourceLocation);
-        boolean value = WEAPONLIB_RESOURCE_DOMAIN.equals(resourceLocation.getResourceDomain())
+        boolean value = WEAPONLIB_RESOURCE_DOMAIN.equals(resourceLocation.getNamespace())
 				&& getClass().getResource(resourcePath) != null;
 		return value;
 	}

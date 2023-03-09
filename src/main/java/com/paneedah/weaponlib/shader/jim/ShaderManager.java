@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class ShaderManager {
 	
@@ -36,7 +36,7 @@ public class ShaderManager {
 					int program = GL20.glCreateProgram();
 					
 					vertexShader = GL20.glCreateShader(GL20.GL_VERTEX_SHADER);
-					GL20.glShaderSource(vertexShader, readFileToBuf(new ResourceLocation(file.getResourceDomain(), file.getResourcePath() + ".vert")));
+					GL20.glShaderSource(vertexShader, readFileToBuf(new ResourceLocation(file.getNamespace(), file.getPath() + ".vert")));
 				GL20.glCompileShader(vertexShader);
 				if(GL20.glGetShaderi(vertexShader, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
 					logger.error(GL20.glGetShaderInfoLog(vertexShader, GL20.GL_INFO_LOG_LENGTH));
@@ -44,7 +44,7 @@ public class ShaderManager {
 				}
 				
 				fragmentShader = GL20.glCreateShader(GL20.GL_FRAGMENT_SHADER);
-				GL20.glShaderSource(fragmentShader, readFileToBuf(new ResourceLocation(file.getResourceDomain(), file.getResourcePath() + ".frag")));
+				GL20.glShaderSource(fragmentShader, readFileToBuf(new ResourceLocation(file.getNamespace(), file.getPath() + ".frag")));
 				GL20.glCompileShader(fragmentShader);
 				if(GL20.glGetShaderi(fragmentShader, GL20.GL_COMPILE_STATUS) == GL11.GL_FALSE) {
 					logger.error(GL20.glGetShaderInfoLog(fragmentShader, GL20.GL_INFO_LOG_LENGTH));

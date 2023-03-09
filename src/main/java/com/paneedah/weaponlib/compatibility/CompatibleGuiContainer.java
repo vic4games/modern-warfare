@@ -1,6 +1,6 @@
 package com.paneedah.weaponlib.compatibility;
 
-import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.proxies.ClientProxy;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -19,7 +19,7 @@ public abstract class CompatibleGuiContainer extends GuiContainer {
     
     public static void renderEntityWithPosYaw(EntityLivingBase entity, double x, double y, double z, float yaw,
             float partialTicks) {
-        ModernWarfareMod.mc.getRenderManager().doRenderEntity(entity, x, y, z, yaw, partialTicks, true);
+        ClientProxy.mc.getRenderManager().renderEntity(entity, x, y, z, yaw, partialTicks, true);
     }
     
     /**
@@ -81,10 +81,10 @@ public abstract class CompatibleGuiContainer extends GuiContainer {
          entity.rotationYawHead = entity.rotationYaw;
          entity.prevRotationYawHead = entity.rotationYaw;
          GlStateManager.translate(0.0F, 0.0F, 0.0F);
-         RenderManager rendermanager = ModernWarfareMod.mc.getRenderManager();
+         RenderManager rendermanager = ClientProxy.mc.getRenderManager();
          rendermanager.setPlayerViewY(180.0F);
          rendermanager.setRenderShadow(false);
-         rendermanager.doRenderEntity(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, false);
+         rendermanager.renderEntity(entity, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F, false);
          rendermanager.setRenderShadow(true);
          entity.renderYawOffset = f;
          entity.rotationYaw = f1;
@@ -108,7 +108,7 @@ public abstract class CompatibleGuiContainer extends GuiContainer {
     }
 
     protected static void setPlayerViewY(float f) {
-        ModernWarfareMod.mc.getRenderManager().playerViewY = 180.0F;
+        ClientProxy.mc.getRenderManager().playerViewY = 180.0F;
     }
     
     @Override

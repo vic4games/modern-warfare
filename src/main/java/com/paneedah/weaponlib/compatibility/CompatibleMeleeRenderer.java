@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.BiConsumer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public abstract class CompatibleMeleeRenderer extends ModelSourceRenderer implements IBakedModel {
 	
@@ -99,6 +99,11 @@ public abstract class CompatibleMeleeRenderer extends ModelSourceRenderer implem
     
     @Override
     public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand) {
+        // Todo: Actually make rendering compatible with Emissive Renderer
+        if (net.minecraftforge.common.ForgeModContainer.allowEmissiveItems) {
+            return Collections.emptyList();
+        }
+
         if(itemStack == null) return Collections.emptyList();
         if(transformType == TransformType.GROUND 
                 || transformType == TransformType.GUI

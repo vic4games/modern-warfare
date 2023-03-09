@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -21,7 +22,7 @@ public class M40A6Factory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("m40a6")
         .withFireRate(0.16f)
         .withEjectRoundRequired()
@@ -274,7 +275,7 @@ public class M40A6Factory implements GunFactory {
         })
         .withTextureNames("gunwerkshamr")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new GunwerksHAMR())
             .withADSBeizer(new Vec3d(-0.2, 5.0, -1.0))
             //.withTextureName("AWP")

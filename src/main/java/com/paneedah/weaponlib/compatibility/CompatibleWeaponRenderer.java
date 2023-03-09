@@ -41,6 +41,7 @@
  import net.minecraft.util.EnumHandSide;
  import net.minecraft.util.ResourceLocation;
  import net.minecraft.world.World;
+ import net.minecraftforge.common.ForgeModContainer;
  import net.minecraftforge.fml.relauncher.Side;
  import net.minecraftforge.fml.relauncher.SideOnly;
  import org.apache.commons.lang3.tuple.Pair;
@@ -63,7 +64,7 @@
  import java.util.List;
  import java.util.Map;
 
- import static com.paneedah.mw.ModernWarfareMod.mc;
+ import static com.paneedah.mw.proxies.ClientProxy.mc;
 		
 
 public abstract class CompatibleWeaponRenderer extends ModelSourceRenderer implements IBakedModel {
@@ -143,9 +144,8 @@ public abstract class CompatibleWeaponRenderer extends ModelSourceRenderer imple
 	@Override
 	public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand) {
 		// Todo: Actually make rendering compatible with Emissive Renderer
-		if (net.minecraftforge.common.ForgeModContainer.allowEmissiveItems) {
-			return Collections.emptyList();
-		}
+		if (ForgeModContainer.allowEmissiveItems)
+			ForgeModContainer.allowEmissiveItems = false;
 		
 		if (transformType == TransformType.GROUND
 				|| transformType == TransformType.GUI

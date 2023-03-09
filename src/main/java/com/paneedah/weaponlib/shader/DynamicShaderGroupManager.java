@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.UUID;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class DynamicShaderGroupManager {
     
@@ -170,11 +170,11 @@ public class DynamicShaderGroupManager {
     private static ResourceLocation modifyResourceLocation(ResourceLocation resourceLocation) {
         ResourceLocation result;
 
-        switch (resourceLocation.getResourceDomain()) {
+        switch (resourceLocation.getNamespace()) {
         case RESOURCE_DOMAIN_WEAPONLIB:
-            if(resourceLocation.getResourcePath().startsWith("shaders/program/")) {
+            if(resourceLocation.getPath().startsWith("shaders/program/")) {
                 result = new ResourceLocation(RESOURCE_DOMAIN_WEAPONLIB, PATH_SHADER_PROGRAMS 
-                        + resourceLocation.getResourcePath().substring(16));
+                        + resourceLocation.getPath().substring(16));
             } else {
                 result = resourceLocation;
             }
@@ -182,10 +182,10 @@ public class DynamicShaderGroupManager {
             break;
         case RESOURCE_DOMAIN_SHADERS_PROGRAM_WEAPONLIB:
             result = new ResourceLocation(RESOURCE_DOMAIN_WEAPONLIB, PATH_SHADER_PROGRAMS
-                    + resourceLocation.getResourcePath());
+                    + resourceLocation.getPath());
             break;
         case RESOURCE_DOMAIN_TEXTURES_EFFECT_WEAPONLIB:
-            result = new ResourceLocation(RESOURCE_DOMAIN_WEAPONLIB, PATH_RESOURCES + resourceLocation.getResourcePath());
+            result = new ResourceLocation(RESOURCE_DOMAIN_WEAPONLIB, PATH_RESOURCES + resourceLocation.getPath());
             break;
         default:
             result = resourceLocation;

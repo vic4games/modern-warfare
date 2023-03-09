@@ -1,10 +1,11 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.MP43E;
 import com.paneedah.mw.models.Shotgun12Gauge;
 import com.paneedah.mw.models.Shotgun12Gauge2;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -22,7 +23,7 @@ public class MP43EFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("MP43E")
         .withAmmoCapacity(2)
         .withFireRate(0.3f)
@@ -82,7 +83,7 @@ public class MP43EFactory implements GunFactory {
         .withCompatibleBullet(Bullets.Shotgun12Guage, (model) -> {})
         .withTextureNames("MP43E")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new MP43E())
             //.withTextureName("Remington900")
             //.withWeaponProximity(0.99F)

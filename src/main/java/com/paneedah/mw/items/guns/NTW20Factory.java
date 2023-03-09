@@ -1,10 +1,11 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.AKRail;
 import com.paneedah.mw.models.JPUreticle;
 import com.paneedah.mw.models.NTW20;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -23,7 +24,7 @@ public class NTW20Factory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("ntw_20")
         .withFireRate(0.1f)
         .withEjectRoundRequired()
@@ -89,7 +90,7 @@ public class NTW20Factory implements GunFactory {
         })
         .withTextureNames("gun2")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new NTW20())
             .withEntityPositioning(itemStack -> {
                 GL11.glScaled(0.35F, 0.35F, 0.35F);

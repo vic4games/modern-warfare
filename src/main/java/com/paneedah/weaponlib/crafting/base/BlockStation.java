@@ -37,7 +37,7 @@ public abstract class BlockStation extends Block {
 			ClientEventHandler.BLANKMAPPED_LIST.add(this);
 		}
 		setHardness(2.0f);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setRegistryName(name);
 		setCreativeTab(CreativeTabs.MISC);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
@@ -94,7 +94,7 @@ public abstract class BlockStation extends Block {
 	
 	@Override
 	public IBlockState getStateFromMeta(int meta) {
-		EnumFacing enumfacing = EnumFacing.getFront(meta);
+		EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
         if (enumfacing.getAxis() == EnumFacing.Axis.Y)
         {

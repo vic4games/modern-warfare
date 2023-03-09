@@ -46,7 +46,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 
@@ -200,7 +200,7 @@ public class Interceptors {
     		
     		//thirdPersonCameraStabilizer.position = Vec3d.ZERO;
     		/*
-    		if(thirdPersonCameraStabilizer.position.lengthVector() == 0.0) {
+    		if(thirdPersonCameraStabilizer.position.length() == 0.0) {
     			thirdPersonCameraStabilizer.setPosition(vehicle.getPositionVector());
     
     		} else {
@@ -222,7 +222,7 @@ public class Interceptors {
     			Vec3d endLift = startLift.subtract(new Vec3d(0, 10, 0).rotatePitch((float) Math.toRadians(vehicle.rotationPitch)).rotateYaw((float) Math.toRadians(-vehicle.rotationYaw)));
     			RayTraceResult rtr = vehicle.world.rayTraceBlocks(startLift, endLift, false, true, false);
     			if(rtr != null) {
-    				GL11.glTranslated(0.0, rtr.hitVec.subtract(startLift).lengthVector(), 0.0);
+    				GL11.glTranslated(0.0, rtr.hitVec.subtract(startLift).length(), 0.0);
     			}
     		}*/
     		
@@ -517,7 +517,7 @@ public class Interceptors {
             float amplitude = 0.02f;
             float frequency = 15f;
             
-            double hillFrac = (vehicle.getSolver().getVelocityVector().lengthVector()*(vehicle.rotationPitch/2))/20;
+            double hillFrac = (vehicle.getSolver().getVelocityVector().length()*(vehicle.rotationPitch/2))/20;
             amplitude += Math.abs(hillFrac)/250;
             frequency += Math.abs(hillFrac)/250;
             
@@ -537,13 +537,13 @@ public class Interceptors {
             	appliedAmplitude = amplitude;
             } else appliedAmplitude = amplitude/7.5f;
             
-            if(vehicle.getSolver().velocity.lengthVector() > 10) {
+            if(vehicle.getSolver().velocity.length() > 10) {
             	appliedAmplitude += vehicle.getSolver().getSideSlipAngle()/45;
             }
             
-           // System.out.println(vehicle.getSolver().getVelocityVector().lengthVector());
+           // System.out.println(vehicle.getSolver().getVelocityVector().length());
             
-            if(vehicle.getSolver().getVelocityVector().lengthVector() != 0.0) {
+            if(vehicle.getSolver().getVelocityVector().length() != 0.0) {
             	  NoiseGeneratorPerlin ngo = new NoiseGeneratorPerlin(new Random(45302), 1);
                   double val = ngo.getValue(vehicle.posX, vehicle.posZ)/25;
                  // System.out.println(val);
@@ -874,7 +874,7 @@ public class Interceptors {
     	if(AnimationModeProcessor.getInstance().getFPSMode() && Mouse.isButtonDown(0)) {
     		Mouse.getEventDWheel();
     		AnimationModeProcessor amp = AnimationModeProcessor.getInstance();
-    		amp.rot = amp.rot.addVector(pitchDelta, yawDelta, 0);
+    		amp.rot = amp.rot.add(pitchDelta, yawDelta, 0);
     		yawDelta = 0;
         	pitchDelta = 0;
     	}

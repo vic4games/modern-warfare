@@ -254,7 +254,7 @@ public class AttachmentBuilder<T> {
 	@SuppressWarnings("deprecation")
 	public ItemAttachment<T> build(ModContext modContext) {
 		ItemAttachment<T> attachment = createAttachment(modContext);
-		attachment.setUnlocalizedName(getModId() + "_" + name);
+		attachment.setTranslationKey(getModId() + "_" + name);
 		attachment.setCreativeTab(tab);
 		attachment.setPostRenderer(postRenderer);
 		attachment.setName(name);

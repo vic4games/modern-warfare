@@ -19,6 +19,7 @@ import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.jim.util.VMWHooksHandler;
 import com.paneedah.weaponlib.render.MuzzleFlashRenderer;
 import com.paneedah.weaponlib.render.Shaders;
+import com.paneedah.weaponlib.render.WavefrontModel;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.Entity;
@@ -42,7 +43,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 public class WeaponRenderer extends CompatibleWeaponRenderer {
@@ -73,6 +74,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
         private Vec3d beizer = new Vec3d(0, 3.5, -1);
 
 		private ModelBase model;
+		private WavefrontModel bakedModel;
 		private String textureName;
 		private Consumer<ItemStack> entityPositioning;
 		private Consumer<ItemStack> inventoryPositioning;
@@ -351,6 +353,10 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 
 		public Builder withModel(ModelBase model) {
 			this.model = model;
+			return this;
+		}
+		public Builder withBakedModel(WavefrontModel bakedModel) {
+			this.bakedModel = bakedModel;
 			return this;
 		}
 		
@@ -1824,9 +1830,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 				totalReloadingDuration += t.getDuration();
 				totalReloadingDuration += t.getPause();
 			}
-			
-			
-	
+
 			
 			//totalLoadIterationDuration
 			for(Transition<RenderContext<RenderableState>> t: firstPersonPositioningLoadIteration) {
@@ -2275,6 +2279,10 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 
 		public ModelBase getModel() {
 			return model;
+		}
+
+		public WavefrontModel getBakedModel() {
+			return bakedModel;
 		}
 
 		public String getModId() {
@@ -3136,7 +3144,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 			Positioner<Part, RenderContext<RenderableState>> positioner) {
 		
 		
-//	    if(player.getDistanceSqToEntity(compatibility.clientPlayer()) > 400) {
+//	    if(player.getDistanceSq(compatibility.clientPlayer()) > 400) {
 //	        return;
 //	    }
 		
@@ -3350,14 +3358,19 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 				//GlStateManager.translate(-0.05*test1, 0.01*test1, 0);
 				//GlStateManager.rotate(-10f*test1, 1, 1, 0);
 				//mc.getTextureManager().bindTexture(new ResourceLocation("mw:textures/items/sexmoiv.png"));
-				
-				getBuilder().getModel().render(this.player,
-		                renderContext.getLimbSwing(),
-		                renderContext.getFlimbSwingAmount(),
-		                renderContext.getAgeInTicks(),
-		                renderContext.getNetHeadYaw(),
-		                renderContext.getHeadPitch(),
-		                renderContext.getScale());
+
+				if (getBuilder().getModel() != null) {
+					getBuilder().getModel().render(this.player,
+							renderContext.getLimbSwing(),
+							renderContext.getFlimbSwingAmount(),
+							renderContext.getAgeInTicks(),
+							renderContext.getNetHeadYaw(),
+							renderContext.getHeadPitch(),
+							renderContext.getScale());
+				} else {
+					// TODO: Make It render
+					getBuilder().getBakedModel();
+				}
 			}
 		    
 			if(DebugCommand.debugFlag == 6) return;
@@ -3650,7 +3663,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 	    if(renderViewEntity == null) {
 	        renderViewEntity = mc.player;
 	    }
-//	    double distanceSq = this.player != null ? renderViewEntity.getDistanceSqToEntity(this.player) : 0;
+//	    double distanceSq = this.player != null ? renderViewEntity.getDistanceSq(this.player) : 0;
 
 	   // GlStateManager.rotate(45, 1, 0, 0);
 	    

@@ -11,7 +11,7 @@ import javax.vecmath.Matrix3d;
 import javax.vecmath.Matrix3f;
 import javax.vecmath.Vector3d;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class OreintedBB {
 	
@@ -104,7 +104,7 @@ public class OreintedBB {
 	}
 	
 	public void move(double x, double y, double z) {
-		this.c = this.c.addVector(x, y, z);
+		this.c = this.c.add(x, y, z);
 	}
 	
 	public double qPTI(double a, double b, float t) {

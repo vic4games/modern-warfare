@@ -1,6 +1,7 @@
 package com.paneedah.mw.skins;
 
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.compatibility.CompatibleItems;
 import com.paneedah.weaponlib.config.ConfigurationManager;
@@ -19,7 +20,7 @@ public class MeleeSkins {
     public static void init(Object mod, ConfigurationManager configurationManager, CompatibleFmlPreInitializationEvent event) {
         CrimsonBlood = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeCrimsonBlood")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withCreativeTab(ModernWarfareMod.AttachmentsTab)
         .withName("CrimsonBlood")
         .withCraftingRecipe("AR",
@@ -30,7 +31,7 @@ public class MeleeSkins {
 
         Chrome = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeChrome")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withCreativeTab(ModernWarfareMod.AttachmentsTab)
         .withName("Chrome")
         .withCraftingRecipe("AR",
@@ -41,7 +42,7 @@ public class MeleeSkins {
 
         GodWillsIt = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeGodWillsIt")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withCreativeTab(ModernWarfareMod.AttachmentsTab)
         .withName("GodWillsIt")
         .withCraftingRecipe("AR",
@@ -52,7 +53,7 @@ public class MeleeSkins {
 
         Murasaki = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeMurasaki")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withCreativeTab(ModernWarfareMod.AttachmentsTab)
         .withName("Murasaki")
         .withCraftingRecipe("AA",
@@ -62,7 +63,7 @@ public class MeleeSkins {
 
         Evangelion = new MeleeSkin.Builder()
         .withTextureVariant("TacKnifeEvangelion")
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withCreativeTab(ModernWarfareMod.AttachmentsTab)
         .withName("Evangelion")
         .withCraftingRecipe("AR",

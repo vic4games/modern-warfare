@@ -218,7 +218,7 @@ public class ItemVest extends CompatibleItem implements ISpecialArmor, ModelSour
             
             item.modelFileString = this.modelFileString;
             item.properTextureName = this.properTextureName;
-            item.setUnlocalizedName(modContext.getModId() + "_" + name);
+            item.setTranslationKey(modContext.getModId() + "_" + name);
             
             // Register hook
             CraftingRegistry.registerHook(item);
@@ -264,8 +264,8 @@ public class ItemVest extends CompatibleItem implements ISpecialArmor, ModelSour
             
             item.customEquippedPositioning = customEquippedPositioning;
             
-           // System.out.println("ITem name: " + item.getUnlocalizedName());
-          //  compatibility.registerItem(item, item.getUnlocalizedName());
+           // System.out.println("ITem name: " + item.getTranslationKey());
+          //  compatibility.registerItem(item, item.getTranslationKey());
             modContext.registerRenderableItem(name, item, compatibility.isClientSide() ? RendererRegistrationHelper.registerRenderer(this, modContext) :null);
             
             return item;

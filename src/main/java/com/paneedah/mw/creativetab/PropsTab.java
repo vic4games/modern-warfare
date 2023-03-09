@@ -13,7 +13,7 @@ public class PropsTab extends CreativeTabs {
 
 	@Override
 	@SideOnly(Side.CLIENT)
-	public ItemStack getTabIconItem() {
+	public ItemStack createIcon() {
 		return new ItemStack(Guns.M4A1);
 	}
 }

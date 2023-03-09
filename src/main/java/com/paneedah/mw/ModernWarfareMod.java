@@ -1,6 +1,8 @@
 package com.paneedah.mw;
 
 import com.paneedah.mw.creativetab.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.command.BalancePackCommand;
 import com.paneedah.weaponlib.command.CraftingFileCommand;
@@ -9,7 +11,6 @@ import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.config.ConfigurationManager;
 import com.paneedah.weaponlib.crafting.CraftingFileManager;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -24,7 +25,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 
-@Mod(modid = ModernWarfareMod.MODID, version = ModernWarfareMod.VERSION, guiFactory = "com.paneedah.weaponlib.config.ConfigGUIFactory")
+@Mod(modid = ModReference.MWC_ID, version = ModernWarfareMod.VERSION, guiFactory = "com.paneedah.weaponlib.config.ConfigGUIFactory")
 public class ModernWarfareMod {
 
 	private static final String DEFAULT_CONFIG_RESOURCE = "/mw.cfg";
@@ -32,24 +33,21 @@ public class ModernWarfareMod {
     public static final String MODID = "mw";
 	public static final String VERSION = "@VERSION@";
 
-    public static final Minecraft mc = Minecraft.getMinecraft();
-
     @SidedProxy(serverSide = "com.paneedah.weaponlib.CommonModContext", clientSide = "com.paneedah.weaponlib.ClientModContext")
     public static ModContext MOD_CONTEXT;
 
     public static final SimpleNetworkWrapper CHANNEL = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
 
-    public static CreativeTabs ArmorTab = new ArmorTab(CreativeTabs.getNextID(), "ArmorTab");
-	public static CreativeTabs AssaultRiflesTab = new AssaultRiflesTab(CreativeTabs.getNextID(), "AssaultRifles_tab");
-	public static CreativeTabs CombatServerTab = new CombatServerTab(CreativeTabs.getNextID(), "CombatServer_tab");
-	public static CreativeTabs AmmoTab = new AmmoTab(CreativeTabs.getNextID(), "AmmoTab");
-	public static CreativeTabs AttachmentsTab = new AttachmentsTab(CreativeTabs.getNextID(), "AttachmentsTab");
-	public static CreativeTabs GrenadesTab = new GrenadesTab(CreativeTabs.getNextID(), "GrenadesTab");
-	public static CreativeTabs GadgetsTab = new GadgetsTab(CreativeTabs.getNextID(), "GadgetsTab");
-	public static CreativeTabs PropsTab = new PropsTab(CreativeTabs.getNextID(), "props_tab");
-	public static CreativeTabs BlocksTab = new BlocksTab(CreativeTabs.getNextID(), "BlocksTab");
+    public static final CreativeTabs ArmorTab = new ArmorTab(CreativeTabs.getNextID(), "ArmorTab");
+	public static final CreativeTabs AssaultRiflesTab = new AssaultRiflesTab(CreativeTabs.getNextID(), "AssaultRifles_tab");
+	public static final CreativeTabs AmmoTab = new AmmoTab(CreativeTabs.getNextID(), "AmmoTab");
+	public static final CreativeTabs AttachmentsTab = new AttachmentsTab(CreativeTabs.getNextID(), "AttachmentsTab");
+	public static final CreativeTabs GrenadesTab = new GrenadesTab(CreativeTabs.getNextID(), "GrenadesTab");
+	public static final CreativeTabs GadgetsTab = new GadgetsTab(CreativeTabs.getNextID(), "GadgetsTab");
+	public static final CreativeTabs PropsTab = new PropsTab(CreativeTabs.getNextID(), "props_tab");
+	public static final CreativeTabs BlocksTab = new BlocksTab(CreativeTabs.getNextID(), "BlocksTab");
 	        
-    @SidedProxy(serverSide = "com.paneedah.mw.CommonProxy", clientSide = "com.paneedah.mw.ClientProxy")
+    @SidedProxy(serverSide = "com.paneedah.mw.proxies.CommonProxy", clientSide = "com.paneedah.mw.proxies.ClientProxy")
     public static CommonProxy proxy;
 
     private ConfigurationManager configurationManager;

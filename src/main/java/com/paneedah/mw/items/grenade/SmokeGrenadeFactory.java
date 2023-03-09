@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.grenade;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.Grenades;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.M18;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.Part;
 import com.paneedah.weaponlib.RenderContext;
 import com.paneedah.weaponlib.animation.Transition;
@@ -18,7 +19,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
     @Override
     public ItemGrenade createGrenade(CommonProxy commonProxy) {
         return new ItemGrenade.Builder()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withName("M18White")
                 .withCreativeTab(ModernWarfareMod.GrenadesTab)
                 .withTextureNames("M18White")
@@ -38,7 +39,7 @@ public class SmokeGrenadeFactory implements GrenadeFactory {
                 .withRotationSlowdownFactor(() -> 0.99f)
                 .withRenderer(
                         new GrenadeRenderer.Builder()
-                        .withModId(ModernWarfareMod.MODID)
+                        .withModId(ModReference.MWC_ID)
                         .withModel(new M18())
                         .withAnimationDuration(500)
 

@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Consumer;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class CompatibleRenderingRegistry implements ICustomModelLoader {
 
@@ -94,7 +94,7 @@ public class CompatibleRenderingRegistry implements ICustomModelLoader {
 	@Override
 	public boolean accepts(ResourceLocation modelLocation) {
 		// Do not accept attachments
-		return modId.equals(modelLocation.getResourceDomain()) && modelSourceLocations.contains(modelLocation.toString());
+		return modId.equals(modelLocation.getNamespace()) && modelSourceLocations.contains(modelLocation.toString());
 	}
 
 	@Override

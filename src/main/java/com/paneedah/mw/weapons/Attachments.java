@@ -3,6 +3,7 @@ package com.paneedah.mw.weapons;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.*;
 import com.paneedah.weaponlib.compatibility.CompatibleFmlPreInitializationEvent;
 import com.paneedah.weaponlib.config.ConfigurationManager;
@@ -584,7 +585,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G11HandguardK1").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G11HandguardK1").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
     	
     	G11HandguardK2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -619,7 +620,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G11HandguardK2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G11HandguardK2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         
@@ -658,7 +659,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FABDefenseMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FABDefenseMount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAS21Mount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -698,7 +699,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MAS21Mount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MAS21Mount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P90Swordfish = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -741,7 +742,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("P90swordfish").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("P90swordfish").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P90DefaultKit = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -776,7 +777,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("P90DefaultKit").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("P90DefaultKit").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P90Terminator = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -811,7 +812,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("P90Terminator").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("P90Terminator").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -849,7 +850,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarHHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -887,7 +888,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarHHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarHHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarMidWestIndustriesHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -927,7 +928,7 @@ public class Attachments {
                     }
                 })
                 .withName("ScarMidWestIndustriesHandGuard")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -967,7 +968,7 @@ public class Attachments {
                     }
                 })
                 .withName("ScarMLOKHandguard")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1008,7 +1009,7 @@ public class Attachments {
                     }
                 })
                 .withName("SIG556Handguard")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1050,7 +1051,7 @@ public class Attachments {
                     }
                 })
                 .withName("SIG556HandguardRailed")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1092,7 +1093,7 @@ public class Attachments {
                     }
                 })
                 .withName("SIG556HandguardKA")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1133,7 +1134,7 @@ public class Attachments {
                     }
                 })
                 .withName("SIG556Grip")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -1172,7 +1173,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarLReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarLReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KrissVectorReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -1210,7 +1211,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KrissVectorReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KrissVectorReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Vector556Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -1251,7 +1252,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KrissVector556Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KrissVector556Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VectorMk1ModularHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1290,7 +1291,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VectorMk1ModularHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VectorMk1ModularHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VectorCarbineHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1329,7 +1330,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VectorCarbineHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VectorCarbineHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VectorTapedGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1369,7 +1370,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VectorTapedGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VectorTapedGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Origin12Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1410,7 +1411,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Origin12Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Origin12Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HKS20Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1447,7 +1448,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HKS20Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HKS20Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Remington700Chassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1482,7 +1483,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Remington700Chassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Remington700Chassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Remington700APACChassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1517,7 +1518,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Remington700APACChassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Remington700APACChassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Remington700MDTXRSChassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1552,7 +1553,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Remington700MDTXRSChassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Remington700MDTXRSChassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SSG08Chassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1588,7 +1589,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SSG08Chassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SSG08Chassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ARX160Chassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -1627,7 +1628,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ARX160Chassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ARX160Chassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G2ContenderBarrelShort = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -1665,7 +1666,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G2ContenderBarrelShort").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G2ContenderBarrelShort").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G2ContenderBarrelLong = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -1704,7 +1705,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G2ContenderBarrelLong").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G2ContenderBarrelLong").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G2ContenderGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1740,7 +1741,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G2ContenderGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G2ContenderGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G2ContenderStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1776,7 +1777,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G2ContenderStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G2ContenderStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Origin12Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1815,7 +1816,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Origin12Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Origin12Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HKS20Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -1850,7 +1851,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HKS20Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HKS20Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Origin12Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -1890,7 +1891,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Origin12Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Origin12Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HKS20Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -1926,7 +1927,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HKS20Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HKS20Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -1967,7 +1968,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRHandGuardBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2009,7 +2010,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRHandGuardBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRHandGuardBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRWEMSKHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2049,7 +2050,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRWEMSKHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRWEMSKHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRWEMSKHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2088,7 +2089,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRWEMSKHandguardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRWEMSKHandguardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPrecisionHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2126,7 +2127,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPrecisionHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPrecisionHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPrecisionHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2164,7 +2165,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPrecisionHandGuardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPrecisionHandGuardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRSBRHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2202,7 +2203,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRSBRHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRSBRHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRSBRHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2240,7 +2241,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRSBRHandGuardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRSBRHandGuardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPolymerHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2278,7 +2279,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPolymerHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPolymerHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPolymerHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2316,7 +2317,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPolymerHandguardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPolymerHandguardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRSquareDropHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2354,7 +2355,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRSquareDropHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRSquareDropHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRSquareDropHandguardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2392,7 +2393,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRSquareDropHandguardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRSquareDropHandguardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Type20Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2430,7 +2431,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Type20Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Type20Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2468,7 +2469,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerMatrixArmsHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2506,7 +2507,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerMatrixArmsHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerMatrixArmsHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M60HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2541,7 +2542,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M60HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M60HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M60E4HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2579,7 +2580,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M60E4Guard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M60E4Guard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2614,7 +2615,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk48HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2650,7 +2651,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk48HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk48HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249UpperHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -2685,7 +2686,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249UpperHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249UpperHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk48UpperHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -2723,7 +2724,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk48UpperHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk48UpperHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         StonerHANDGUARD = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2760,7 +2761,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("StonerHANDGUARD").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("StonerHANDGUARD").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGA1handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2795,7 +2796,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGA1").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGA1").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGA2handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2831,7 +2832,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGA2handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGA2handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGA3handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2867,7 +2868,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGA3handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGA3handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         EF88Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -2903,7 +2904,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("EF88Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("EF88Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGDefaultKit = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -2938,7 +2939,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGDefaultKit").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGDefaultKit").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGParaConversion = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -2973,7 +2974,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGParaConversion").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGParaConversion").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGA3extGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -3013,7 +3014,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AUGA3extGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGA3extGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1CarbineBody = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3048,7 +3049,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1CarbineBody").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1CarbineBody").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1A1CarbineBody = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3083,7 +3084,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1A1CarbineBody").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1A1CarbineBody").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1CarbineHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -3118,7 +3119,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1CarbineHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1CarbineHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1CarbineVentilatedHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -3153,7 +3154,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1CarbineVentilatedHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1CarbineVentilatedHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1CarbineScoutHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -3189,7 +3190,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1ScoutCarbineHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1ScoutCarbineHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G3A1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3228,7 +3229,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G3A1Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G3A1Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G3HandguardRailed = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3270,7 +3271,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G3HandguardRailed").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G3HandguardRailed").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3305,7 +3306,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DSR1Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DSR1Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1HandguardRailed = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3340,7 +3341,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DSR1HandguardRailed").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DSR1HandguardRailed").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1Barrel = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -3375,7 +3376,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DSR1Barrel").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DSR1Barrel").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DSR1BarrelLong = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -3410,7 +3411,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DSR1BarrelLong").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DSR1BarrelLong").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M14Body = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -3450,7 +3451,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M14Body").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M14Body").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M14SOCOMChassis = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -3491,7 +3492,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M14DMRSocomChassis").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M14DMRSocomChassis").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk14TanBody = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -3532,7 +3533,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk14TanBody").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk14TanBody").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk14SnowBody = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -3573,7 +3574,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk14SnowBody").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk14SnowBody").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk14BlackBody = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -3614,7 +3615,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk14BlackBody").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk14BlackBody").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M14Cover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3654,7 +3655,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M14Cover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M14Cover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M14TriRailCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -3697,7 +3698,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M14TriRailCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M14TriRailCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M14Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -3736,7 +3737,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M14Rail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M14Rail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3774,7 +3775,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarRetractableStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3812,7 +3813,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarRetractableStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarRetractableStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarAdapterStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3854,7 +3855,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarAdapterStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarAdapterStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScarHStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3892,7 +3893,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScarHStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScarHStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VectorStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3931,7 +3932,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VectorStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VectorStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VectorStockAdapter = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -3971,7 +3972,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VectorStockAdapter").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VectorStockAdapter").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UMP45Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -4006,7 +4007,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("UMP45Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("UMP45Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UMP9Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -4041,7 +4042,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("UMP9Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("UMP9Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UMP45Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4076,7 +4077,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("UMP45Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("UMP45Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAC10Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4114,7 +4115,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MAC10Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MAC10Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAC21Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4153,7 +4154,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MAC21Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MAC21Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4191,7 +4192,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRStockBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4229,7 +4230,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRStockBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRStockBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRFixedStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4267,7 +4268,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRFixedStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRFixedStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRFixedStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4305,7 +4306,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRFixedStockTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRFixedStockTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPRSStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4343,7 +4344,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPRSStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPRSStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPRSStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4381,7 +4382,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPRSStockTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPRSStockTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRLongRangeStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4420,7 +4421,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRLongRangeStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRLongRangeStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACRPDWStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4458,7 +4459,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ACRPDWStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ACRPDWStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1014Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4493,7 +4494,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1014Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1014Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1014Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -4528,7 +4529,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M1014Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1014Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4BenelliStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4563,7 +4564,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4BenelliStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4BenelliStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Spas12Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4598,7 +4599,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Spas12Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Spas12Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4633,7 +4634,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249ParaStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4668,7 +4669,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249ParaStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249ParaStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249MilspecStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4706,7 +4707,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249MilspecStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249MilspecStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M249HK416Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -4744,7 +4745,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M249Hk416Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M249Hk416Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         UTGTriRailHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -4786,7 +4787,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("UTGTriRailHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("UTGTriRailHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5BMHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -4828,7 +4829,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5BMHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5BMHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MIMP5MHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -4866,7 +4867,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MIMP5MHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MIMP5MHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScorpionHandguardShort = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -4908,7 +4909,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScorpionEVO3A1HandguardShort").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScorpionEVO3A1HandguardShort").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScorpionHandguardLong = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -4947,42 +4948,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScorpionEVO3A1HandguardLong").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRMount(), "OSIPRmount.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(-0.6F, -0.3F, -0.2F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(1.3F, 1.3F, 1.3f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRMount) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScorpionEVO3A1HandguardLong").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MIMP5TRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5021,7 +4987,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MIMP5TRRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MIMP5TRRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MIMP5MRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5060,7 +5026,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MIMP5MRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MIMP5MRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ShotgunRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5096,7 +5062,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ShotgunRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ShotgunRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Kar98Krail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5132,7 +5098,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Kar98Krail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Kar98Krail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M60Rail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5168,7 +5134,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M60Rail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M60Rail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A1ScopeMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5208,7 +5174,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16A1ScopeMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16A1ScopeMount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FamasF1ScopeMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5248,7 +5214,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FamasF1ScopeMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FamasF1ScopeMount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A1PicatinnyRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -5288,7 +5254,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16A1PicatinnyRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16A1PicatinnyRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FamasF1PicatinnyRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -5330,7 +5296,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FamasF1PicatinnyRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FamasF1PicatinnyRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         NGSWRRail = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -5366,7 +5332,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("NGSWRRail").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("NGSWRRail").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RailRiser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -5403,7 +5369,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("RailRiser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("RailRiser").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1911Slide = new AttachmentBuilder<Weapon>()
@@ -5442,7 +5408,7 @@ public class Attachments {
                     }
                 })
                 .withName("M1911Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1911Body = new AttachmentBuilder<Weapon>()
@@ -5479,7 +5445,7 @@ public class Attachments {
                     }
                 })
                 .withName("M1911Body")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M191144MagSlide = new AttachmentBuilder<Weapon>()
@@ -5518,7 +5484,7 @@ public class Attachments {
                     }
                 })
                 .withName("M191144MagSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M191144MagBody = new AttachmentBuilder<Weapon>()
@@ -5555,7 +5521,7 @@ public class Attachments {
                     }
                 })
                 .withName("M191144MagBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M9A1Slide = new AttachmentBuilder<Weapon>()
@@ -5597,7 +5563,7 @@ public class Attachments {
                     }
                 })
                 .withName("M9A1Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M9A1Body = new AttachmentBuilder<Weapon>()
@@ -5637,7 +5603,7 @@ public class Attachments {
                     }
                 })
                 .withName("M9A1Body")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SamuraiEdgeSlide = new AttachmentBuilder<Weapon>()
@@ -5680,7 +5646,7 @@ public class Attachments {
                     }
                 })
                 .withName("SamuraiEdgeSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SamuraiEdgeBody = new AttachmentBuilder<Weapon>()
@@ -5721,7 +5687,7 @@ public class Attachments {
                     }
                 })
                 .withName("SamuraiEdgeBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SamuraiEdgeMount = new AttachmentBuilder<Weapon>()
@@ -5759,7 +5725,7 @@ public class Attachments {
                     }
                 })
                 .withName("SamuraiEdgeMount")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DesertEagleSlide = new AttachmentBuilder<Weapon>()
@@ -5795,7 +5761,7 @@ public class Attachments {
                     }
                 })
                 .withName("DesertEagleSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DesertEagleBody = new AttachmentBuilder<Weapon>()
@@ -5832,7 +5798,7 @@ public class Attachments {
                     }
                 })
                 .withName("DesertEagleBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DesertEagleLongBody = new AttachmentBuilder<Weapon>()
@@ -5869,7 +5835,7 @@ public class Attachments {
                     }
                 })
                 .withName("DesertEagleLongBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19Body = new AttachmentBuilder<Weapon>()
@@ -5909,7 +5875,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19Body")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
 //        Glock18CBody = new AttachmentBuilder<Weapon>()
@@ -5946,7 +5912,7 @@ public class Attachments {
 //                    }
 //                })
 //                .withName("Glock18CBody")
-//                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+//                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
 //                .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19XBody = new AttachmentBuilder<Weapon>()
@@ -5986,7 +5952,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19XBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19RazorbackBody = new AttachmentBuilder<Weapon>()
@@ -6026,7 +5992,7 @@ public class Attachments {
                     }
                 })
                 .withName("GlockRazorbackBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19Slide = new AttachmentBuilder<Weapon>()
@@ -6068,7 +6034,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock18CSlide = new AttachmentBuilder<Weapon>()
@@ -6110,7 +6076,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock18CSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock18CCNCSlide = new AttachmentBuilder<Weapon>()
@@ -6152,7 +6118,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock18CCNCslide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19XSlide = new AttachmentBuilder<Weapon>()
@@ -6194,7 +6160,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19XSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19RazorbackSlide = new AttachmentBuilder<Weapon>()
@@ -6236,7 +6202,7 @@ public class Attachments {
                     }
                 })
                 .withName("GlockRazorbackSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19RockSlideOlive = new AttachmentBuilder<Weapon>()
@@ -6278,7 +6244,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19RockslideOlive")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Glock19GhostPrecisionSlide = new AttachmentBuilder<Weapon>()
@@ -6320,7 +6286,7 @@ public class Attachments {
                     }
                 })
                 .withName("Glock19GhostPrecisionSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2Body = new AttachmentBuilder<Weapon>()
@@ -6360,7 +6326,7 @@ public class Attachments {
                     }
                 })
                 .withName("SCCYCPX2Body")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2BodyTan = new AttachmentBuilder<Weapon>()
@@ -6400,7 +6366,7 @@ public class Attachments {
                     }
                 })
                 .withName("SCCYCPX2BodyTan")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2GripTape = new AttachmentBuilder<Weapon>()
@@ -6441,7 +6407,7 @@ public class Attachments {
                     }
                 })
                 .withName("SCCYCPX2GripTape")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2Slide = new AttachmentBuilder<Weapon>()
@@ -6483,7 +6449,7 @@ public class Attachments {
                     }
                 })
                 .withName("SCCYCPX2Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2BSlide = new AttachmentBuilder<Weapon>()
@@ -6525,7 +6491,7 @@ public class Attachments {
                     }
                 })
                 .withName("SCCYCPX2BSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P226Slide = new AttachmentBuilder<Weapon>()
@@ -6567,7 +6533,7 @@ public class Attachments {
                     }
                 })
                 .withName("P226Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FiveSevenSlide = new AttachmentBuilder<Weapon>()
@@ -6606,7 +6572,7 @@ public class Attachments {
                     }
                 })
                 .withName("FiveSevenSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MakarovBody = new AttachmentBuilder<Weapon>()
@@ -6646,7 +6612,7 @@ public class Attachments {
                     }
                 })
                 .withName("MakarovBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MakarovSlide = new AttachmentBuilder<Weapon>()
@@ -6688,7 +6654,7 @@ public class Attachments {
                     }
                 })
                 .withName("MakarovPMSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MakarovPBSlide = new AttachmentBuilder<Weapon>()
@@ -6730,7 +6696,7 @@ public class Attachments {
                     }
                 })
                 .withName("MakarovPBSlide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP443Slide = new AttachmentBuilder<Weapon>()
@@ -6770,7 +6736,7 @@ public class Attachments {
                     }
                 })
                 .withName("MP443Slide")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MakarovPBBody = new AttachmentBuilder<Weapon>()
@@ -6813,7 +6779,7 @@ public class Attachments {
                     }
                 })
                 .withName("MakarovPBBody")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAC10Body = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -6851,7 +6817,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MAC10Body").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MAC10Body").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAC10Action = new AttachmentBuilder<Weapon>()
@@ -6892,7 +6858,7 @@ public class Attachments {
                     }
                 })
                 .withName("MAC10Action")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5NavyHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -6930,7 +6896,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5NavyHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5NavyHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5A5HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -6968,7 +6934,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5A5HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5A5HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5SDHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7007,7 +6973,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5SDHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5SDHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5HOGUEGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -7045,7 +7011,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5HOGUEGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5HOGUEGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         GlockHOGUEGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -7080,7 +7046,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("GlockHogueGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("GlockHogueGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         GlockHOGUEGripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -7118,7 +7084,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("GlockHogueGripTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("GlockHogueGripTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         APSGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -7157,7 +7123,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("APSGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("APSGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         APSStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -7196,7 +7162,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("APSStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("APSStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MAC10Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -7234,7 +7200,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MAC10Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MAC10Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -7272,7 +7238,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5A3Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -7310,7 +7276,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5A3Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5A3Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5A4Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -7348,7 +7314,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5A4Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5A4Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP5MilspecStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -7392,7 +7358,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP5StockAdapter").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP5StockAdapter").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         LVOAVHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7434,7 +7400,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("LVOAVHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("LVOAVHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AR15HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7474,7 +7440,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AR15FN15Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AR15FN15Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M38HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7516,7 +7482,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M38HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M38HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416HandGuardBlackAndTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7558,7 +7524,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416HandGuardBlackAndTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416HandGuardBlackAndTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK417Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7597,7 +7563,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK417Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK417Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK417HandguardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7636,7 +7602,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK417HandguardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK417HandguardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk18HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7678,7 +7644,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk18HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk18HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Mk18HandGuardBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7720,7 +7686,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Mk18HandGuardBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Mk18HandGuardBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Block2SOCOMHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7763,7 +7729,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Block2SOCOMHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Block2SOCOMHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FSSTacLiteHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7805,7 +7771,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FSSTacLiteHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FSSTacLiteHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4MagpulHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7843,7 +7809,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4MagpulHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4MagpulHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4MagpulHandGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -7881,7 +7847,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4MagpulHandGuardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4MagpulHandGuardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -7920,7 +7886,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -7959,7 +7925,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         C8SFWReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -7995,7 +7961,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("C8SFWReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("C8SFWReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VLTORReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8034,7 +8000,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VLTORReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VLTORReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AR57Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8070,7 +8036,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AR57Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AR57Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK417Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8106,7 +8072,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK417Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK417Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK417ReceiverTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8142,7 +8108,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK417ReceiverTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK417ReceiverTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8181,7 +8147,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M110Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M110Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Z10Receiver = new AttachmentBuilder<Weapon>()
@@ -8219,7 +8185,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Z10Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Z10Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Beowulf50CalReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8259,7 +8225,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Beowulf50CalReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Beowulf50CalReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         S710Receiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8294,7 +8260,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("S710Receiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("S710Receiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         CZ805BrenReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8332,7 +8298,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("CZ805BrenReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("CZ805BrenReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8368,7 +8334,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerReceiverBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8404,7 +8370,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerReceiverBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerReceiverBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerKnightsReceiver = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8440,7 +8406,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerKnightsReceiver").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerKnightsReceiver").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerKnightsReceiverBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8476,7 +8442,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerKnightsReceiverBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerKnightsReceiverBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Placeholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -8498,7 +8464,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Placeholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Placeholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FamasPlaceholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8520,7 +8486,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FamasPlaceholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FamasPlaceholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         APC9Placeholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8542,7 +8508,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("APC9Placeholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("APC9Placeholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         P90Placeholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -8564,7 +8530,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("P90Placeholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("P90Placeholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         PistolPlaceholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8586,7 +8552,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("PistolPlaceholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("PistolPlaceholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         GripPlaceholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -8608,7 +8574,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("GripPlaceholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("GripPlaceholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M40A6GripPlaceholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -8630,7 +8596,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M40A6GripPlaceholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M40A6GripPlaceholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         LaserPlaceholder = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RECEIVER)
@@ -8652,7 +8618,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("LaserPlaceholder").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("LaserPlaceholder").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8690,7 +8656,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AR57Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8729,7 +8695,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AR57Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AR57Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         NTW20HandguardRAIL = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8765,7 +8731,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("NTW20Guard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("NTW20Guard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8803,7 +8769,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8841,7 +8807,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16A1Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16A1Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4CarbineHandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8883,7 +8849,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4CarbineHandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4CarbineHandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A4HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8925,7 +8891,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16A4HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16A4HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -8967,7 +8933,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M110Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M110Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Z10Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9007,7 +8973,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Z10Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Z10Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AR10SuperSASSHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9049,46 +9015,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AR10SuperSASSHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        C8SFWHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.C8SFWHandguard(), "C8SFWHandguard.png")
-                .withModel(new com.paneedah.mw.models.AKRail(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail2(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail3(), "c8sfw_gun.png")
-                .withModel(new com.paneedah.mw.models.AKRail5(), "c8sfw_gun.png")
-                .withInventoryModelPositioning((model, s) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(-0.6F, 0.3F, -1.3F);
-                        GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-190F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.9F, 0.9F, 0.9f);
-                    } else {
-                        GL11.glScalef(0f, 0f, 0f);
-                    }
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.7F, 0.7F, 0.7F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.C8SFWHandguard) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("C8SFWHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AR10SuperSASSHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         S710Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9123,9 +9050,8 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("S710Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("S710Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
         SIGMCXHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
                 .withModel(new com.paneedah.mw.models.SIGMCXHandguard(), "sigmcx.png")
@@ -9164,7 +9090,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SIGMCXHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SIGMCXHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SIGMCXHandguardShort = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9202,7 +9128,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SIGMCXHandguardShort").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SIGMCXHandguardShort").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MPXHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9241,7 +9167,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MPXHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MPXHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MPXHandguardExtended = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9280,7 +9206,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MPXHandguardExtended").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MPXHandguardExtended").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MPXHandguardRailed = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9319,7 +9245,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MPXHandguardRailed").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MPXHandguardRailed").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         K2C1Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -9359,7 +9285,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("K2C1Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("K2C1Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HeraArmsGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9397,7 +9323,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HeraArmsGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HeraArmsGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9435,7 +9361,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4GripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9473,7 +9399,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4GripTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4GripTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SOCOM_Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9508,7 +9434,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SOCOM_Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SOCOM_Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4GripGray = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9546,7 +9472,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4GripGray").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4GripGray").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9584,7 +9510,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416GripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9622,7 +9548,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416GripTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416GripTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9660,7 +9586,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M110Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M110Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         S710TricunGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9695,7 +9621,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("S710TricunGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("S710TricunGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         K2C1Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9733,7 +9659,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("K2C1Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("K2C1Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK47Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9772,7 +9698,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK47Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK47Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK101Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9810,7 +9736,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK101Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK101Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKErgoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9848,7 +9774,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKErgoGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKErgoGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKErgoGripGreen = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9886,7 +9812,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKErgoGripGreen").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKErgoGripGreen").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKErgoGripTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9924,7 +9850,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKErgoGripTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKErgoGripTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -9962,7 +9888,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12ErgoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -10000,7 +9926,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12ErgoGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12ErgoGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10036,7 +9962,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HoneyBadgerStockBlack = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10072,7 +9998,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HoneyBadgerStockBlack").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerStockBlack").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         G3Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10112,7 +10038,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("G3Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("G3Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10152,7 +10078,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP7Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP7Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7MilSpecStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10197,7 +10123,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MP7MilSpecStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MP7MilSpecStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK47Stock = new AttachmentBuilder<Weapon>()
@@ -10241,7 +10167,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK47stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK47stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DragunovGripStock = new AttachmentBuilder<Weapon>()
@@ -10285,7 +10211,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DragunovGripStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DragunovGripStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Dragunov98Stock = new AttachmentBuilder<Weapon>()
@@ -10328,7 +10254,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Dragunov98Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Dragunov98Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RPKStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10363,7 +10289,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("RPKstock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("RPKstock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK101Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10401,7 +10327,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK101Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK101Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK74Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10439,7 +10365,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK74Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK74Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10477,7 +10403,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12ZenitcoStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10515,7 +10441,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12ZenitcoStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12ZenitcoStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10554,7 +10480,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSVintorezStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSVintorezStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ASValStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10593,7 +10519,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ASValStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ASValStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezMilspecStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10637,7 +10563,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSVintorezMilspecStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSVintorezMilspecStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         CollapsableMOEStock = new AttachmentBuilder<Weapon>()
@@ -10677,7 +10603,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("CollapsableMOEStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("CollapsableMOEStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         CollapsableMOEStockGreen = new AttachmentBuilder<Weapon>()
@@ -10717,7 +10643,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("CollapsableMOEStockGreen").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("CollapsableMOEStockGreen").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MagpulCTRStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10756,7 +10682,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MagpulCTRStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MagpulCTRStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MagpulCTRStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10795,7 +10721,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MagpulCTRStockTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MagpulCTRStockTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MilSpecStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10834,7 +10760,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MilSpecStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MilSpecStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         CZ805BrenStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10873,7 +10799,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("CZ805BrenStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("CZ805BrenStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SIGMCXStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10912,7 +10838,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SIGMCXStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SIGMCXStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         C8Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10948,7 +10874,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("C8Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("C8Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MilSpecStockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -10987,7 +10913,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MilSpecStockTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MilSpecStockTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HeraArmsStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11026,7 +10952,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HeraArmsStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HeraArmsStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11065,7 +10991,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SOCOM_Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11101,45 +11027,8 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SOCOM_Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SOCOM_Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        M4AsiimovStock = new AttachmentBuilder<Weapon>()
-        		.withCategory(AttachmentCategory.STOCK)
-//              .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-              .withRenderablePart()
-              .withModel(new com.paneedah.mw.models.M4AsiimovStock(), "m4a1asiimovstock.png")
-              .withInventoryModelPositioning((model, s) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(-0.6F, 0F, 1.4F);
-                      GL11.glRotatef(10F, 1f, 0f, 0f);
-                      GL11.glRotatef(-190F, 0f, 1f, 0f);
-                      GL11.glRotatef(0F, 0f, 0f, 1f);
-                      GL11.glScaled(0.9F, 0.9F, 0.9f);
-                  } else {
-                      GL11.glScalef(0f, 0f, 0f);
-                  }
-              }).withFirstPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                      GL11.glRotatef(30F, 0f, 1f, 0f);
-                      GL11.glScaled(0.7F, 0.7F, 0.7F);
-                  } else {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-
-              }).withThirdPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.M4AsiimovStock) {
-                      GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                      GL11.glRotatef(-50F, 0f, 1f, 0f);
-                      GL11.glRotatef(80F, 1f, 0f, 0f);
-                      GL11.glScaled(0.5F, 0.5F, 0.5F);
-                  } else {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              })
-              .withName("M4AsiimovStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-              .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
                 .withCreativeTab(ModernWarfareMod.AttachmentsTab)
@@ -11176,7 +11065,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416StockTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11215,7 +11104,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416StockTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416StockTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M110Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11254,7 +11143,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M110Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M110Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         PRSPrecisionStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -11293,7 +11182,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ARPRSPrecisionStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ARPRSPrecisionStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK47HandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11332,7 +11221,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK47HandleGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK47HandleGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DragunovHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11373,7 +11262,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DragunovHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DragunovHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Dragunov98Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11412,7 +11301,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Dragunov98Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Dragunov98Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK101HandGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11450,7 +11339,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK101HandGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK101HandGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK74Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11488,7 +11377,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK74Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK74Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKMagpulHandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11526,7 +11415,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKMagpulHandleGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKMagpulHandleGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKMagpulHandleGuardTan = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11564,7 +11453,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKMagpulHandleGuardTan").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKMagpulHandleGuardTan").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MLOKHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11604,7 +11493,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MLOKHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MLOKHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MLOKExtendedHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11644,7 +11533,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MLOKExtendedHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MLOKExtendedHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK15HandleGuard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11683,7 +11572,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK15HandleGuard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK15HandleGuard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12kalHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11722,7 +11611,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12kalHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12kalHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RPK16Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11761,7 +11650,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("RPK16handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("RPK16handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11799,7 +11688,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12BHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11837,7 +11726,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12BHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12BHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KBP9A91Handguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11875,7 +11764,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KBP9A91Handguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KBP9A91Handguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KBP9A91CompactHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11913,7 +11802,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KBP9A91CompactHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KBP9A91CompactHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KBP9A91KulaTacHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11951,7 +11840,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KBP9A91KulaTacHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KBP9A91KulaTacHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -11990,7 +11879,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSVintorezHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSVintorezHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ASValHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -12028,7 +11917,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ASValHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ASValHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezTriRailMount = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12066,7 +11955,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSVintorezTriRailMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSVintorezTriRailMount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK47DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12104,7 +11993,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK47Dustcover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK47Dustcover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         DragunovDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12142,7 +12031,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("DragunovDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DragunovDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Dragunov98DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12180,7 +12069,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Dragunov98DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Dragunov98DustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AKMDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12218,7 +12107,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKMDustcover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKMDustcover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK101DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12256,7 +12145,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK101DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK101DustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VeprDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12295,7 +12184,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VeprDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VeprDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK15DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12334,7 +12223,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK15DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK15DustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12372,7 +12261,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12DustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12BDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12410,7 +12299,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AK12BDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AK12BDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSVintorezDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12448,7 +12337,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSVintorezDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSVintorezDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VSSMDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12486,7 +12375,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VSSMDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VSSMDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALDustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12521,7 +12410,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FNFALDustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALDustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SA58DustCover = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -12557,7 +12446,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("SA58DustCover").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("SA58DustCover").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.BACKGRIP)
@@ -12592,7 +12481,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FNFALGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -12627,7 +12516,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FNFALStock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALStock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -12662,7 +12551,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })	
-                .withName("FNFALHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALPARAHandguard = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GUARD)
@@ -12698,7 +12587,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })	
-                .withName("FNFALPARAHandguard").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALPARAHandguard").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M4FrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12740,7 +12629,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M4FrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M4FrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M60FrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12775,7 +12664,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M60FrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M60FrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M38FrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12815,7 +12704,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M38FrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M38FrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416FrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12863,7 +12752,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416FrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416FrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MBUSFrontSight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -12912,7 +12801,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MBUSFrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MBUSFrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         LeupoldScope = new ItemScope.Builder()
@@ -12972,7 +12861,7 @@ public class Attachments {
                     }
                 })
                 .withName("Leupold")
-                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+                .withModId(ModReference.MWC_ID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         PSO1 = new ItemScope.Builder()
         		.withSniperReticle(Reticles.RETICLE_PSO1)
@@ -13035,7 +12924,7 @@ public class Attachments {
                     }
                 })
                 .withName("PSO1")
-                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
+                .withModId(ModReference.MWC_ID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         OKP7 = new ItemScope.Builder()
         		.withHolographicReticles(Reticles.OKP)
@@ -13090,7 +12979,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("okp7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("okp7").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FMG9Sight = new ItemScope.Builder()
@@ -13140,7 +13029,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("fmg9carryhandle").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("fmg9carryhandle").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Reflex = new ItemScope.Builder()
@@ -13209,7 +13098,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Reflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Reflex").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         BijiaReflex = new ItemScope.Builder()
@@ -13277,7 +13166,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("BijiaReflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("BijiaReflex").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MicroReflex = new ItemScope.Builder()
@@ -13352,7 +13241,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MicroReflex").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MicroReflex").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ACOG = new ItemScope.Builder()
@@ -13437,7 +13326,7 @@ public class Attachments {
                 })
                 .withName("Acog")
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -13508,7 +13397,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Specter").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Specter").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -13579,7 +13468,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Holographic2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Holographic2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -13650,7 +13539,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HolographicAlt").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HolographicAlt").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         EotechHybrid2 = new ItemScope.Builder()
@@ -13728,7 +13617,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("EotechHybrid2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("EotechHybrid2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VortexRedux = new ItemScope.Builder()
@@ -13797,7 +13686,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("VortexSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VortexSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MicroT1 = new ItemScope.Builder()
@@ -13867,7 +13756,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MicroT1").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MicroT1").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AimpointCompM2 = new ItemScope.Builder()
@@ -13937,7 +13826,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AimpointCompM2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AimpointCompM2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -14008,7 +13897,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AimpointCompM5").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AimpointCompM5").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         RMR = new ItemScope.Builder()
@@ -14072,7 +13961,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("RMRsight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("RMRsight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Kobra = new ItemScope.Builder()
@@ -14142,7 +14031,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Kobra").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Kobra").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KobraGen3 = new ItemScope.Builder()
@@ -14212,7 +14101,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KobraGen3").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KobraGen3").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         KobraMount = new ItemScope.Builder()
@@ -14268,7 +14157,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("KobraMount").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("KobraMount").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         HP = new ItemScope.Builder()
@@ -14321,7 +14210,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HPScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HPScope").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         LeupoldRailScope = new ItemScope.Builder()
@@ -14391,58 +14280,7 @@ public class Attachments {
                 })
                 .withName("LeupoldRailScope")
                 .withRotationPoint(-0.12079999459981924, -1.4240000168085098, -2.392400065904859)
-                .withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
-        
-        AX50Scope = new ItemScope.Builder()
-//              .withNightVision()
-              .withOpticalZoom()
-              .withZoomRange(0.22f, 0.02f)
-              .withViewfinderPositioning((p, s) -> {
-                  GL11.glScalef(1.85f, 1.85f, 1.85f);
-                  GL11.glTranslatef(-0.0765f, 0.565f, 0.7f);
-              })
-              .withCreativeTab(ModernWarfareMod.AttachmentsTab).withCrosshair("HP")
-              .withModel(new com.paneedah.mw.models.AX50Scope(), "gun.png")
-              .withModel(new com.paneedah.mw.models.JPUreticle(), "black.png")
-              .withFirstPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(0.1F, -0.8F, 0.4F);
-                      GL11.glRotatef(30F, 0f, 1f, 0f);
-                      GL11.glScaled(0.3F, 0.3F, 0.3F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-
-              }).withThirdPersonModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                      GL11.glRotatef(-50F, 0f, 1f, 0f);
-                      GL11.glRotatef(80F, 1f, 0f, 0f);
-                      GL11.glScaled(0.2F, 0.2F, 0.2F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              }).withInventoryModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(-0.6F, -0.6F, 0F);
-                      GL11.glRotatef(10F, 1f, 0f, 0f);
-                      GL11.glRotatef(-190F, 0f, 1f, 0f);
-                      GL11.glRotatef(0F, 0f, 0f, 1f);
-                      GL11.glScaled(0.45F, 0.45F, 0.45f);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              }).withEntityModelPositioning((model, itemStack) -> {
-                  if (model instanceof com.paneedah.mw.models.AX50Scope) {
-                      GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                      GL11.glRotatef(90F, 0f, 0f, 1f);
-                      GL11.glScaled(0.4F, 0.4F, 0.4F);
-                  } else if (model instanceof com.paneedah.mw.models.JPUreticle) {
-                      GL11.glScaled(0F, 0F, 0F);
-                  }
-              })
-              .withName("AX50Scope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-              .build(ModernWarfareMod.MOD_CONTEXT);
+                .withModId(ModReference.MWC_ID).withTextureName("Dummy.png").build(ModernWarfareMod.MOD_CONTEXT);
         
         NightRaider = new ItemScope.Builder()
                 .withNightVision()
@@ -14508,7 +14346,7 @@ public class Attachments {
                     }
                 })
                 .withName("NightRaiderScope")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -14562,7 +14400,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("m2a1_sight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("m2a1_sight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         F2000Scope = new ItemScope.Builder()
@@ -14623,7 +14461,7 @@ public class Attachments {
                     }
                 })
                 .withName("F2000Scope")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -14662,7 +14500,7 @@ public class Attachments {
                     } 
                 })
                 .withName("M202scope")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -14725,108 +14563,8 @@ public class Attachments {
                     }
                 })
                 .withName("AUGscope")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRMiniScope = new ItemScope.Builder()
-                .withOpticalZoom()
-                .withZoomRange(0.22f, 0.2f)
-                .withViewfinderPositioning((p, s) -> {
-                    GL11.glScalef(1.35f, 1.35f, 1.35f);
-                    GL11.glTranslatef(-0.385f, 1.215f, 0.2f);
-//                    GL11.glScalef(0f, 0f, 0f);
-                })
-                .withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withRenderablePart()
-                .withModel(new com.paneedah.mw.models.OSIPRminiscope(), "gun.png")
-                .withModel(new FALIron(), "gun.png")
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(-0.6F, -0.9F, 0F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(0.8F, 0.8F, 0.8f);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRminiscope) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.paneedah.mw.models.FALIron) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRMiniScope").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRSight = new ItemScope.Builder()
-                .withCategory(AttachmentCategory.SCOPE)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withRenderablePart()
-                .withModel(new com.paneedah.mw.models.OSIPRSight(), "OSIPRMount.png")
-                .withModel(new OSIPRscopereticle(), "OSIPRscopereticle.png")
-                .withRequiredAttachments(OSIPRMount)
-                .withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(0.1F, -0.8F, 0.2F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(-0.8F, -0.5F, 0.8F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(-0.6F, -0.1F, -0.5F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(2F, 2F, 2f);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRSight) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    } else if (model instanceof com.paneedah.mw.models.OSIPRscopereticle) {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-                })
-                .withName("OSIPRSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Silencer556x45 = new AttachmentBuilder<Weapon>()
@@ -14867,7 +14605,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer556x45").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer556x45").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer545x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -14907,7 +14645,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer545x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer545x39").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -14947,7 +14685,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer762x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer762x39").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M32Barrel = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.FRONTSIGHT)
@@ -14983,7 +14721,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("M32Barrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15020,7 +14758,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870Pump")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15057,7 +14795,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870MagpulPump")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15094,7 +14832,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870PoliceMagnumPump")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15140,7 +14878,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870FABDefensePump")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15176,7 +14914,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870Stock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15212,7 +14950,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870PoliceMagnumStock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15261,7 +14999,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870MilSpecStock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15310,7 +15048,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870HK416StockStock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15346,7 +15084,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Remington870SawedGrip")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15391,7 +15129,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870Barrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15436,7 +15174,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870PoliceMagnumBarrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15481,7 +15219,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 }).withName("Remington870SawedBarrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15517,7 +15255,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KS23Stock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15553,7 +15291,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KS23RaptorGrip")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15589,7 +15327,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KS23MStock")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15626,7 +15364,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KS23Barrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15663,7 +15401,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KS23ExtendedBarrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15709,7 +15447,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("RPKbarrel")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15747,7 +15485,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("AKIron")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15785,7 +15523,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("AK12Iron")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15827,7 +15565,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("SilencerPBS")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
@@ -15871,7 +15609,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Silencer9mm")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15913,7 +15651,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("SamuraiEdgeSuppressor")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15954,7 +15692,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("Silencer9x39mm")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -15995,7 +15733,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 }).withName("KBP9A91Suppressor")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -16036,7 +15774,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer45ACP").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("Silencer45ACP").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SilencerEABH = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16071,7 +15809,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("silencer_eabh").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("silencer_eabh").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x54 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16111,7 +15849,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer762x54").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer762x54").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer762x51 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16151,7 +15889,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer762x51").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer762x51").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer50BMG = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16191,7 +15929,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer50BMG").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer50BMG").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
 
@@ -16232,7 +15970,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer556x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer556x39").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
 
@@ -16283,7 +16021,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("AKMIron").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AKMIron").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         TritiumRearSights = new AttachmentBuilder<Weapon>()
@@ -16330,7 +16068,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("TritiumRearSights").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("TritiumRearSights").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MBUSRearSights = new AttachmentBuilder<Weapon>()
@@ -16378,7 +16116,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("MBUSRearSights").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("MBUSRearSights").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         HK416RearSights = new AttachmentBuilder<Weapon>()
@@ -16425,7 +16163,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("HK416RearSights").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HK416RearSights").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         FNFALRearSights = new AttachmentBuilder<Weapon>()
@@ -16461,7 +16199,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("FNFALRearSights").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("FNFALRearSights").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M16A1RearSights = new AttachmentBuilder<Weapon>()
@@ -16496,7 +16234,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("M16A1RearSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M16A1RearSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         K2C1RearSights = new AttachmentBuilder<Weapon>()
@@ -16534,7 +16272,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("K2C1RearSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("K2C1RearSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScorpionRearSight = new AttachmentBuilder<Weapon>()
@@ -16570,7 +16308,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScorpionRearSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScorpionRearSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         ScorpionFrontSight = new AttachmentBuilder<Weapon>()
@@ -16606,7 +16344,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("ScorpionFrontSight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("ScorpionFrontSight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7IronSights = new AttachmentBuilder<Weapon>()
@@ -16645,7 +16383,7 @@ public class Attachments {
                     }
                 })
                 .withName("MP7IronSights")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         MP7IronSightsStanding = new AttachmentBuilder<Weapon>()
@@ -16684,7 +16422,7 @@ public class Attachments {
                     }
                 })
                 .withName("MP7IronSightsStanding")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Kar98Ksight = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.RAILING)
@@ -16719,7 +16457,7 @@ public class Attachments {
                         GL11.glScaled(0F, 0F, 0F);
                     }
                 })
-                .withName("Kar98Ksight").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Kar98Ksight").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK15ironsight = new AttachmentBuilder<Weapon>()
@@ -16758,7 +16496,7 @@ public class Attachments {
                     }
                 })
                 .withName("AK15ironsight")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AK12ironsight = new AttachmentBuilder<Weapon>()
@@ -16797,7 +16535,7 @@ public class Attachments {
                     }
                 })
                 .withName("AK12ironsight")
-                .withRenderablePart().withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withRenderablePart().withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         SilencerMP7 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16836,7 +16574,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("SilencerMP7").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("SilencerMP7").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer357 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16871,7 +16609,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer357").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("Silencer357").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Silencer57x38 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -16910,7 +16648,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer57x38").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("Silencer57x38").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
 
@@ -16950,7 +16688,7 @@ public class Attachments {
                         GL11.glRotatef(90F, 0f, 0f, 1f);
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
-                }).withName("Silencer12Gauge").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                }).withName("Silencer12Gauge").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
 
@@ -16991,7 +16729,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer300AACBlackout").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer300AACBlackout").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         HoneyBadgerSilencer = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -17026,7 +16764,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("HoneyBadgerSilencer").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("HoneyBadgerSilencer").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         Silencer65x39 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.SILENCER)
@@ -17066,7 +16804,7 @@ public class Attachments {
                         GL11.glScaled(0.4F, 0.4F, 0.4F);
                     }
                 })
-                .withName("Silencer65x39").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Silencer65x39").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Laser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
@@ -17133,7 +16871,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("Laser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Laser").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Laser2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
@@ -17190,7 +16928,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("Laser2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Laser2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         SCCYCPX2Laser = new AttachmentBuilder<Weapon>()
@@ -17241,7 +16979,7 @@ public class Attachments {
                 })
                 .withRenderablePart()
                 .withName("SCCYCPX2Laser")
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
@@ -17290,56 +17028,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("DanWessonLaser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
-                .build(ModernWarfareMod.MOD_CONTEXT);
-        
-        OSIPRLaser = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.LASER)
-                .withCreativeTab(ModernWarfareMod.AttachmentsTab)
-                .withModel(new com.paneedah.mw.models.OSIPRLaser(), "OSIPRMount.png")
-                .withRequiredAttachments(OSIPRMount)
-                .withPostRender(new LaserBeamRenderer((p, s) -> {
-                    GL11.glTranslatef(-0.5F, 0.95F, 0.5F);
-                    // GL11.glRotatef(30F, 0f, 1f, 0f);
-                    // GL11.glScaled(0.6F, 0.6F, 0.6F);
-                })).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.5F, -1.3F, -0.1F);
-                        GL11.glRotatef(30F, 0f, 1f, 0f);
-                        GL11.glScaled(0.6F, 0.6F, 0.6F);
-                    }
-
-                }).withFirstPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-
-                    } else {
-                        GL11.glScaled(0F, 0F, 0F);
-                    }
-
-                }).withThirdPersonModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(-0.7F, -0.5F, 0.6F);
-                        GL11.glRotatef(-50F, 0f, 1f, 0f);
-                        GL11.glRotatef(80F, 1f, 0f, 0f);
-                        GL11.glScaled(0.5F, 0.5F, 0.5F);
-                    }
-                }).withInventoryModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.6F, 1.3F, -4.6F);
-                        // GL11.glRotatef(10F, 1f, 0f, 0f);
-                        GL11.glRotatef(-180F, 0f, 1f, 0f);
-                        GL11.glRotatef(0F, 0f, 0f, 1f);
-                        GL11.glScaled(3F, 3F, 3f);
-
-                    }
-                }).withEntityModelPositioning((model, itemStack) -> {
-                    if (model instanceof com.paneedah.mw.models.OSIPRLaser) {
-                        GL11.glTranslatef(0.1F, 0.2F, 0.4F);
-                        GL11.glRotatef(90F, 0f, 0f, 1f);
-                        GL11.glScaled(0.4F, 0.4F, 0.4F);
-                    }
-                })
-                .withRenderablePart()
-                .withName("OSIPRLaser").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("DanWessonLaser").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1928Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17377,7 +17066,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("M1928Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1928Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         M1A1Grip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17415,7 +17104,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("M1A1Grip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("M1A1Grip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Grip2 = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17474,7 +17163,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("Grip2").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Grip2").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         JunoGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17523,7 +17212,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("JunoGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("JunoGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         GlockStock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -17564,7 +17253,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("Glock18Cstock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Glock18Cstock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         VP70Stock = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.STOCK)
@@ -17606,7 +17295,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("VP70Stock").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VP70Stock").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         AngledGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17664,7 +17353,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("AngledGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AngledGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         StubbyGrip = new AttachmentBuilder<Weapon>()
@@ -17731,7 +17420,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("StubbyGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("StubbyGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         VGrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17792,7 +17481,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("VGrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("VGrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
         Bipod = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17846,7 +17535,7 @@ public class Attachments {
                         GL11.glScaled(0.6F, 0.6F, 0.6F);
                     }
                 })
-                .withName("Bipod").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("Bipod").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         AUGgrip = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17886,7 +17575,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("AUGgrip").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("AUGgrip").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
         
         USPMatchCompensator = new AttachmentBuilder<Weapon>().withCategory(AttachmentCategory.GRIP)
@@ -17926,7 +17615,7 @@ public class Attachments {
                     }
                 })
                 .withRenderablePart()
-                .withName("USPMatchCompensator").withModId(ModernWarfareMod.MODID).withTextureName("Dummy.png")
+                .withName("USPMatchCompensator").withModId(ModReference.MWC_ID).withTextureName("Dummy.png")
                 .build(ModernWarfareMod.MOD_CONTEXT);
 
     }

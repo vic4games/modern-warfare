@@ -3,9 +3,10 @@ package com.paneedah.mw.items.guns;
 
 // IMPORT LIST START
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -25,7 +26,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-                .withModId(ModernWarfareMod.MODID) // MOD ID
+                .withModId(ModReference.MWC_ID) // MOD ID
                 .withName("aac_honey_badger") // Name of the item and model
                 .withFireRate(0.80f) // Fire rate in rounds per minute
                 .withRecoil(3f) // Recoil in degrees
@@ -587,7 +588,7 @@ public class AACHoneyBadgerFactory implements GunFactory {
                 // BUILDS THE GUN
                 .withTextureNames("aachoneybadger")
                 .withRenderer(new WeaponRenderer.Builder()
-                        .withModId(ModernWarfareMod.MODID)
+                        .withModId(ModReference.MWC_ID)
                         .withModel(new AACHoneyBadger())
                         .withEntityPositioning(itemStack -> {
                             GL11.glScaled(0.5F, 0.5F, 0.5F);

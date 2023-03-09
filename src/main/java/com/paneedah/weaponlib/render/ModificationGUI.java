@@ -17,7 +17,7 @@ import org.lwjgl.input.Mouse;
 
 import java.util.ArrayList;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 /**
@@ -629,7 +629,7 @@ public class ModificationGUI {
 				30, 205, 1.0, ColorPalette.WHITE);
 		
 		GUIRenderHelper.drawScaledString(
-				TextFormatting.GOLD + translate(weapon.getUnlocalizedName()),
+				TextFormatting.GOLD + translate(weapon.getTranslationKey()),
 				30, 30, 1.0, ColorPalette.WHITE);
 		GUIRenderHelper.drawScaledString(
 				"Damage :: " + TextFormatting.GOLD + weapon.getSpawnEntityDamage(),
@@ -858,14 +858,14 @@ public class ModificationGUI {
 			tooltip.color = TOOLTIP_COL_NORMAL;
 			requiresTooltip = true;
 			tooltip.addLine(
-					new TextComponentTranslation(primaryAttachment.getUnlocalizedName() + ".name").getFormattedText());
+					new TextComponentTranslation(primaryAttachment.getTranslationKey() + ".name").getFormattedText());
 
 			if (lockOutState) {
 				ArrayList<ItemAttachment<Weapon>> requirees = WeaponAttachmentAspect.whatRequiredFor(primaryAttachment,
 						pwi);
 				tooltip.addLine(TextFormatting.BOLD + "Is Required By:");
 				for (ItemAttachment<Weapon> req : requirees)
-					tooltip.addBulletPoint(translate(req.getUnlocalizedName()));
+					tooltip.addBulletPoint(translate(req.getTranslationKey()));
 			}
 
 			if (isInClick) {
@@ -1019,10 +1019,10 @@ public class ModificationGUI {
 
 						
 						tooltip.color = TOOLTIP_COL_ERROR;
-						tooltip.addBulletPoint(translate(flag.getAttachment().getUnlocalizedName()));
+						tooltip.addBulletPoint(translate(flag.getAttachment().getTranslationKey()));
 						tooltip.addLine(TextFormatting.BOLD + "Required Mods: ");
 						for (ItemAttachment<Weapon> required : flag.getRequiredParts()) {
-							tooltip.addBulletPoint(translate(required.getUnlocalizedName()));
+							tooltip.addBulletPoint(translate(required.getTranslationKey()));
 						}
 					}
 					// drawTexturedRect(i+11, 150, 0, 300, 89, 89, 512, 512);
@@ -1040,7 +1040,7 @@ public class ModificationGUI {
 						tooltip.color = TOOLTIP_COL_NORMAL;
 						requiresTooltip = true;
 						tooltip.addLine(
-								new TextComponentTranslation(flag.getAttachment().getUnlocalizedName() + ".name")
+								new TextComponentTranslation(flag.getAttachment().getTranslationKey() + ".name")
 										.getFormattedText());
 
 						if (isInClick) {

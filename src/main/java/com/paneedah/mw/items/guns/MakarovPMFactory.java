@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.Magazines;
 import com.paneedah.weaponlib.AttachmentCategory;
@@ -24,7 +25,7 @@ public class MakarovPMFactory implements GunFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("makarov_pm")
         .withFireRate(0.3f)
         .withRecoil(2f)
@@ -137,7 +138,7 @@ public class MakarovPMFactory implements GunFactory {
         })
         .withTextureNames("makarovpm")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new Glock18C())
             .withActionPiece(
             		Attachments.MakarovSlide)

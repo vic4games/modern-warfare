@@ -34,8 +34,7 @@ public class CompatibleRayTracing {
 		}
 	}
 	
-    public static CompatibleRayTraceResult rayTraceBlocks(World world, CompatibleVec3 cvec31, CompatibleVec3 cvec32,
-            BiPredicate<Block, CompatibleBlockState> isCollidable) {
+    public static CompatibleRayTraceResult rayTraceBlocks(World world, CompatibleVec3 cvec31, CompatibleVec3 cvec32, BiPredicate<Block, CompatibleBlockState> isCollidable) {
     	
     	CompatibleRayTraceResult crtr = new CompatibleRayTraceResult();
     	

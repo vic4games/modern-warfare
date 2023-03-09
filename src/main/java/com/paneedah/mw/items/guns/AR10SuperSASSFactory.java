@@ -1,9 +1,10 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
 import com.paneedah.mw.ores.Ores;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -22,7 +23,7 @@ public class AR10SuperSASSFactory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
-		.withModId(ModernWarfareMod.MODID)
+		.withModId(ModReference.MWC_ID)
 		.withName("ar10_super_sass")
 		//.withAmmoCapacity(30)
 		.withFireRate(0.8f)
@@ -619,7 +620,7 @@ public class AR10SuperSASSFactory implements GunFactory {
 		})
 		.withTextureNames("m16a4")
 		.withRenderer(new WeaponRenderer.Builder()
-			.withModId(ModernWarfareMod.MODID)
+			.withModId(ModReference.MWC_ID)
 			.withModel(new M16A4())
 			.withEntityPositioning(itemStack -> {
 				GL11.glScaled(0.5F, 0.5F, 0.5F);

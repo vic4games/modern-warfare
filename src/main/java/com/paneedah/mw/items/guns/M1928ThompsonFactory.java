@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.*;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.weapons.Magazines;
@@ -18,7 +19,7 @@ public class M1928ThompsonFactory {
 
     public Item createGun(CommonProxy commonProxy) {
         return new Weapon.Builder()
-        .withModId(ModernWarfareMod.MODID)
+        .withModId(ModReference.MWC_ID)
         .withName("m1928_thompson")
 //        .withAmmoCapacity(50)
         .withFireRate(0.75f)
@@ -122,7 +123,7 @@ public class M1928ThompsonFactory {
         })
         .withTextureNames("m1a1thompson")
         .withRenderer(new WeaponRenderer.Builder()
-            .withModId(ModernWarfareMod.MODID)
+            .withModId(ModReference.MWC_ID)
             .withModel(new M1928Thompson())
             //.withTextureName("AK47")
             //.withWeaponProximity(0.99F)

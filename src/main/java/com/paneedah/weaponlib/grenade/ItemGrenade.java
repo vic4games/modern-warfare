@@ -317,7 +317,7 @@ PlayerItemInstanceFactory<PlayerGrenadeInstance, GrenadeState>, AttachmentContai
         public ItemGrenade build(ModContext modContext) {
 
             ItemGrenade grenade = new ItemGrenade(this, modContext);
-            grenade.setUnlocalizedName(modId + "_" + name);
+            grenade.setTranslationKey(modId + "_" + name);
             grenade.setCreativeTab(tab);
             grenade.maxStackSize = maxStackSize;
 

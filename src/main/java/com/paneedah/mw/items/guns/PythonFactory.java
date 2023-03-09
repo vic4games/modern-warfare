@@ -1,8 +1,9 @@
 package com.paneedah.mw.items.guns;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
 import com.paneedah.mw.models.Python;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.mw.weapons.Attachments;
 import com.paneedah.mw.weapons.AuxiliaryAttachments;
 import com.paneedah.mw.wearables.Bullets;
@@ -18,7 +19,7 @@ public class PythonFactory implements GunFactory {
 
 	public Item createGun(CommonProxy commonProxy) {
 		return new Weapon.Builder()
-		.withModId(ModernWarfareMod.MODID)
+		.withModId(ModReference.MWC_ID)
 		.withName("Python")
 		.withAmmoCapacity(6)
 		.withFireRate(0.2f)
@@ -87,7 +88,7 @@ public class PythonFactory implements GunFactory {
 		.withCompatibleBullet(Bullets.Bullet357, (model) -> {})
 		.withTextureNames("Python")
 		.withRenderer(new WeaponRenderer.Builder()
-			.withModId(ModernWarfareMod.MODID)
+			.withModId(ModReference.MWC_ID)
 			.withModel(new Python())
 			//.withTextureName("XEagle")
 			//.withWeaponProximity(0.99F)

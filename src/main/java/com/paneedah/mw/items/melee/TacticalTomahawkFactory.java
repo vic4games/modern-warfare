@@ -1,7 +1,8 @@
 package com.paneedah.mw.items.melee;
 
-import com.paneedah.mw.CommonProxy;
 import com.paneedah.mw.ModernWarfareMod;
+import com.paneedah.mw.proxies.CommonProxy;
+import com.paneedah.mw.utils.ModReference;
 import com.paneedah.weaponlib.RenderContext;
 import com.paneedah.weaponlib.animation.Transition;
 import com.paneedah.weaponlib.melee.ItemMelee;
@@ -15,7 +16,7 @@ public class TacticalTomahawkFactory implements MeleeFactory {
     @Override
     public Item createMelee(CommonProxy commonProxy) {
         return new ItemMelee.Builder()
-                .withModId(ModernWarfareMod.MODID)
+                .withModId(ModReference.MWC_ID)
                 .withName("tactical_tomahawk")
                 .withCreativeTab(ModernWarfareMod.AssaultRiflesTab)
                 .withTextureNames("tacticaltomahawk")
@@ -29,7 +30,7 @@ public class TacticalTomahawkFactory implements MeleeFactory {
                 .withHeavyAttackSound("swoosh")
                 .withRenderer(
                         new MeleeRenderer.Builder()
-                                .withModId(ModernWarfareMod.MODID)
+                                .withModId(ModReference.MWC_ID)
                                 .withModel(new com.paneedah.mw.models.TacticalTomahawk())
                                 .withAnimationDuration(400)
                                 .withInventoryPositioning(itemStack -> {

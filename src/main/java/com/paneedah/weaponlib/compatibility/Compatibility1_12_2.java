@@ -4,6 +4,7 @@ import com.paneedah.weaponlib.Explosion;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.ai.EntityCustomMob;
 import com.paneedah.weaponlib.compatibility.CompatibleParticle.CompatibleParticleBreaking;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.inventory.GuiHandler;
 import com.paneedah.weaponlib.particle.CompatibleBloodParticle;
 import com.paneedah.weaponlib.particle.CompatibleDiggingParticle;
@@ -88,7 +89,7 @@ import java.util.*;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
 
 @SuppressWarnings("deprecation")
@@ -96,9 +97,37 @@ public class Compatibility1_12_2 implements Compatibility {
 
     private static final float DEFAULT_SHELL_CASING_FORWARD_OFFSET = 0.1f;
 
-    private static DamageSource GENERIC_DAMAGE_SOURCE = new DamageSource("thrown");
+    private static final DamageSource GENERIC_DAMAGE_SOURCE = new DamageSource("thrown");
 
-    private static CompatibleMathHelper mathHelper = new CompatibleMathHelper();
+    private static final CompatibleMathHelper mathHelper = new CompatibleMathHelper();
+
+    private static final List<Block> blocksToCheck = Arrays.asList(
+            Blocks.AIR,
+            Blocks.TALLGRASS,
+            Blocks.LEAVES,
+            Blocks.LEAVES2,
+            Blocks.FIRE,
+            Blocks.DOUBLE_PLANT,
+            Blocks.WEB,
+            Blocks.WHEAT,
+            Blocks.POTATOES,
+            Blocks.CARROTS,
+            Blocks.BEETROOTS,
+            Blocks.CAKE,
+            Blocks.CARPET,
+            Blocks.COCOA,
+            Blocks.IRON_BARS,
+            Blocks.LADDER,
+            Blocks.LEVER,
+            Blocks.TORCH,
+            Blocks.REDSTONE_TORCH,
+            Blocks.SAPLING,
+            Blocks.TRAPDOOR,
+            Blocks.VINE,
+            Blocks.WALL_BANNER,
+            Blocks.WALL_SIGN,
+            Blocks.WATERLILY
+    );
 
     @Override
     public World world(Entity entity) {
@@ -278,7 +307,7 @@ public class Compatibility1_12_2 implements Compatibility {
     @Override
     public void registerItem(String modId, Item item, String name) {
         if(item.getRegistryName() == null) {
-            String registryName = item.getUnlocalizedName().toLowerCase();
+            String registryName = item.getTranslationKey().toLowerCase();
             int indexOfPrefix = registryName.indexOf("." + modId);
             if(indexOfPrefix > 0) {
                 registryName = registryName.substring(indexOfPrefix + modId.length() + 2);
@@ -505,7 +534,7 @@ public class Compatibility1_12_2 implements Compatibility {
         //GameRegistry.addShapedRecipe(itemStack, materials);
         ForgeRegistries.RECIPES.register(new ShapedOreRecipe(null, itemStack, materials)
                 .setMirrored(false)
-                .setRegistryName("mw", itemStack.getItem().getUnlocalizedName() + "_recipe"));
+                .setRegistryName("mw", itemStack.getItem().getTranslationKey() + "_recipe"));
 
     }
 
@@ -515,7 +544,7 @@ public class Compatibility1_12_2 implements Compatibility {
         ForgeRegistries.RECIPES.register(
                 new ShapedOreRecipe(null, itemStack, materials)
                 .setMirrored(false)
-                .setRegistryName("mw", itemStack.getItem().getUnlocalizedName() + "_recipe") // TODO: temporary hack
+                .setRegistryName("mw", itemStack.getItem().getTranslationKey() + "_recipe") // TODO: temporary hack
                 );
     }
 
@@ -535,10 +564,10 @@ public class Compatibility1_12_2 implements Compatibility {
     public void registerBlock(ModContext context, Block block, String name) {
         String modId = context.getModId();
         if(block.getRegistryName() == null) {
-            if(block.getUnlocalizedName().length() < modId.length() + 2 + 5) {
-                throw new IllegalArgumentException("Unlocalize block name too short " + block.getUnlocalizedName());
+            if(block.getTranslationKey().length() < modId.length() + 2 + 5) {
+                throw new IllegalArgumentException("Unlocalize block name too short " + block.getTranslationKey());
             }
-            String unlocalizedName = block.getUnlocalizedName().toLowerCase();
+            String unlocalizedName = block.getTranslationKey().toLowerCase();
             String registryName = unlocalizedName.substring(5 + modId.length() + 1);
             block.setRegistryName(modId, registryName);
         }
@@ -859,36 +888,13 @@ public class Compatibility1_12_2 implements Compatibility {
 
     @Override
     public boolean isBlockPenetratableByBullets(Block block) {
-        return block == Blocks.AIR
-                || block == Blocks.TALLGRASS
-                || block == Blocks.LEAVES
-                || block == Blocks.LEAVES2
-                || block == Blocks.FIRE
-                || block == Blocks.DOUBLE_PLANT
-                || block == Blocks.WEB
-                || block == Blocks.BARRIER
-                || block == Blocks.BEETROOTS
-                || block == Blocks.CAKE
-                || block == Blocks.CARPET
-                || block == Blocks.CARROTS
-                || block == Blocks.COCOA
-                || block == Blocks.GLASS
-                || block == Blocks.GLASS_PANE
-                || block == Blocks.GLOWSTONE
-                || block == Blocks.IRON_BARS
-                || block == Blocks.LADDER
-                || block == Blocks.LEVER
-                || block == Blocks.POTATOES
-                || block == Blocks.REDSTONE_TORCH
-                || block == Blocks.SAPLING
-                || block == Blocks.TORCH
-                || block == Blocks.TRAPDOOR
-                || block == Blocks.VINE
-                || block == Blocks.WALL_BANNER
-                || block == Blocks.WALL_SIGN
-                || block == Blocks.WATERLILY
-                || block == Blocks.DOUBLE_WOODEN_SLAB
-                || block == Blocks.WHEAT;
+        if (blocksToCheck.contains(block))
+            return true;
+
+        if (ModernConfigManager.bulletBreakGlass)
+            return block.getBlockState().getBaseState().getMaterial() == Material.GLASS;
+
+        return false;
     }
     
     @Override

@@ -64,7 +64,7 @@ public class HighIQSpawnEgg extends CompatibleItem implements IModernCrafting {
 			egg.setBlockPredicate(this.blockPredicate);
 			egg.setEntitySpawnName(this.entitySpawnName);
 			egg.setCreativeTab(this.creativeTab);
-			egg.setUnlocalizedName(this.registryName);
+			egg.setTranslationKey(this.registryName);
 			egg.setRegistryName("mw", this.registryName);
 			egg.setID(this.id);
 

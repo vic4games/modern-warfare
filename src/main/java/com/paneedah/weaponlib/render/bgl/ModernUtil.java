@@ -7,14 +7,14 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 
-import static com.paneedah.mw.ModernWarfareMod.mc;
+import static com.paneedah.mw.proxies.ClientProxy.mc;
 
 public class ModernUtil {
 	
 	public static void setupLighting(Vec3d position) {
 		GlStateManager.enableLighting();
 		mc.entityRenderer.enableLightmap();
-		CompatibleShellRenderer.setupLightmapCoords(mc.player.getPositionVector().addVector(0, 1, 0));
+		CompatibleShellRenderer.setupLightmapCoords(mc.player.getPositionVector().add(0, 1, 0));
 		
 	}
 	
