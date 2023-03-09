@@ -30,7 +30,9 @@ import com.paneedah.weaponlib.config.ConfigurationManager;
 import com.paneedah.weaponlib.vehicle.network.VehicleDataSerializer;
 import com.paneedah.weaponlib.vehicle.network.VehiclePhysSerializer;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.settings.GameSettings;
 import net.minecraft.network.datasync.DataSerializers;
+import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;

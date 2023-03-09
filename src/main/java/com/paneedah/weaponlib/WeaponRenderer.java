@@ -1832,8 +1832,6 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 			}
 
 			
-	
-			
 			//totalLoadIterationDuration
 			for(Transition<RenderContext<RenderableState>> t: firstPersonPositioningLoadIteration) {
 			    totalLoadIterationDuration += t.getDuration();
