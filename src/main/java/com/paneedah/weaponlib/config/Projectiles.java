@@ -34,9 +34,7 @@ import java.util.List;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Projectiles", propOrder = {
-    "gun"
-})
+@XmlType(name = "projectiles", propOrder = {"gun"})
 public class Projectiles {
 
     protected List<Gun> gun;

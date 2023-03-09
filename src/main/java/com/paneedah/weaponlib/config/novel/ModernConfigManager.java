@@ -17,21 +17,22 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ModernConfigManager {
-	
-	
+
 	public static final Logger LOGGER = LogManager.getLogger();
 	
 	private static HashMap<Field, Property> elementMappings = new HashMap<>();
 	
-	private static List<Field> MODERN_CONFIG_FIELDS = new ArrayList<Field>();
+	private static List<Field> MODERN_CONFIG_FIELDS = new ArrayList<>();
 	
 	public static final String CATEGORY_RENDERING = "rendering";
 	public static final String CATEGORY_RENDERING_SCREENSHADERS = "rendering.screenshaders";
 	public static final String CATEGORY_GAMEPLAY = "gameplay";
-	
-	
+	public static final String CATEGORY_OLD_CONFIG = "oldconfig";
+
 	private static ArrayList<String> categories = new ArrayList<>();
-	
+
+	@ConfigSync(category = CATEGORY_OLD_CONFIG, comment = "Should glass blocks be breakable by bullets?")
+	public static boolean bulletBreakGlass = true;
 	
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Setting this to false disables all shaders, enabling allows to select which shaders are used.")
 	public static boolean enableAllShaders = true;
@@ -96,25 +97,12 @@ public class ModernConfigManager {
 	//@ConfigSync(category = CATEGORY_RENDERING, comment = "Turns on the custom render for third person, may improve compat.")
 	//public static boolean enableThirdPersonAnimations = true;
 
-
-	
-	
-	
-	
-	
-	
-	
-	
 	private static Configuration config = null;
-	
 
-	
 	private static boolean isLoaded = false;
 	
 	static {
-		
-		
-		
+
 		// Register all categories
 		
 	}
@@ -130,8 +118,7 @@ public class ModernConfigManager {
 			LOGGER.error("Could not set field for field name: {}, please report this to developers.", f.getName());
 			e.printStackTrace();
 		}
-		
-		
+
 		if(f.getType() == int.class) {
 			elementMappings.get(f).set((int) value);
 		} else if(f.getType() == int[].class) {
@@ -151,17 +138,10 @@ public class ModernConfigManager {
 		}else if(f.getType() == long.class) {
 			elementMappings.get(f).set((long) value);
 		}
- 		
-		
 	}
 	
-	
-	
 	private static void registerProperty(Field f, ConfigSync annotation) {
-		
 		Property property = null;
-		
-	
 		
 		try {
 			if(f.getType() == int.class) {
@@ -175,8 +155,7 @@ public class ModernConfigManager {
 					property = config.get(annotation.category(), f.getName(), f.getInt(null), annotation.comment(), rangedAnnotation.min(), rangedAnnotation.max());
 					f.set(null, property.getInt());
 				}
-				
-				
+
 			} else if(f.getType() == boolean.class) {
 				property = config.get(annotation.category(), f.getName(), f.getBoolean(null), annotation.comment());
 				f.set(null, property.getBoolean());
@@ -197,17 +176,14 @@ public class ModernConfigManager {
 				
 				
 			}
-		} catch(IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch(IllegalAccessException e) {
+		} catch(IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
 		}
-		
+
 		if(f.isAnnotationPresent(RequiresMcRestart.class)) {
 			property.setRequiresMcRestart(true);
 		}
-		
-		
+
 		// Put property into the map
 		elementMappings.put(f, property);
 	}
@@ -218,15 +194,10 @@ public class ModernConfigManager {
 	
 	
 	public static void init() {
-		
-	
-		
-		// Return if already loaded
-		if(isLoaded) {
+		if(isLoaded)
 			return;
-		} else isLoaded = true;
-		
-		
+
+		isLoaded = true;
 		config = new Configuration(new File(Loader.instance().getConfigDir(), "mw.cfg"));
 		
 		// Initialize this class' fields
@@ -234,25 +205,16 @@ public class ModernConfigManager {
 			ConfigSync annotation = f.getAnnotation(ConfigSync.class);
 			if(annotation == null) continue;
 			MODERN_CONFIG_FIELDS.add(f);
-			
+
 			registerProperty(f, annotation);
-			
-			
 			
 			if(!VMWHooksHandler.isOnServer()) {
 				// Submits field to be organized within the tree
 				VMWModConfigGUI.submitField(annotation, f);
 			}
-			
-
 		}
-		
+
 		saveConfig();
 		
 	}
-	
-
-
-	
-
 }

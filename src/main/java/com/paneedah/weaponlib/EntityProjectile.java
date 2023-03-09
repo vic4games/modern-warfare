@@ -1,6 +1,7 @@
 package com.paneedah.weaponlib;
 
 import com.paneedah.weaponlib.compatibility.*;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -17,7 +18,6 @@ import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.paneedah.weaponlib.compatibility.CompatibilityProvider.compatibility;
@@ -187,17 +187,9 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
      * Called to update the entity's position/logic.
      */
     public void onUpdate() {
-    	//System.out.println("hi?");
-    
-    	
-    	
-    	
-    	
-    	
-        if(ticksExisted > MAX_TICKS) {
-            //setDead();
+        if(ticksExisted > MAX_TICKS)
             return;
-        }
+
         this.lastTickPosX = this.posX;
         this.lastTickPosY = this.posY;
         this.lastTickPosZ = this.posZ;
@@ -218,8 +210,6 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
 //
 //                return;
 //            }
-        	
-        	
 
             this.inGround = false;
             this.motionX *= (double) (this.rand.nextFloat() * 0.2F);
@@ -227,98 +217,59 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
             this.motionZ *= (double) (this.rand.nextFloat() * 0.2F);
             //this.ticksInGround = 0;
             this.ticksInAir = 0;
+
         } else {
             ++this.ticksInAir;
         }
 
         CompatibleVec3 vec3 = new CompatibleVec3(this.posX, this.posY, this.posZ);
-        CompatibleVec3 vec31 = new CompatibleVec3(this.posX + this.motionX, this.posY + this.motionY,
-                this.posZ + this.motionZ);
+        CompatibleVec3 vec31 = new CompatibleVec3(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
 
-        List<BlockPos> possibleCollisions = new ArrayList<>();
-    
-        /*
-        CompatibleRayTraceResult movingobjectposition = CompatibleRayTracing.rayTraceBlocksExtraInformation(compatibility.world(this),
-                vec3, vec31,
-                (block, blockMetadata) -> canCollideWithBlock(possibleCollisions, block, blockMetadata.first(), blockMetadata.second()));
-        */
-        
-        CompatibleRayTraceResult movingobjectposition = CompatibleRayTracing.rayTraceBlocks(compatibility.world(this),
-                vec3, vec31,
-                (block, blockMetadata) -> canCollideWithBlock(null, block, null, blockMetadata));
-      
-      
+        //List<BlockPos> possibleCollisions = new ArrayList<>();
+
+        // Check what is at the projectile current position, null if air
+        CompatibleRayTraceResult movingobjectposition = CompatibleRayTracing.rayTraceBlocks(compatibility.world(this), vec3, vec31, (block, blockMetadata) -> canCollideWithBlock(null, block, null, blockMetadata));
+
         /*
          *  GLASS BREAK CHECK
          */
-        
-       
-        if(!world.isRemote) {
+
+        if(ModernConfigManager.bulletBreakGlass && !world.isRemote) {
         	 Vec3d motion = new Vec3d(this.motionX, this.motionY, this.motionZ);
              Vec3d start = new Vec3d(this.prevPosX, this.prevPosY, this.prevPosZ);
              Vec3d end = new Vec3d(this.posX, this.posY, this.posZ).add(motion);
 
              RayTraceResult rtr = compatibility.world(this).rayTraceBlocks(start, end, false, true, false);
+             if (rtr == null)
+                 return;
 
-            
-             if(rtr != null) {
-             	IBlockState state = compatibility.world(this).getBlockState(rtr.getBlockPos());
-             	if(state.getMaterial() == Material.GLASS) {
-             		this.world.destroyBlock(rtr.getBlockPos(), true);
-             	
-             		
-       
-             		if(CommonModContext.getContext() != null) {
-             			CommonModContext.getContext().getChannel().sendToAllAround(new BlockHitMessage(rtr.getBlockPos(), rtr.hitVec.x, rtr.hitVec.y, rtr.hitVec.z, CompatibleEnumFacing.valueOf(rtr.sideHit)), new CompatibleTargetPoint(this.dimension, this.posX, this.posY, this.posZ, 20.0));
-                 		
-             		}
-             		/*
-             		modContext.getChannel().sendToAllAround(
-                             new BlockHitMessage(position.getBlockPos().getBlockPos(), position.getHitVec().getXCoord(), position.getHitVec().getYCoord(), position.getHitVec().getZCoord(), position.getSideHit()), point);
-                     */
-             	}
+             IBlockState state = compatibility.world(this).getBlockState(rtr.getBlockPos());
+             if(state.getMaterial() == Material.GLASS) {
+                 this.world.destroyBlock(rtr.getBlockPos(), true);
+
+                 ModContext context = CommonModContext.getContext();
+                 if (context == null)
+                     return;
+
+                 context.getChannel().sendToAllAround(new BlockHitMessage(rtr.getBlockPos(), rtr.hitVec.x, rtr.hitVec.y, rtr.hitVec.z, CompatibleEnumFacing.valueOf(rtr.sideHit)), new CompatibleTargetPoint(this.dimension, this.posX, this.posY, this.posZ, 20.0));
              }
         }
-       
-        
-       
-      
-       
-        /*
-        
-        if(this.world != null && movingobjectposition != null && CommonModContext.getContext() != null && CommonModContext.getContext().getConfigurationManager().getProjectiles().isDestroyGlassBlocks()) {
-        	for(BlockPos pos : movingobjectposition.getPassThrus()) {
-        		IBlockState state =  this.world.getBlockState(pos);
-        		if(state.getMaterial() == Material.GLASS) {
-        			
-        			
-        			
-        			//this.world.destroyBlock(pos, false);
-        		}
-        	}
-        }
-        */
-      
-        
-       
+
         vec3 = new CompatibleVec3(this.posX, this.posY, this.posZ);
         vec31 = new CompatibleVec3(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
 
-        if (movingobjectposition != null) {
+        if (movingobjectposition != null)
             vec31 = CompatibleVec3.fromCompatibleVec3(movingobjectposition.getHitVec());
-        }
 
         if (!compatibility.world(this).isRemote) {
             Entity entity = getRayTraceEntities(vec3, vec31);
 
-            if (entity != null) {
+            if (entity != null)
                movingobjectposition = new CompatibleRayTraceResult(entity);
-            }
         }
 
-        if (movingobjectposition != null) {
+        if (movingobjectposition != null)
             this.onImpact(movingobjectposition);
-        }
 		
         this.posX += this.motionX;
         this.posY += this.motionY;
@@ -326,10 +277,7 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
         float f1 = CompatibleMathHelper.sqrt_double(this.motionX * this.motionX + this.motionZ * this.motionZ);
         this.rotationYaw = (float) (Math.atan2(this.motionX, this.motionZ) * 180.0D / Math.PI);
 
-        for (this.rotationPitch = (float) (Math.atan2(this.motionY, (double) f1) * 180.0D / Math.PI); this.rotationPitch
-                - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F) {
-            ;
-        }
+        for (this.rotationPitch = (float) (Math.atan2(this.motionY, (double) f1) * 180.0D / Math.PI); this.rotationPitch - this.prevRotationPitch < -180.0F; this.prevRotationPitch -= 360.0F);
 
         while (this.rotationPitch - this.prevRotationPitch >= 180.0F) {
             this.prevRotationPitch += 360.0F;
@@ -368,29 +316,22 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
 
     private Entity getRayTraceEntities(CompatibleVec3 vec3, CompatibleVec3 vec31) {
         Entity entity = null;
-        List<?> list = compatibility.getEntitiesWithinAABBExcludingEntity(compatibility.world(this), this,
-                compatibility.getBoundingBox(this).addCoord(this.motionX, this.motionY, this.motionZ).expand(1.0D,
-                        1.0D, 1.0D));
+        List<?> list = compatibility.getEntitiesWithinAABBExcludingEntity(compatibility.world(this), this, compatibility.getBoundingBox(this).addCoord(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
         double d0 = 0.0D;
         EntityLivingBase entitylivingbase = this.getThrower();
 
-        for (int j = 0; j < list.size(); ++j) {
-            Entity entity1 = (Entity) list.get(j);
+        for (Object o : list) {
+            Entity entity1 = (Entity) o;
 
-           
-            
-            // Fix for issue in the mod where a dying entity could
-            // block bullets.
             boolean flag = true;
-            if(entity1 instanceof EntityLivingBase) {
-            	EntityLivingBase elb = (EntityLivingBase) entity1;
-            	flag = elb.deathTime == 0;
+            if (entity1 instanceof EntityLivingBase) {
+                EntityLivingBase elb = (EntityLivingBase) entity1;
+                flag = elb.deathTime == 0;
             }
-            
+
             if (flag && entity1.canBeCollidedWith() && (entity1 != entitylivingbase || this.ticksInAir >= 5)) {
                 float f = 0.3F;
-                CompatibleAxisAlignedBB axisalignedbb = compatibility.expandEntityBoundingBox(entity1, (double) f,
-                        (double) f, (double) f);
+                CompatibleAxisAlignedBB axisalignedbb = compatibility.expandEntityBoundingBox(entity1, (double) f, (double) f, (double) f);
                 CompatibleRayTraceResult movingobjectposition1 = axisalignedbb.calculateIntercept(vec3, vec31);
 
                 if (movingobjectposition1 != null) {
@@ -403,7 +344,7 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
                 }
             }
         }
-        //System.out.println("Picked " + entityCollisionReduction.d);
+
         return entity;
     }
 
@@ -505,8 +446,6 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
     }
 
     public boolean canCollideWithBlock(List<BlockPos> violators, Block block, BlockPos pos, CompatibleBlockState metadata) {
-    	
-    	
         return compatibility.canCollideCheck(block, metadata, false);
     }
 }

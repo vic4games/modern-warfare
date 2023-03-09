@@ -2,7 +2,7 @@ package com.paneedah.weaponlib.animation.gui;
 
 import net.minecraft.client.renderer.GlStateManager;
 
-import java.awt.Color;
+import java.awt.*;
 
 public class Button {
 	

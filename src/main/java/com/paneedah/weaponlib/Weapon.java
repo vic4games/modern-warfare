@@ -9,6 +9,7 @@ import com.paneedah.weaponlib.compatibility.*;
 import com.paneedah.weaponlib.config.BalancePackManager;
 import com.paneedah.weaponlib.config.BalancePackManager.GunConfigurationGroup;
 import com.paneedah.weaponlib.config.Gun;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.crafting.*;
 import com.paneedah.weaponlib.model.Shell;
 import com.paneedah.weaponlib.render.WeaponSpritesheetBuilder;
@@ -981,10 +982,12 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             if (blockImpactHandler == null) {
                 blockImpactHandler = (world, player, entity, position) -> {
                     CompatibleBlockState blockState = compatibility.getBlockAtPosition(world, position);
-                    Boolean canDestroyGlassBlocks = modContext.getConfigurationManager().getProjectiles().isDestroyGlassBlocks();
-                    if (canDestroyGlassBlocks != null && canDestroyGlassBlocks && compatibility.isGlassBlock(blockState)) {
+                    System.out.println("Block hit: " + blockState.getBlockState().getBlock().getLocalizedName());
+                    if (ModernConfigManager.bulletBreakGlass && compatibility.isGlassBlock(blockState)) {
                         compatibility.destroyBlock(world, position);
-                    } else  {
+                        System.out.println("Block destroyed!");
+
+                    } else {
                         //compatibility.addBlockHitEffect(position);
                         //compatibility.playSound(world, posX, posY, posZ, explosionSound, volume, pitch);
                         CompatibleTargetPoint point = new CompatibleTargetPoint(entity.dimension,
@@ -997,6 +1000,7 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                             compatibility.playSound(world, position.getBlockPosX(), position.getBlockPosY(), position.getBlockPosZ(), 
                                     materialImpactSound.getSound(), materialImpactSound.getVolume(), 1f);
                         }
+                        System.out.println("Alternative triggered!");
                     }
                 };
             }
