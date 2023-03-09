@@ -101,7 +101,7 @@ public class Compatibility1_12_2 implements Compatibility {
 
     private static CompatibleMathHelper mathHelper = new CompatibleMathHelper();
 
-    private static final Block[] blocksToCheck = {
+    private static final List<Block> blocksToCheck = Arrays.asList(
             Blocks.AIR,
             Blocks.TALLGRASS,
             Blocks.LEAVES,
@@ -130,7 +130,7 @@ public class Compatibility1_12_2 implements Compatibility {
             Blocks.WATERLILY,
             Blocks.DOUBLE_WOODEN_SLAB,
             Blocks.WHEAT
-    };
+    );
 
     @Override
     public World world(Entity entity) {
@@ -889,8 +889,6 @@ public class Compatibility1_12_2 implements Compatibility {
         return player.getName();
     }
 
-
-
     @Override
     public boolean isBlockPenetratableByBullets(Block block) {
         Block blockToCheck = block;
@@ -903,13 +901,10 @@ public class Compatibility1_12_2 implements Compatibility {
             i++;
         }
 
-        if (ModernConfigManager.bulletBreakGlass) {
-            IBlockState blockState = block.getBlockState().getBaseState();
-            if (blockState.getMaterial() == Material.GLASS)
-                isMatched = true;
-        }
+        if (ModernConfigManager.bulletBreakGlass)
+            return block.getBlockState().getBaseState().getMaterial() == Material.GLASS;
 
-        return isMatched;
+        return false;
     }
     
     @Override
