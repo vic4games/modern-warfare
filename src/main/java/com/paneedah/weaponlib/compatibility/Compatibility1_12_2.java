@@ -109,27 +109,24 @@ public class Compatibility1_12_2 implements Compatibility {
             Blocks.FIRE,
             Blocks.DOUBLE_PLANT,
             Blocks.WEB,
-            Blocks.BARRIER,
+            Blocks.WHEAT,
+            Blocks.POTATOES,
+            Blocks.CARROTS,
             Blocks.BEETROOTS,
             Blocks.CAKE,
             Blocks.CARPET,
-            Blocks.CARROTS,
             Blocks.COCOA,
-            Blocks.GLOWSTONE,
             Blocks.IRON_BARS,
             Blocks.LADDER,
             Blocks.LEVER,
-            Blocks.POTATOES,
+            Blocks.TORCH,
             Blocks.REDSTONE_TORCH,
             Blocks.SAPLING,
-            Blocks.TORCH,
             Blocks.TRAPDOOR,
             Blocks.VINE,
             Blocks.WALL_BANNER,
             Blocks.WALL_SIGN,
-            Blocks.WATERLILY,
-            Blocks.DOUBLE_WOODEN_SLAB,
-            Blocks.WHEAT
+            Blocks.WATERLILY
     );
 
     @Override
