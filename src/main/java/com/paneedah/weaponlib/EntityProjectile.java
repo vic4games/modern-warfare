@@ -323,6 +323,8 @@ public abstract class EntityProjectile extends Entity implements IProjectile, Co
         for (Object o : list) {
             Entity entity1 = (Entity) o;
 
+            // Fix for issue in the mod where a dying entity could
+            // block bullets.
             boolean flag = true;
             if (entity1 instanceof EntityLivingBase) {
                 EntityLivingBase elb = (EntityLivingBase) entity1;

@@ -891,15 +891,8 @@ public class Compatibility1_12_2 implements Compatibility {
 
     @Override
     public boolean isBlockPenetratableByBullets(Block block) {
-        Block blockToCheck = block;
-        boolean isMatched = false;
-        int i = 0;
-        while (i < blocksToCheck.length && !isMatched) {
-            if (blockToCheck == blocksToCheck[i]) {
-                isMatched = true;
-            }
-            i++;
-        }
+        if (blocksToCheck.contains(block))
+            return true;
 
         if (ModernConfigManager.bulletBreakGlass)
             return block.getBlockState().getBaseState().getMaterial() == Material.GLASS;
