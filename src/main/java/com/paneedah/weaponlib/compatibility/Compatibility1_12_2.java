@@ -4,6 +4,7 @@ import com.paneedah.weaponlib.Explosion;
 import com.paneedah.weaponlib.ModContext;
 import com.paneedah.weaponlib.ai.EntityCustomMob;
 import com.paneedah.weaponlib.compatibility.CompatibleParticle.CompatibleParticleBreaking;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.inventory.GuiHandler;
 import com.paneedah.weaponlib.particle.CompatibleBloodParticle;
 import com.paneedah.weaponlib.particle.CompatibleDiggingParticle;
@@ -99,6 +100,37 @@ public class Compatibility1_12_2 implements Compatibility {
     private static DamageSource GENERIC_DAMAGE_SOURCE = new DamageSource("thrown");
 
     private static CompatibleMathHelper mathHelper = new CompatibleMathHelper();
+
+    private static final Block[] blocksToCheck = {
+            Blocks.AIR,
+            Blocks.TALLGRASS,
+            Blocks.LEAVES,
+            Blocks.LEAVES2,
+            Blocks.FIRE,
+            Blocks.DOUBLE_PLANT,
+            Blocks.WEB,
+            Blocks.BARRIER,
+            Blocks.BEETROOTS,
+            Blocks.CAKE,
+            Blocks.CARPET,
+            Blocks.CARROTS,
+            Blocks.COCOA,
+            Blocks.GLOWSTONE,
+            Blocks.IRON_BARS,
+            Blocks.LADDER,
+            Blocks.LEVER,
+            Blocks.POTATOES,
+            Blocks.REDSTONE_TORCH,
+            Blocks.SAPLING,
+            Blocks.TORCH,
+            Blocks.TRAPDOOR,
+            Blocks.VINE,
+            Blocks.WALL_BANNER,
+            Blocks.WALL_SIGN,
+            Blocks.WATERLILY,
+            Blocks.DOUBLE_WOODEN_SLAB,
+            Blocks.WHEAT
+    };
 
     @Override
     public World world(Entity entity) {
@@ -857,38 +889,27 @@ public class Compatibility1_12_2 implements Compatibility {
         return player.getName();
     }
 
+
+
     @Override
     public boolean isBlockPenetratableByBullets(Block block) {
-        return block == Blocks.AIR
-                || block == Blocks.TALLGRASS
-                || block == Blocks.LEAVES
-                || block == Blocks.LEAVES2
-                || block == Blocks.FIRE
-                || block == Blocks.DOUBLE_PLANT
-                || block == Blocks.WEB
-                || block == Blocks.BARRIER
-                || block == Blocks.BEETROOTS
-                || block == Blocks.CAKE
-                || block == Blocks.CARPET
-                || block == Blocks.CARROTS
-                || block == Blocks.COCOA
-                || block == Blocks.GLASS
-                || block == Blocks.GLASS_PANE
-                || block == Blocks.GLOWSTONE
-                || block == Blocks.IRON_BARS
-                || block == Blocks.LADDER
-                || block == Blocks.LEVER
-                || block == Blocks.POTATOES
-                || block == Blocks.REDSTONE_TORCH
-                || block == Blocks.SAPLING
-                || block == Blocks.TORCH
-                || block == Blocks.TRAPDOOR
-                || block == Blocks.VINE
-                || block == Blocks.WALL_BANNER
-                || block == Blocks.WALL_SIGN
-                || block == Blocks.WATERLILY
-                || block == Blocks.DOUBLE_WOODEN_SLAB
-                || block == Blocks.WHEAT;
+        Block blockToCheck = block;
+        boolean isMatched = false;
+        int i = 0;
+        while (i < blocksToCheck.length && !isMatched) {
+            if (blockToCheck == blocksToCheck[i]) {
+                isMatched = true;
+            }
+            i++;
+        }
+
+        if (ModernConfigManager.bulletBreakGlass) {
+            IBlockState blockState = block.getBlockState().getBaseState();
+            if (blockState.getMaterial() == Material.GLASS)
+                isMatched = true;
+        }
+
+        return isMatched;
     }
     
     @Override

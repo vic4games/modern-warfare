@@ -293,8 +293,7 @@ public class WeaponSpawnEntity extends EntityProjectile {
     }
 	
 	@Override
-	public boolean canCollideWithBlock(List<BlockPos> violators, Block block, BlockPos pos,
-			CompatibleBlockState metadata) {
+	public boolean canCollideWithBlock(List<BlockPos> violators, Block block, BlockPos pos, CompatibleBlockState metadata) {
 		// TODO Auto-generated method stub
 		//System.out.println(block);
 		return !compatibility.isBlockPenetratableByBullets(block) && super.canCollideWithBlock(violators, block, pos, metadata);
