@@ -982,10 +982,8 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
             if (blockImpactHandler == null) {
                 blockImpactHandler = (world, player, entity, position) -> {
                     CompatibleBlockState blockState = compatibility.getBlockAtPosition(world, position);
-                    System.out.println("Block hit: " + blockState.getBlockState().getBlock().getLocalizedName());
                     if (ModernConfigManager.bulletBreakGlass && compatibility.isGlassBlock(blockState)) {
                         compatibility.destroyBlock(world, position);
-                        System.out.println("Block destroyed!");
 
                     } else {
                         //compatibility.addBlockHitEffect(position);
@@ -1000,7 +998,6 @@ AttachmentContainer, Reloadable, Inspectable, Modifiable, Updatable, IModernCraf
                             compatibility.playSound(world, position.getBlockPosX(), position.getBlockPosY(), position.getBlockPosZ(), 
                                     materialImpactSound.getSound(), materialImpactSound.getVolume(), 1f);
                         }
-                        System.out.println("Alternative triggered!");
                     }
                 };
             }

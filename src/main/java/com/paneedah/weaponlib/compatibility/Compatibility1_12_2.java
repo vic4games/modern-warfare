@@ -97,9 +97,9 @@ public class Compatibility1_12_2 implements Compatibility {
 
     private static final float DEFAULT_SHELL_CASING_FORWARD_OFFSET = 0.1f;
 
-    private static DamageSource GENERIC_DAMAGE_SOURCE = new DamageSource("thrown");
+    private static final DamageSource GENERIC_DAMAGE_SOURCE = new DamageSource("thrown");
 
-    private static CompatibleMathHelper mathHelper = new CompatibleMathHelper();
+    private static final CompatibleMathHelper mathHelper = new CompatibleMathHelper();
 
     private static final List<Block> blocksToCheck = Arrays.asList(
             Blocks.AIR,
