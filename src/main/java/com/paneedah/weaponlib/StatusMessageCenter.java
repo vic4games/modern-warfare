@@ -29,7 +29,7 @@ public final class StatusMessageCenter {
 		}
 	}
 	
-	protected Deque<Message> messageQueue = new LinkedList<>();
+	private final Deque<Message> messageQueue = new LinkedList<>();
 
 	public void addMessage(String message) {
 		addMessage(message, -1);

@@ -4,6 +4,7 @@ import com.paneedah.weaponlib.animation.ClientValueRepo;
 import com.paneedah.weaponlib.compatibility.CompatibleClientEventHandler;
 import com.paneedah.weaponlib.compatibility.CompatibleSound;
 import com.paneedah.weaponlib.config.BalancePackManager;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.jim.util.VMWHooksHandler;
 import com.paneedah.weaponlib.network.packets.BulletShellClient;
 import com.paneedah.weaponlib.network.packets.GunFXPacket;
@@ -335,12 +336,8 @@ public class WeaponFireAspect implements Aspect<WeaponState, PlayerWeaponInstanc
         ClientValueRepo.recoilWoundY += recoilAmount * 0.7f;
         
 
-        Boolean muzzleFlash = modContext.getConfigurationManager().getProjectiles().isMuzzleEffects();
-        if(muzzleFlash == null || muzzleFlash) {
-            if(weapon.builder.flashIntensity > 0 ) {
-            	
-            	
-            	
+        if (ModernConfigManager.enableMuzzleEffects) {
+            if (weapon.builder.flashIntensity > 0) {
             		modContext.getEffectManager().spawnFlashParticle(player, weapon.builder.flashIntensity,
                             weapon.builder.flashScale.get(),
                             weaponInstance.isAimed() ? FLASH_X_OFFSET_ZOOMED : compatibility.getEffectOffsetX()

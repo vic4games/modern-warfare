@@ -19,96 +19,103 @@ import java.util.List;
 public class ModernConfigManager {
 
 	public static final Logger LOGGER = LogManager.getLogger();
-	
-	private static HashMap<Field, Property> elementMappings = new HashMap<>();
-	
-	private static List<Field> MODERN_CONFIG_FIELDS = new ArrayList<>();
-	
+
+	private static final HashMap<Field, Property> elementMappings = new HashMap<>();
+	private static final List<Field> MODERN_CONFIG_FIELDS = new ArrayList<>();
+	private static final ArrayList<String> categories = new ArrayList<>();
+
 	public static final String CATEGORY_RENDERING = "rendering";
 	public static final String CATEGORY_RENDERING_SCREENSHADERS = "rendering.screenshaders";
 	public static final String CATEGORY_GAMEPLAY = "gameplay";
-	public static final String CATEGORY_OLD_CONFIG = "oldconfig";
 
-	private static ArrayList<String> categories = new ArrayList<>();
-
-	@ConfigSync(category = CATEGORY_OLD_CONFIG, comment = "Should glass blocks be breakable by bullets?")
-	public static boolean bulletBreakGlass = true;
-	
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Setting this to false disables all shaders, enabling allows to select which shaders are used.")
 	public static boolean enableAllShaders = true;
 
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Setting this to false disables all world shaders, enabling allows to select which world shaders are used.")
 	public static boolean enableWorldShaders = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Setting this to false disables all screen shaders, enabling allows to select which screen shaders are used.")
 	public static boolean enableScreenShaders = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables gun shaders, so skinning & lighting")
 	public static boolean enableGunShaders = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables scope effects")
 	public static boolean enableScopeEffects = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables flash shaders")
 	public static boolean enableFlashShaders = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables reticle shaders")
 	public static boolean enableReticleShaders = true;
-	
-	
+
+
 	@ConfigSync(category = CATEGORY_RENDERING_SCREENSHADERS, comment = "Enables film grain effect")
 	public static boolean filmGrain = true;
-	
+
 	@RangeDouble(min = 0.0, max = 1.0)
 	@ConfigSync(category = CATEGORY_RENDERING_SCREENSHADERS, comment = "Configures the intensity of the film grain effect")
 	public static double filmGrainIntensity = 0.025;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING_SCREENSHADERS, comment = "Enables glow around bright objects (bloom)")
 	public static boolean bloomEffect = true;
-	
+
 	@RequiresMcRestart
 	@RangeInt(min = 2, max = 8)
 	@ConfigSync(category = CATEGORY_RENDERING_SCREENSHADERS, comment = "Lower numbers = better performance")
 	public static int bloomLayers = 3;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING_SCREENSHADERS, comment = "Enable on-screen rain/snow VFX")
 	public static boolean onScreenRainAndSnow = true;
-	
+
 	@RequiresMcRestart
-	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables the HDR framebuffer, requires restart. \nThe HDR is the cause of a lot of shader incompat, \nbut Bloom will look weird without it")
+	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables the HDR framebuffer, requires restart. The HDR is the cause of a lot of shader incompat, but Bloom will look weird without it")
 	public static boolean enableHDRFramebuffer = true;
-	
+
 	@ConfigSync(category = CATEGORY_RENDERING, comment = "Enables the fancy VMW snow/rain")
 	public static boolean enableFancyRainAndSnow = true;
-	
-	
+
+
 	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Enables the ammo counter")
 	public static boolean enableAmmoCounter = true;
-	
+
 	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Enable open door key display when hovering doors")
 	public static boolean enableOpenDoorDisplay = true;
-	
+
 	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "If true, hold to aim. If false, toggle to aim.")
 	public static boolean holdToAim = true;
-	
+
 	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Enables the black background on the ammo counter.")
 	public static boolean enableAmmoCounterBackground = true;
-	
+
+	@RangeInt(min = 0, max = 1)
+	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Should players bleed when hit?")
+	public static float enableBleedingOnHit = 1.0F;
+
+	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Should glass blocks be breakable by bullets?")
+	public static boolean bulletBreakGlass = true;
+
+	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Enables muzzle effects.")
+	public static boolean enableMuzzleEffects = true;
+
+	@ConfigSync(category = CATEGORY_GAMEPLAY, comment = "Should blur be applied when aiming?")
+	public static boolean enableBlurOnAim = true;
+
 	//@ConfigSync(category = CATEGORY_RENDERING, comment = "Turns on the custom render for third person, may improve compat.")
 	//public static boolean enableThirdPersonAnimations = true;
 
 	private static Configuration config = null;
 
 	private static boolean isLoaded = false;
-	
+
 	static {
 
 		// Register all categories
-		
+
 	}
-	
+
 	public static void updateField(Field f, Object value) {
-		
+
 		// Try to set field
 		try {
 			// Instance is 'null' because all of these
@@ -139,13 +146,13 @@ public class ModernConfigManager {
 			elementMappings.get(f).set((long) value);
 		}
 	}
-	
+
 	private static void registerProperty(Field f, ConfigSync annotation) {
 		Property property = null;
-		
+
 		try {
 			if(f.getType() == int.class) {
-				
+
 				boolean isRanged = f.isAnnotationPresent(RangeInt.class);
 				if(!isRanged) {
 					property = config.get(annotation.category(), f.getName(), f.getInt(null), annotation.comment());
@@ -163,7 +170,7 @@ public class ModernConfigManager {
 				property = config.get(annotation.category(), f.getName(), (String) f.get(null), annotation.comment());
 				f.set(null, property.getString());
 			} else if(f.getType() == double.class) {
-				
+
 				boolean isRanged = f.isAnnotationPresent(RangeDouble.class);
 				if(!isRanged) {
 					property = config.get(annotation.category(), f.getName(), f.getDouble(null), annotation.comment());
@@ -173,8 +180,8 @@ public class ModernConfigManager {
 					property = config.get(annotation.category(), f.getName(), f.getDouble(null), annotation.comment(), range.min(), range.max());
 					f.set(null, property.getDouble());
 				}
-				
-				
+
+
 			}
 		} catch(IllegalArgumentException | IllegalAccessException e) {
 			e.printStackTrace();
@@ -187,19 +194,19 @@ public class ModernConfigManager {
 		// Put property into the map
 		elementMappings.put(f, property);
 	}
-	
+
 	public static void saveConfig() {
 		config.save();
 	}
-	
-	
+
+
 	public static void init() {
 		if(isLoaded)
 			return;
 
 		isLoaded = true;
 		config = new Configuration(new File(Loader.instance().getConfigDir(), "mw.cfg"));
-		
+
 		// Initialize this class' fields
 		for(Field f : ModernConfigManager.class.getFields()) {
 			ConfigSync annotation = f.getAnnotation(ConfigSync.class);
@@ -207,7 +214,7 @@ public class ModernConfigManager {
 			MODERN_CONFIG_FIELDS.add(f);
 
 			registerProperty(f, annotation);
-			
+
 			if(!VMWHooksHandler.isOnServer()) {
 				// Submits field to be organized within the tree
 				VMWModConfigGUI.submitField(annotation, f);
@@ -215,6 +222,6 @@ public class ModernConfigManager {
 		}
 
 		saveConfig();
-		
+
 	}
 }

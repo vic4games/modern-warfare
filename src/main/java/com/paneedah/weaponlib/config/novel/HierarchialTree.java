@@ -29,22 +29,22 @@ public class HierarchialTree<K> {
 	 */
 	public static class Branch<K> {
 		
-		private Branch<K> parent;
+		private final Branch<K> parent;
 		
-		private String key;
+		private final String key;
 		
 		/**
 		 * Map of all the subbranches
 		 */
-		private HashMap<String, Branch<K>> subBranches = new HashMap<>();
+		private final HashMap<String, Branch<K>> subBranches = new HashMap<>();
 		
 		/**
 		 * List of all the subbranches
 		 */
-		private List<Branch<K>> subBranchList = new ArrayList<>();
+		private final List<Branch<K>> subBranchList = new ArrayList<>();
 		
 		
-		private List<K> nodes = new ArrayList<K>();
+		private final List<K> nodes = new ArrayList<K>();
 		
 		public Branch(String key, Branch<K> parent) {
 			this.key = key;
@@ -208,13 +208,13 @@ public class HierarchialTree<K> {
 	/**
 	 * Stores all the roots at the top of the tree
 	 */
-	private HashMap<String, Branch<K>> roots = new HashMap<>(1, 0.7f);
+	private final HashMap<String, Branch<K>> roots = new HashMap<>(1, 0.7f);
  	
 	/**
 	 * Stores all the roots in a list in order for fast access
 	 * while iterating.
 	 */
-	private List<Branch<K>> rootsList = new ArrayList<>();
+	private final List<Branch<K>> rootsList = new ArrayList<>();
 	
 	public HierarchialTree() {
 		
@@ -249,15 +249,6 @@ public class HierarchialTree<K> {
 			return roots.get(pathway);
 		}
 		
-	}
-	
-	/**
-	 * Tree walk with System output stream
-	 * 
-	 * Common use implementation of {@link HierarchialTree#print(OutputStream)}
-	 */
-	public void print() {
-		print(System.out);
 	}
 	
 	/**
@@ -318,7 +309,6 @@ public class HierarchialTree<K> {
 	 * Fetches a branch's nodes
 	 * 
 	 * @param pathway - pathway, with branch order separated by periods.
-	 * @param node - node to be inserted
 	 */
 	public List<K> fetchNodes(String pathway) {
 		return addBranch(pathway).nodes;

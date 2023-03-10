@@ -101,27 +101,26 @@ class ClientWeaponTicker extends Thread {
         }
         
         PlayerWeaponInstance mainHandHeldWeaponInstance = clientModContext.getMainHeldWeapon();
-        if(mainHandHeldWeaponInstance != null) {
-        	if(ModernConfigManager.holdToAim) {
-        		if(item instanceof Weapon && mainHandHeldWeaponInstance.isAimed()) {
-            		if(mainHandHeldWeaponInstance.isAimed() && ClientValueRepo.shouldContinueRunning) {
-            			player.setSprinting(true);
-            			ClientValueRepo.shouldContinueRunning = false;
-            		}
-            		((Weapon) item).toggleAiming();
-            	
-            	}
-        	}
-        	
+        if(mainHandHeldWeaponInstance != null && ModernConfigManager.holdToAim && item instanceof Weapon && mainHandHeldWeaponInstance.isAimed()) {
+			if(mainHandHeldWeaponInstance.isAimed() && ClientValueRepo.shouldContinueRunning) {
+				player.setSprinting(true);
+				ClientValueRepo.shouldContinueRunning = false;
+			}
+
+			((Weapon) item).toggleAiming();
         }
         
     }
 
     private void onLeftButtonDown() {
-    	if(AnimationModeProcessor.getInstance().getFPSMode()) return;
+    	if(AnimationModeProcessor.getInstance().getFPSMode())
+			return;
+
         EntityPlayer player = compatibility.getClientPlayer();
         Item item = getHeldItemMainHand(player);
-        if((item instanceof Weapon) && BalancePackManager.isWeaponDisabled((Weapon) item)) return;
+        if((item instanceof Weapon) && BalancePackManager.isWeaponDisabled((Weapon) item))
+			return;
+
         if(item instanceof Weapon) {
             ((Weapon) item).tryFire(player);
         } else if(item instanceof ItemMelee) {
@@ -130,17 +129,16 @@ class ClientWeaponTicker extends Thread {
             ((ItemGrenade) item).attack(player, true);
         }
     }
-    
-    
 
     private void onRightButtonDown() {
-    	if(AnimationModeProcessor.getInstance().getFPSMode()) return;
-    	
-        
+    	if(AnimationModeProcessor.getInstance().getFPSMode())
+			return;
+
         EntityPlayer player = compatibility.getClientPlayer();
         Item item = getHeldItemMainHand(player);
         
-        if((item instanceof Weapon) && BalancePackManager.isWeaponDisabled((Weapon) item)) return;
+        if((item instanceof Weapon) && BalancePackManager.isWeaponDisabled((Weapon) item))
+			return;
         
         if(item instanceof Weapon) {
         	if(player.isSprinting()) {
@@ -158,14 +156,8 @@ class ClientWeaponTicker extends Thread {
     }
 
 	private void onTick() {
-		
-		
-		
 	    EntityPlayer player = compatibility.getClientPlayer();
-	    
-	    
-	    
-	    
+
 	    Item item = getHeldItemMainHand(player);
 	    /*
 	    if(item instanceof Weapon) {
@@ -179,8 +171,7 @@ class ClientWeaponTicker extends Thread {
 	    	}
 	    	
 	    }*/
-	    
-	    
+
         if(item instanceof Updatable) {
             ((Updatable) item).update(player);
         }

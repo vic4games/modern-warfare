@@ -4,6 +4,7 @@ import com.paneedah.weaponlib.compatibility.CompatibleBlockState;
 import com.paneedah.weaponlib.compatibility.CompatibleRayTraceResult;
 import com.paneedah.weaponlib.compatibility.CompatibleTargetPoint;
 import com.paneedah.weaponlib.config.Projectiles;
+import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.jim.util.HitUtil;
 import com.paneedah.weaponlib.network.packets.BloodPacketClient;
 import io.netty.buffer.ByteBuf;
@@ -181,9 +182,9 @@ public class WeaponSpawnEntity extends EntityProjectile {
             //double magnitude = Math.sqrt(motionX * motionX + motionY * motionY + motionZ * motionZ) + 1;
             
             float bleedingCoefficient = weapon.getBleedingCoefficient();
-            
-            if (projectilesConfig.getBleedingOnHit() != null)
-                bleedingCoefficient *= projectilesConfig.getBleedingOnHit();
+
+            if (ModernConfigManager.enableBleedingOnHit != 0.0F)
+                bleedingCoefficient *= ModernConfigManager.enableBleedingOnHit;
             
             if(bleedingCoefficient > 0.0f) {
                 int count = (int)(getParticleCount (damage) * bleedingCoefficient);

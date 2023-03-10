@@ -48,18 +48,11 @@ public class ViewfinderModel extends ModelBase {
 	}
 	
 	public void render(Reticle ret, RenderContext<RenderableState> renderContext, Entity entity, float f5) {
-		
-
-	
-		
 		if(ModernConfigManager.enableAllShaders && ModernConfigManager.enableScopeEffects) {
 			renderWithScopeFX(ret, renderContext, entity, f5);
 		} else {
 			renderDry(ret, entity, f5);
 		}
-		
-		
-		
 	}
 	
 	public void renderDry(Reticle ret, Entity entity, float f5) {
@@ -90,18 +83,14 @@ public class ViewfinderModel extends ModelBase {
 	public void renderWithScopeFX(Reticle ret, RenderContext<RenderableState> renderContext, Entity entity, float f5) {
 		GlStateManager.enableBlend();
 		GlStateManager.enableAlpha();
-		
-		
-	
+
 		boolean isNightVisionOn = false;
 		boolean useWhitePhosphor = false;
 		if(renderContext.getWeaponInstance() != null) {
 			ItemAttachment<Weapon> scope = renderContext.getWeaponInstance().getAttachmentItemWithCategory(AttachmentCategory.SCOPE);
-			if(scope != null) { 
-				if(scope instanceof ItemScope) {
-					isNightVisionOn = ((ItemScope) scope).hasNightVision() && renderContext.getWeaponInstance().isNightVisionOn();
-					useWhitePhosphor = ((ItemScope) scope).usesWhitePhosphor();
-				}
+			if(scope instanceof ItemScope) {
+				isNightVisionOn = ((ItemScope) scope).hasNightVision() && renderContext.getWeaponInstance().isNightVisionOn();
+				useWhitePhosphor = ((ItemScope) scope).usesWhitePhosphor();
 			}
 		}
 
@@ -177,10 +166,7 @@ public class ViewfinderModel extends ModelBase {
     	scopeShader.boolean1b("isNightVisionOn", isNightVisionOn);
     	scopeShader.boolean1b("useWhitePhosphor", useWhitePhosphor);
     	scopeShader.uniform1f("time", ClientValueRepo.TICKER.getLerpedFloat());
- 
-    	
-    	
-    	
+
     	GlStateManager.enableBlend();
 		surfaceRenderer.render(f5);
 		scopeShader.release();

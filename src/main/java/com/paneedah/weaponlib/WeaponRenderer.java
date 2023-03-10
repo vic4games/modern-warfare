@@ -14,7 +14,6 @@ import com.paneedah.weaponlib.compatibility.CompatibleClientEventHandler;
 import com.paneedah.weaponlib.compatibility.CompatibleWeaponRenderer;
 import com.paneedah.weaponlib.compatibility.Interceptors;
 import com.paneedah.weaponlib.config.BalancePackManager;
-import com.paneedah.weaponlib.config.Projectiles;
 import com.paneedah.weaponlib.config.novel.ModernConfigManager;
 import com.paneedah.weaponlib.jim.util.VMWHooksHandler;
 import com.paneedah.weaponlib.render.MuzzleFlashRenderer;
@@ -3325,18 +3324,9 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 		            renderContext.getAgeInTicks());
 		    sqDistance = projectView.squareDistanceTo(player.posX, player.posY, player.posZ);
 		}
-		
-		Float renderOptimization = null;
-		Projectiles projectilesConfig = clientModContext.configurationManager.getProjectiles();
-		if(projectilesConfig != null) {
-		      renderOptimization = projectilesConfig.getRenderOptimization();
-		}
-		if(renderOptimization == null) {
-		    renderOptimization = 0.25f;
-		}
+
 		double volumeThreshold = sqDistance;
-		
-		
+
 		
 		if(sqDistance > Interceptors.OPTIMIZATION_MODE_MIN)
 			Interceptors.setRenderVolumeThreshold(volumeThreshold - Interceptors.OPTIMIZATION_MODE_MIN);
@@ -3518,10 +3508,11 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 		
 		
 		// For animation mode
-		if(AnimationModeProcessor.getInstance().shouldIsolateCategory()) {
-			if(AnimationModeProcessor.getInstance().getIsolatedCategory() != compatibleAttachment.getAttachment().getCategory());
-			
-		}
+		//if(AnimationModeProcessor.getInstance().shouldIsolateCategory()) {
+		//	if(AnimationModeProcessor.getInstance().getIsolatedCategory() != compatibleAttachment.getAttachment().getCategory());
+		//
+		//}
+
 		// Do magic mag stuff
 		if(compatibleAttachment.getAttachment().getCategory() == AttachmentCategory.MAGICMAG) {
 			
@@ -3557,57 +3548,25 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 			boolean isFinishing = state != WeaponState.COMPOUND_RELOAD_FINISHED && state != WeaponState.COMPOUND_RELOAD_FINISH;
 			
 			
-			if(magicState == WeaponState.COMPOUND_RELOAD) {
-				if((state == WeaponState.COMPOUND_REQUESTED || state == WeaponState.COMPOUND_RELOAD || state == WeaponState.COMPOUND_RELOAD_FINISHED) && !isCompoundReloadTactical()) {
-					
-					return;
-				}
-			}
+			if(magicState == WeaponState.COMPOUND_RELOAD && (state == WeaponState.COMPOUND_REQUESTED || state == WeaponState.COMPOUND_RELOAD || state == WeaponState.COMPOUND_RELOAD_FINISHED) && !isCompoundReloadTactical())
+				return;
 			
-			if(magicState == WeaponState.COMPOUND_RELOAD_EMPTY) {
-				if((state == WeaponState.COMPOUND_RELOAD_EMPTY) && !isCompoundReloadEmptyTactical()) {
-					return;
-				}
-			}
-			
-			
-		
-			
-			
+			if(magicState == WeaponState.COMPOUND_RELOAD_EMPTY && (state == WeaponState.COMPOUND_RELOAD_EMPTY) && !isCompoundReloadEmptyTactical())
+				return;
+
 			// Run checks
-			if(time) {
-				if(!isCompoundReloadEmptyTactical() && !isCompoundReloadTactical() && !getBuilder().isHasTacticalReload())
-					return;
-					
-					
-				
-				
-				
-					
-				if(state != WeaponState.COMPOUND_RELOAD_EMPTY && state != WeaponState.COMPOUND_RELOAD && state != WeaponState.TACTICAL_RELOAD && isFinishing) {
-					return;
-				}
-				
-				
-				
-				
-			
-			
-			} else if(!isCompoundReloadEmptyTactical() && !isCompoundReloadTactical() && !getBuilder().isHasTacticalReload()){
+			if(!isCompoundReloadEmptyTactical() && !isCompoundReloadTactical() && !getBuilder().isHasTacticalReload())
+				return;
+
+			if(time && state != WeaponState.COMPOUND_RELOAD_EMPTY && state != WeaponState.COMPOUND_RELOAD && state != WeaponState.TACTICAL_RELOAD && isFinishing) {
 				return;
 			}
-			
-			
-			
 			//ItemAttachment<Weapon> exp = renderContext.getModContext().getAttachmentAspect().getActiveAttachment(renderContext.getWeaponInstance(), AttachmentCategory.MAGAZINE);
-			if(currentMagazine != null) {
+			//if(currentMagazine != null) {
 				//compatibleAttachment.getModelPositioning().accept(texturedModel.getU());
 				
 				//currentMagazine.getModelPositioning().accept(arg0);
-			}
-			
-			
-		
+			//}
 		}
 		
 		
@@ -3673,8 +3632,7 @@ public class WeaponRenderer extends CompatibleWeaponRenderer {
 	   
 	    
 		for(Tuple<ModelBase, String> texturedModel: compatibleAttachment.getAttachment().getTexturedModels()) {
-			mc.renderEngine.bindTexture(new ResourceLocation(getBuilder().getModId()
-					+ ":textures/models/" + texturedModel.getV()));
+			mc.renderEngine.bindTexture(new ResourceLocation(getBuilder().getModId() + ":textures/models/" + texturedModel.getV()));
 			GL11.glPushMatrix();
 			GL11.glPushAttrib(GL11.GL_ENABLE_BIT | GL11.GL_CURRENT_BIT);
 			

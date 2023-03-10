@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ModernConfigCategory extends DummyCategoryElement {
 
-	private String registryKey;
+	private final String registryKey;
 	
 	public ModernConfigCategory(String name, String registryKey, List<IConfigElement> childElements) {
 		super(name, registryKey, childElements);
@@ -23,5 +23,4 @@ public class ModernConfigCategory extends DummyCategoryElement {
 	public String getName() {
 		return I18n.format(registryKey);
 	}
-
 }
